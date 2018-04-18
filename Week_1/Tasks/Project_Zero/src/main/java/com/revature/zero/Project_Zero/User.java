@@ -8,17 +8,22 @@ public class User implements Serializable {
 	private static boolean admin;
 	private static boolean locked;
 	private static String name;
-	
+	private static boolean approved;
 	public User() {}
-	public User(String name, int balance, boolean admin, boolean locked) {
+	public User(String name, int balance, boolean admin, boolean locked, boolean approved) {
 		super();
 		this.name = name;
 		this.balance = balance;
 		this.admin = admin;
 		this.locked = locked;
+		this.approved = approved;
 	}
 	public static int getBalance() {
 		return balance;
+	}
+	
+	public static String getName() {
+		return name;
 	}
 
 	public static void setBalance(int balance) {
@@ -31,6 +36,9 @@ public class User implements Serializable {
 
 	public static void setLocked(boolean locked) {
 		User.locked = locked;
+	}
+	public static boolean isApproved() {
+		return approved;
 	}
 
 	public static boolean isAdmin() {
