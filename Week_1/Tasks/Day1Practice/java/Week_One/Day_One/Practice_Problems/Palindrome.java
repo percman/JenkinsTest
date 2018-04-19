@@ -1,4 +1,5 @@
 package Week_One.Day_One.Practice_Problems;
+
 // Run Class User for console application.
 public class Palindrome {
     public static void palindrome(String word) {

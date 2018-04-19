@@ -18,7 +18,7 @@ public class User {
     static Scanner input = new Scanner(System.in);
 
     // Methods
-    public static void menu(){
+    public static void menu() {
         System.out.println("Hello User, which of the following practice problem would you like to test?" +
                 "\n1 - Fibonacci (Recursive)" +
                 "\n2 - Fibonacci (Iteratively)" +
@@ -35,7 +35,7 @@ public class User {
 
     public static void retrieveProblem(int num) {
         int n, r, x, y;
-        switch(num){
+        switch (num) {
             case 1:
                 // Fibonacci (Recursive)
                 System.out.print("\nEnter the number of the place within the Fibonacci sequence you wish to receive: ");
@@ -90,27 +90,31 @@ public class User {
                 System.out.print("\nEnter a number: ");
                 OddEven.oddeven(input.nextInt());
                 break;
+            case 0:
+                System.out.println("\nProgram Terminated.");
+                System.exit(0);
             default:
-                System.out.println("Test complete.\n");
-                User.menu();
+                System.out.println("\nInvalid number.");
         }
     }
 
-    public static void main(String[] args) {
-        // Create user.
-        User user = new User();
+    public static void start() {
         // Menu for user
         do {
-            user.menu();
+            User.menu();
             // Get user's input
-            user.retrieveProblem(input.nextInt());
+            User.retrieveProblem(input.nextInt());
             System.out.println("\nWould you like to test another practice problem?" +
                     "\n1 - Yes" +
                     "\n0 - No");
             System.out.print("\nEnter number: ");
             select = input.nextInt();
         }
-        while(select != 0);
+        while (select != 0);
         System.out.println("\nProgram Terminated.");
+    }
+
+    public static void main(String[] args) {
+        User.start();
     }
 }
