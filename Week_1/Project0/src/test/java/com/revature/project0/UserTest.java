@@ -56,22 +56,4 @@ public class UserTest {
 		Iterator<String> itr = user.movies.iterator();
 		assertEquals(itr.next(), "Batman Begins");
 	}
-	@Test
-	//test to see if a user can be locked and unlocked correctly 
-	public void lockTest() {
-		User user = new User();
-		user.setLocked(true);
-		assertTrue(user.isUserLocked());
-		user.setLocked(false);
-		assertFalse(user.isUserLocked());
-	}
-	@Test
-	//test to see if a user can be approved
-	public void userApprovedTest() {
-		User user = new User();
-		assertFalse(user.isUserApproved());
-		user.approved();
-		assertTrue(user.isUserApproved());
-	}
-
 }
