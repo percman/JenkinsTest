@@ -3,6 +3,8 @@ package com.revature.project0;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -12,12 +14,16 @@ public class IOTest {
 	@Test
 	//test to see if the File IO class properly scans for approval
 	public void approveScanTest() {
+		MovieBarn.users.clear();
 		User tom = new User("tom","password");
+		FileIO.addUser(tom);
+		tom.approved();
 		FileIO.addUser(tom);
 		User greg = new User("greg","password");
 		FileIO.addUser(greg);
-		ArrayList<User> temp = FileIO.scanApproved();
-		assertEquals(temp.get(0).username,greg);
+		Set<User> temp = FileIO.scanApproved();
+		Iterator<User> itr = temp.iterator();
+		assertEquals((User)itr.next(),greg);
 	}
 	@Test
 	//test to see if the File IO class properly scans for locked users
@@ -27,8 +33,9 @@ public class IOTest {
 		User greg = new User("greg","password");
 		greg.setLocked(true);
 		FileIO.addUser(greg);
-		ArrayList<User> temp = FileIO.scanLocked();
-		assertEquals(temp.get(0).username,greg);
+		Set<User> temp = FileIO.scanLocked();
+		Iterator<User> itr = temp.iterator();
+		assertEquals((User)itr.next(),greg);
 	}
 	@Test
 	//test to see if the File IO class properly scans for unlocked users
@@ -38,8 +45,9 @@ public class IOTest {
 		User greg = new User("greg","password");
 		greg.setLocked(true);
 		FileIO.addUser(greg);
-		ArrayList<User> temp = FileIO.scanUnlocked();
-		assertEquals(temp.get(0).username,tom);
+		Set<User> temp = FileIO.scanUnlocked();
+		Iterator<User> itr = temp.iterator();
+		assertEquals((User)itr.next(),tom);
 	}
 
 }

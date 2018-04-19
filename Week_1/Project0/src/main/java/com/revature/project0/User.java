@@ -9,7 +9,7 @@ import java.util.TreeSet;
 public class User implements Serializable{
 private boolean approved,locked,admin = false;//keeps track of whether a user has been approved, is currently locked and is an admin
 private static boolean adminSet = false;// checks if there is already one admin
-String username, password;// the users username and password
+String username, password; // the users username and password
 Set<String> movies = new TreeSet<>();// the users library of movies
 public User() {
 	
@@ -48,10 +48,14 @@ public boolean isUserApproved() {
 }
 //either locks or unlocks a user
 public void setLocked(boolean lock) {
+	MovieBarn.users.remove(this);
 	locked = lock;
+	MovieBarn.users.add(this);
 }
-// approves a user
+//approves a user
 public void approved() {
-	approved = true;
+	MovieBarn.users.remove(this);
+	this.approved = true;
+	MovieBarn.users.add(this);
 }
 }

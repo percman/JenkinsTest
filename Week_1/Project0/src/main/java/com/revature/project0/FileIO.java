@@ -5,8 +5,11 @@ import java.util.*;
 public class FileIO {
 //adds a new user to the list containing all users	
 public static void addUser(User user){
-	MovieBarn.users.add(user);
-	MovieBarn.passwords.put(user.username, user.password);
+	if(!MovieBarn.users.contains(user)) {
+		MovieBarn.users.add(user);
+		MovieBarn.passwords.put(user.username, user.password);
+	}
+
 }
 //looks through the list of users for those who are pending approval
 public static Set<User> scanApproved() {

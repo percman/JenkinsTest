@@ -15,7 +15,10 @@ public class SerializationTest {
 		User user = new User("daniel", "password");
 		user.addMovie("Batman Begins");
 		UserSerializer.serializeUser(user,new File("src/test/resources/testUser.txt"));
-		assertEquals(user,(User)UserSerializer.deSerializeUser(new File("src/main/resources/testBytes.txt")));
+		User deUser = (User)UserSerializer.deSerializeUser(new File("src/test/resources/testUser.txt")); 
+		assertEquals(user.username, deUser.username);
+		assertEquals(user.password, deUser.password);
+		assertEquals(user.movies, deUser.movies);
 	}
 
 }

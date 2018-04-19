@@ -42,6 +42,7 @@ public class UserTest {
 		Iterator<String> itr = user.movies.iterator();
 		assertEquals(itr.next(), "The Dark Knight");
 		user.removeMovie("The Dark Knight");
+		itr = user.movies.iterator();
 		assertEquals(itr.next(), "The Dark Knight Rises");
 	}
 	@Test

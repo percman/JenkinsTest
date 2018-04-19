@@ -12,7 +12,7 @@ public class Login {
 }
  //checks if the password given matches what is on record for the user
  static boolean checkPassword(String pass,String name) {
-return pass.equals(MovieBarn.passwords.get(name));
+	 return pass.equals(MovieBarn.passwords.get(name));
 }
  //handles running the main login interaction 
 public static void login() {
