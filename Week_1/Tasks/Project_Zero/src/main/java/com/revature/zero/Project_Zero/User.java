@@ -3,12 +3,13 @@ package com.revature.zero.Project_Zero;
 import java.io.Serializable;
 
 public class User implements Serializable {
-	private static final long serialVersionUID = -3703230509509286756L;
-	private static int balance;
-	private static boolean admin;
-	private static boolean locked;
-	private static String name;
-	private static boolean approved;
+	private final long serialVersionUID = -3703230509509286756L;
+	private int balance;
+	private boolean admin;
+	private boolean locked;
+	private String name;
+	private boolean approved;
+	
 	public User() {}
 	public User(String name, int balance, boolean admin, boolean locked, boolean approved) {
 		super();
@@ -18,30 +19,30 @@ public class User implements Serializable {
 		this.locked = locked;
 		this.approved = approved;
 	}
-	public static int getBalance() {
+	public int getBalance() {
 		return balance;
 	}
 	
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 
-	public static void setBalance(int balance) {
-		User.balance = balance;
+	public void setBalance(int balance) {
+		this.balance = balance;
 	}
 
-	public static boolean isLocked() {
+	public boolean isLocked() {
 		return locked;
 	}
 
-	public static void setLocked(boolean locked) {
-		User.locked = locked;
+	public void setLocked(boolean locked) {
+		this.locked = locked;
 	}
-	public static boolean isApproved() {
+	public boolean isApproved() {
 		return approved;
 	}
 
-	public static boolean isAdmin() {
+	public boolean isAdmin() {
 		return admin;
 	}
 	

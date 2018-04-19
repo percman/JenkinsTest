@@ -67,6 +67,7 @@ public class App {
 		}
 	}
 	//method for creating a new user
+	@SuppressWarnings("resource")
 	public static void newUser() {
 		boolean taken = true;
 		while (taken == true) {	
@@ -74,9 +75,9 @@ public class App {
 			Scanner input = new Scanner(System.in);
 			System.out.println("Create Username: ");
 			String userName = input.next();
-			for(int i = 0; i < userList.size(); i++) {
-				System.out.println(userList.get(i));
-				if (userList.get(i).getName().equals(userName)) {
+			for(User u : userList) {
+				//check if the user name is taken
+				if (u.getName().equals(userName)) {
 					System.out.println("Username " + userName + " is taken");
 					taken = true;
 				}
@@ -89,6 +90,7 @@ public class App {
 					newAdmin(userName);
 				}
 				else {
+					printUserList();
 					User user = new User(userName, 0, false, false, false);
 					userList.add(user);
 					System.out.println("Please wait to be approved by admin");
@@ -134,8 +136,14 @@ public class App {
 			}
 		}
 	}
+	public static void printUserList() {
+		for(User u : userList) {
+			System.out.println(u.getName());
+		}
+	}
     public static void main ( String[] args ) {
     	while (true) {
+    		printUserList();
     		welcome();
     	}
     }
