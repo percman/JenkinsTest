@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-
+//use bufferReader/fileReader and bufferWriter/fileWriter
 public class SerializationUser {
 	
 	public static void serializeUser(User user, File file) {

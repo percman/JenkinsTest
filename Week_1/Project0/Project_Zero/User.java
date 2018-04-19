@@ -30,6 +30,12 @@ public class User implements Serializable {
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
+	public void addBalance(int n) {
+		this.balance += n;
+	}
+	public void subtractBalance(int n) {
+		this.balance -= n;
+	}
 
 	public boolean isLocked() {
 		return locked;
@@ -40,6 +46,9 @@ public class User implements Serializable {
 	}
 	public boolean isApproved() {
 		return approved;
+	}
+	public void setApproved(boolean approved) {
+		this.approved = approved;
 	}
 
 	public boolean isAdmin() {
