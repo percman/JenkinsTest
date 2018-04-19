@@ -127,8 +127,15 @@ public class App {
 				System.out.println("Withdraw money");
 				withdrawMoney(u);
 			}
+			if (response == 3) {
+				System.out.println("View balance");
+				viewBalance(u);
+			}
 		}
 	}
+	/**************************************
+	 * Admin Method : the method for all admin actions
+	 **************************************/
 	public static void adminMethod() {
 		Scanner input = new Scanner(System.in);
 		int response = 0;
@@ -152,6 +159,7 @@ public class App {
 			// Lock or unlock users
 			if (response == 2) {
 				System.out.println("Lock or Unlock");
+				lockOrUnlock();
 			}
 		}
 	}
@@ -168,6 +176,9 @@ public class App {
 		int n = input.nextInt();
 		u.subtractBalance(n);
 		System.out.println("You successfully withdrew $" + n +"s " + "your current balance is $" + u.getBalance());
+	}
+	public static void viewBalance(User u) {
+		System.out.println("Your balance is $" + u.getBalance());
 	}
 	//method for admin to approve or reject users
 	public static void approveOrReject() {
@@ -202,6 +213,37 @@ public class App {
 			System.out.println(who + " has been rejected!");
 		}
 	}
+	//method for admin to lock or unlock account
+	public static void lockOrUnlock() {
+		int i = 1;
+		for (User u : userList) {
+			System.out.println(u.getName() + "'s account is currently " + u.getLockedState() + 
+					", enter \"" + u.changeLockedState() + " " +  u.getName() + "\" to " + u.changeLockedState() + " it.");
+			i++;
+		}
+		Scanner input = new Scanner(System.in);
+		String lockOrUnlock = input.next();
+		String who = input.next();
+		while (!lockOrUnlock.equals("lock") & !lockOrUnlock.equals("unlock")) {
+			System.out.println("Please enter 'lock' or unlock' followed by user name");
+			lockOrUnlock = input.next();
+			who = input.next();			
+		}
+		while (!inUserList(who)) {
+			System.out.println(who + " is not recognized. Please enter valid name");
+			who = input.next();
+		}
+		if (lockOrUnlock.equals("lock")) {
+			User user = returnUserByName(who);
+			user.setLocked(true);
+			System.out.println("User " + user.getName() + " has been locked");
+		}
+		else {
+			User user = returnUserByName(who);
+			user.setLocked(false);
+			System.out.println("User " + user.getName() + " has been unlocked");
+		}
+	}
 	//this method will return a user that shares 
 	//the name with the parameter 'name'
 	public static User returnUserByName(String name) {
@@ -223,7 +265,7 @@ public class App {
 	public static void printUserList() {
 		int i = 1;
 		for (User u : userList) {
-			System.out.println(1 + ") " + u.getName());
+			System.out.println(i + ") " + u.getName());
 		}
 	}
     public static void main ( String[] args ) {

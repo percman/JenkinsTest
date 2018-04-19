@@ -40,6 +40,21 @@ public class User implements Serializable {
 	public boolean isLocked() {
 		return locked;
 	}
+	public String getLockedState() {
+		if (locked) {
+			return "locked";
+		}
+		else {
+			return "not locked";
+		}
+	}
+	public String changeLockedState() {
+		if (locked) {
+			return "unlock";
+		} else {
+			return "lock";
+		}
+	}
 
 	public void setLocked(boolean locked) {
 		this.locked = locked;
