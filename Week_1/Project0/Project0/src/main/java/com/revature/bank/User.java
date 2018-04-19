@@ -12,6 +12,8 @@ public class User extends Person{
 		approved = false;
 		balance = 0;
 	}
+
+	
 	float getBalance() {
 		return balance;
 	}

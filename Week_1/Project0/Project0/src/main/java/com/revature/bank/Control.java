@@ -4,34 +4,31 @@ import java.util.*;
 
 public class Control {
 	public static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-		if(userList.isEmpty()) {
+		if(Person.userMap.isEmpty()) {
 			addFirstUser();
 		}
-		while(current!=null) {
-			System.out.println("You are logged in.");
-			System.out.println("Type 'L' to log out.");
-			String log = sc.next();
-			if(log.equals("L")) {
-				logOut();
-				System.out.println("You have logged out.");
-				System.out.println();
-			}
-			sc.close();
+		while(true) {
+		if(current!=null) {
+			welcomePage();			
 		}	
-		System.out.println("Enter username.");
-	}
-	
-	private static List<Person> userList = new ArrayList<>();
-	
-	public static void addUserToList(Person user) {
-		userList.add(user);
+		login();
+		}
 	}
 	
 	public static Person current;
 	
-	public static void login(String username, String password) {
-		
+	public static void login() {
+		System.out.println("Enter username.");
+		String username = sc.next();
+		System.out.println("Enter password.");
+		String password = sc.next();
+		if (Person.userMap.containsKey(username) && 
+				password.equals(Person.userMap.get(username).password)){
+			current = Person.userMap.get(username);
+		}
+		else System.out.println("The username/password combination does not exist.");
 	}
 	
 	public static void logOut() {
@@ -46,9 +43,21 @@ public class Control {
 		System.out.print("Create password (no spaces allowed: ");
 		String password = sc.next();
 		Admin first = new Admin (username, password);
-		addUserToList(first);
+		Person.addUserToMap(username, first);
 		current = first;
 		System.out.println("You have been added.");
 		System.out.println();
+	}
+	
+	public static void welcomePage() {
+		System.out.println("Welcome, "+current.username + ".");
+		System.out.println("You are logged in.");
+		System.out.println("Type 'L' to log out.");
+		String log = sc.next();
+		if(log.equals("L")) {
+			logOut();
+			System.out.println("You have logged out.");
+			System.out.println();
+		}
 	}
 }
