@@ -1,4 +1,4 @@
-package com.revature.project0;
+package com.revature.projectZero;
 
 import org.apache.log4j.Logger;
 
@@ -24,6 +24,10 @@ public class LogThis {
 			instance = new LogThis();
 		}
 		return instance;
+	}
+	
+	public static void info(Object msg) {
+		logger.info(msg);
 	}
 	
 	public static void warn(String msg, Exception e) {

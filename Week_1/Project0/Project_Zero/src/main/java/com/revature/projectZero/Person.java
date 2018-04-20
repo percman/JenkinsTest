@@ -1,4 +1,4 @@
-package com.revature.project0;
+package com.revature.projectZero;
 
 import java.io.Serializable;
 import java.util.Scanner;
@@ -9,11 +9,12 @@ public abstract class Person implements Serializable {
 
 	// These are variables that all Person classes have
 	private String name;
-	transient private String password;
-	
-	// These are methods that all Person classes have, but they will all be different
-	public abstract void mainMenu();
+	private String userName;
+	private String password;
 
+	// These are methods that all Person classes have, but they will all be
+	// different
+	public abstract void mainMenu();
 
 	public Person() {
 		super();
@@ -42,11 +43,21 @@ public abstract class Person implements Serializable {
 		this.password = password;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
 	}
 
@@ -64,19 +75,30 @@ public abstract class Person implements Serializable {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [name=" + name + "]";
+		return "Person [name=" + name + ", userName=" + userName + "]";
 	}
 
-	
+	//
 	//
 	// Method(s) that all Person classes have
 	//
-	
+	//
+
 	public void logout() {
 		System.out.println("Are you sure you want to log out?");
 		System.out.println("1. Yes");
@@ -100,12 +122,9 @@ public abstract class Person implements Serializable {
 		}
 
 	}
-	
-//	public void changePassword() {
-//		
-//	}
-	
-	
-	
+
+	// public void changePassword() {
+	//
+	// }
 
 }

@@ -1,4 +1,4 @@
-package com.revature.project0;
+package com.revature.projectZero;
 
 public class Principal extends Person {
 
