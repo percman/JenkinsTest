@@ -13,13 +13,16 @@ import com.revature.readwrite.ReadWrite;
 
 public class SerializationOfUsers extends ReadWrite{
 
+	// File paths declared here so they can easily be changed later 
 	public static File userFile = new File("src/main/resources/users.txt");
 	public static File serializedUserFile = new File("src/main/resources/serializeduser.txt");
 	
-	public static void serializeUser(ProjectUsers u, File toFile) {
+	// Serializes a given user
+	// takes User 'u' and uses the hashCode to write to File 'resource'
+	public static void serializeUser(User u, File resource) {
 		
 		try {
-			out = new ObjectOutputStream(new FileOutputStream(toFile.getPath()));
+			out = new ObjectOutputStream(new FileOutputStream(resource.getPath()));
 			out.writeObject(u);
 		} catch (IOException ioe) {
 			System.err.println(ioe.getMessage());
@@ -33,31 +36,14 @@ public class SerializationOfUsers extends ReadWrite{
 			}
 		}
 	}
-	
-	public static void deserializeUser(File fromFile) {
-		try {
-			in = new ObjectInputStream(new FileInputStream(fromFile.getPath()));
-			ProjectUsers deserializedUser = (ProjectUsers) in.readObject();
-			System.out.println(deserializedUser);
-		} catch (IOException ioe) {
-			System.err.println(ioe.getMessage());
-		} catch (ClassNotFoundException cfne) {
-			System.err.println(cfne.getMessage());
-		} finally {
-			try {
-				in.close();
-			} catch (IOException ioe) {
-				ioe.printStackTrace();
-			} finally {
-				//System.out.println("Resource successfully closed");
-			}
-		}
-	}
 
-	public static ProjectUsers returnDeserializedUser(File fromFile) {
+
+	// Deserializes a given user (return data)
+	// takes User 'u' from File 'resource' and uses the hashCode to return the User data
+	public static User returnDeserializedUser(File resource) {
 		try {
-			in = new ObjectInputStream(new FileInputStream(fromFile.getPath()));
-			ProjectUsers deserializedUser = (ProjectUsers) in.readObject();
+			in = new ObjectInputStream(new FileInputStream(resource.getPath()));
+			User deserializedUser = (User) in.readObject();
 			return deserializedUser;
 		} catch (IOException ioe) {
 			System.err.println(ioe.getMessage());
@@ -75,23 +61,29 @@ public class SerializationOfUsers extends ReadWrite{
 		return null;
 	}
 	
-	public static HashMap<Integer, ProjectUsers> hashSetUserData(File fromFile) {
-		HashMap<Integer, ProjectUsers> hashUsers = new HashMap<>();
+	// Deserializes all user data into a HashMap for parsing 
+	// * very inefficient way to do this, but it works for now *
+	// ** having problems with tempFile, so decided to store all userData into LinkedList **
+	// deserializes the text from File 'resource', and stores it in a hashMap 
+	// * by reading in, line by line, into LinkedList<String>, then writing it back later * 
+	public static HashMap<Integer, User> hashMapUserData(File resource) {
+		HashMap<Integer, User> hashUsers = new HashMap<>();
 		LinkedList<String> userData = new LinkedList<>();
-		int count = lineCount(fromFile);
+		int count = lineCount(resource);
 		
+		// just to ensure extra data isn't accidently written into user data, such as null
 		tempFile.delete();
 		
 		try {
 			
 			for(int i = 0; i < count; i++) {
-				hashUsers.put(i, returnDeserializedUser(fromFile));
-				userData.add(readFirstLine(fromFile));
-				deleteContentOfFile(readFirstLine(fromFile), fromFile);
+				hashUsers.put(i, returnDeserializedUser(resource));
+				userData.add(readFirstLine(resource));
+				deleteContentOfFile(readFirstLine(resource), resource);
 			}
 			
 			for(int i = 0; i < (count - 1); i++) {
-				writeToExistingFile(userData.removeFirst(), fromFile);
+				writeToExistingFile(userData.removeFirst(), resource);
 			}
 			
 		} finally {
@@ -105,7 +97,5 @@ public class SerializationOfUsers extends ReadWrite{
 		}
 		return hashUsers;
 	}
-	
-
 	
 }

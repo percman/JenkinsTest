@@ -15,8 +15,11 @@ import java.nio.file.NoSuchFileException;
 
 public class ReadWrite{
 
+	// Declared here so it can be easily found and path changed if need be
 	public static File tempFile = new File("src/main/resources/tempfile.txt");
 	
+	// Readers and writers to be used later
+	// not sure on static declarations, but it stopped yelling at me when I did this so..
 	public static ObjectOutputStream out = null;
 	public static ObjectInputStream in = null;
 	public static FileWriter fw = null;
@@ -24,9 +27,11 @@ public class ReadWrite{
 	public static BufferedWriter bw = null;
 	public static BufferedReader br = null;
 	
-    public static String readFirstLine(File fromFile) {
+	// Typically used so the entire file isn't loaded all at once
+	// ex: read first line into array, delete the line, repeat 
+    public static String readFirstLine(File resource) {
 
-        String fileName = fromFile.getPath();
+        String fileName = resource.getPath();
         String currentLine = null;
 
         try {
@@ -38,19 +43,19 @@ public class ReadWrite{
             br.close();         
         }
         catch(FileNotFoundException ex) {
-            System.out.println(
-                "Unable to open file '" +  fileName + "'");                
+            System.out.println("Unable to open file '" +  fileName + "'");                
         }
         catch(IOException ex) {
-            System.out.println(
-                "Error reading file '" + fileName + "'"); 
+            System.out.println("Error reading file '" + fileName + "'"); 
         }
         return currentLine;
     }
 
-    public static void readFileStrings(File fromFile) {
+    // Prints entire file
+    // used as a sort of check
+    public static void readFileStrings(File resource) {
 
-        String fileName = fromFile.getPath();
+        String fileName = resource.getPath();
         String currentLine = null;
 
         try {
@@ -72,20 +77,24 @@ public class ReadWrite{
         }
     }
 
+    // User input 
+    // consoleinput = aquireline();
 	public static String aquireLine() {
 		
-		String somestuff = "";
+		String line = "";
 		
 		try {
 			br = new BufferedReader(new InputStreamReader(System.in));
-			somestuff = br.readLine();
+			line = br.readLine();
 			
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} 
-		return somestuff;
+		return line;
 	}
 	
+	// Count number of lines in a file 
+	// easy way to quickly check current number of users etc 
 	public static int lineCount(File file){
 		int result = 0;
 		try
@@ -108,23 +117,27 @@ public class ReadWrite{
 		return result;
 	}
 
-	public static void writeToNewFile(String toBeWritten, File file) {
+	// Writes to a new file at the path given
+	// creates new File resource with string-text toBeWritten
+	public static void writeToNewFile(String toBeWritten, File resource) {
 		try {
 
-			fw = new FileWriter(file);
+			fw = new FileWriter(resource);
 			bw = new BufferedWriter(fw);
 			
 			toBeWritten+= "\n";
 			bw.write(toBeWritten);
 			
 		} catch (FileNotFoundException fnfe) {
-			System.err.println("Could not find file " + file.getName());
+			System.err.println("Could not find file " + resource.getName());
 			fnfe.printStackTrace();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} 
 	}
 
+	// Copies text into another file
+	// takes entire text of destination and writes into resource, line by line
 	public static void writeToAFileFromAFile(File destination, File resource) {
 		
 		try{
@@ -146,6 +159,8 @@ public class ReadWrite{
 		
 	}
 
+	// Writes to an existing file at the path given
+	// appends File 'resource' with string-text toBeWritten
 	public static void writeToExistingFile(String toBeWritten, File resource) {
 		
 		try {
@@ -168,6 +183,8 @@ public class ReadWrite{
 		} 
 	}
 
+	// Finds a string and removes it from file
+	// given a String toBeRemoved at File 'resource', delete it, doing so by reading line by line 
 	public static void deleteContentOfFile(String toBeRemoved, File resource) {
 		
 		String currentLine;
@@ -186,10 +203,11 @@ public class ReadWrite{
 			
 			codeCleanUp();
 			
-			// Below is a workaround. Apparently you cannot rename it directly from resource (?)
+			// Below is a workaround. Apparently you cannot rename it directly from resource
+			// Still having trouble deleting and renaming files. Windows problem I guess (?)
 			resource.delete();
 			tempFile.renameTo(resource);
-			//tempFile.delete();
+			tempFile.delete();
 			
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
@@ -198,7 +216,8 @@ public class ReadWrite{
 		}
 	}
 
-	
+	// Ensures all readers and writers are closed
+	// if read/write methods are open and not null, close them
 	public static void codeCleanUp() {
 		try {
 			
