@@ -12,9 +12,8 @@ public class App {
 	public static int numUsers = 0;
 	public static ArrayList<User> userList = new ArrayList<User>();
 	//Initial page for welcoming new and returning users
-	public static void welcome () {
+	public static void welcome (Scanner input) {
 		
-		Scanner input = new Scanner(System.in);
 		System.out.println("Hello, new user? (Y/N) ");
 		String response = input.next();
 		while ((!response.equals("Y")) & (!response.equals("N"))) {
@@ -24,19 +23,18 @@ public class App {
 		//create new user
 		if(response.equals("Y")) {
 			System.out.println("Welcome New User");
-			newUser();
+			newUser(input);
 		}
 		//returning user
 		else {
 			System.out.println("Welcome Back");
-			returnUser();
+			returnUser(input);
 		}
 	}
 	//user has already been created
-	public static void returnUser() {
+	public static void returnUser(Scanner input) {
 		//variable that will be true if the user name is a return
 		boolean recognized = false;
-		Scanner input = new Scanner(System.in);
 		//ask user for user name
 		System.out.println("Enter Username: ");
 		String userName = input.next();
@@ -45,7 +43,7 @@ public class App {
 				System.out.println("welcome back " + userName);
 				recognized = true;
 				if (u.isAdmin()) {
-					adminMethod();
+					adminMethod(input);
 				}
 				else {
 					//is this user approved?
@@ -57,7 +55,7 @@ public class App {
 						System.out.println("Your account is currently locked");
 					}
 					if (u.isApproved() & !u.isLocked()) {
-						userMethod(u);
+						userMethod(u, input);
 					}
 				}
 			}
@@ -68,11 +66,10 @@ public class App {
 	}
 	//method for creating a new user
 	@SuppressWarnings("resource")
-	public static void newUser() {
+	public static void newUser(Scanner input) {
 		boolean taken = true;
 		while (taken == true) {	
 			taken = false;
-			Scanner input = new Scanner(System.in);
 			System.out.println("Create Username: ");
 			String userName = input.next();
 			for(User u : userList) {
@@ -87,7 +84,7 @@ public class App {
 				taken = false;
 				if (numUsers == 0) {
 					numUsers++;
-					newAdmin(userName);
+					newAdmin(userName, input);
 				}
 				else {
 					User user = new User(userName, 0, false, false, false);
@@ -98,13 +95,12 @@ public class App {
 		}
 	}
 	
-	public static void newAdmin(String userName) {
+	public static void newAdmin(String userName, Scanner input) {
 		User user = new User(userName, 0, true, false, true);
 		userList.add(user);
-		adminMethod();
+		adminMethod(input);
 	}
-	public static void userMethod(User u) {
-		Scanner input = new Scanner(System.in);
+	public static void userMethod(User u, Scanner input) {
 		int response = 0;
 		
 		while (response !=4) {
@@ -136,8 +132,7 @@ public class App {
 	/**************************************
 	 * Admin Method : the method for all admin actions
 	 **************************************/
-	public static void adminMethod() {
-		Scanner input = new Scanner(System.in);
+	public static void adminMethod(Scanner input) {
 		int response = 0;
 
 		while (response != 3) {
@@ -153,13 +148,17 @@ public class App {
 			}
 			// Approve or reject users
 			if (response == 1) {
+				System.out.println("----------------------");
 				System.out.println("Approve or Reject Users");
-				approveOrReject();
+				System.out.println("-----------------------");
+				approveOrReject(input);
 			}
 			// Lock or unlock users
 			if (response == 2) {
+				System.out.println("----------------------");
 				System.out.println("Lock or Unlock");
-				lockOrUnlock();
+				System.out.println("----------------------");
+				lockOrUnlock(input);
 			}
 		}
 	}
@@ -181,7 +180,7 @@ public class App {
 		System.out.println("Your balance is $" + u.getBalance());
 	}
 	//method for admin to approve or reject users
-	public static void approveOrReject() {
+	public static void approveOrReject(Scanner input) {
 		int i = 1;
 		//print out name of users awaiting approval
 		for(User u : userList) {
@@ -190,15 +189,18 @@ public class App {
 				i++;
 			}
 		}
+		//no one is awaiting approval
+		if(i == 1) {
+			System.out.println("No one is awaiting approval");
+			return;
+		}
 		//admin inputs who he wants to approve/reject
-		Scanner input = new Scanner(System.in);
 		String approveOrReject = input.next();
 		String who = input.next();
 		
 		while (!approveOrReject.equals("approve") & !approveOrReject.equals("reject")) {
 			System.out.println("Please enter'approve' or 'reject' followed by user");
-			approveOrReject = input.next();
-			who = input.next();
+			approveOrReject = input.next();		
 		}
 		while (!inUserList(who)) {
 			System.out.println(who + " is not recognized. Please enter valid name");
@@ -214,14 +216,13 @@ public class App {
 		}
 	}
 	//method for admin to lock or unlock account
-	public static void lockOrUnlock() {
+	public static void lockOrUnlock(Scanner input) {
 		int i = 1;
 		for (User u : userList) {
 			System.out.println(u.getName() + "'s account is currently " + u.getLockedState() + 
 					", enter \"" + u.changeLockedState() + " " +  u.getName() + "\" to " + u.changeLockedState() + " it.");
 			i++;
 		}
-		Scanner input = new Scanner(System.in);
 		String lockOrUnlock = input.next();
 		String who = input.next();
 		while (!lockOrUnlock.equals("lock") & !lockOrUnlock.equals("unlock")) {
@@ -269,8 +270,9 @@ public class App {
 		}
 	}
     public static void main ( String[] args ) {
+		Scanner input = new Scanner(System.in);
     	while (true) {
-    		welcome();
+    		welcome(input);
     	}
     }
 }
