@@ -6,8 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 
 import com.revature.readwrite.ReadWrite;
 
@@ -68,7 +68,7 @@ public class SerializationOfUsers extends ReadWrite{
 	// * by reading in, line by line, into LinkedList<String>, then writing it back later * 
 	public static HashMap<Integer, User> hashMapUserData(File resource) {
 		HashMap<Integer, User> hashUsers = new HashMap<>();
-		LinkedList<String> userData = new LinkedList<>();
+		ArrayList<String> userData = new ArrayList<>();
 		int count = lineCount(resource);
 		
 		// just to ensure extra data isn't accidently written into user data, such as null
@@ -76,14 +76,14 @@ public class SerializationOfUsers extends ReadWrite{
 		
 		try {
 			
-			for(int i = 0; i < count; i++) {
+			for(int i = 0; i < (count - 1); i++) {
 				hashUsers.put(i, returnDeserializedUser(resource));
 				userData.add(readFirstLine(resource));
 				deleteContentOfFile(readFirstLine(resource), resource);
 			}
 			
 			for(int i = 0; i < (count - 1); i++) {
-				writeToExistingFile(userData.removeFirst(), resource);
+				writeToExistingFile(userData.get(i), resource);
 			}
 			
 		} finally {

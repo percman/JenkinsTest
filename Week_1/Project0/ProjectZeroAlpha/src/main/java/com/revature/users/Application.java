@@ -30,38 +30,74 @@ public class Application extends Admin{
 		Double doubleObject = new Double(balancestring);
 		double startingbalance = doubleObject.doubleValue();
 		
-		addUserAsAdmin(username, password, true, startingbalance);
+		addUserAsAdmin(username, password, true, false, startingbalance);
 		
 		
 	}
 	
 	// Allows selection of various activities to do 
-	public static void mainMenu() {
-		int equalsigns = 12;
+	public static void mainMenu(HashMap<Integer, User> userHashData, String currentUser) {
+		int equalsigns = 20;
 		for(int i = 0; i < equalsigns; i++) System.out.print("=");
-		System.out.print("Main Menu");
+		System.out.print(" Main Menu ");
 		for(int i = 0; i < equalsigns; i++) System.out.print("=");
 		System.out.println();
-		System.out.println("You are currently logged in as: ");
+		System.out.println("You are currently logged in as: " + currentUser);
+		System.out.println("\nPlease choose from the list below.");
+		System.out.println("1. Check balance");
+		System.out.println("2. Deposit");
+		System.out.println("3. Withdraw");
+		System.out.println("4. Change username or password");
+		if(adminCheck(userHashData, currentUser)) {
+			System.out.println("5. Approve or reject new user or admin");
+			System.out.println("6. Lock or unlock account");
+		}
+		
+		
+		String input = aquireLine();
+		if(input.length() > 1)
+			System.out.println("You have made an invalid entry.");
 		
 		
 	}
 	
 	// Allows for login given a username and password 
-	public static void login() {
-		System.out.println("Please enter the user or admin name: ");
+	public static String login(HashMap<Integer, User> userHashData) {
+		System.out.println("Please enter your user or admin name: ");
+		String username = aquireLine();
 		
+		System.out.println("Please enter your password: ");
+		String password = aquireLine();
+		
+		if(passwordCheck(userHashData, username, password)) {
+			System.out.println("You have successfully logged in.");
+			return username;
+		}
+		
+		System.out.println("Invalid username or password.");
+		return login(userHashData);
 	}
 	
 	
 	
 	public static void main(String[] args) {	
 		
-	
+//		userFile.delete();
+//		
+//		
 //		if(!userFile.exists())
 //			firstRun();
-		
-		
+
+		// Create a HashMap of all users
+		// this is created here so it does not have to be recreated multiple times 
+		// can query this until an account is changed 
+		HashMap<Integer, User> userHashData = new HashMap<>();
+		userHashData = hashMapUserData(userFile);
+
+
+		System.out.println("Hello! Welcome to Adam Lahey's Project Zero!\n\n");
+		String currentUser = login(userHashData);
+		mainMenu(userHashData, currentUser);
 		
 		// ================= EASY TESTING BELOW =================
 		// should be automated using junit, but this is quick and dirty 
@@ -71,7 +107,8 @@ public class Application extends Admin{
 //		User p = addUserAsAdmin("adamL", "easypass", true, 53.6);
 //		User v = addUserAsAdmin("admjl", "ExCeLl3nT_passW0rd", false, 573.6);
 //		User f = addUserAsAdmin("sfd2", "lkaslkjdf", true, 531.6);
-//				
+//		
+//						
 //		HashMap<Integer, User> userHashData = new HashMap<>();
 //				
 //		userHashData = hashMapUserData(userFile);
@@ -81,7 +118,7 @@ public class Application extends Admin{
 //		
 //		System.out.println("===========");
 //		
-//		System.out.println(adminCheck(userHashData, "sfd2"));
+//		System.out.println(passwordCheck(userHashData, p.getName(), p.getPassword()));
 		
 		
 		

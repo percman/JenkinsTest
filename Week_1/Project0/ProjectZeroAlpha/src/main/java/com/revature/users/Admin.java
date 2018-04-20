@@ -29,22 +29,24 @@ public class Admin extends User{
 		Double doubleObject = new Double(balancestring);
 		double startingbalance = doubleObject.doubleValue();
 		
+		boolean locked = true;
 		
-		User newUser = new User (username, password, adminstatus, startingbalance);
+		User newUser = new User (username, password, adminstatus, locked, startingbalance);
 		
 		serializeUser(newUser, serializedUserFile);
 		writeToAFileFromAFile(userFile, serializedUserFile);
 		
 		serializedUserFile.delete();
 					
-		System.out.println("The new user " + username + " has been created.\n");
+		System.out.println("The new user " + username + " has been created.");
+		System.out.println("You will be locked until an admin approves the account.");
 	}
 	
 	// Easy way to have User objects loaded for testing 
 	// allows for direct input by taking String etc 
-	public static User addUserAsAdmin(String username, String password, boolean adminstatus, double startingbalance) {
+	public static User addUserAsAdmin(String username, String password, boolean adminstatus, boolean locked, double startingbalance) {
 		
-		User newUser = new User (username, password, adminstatus, startingbalance);
+		User newUser = new User (username, password, adminstatus, locked, startingbalance);
 		
 		serializeUser(newUser, serializedUserFile);
 		writeToAFileFromAFile(userFile, serializedUserFile);
@@ -59,6 +61,17 @@ public class Admin extends User{
 	// Checks if a given User is an Admin
 	// * requires a HashMap to have been created by reading userFile *
 	// takes HashMap 'userHashData' and checks each element for equality to String 'username' 
+	public static boolean passwordCheck(HashMap<Integer, User> userHashData, String username, String password) {
+		int count = lineCount(userFile);
+		
+		for(int i = 0; i < (count - 1); i++)
+			if(userHashData.get(i).getName().equals(username))
+				if(userHashData.get(i).getPassword().equals(password))
+					return true;
+		
+		return false;
+	}
+	
 	public static boolean adminCheck(HashMap<Integer, User> userHashData, String username) {
 		int count = lineCount(userFile);
 		
