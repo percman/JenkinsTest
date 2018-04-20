@@ -3,23 +3,29 @@ package com.revature.project0;
 import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Person implements Serializable{
+public abstract class Person implements Serializable {
 
 	private static final long serialVersionUID = -7837235030867746015L;
-	
+
+	// These are variables that all Person classes have
 	private String name;
 	transient private String password;
 	
-	public Person(){
+	// These are methods that all Person classes have, but they will all be different
+	public abstract void mainMenu();
+
+
+	public Person() {
 		super();
 	}
-	
+
 	public Person(String name, String password) {
 		super();
 		this.name = name;
 		this.password = password;
 	}
 
+	// getters and setters
 	public String getName() {
 		return name;
 	}
@@ -66,27 +72,40 @@ public abstract class Person implements Serializable{
 		return "Person [name=" + name + "]";
 	}
 
+	
+	//
+	// Method(s) that all Person classes have
+	//
+	
 	public void logout() {
 		System.out.println("Are you sure you want to log out?");
 		System.out.println("1. Yes");
 		System.out.println("2. No");
-		
+
 		Scanner sc = new Scanner(System.in);
 		int choice = sc.nextInt();
-		
-		// make while loop with nested if loop to determine the choice
-		//
-		//
-		//
-		//
-		//
-		sc.close();
-		
-		
+
+		while (true) {
+			if (choice == 1) {
+				System.out.println("You have successfully logged out.");
+				sc.close();
+				Application.startMenu();
+			} else if (choice == 2) {
+				sc.close();
+				this.mainMenu();
+			} else {
+				System.out.println("Please enter a 1 to log out or a 2 to return to main menu.");
+				choice = sc.nextInt();
+			}
+		}
+
 	}
 	
+//	public void changePassword() {
+//		
+//	}
 	
 	
 	
-	
+
 }
