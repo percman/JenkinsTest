@@ -1,5 +1,8 @@
 package com.revature.bank;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class User extends Person{
 
 	private float balance;
@@ -13,6 +16,11 @@ public class User extends Person{
 		balance = 0;
 	}
 
+	public static Map<String, User> userMap = new HashMap<>();
+		
+	public static void addUserToMap(String username, User user) {
+		userMap.put(username, user);
+	}
 	
 	float getBalance() {
 		return balance;
