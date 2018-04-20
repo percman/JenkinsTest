@@ -1,17 +1,28 @@
 package com.revature.users;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.revature.readwrite.ReadWrite;
+import static com.revature.readwrite.ReadWrite.*;
 
-public class SerializationOfUsers extends ReadWrite{
+public class SerializationOfUsers{
+	
+	public static ObjectOutputStream out = null;
+	public static ObjectInputStream in = null;
+	public static FileWriter fw = null;
+	public static FileReader fr = null;
+	public static BufferedWriter bw = null;
+	public static BufferedReader br = null;
 
 	// File paths declared here so they can easily be changed later 
 	public static File userFile = new File("src/main/resources/users.txt");

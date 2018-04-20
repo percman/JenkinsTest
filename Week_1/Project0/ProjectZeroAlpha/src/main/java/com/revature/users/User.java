@@ -1,12 +1,7 @@
 package com.revature.users;
 
 
-import java.io.Serializable;
-
-public class User extends SerializationOfUsers implements Serializable{
-
-	
-	private static final long serialVersionUID = -4269544628204763811L;
+public class User{
 
 	private String name; 
 	private String password;
@@ -17,7 +12,6 @@ public class User extends SerializationOfUsers implements Serializable{
 	public User() {}
 	
 	
-
 	public User(String name, String password, boolean adminStatus, boolean locked, double balance) {
 		super();
 		this.name = name;
@@ -26,7 +20,6 @@ public class User extends SerializationOfUsers implements Serializable{
 		this.locked = locked;
 		this.balance = balance;
 	}
-
 
 
 	public String getName() {
@@ -72,11 +65,6 @@ public class User extends SerializationOfUsers implements Serializable{
 	}
 
 
-
-	
-
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -90,7 +78,6 @@ public class User extends SerializationOfUsers implements Serializable{
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		return result;
 	}
-
 
 
 	@Override
@@ -122,20 +109,11 @@ public class User extends SerializationOfUsers implements Serializable{
 	}
 
 
-
 	@Override
 	public String toString() {
 		return "[name=" + name + ", adminStatus=" + adminStatus + ", balance=" + balance
 				+ "]";
 	}
-
-
-
-
-	
-
-
-	
 
 
 }

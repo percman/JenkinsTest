@@ -1,11 +1,17 @@
 package com.revature.users;
 
+import static com.revature.readwrite.ReadWrite.aquireLine;
+import static com.revature.readwrite.ReadWrite.lineCount;
+import static com.revature.readwrite.ReadWrite.writeToAFileFromAFile;
+import static com.revature.users.SerializationOfUsers.serializeUser;
+import static com.revature.users.SerializationOfUsers.serializedUserFile;
+import static com.revature.users.SerializationOfUsers.userFile;
+
 import java.util.HashMap;
+
 
 public class Admin extends User{
 	
-	private static final long serialVersionUID = 2497495325087649751L;
-
 	// Sloppy way to read in user information and write it to a file
 	// takes input for each property of User newUser, and serializes it to File 'userFile'
 	public static void addUserAsAdmin() {
@@ -81,4 +87,46 @@ public class Admin extends User{
 		
 		return false;
 	}
+
+	public static double checkBalance(HashMap<Integer, User> userHashData, String username) {
+		int count = lineCount(userFile);
+
+		for(int i = 0; i < (count - 1); i++)
+			if(userHashData.get(i).getName().equals(username))
+				return userHashData.get(i).getBalance();
+		
+		return 0;
+	}
+
+	public static void changeBalance(HashMap<Integer, User> userHashData, String username, double changedAmount) {
+		int count = lineCount(userFile);
+
+		for(int i = 0; i < (count - 1); i++)
+			if(userHashData.get(i).getName().equals(username)) {
+				
+			}
+	}
+	
+	public static boolean changeUsername(HashMap<Integer, User> userHashData, String username, String newUsername) {
+		int count = lineCount(userFile);
+
+		for(int i = 0; i < (count - 1); i++)
+			if(userHashData.get(i).getName().equals(username)) {
+				return true;
+			}
+		
+		return false;
+	}
+	
+	public static boolean userLock(HashMap<Integer, User> userHashData, String username, String newUsername) {
+		int count = lineCount(userFile);
+
+		for(int i = 0; i < (count - 1); i++)
+			if(userHashData.get(i).getName().equals(username)) {
+				return true;
+			}
+		
+		return false;
+	}
+
 }
