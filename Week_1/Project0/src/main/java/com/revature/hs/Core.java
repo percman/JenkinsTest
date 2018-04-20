@@ -15,7 +15,7 @@ public class Core {
 		
 		StartOptions whatToDo = textIO.newEnumInputReader(StartOptions.class).read("What do you want to do?");
 		if (whatToDo == StartOptions.SIGNUP) {
-			terminal.printf("asd %s", whatToDo);
+			signup();
 		}
 		else {
 			terminal.printf("%s", whatToDo);
@@ -26,7 +26,9 @@ public class Core {
 	
 	private void userOptions() {}
 	
-	private void signup() {}
+	private void signup() {
+		
+	}
 	
 	public static void main(String[] args) {
 		Core c = new Core();
