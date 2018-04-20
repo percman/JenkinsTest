@@ -10,4 +10,4 @@ password: password
 username: exampletwo
 password: password
 
-You NEED BOTH andy.txt and pendinguser.txt to run the program. 
+You NEED BOTH andy.txt and pendingUsers.txt to run the program. 
