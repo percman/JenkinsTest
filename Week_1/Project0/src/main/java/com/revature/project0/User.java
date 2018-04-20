@@ -25,7 +25,7 @@ public void removeMovie(String title) {
 this.movies.remove(title);	
 }
 //allows a user to view thier collection
-public void viewMovies(String title) {	
+public void viewMovies() {	
 for(String movie : this.movies) {
 	System.out.println(movie);
 }

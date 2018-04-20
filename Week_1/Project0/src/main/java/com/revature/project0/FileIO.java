@@ -20,38 +20,40 @@ public static void addAdmin(Admin admin){
 
 }
 //looks through the list of users for those who are pending approval
-public static Set<User> scanApproved() {
-	Set<User> unApproved = new HashSet<>();
+public static void scanApproved() {
 	for(User user : Record.users) {
 		if(!user.isUserApproved()) {
-			unApproved.add(user);
+			System.out.println(user.username);
 		}
 	}
-	return unApproved;
 }
 //looks through the list of users for those who are currently locked
-public static Set<User> scanLocked() {
-	Set<User> Locked = new HashSet<>();
+public static void scanLocked() {
 	for(User user : Record.users) {
 		if(user.isUserLocked()) {
-			Locked.add(user);
+			System.out.println(user.username);
 		}
 	}
-	return Locked;
 }
-public static Set<User> scanUnlocked(){
-	Set<User> unLocked = new HashSet<>();
+public static void scanUnlocked(){
 	for(User user : Record.users) {
 		if(!user.isUserLocked()) {
-			unLocked.add(user);
+			System.out.println(user.username);
 		}
 	}
-	return unLocked;
 }
 public static User getUser(String name) {
 	for(User use : Record.users) {
 		if(use.username.equals(name)) {
 			return use;
+		}	
+	}
+	return null;
+}
+public static Admin getAdmin(String name) {
+	for(Admin admin : Record.admins) {
+		if(admin.username.equals(name)) {
+			return admin;
 		}	
 	}
 	return null;

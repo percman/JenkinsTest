@@ -16,19 +16,19 @@ public class Admin implements Serializable,NewUser {
 		if (user.isUserLocked() == lock) {
 			System.out.print("User is already ");
 			if(lock) {
-				System.out.println(" locked");
+				System.out.println(" locked.");
 			}
 			else {
-				System.out.println(" unlocked");
+				System.out.println(" unlocked.");
 			}
 		} else {
 			if(lock) {
 				Record.lockedUsers.add(user.username);
-				System.out.print("User has been locked ");
+				System.out.print("User has been locked.");
 			}
 			else {
 				Record.lockedUsers.remove(user.username);
-				System.out.print("User is now unlocked");
+				System.out.print("User is now unlocked.");
 			}
 		}
 	}
