@@ -13,12 +13,18 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.NoSuchFileException;
 
+import org.apache.log4j.Logger;
+
+
+
 public class ReadWrite{
 
 	// Declared here so it can be easily found and path changed if need be
 	
 	// Readers and writers to be used later
 	// not sure on static declarations, but it stopped yelling at me when I did this so..
+	private static final Logger logger = Logger.getLogger(ReadWrite.class);
+
 	public static ObjectOutputStream out = null;
 	public static ObjectInputStream in = null;
 	public static FileWriter fw = null;
@@ -30,22 +36,21 @@ public class ReadWrite{
 	// ex: read first line into array, delete the line, repeat 
     public static String readFirstLine(File resource) {
 
-        String fileName = resource.getPath();
         String currentLine = null;
 
         try {
-            fr = new FileReader(fileName);
+            fr = new FileReader(resource.getPath());
             br = new BufferedReader(fr);
 
             currentLine = br.readLine();
             
             br.close();         
-        }
-        catch(FileNotFoundException ex) {
-            System.out.println("Unable to open file '" +  fileName + "'");                
-        }
-        catch(IOException ex) {
-            System.out.println("Error reading file '" + fileName + "'"); 
+        } catch(FileNotFoundException fnfe) {
+			System.err.println("Could not find file '" + resource.getName() + "'");
+			logger.warn(fnfe.getMessage());
+        } catch(IOException ioe) {
+            System.out.println("Error reading file '" + resource.getName() + "'"); 
+			logger.warn(ioe.getMessage());
         }
         return currentLine;
     }
@@ -54,25 +59,22 @@ public class ReadWrite{
     // used as a sort of check
     public static void readFileStrings(File resource) {
 
-        String fileName = resource.getPath();
         String currentLine = null;
 
         try {
-            fr = new FileReader(fileName);
+            fr = new FileReader(resource.getPath());
             br = new BufferedReader(fr);
 
             while((currentLine = br.readLine()) != null) {
                 System.out.println(currentLine);
             }   
             br.close();         
-        }
-        catch(FileNotFoundException ex) {
-            System.out.println(
-                "Unable to open file '" +  fileName + "'");                
-        }
-        catch(IOException ex) {
-            System.out.println(
-                "Error reading file '" + fileName + "'"); 
+        } catch(FileNotFoundException fnfe) {
+			System.err.println("Could not find file '" + resource.getName() + "'");
+			logger.warn(fnfe.getMessage());
+        } catch(IOException ioe) {
+            System.out.println("Error reading file '" + resource.getName() + "'"); 
+			logger.warn(ioe.getMessage());
         }
     }
 
@@ -87,18 +89,19 @@ public class ReadWrite{
 			line = br.readLine();
 			
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+            System.out.println("Error getting input from the input stream"); 
+			logger.warn(ioe.getMessage());
 		} 
 		return line;
 	}
 	
 	// Count number of lines in a file 
 	// easy way to quickly check current number of users etc 
-	public static int lineCount(File file){
+	public static int lineCount(File resource){
 		int result = 0;
 		try
 		(
-		   FileReader input = new FileReader(file);
+		   FileReader input = new FileReader(resource);
 		   LineNumberReader count = new LineNumberReader(input);
 		)
 		{
@@ -108,11 +111,13 @@ public class ReadWrite{
 		   }
 
 		   result = count.getLineNumber() + 1;                                    // +1 because line index starts at 0
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		} catch(FileNotFoundException fnfe) {
+			System.err.println("Could not find file '" + resource.getName() + "'");
+			logger.warn(fnfe.getMessage());
+        } catch(IOException ioe) {
+            System.out.println("Error reading file '" + resource.getName() + "'"); 
+			logger.warn(ioe.getMessage());
+        }
 		return result;
 	}
 
@@ -127,12 +132,13 @@ public class ReadWrite{
 			toBeWritten+= "\n";
 			bw.write(toBeWritten);
 			
-		} catch (FileNotFoundException fnfe) {
-			System.err.println("Could not find file " + resource.getName());
-			fnfe.printStackTrace();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		} 
+		} catch(FileNotFoundException fnfe) {
+			System.err.println("Could not find file '" + resource.getName() + "'");
+			logger.warn(fnfe.getMessage());
+        } catch(IOException ioe) {
+            System.out.println("Error reading file '" + resource.getName() + "'"); 
+			logger.warn(ioe.getMessage());
+        }
 	}
 
 	// Copies text into another file
@@ -150,11 +156,13 @@ public class ReadWrite{
 			}
 			
 		
-		} catch (FileNotFoundException fnfe) {
-			fnfe.printStackTrace();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		}
+		} catch(FileNotFoundException fnfe) {
+			System.err.println("Could not find file '" + resource.getName() + "'");
+			logger.warn(fnfe.getMessage());
+        } catch(IOException ioe) {
+            System.out.println("Error reading file '" + resource.getName() + "'"); 
+			logger.warn(ioe.getMessage());
+        }
 		
 	}
 
@@ -173,13 +181,14 @@ public class ReadWrite{
 			
 		} catch (NoSuchFileException nsfe) {
 			writeToNewFile(toBeWritten, resource);
-			System.out.println("New user file created.");
-		} catch (FileNotFoundException fnfe) {
-			System.err.println("Could not find file " + resource.getName() + ". Created new file safely.");
-			fnfe.printStackTrace();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		} 
+			//logger.warn(nsfe.getMessage());
+		}  catch(FileNotFoundException fnfe) {
+			System.err.println("Could not find file '" + resource.getName() + "'");
+			logger.warn(fnfe.getMessage());
+        } catch(IOException ioe) {
+            System.out.println("Error reading file '" + resource.getName() + "'"); 
+			logger.warn(ioe.getMessage());
+        }
 	}
 
 	// Finds a string and removes it from file
@@ -209,11 +218,13 @@ public class ReadWrite{
 			tempFile.renameTo(resource);
 			tempFile.delete();
 			
-		} catch (FileNotFoundException fnfe) {
-			fnfe.printStackTrace();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		}
+		} catch(FileNotFoundException fnfe) {
+			System.err.println("Could not find file '" + resource.getName() + "'");
+			logger.warn(fnfe.getMessage());
+        } catch(IOException ioe) {
+            System.out.println("Error reading file '" + resource.getName() + "'"); 
+			logger.warn(ioe.getMessage());
+        }
 	}
 
 	// Ensures all readers and writers are closed
@@ -228,13 +239,11 @@ public class ReadWrite{
 			if(in != null) in.close();
 
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			logger.warn(ioe.getMessage());
 		} catch(NullPointerException npe) {
-			npe.printStackTrace();
+			logger.warn(npe.getMessage());
 			System.out.println("This error was successfully handled.");
 		}
 	}
 	
 }
-
-

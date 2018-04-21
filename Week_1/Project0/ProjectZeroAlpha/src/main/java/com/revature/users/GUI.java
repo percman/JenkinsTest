@@ -90,80 +90,82 @@ public class GUI{
 		switch(choice) {
 		
 		case 0: choice = 0;
-		System.out.println("Thank you for testing out Adam Lahey's Project Zero!");
-		System.out.println("Later!");
+			System.out.println("Thank you for testing out Adam Lahey's Project Zero!");
+			System.out.println("Later!");
 		return;
 		
 		case 1: choice = 1;
-		System.out.println("The current balance is: " + checkBalance(userHashData, currentUser));
+			System.out.println("The current balance is: " + checkBalance(userHashData, currentUser));
 		break;
 		
         case 2: choice = 2;
-		System.out.println("Please enter the deposit amount: ");
-		String depositLine = inputLine();
-		Double depositObject = new Double (depositLine);
-		double deposit = depositObject.doubleValue();
-		changeBalance(userHashData, currentUser, deposit);
-		System.out.println("The new balance is: " + checkBalance(userHashData, currentUser));
+			System.out.println("Please enter the deposit amount: ");
+			String depositLine = inputLine();
+			Double depositObject = new Double (depositLine);
+			double deposit = depositObject.doubleValue();
+			changeBalance(userHashData, currentUser, deposit);
+			System.out.println("The new balance is: " + checkBalance(userHashData, currentUser));
 		break;  
 		
         case 3: choice = 3;
-        System.out.println("Please enter the withdrawn amount: ");
-		String withdrawnLine = inputLine();
-		Double withdrawnObject = new Double (withdrawnLine);
-		double withdrawn = withdrawnObject.doubleValue();
-		changeBalance(userHashData, currentUser, -(withdrawn));
-		System.out.println("The new balance is: " + checkBalance(userHashData, currentUser));
+	        System.out.println("Please enter the withdrawn amount: ");
+			String withdrawnLine = inputLine();
+			Double withdrawnObject = new Double (withdrawnLine);
+			double withdrawn = withdrawnObject.doubleValue();
+			changeBalance(userHashData, currentUser, -(withdrawn));
+			System.out.println("The new balance is: " + checkBalance(userHashData, currentUser));
 		break;
 		
         case 4: choice = 4;        
-		currentUser = login(userHashData);
+			currentUser = login(userHashData);
 		break;
 		
         case 5: choice = 5;
-		System.out.println("Which account would you like to approve or reject? Enter a username: ");
-		System.out.println("If you would like a list of possible awaiting accounts, TBD");
-		String userApproval = inputLine();
-		System.out.println("approve or reject?");
-		String approvalStatus = inputLine();
-		
-		boolean approve = true;
-		if(approvalStatus == "reject")
-			approve = true;
-		else
-			approve = false;
-		if(userExists(userHashData, userApproval)) {
-			userLock(userHashData, userApproval, approve);
-			System.out.println(userApproval + " has been " + approvalStatus + "d.");
-		}
-		else
-			System.out.println(userApproval + " has not been found.");
+			System.out.println("Which account would you like to approve or reject? Enter a username: ");
+			System.out.println("If you would like a list of possible awaiting accounts, TBD");
+			String userApproval = inputLine();
+			System.out.println("approve or reject?");
+			String approvalStatus = inputLine();
+			
+			boolean approve = true;
+			if(approvalStatus == "reject")
+				approve = true;
+			else
+				approve = false;
+			if(userExists(userHashData, userApproval)) {
+				userLock(userHashData, userApproval, approve);
+				System.out.println(userApproval + " has been " + approvalStatus + "d.");
+			}
+			else
+				System.out.println(userApproval + " has not been found.");
 		
 		break;
 		
         case 6: choice = 6;
-		System.out.println("Which account would you like to lock or unlock? Enter a username: ");
-		System.out.println("If you would like a list of possible locked accounts, TBD");
-		String userLocked = inputLine();
-		System.out.println("lock or unlock?");
-		String lockStatus = inputLine();
-		
-		boolean lock = true;
-		if(lockStatus == "lock")
-			lock = true;
-		else
-			lock = false;
-		if(userExists(userHashData, userLocked)) {
-			userLock(userHashData, userLocked, lock);
-			System.out.println(userLocked + " has been " + lockStatus + "d.");
-		}
-		else
-			System.out.println(userLocked + " has not been found.");
-        break;	     
+			System.out.println("Which account would you like to lock or unlock? Enter a username: ");
+			System.out.println("If you would like a list of possible locked accounts, TBD");
+			String userLocked = inputLine();
+			System.out.println("lock or unlock?");
+			String lockStatus = inputLine();
+			
+			boolean lock = true;
+			if(lockStatus == "lock")
+				lock = true;
+			else
+				lock = false;
+			if(userExists(userHashData, userLocked)) {
+				userLock(userHashData, userLocked, lock);
+				System.out.println(userLocked + " has been " + lockStatus + "d.");
+			}
+			else
+				System.out.println(userLocked + " has not been found.");
+	        break;	     
+        
+        	
         
         default:
-        System.out.println("You have made an invalid entry. Please try again.");
-        mainMenu(userHashData, currentUser);
+	        System.out.println("You have made an invalid entry. Please try again.");
+	        mainMenu(userHashData, currentUser);
 		}
 		
 		userHashData = hashMapUserData(userFile);

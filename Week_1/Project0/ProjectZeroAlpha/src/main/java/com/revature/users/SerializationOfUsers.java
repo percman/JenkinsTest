@@ -18,8 +18,13 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayDeque;
 import java.util.HashMap;
 
+import org.apache.log4j.Logger;
+
+
 public class SerializationOfUsers {
 		
+	private static final Logger logger = Logger.getLogger(SerializationOfUsers.class);
+	
 	public static ObjectOutputStream out = null;
 	public static ObjectInputStream in = null;
 	public static FileWriter fw = null;
@@ -38,17 +43,10 @@ public class SerializationOfUsers {
 		try {
 			out = new ObjectOutputStream(new FileOutputStream(resource.getPath()));
 			out.writeObject(u);
-		} catch (IOException ioe) {
-			System.err.println(ioe.getMessage());
-		} finally {
-			try {
-				out.close();
-			} catch (IOException ioe) {
-				ioe.printStackTrace();
-			} finally {
-				//System.out.println("Resource successfully closed");
-			}
-		}
+		} catch(IOException ioe) {
+            System.out.println("Error reading file '" + resource.getName() + "'"); 
+			logger.warn(ioe.getMessage());
+        }
 	}
 
 
@@ -59,19 +57,13 @@ public class SerializationOfUsers {
 			in = new ObjectInputStream(new FileInputStream(resource.getPath()));
 			User deserializedUser = (User) in.readObject();
 			return deserializedUser;
-		} catch (IOException ioe) {
-			System.err.println(ioe.getMessage());
-		} catch (ClassNotFoundException cfne) {
-			System.err.println(cfne.getMessage());
-		} finally {
-			try {
-				in.close();
-			} catch (IOException ioe) {
-				ioe.printStackTrace();
-			} finally {
-				//System.out.println("Resource successfully closed");
-			}
-		}
+		} catch(IOException ioe) {
+            System.out.println("Error reading file '" + resource.getName() + "'"); 
+			logger.warn(ioe.getMessage());
+        } catch (ClassNotFoundException cfne) {
+        	System.out.println("Error reading a class file");
+			logger.warn(cfne.getMessage());
+		} 
 		return null;
 	}
 	
