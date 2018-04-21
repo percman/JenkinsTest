@@ -1,9 +1,17 @@
 package com.revature.users;
 
-import static com.revature.readwrite.ReadWrite.*;
-import static com.revature.users.SerializationOfUsers.*;
+import static com.revature.readwrite.ReadWrite.deleteContentOfFile;
+import static com.revature.readwrite.ReadWrite.inputLine;
+import static com.revature.readwrite.ReadWrite.lineCount;
+import static com.revature.readwrite.ReadWrite.readFirstLine;
+import static com.revature.readwrite.ReadWrite.tempFile;
+import static com.revature.readwrite.ReadWrite.writeToAFileFromAFile;
+import static com.revature.readwrite.ReadWrite.writeToExistingFile;
+import static com.revature.users.SerializationOfUsers.serializeUser;
+import static com.revature.users.SerializationOfUsers.serializedUserFile;
+import static com.revature.users.SerializationOfUsers.userFile;
 
-import java.util.ArrayList;
+import java.util.ArrayDeque;
 import java.util.HashMap;
 
 
@@ -106,13 +114,11 @@ public class Admin extends User{
 	
 	public static void changeBalance(HashMap<Integer, User> userHashData, String username, double changedAmount) {
 		int count = lineCount(userFile);
-		ArrayList<String> userData = new ArrayList<>();
+		ArrayDeque<String> userData = new ArrayDeque<>();
 		
 		for(int i = 0; i < (count - 1); i++)
 			if(userHashData.get(i).getName().equals(username)) {	
-				System.out.println(userHashData.get(i));
 				userHashData.put(i, new User(userHashData.get(i).getName(), userHashData.get(i).getPassword(), userHashData.get(i).isAdminStatus(), userHashData.get(i).isLocked(), userHashData.get(i).getBalance() + changedAmount));
-				System.out.println(userHashData.get(i));
 				
 				// just to ensure extra data isn't accidently written into user data, such as null
 				tempFile.delete();
@@ -128,8 +134,9 @@ public class Admin extends User{
 					}
 				}
 				
+				
 				for(int n = 0; n < (count - 1); n++) {
-					writeToExistingFile(userData.get(n), userFile);
+					writeToExistingFile(userData.removeLast(), userFile);
 				}
 			}
 	}

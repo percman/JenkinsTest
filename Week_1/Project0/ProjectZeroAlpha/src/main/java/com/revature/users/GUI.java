@@ -4,7 +4,6 @@ import static com.revature.readwrite.ReadWrite.inputLine;
 import static com.revature.users.Admin.addUserAsAdmin;
 import static com.revature.users.Admin.adminCheck;
 import static com.revature.users.Admin.changeBalance;
-import static com.revature.users.Admin.changeUsername;
 import static com.revature.users.Admin.checkBalance;
 import static com.revature.users.Admin.passwordCheck;
 import static com.revature.users.Admin.userLock;
@@ -71,13 +70,14 @@ public class GUI{
 		System.out.println("1. Check balance");
 		System.out.println("2. Deposit");
 		System.out.println("3. Withdraw");
-		System.out.println("4. Change username or password");
+		System.out.println("4. Switch user");
 		if(adminCheck(userHashData, currentUser)) {
 			System.out.println("5. Approve or reject new user or admin");
 			System.out.println("6. Lock or unlock account");
 		}
 		System.out.println("0. Exit");
 		for(int i = 0; i < equalsigns*4; i++) System.out.print("=");
+		System.out.println();
 
 		
 
@@ -114,16 +114,8 @@ public class GUI{
 		System.out.println("The new balance is: " + checkBalance(userHashData, currentUser));
 		break;
 		
-        case 4: choice = 4;
-		System.out.println("Please enter the new username: ");
-		String newUserName = inputLine();
-		if(changeUsername(userHashData, currentUser, newUserName)) {
-			System.out.println("Your username has been updated to " + newUserName);
-			currentUser = newUserName;
-		}
-		else {
-			System.out.println("The name has already been taken. TBD");
-		}
+        case 4: choice = 4;        
+		currentUser = login(userHashData);
 		break;
 		
         case 5: choice = 5;

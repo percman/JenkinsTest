@@ -20,6 +20,10 @@ public class Application{
 		
 		userFile.delete();
 		
+		User p = addUserAsAdmin("adamL", "easypass", false, false, 53.6);
+		User v = addUserAsAdmin("admjl", "ExCeLl3nT_passW0rd", false, false, 573.6);
+//		User f = addUserAsAdmin("sfd2", "lkaslkjdf", true, false, 531.6);
+		
 		if(!userFile.exists()) {
 			currentUser = firstRun();
 			userHashData = hashMapUserData(userFile);
@@ -39,9 +43,7 @@ public class Application{
 		
 //		userFile.delete();
 //		
-//		User p = addUserAsAdmin("adamL", "easypass", true, false, 53.6);
-//		User v = addUserAsAdmin("admjl", "ExCeLl3nT_passW0rd", true, false, 573.6);
-//		User f = addUserAsAdmin("sfd2", "lkaslkjdf", true, false, 531.6);
+
 //		
 //		String username = p.getName();
 //						

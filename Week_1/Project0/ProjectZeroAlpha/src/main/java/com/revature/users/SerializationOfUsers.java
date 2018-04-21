@@ -1,5 +1,11 @@
 package com.revature.users;
 
+import static com.revature.readwrite.ReadWrite.deleteContentOfFile;
+import static com.revature.readwrite.ReadWrite.lineCount;
+import static com.revature.readwrite.ReadWrite.readFirstLine;
+import static com.revature.readwrite.ReadWrite.tempFile;
+import static com.revature.readwrite.ReadWrite.writeToExistingFile;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,10 +16,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
+import java.util.ArrayDeque;
 import java.util.HashMap;
-
-import static com.revature.readwrite.ReadWrite.*;
 
 public class SerializationOfUsers {
 		
@@ -79,7 +83,7 @@ public class SerializationOfUsers {
 	// * by reading in, line by line, into LinkedList<String>, then writing it back later * 
 	public static HashMap<Integer, User> hashMapUserData(File resource) {
 		HashMap<Integer, User> hashUsers = new HashMap<>();
-		ArrayList<String> userData = new ArrayList<>();
+		ArrayDeque<String> userData = new ArrayDeque<>();
 		int count = lineCount(resource);
 		
 		// just to ensure extra data isn't accidently written into user data, such as null
@@ -93,7 +97,7 @@ public class SerializationOfUsers {
 		}
 				
 		for(int i = 0; i < (count - 1); i++) {
-			writeToExistingFile(userData.get(i), resource);
+			writeToExistingFile(userData.removeLast(), resource);
 		}
 			
 		 
