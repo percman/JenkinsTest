@@ -49,7 +49,7 @@ public class App {
 				System.out.println("welcome back " + userName);
 				recognized = true;
 				if (u.isAdmin()) {
-					adminMethod(input);
+					adminMethod(input, u);
 				}
 				else {
 					//is this user approved?
@@ -103,8 +103,9 @@ public class App {
 	}	
 	public static void newAdmin(String userName, Scanner input) {
 		User user = new User(userName, 0, true, false, true);
+		userList.add(user);
 		User.serializeUser(user, bankData);
-		adminMethod(input);
+		adminMethod(input, user);
 	}
 	public static void userMethod(User u, Scanner input) throws InputMismatchException {
 		int response = 0;
@@ -119,6 +120,7 @@ public class App {
 					response = input.nextInt();
 				} catch (InputMismatchException e) {
 					System.out.println("Invalid value");
+					logger.warn(u.getName() + " entered a bad value" , e);
 					return;
 				}
 
@@ -143,7 +145,7 @@ public class App {
 	/**************************************
 	 * Admin Method : the method for all admin actions
 	 **************************************/
-	public static void adminMethod(Scanner input) {
+	public static void adminMethod(Scanner input, User u) {
 		int response = 0;
 
 		while (response != 3) {
@@ -155,6 +157,7 @@ public class App {
 				response = input.nextInt();
 			} catch(InputMismatchException e) {
 				System.out.println("Invalid value");
+				logger.warn(u.getName() + " entered a bad value " , e);
 				return;
 			}			// Loop until a valid response is given
 			while (response > 3 | response < 1) {
@@ -282,6 +285,7 @@ public class App {
 		int i = 1;
 		for (User u : userList) {
 			System.out.println(i + ") " + u.getName());
+			i++;
 		}
 	}
     public static void main ( String[] args ) {
