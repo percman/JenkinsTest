@@ -7,6 +7,9 @@ public class ParentException extends Exception{
 	
 	/*
 	 * To create your own custom exception, you need to provide 3 constructors
+	 * - public no-arg constructor
+	 * - public constructor that takes a String
+	 * - public constructor that takes a String and a throwable
 	 */
 	
 	// Public no-arg
