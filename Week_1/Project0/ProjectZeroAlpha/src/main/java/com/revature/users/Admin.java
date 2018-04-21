@@ -1,17 +1,12 @@
 package com.revature.users;
 
-import static com.revature.readwrite.ReadWrite.deleteContentOfFile;
 import static com.revature.readwrite.ReadWrite.inputLine;
 import static com.revature.readwrite.ReadWrite.lineCount;
-import static com.revature.readwrite.ReadWrite.readFirstLine;
-import static com.revature.readwrite.ReadWrite.tempFile;
 import static com.revature.readwrite.ReadWrite.writeToAFileFromAFile;
-import static com.revature.readwrite.ReadWrite.writeToExistingFile;
 import static com.revature.users.SerializationOfUsers.serializeUser;
 import static com.revature.users.SerializationOfUsers.serializedUserFile;
 import static com.revature.users.SerializationOfUsers.userFile;
 
-import java.util.ArrayDeque;
 import java.util.HashMap;
 
 
@@ -66,7 +61,7 @@ public class Admin extends User{
 		
 		serializedUserFile.delete();
 					
-		System.out.println("The new user " + username + " has been created.\n");
+		System.out.println("The new user " + username + " has been created.");
 		
 		return newUser;
 	}
@@ -111,32 +106,26 @@ public class Admin extends User{
 		return 0;
 	}
 
-	
+	// Changes a given User's balance in the HashMap and in the stored file
+	// finds the User 'username' in the HashMap, updates their balance, then serializes the new information and reads that information into 
 	public static void changeBalance(HashMap<Integer, User> userHashData, String username, double changedAmount) {
 		int count = lineCount(userFile);
-		ArrayDeque<String> userData = new ArrayDeque<>();
 		
 		for(int i = 0; i < (count - 1); i++)
 			if(userHashData.get(i).getName().equals(username)) {	
-				userHashData.put(i, new User(userHashData.get(i).getName(), userHashData.get(i).getPassword(), userHashData.get(i).isAdminStatus(), userHashData.get(i).isLocked(), userHashData.get(i).getBalance() + changedAmount));
-				
-				// just to ensure extra data isn't accidently written into user data, such as null
-				tempFile.delete();
-					
+				User updatedUser = new User(userHashData.get(i).getName(), 
+						userHashData.get(i).getPassword(), 
+						userHashData.get(i).isAdminStatus(), 
+						userHashData.get(i).isLocked(), 
+						userHashData.get(i).getBalance() + changedAmount);
+				userHashData.put(i, updatedUser);
+				userFile.delete();
 				for(int n = 0; n < (count - 1); n++) {
-					if( n == i) {
-						serializeUser(userHashData.get(i), userFile);
-						userData.add(readFirstLine(serializedUserFile));
-					}
-					else {
-						userData.add(readFirstLine(userFile));
-						deleteContentOfFile(readFirstLine(userFile), userFile);
-					}
-				}
-				
-				
-				for(int n = 0; n < (count - 1); n++) {
-					writeToExistingFile(userData.removeLast(), userFile);
+					addUserAsAdmin(userHashData.get(n).getName(), 
+							userHashData.get(n).getPassword(), 
+							userHashData.get(n).isAdminStatus(), 
+							userHashData.get(n).isLocked(), 
+							userHashData.get(n).getBalance());
 				}
 			}
 	}

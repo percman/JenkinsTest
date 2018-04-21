@@ -3,7 +3,6 @@ package com.revature.users;
 import static com.revature.readwrite.ReadWrite.deleteContentOfFile;
 import static com.revature.readwrite.ReadWrite.lineCount;
 import static com.revature.readwrite.ReadWrite.readFirstLine;
-import static com.revature.readwrite.ReadWrite.tempFile;
 import static com.revature.readwrite.ReadWrite.writeToExistingFile;
 
 import java.io.BufferedReader;
@@ -86,8 +85,6 @@ public class SerializationOfUsers {
 		ArrayDeque<String> userData = new ArrayDeque<>();
 		int count = lineCount(resource);
 		
-		// just to ensure extra data isn't accidently written into user data, such as null
-		tempFile.delete();
 		
 			
 		for(int i = 0; i < (count - 1); i++) {

@@ -16,7 +16,6 @@ import java.nio.file.NoSuchFileException;
 public class ReadWrite{
 
 	// Declared here so it can be easily found and path changed if need be
-	public static File tempFile = new File("src/main/resources/tempfile.txt");
 	
 	// Readers and writers to be used later
 	// not sure on static declarations, but it stopped yelling at me when I did this so..
@@ -187,6 +186,7 @@ public class ReadWrite{
 	// given a String toBeRemoved at File 'resource', delete it, doing so by reading line by line 
 	public static void deleteContentOfFile(String toBeRemoved, File resource) {
 		
+		File tempFile = new File("src/main/resources/tempfile.txt");
 		String currentLine;
 		
 		try {
@@ -221,7 +221,6 @@ public class ReadWrite{
 	public static void codeCleanUp() {
 		try {
 			
-			if(tempFile.exists()) tempFile.delete();
 			if(br != null)  br.close();
 			if(bw != null)  bw.close();
 			if(fw != null) fw.close();
