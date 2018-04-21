@@ -1,7 +1,11 @@
 package com.revature.zero.Project_Zero;
-
+import java.io.File;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.io.Serializable;
+import org.apache.log4j.Logger;
+
 
 /**
  * Cameron Skaggs Project Zero
@@ -9,6 +13,8 @@ import java.util.Scanner;
  */
 public class App {
 
+	private static final Logger logger = Logger.getLogger(App.class);
+	public static File bankData = new File("src/main/java/cameron.txt");
 	public static int numUsers = 0;
 	public static ArrayList<User> userList = new ArrayList<User>();
 	//Initial page for welcoming new and returning users
@@ -89,45 +95,50 @@ public class App {
 				else {
 					User user = new User(userName, 0, false, false, false);
 					userList.add(user);
+					User.serializeUser(user, bankData);
 					System.out.println("Please wait to be approved by admin");
 				}
 			}
 		}
-	}
-	
+	}	
 	public static void newAdmin(String userName, Scanner input) {
 		User user = new User(userName, 0, true, false, true);
-		userList.add(user);
+		User.serializeUser(user, bankData);
 		adminMethod(input);
 	}
-	public static void userMethod(User u, Scanner input) {
+	public static void userMethod(User u, Scanner input) throws InputMismatchException {
 		int response = 0;
-		
-		while (response !=4) {
-			System.out.println("Would you like to:");
-			System.out.println("Deposit money? (1)");
-			System.out.println("Withdraw money? (2)");
-			System.out.println("View current balance? (3)");
-			System.out.println("Quit (4)");
-			response = input.nextInt();
-			
-			while (response > 4 | response < 1) {
-				System.out.println("Please enter a valid number");
-				response = input.nextInt();
+			while (response !=4) {
+				System.out.println("Would you like to:");
+				System.out.println("Deposit money? (1)");
+				System.out.println("Withdraw money? (2)");
+				System.out.println("View current balance? (3)");
+				System.out.println("Quit (4)");
+
+				try {
+					response = input.nextInt();
+				} catch (InputMismatchException e) {
+					System.out.println("Invalid value");
+					return;
+				}
+
+				while (response > 4 | response < 1) {
+					System.out.println("Please enter a valid number");
+					response = input.nextInt();
+				}
+				if (response == 1) {
+					System.out.println("Deposit money");
+					depositMoney(u);
+				}
+				if (response == 2) {
+					System.out.println("Withdraw money");
+					withdrawMoney(u);
+				}
+				if (response == 3) {
+					System.out.println("View balance");
+					viewBalance(u);
+				}
 			}
-			if (response == 1) {
-				System.out.println("Deposit money");
-				depositMoney(u);
-			}
-			if (response == 2) {
-				System.out.println("Withdraw money");
-				withdrawMoney(u);
-			}
-			if (response == 3) {
-				System.out.println("View balance");
-				viewBalance(u);
-			}
-		}
 	}
 	/**************************************
 	 * Admin Method : the method for all admin actions
@@ -140,8 +151,12 @@ public class App {
 			System.out.println("Approve/Reject Users? (1)");
 			System.out.println("Lock/Unlock Users? (2)");
 			System.out.println("Quit (3)");
-			response = input.nextInt();
-			// Loop until a valid response is given
+			try {
+				response = input.nextInt();
+			} catch(InputMismatchException e) {
+				System.out.println("Invalid value");
+				return;
+			}			// Loop until a valid response is given
 			while (response > 3 | response < 1) {
 				System.out.println("Please enter a valid number");
 				response = input.nextInt();

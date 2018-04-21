@@ -1,5 +1,9 @@
 package com.revature.zero.Project_Zero;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class User implements Serializable {
@@ -10,6 +14,15 @@ public class User implements Serializable {
 	private String name;
 	private boolean approved;
 	
+	public static void serializeUser(User user, File file) {
+		try {
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+			out.writeObject(user.getName());
+			out.close();
+		} catch(IOException ioe) {
+			ioe.printStackTrace();
+		}
+	}
 	public User() {}
 	public User(String name, int balance, boolean admin, boolean locked, boolean approved) {
 		super();
@@ -55,7 +68,6 @@ public class User implements Serializable {
 			return "lock";
 		}
 	}
-
 	public void setLocked(boolean locked) {
 		this.locked = locked;
 	}

@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 //use bufferReader/fileReader and bufferWriter/fileWriter
 public class SerializationUser {
 	
-	public static void serializeUser(User user, File file) {
+/*	public static void serializeUser(User user, File file) {
 		try {
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
 			out.writeObject(user);
@@ -19,5 +19,11 @@ public class SerializationUser {
 	public static void main(String[] args) {
 		//User user = new User(1, true, false);
 		//serializeUser(user, new File("src/main/java/camerom.txt"));
+	}*/
+	public static void main(String[] args) {
+		System.out.println("Hello world");
+	}
+	public static void main(String hello) {
+		
 	}
 }
