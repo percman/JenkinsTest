@@ -1,4 +1,4 @@
-package application;
+package application0;
 
 public class UserNotFoundException extends Exception {
     private static final long serialVersionUID = 5113828884107708309L;
