@@ -8,15 +8,19 @@ package com.revature.project0;
 	import java.io.ObjectOutputStream;
 	import java.util.Set;
 
+import org.apache.log4j.Logger;
+
+
 	public class AdminSerializer {
+		private static final Logger logger = Logger.getLogger(AdminSerializer.class);
 		// puts a user into a file
 		public static void serializeAdmin(Set<Admin> admins, File file) {
 			try (ObjectOutputStream userOutStream = new ObjectOutputStream(new FileOutputStream(file.getPath()))) {
 					userOutStream.writeObject(admins);
 			} catch (FileNotFoundException fnfe) {
-				fnfe.printStackTrace();
+				logger.error(fnfe.getMessage(),fnfe);
 			} catch (IOException ioe) {
-				ioe.printStackTrace();
+				logger.error(ioe.getMessage(),ioe);
 			}
 
 		}
@@ -26,11 +30,11 @@ package com.revature.project0;
 			try (ObjectInputStream userInStream = new ObjectInputStream(new FileInputStream(file.getPath()))) {
 				return(Set<Admin>) userInStream.readObject();
 			} catch (FileNotFoundException fnfe) {
-				fnfe.printStackTrace();
+				logger.error(fnfe.getMessage(),fnfe);
 			} catch (IOException ioe) {
-				ioe.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
+				logger.error(ioe.getMessage(),ioe);
+			} catch (ClassNotFoundException cnfe) {
+				logger.error(cnfe.getMessage(),cnfe);
 			}
 			return null;
 		}

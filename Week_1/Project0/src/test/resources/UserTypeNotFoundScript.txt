@@ -1,0 +1,4 @@
+new user
+notAtype
+testName
+testPass

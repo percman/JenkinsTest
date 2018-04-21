@@ -7,16 +7,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Set;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-public class UserSerializer {
-	private static final Logger logger = Logger.getLogger(UserSerializer.class);
+public class PasswordSerializer {
+	private static final Logger logger = Logger.getLogger(AdminSerializer.class);
 	// puts a user into a file
-	public static void serializeUser(Set<User> users, File file) {
-		try (ObjectOutputStream userOutStream = new ObjectOutputStream(new FileOutputStream(file.getPath()))) {
-				userOutStream.writeObject(users);
+	public static void serializePasswords(Map<String, String> passwords, File file) {
+		try (ObjectOutputStream passOutStream = new ObjectOutputStream(new FileOutputStream(file.getPath()))) {
+				passOutStream.writeObject(passwords);
 		} catch (FileNotFoundException fnfe) {
 			logger.error(fnfe.getMessage(),fnfe);
 		} catch (IOException ioe) {
@@ -26,9 +26,9 @@ public class UserSerializer {
 	}
 
 	// pulls down a user from a file
-	public static Set<User> deSerializeUser(File file) {
-		try (ObjectInputStream userInStream = new ObjectInputStream(new FileInputStream(file.getPath()))){
-			return(Set<User>) userInStream.readObject();
+	public static Map<String, String> deSerializePasswords(File file) {
+		try (ObjectInputStream passInStream = new ObjectInputStream(new FileInputStream(file.getPath()))) {
+			return(Map<String, String>) passInStream.readObject();
 		} catch (FileNotFoundException fnfe) {
 			logger.error(fnfe.getMessage(),fnfe);
 		} catch (IOException ioe) {
@@ -39,3 +39,4 @@ public class UserSerializer {
 		return null;
 	}
 }
+

@@ -3,6 +3,9 @@ package com.revature.project0;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -14,8 +17,13 @@ public class SerializationTest {
 	public void deSerializeTest() {
 		User user = new User("daniel", "password");
 		user.addMovie("Batman Begins");
-		UserSerializer.serializeUser(user,new File("src/test/resources/testUser.txt"));
-		User deUser = (User)UserSerializer.deSerializeUser(new File("src/test/resources/testUser.txt")); 
+		Set<User> users = new HashSet<>();
+		users.add(user);
+		UserSerializer.serializeUser(users,new File("src/test/resources/testUser.txt"));
+		users.clear();
+		users = UserSerializer.deSerializeUser(new File("src/test/resources/testUser.txt"));
+		Iterator<User> itr = users.iterator();
+		User deUser = itr.next();
 		assertEquals(user.username, deUser.username);
 		assertEquals(user.password, deUser.password);
 		assertEquals(user.movies, deUser.movies);

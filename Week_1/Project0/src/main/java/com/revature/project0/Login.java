@@ -1,8 +1,5 @@
 package com.revature.project0;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 //handle all the login attempts of users
 public class Login {
@@ -26,6 +23,8 @@ static boolean adminExists(String name) {
 }
  //checks if the password given matches what is on record for the user
  static boolean checkPassword(String pass,String name) {
+	 
+	 String password = Record.passwords.get(name);
 	 return pass.equals(Record.passwords.get(name));
 }
 }

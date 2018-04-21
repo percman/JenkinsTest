@@ -5,7 +5,7 @@ import java.util.*;
 public class FileIO {
 //adds a new user to the list containing all users	
 public static void addNewUser(User user){
-	if(!Record.users.contains(user)) {
+	if(!Record.users.contains(user)&&!Record.admins.contains(new Admin(user.username,user.password))){
 		Record.users.add(user);
 		Record.passwords.put(user.username, user.password);
 	}
@@ -13,7 +13,7 @@ public static void addNewUser(User user){
 }
 //adds a new admin to the list containing all admins
 public static void addAdmin(Admin admin){
-	if(!Record.admins.contains(admin)) {
+	if(!Record.admins.contains(admin)&&!Record.admins.contains(new User(admin.username,admin.password))) {
 		Record.admins.add(admin);
 		Record.passwords.put(admin.username, admin.password);
 	}
