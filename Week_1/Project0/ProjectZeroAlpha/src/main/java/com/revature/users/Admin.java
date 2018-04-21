@@ -66,6 +66,17 @@ public class Admin extends User{
 		return newUser;
 	}
 
+	
+	public static boolean userExists(HashMap<Integer, User> userHashData, String username) {
+		int count = lineCount(userFile);
+		
+		for(int i = 0; i < (count - 1); i++)
+			if(userHashData.get(i).getName().equals(username))
+				return true;
+		
+		return false;
+	}
+	
 	// Checks if a given User has entered their correct password
 	// * requires a HashMap to have been created by reading userFile *
 	// takes HashMap 'userHashData' and checks each element for equality to String 'username', then to password
@@ -79,6 +90,17 @@ public class Admin extends User{
 		
 		return false;
 	}
+	
+	public static boolean lockStatus(HashMap<Integer, User> userHashData, String username) {
+		int count = lineCount(userFile);
+		
+		for(int i = 0; i < (count - 1); i++)
+			if(userHashData.get(i).getName().equals(username))
+				return userHashData.get(i).isLocked();
+		
+		return true;
+	}
+	
 	
 	// Checks if a given User is an Admin
 	// * requires a HashMap to have been created by reading userFile *
@@ -130,28 +152,27 @@ public class Admin extends User{
 			}
 	}
 	
-	
-	public static boolean changeUsername(HashMap<Integer, User> userHashData, String username, String newUsername) {
+
+	public static void userLock(HashMap<Integer, User> userHashData, String username, boolean lock) {
 		int count = lineCount(userFile);
 
-		for(int i = 0; i < (count - 1); i++)
-			if(userHashData.get(i).getName().equals(username)) {
-				return true;
-			}
 		
-		return false;
-	}
-	
-	
-	public static boolean userLock(HashMap<Integer, User> userHashData, String username, String newUsername) {
-		int count = lineCount(userFile);
-
 		for(int i = 0; i < (count - 1); i++)
-			if(userHashData.get(i).getName().equals(username)) {
-				return true;
+			if(userHashData.get(i).getName().equals(username)) {	
+				User updatedUser = new User(userHashData.get(i).getName(), 
+						userHashData.get(i).getPassword(), 
+						userHashData.get(i).isAdminStatus(), 
+						lock, 
+						userHashData.get(i).getBalance());
+				userHashData.put(i, updatedUser);
+				userFile.delete();
+				for(int n = 0; n < (count - 1); n++) {
+					addUserAsAdmin(userHashData.get(n).getName(), 
+							userHashData.get(n).getPassword(), 
+							userHashData.get(n).isAdminStatus(), 
+							userHashData.get(n).isLocked(), 
+							userHashData.get(n).getBalance());
+				}
 			}
-		
-		return false;
 	}
-
 }

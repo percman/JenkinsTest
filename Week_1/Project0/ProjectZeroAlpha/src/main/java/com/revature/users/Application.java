@@ -20,12 +20,12 @@ public class Application{
 		
 		userFile.delete();
 		
-		User p = addUserAsAdmin("adamL", "easypass", true, false, 53.6);
+		User p = addUserAsAdmin("adamL", "easypass", true, true, 53.6);
 		User v = addUserAsAdmin("admjl", "ExCeLl3nT_passW0rd", false, false, 573.6);
 		User f = addUserAsAdmin("neat", "guy", true, false, 531.6);
 		User a = addUserAsAdmin("anything", "true", true, false, 100);
 		User b = addUserAsAdmin("what", "thing", true, false, 200);
-		User c = addUserAsAdmin("dude", "no", true, false, 300);
+		User c = addUserAsAdmin("dude", "no", true, true, 300);
 		
 		if(!userFile.exists()) {
 			currentUser = firstRun();

@@ -1,12 +1,7 @@
 package com.revature.users;
 
 import static com.revature.readwrite.ReadWrite.inputLine;
-import static com.revature.users.Admin.addUserAsAdmin;
-import static com.revature.users.Admin.adminCheck;
-import static com.revature.users.Admin.changeBalance;
-import static com.revature.users.Admin.checkBalance;
-import static com.revature.users.Admin.passwordCheck;
-import static com.revature.users.Admin.userLock;
+import static com.revature.users.Admin.*;
 import static com.revature.users.SerializationOfUsers.*;
 
 import java.util.HashMap;
@@ -46,8 +41,15 @@ public class GUI{
 		String password = inputLine();
 		
 		if(passwordCheck(userHashData, username, password)) {
-			System.out.println("You have successfully logged in.");
-			return username;
+			if(lockStatus(userHashData, username))
+			{
+				System.out.println("You have been locked. New users must be approved by admins.");
+				return login(userHashData);
+			}
+			else {
+				System.out.println("You have successfully logged in.");
+				return username;
+			}
 		}
 		
 		System.out.println("Invalid username or password.");
@@ -122,24 +124,41 @@ public class GUI{
 		System.out.println("Which account would you like to approve or reject? Enter a username: ");
 		System.out.println("If you would like a list of possible awaiting accounts, TBD");
 		String userApproval = inputLine();
-		System.out.println("And would you like to approve or reject this account?");
+		System.out.println("approve or reject?");
 		String approvalStatus = inputLine();
-		if(!userLock(userHashData, userApproval, approvalStatus))
-			System.out.println("The user has been approved.");
+		
+		boolean approve = true;
+		if(approvalStatus == "reject")
+			approve = true;
 		else
-			System.out.println("Either the user has not been found, or the user has been rejected.");
+			approve = false;
+		if(userExists(userHashData, userApproval)) {
+			userLock(userHashData, userApproval, approve);
+			System.out.println(userApproval + " has been " + approvalStatus + "d.");
+		}
+		else
+			System.out.println(userApproval + " has not been found.");
+		
 		break;
 		
         case 6: choice = 6;
 		System.out.println("Which account would you like to lock or unlock? Enter a username: ");
 		System.out.println("If you would like a list of possible locked accounts, TBD");
 		String userLocked = inputLine();
-		System.out.println("And would you like to lock or unlock this account?");
+		System.out.println("lock or unlock?");
 		String lockStatus = inputLine();
-		if(!userLock(userHashData, userLocked, lockStatus))
-			System.out.println("The user has been unlocked.");
+		
+		boolean lock = true;
+		if(lockStatus == "lock")
+			lock = true;
 		else
-			System.out.println("Either the user has not been found, or the user has been locked.");
+			lock = false;
+		if(userExists(userHashData, userLocked)) {
+			userLock(userHashData, userLocked, lock);
+			System.out.println(userLocked + " has been " + lockStatus + "d.");
+		}
+		else
+			System.out.println(userLocked + " has not been found.");
         break;	     
         
         default:
