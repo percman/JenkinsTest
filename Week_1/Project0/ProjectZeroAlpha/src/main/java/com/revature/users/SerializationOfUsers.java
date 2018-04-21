@@ -15,8 +15,8 @@ import java.util.HashMap;
 
 import static com.revature.readwrite.ReadWrite.*;
 
-public class SerializationOfUsers{
-	
+public class SerializationOfUsers {
+		
 	public static ObjectOutputStream out = null;
 	public static ObjectInputStream in = null;
 	public static FileWriter fw = null;
@@ -85,27 +85,18 @@ public class SerializationOfUsers{
 		// just to ensure extra data isn't accidently written into user data, such as null
 		tempFile.delete();
 		
-		try {
 			
-			for(int i = 0; i < (count - 1); i++) {
-				hashUsers.put(i, returnDeserializedUser(resource));
-				userData.add(readFirstLine(resource));
-				deleteContentOfFile(readFirstLine(resource), resource);
-			}
-			
-			for(int i = 0; i < (count - 1); i++) {
-				writeToExistingFile(userData.get(i), resource);
-			}
-			
-		} finally {
-			try {
-				in.close();
-			} catch (IOException ioe) {
-				ioe.printStackTrace();
-			} finally {
-				//System.out.println("Resource successfully closed");
-			}
+		for(int i = 0; i < (count - 1); i++) {
+			hashUsers.put(i, returnDeserializedUser(resource));
+			userData.add(readFirstLine(resource));
+			deleteContentOfFile(readFirstLine(resource), resource);
 		}
+				
+		for(int i = 0; i < (count - 1); i++) {
+			writeToExistingFile(userData.get(i), resource);
+		}
+			
+		 
 		return hashUsers;
 	}
 	

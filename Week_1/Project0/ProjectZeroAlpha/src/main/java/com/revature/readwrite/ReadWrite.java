@@ -78,8 +78,8 @@ public class ReadWrite{
     }
 
     // User input 
-    // consoleinput = aquireline();
-	public static String aquireLine() {
+    // consoleinput = inputLine();
+	public static String inputLine() {
 		
 		String line = "";
 		
