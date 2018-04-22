@@ -1,284 +1,178 @@
 package com.andrewsrahn.main;
 
-import java.io.File;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Teller {
 	private static Bank bank;
+	private static Scanner scanner;
 	
-	public static void greet() {
-		Scanner s = new Scanner(System.in);
+	private static void greet() {
+		System.out.print("do you want to login user, login administrator, "
+				+ "create user, or create administrator? (lu/la/cu/ca):");
 		
-		System.out.print("new or existing? (n/e):");
-		switch(s.nextLine()) {
-		case "n":
-			neww(s);
+		switch(scanner.nextLine()) {
+		case "lu":
+			loginUser();
+			break;
+		case"la":
+			loginAdministrator();
+		case "cu":
+			createUser();
+			break;
+		case "ca":
+			createAdministrator();
+			break;
+		default:
+			System.out.println("Bad input; retrying greet");
+			greet();
+		}
+	}
+	
+	private static void createAdministrator() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private static void createUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void loginAdministrator() {
+		System.out.println("logging in as an administrator");
+		System.out.print("what is your username?:");
+		String name = scanner.nextLine();
+		System.out.print("what is your password?:");
+		String password = scanner.nextLine();
+		
+		String authenticate = bank.authenticateAdministrator(name, password);
+		switch(authenticate) {
+		case "authenticate":
+			System.out.println("administrator found. reviewing statuses");
+			greetAdministrator(Teller.bank.getAdministrator(name));
+			break;
+		case "incorrect password":
+			System.out.println("administrator found but password incorrect. retrying login administrator...");
+			loginAdministrator();
+			break;
+		case "administrator not found":
+		default:
+			System.out.println("administrator not found. retrying login administrator...");
+			loginAdministrator();
+			break;
+		}
+	}
+
+	private static void greetAdministrator(Administrator administrator) {
+		System.out.println(administrator.getName() + "welcome.\n");
+		System.out.print("do you want to update users or exit? (u/e):");
+		
+		switch(Teller.scanner.nextLine()) {
+		case "u":
+			System.out.println("updating...\n");
+			updateUsers(administrator);
 			break;
 		case "e":
-			existing(s);
+			System.out.println("ending...\n");
+			exit();
 			break;
 		default:
-			System.out.println("Bad user.  retrying...\n");
-			s.close();
+			System.out.println("bad input. retrying greet administrator...");
+			greetAdministrator(administrator);
+			break;
+		}
+	}
+
+	private static void exit() {
+		System.out.print("exit or retry? (e/r):");
+		switch(Teller.scanner.nextLine()) {
+		case "e":
+			Teller.scanner.close();
+			Teller.bank.serialize();
+			System.out.println("goodbye!");
+			break;
+		case "r":
 			greet();
 			break;
-		}
-	}
-	
-	public static void neww(Scanner s) {
-		System.out.print("administrator or user? (a/u):");
-		switch(s.nextLine()) {
-		case "a":
-			createAdmin(s);
-			break;
-		case "u":
-			createUser(s);
-			break;
 		default:
-			System.out.println("Bad user. retrying...\n");
-			s.close();
-			greet();
-			break;
-		}
-	}
-	
-	public static void existing(Scanner s) {
-		System.out.print("administrator or user? (a/u):");
-		
-		switch(s.nextLine()) {
-		case "a":
-			readAdmin(s);
-			break;
-		case "u":
-			readUser(s);
-			break;
-		default:
-			System.out.println("Bad user. Retrying existing...\n");
-			existing(s);
-			break;
+			System.out.println("bad input. retrying exit...");
+			exit();
 		}
 	}
 
-	public static void readUser(Scanner s) {
-		List<User> users = Teller.bank.getUsers().values().stream().collect(Collectors.toList());
-		String name = "", email = "", password = "";
-		users.forEach( u -> System.out.println( ));
-		User u = Teller.bank.getUser(name);
-		if(u != null) {
-			System.out.println(name + " found!\n");
-			System.out.println(u.getStatus());
-			readBalance(u, s);
-		}
-		else {
-			System.out.println(name + " not found! Creating user...\n");
-			createUser(name, email, password, s);
-		}
-	}
-
-	public static void readAdmin(Scanner s) {
-		String name = "", email = "", password = "";
-		Administrator a = Teller.bank.getAdministrator(name);
-		if(a != null) {
-			System.out.println(name + " found!\n");
-			readStatuses(s, a);
-		}
-		else {
-			System.out.println(name + " not found! Creating administrator...\n");
-			createAdmin(name, email, password, s);
-		}
-	}
-
-	public static void createAdmin(Scanner s) {
-		System.out.print("name:");
-		String name = s.nextLine();
-		System.out.print("email:");
-		String email = s.nextLine();
-		System.out.print("password:");
-		String password = s.nextLine();
-		System.out.println("");
-		createAdmin(name, email, password, s);
-	}
-	
-	public static void createUser(Scanner s) {
-		System.out.print("name:");
-		String name = s.nextLine();
-		System.out.print("email:");
-		String email = s.nextLine();
-		System.out.print("password:");
-		String password = s.nextLine();
-		System.out.println("");
-		createUser(name, email, password, s);		
-	}
-	
-	public static void createAdmin(String name, String email, String password, Scanner s) {
-		Administrator a = new Administrator(name, email, password);
-		Teller.bank.createAdmin(a);
-		System.out.println("Administrator " + name + " created.");
-		readStatuses(s, a);
-	}
-	
-	public static void createUser(String name, String email, String password, Scanner s) {
-		User u = new User(name, email, password);
-		Teller.bank.createUser(u);
-		System.out.println(name + " created as user.  Reading balance...");
-		readBalance(u, s);
-	}
-	
-	public static void readBalance(User u, Scanner s) {
-		System.out.println(u.getName() + ", " + u.getBalance());
-		System.out.println("Transaction or quit? (t/q):");
-		switch(s.nextLine()) {
-		case "t":
-			updateBalance(u, s);
-			break;
-		case "q":
-			exit(s);
-			break;
-		default:
-			System.out.println("Bad user. Retrying...");
-			readBalance(u, s);
-			break;
-		}
-	}
-	
-	public static void updateBalance(User u, Scanner s) {
-		System.out.print("Add or subtract $20? (a/s):");
-		
-		switch(s.nextLine()) {
-		case "a":
-			u.setBalance(20);
-			break;
-		case "s":
-			u.setBalance(-20);
-			break;
-		default:
-			System.out.println("Bad user. Retrying transaction...");
-		}
-		Teller.bank.setUser(u);
-		readBalance(u, s);
-	}
-
-	public static void readStatuses(Scanner s, Administrator a) {
+	private static void updateUsers(Administrator administrator) {
+		System.out.println("users on the system include");
 		Map<String, User> users = Teller.bank.getUsers();
+		System.out.println(Stream.pendingUsers(users));
+		System.out.println(Stream.approvedUsers(users));
+		System.out.println(Stream.rejectedUsers(users));
+		System.out.println(Stream.lockedUsers(users));
+		System.out.println(Stream.unlockedUsers(users));
 		
-		List<User> pending = users.values().stream()
-				.filter(u -> u.getApprovedBy() == null)
-				.filter(u -> u.getRejectedBy() == null)
-				.collect(Collectors.toList());
-		
-		List<User> rejected = users.values().stream()
-				.filter( u -> u.getApprovedBy() == null)
-				.filter( u -> u.getRejectedBy() != null)
-				.collect(Collectors.toList());
-		
-		List<User> approved = users.values().stream()
-				.filter( u -> u.getApprovedBy() != null)
-				.filter( u -> u.getRejectedBy() == null)
-				.collect(Collectors.toList());
-				
-		System.out.print("Pending [");
-		pending.forEach( p -> System.out.print( p.getName() + ", " ));
-		System.out.println("]");
-		
-		System.out.print("Rejected [");
-		rejected.forEach( r -> System.out.print( r.getName() + ", "));
-		System.out.println("]");
-		
-		System.out.print("Approved [");
-		approved.forEach( p -> System.out.print( p.getName() + ", "));
-		System.out.println("]");
-		
-		updateStatuses(s, a);
+		updateUser(administrator);
 	}
-	
-	public static void updateStatuses(Scanner s, Administrator a) {
-		System.out.print("Enter name of user to reject or approve:");
-		String name = s.nextLine();
-		System.out.print("\nReject or approve? (r/a):");
-		String status = s.nextLine();
+
+	private static void updateUser(Administrator administrator) {
+		System.out.print("which user do you want to update?:");
+		String name = Teller.scanner.nextLine();
+		User user = Teller.bank.getUser(name);
 		
-		User u = Teller.bank.getUser(name);
-		
-		switch(status) {
-		case "r":
-			if(u != null) {
-				u.setRejectedBy(a);
-				Teller.bank.setUser(u);
-				System.out.println("Rejected " + u.getName());
+		if(user == null) {	
+			System.out.println("user not found. retrying update");
+			updateUser(administrator);
+		} else {
+			System.out.println("updating " + user.getName());
+			System.out.println("approve, reject, lock, or unlock? (a/r/l/u):");
+			
+			switch(Teller.scanner.nextLine()) {
+			case "a":
+				user.setApprovedBy(administrator);
+				System.out.println(user.getName() + " approved");
+				break;
+			case "r":
+				user.setRejectedBy(administrator);
+				System.out.println(user.getName() + " rejected");
+				break;
+			case "l":
+				user.setLocked(true);
+				System.out.println(user.getName() + " locked");
+				break;
+			case "u":
+				user.setLocked(false);
+				System.out.println(user.getName() + " unlocked");
+				break;
+			default:
+				System.out.println("bad input. retrying update user");
+				updateUsers(administrator);
 			}
-			else {
-				System.out.println("User not found. Retrying...");
-				readStatuses(s, a);
-			}
-			break;
-		case "a":
-			if(u != null) {
-				u.setApprovedBy(a);
-				Teller.bank.setUser(u);
-				System.out.println("Approved " + u.getName());
-			}
-			else {
-				System.out.println("User not found. Retrying...");
-				readStatuses(s, a);
-			}
-			break;
-		default:
-			System.out.println("Bad admin. retrying...");
-			readStatuses(s, a);
-			break;
+			Teller.bank.setUser(user);
 		}
 		
-		System.out.println("");
-		readStatuses(s, a);
-	}
-	
-	public static void farewell(Scanner s, Administrator a) {
-		System.out.print("Quit or review users? (q/r):");
-		
-		switch(s.nextLine()) {
-		case "q":
-			exit(s);
+		System.out.println("Update another user or exit? (u/e):");
+		switch(Teller.scanner.nextLine()) {
+		case "u":
+			updateUsers(administrator);
 			break;
-		case "r":
-			readStatuses(s, a);
+		case "e":
+			exit();
 			break;
 		default:
-			System.out.println("Bad admin. Retrying farewell...");
-			farewell(s, a);
-			break;
+			System.out.println("bad input. retrying update users...");
+			updateUsers(administrator);
 		}
 	}
-	
-	public static void farewell(Scanner s, User u) {
-		System.out.print("Quit or read balance? (q/r):");
+
+	private static void loginUser() {
+		// TODO Auto-generated method stub
 		
-		switch(s.nextLine()) {
-		case "q":
-			exit(s);
-			break;
-		case "r":
-			readBalance(u, s);
-			break;
-		default:
-			System.out.println("Bad user. Retrying farewell...");
-			farewell(s, u);
-			break;
-		}
 	}
-	
-	public static void exit(Scanner s) {
-		System.out.println("Quiting; Thank you for using project 0! -andrew");
-		s.close();
-		Serialize.serialize(Teller.bank, new File("src/main/resources/bank.txt"));
-		System.exit(0);
-	}
+
 
 	public static void main(String[] args) {
+		Teller.scanner = new Scanner(System.in);
 		Teller.bank = new Bank();
-		Teller.bank.initialize();
 		Teller.greet();
 	}
 }

@@ -5,15 +5,13 @@ import java.util.Map;
 import java.util.HashMap;
 import com.andrewsrahn.main.User;
 import com.andrewsrahn.main.Administrator;
-import com.andrewsrahn.main.StreamPractice;
-
+import com.andrewsrahn.main.Stream;
 import java.util.List;
 import java.util.ArrayList;
-
 import org.junit.Test;
 import org.junit.Before;
 
-public class StreamPracticeTest {
+public class StreamTest {
 	Map<String, User> users;
 	Administrator andrew;
 	User cameron;
@@ -26,17 +24,13 @@ public class StreamPracticeTest {
 	@Before
 	public void setUp() {
 		users = new HashMap<>();
-
-		andrew = new Administrator("andrew", "andrewsrahn@gmail.com", "password");
-
-		cameron = new User("cameron", "cameron@gmail.com", "password");
-
-		andy = new User("andy", "ahnman341@gmail.com", "password");
+		andrew = new Administrator("andrew", "password");
+		andy = new User("andy", "password", 0, true);
+		cameron = new User("cameron", "password", 20, false);
+		vince = new User("vince", "password", 20, false);
+		
 		andy.setRejectedBy(andrew);
-
-		vince = new User("vince", "vince@gmail.com", "password");
 		vince.setApprovedBy(andrew);
-
 		users.put("cameron", cameron);
 		users.put("andy", andy);
 		users.put("vince", vince);
@@ -52,17 +46,26 @@ public class StreamPracticeTest {
 
 	@Test
 	public void testApproved() {
-		assertEquals(StreamPractice.approved(users), approved);
-	}
-	
-	@Test
-	public void testRejected() {
-		assertEquals(StreamPractice.rejected(users), rejected);
-	}
-	
-	@Test
-	public void testPending() {
-		assertEquals(StreamPractice.pending(users), pending);
+		assertEquals(Stream.approved(users), approved);
 	}
 
+	@Test
+	public void testRejected() {
+		assertEquals(Stream.rejected(users), rejected);
+	}
+
+	@Test
+	public void testPending() {
+		assertEquals(Stream.pending(users), pending);
+	}
+	
+	@Test
+	public void testPendingUsers() {
+		assertEquals(Stream.pendingUsers(users), "pending: cameron");
+	}
+	
+	@Test
+	public void testLockedUsers() {
+		assertEquals(Stream.lockedUsers(users), "locked: andy");
+	}
 }

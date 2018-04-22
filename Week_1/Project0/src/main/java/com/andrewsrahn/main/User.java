@@ -1,20 +1,24 @@
 package com.andrewsrahn.main;
 
 public class User extends Person{
-	private float balance;
+	private int balance;
+	private boolean locked;
 	private Administrator approvedBy;
 	private Administrator rejectedBy;
 	
-	public User(String name, String email, String password) {
+	public User(String name, String password, int balance, boolean locked) {
 		super();
-		this.setName(name);
-		this.setEmail(email);
-		this.setPassword(password);
-		this.setLocked(false);
+		super.setName(name);
+		super.setPassword(password);
 		
-		setBalance(0.00f);
-		setApprovedBy(null);
-		setRejectedBy(null);
+		this.balance = balance;
+		this.locked = locked;
+	}
+	public boolean isLocked() {
+		return locked;
+	}
+	public void setLocked(boolean locked) {
+		this.locked = locked;
 	}
 	public float getBalance() {
 		return balance;
@@ -25,7 +29,7 @@ public class User extends Person{
 	public Administrator getRejectedBy() {
 		return rejectedBy;
 	}
-	public void setBalance(float balance) {
+	public void setBalance(int balance) {
 		this.balance = balance;
 	}
 	public void setApprovedBy(Administrator approvedBy) {
@@ -42,7 +46,7 @@ public class User extends Person{
 		else if(rejectedBy != null)
 			return "Status: rejected by " + rejectedBy.getName();
 		else
-			return "program error";
+			return "Status: error";
 	}
 }
 
