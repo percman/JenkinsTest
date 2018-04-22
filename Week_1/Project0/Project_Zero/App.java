@@ -95,7 +95,7 @@ public class App {
 				else {
 					User user = new User(userName, 0, false, false, false);
 					userList.add(user);
-					User.serializeUser(user, bankData);
+					User.serializeUser(userList, bankData);
 					System.out.println("Please wait to be approved by admin");
 				}
 			}
@@ -104,7 +104,7 @@ public class App {
 	public static void newAdmin(String userName, Scanner input) {
 		User user = new User(userName, 0, true, false, true);
 		userList.add(user);
-		User.serializeUser(user, bankData);
+		User.serializeUser(userList, bankData);
 		adminMethod(input, user);
 	}
 	public static void userMethod(User u, Scanner input) throws InputMismatchException {

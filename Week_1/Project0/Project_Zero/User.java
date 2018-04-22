@@ -1,10 +1,11 @@
 package com.revature.zero.Project_Zero;
 
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class User implements Serializable {
 	private final long serialVersionUID = -3703230509509286756L;
@@ -14,10 +15,12 @@ public class User implements Serializable {
 	private String name;
 	private boolean approved;
 	
-	public static void serializeUser(User user, File file) {
+	public static void serializeUser(ArrayList<User> userList, File file) {
 		try {
-			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
-			out.writeObject(user.getName());
+			BufferedWriter out = new BufferedWriter(new FileWriter(file));
+			for (User u: userList) {
+				out.write(u.getName() + " " + " was added \n");
+			}
 			out.close();
 		} catch(IOException ioe) {
 			ioe.printStackTrace();
