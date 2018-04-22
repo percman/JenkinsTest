@@ -1,4 +1,4 @@
-package application0;
+package save_0;
 
 public class User {
     //private static final long serialVersionUID = 5058997999481525938L;

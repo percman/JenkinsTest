@@ -1,6 +1,7 @@
 package BankApp;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,12 +16,12 @@ public class User implements Serializable {
     private String password;                // Encrypt
     private String firstName;
     private String lastName;
-    private String birthday;
-    private String street;
-    private String state;
-    private String country;
-    private String zipcode;
-    private String socialSecurityNumber;    // Encrypt
+    private LocalDate birthday;
+    private String street;                  // Move to CustomerCheckingAccount
+    private String state;                   // Move to CustomerCheckingAccount
+    private String country;                 // Move to CustomerCheckingAccount
+    private String zipcode;                 // Move to CustomerCheckingAccount
+    private String socialSecurityNumber;    // Encrypt and move to CustomerCheckingAccount
     private String role;
 
     // No arg constructor
@@ -80,11 +81,11 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
@@ -172,16 +173,54 @@ public class User implements Serializable {
         File file = new File("Project_00/src/main/resources/Users.ser");
 
         if (file.exists()) {
-            System.out.println("File is exist");
+            //todo log Users.ser exist.
         } else {
             User u = new User();
             Serialization.serializeUsers(u);
         }
     }
 
-    public void addUserToList(User u) {
+    /**********************************
+
+     Start of masterUser methods.
+
+     **********************************/
+
+    // Add a user to the listOfUsers
+    void addUserToList(User u) {
         this.listOfUsers.add(u);
     }
+
+    // Check email for login
+    boolean checkLogin(String email, String password) {
+        boolean result = false;
+        for (User u : this.listOfUsers) {
+            if (u.getEmail().equals(email) && u.getPassword().equals(password)) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
+    User getUser(String email) {
+        User user = new User();
+        for (User u : listOfUsers){
+            if (u.getEmail().equals(email)) {
+                user = u;
+                break;
+            }
+            else{
+                //todo log that user was not found
+            }
+        }
+        return user;
+    }
+    /**********************************
+
+     End of masterUser methods.
+
+     **********************************/
 
 //    // main used to quick test
 //    public static void main(String[] args) {
