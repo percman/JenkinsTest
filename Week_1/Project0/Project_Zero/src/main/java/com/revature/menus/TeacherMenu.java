@@ -12,12 +12,24 @@ import com.revature.users.Teacher;
 public class TeacherMenu {
 
 	public static void teacherMenu(Teacher teacher) {
-		LogThis.info("Teacher Menu");
-		System.out.println("Your options are:");
-		System.out.println("1. Approve new Student Profiles");
-		System.out.println("2. Lock Student Profile");
-		System.out.println("3. Unlock Student Profile");
-		System.out.println("0. Logout");
+		
+		if (teacher.isApproved()) {
+			System.out.println("Your account has not been approved by your teacher.");
+			System.out.println("Please try to login again later.");
+		} else if (teacher.isLocked()) {
+			System.out.println("Your account has been locked.");
+			System.out.println("Please talk to your teacher.");
+		} else {
+			LogThis.info("Teacher Menu");
+			System.out.println("Your options are:");
+			System.out.println("1. Approve new Student Profiles");
+			System.out.println("2. Lock Student Profile");
+			System.out.println("3. Unlock Student Profile");
+			System.out.println("0. Logout");
+		}
+		
+		
+		
 
 		Scanner sc = new Scanner(System.in);
 
@@ -40,7 +52,6 @@ public class TeacherMenu {
 					System.out.println("2. Lock Student Profile");
 					System.out.println("3. Unlock Student Profile");
 					System.out.println("0. Logout");
-					choice = sc.nextInt();
 					break;
 				}
 			}

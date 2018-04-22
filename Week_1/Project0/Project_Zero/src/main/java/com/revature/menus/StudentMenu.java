@@ -12,10 +12,10 @@ public class StudentMenu {
 
 	public static void studentMenu(Student student) {
 
-		if (student.getIsApproved()) {
+		if (student.isApproved()) {
 			System.out.println("Your account has not been approved by your teacher.");
 			System.out.println("Please try to login again later.");
-		} else if (student.getIsLocked()) {
+		} else if (student.isLocked()) {
 			System.out.println("Your account has been locked.");
 			System.out.println("Please talk to your teacher.");
 		} else {
@@ -46,7 +46,6 @@ public class StudentMenu {
 					System.out.println("1. Earn more coins by completing arithmetic problems");
 					System.out.println("2. Buy more arithmetic problems with your coins");
 					System.out.println("0. Logout");
-					choice = sc.nextInt();
 					break;
 				}
 			}

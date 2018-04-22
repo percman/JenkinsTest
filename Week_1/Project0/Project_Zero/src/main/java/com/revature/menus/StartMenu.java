@@ -24,22 +24,22 @@ public class StartMenu {
 	
 	
 
-
 	public static void startMenu() {
-
+		
 		AccountData ad = AccountData.getInstance();
 
 		// if the data has not been deserialized yet, this statement will run
 		// it will not run if someone logs out and returns to the start menu
-		 if (!wasDeserialized) {
-		 deserializeAccountData(new File("src/main/resources/data.txt"));
-		 wasDeserialized = true;
-		 }
+		if (!wasDeserialized) {
+			deserializeAccountData(new File("src/main/resources/data.txt"));
+			wasDeserialized = true;
+		}
 
 		// if it is the first time this program is ever run
 		// this statement will create a principal
 		if (ad.size() == 0) {
 			createPrincipal();
+			return;
 		}
 
 		LogThis.info("Start Menu");
@@ -50,21 +50,20 @@ public class StartMenu {
 		System.out.println("0. Exit");
 
 		Scanner sc = new Scanner(System.in);
-		
+		int choice = sc.nextInt();
 
 		try {
 			while (true) {
-				int choice = sc.nextInt();
 				switch (choice) {
 				case 1:
 					login();
-					break;
+					return;
 				case 2:
 					createStudent();
-					break;
+					return;
 				case 3:
 					createTeacher();
-					break;
+					return;
 				case 0:
 					serializeAccountData(ad.getHashMap(), new File("src/main/resources/data.txt"));
 					sc.close();
@@ -80,11 +79,11 @@ public class StartMenu {
 					break;
 				}
 			}
-		} catch(InputMismatchException ime) {
+		} catch (InputMismatchException ime) {
 			LogThis.warn(ime.getMessage());
-		} catch(NoSuchElementException nsee) {
+		} catch (NoSuchElementException nsee) {
 			LogThis.warn(nsee.getMessage());
-		} catch(IllegalStateException ise) {
+		} catch (IllegalStateException ise) {
 			LogThis.warn(ise.getMessage());
 		} finally {
 			sc.close();
@@ -93,9 +92,9 @@ public class StartMenu {
 	}
 
 	public static void login() {
-		
+
 		AccountData ad = AccountData.getInstance();
-		
+
 		LogThis.info("Login Menu");
 
 		Scanner sc = new Scanner(System.in);
@@ -150,36 +149,121 @@ public class StartMenu {
 
 	public static void createStudent() {
 		LogThis.info("Create a New Student Profile");
+		
+		AccountData ad = AccountData.getInstance();
+
+		Person student = new Student();
+
+		Scanner sc = new Scanner(System.in);
+		
+		try {
+			System.out.println("Please enter your first and last name");
+			student.setName(sc.nextLine());
+
+			System.out.println("Please choose a username");
+			student.setUserName(sc.nextLine());
+			String username = student.getUserName();
+
+			System.out.println("Please enter a password");
+			student.setPassword(sc.nextLine());
+			String password = student.getPassword();
+
+			student.setType("student");
+			
+			ad.put(username + ":" + password, student);
+			
+		} catch (NoSuchElementException nsee) {
+			LogThis.warn(nsee.getMessage());
+		} catch (IllegalStateException ise) {
+			LogThis.warn(ise.getMessage());
+		} finally {
+			sc.close();
+		}
+		
+		LogThis.info("Student Account Created");
+		StudentMenu.studentMenu((Student) student);
+
 
 	}
 
 	public static void createTeacher() {
 		LogThis.info("Create a New Teacher Profile");
+		
+		AccountData ad = AccountData.getInstance();
+
+		Person teacher = new Teacher();
+
+		Scanner sc = new Scanner(System.in);
+		
+		try {
+			System.out.println("Please enter your first and last name");
+			teacher.setName(sc.nextLine());
+
+			System.out.println("Please choose a username");
+			teacher.setUserName(sc.nextLine());
+			String username = teacher.getUserName();
+			
+			System.out.println("Please enter a password");
+			teacher.setPassword(sc.nextLine());
+			String password = teacher.getPassword();
+			
+			teacher.setType("teacher");
+			
+			ad.put(username + ":" + password, teacher);
+
+			
+		} catch (NoSuchElementException nsee) {
+			LogThis.warn(nsee.getMessage());
+		} catch (IllegalStateException ise) {
+			LogThis.warn(ise.getMessage());
+		} finally {
+			sc.close();
+		}
+		
+		LogThis.info("Teacher Account Created");
+		TeacherMenu.teacherMenu((Teacher) teacher);
 
 	}
 
 	public static void createPrincipal() {
 		LogThis.info("Create Principal");
+		
+		AccountData ad = AccountData.getInstance();
+
 		Person principal = new Principal();
 
 		Scanner sc = new Scanner(System.in);
+		
+		try {
+			System.out.println("Please enter your first and last name");
+			principal.setName(sc.nextLine());
 
-		System.out.println("Please enter your first and last name");
-		principal.setName(sc.nextLine());
+			System.out.println("Please choose a username");
+			principal.setUserName(sc.nextLine());
+			String username = principal.getUserName();
 
-		System.out.println("Please choose a username");
-		principal.setUserName(sc.nextLine());
+			System.out.println("Please enter a password");
+			principal.setPassword(sc.nextLine());
+			String password = principal.getPassword();
 
-		System.out.println("Please enter a password");
-		principal.setPassword(sc.nextLine());
+			principal.setType("principal");
+			
+			ad.put(username + ":" + password, principal);
 
-		sc.close();
+			
+		} catch (NoSuchElementException nsee) {
+			LogThis.warn(nsee.getMessage());
+		} catch (IllegalStateException ise) {
+			LogThis.warn(ise.getMessage());
+		} finally {
+			sc.close();
+		}
 		
 		LogThis.info("Principal Account Created");
 		PrincipalMenu.principalMenu((Principal) principal);
 	}
 
-	public static void serializeAccountData(Map<String,Person> data, File file) {
+	public static void serializeAccountData(Map<String, Person> data, File file) {
 		ObjectOutputStream save = null;
 		try {
 			save = new ObjectOutputStream(new FileOutputStream(new File(file.getPath())));
@@ -199,14 +283,14 @@ public class StartMenu {
 
 	@SuppressWarnings("unchecked")
 	public static void deserializeAccountData(File file) {
-		
+
 		AccountData ad = AccountData.getInstance();
 
 		if (file.exists()) {
 			ObjectInputStream savedData = null;
-			try { 
+			try {
 				savedData = new ObjectInputStream(new FileInputStream(new File(file.getPath())));
-				
+
 				ad.setHashMap((Map<String, Person>) savedData.readObject());
 
 			} catch (IOException ioe) {
@@ -223,6 +307,5 @@ public class StartMenu {
 				}
 			}
 		}
-//		AccountData.getInstance();
 	}
 }

@@ -19,7 +19,10 @@ public abstract class Person implements Serializable {
 	private String name;
 	private String userName;
 	private String password;
-	protected String type;
+	private String type;
+	
+	private boolean isApproved;
+	private boolean isLocked;
 
 	public Person() {
 		super();
@@ -59,6 +62,27 @@ public abstract class Person implements Serializable {
 	public String getType() {
 		return type;
 	}
+	
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public boolean isApproved() {
+		return isApproved;
+	}
+
+	public void setApproved(boolean isApproved) {
+		this.isApproved = isApproved;
+	}
+
+	public boolean isLocked() {
+		return isLocked;
+	}
+
+	public void setLocked(boolean isLocked) {
+		this.isLocked = isLocked;
+	}
+
 
 	@Override
 	public int hashCode() {
