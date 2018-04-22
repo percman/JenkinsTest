@@ -8,7 +8,9 @@ import java.util.HashMap;
 
 public class GUI{
 
-	// Greeting screen runs given no userFile
+	/* A first run method which should only run given no userFile
+	 * The first welcome screen! 
+	 */
 	public static String firstRun() {
 		
 		System.out.println("Hello! Welcome to the first run of Adam Lahey's Project Zero!");
@@ -31,8 +33,10 @@ public class GUI{
 		return username;
 	}
 	
-	
-	// Allows for login given a username and password 
+
+	/* Allows a User to login 
+	 * Takes a HashMap 'userHashData' of all current Users, and compares to see if they are eligible for access 
+	 */
 	public static String login(HashMap<Integer, User> userHashData) {
 		System.out.println("Please enter your user or admin name: ");
 		String username = inputLine();
@@ -58,7 +62,11 @@ public class GUI{
 	}
 	
 
+	/* Standard welcome screen
+	 * Takes HashMap 'userHashData' for login and user creation purposes (to check against)
+	 */
 	public static String welcomeScreen(HashMap<Integer, User> userHashData) {
+		int choice = 100;
 		String newUser = "";
 		
 		System.out.println("Hello! Welcome to Adam Lahey's Project Zero!\n\n");
@@ -67,9 +75,13 @@ public class GUI{
 		System.out.println("0. Exit");
 		System.out.println();
 		
-		String input = inputLine();		
-		Integer inputObject = new Integer(input); 
-		int choice = inputObject.intValue();
+		try {
+			String input = inputLine();
+			Integer inputObject = new Integer(input); 
+			choice = inputObject.intValue();			
+		} catch (NumberFormatException nfe) {
+			System.out.println("That's not even a number!");
+		}
 		
 		switch(choice) {
 		
@@ -95,15 +107,23 @@ public class GUI{
 	}
 	
 	
-	
-	
-	// Allows selection of various activities to do 
+	/* The Main Menu
+	 * easy to adjust :)
+	 * Takes HashMap 'userHashData' for given to other methods 
+	 */
 	public static void mainMenu(HashMap<Integer, User> userHashData, String currentUser) {
+		
+		int choice = 100;
+		
+
+		//Easy adjustment of header and footer
 		int equalsigns = 10;
+		
 		for(int i = 0; i < equalsigns*2; i++) System.out.print("=");
 		System.out.print(" Main Menu ");
 		for(int i = 0; i < equalsigns*2; i++) System.out.print("=");
 		System.out.println();
+		
 		System.out.println("You are currently logged in as: " + currentUser);
 		System.out.println("\nPlease choose from the list below.");
 		System.out.println("1. Check balance");
@@ -120,13 +140,17 @@ public class GUI{
 		for(int i = 0; i < equalsigns*4; i++) System.out.print("=");
 		System.out.println();
 
-
-		String input = inputLine();
-		Integer inputObject = new Integer(input); 
-		int choice = inputObject.intValue();
+		// Converts the string given to an integer value 
+		try {
+			String input = inputLine();
+			Integer inputObject = new Integer(input); 
+			choice = inputObject.intValue();			
+		} catch (NumberFormatException nfe) {
+			System.out.println("That's not even a number!");
+		}
 		
 		switch(choice) {
-		
+	
 		case 0: choice = 0;
 			System.out.println("Thank you for testing out Adam Lahey's Project Zero!");
 			System.out.println("Later!");
@@ -210,8 +234,8 @@ public class GUI{
 		
 		userHashData = hashMapUserData(userFile);
 	    mainMenu(userHashData, currentUser);
-		
 	}
+	
 
 	
 	

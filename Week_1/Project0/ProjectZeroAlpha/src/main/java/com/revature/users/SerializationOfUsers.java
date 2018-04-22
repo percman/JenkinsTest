@@ -1,9 +1,6 @@
 package com.revature.users;
 
-import static com.revature.readwrite.ReadWrite.deleteContentOfFile;
-import static com.revature.readwrite.ReadWrite.lineCount;
-import static com.revature.readwrite.ReadWrite.readFirstLine;
-import static com.revature.readwrite.ReadWrite.writeToExistingFile;
+import static com.revature.readwrite.ReadWrite.*;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

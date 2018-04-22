@@ -16,11 +16,10 @@ import org.apache.log4j.Logger;
 
 
 public class ReadWrite{
-
-	// Declared here so it can be easily found and path changed if need be
 	
-	// Readers and writers to be used later
-	// not sure on static declarations, but it stopped yelling at me when I did this so..
+	/* Readers and writers to be used later
+	 * Saves declaring it in each method so it can be closed in the try-catch-finally without issue
+	 */
 	private static final Logger logger = Logger.getLogger(ReadWrite.class);
 	public static ObjectOutputStream out = null;
 	public static ObjectInputStream in = null;
@@ -28,9 +27,11 @@ public class ReadWrite{
 	public static FileReader fr = null;
 	public static BufferedWriter bw = null;
 	public static BufferedReader br = null;
+
 	
-	// Typically used so the entire file isn't loaded all at once
-	// ex: read first line into array, delete the line, repeat 
+	/* Reads just the first line of a given File
+	 * takes a File 'resource' and returns the currentLine (first line of 'resource') as a String
+	 */
     public static String readFirstLine(File resource) {
 
         String fileName = resource.getPath();
@@ -59,8 +60,10 @@ public class ReadWrite{
         return currentLine;
     }
 
-    // Prints entire file
-    // used as a sort of check
+
+    /* Prints entire File. Used as a sort of check
+     * takes a File 'resource' and System.out each currentLine 
+     */
     public static void readFileStrings(File resource) {
 
         String fileName = resource.getPath();
@@ -89,8 +92,9 @@ public class ReadWrite{
         }
     }
 
-    // User input 
-    // consoleinput = inputLine();
+    /* Takes input and returns it as a String
+     * reads in String from InputStreamRead System.in (console command)
+     */
 	public static String inputLine() {
 		
 		String line = "";
@@ -149,7 +153,9 @@ public class ReadWrite{
 
 	// Writes to a new file at the path given
 	// creates new File resource with string-text toBeWritten
-	
+	/* Writes a String to a new File
+	 * Takes a File 'resource' and writes the String toBeWritten 
+	 */
 	public static void writeToNewFile(String toBeWritten, File resource) {
 		try {
 
@@ -178,7 +184,10 @@ public class ReadWrite{
 	// Copies text into another file
 	// takes entire text of destination and writes into resource, line by line
 	
-	
+	/* Copies a file to another location line by line
+	 * Takes a File 'resource' and writes each line to the File 'destination'
+	 * Note that the 'destination' is not deleted afterwards
+	 */
 	public static void writeToAFileFromAFile(File destination, File resource) {
 		
 		try{
@@ -212,7 +221,9 @@ public class ReadWrite{
 	// Writes to an existing file at the path given
 	// appends File 'resource' with string-text toBeWritten
 	
-	
+	/* Writes a String to an existing File
+	 * Takes a File 'resource' and writes.appends the String 'toBeWritten' 
+	 */
 	public static void writeToExistingFile(String toBeWritten, File resource) {
 		
 		try {
@@ -244,7 +255,9 @@ public class ReadWrite{
 	// Finds a string and removes it from file
 	// given a String toBeRemoved at File 'resource', delete it, doing so by reading line by line 
 	
-	
+	/* Deletes a given String from a given File
+	 * Takes a File 'resource', reads each currentLine, finds the String toBeRemoved, and then writes the remaining currentLine s
+	 */
 	public static void deleteContentOfFile(String toBeRemoved, File resource) {
 		
 		File tempFile = new File("src/main/resources/tempfile.txt");
@@ -290,7 +303,10 @@ public class ReadWrite{
 	// Ensures all readers and writers are closed
 	// if read/write methods are open and not null, close them
 	
-
+	/* A clean up of any open readers / writers
+	 * Used to close up any memory leaks (just in case)
+	 * If any given BufferedReader,Writer, FileReader,Writer is open, this will close it, given they are not null
+	 */
 	public static void codeCleanUp() {
 		try {
 			

@@ -53,7 +53,7 @@ public class Admin extends User{
 		
 		serializedUserFile.delete();
 					
-		System.out.println("The new user " + username + " has been created.");
+		//System.out.println("The new user " + username + " has been created.");
 		
 		return newUser;
 	}
