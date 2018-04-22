@@ -25,65 +25,65 @@ public class User extends Account implements Serializable {
 		System.out.println("Would you like to Withdraw / Deposit / View balance / Sign out\nPlease press w/d/v/ or s");
 		Scanner scan = new Scanner(System.in);
 		try {
-		while(true) {
-			String user = scan.nextLine();
-			user = user.toLowerCase();
-			if(user.equals("w")) {
-				System.out.println("How much would you like to withdraw?");
-				user = scan.nextLine();
-				if(!isStringInteger(user)) {
-					System.out.println("\nInvalid input");
+			while(true) {
+				String user = scan.nextLine();
+				user = user.toLowerCase();
+				if(user.equals("w")) {
+					System.out.println("How much would you like to withdraw?");
+					user = scan.nextLine();
+					if(!isStringInteger(user)) {
+						System.out.println("\nInvalid input");
+						UserHome();
+						break;
+					}
+					else {
+						int w = Integer.parseInt(user);
+						withdraw(w);
+						SerializationOfNewAccount.SerializeAccount(this, new File("src/main/resources/"+getUserName()+".txt"));
+						UserHome();
+						break;
+					}
+				}
+				else if(user.equals("d")) {
+					System.out.println("How much would you like to deposit?");
+					user = scan.nextLine();
+					if(!isStringInteger(user)) {
+						System.out.println("\nInvalid input");
+						UserHome();
+						break;
+					}
+					else {
+						int w = Integer.parseInt(user);
+						deposit(w);
+						SerializationOfNewAccount.SerializeAccount(this, new File("src/main/resources/"+getUserName()+".txt"));
+						UserHome();
+						break;
+					}
+				}
+				else if(user.equals("v")) {
+					System.out.println("You have $"+funds+" available funds in your account");
 					UserHome();
+					break;
+				}
+				else if(user.equals("s")) {
+					Login.menu();
 					break;
 				}
 				else {
-					int w = Integer.parseInt(user);
-					withdraw(w);
-					SerializationOfNewAccount.SerializeAccount(this, new File("src/main/resources/"+getUserName()+".txt"));
 					UserHome();
 					break;
 				}
+					
 			}
-			else if(user.equals("d")) {
-				System.out.println("How much would you like to deposit?");
-				user = scan.nextLine();
-				if(!isStringInteger(user)) {
-					System.out.println("\nInvalid input");
-					UserHome();
-					break;
-				}
-				else {
-					int w = Integer.parseInt(user);
-					deposit(w);
-					SerializationOfNewAccount.SerializeAccount(this, new File("src/main/resources/"+getUserName()+".txt"));
-					UserHome();
-					break;
-				}
-			}
-			else if(user.equals("v")) {
-				System.out.println("You have $"+funds+" available funds in your account");
-				UserHome();
-				break;
-			}
-			else if(user.equals("s")) {
-				Login.menu();
-				break;
-			}
-			else {
-				UserHome();
-				break;
-			}
-				
-		}
 		}catch(NoSuchElementException e) {
-			logger.fatal("Scanner not found", e);
+			logger.warn("Scanner not found", e);
 		}catch(Exception e) {
 			logger.warn(e.getMessage());
 		}finally {
 			try {
 				scan.close();
 			}catch(NoSuchElementException e) {
-				logger.fatal(e.getMessage());
+				logger.warn(e.getMessage());
 			}
 		}
 		

@@ -30,11 +30,16 @@ public class Login {
 					}
 				}
 			}catch(NoSuchElementException e) {
-				logger.fatal("Scanner is missing!", e);
+				logger.warn("Scanner is missing!", e);
 			}catch(Exception e) {
 				logger.warn("Error has occured", e);
+			}finally {
+				try {
+					user.close();
+				}catch(NoSuchElementException nse) {
+					logger.warn(nse.getMessage());
+				}
 			}
-			user.close();
 		}
 		
 		/*
@@ -44,51 +49,62 @@ public class Login {
 		private static void signIn() {
 			Scanner scan = new Scanner(System.in);
 			while(true) {
-				System.out.print("Enter your username: ");
-				String name = scan.nextLine();
-				System.out.print("Enter your password: ");
-				String pword = scan.nextLine();
-				name = name.toLowerCase();
-				if(uNameExist(name)==false)
-					System.out.println("That User name does not exist or password is incorrect");
-				else {
-					File file = new File("src/main/resources/"+name+".txt");
-					Account user = SerializationOfNewAccount.deserializeAccount(file);
-					if(!user.getPassword().equals(pword)) {
-						System.out.println("user name or password is incorrect");
-					}
+				try {
+					System.out.print("Enter your username: ");
+					String name = scan.nextLine();
+					System.out.print("Enter your password: ");
+					String pword = scan.nextLine();
+					name = name.toLowerCase();
+					if(uNameExist(name)==false)
+						System.out.println("That User name does not exist or password is incorrect");
 					else {
-						/*
-						 * Checks to see if the de-serialized obj is an admin or not. 
-						 * If they are an admin then they get taken to the admin menu
-						 */
-						if(UserOrAdmin(user) == true) {
-							Admin cast = (Admin)user;
-							cast.adminMenu();
-							break;
+						File file = new File("src/main/resources/"+name+".txt");
+						Account user = SerializationOfNewAccount.deserializeAccount(file);
+						if(!user.getPassword().equals(pword)) {
+							System.out.println("user name or password is incorrect");
 						}
 						else {
 							/*
-							 * In case if the user's account is locked, they are prompted with this message and are prevented from accessing
-							 * their account
+							 * Checks to see if the de-serialized obj is an admin or not. 
+							 * If they are an admin then they get taken to the admin menu
 							 */
-							User cast = (User)user;
-							if(cast.isLocked()) {
-								System.out.println("YOUR ACCOUNT HAS BEEN LOCKED. PLEASE CONTACT ADMIN FOR FURTHER DETAILS");
-								menu();
+							if(UserOrAdmin(user) == true) {
+								Admin cast = (Admin)user;
+								cast.adminMenu();
 								break;
 							}
-							//If the user's account is not locked then they are allowed to access their account normally
 							else {
-								cast.UserHome();
-							}
-							break;
-						}	
+								/*
+								 * In case if the user's account is locked, they are prompted with this message and are prevented from accessing
+								 * their account
+								 */
+								User cast = (User)user;
+								if(cast.isLocked()) {
+									System.out.println("YOUR ACCOUNT HAS BEEN LOCKED. PLEASE CONTACT ADMIN FOR FURTHER DETAILS");
+									menu();
+									break;
+								}
+								//If the user's account is not locked then they are allowed to access their account normally
+								else {
+									cast.UserHome();
+								}
+								break;
+							}	
+						}
+				
+					}
+				}catch(NoSuchElementException nse) {
+					logger.warn(nse.getMessage());
+				}catch(Exception e) {
+					logger.warn(e.getMessage());
+				}finally {
+					try {
+						scan.close();
+					}catch(NoSuchElementException nse) {
+						logger.warn(nse.getMessage());
 					}
 				}
-					
 			}
-			scan.close();
 		}
 		
 		//Returns whether or not the user is an admin
@@ -118,27 +134,27 @@ public class Login {
 					else
 						nameAvailability = false;
 				}
-			//User puts in their password twice 
-			while(pwordVerify) {
-				System.out.print("Enter your password: ");
-				pword = scan.nextLine();
-				System.out.print("Please re-enter your password for confirmation: ");
-				String pwordV = scan.nextLine();
-				if(pword.equals(pwordV))
-					pwordVerify = false;
-				else
-					System.out.println("You passwords did not match, try again");
-			}
-			
-			System.out.print("Enter the amount of dollars you wish to deposit: $");
-			money = scan.nextInt();
-			
-			//The new user is then serialized and put into a list of users waiting for approval
-			User newUser = new User(name,pword,money);
-			
-			pending(newUser);
+				//User puts in their password twice 
+				while(pwordVerify) {
+					System.out.print("Enter your password: ");
+					pword = scan.nextLine();
+					System.out.print("Please re-enter your password for confirmation: ");
+					String pwordV = scan.nextLine();
+					if(pword.equals(pwordV))
+						pwordVerify = false;
+					else
+						System.out.println("You passwords did not match, try again");
+				}
+				
+				System.out.print("Enter the amount of dollars you wish to deposit: $");
+				money = scan.nextInt();
+				
+				//The new user is then serialized and put into a list of users waiting for approval
+				User newUser = new User(name,pword,money);
+				
+				pending(newUser);
 			}catch(NoSuchElementException e) {
-				logger.fatal("There is no Scanner!", e);
+				logger.warn("There is no Scanner!", e);
 			}catch(Exception e) {
 				logger.warn("That file does not exists", e);
 			}finally {
@@ -146,7 +162,7 @@ public class Login {
 					menu();
 					scan.close();
 				}catch(NoSuchElementException e) {
-					logger.fatal(e.getMessage());
+					logger.warn(e.getMessage());
 				}
 			}
 		}

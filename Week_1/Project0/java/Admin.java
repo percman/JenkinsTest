@@ -36,7 +36,7 @@ public class Admin extends Account implements Serializable {
 					break;
 			}
 		}catch(NoSuchElementException e) {
-			logger.fatal("There is no Scanner", e);
+			logger.warn("There is no Scanner", e);
 		}catch(Exception e) {
 			logger.warn("An error has occured", e);
 		}finally {
@@ -66,7 +66,7 @@ public class Admin extends Account implements Serializable {
 					break;
 			}
 		}catch(NoSuchElementException e) {
-			logger.fatal("There is no Scanner!",e);
+			logger.warn("There is no Scanner!",e);
 		}catch(Exception e) {
 			logger.warn("An error has occured!",e);
 		}finally {
@@ -98,7 +98,7 @@ public class Admin extends Account implements Serializable {
 				}
 			}
 		}catch(NoSuchElementException e) {
-			logger.fatal("There is no Scanner", e);
+			logger.warn("There is no Scanner", e);
 		}catch(Exception e) {
 			logger.warn("An error has occured", e);
 		}
@@ -145,7 +145,7 @@ public class Admin extends Account implements Serializable {
 				}
 			}
 		}catch(NoSuchElementException e) {
-			logger.fatal("There is no Scanner", e);
+			logger.warn("There is no Scanner", e);
 		}catch(Exception e) {
 			logger.warn("An error has occured", e);
 		}finally {
@@ -153,7 +153,7 @@ public class Admin extends Account implements Serializable {
 				BackToMenu();
 				input.close();
 			}catch(NoSuchElementException nse) {
-				logger.fatal(nse.getMessage());
+				logger.warn(nse.getMessage());
 			}
 		}
 	}
@@ -172,29 +172,28 @@ public class Admin extends Account implements Serializable {
 		Scanner input = new Scanner(System.in);
 		int i = 0;
 		try {
-		while(i < pending.waitingSize()) {
-			System.out.println("Do you wish to approve "+pending.getWaiting(i).getUserName()+"? Y/N");
-			User user = pending.getWaiting(i);
-			String answer = input.nextLine();
-			answer.toLowerCase();
-			switch(answer) {
-				case "y" :
-					Approved(user);
-					pending.waitingDelete(user);
-					pending.Add(user.getUserName());
-					break;
-				case "n" :
-					pending.waitingDelete(user);
-					break;
-				default :
-					System.out.println("Skipping user for now");
-					i++;
-					break;
+			while(i < pending.waitingSize()) {
+				System.out.println("Do you wish to approve "+pending.getWaiting(i).getUserName()+"? Y/N");
+				User user = pending.getWaiting(i);
+				String answer = input.nextLine();
+				answer.toLowerCase();
+				switch(answer) {
+					case "y" :
+						Approved(user);
+						pending.waitingDelete(user);
+						pending.Add(user.getUserName());
+						break;
+					case "n" :
+						pending.waitingDelete(user);
+						break;
+					default :
+						System.out.println("Skipping user for now");
+						i++;
+						break;
+				}
 			}
-		}
-		
 		}catch(NoSuchElementException e) {
-			logger.fatal("There is no Scanner", e);
+			logger.warn("There is no Scanner", e);
 		}catch(Exception e) {
 			logger.warn("An error has occured");
 		}finally {
@@ -203,7 +202,7 @@ public class Admin extends Account implements Serializable {
 				BackToMenu();
 				input.close();
 			}catch(NoSuchElementException nse) {
-				logger.fatal(nse);
+				logger.warn(nse);
 			}catch(Exception e) {
 				logger.warn(e.getMessage());
 			}
