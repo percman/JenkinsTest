@@ -75,4 +75,7 @@ yarn-error.log
 Thumbs.db
 
 # empty folder
-src/test/resources
+*/Project0/test/resources
+*/Project1/test/resources
+*/Project2/test/resources
+*/Project3/test/resources
