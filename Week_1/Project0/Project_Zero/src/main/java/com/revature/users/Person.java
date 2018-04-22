@@ -1,7 +1,15 @@
-package com.revature.projectZero;
+package com.revature.users;
 
 import java.io.Serializable;
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
+
+import com.revature.menus.PrincipalMenu;
+import com.revature.menus.StartMenu;
+import com.revature.menus.StudentMenu;
+import com.revature.menus.TeacherMenu;
+import com.revature.singletons.LogThis;
 
 public abstract class Person implements Serializable {
 
@@ -11,10 +19,7 @@ public abstract class Person implements Serializable {
 	private String name;
 	private String userName;
 	private String password;
-
-	// These are methods that all Person classes have, but they will all be
-	// different
-	public abstract void mainMenu();
+	protected String type;
 
 	public Person() {
 		super();
@@ -49,6 +54,10 @@ public abstract class Person implements Serializable {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getType() {
+		return type;
 	}
 
 	@Override
@@ -99,7 +108,7 @@ public abstract class Person implements Serializable {
 	//
 	//
 
-	public void logout() {
+	public static void logout(Person user) {
 		System.out.println("Are you sure you want to log out?");
 		System.out.println("1. Yes");
 		System.out.println("2. No");
@@ -107,18 +116,36 @@ public abstract class Person implements Serializable {
 		Scanner sc = new Scanner(System.in);
 		int choice = sc.nextInt();
 
-		while (true) {
-			if (choice == 1) {
-				System.out.println("You have successfully logged out.");
-				sc.close();
-				Application.startMenu();
-			} else if (choice == 2) {
-				sc.close();
-				this.mainMenu();
-			} else {
-				System.out.println("Please enter a 1 to log out or a 2 to return to main menu.");
-				choice = sc.nextInt();
+		try {
+			while (true) {
+				if (choice == 1) {
+					LogThis.info("You have successfully logged out.");
+					sc.close();
+					StartMenu.startMenu();
+					} else if (choice == 2) {
+					sc.close();
+					if (user.getType().equals("student")) {
+						StudentMenu.studentMenu((Student) user );
+					} else if (user.getType().equals("teacher")) {
+						TeacherMenu.teacherMenu((Teacher) user);
+					} else {
+						PrincipalMenu.principalMenu((Principal) user);
+					}
+					
+				} else {
+					LogThis.info("Invalid Choice");
+					System.out.println("Please enter a 1 to log out or a 2 to return to main menu.");
+					choice = sc.nextInt();
+				}
 			}
+		} catch (InputMismatchException ime) {
+			LogThis.warn(ime.getMessage());
+		} catch (NoSuchElementException nsee) {
+			LogThis.warn(nsee.getMessage());
+		} catch (IllegalStateException ise) {
+			LogThis.warn(ise.getMessage());
+		} finally {
+			sc.close();
 		}
 
 	}

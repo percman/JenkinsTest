@@ -1,4 +1,4 @@
-package com.revature.projectZero;
+package com.revature.singletons;
 
 import org.apache.log4j.Logger;
 
@@ -30,8 +30,8 @@ public class LogThis {
 		logger.info(msg);
 	}
 	
-	public static void warn(String msg, Exception e) {
-		logger.warn(msg, e);
+	public static void warn(String msg) {
+		logger.warn(msg);
 	}
 
 	

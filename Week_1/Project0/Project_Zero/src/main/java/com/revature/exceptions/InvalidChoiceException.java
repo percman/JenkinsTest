@@ -1,4 +1,4 @@
-package com.revature.projectZero;
+package com.revature.exceptions;
 
 public class InvalidChoiceException extends Exception{
 
