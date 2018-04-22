@@ -9,14 +9,15 @@ import org.apache.log4j.Logger;
 
 /**
  * Cameron Skaggs Project Zero
+ * March 2017
  *
  */
 public class App {
 
 	private static final Logger logger = Logger.getLogger(App.class);
-	public static File bankData = new File("src/main/java/cameron.txt");
+	public static File bankData = new File("src/main/java/users.txt");
 	public static int numUsers = 0;
-	public static ArrayList<User> userList = new ArrayList<User>();
+	public static ArrayList<User> userList = User.getUserList(bankData);
 	//Initial page for welcoming new and returning users
 	public static void welcome (Scanner input) {
 		
