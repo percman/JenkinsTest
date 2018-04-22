@@ -1,21 +1,19 @@
 package com.revature.hs;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
 
 
 public class UserDB {
-	private JSONArray DB;
+	private JSONObject DB;
 	private static UserDB instance = null;
 	
 	private static final Logger logger = Logger.getLogger(UserDB.class);
@@ -27,32 +25,48 @@ public class UserDB {
 		return instance;
 	}
 	
-	//TODO: implement
-	public User login(String username, int passwordHash) throws NoSuchUserException, WrongPasswordException {
-		return new User("", 0);
-	}
-	
-	//TODO: implement
-	public Deque<User> getUsers() {
-		Deque<User> dd = new ArrayDeque<User>();
-		JSONObject jso;
-		for (Object o: DB) {
-			jso = (JSONObject) o;
-			jso.get("role");
+	public User login(String username, int passwordHash) throws NoSuchUserException, WrongPasswordException,
+		LockedAccountException, UnApprovedUserException {
+
+		User us = getUser(username);
+		if (us.getPasswordHash() != passwordHash) {
+			throw new WrongPasswordException();
 		}
-		
-		return ;
+		if (us.isLocked()) {
+			throw new LockedAccountException();
+		}
+		if (us instanceof Player && !((Player) us).isApproved()) {
+			throw new UnApprovedUserException();
+		}
+		logger.debug("User " + username + "logged in successfully!");
+		return us;
+	}
+
+	public Deque<User> getUsers() {
+		Deque<User> dd = new ArrayDeque<>();
+		JSONObject jso;
+		String role = null;
+
+		for (String s: DB.keySet()) {
+			jso = DB.getJSONObject(s);
+			role = jso.getString("role");
+			if (role.equals("admin")) {
+				dd.add(new Admin(jso));
+			}
+			else {
+				dd.add(new Player(jso));
+			}
+		}
+
+		return dd;
 	}
 	
-	private Player jsoToPlayer(JSONObject jso) {
-		
-	}
 	
 	private UserDB() {
 		FileReader fr = null;
 		try {
 			fr = new FileReader(new File("src/main/resources/users.json"));
-			DB = new JSONArray(new JSONTokener(fr));
+			DB = new JSONObject(new JSONTokener(fr));
 		} catch (FileNotFoundException fnfe) {
 			logger.warn("Couldn't find users.json", fnfe);
 		} finally {
@@ -64,18 +78,66 @@ public class UserDB {
 		}
 	}
 	
-	//TODO: implement
-	public void addUser(Player user) {
-		
+	private boolean isUser(String username) {
+		try {
+			DB.get(username);
+			return true;
+		} catch (JSONException e) {
+			return false;
+		}
 	}
-	
-	//TODO: implement
-	public void addUser(Admin user) {
-		
+
+	private User getUser(String username) throws NoSuchUserException {
+		JSONObject jso;
+		try {
+			jso = DB.getJSONObject(username);
+		} catch (JSONException e) {
+			logger.warn("User \"" + username +"\"doesn't exist");
+			throw new NoSuchUserException("User \"" + username +"\"doesn't exist");
+		}
+		String role = jso.getString("role");
+		if (role.equals("player")) {
+			return new Player(jso);
+		}
+		else {
+			return new Admin(jso);
+		}
 	}
-	
-	//TODO: implement
+
+	public void addUser(User user) throws DuplicateUserNameException {
+		if (isUser(user.getUserName())) {
+			throw new DuplicateUserNameException();
+		}
+		setUser(user);
+	}
+
+	public void setUser(User user) {
+		DB.put(user.getUserName(), user.toJSONObject());
+		writeToFile();
+	}
+
+
 	public void removeUser(String username) throws NoSuchUserException {
-		
+		if (isUser(username)) {
+			DB.remove(username);
+			writeToFile();
+		}
+		throw new NoSuchUserException();
+	}
+
+	private void writeToFile() {
+		FileWriter fw = null;
+		try {
+			fw = new FileWriter(new File("src/main/resources/users.json"));
+			fw.write(DB.toString());
+		} catch (IOException e) {
+			logger.warn("Couldn't write userDB to file");
+		} finally {
+			try {
+				fw.close();
+			} catch (IOException e) {
+				logger.warn("Failed to close FileWriter after printing userDB to file");
+			}
+		}
 	}
 }
