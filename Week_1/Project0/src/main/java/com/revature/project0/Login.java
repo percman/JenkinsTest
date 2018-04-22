@@ -1,6 +1,5 @@
 package com.revature.project0;
 
-
 //handle all the login attempts of users
 public class Login {
 // checks if a user is currently in the list of users	
@@ -14,7 +13,7 @@ public class Login {
 }
 //checks if a user is currently in the list of users	
 static boolean adminExists(String name) {
-	 for(Admin admin : Record.admins) {
+	for(Admin admin : Record.admins) {
 		 if(admin.username.equals(name)) {
 			 return true;
 		 }
@@ -23,8 +22,6 @@ static boolean adminExists(String name) {
 }
  //checks if the password given matches what is on record for the user
  static boolean checkPassword(String pass,String name) {
-	 
-	 String password = Record.passwords.get(name);
 	 return pass.equals(Record.passwords.get(name));
 }
 }

@@ -1,12 +1,8 @@
 package com.revature.project0;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.StringTokenizer;
 
 import org.apache.log4j.Logger;
@@ -20,24 +16,7 @@ public class Script {
 	// handles the basic start up for the application
 	public static void start(Reader stream) {
 		read = new BufferedReader(stream);
-		File userFile = new File("src/main/resources/userData.txt");
-		File adminFile = new File("src/main/resources/adminData.txt");
-		File passFile = new File("src/main/resources/passData.txt");
-		if (userFile.length() != 0) {
-			Record.users = UserSerializer.deSerializeUser(userFile);
-		} else {
-			Record.users = new HashSet<>();
-		}
-		if (userFile.length() != 0) {
-			Record.admins = AdminSerializer.deSerializeAdmin(adminFile);
-		} else {
-			Record.admins = new HashSet<>();
-		}
-		if (passFile.length() != 0) {
-			Record.passwords = PasswordSerializer.deSerializePasswords(passFile);
-		} else {
-			Record.passwords = new HashMap<>();
-		}
+		Record.loadData();
 		System.out.print("Type login to login or new user to create a new user:");
 		try {
 			input = read.readLine().toLowerCase();
@@ -49,14 +28,13 @@ public class Script {
 			}
 		} catch (IOException ioe) {
 			logger.error(ioe.getMessage(), ioe);
-		} finally {
-			Record.backup();
+		} /*finally {
 			try {
 				read.close();
 			} catch (IOException ioe) {
 				logger.error(ioe.getMessage(), ioe);
 			}
-		}
+		}*/
 	}
 
 	// handles the script that handles the creation of a new user
@@ -76,14 +54,15 @@ public class Script {
 			} else if (type.equals("user")) {
 				FileIO.addNewUser((User) user);
 				logger.info("new user " + username + " created");
-				userHub(FileIO.getUser(username));
+				System.out.println("Your account has been created and is now pending admin approval");
 			}
 		} catch (IOException ioe) {
 			logger.error(ioe.getMessage(), ioe);
-		} catch (UserTypeNotFoundException unfe) {
+		} catch (UserTypeNotFoundException utnfe) {
+			logger.error(utnfe.getMessage(), utnfe);
+		} catch (UserNotFoundException unfe) {
 			logger.error(unfe.getMessage(), unfe);
 		} finally {
-			Record.backup();
 			try {
 				read.close();
 			} catch (IOException ioe) {
@@ -102,15 +81,15 @@ public class Script {
 				String password = read.readLine();
 				if (Login.checkPassword(password, username)) {
 					User user = FileIO.getUser(username);
-					if (!user.isUserApproved()) {
+					if (user.isUserUnapproved()) {
 						throw new ApprovalPendingException();
 					}
-					if (!user.isUserLocked()) {
+					if (user.isUserLocked()) {
 						throw new LockedAccountException();
 					}
-					System.out.print("Welcome " + username);
+					System.out.println("Welcome " + username);
 					logger.info("user " + username + "logged in");
-					userHub(FileIO.getUser("username"));
+					userHub(FileIO.getUser(username));
 				}
 				throw new PasswordIncorrectException();
 			}
@@ -118,11 +97,10 @@ public class Script {
 				System.out.print("Please enter your password:");
 				String password = read.readLine();
 				if (Login.checkPassword(password, username)) {
-					System.out.print("you have been successfully logged in as an admin.");
+					System.out.println("you have been successfully logged in as an admin.");
 					logger.info("admin " + username + "logged in");
-					adminHub(FileIO.getAdmin("username"));
+					adminHub(FileIO.getAdmin(username));
 				}
-				Set<Admin> re = AdminSerializer.deSerializeAdmin(new File("src/main/resources/adminData.txt"));
 				throw new PasswordIncorrectException();
 			} else {
 				throw new UserNotFoundException();
@@ -138,7 +116,6 @@ public class Script {
 		} catch (ApprovalPendingException ape) {
 			logger.error(ape.getMessage(), ape);
 		} finally {
-			Record.backup();
 			try {
 				read.close();
 			} catch (IOException ioe) {
@@ -172,7 +149,7 @@ public class Script {
 					tokenizer = new StringTokenizer(titles, ",");
 					while (tokenizer.hasMoreTokens()) {
 						String title = tokenizer.nextToken();
-						user.removeMovie(tokenizer.nextToken());
+						user.removeMovie(title);
 						logger.info("user " + user.username + "added movie " + title);
 					}
 					break;
@@ -189,13 +166,12 @@ public class Script {
 					logger.info("user " + user.username + "logged out");
 					break;
 				default:
-					System.out.print("please enter add,remove or view.");
+					System.out.println("please enter add,remove or view.");
 				}
 			}
 		} catch (IOException ioe) {
 			logger.error(ioe.getMessage(), ioe);
 		} finally {
-			Record.backup();
 			try {
 				read.close();
 			} catch (IOException ioe) {
@@ -214,7 +190,7 @@ public class Script {
 				String user = "";
 				switch (input) {
 				case "lock":
-					System.out.print("The list of users that can be locked are");
+					System.out.println("The list of users that can be locked are");
 					FileIO.scanLocked();
 					System.out.print("Type the names of the users you want to lock seperated by a comma:");
 					user = read.readLine();
@@ -226,7 +202,7 @@ public class Script {
 					}
 					break;
 				case "unlock":
-					System.out.print("The list of users that can be unlocked are");
+					System.out.println("The list of users that can be unlocked are");
 					FileIO.scanUnlocked();
 					System.out.print("Type the names of the users you want to unlock seperated by a comma:");
 					user = read.readLine();
@@ -238,7 +214,7 @@ public class Script {
 					}
 					break;
 				case "approve":
-					System.out.print("The list of users that are pending approval");
+					System.out.println("The list of users that are pending approval");
 					FileIO.scanApproved();
 					System.out.print("Type the name of the users you want to approve separated by a comma:");
 					user = read.readLine();
@@ -258,13 +234,14 @@ public class Script {
 					logger.info("admin " + admin.username + "logged out");
 					break;
 				default:
-					System.out.print("please enter lock,unlock or approve.");
+					System.out.println("please enter lock,unlock or approve.");
 				}
 			}
 		} catch (IOException ioe) {
 			logger.error(ioe.getMessage(), ioe);
+		} catch (UserNotFoundException unfe) {
+			logger.error(unfe.getMessage(), unfe);
 		} finally {
-			Record.backup();
 			try {
 				read.close();
 			} catch (IOException ioe) {

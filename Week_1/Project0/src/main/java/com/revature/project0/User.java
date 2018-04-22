@@ -3,16 +3,17 @@ package com.revature.project0;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 // houses the current state of a user and the methods that allow them to manipulate thier movie collection
 public class User implements Serializable, NewUser{
+private static final long serialVersionUID = -9008338397651161896L;
 String username, password; // the users username and password
-Set<String> movies = new TreeSet<>();// the users library of movies
+Set<String> movies;// the users library of movies
 public User() {
 	
 }
 public User(String name,String pass) {
+	movies = new HashSet<>();
 	username = name;
 	password = pass;
 }
@@ -35,8 +36,8 @@ public boolean isUserLocked() {
 	return Record.lockedUsers.contains(this.username);
 }
 //checks if a user is approved
-public boolean isUserApproved() {
-	return !Record.unApprovedUsers.contains(this.username);
+public boolean isUserUnapproved() {
+	return Record.unApprovedUsers.contains(this.username);
 }
 
 }

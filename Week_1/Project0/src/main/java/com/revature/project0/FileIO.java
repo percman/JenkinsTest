@@ -1,6 +1,5 @@
 package com.revature.project0;
 
-import java.util.*;
 //adds to and scans the list of all users
 public class FileIO {
 //adds a new user to the list containing all users	
@@ -8,6 +7,7 @@ public static void addNewUser(User user){
 	if(!Record.users.contains(user)&&!Record.admins.contains(new Admin(user.username,user.password))){
 		Record.users.add(user);
 		Record.passwords.put(user.username, user.password);
+		Record.unApprovedUsers.add(user.username);
 	}
 
 }
@@ -22,7 +22,7 @@ public static void addAdmin(Admin admin){
 //looks through the list of users for those who are pending approval
 public static void scanApproved() {
 	for(User user : Record.users) {
-		if(!user.isUserApproved()) {
+		if(user.isUserUnapproved()) {
 			System.out.println(user.username);
 		}
 	}
@@ -42,20 +42,20 @@ public static void scanUnlocked(){
 		}
 	}
 }
-public static User getUser(String name) {
+public static User getUser(String name) throws UserNotFoundException {
 	for(User use : Record.users) {
 		if(use.username.equals(name)) {
 			return use;
 		}	
 	}
-	return null;
+	throw new UserNotFoundException();
 }
-public static Admin getAdmin(String name) {
+public static Admin getAdmin(String name) throws UserNotFoundException {
 	for(Admin admin : Record.admins) {
 		if(admin.username.equals(name)) {
 			return admin;
 		}	
 	}
-	return null;
+	throw new UserNotFoundException();
 }
 }

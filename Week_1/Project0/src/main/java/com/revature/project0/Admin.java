@@ -1,6 +1,7 @@
 package com.revature.project0;
 
 import java.io.Serializable;
+import java.util.Set;
 
 public class Admin implements Serializable,NewUser {
 	private static final long serialVersionUID = 2650766702984126758L;

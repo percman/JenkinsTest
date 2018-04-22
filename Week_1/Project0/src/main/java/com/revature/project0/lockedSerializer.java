@@ -11,10 +11,10 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
-public class UserSerializer {
+public class lockedSerializer {
 	private static final Logger logger = Logger.getLogger(UserSerializer.class);
 	// puts a user into a file
-	public static void serializeUser(Set<User> users, File file) {
+	public static void serializeUser(Set<String> users, File file) {
 		try (ObjectOutputStream userOutStream = new ObjectOutputStream(new FileOutputStream(file.getPath()))) {
 				userOutStream.writeObject(users);
 		} catch (FileNotFoundException fnfe) {
@@ -26,10 +26,9 @@ public class UserSerializer {
 	}
 
 	// pulls down a user from a file
-	public static Set<User> deSerializeUser(File file) {
+	public static Set<String> deSerializelockedUser(File file) {
 		try (ObjectInputStream userInStream = new ObjectInputStream(new FileInputStream(file.getPath()))){
-			
-			return(Set<User>) userInStream.readObject();
+			return(Set<String>) userInStream.readObject();
 		} catch (FileNotFoundException fnfe) {
 			logger.error(fnfe.getMessage(),fnfe);
 		} catch (IOException ioe) {
