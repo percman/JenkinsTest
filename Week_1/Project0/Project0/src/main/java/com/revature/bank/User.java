@@ -5,13 +5,18 @@ import java.util.Map;
 
 public class User extends Person{
 
-	private float balance;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2431287459106300670L;
+	private double balance;
 	boolean locked;
+	
 	public User(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
-		locked = true;
+		locked = false;
 		approved = false;
 		balance = 0;
 	}
@@ -22,19 +27,24 @@ public class User extends Person{
 		userMap.put(username, user);
 	}
 	
-	float getBalance() {
+	double getBalance() {
 		return balance;
 	}
 	
-	void withdraw(float cash) {
-		if(balance >= cash) {
+	void withdraw(double cash) {
+		if(cash<=0) System.out.println("You must enter a positive number.");
+		else if(balance >= cash) {
 			balance =  balance-cash;
 			System.out.println("You have withdrawn $" + cash + " and have $" + balance + " remaining");
 		}
 		else System.out.println("You do not have enough in your account");
 	}
-	void deposit(float cash) {
-		balance+=cash;
-		System.out.println("You now have $" + balance + " in your account.");
+	void deposit(double cash) {
+		if(cash<=0) System.out.println("You must enter a positive number.");
+		else {
+			balance+=cash;
+			System.out.println("You now have $" + balance + " in your account.");
+		}
 	}
+	
 }

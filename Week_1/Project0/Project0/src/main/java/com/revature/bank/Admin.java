@@ -3,6 +3,11 @@ package com.revature.bank;
 import java.util.*;
 
 public class Admin extends Person{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6065239180076826871L;
+
 	public Admin(String username, String password) {
 		super();
 		this.username = username;
@@ -20,6 +25,10 @@ public class Admin extends Person{
 		user.approved = true;
 	}
 	
+	void approveAdmin(Admin admin) {
+		admin.approved = true;
+	}
+	
 	void lockUser(User user) {
 		user.locked = true;
 	}
@@ -27,5 +36,7 @@ public class Admin extends Person{
 	void unlockUser(User user) {
 		user.locked = false;
 	}
+
+
 	
 }
