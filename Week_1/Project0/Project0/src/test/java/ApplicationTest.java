@@ -14,7 +14,7 @@ public class ApplicationTest {
 				
 		userFile.delete();
 		
-		com.revature.users.Application.main(null);
+		com.revature.application.Application.main(null);
 	}
 	
 	@Test
@@ -29,12 +29,12 @@ public class ApplicationTest {
 		User b = addUser("what", "thing", true, false, 200);
 		User c = addUser("dude", "no", true, true, 300);
 		
-		com.revature.users.Application.main(null);
+		com.revature.application.Application.main(null);
 	}
 	
 	@Test
 	public void applicationTest() {		
-		com.revature.users.Application.main(null);
+		com.revature.application.Application.main(null);
 	}
 	
 }

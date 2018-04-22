@@ -1,10 +1,12 @@
-package com.revature.users;
+package com.revature.menu;
 
 import static com.revature.readwrite.ReadWrite.*;
 import static com.revature.users.Admin.*;
 import static com.revature.users.SerializationOfUsers.*;
 
 import java.util.HashMap;
+
+import com.revature.users.User;
 
 public class GUI{
 

@@ -1,13 +1,15 @@
-package com.revature.users;
+package com.revature.application;
 
+import static com.revature.menu.GUI.*;
 import static com.revature.readwrite.ReadWrite.*;
 import static com.revature.users.SerializationOfUsers.*;
-import static com.revature.users.GUI.*;
 import static com.revature.users.Admin.*;
 
 
 
 import java.util.HashMap;
+
+import com.revature.users.User;
 
 /**
  * 
