@@ -15,8 +15,7 @@ import org.apache.log4j.Logger;
 public class App {
 
 	private static final Logger logger = Logger.getLogger(App.class);
-	public static File bankData = new File("src/main/java/users.txt");
-	public static int numUsers = 0;
+	public static File bankData = new File("src/main/java/users3.txt");
 	public static ArrayList<User> userList = User.getUserList(bankData);
 	//Initial page for welcoming new and returning users
 	public static void welcome (Scanner input) {
@@ -89,8 +88,7 @@ public class App {
 			if(taken == false) {
 				System.out.println("Username " + userName + " is available");
 				taken = false;
-				if (numUsers == 0) {
-					numUsers++;
+				if (userList.size() == 0) {
 					newAdmin(userName, input);
 				}
 				else {
