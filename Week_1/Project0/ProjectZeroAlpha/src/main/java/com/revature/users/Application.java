@@ -14,11 +14,18 @@ public class Application{
 	
 	public static void main(String[] args) {	
 		
-		userFile.delete();
-		
 		String currentUser = "";
 		HashMap<Integer, User> userHashData = new HashMap<>();
 		int choice = 0;
+		
+		userFile.delete();
+		
+		User p = addUser("adamL", "easypass", true, true, 53.6);
+		User v = addUser("admjl", "ExCeLl3nT_passW0rd", false, false, 573.6);
+		User f = addUser("neat", "guy", true, false, 531.6);
+		User a = addUser("anything", "true", true, false, 100);
+		User b = addUser("what", "thing", true, false, 200);
+		User c = addUser("dude", "no", true, true, 300);
 		
 		if(!userFile.exists()) {
 			currentUser = firstRun();
@@ -26,13 +33,13 @@ public class Application{
 		}
 		else
 		{
-			System.out.println("Hello! Welcome to Adam Lahey's Project Zero!\n\n");
 			userHashData = hashMapUserData(userFile);
-			currentUser = login(userHashData);
+			currentUser = welcomeScreen(userHashData);
 		}
-			
-		mainMenu(userHashData, currentUser);
 		
+		
+		mainMenu(userHashData, currentUser);
+
 		codeCleanUp();
 	}
 

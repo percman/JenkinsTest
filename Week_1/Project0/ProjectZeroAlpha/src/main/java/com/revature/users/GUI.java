@@ -1,6 +1,6 @@
 package com.revature.users;
 
-import static com.revature.readwrite.ReadWrite.inputLine;
+import static com.revature.readwrite.ReadWrite.*;
 import static com.revature.users.Admin.*;
 import static com.revature.users.SerializationOfUsers.*;
 
@@ -26,7 +26,7 @@ public class GUI{
 		Double doubleObject = new Double(balancestring);
 		double startingbalance = doubleObject.doubleValue();
 		
-		addUserAsAdmin(username, password, true, false, startingbalance);
+		addUser(username, password, true, false, startingbalance);
 		
 		return username;
 	}
@@ -57,6 +57,43 @@ public class GUI{
 		return login(userHashData);
 	}
 	
+
+	public static String welcomeScreen(HashMap<Integer, User> userHashData) {
+		String newUser = "";
+		
+		System.out.println("Hello! Welcome to Adam Lahey's Project Zero!\n\n");
+		System.out.println("1. Login");
+		System.out.println("2. Create new account");
+		System.out.println("0. Exit");
+		System.out.println();
+		
+		String input = inputLine();		
+		Integer inputObject = new Integer(input); 
+		int choice = inputObject.intValue();
+		
+		switch(choice) {
+		
+		case 0: choice = 0;
+			System.out.println("Thank you for testing out Adam Lahey's Project Zero!");
+			System.out.println("Later!");
+			System.exit(0);
+		break;
+		
+		case 1: choice = 1;
+		return login(userHashData);
+		
+		case 2: choice = 2;
+			createUser();
+		return welcomeScreen(userHashData);
+		
+		default:
+	        System.out.println("You have made an invalid entry. Please try again.");
+	        return welcomeScreen(userHashData);
+		}
+		
+		return newUser;
+	}
+	
 	
 	
 	
@@ -73,15 +110,16 @@ public class GUI{
 		System.out.println("2. Deposit");
 		System.out.println("3. Withdraw");
 		System.out.println("4. Switch user");
+		System.out.println("5. Create new account");
 		if(adminCheck(userHashData, currentUser)) {
-			System.out.println("5. Approve or reject new user or admin");
-			System.out.println("6. Lock or unlock account");
+			System.out.println("6. Approve or reject new user or admin");
+			System.out.println("7. Lock or unlock account");
+			System.out.println("8. Upgrade account to admin");
 		}
 		System.out.println("0. Exit");
 		for(int i = 0; i < equalsigns*4; i++) System.out.print("=");
 		System.out.println();
 
-		
 
 		String input = inputLine();
 		Integer inputObject = new Integer(input); 
@@ -92,7 +130,7 @@ public class GUI{
 		case 0: choice = 0;
 			System.out.println("Thank you for testing out Adam Lahey's Project Zero!");
 			System.out.println("Later!");
-		return;
+			System.exit(0);
 		
 		case 1: choice = 1;
 			System.out.println("The current balance is: " + checkBalance(userHashData, currentUser));
@@ -119,8 +157,12 @@ public class GUI{
         case 4: choice = 4;        
 			currentUser = login(userHashData);
 		break;
-		
+        
         case 5: choice = 5;
+        	createUser();
+        break;
+		
+        case 6: choice = 6;
 			System.out.println("Which account would you like to approve or reject? Enter a username: ");
 			System.out.println("If you would like a list of possible awaiting accounts, TBD");
 			String userApproval = inputLine();
@@ -128,7 +170,7 @@ public class GUI{
 			String approvalStatus = inputLine();
 			
 			boolean approve = true;
-			if(approvalStatus == "reject")
+			if(approvalStatus == "approve")
 				approve = true;
 			else
 				approve = false;
@@ -138,10 +180,10 @@ public class GUI{
 			}
 			else
 				System.out.println(userApproval + " has not been found.");
-		
+			
 		break;
 		
-        case 6: choice = 6;
+        case 7: choice = 7;
 			System.out.println("Which account would you like to lock or unlock? Enter a username: ");
 			System.out.println("If you would like a list of possible locked accounts, TBD");
 			String userLocked = inputLine();
@@ -159,9 +201,7 @@ public class GUI{
 			}
 			else
 				System.out.println(userLocked + " has not been found.");
-	        break;	     
-        
-        	
+        break;	     
         
         default:
 	        System.out.println("You have made an invalid entry. Please try again.");

@@ -12,9 +12,7 @@ import java.io.LineNumberReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.NoSuchFileException;
-
 import org.apache.log4j.Logger;
-
 
 
 public class ReadWrite{
@@ -24,7 +22,6 @@ public class ReadWrite{
 	// Readers and writers to be used later
 	// not sure on static declarations, but it stopped yelling at me when I did this so..
 	private static final Logger logger = Logger.getLogger(ReadWrite.class);
-
 	public static ObjectOutputStream out = null;
 	public static ObjectInputStream in = null;
 	public static FileWriter fw = null;
@@ -36,21 +33,28 @@ public class ReadWrite{
 	// ex: read first line into array, delete the line, repeat 
     public static String readFirstLine(File resource) {
 
+        String fileName = resource.getPath();
         String currentLine = null;
 
         try {
-            fr = new FileReader(resource.getPath());
+            fr = new FileReader(fileName);
             br = new BufferedReader(fr);
 
             currentLine = br.readLine();
             
-            br.close();         
         } catch(FileNotFoundException fnfe) {
 			System.err.println("Could not find file '" + resource.getName() + "'");
 			logger.warn(fnfe.getMessage());
         } catch(IOException ioe) {
             System.out.println("Error reading file '" + resource.getName() + "'"); 
 			logger.warn(ioe.getMessage());
+        }finally {
+        	try {
+				br.close();
+			} catch(IOException ioe) {
+	            System.out.println("Error reading file '" + resource.getName() + "'"); 
+				logger.warn(ioe.getMessage());
+	        }
         }
         return currentLine;
     }
@@ -59,22 +63,29 @@ public class ReadWrite{
     // used as a sort of check
     public static void readFileStrings(File resource) {
 
+        String fileName = resource.getPath();
         String currentLine = null;
 
         try {
-            fr = new FileReader(resource.getPath());
+            fr = new FileReader(fileName);
             br = new BufferedReader(fr);
 
             while((currentLine = br.readLine()) != null) {
                 System.out.println(currentLine);
             }   
-            br.close();         
         } catch(FileNotFoundException fnfe) {
 			System.err.println("Could not find file '" + resource.getName() + "'");
 			logger.warn(fnfe.getMessage());
         } catch(IOException ioe) {
             System.out.println("Error reading file '" + resource.getName() + "'"); 
 			logger.warn(ioe.getMessage());
+        } finally {
+        	try {
+				br.close();
+			}  catch(IOException ioe) {
+	            System.out.println("Error reading file '" + resource.getName() + "'"); 
+				logger.warn(ioe.getMessage());
+	        }
         }
     }
 
@@ -86,12 +97,20 @@ public class ReadWrite{
 		
 		try {
 			br = new BufferedReader(new InputStreamReader(System.in));
-			line = br.readLine();
-			
+			line = br.readLine();			
 		} catch (IOException ioe) {
             System.out.println("Error getting input from the input stream"); 
-			logger.warn(ioe.getMessage());
+			ioe.printStackTrace();
 		} 
+		// Crazy bug if I close the bufferedreader stream so I'm leaving it open 
+//		finally {
+//		try {
+//			br.close();
+//		} catch (IOException ioe) {
+//            System.out.println("Error getting input from the input stream"); 
+//			logger.warn(ioe.getMessage());			
+//		}
+//	}
 		return line;
 	}
 	
@@ -99,30 +118,38 @@ public class ReadWrite{
 	// easy way to quickly check current number of users etc 
 	public static int lineCount(File resource){
 		int result = 0;
+
 		try
 		(
 		   FileReader input = new FileReader(resource);
-		   LineNumberReader count = new LineNumberReader(input);
+		   LineNumberReader lnr = new LineNumberReader(input);
 		)
 		{
-		   while (count.skip(Long.MAX_VALUE) > 0)
-		   {
-		      // Loop just in case the file is > Long.MAX_VALUE or skip() decides to not read the entire file
-		   }
+		   while (lnr.skip(Long.MAX_VALUE) > 0){}
 
-		   result = count.getLineNumber() + 1;                                    // +1 because line index starts at 0
+		   result = lnr.getLineNumber() + 1;
 		} catch(FileNotFoundException fnfe) {
 			System.err.println("Could not find file '" + resource.getName() + "'");
 			logger.warn(fnfe.getMessage());
         } catch(IOException ioe) {
             System.out.println("Error reading file '" + resource.getName() + "'"); 
 			logger.warn(ioe.getMessage());
-        }
+        } 
+		// Getting a weird bug here again so I'm leaving this open 
+//		finally {
+//        	try {
+//        		lnr.close();
+//        	}  catch (IOException ioe) {
+//	            System.out.println("Error getting input from the input stream"); 
+//				logger.warn(ioe.getMessage());			
+//			}
+//        }
 		return result;
 	}
 
 	// Writes to a new file at the path given
 	// creates new File resource with string-text toBeWritten
+	
 	public static void writeToNewFile(String toBeWritten, File resource) {
 		try {
 
@@ -138,11 +165,20 @@ public class ReadWrite{
         } catch(IOException ioe) {
             System.out.println("Error reading file '" + resource.getName() + "'"); 
 			logger.warn(ioe.getMessage());
+        } finally {
+        	try {
+        		bw.close();
+        	} catch (IOException ioe) {
+	            System.out.println("Error getting input from the input stream"); 
+				logger.warn(ioe.getMessage());			
+			}
         }
 	}
 
 	// Copies text into another file
 	// takes entire text of destination and writes into resource, line by line
+	
+	
 	public static void writeToAFileFromAFile(File destination, File resource) {
 		
 		try{
@@ -162,12 +198,21 @@ public class ReadWrite{
         } catch(IOException ioe) {
             System.out.println("Error reading file '" + resource.getName() + "'"); 
 			logger.warn(ioe.getMessage());
+        } finally {
+        	try {
+        		br.close();
+        	} catch (IOException ioe) {
+	            System.out.println("Error getting input from the input stream"); 
+				logger.warn(ioe.getMessage());			
+			}
         }
 		
 	}
 
 	// Writes to an existing file at the path given
 	// appends File 'resource' with string-text toBeWritten
+	
+	
 	public static void writeToExistingFile(String toBeWritten, File resource) {
 		
 		try {
@@ -176,9 +221,7 @@ public class ReadWrite{
 			
 			toBeWritten+= "\n";
 			bw.write(toBeWritten);
-			
-			bw.close();
-			
+						
 		} catch (NoSuchFileException nsfe) {
 			writeToNewFile(toBeWritten, resource);
 			//logger.warn(nsfe.getMessage());
@@ -188,11 +231,20 @@ public class ReadWrite{
         } catch(IOException ioe) {
             System.out.println("Error reading file '" + resource.getName() + "'"); 
 			logger.warn(ioe.getMessage());
-        }
+        } finally {
+        	try {
+        		bw.close();
+        	} catch (IOException ioe) {
+	            System.out.println("Error getting input from the input stream"); 
+				logger.warn(ioe.getMessage());			
+			}
+        } 
 	}
 
 	// Finds a string and removes it from file
 	// given a String toBeRemoved at File 'resource', delete it, doing so by reading line by line 
+	
+	
 	public static void deleteContentOfFile(String toBeRemoved, File resource) {
 		
 		File tempFile = new File("src/main/resources/tempfile.txt");
@@ -224,11 +276,21 @@ public class ReadWrite{
         } catch(IOException ioe) {
             System.out.println("Error reading file '" + resource.getName() + "'"); 
 			logger.warn(ioe.getMessage());
+        } finally {
+        	try {
+        		br.close();
+        		bw.close();
+        	} catch (IOException ioe) {
+	            System.out.println("Error getting input from the input stream"); 
+				logger.warn(ioe.getMessage());			
+			}
         }
 	}
 
 	// Ensures all readers and writers are closed
 	// if read/write methods are open and not null, close them
+	
+
 	public static void codeCleanUp() {
 		try {
 			
@@ -239,11 +301,13 @@ public class ReadWrite{
 			if(in != null) in.close();
 
 		} catch (IOException ioe) {
-			logger.warn(ioe.getMessage());
+			ioe.printStackTrace();
 		} catch(NullPointerException npe) {
-			logger.warn(npe.getMessage());
+			npe.printStackTrace();
 			System.out.println("This error was successfully handled.");
 		}
 	}
 	
 }
+
+

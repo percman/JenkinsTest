@@ -16,7 +16,7 @@ public class Admin extends User{
 
 	// Sloppy way to read in user information and write it to a file
 	// takes input for each property of User newUser, and serializes it to File 'userFile'
-	public static void addUserAsAdmin() {
+	public static void createUser() {
 
 		System.out.println("Please enter the username: ");
 		String username = inputLine();
@@ -24,22 +24,13 @@ public class Admin extends User{
 		System.out.println("Please enter your password (case-sensitive)");
 		String password = inputLine();
 		
-		System.out.println("Is this person an admin? T or F");
-		String adminstatusstring = inputLine(); 
-		boolean adminstatus;
-		if(adminstatusstring.equals("T"))
-			adminstatus = true;
-		else 
-			adminstatus = false;
 		
 		System.out.println("What is the beginning balance?");
 		String balancestring = inputLine();
 		Double doubleObject = new Double(balancestring);
 		double startingbalance = doubleObject.doubleValue();
 		
-		boolean locked = true;
-		
-		User newUser = new User (username, password, adminstatus, locked, startingbalance);
+		User newUser = new User (username, password, false, true, startingbalance);
 		
 		serializeUser(newUser, serializedUserFile);
 		writeToAFileFromAFile(userFile, serializedUserFile);
@@ -47,12 +38,13 @@ public class Admin extends User{
 		serializedUserFile.delete();
 					
 		System.out.println("The new user " + username + " has been created.");
-		System.out.println("You will be locked until an admin approves the account.");
+		System.out.println("This account will be locked until an admin approves the account.");
 	}
+
 	
 	// Easy way to have User objects loaded for testing 
 	// allows for direct input by taking String etc 
-	public static User addUserAsAdmin(String username, String password, boolean adminstatus, boolean locked, double startingbalance) {
+	public static User addUser(String username, String password, boolean adminstatus, boolean locked, double startingbalance) {
 		
 		User newUser = new User (username, password, adminstatus, locked, startingbalance);
 		
@@ -143,7 +135,7 @@ public class Admin extends User{
 				userHashData.put(i, updatedUser);
 				userFile.delete();
 				for(int n = 0; n < (count - 1); n++) {
-					addUserAsAdmin(userHashData.get(n).getName(), 
+					addUser(userHashData.get(n).getName(), 
 							userHashData.get(n).getPassword(), 
 							userHashData.get(n).isAdminStatus(), 
 							userHashData.get(n).isLocked(), 
@@ -167,7 +159,7 @@ public class Admin extends User{
 				userHashData.put(i, updatedUser);
 				userFile.delete();
 				for(int n = 0; n < (count - 1); n++) {
-					addUserAsAdmin(userHashData.get(n).getName(), 
+					addUser(userHashData.get(n).getName(), 
 							userHashData.get(n).getPassword(), 
 							userHashData.get(n).isAdminStatus(), 
 							userHashData.get(n).isLocked(), 

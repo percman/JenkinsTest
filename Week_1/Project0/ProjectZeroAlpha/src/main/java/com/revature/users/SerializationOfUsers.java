@@ -20,11 +20,8 @@ import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 
-
 public class SerializationOfUsers {
 		
-	private static final Logger logger = Logger.getLogger(SerializationOfUsers.class);
-	
 	public static ObjectOutputStream out = null;
 	public static ObjectInputStream in = null;
 	public static FileWriter fw = null;
@@ -35,6 +32,9 @@ public class SerializationOfUsers {
 	// File paths declared here so they can easily be changed later 
 	public static File userFile = new File("src/main/resources/users.txt");
 	public static File serializedUserFile = new File("src/main/resources/serializeduser.txt");
+	
+	public static final Logger logger = Logger.getLogger(SerializationOfUsers.class);
+
 	
 	// Serializes a given user
 	// takes User 'u' and uses the hashCode to write to File 'resource'
@@ -63,7 +63,14 @@ public class SerializationOfUsers {
         } catch (ClassNotFoundException cfne) {
         	System.out.println("Error reading a class file");
 			logger.warn(cfne.getMessage());
-		} 
+		} finally {
+			try {
+				in.close();
+			} catch(IOException ioe) {
+	            System.out.println("Error reading file '" + resource.getName() + "'"); 
+				logger.warn(ioe.getMessage());
+	        } 
+		}
 		return null;
 	}
 	
