@@ -13,7 +13,7 @@ public class Card {
         this.name = jso.getString("name");
         this.rarity = CardCollector.stringToRarity(jso.getString("rarity"));
         this.mana = jso.getInt("cost");
-        this.owned = jso.getInt("owned");
+        this.owned = 1;
         this.json = jso;
     }
 

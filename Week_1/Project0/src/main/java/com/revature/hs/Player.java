@@ -17,8 +17,9 @@ public class Player extends User {
 		super(jso);
 		JSONArray ja = jso.getJSONArray("myCards");
 		this.myCards = new ArrayList<Card>;
+		CardCollector cc = CardCollector.getInstance();
 		for (Object o: ja) {
-			this.addCard(CardCollector.getCard((String) o));
+			this.addCard(cc.getCard((String) o));
 		}
 		this.dust = jso.getInt("dust");
 		this.isApproved = jso.getBoolean("isApproved");
