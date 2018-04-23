@@ -1,0 +1,169 @@
+2018-04-23 01:39:07 INFO  KLBankLogger:311 - Admin file exist.
+2018-04-23 01:39:24 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:39:24 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:39:24 INFO  KLBankLogger:247 - User is logged in!
+2018-04-23 01:39:27 INFO  KLBankLogger:365 - Scanner resources closed.
+2018-04-23 01:40:10 INFO  KLBankLogger:311 - Admin file exist.
+2018-04-23 01:40:14 INFO  KLBankLogger:371 - Scanner resources closed.
+2018-04-23 01:40:27 INFO  KLBankLogger:311 - Admin file exist.
+2018-04-23 01:40:41 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:40:41 INFO  KLBankLogger:254 - Failed login!
+2018-04-23 01:41:59 INFO  KLBankLogger:371 - Scanner resources closed.
+2018-04-23 01:46:12 INFO  KLBankLogger:403 - Admin file exist.
+2018-04-23 01:46:39 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:46:39 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:46:39 INFO  KLBankLogger:339 - User is logged in!
+2018-04-23 01:46:43 INFO  KLBankLogger:352 - User is logged out!
+2018-04-23 01:47:16 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 01:47:16 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 01:47:16 INFO  KLBankLogger:396 - .ser created.
+2018-04-23 01:47:26 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:47:26 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:47:26 INFO  KLBankLogger:339 - User is logged in!
+2018-04-23 01:47:34 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 01:47:34 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 01:47:58 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 01:47:58 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 01:48:53 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 01:48:53 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 01:49:01 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 01:49:01 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 01:49:08 INFO  KLBankLogger:352 - User is logged out!
+2018-04-23 01:49:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:49:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:49:14 INFO  KLBankLogger:339 - User is logged in!
+2018-04-23 01:49:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:49:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:54:16 INFO  KLBankLogger:414 - Admin file exist.
+2018-04-23 01:54:48 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 01:54:48 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 01:54:48 INFO  KLBankLogger:407 - .ser created.
+2018-04-23 01:55:01 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:55:01 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:55:01 INFO  KLBankLogger:348 - User is logged in!
+2018-04-23 01:55:01 INFO  KLBankLogger:38 - Scanner resources closed.
+2018-04-23 01:56:34 INFO  KLBankLogger:415 - Admin file exist.
+2018-04-23 01:57:00 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:57:00 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:57:00 INFO  KLBankLogger:349 - User is logged in!
+2018-04-23 01:57:29 INFO  KLBankLogger:475 - Scanner resources closed.
+2018-04-23 01:57:32 INFO  KLBankLogger:415 - Admin file exist.
+2018-04-23 01:58:15 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 01:58:15 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 01:58:15 INFO  KLBankLogger:408 - .ser created.
+2018-04-23 01:58:24 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:58:24 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:58:24 INFO  KLBankLogger:349 - User is logged in!
+2018-04-23 01:58:36 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:58:36 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:58:36 INFO  KLBankLogger:349 - User is logged in!
+2018-04-23 01:58:41 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:58:41 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:58:41 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:59:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:59:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:59:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:59:26 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 01:59:26 INFO  KLBankLogger:335 - qwe123 is denied!
+2018-04-23 01:59:26 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 01:59:26 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 01:59:26 INFO  KLBankLogger:337 - Serialized current user.
+2018-04-23 01:59:29 INFO  KLBankLogger:362 - User is logged out!
+2018-04-23 02:02:23 INFO  KLBankLogger:475 - Scanner resources closed.
+2018-04-23 02:02:34 INFO  KLBankLogger:422 - Admin file exist.
+2018-04-23 02:02:44 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:02:44 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:02:44 INFO  KLBankLogger:356 - User is logged in!
+2018-04-23 02:03:22 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:03:22 INFO  KLBankLogger:363 - Failed login!
+2018-04-23 02:03:29 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:03:29 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:03:29 INFO  KLBankLogger:356 - User is logged in!
+2018-04-23 02:03:31 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:03:31 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:03:31 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:03:35 INFO  KLBankLogger:369 - User is logged out!
+2018-04-23 02:03:40 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:03:40 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:03:40 INFO  KLBankLogger:356 - User is logged in!
+2018-04-23 02:04:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:04:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:04:14 INFO  KLBankLogger:356 - User is logged in!
+2018-04-23 02:04:24 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:04:24 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:04:24 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:04:53 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:04:53 INFO  KLBankLogger:328 - kirk is approved!
+2018-04-23 02:04:53 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 02:04:53 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 02:04:53 INFO  KLBankLogger:330 - Serialized current user.
+2018-04-23 02:06:22 WARN  KLBankLogger:42 - File not found
+java.io.FileNotFoundException: Project_00\src\main\resources\Users\r.ser (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at BankApp.Serialization.deserializeUser(Serialization.java:38)
+	at BankApp.KLBank.lockAccount(KLBank.java:298)
+	at BankApp.KLBank.retrieveAdminMenuSelection(KLBank.java:216)
+	at BankApp.KLBank.adminMenu(KLBank.java:203)
+	at BankApp.KLBank.retrieveMenuSelection(KLBank.java:64)
+	at BankApp.KLBank.menu(KLBank.java:50)
+	at BankApp.KLBank.start(KLBank.java:36)
+	at BankApp.KLBank.main(KLBank.java:494)
+2018-04-23 02:06:22 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:06:22 INFO  KLBankLogger:301 - r is locked!
+2018-04-23 02:06:22 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 02:06:22 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 02:06:22 INFO  KLBankLogger:303 - Serialized current user.
+2018-04-23 02:07:48 INFO  KLBankLogger:369 - User is logged out!
+2018-04-23 02:07:50 INFO  KLBankLogger:482 - Scanner resources closed.
+2018-04-23 02:08:04 INFO  KLBankLogger:424 - Admin file exist.
+2018-04-23 02:08:10 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:08:10 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:08:10 INFO  KLBankLogger:358 - User is logged in!
+2018-04-23 02:08:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:08:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:08:14 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:11 INFO  KLBankLogger:424 - Admin file exist.
+2018-04-23 02:09:16 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:16 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:16 INFO  KLBankLogger:358 - User is logged in!
+2018-04-23 02:09:18 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:18 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:18 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:32 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:32 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:32 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:36 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:09:36 INFO  KLBankLogger:302 - kirk is locked!
+2018-04-23 02:09:36 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 02:09:36 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 02:09:36 INFO  KLBankLogger:304 - Serialized current user.
+2018-04-23 02:10:20 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:10:20 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:10:20 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:10:22 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:10:22 INFO  KLBankLogger:316 - kirk is unlocked!
+2018-04-23 02:10:22 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 02:10:22 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 02:10:22 INFO  KLBankLogger:318 - Serialized current user.
+2018-04-23 02:10:26 INFO  KLBankLogger:371 - User is logged out!
+2018-04-23 02:10:37 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:10:37 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:10:37 INFO  KLBankLogger:358 - User is logged in!
+2018-04-23 02:12:14 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 02:12:14 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 02:12:19 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 02:12:19 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 02:12:24 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 02:12:24 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 02:12:30 INFO  KLBankLogger:18 - .ser file created.
+2018-04-23 02:12:30 INFO  KLBankLogger:26 - Out resources closed.
+2018-04-23 02:12:35 INFO  KLBankLogger:371 - User is logged out!
+2018-04-23 02:12:46 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:12:46 INFO  KLBankLogger:365 - Failed login!
+2018-04-23 02:12:57 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:12:57 INFO  KLBankLogger:51 - In resources closed.
+2018-04-23 02:12:57 INFO  KLBankLogger:358 - User is logged in!
+2018-04-23 02:13:00 INFO  KLBankLogger:478 - Scanner resources closed.

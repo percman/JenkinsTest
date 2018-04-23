@@ -1,60 +1,58 @@
 package BankApp;
 
+import org.apache.log4j.Logger;
+
 import java.io.*;
 
-public class Serialization {
-    public static void serializeUsers(User u) {
+public class Serialization implements Serializable {
+    private static final long serialVersionUID = 4025645288366771784L;
+    final static Logger logger = Logger.getLogger(KLBankLogger.class);
+    public static void serializeUser(User user){
         ObjectOutputStream objectOut = null;
         FileOutputStream fileOut = null;
 
         try {
-            fileOut = new FileOutputStream("Project_00/src/main/resources/Users.ser");
+            fileOut = new FileOutputStream("Project_00/src/main/resources/Users/"+user.getUsername()+".ser");
             objectOut = new ObjectOutputStream(fileOut);
-            objectOut.writeObject(u);
-            // TODO - log saved User.ser
-            //System.out.print("Serialized data is saved in Project_00/src/main/resources/" + name + ".ser");
-        } catch (IOException i) {
-            // TODO - log exception
-            i.printStackTrace();
+            objectOut.writeObject(user);
+            logger.info(".ser file created.");
+        } catch (IOException ioe) {
+            logger.warn("I/O Exception", ioe);
         } finally {
             // Close resources
             try {
-                // TODO - log resource closed for each
                 if (fileOut != null) fileOut.close();
-                if (fileOut != null) objectOut.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+                if (objectOut != null) objectOut.close();
+                logger.info("Out resources closed.");
+            } catch (IOException ioe) {
+                logger.warn("I/O Exception", ioe);
             }
         }
     }
 
-    public static User deserializeUsers() {
+    public static User deserializeUser(String username) {
         ObjectInputStream objectIn = null;
         FileInputStream fileIn = null;
-        User u = new User();
-
+        User user = new User();
         try {
-            fileIn = new FileInputStream("Project_00/src/main/resources/Users.ser");
+            fileIn = new FileInputStream("Project_00/src/main/resources/Users/"+username+".ser");
             objectIn = new ObjectInputStream(fileIn);
-            u = (User) objectIn.readObject();
+            user = (User) objectIn.readObject();
         } catch (FileNotFoundException fnfe) {
-            System.out.println("File not found.");
-        } catch (IOException i) {
-            i.printStackTrace();
+            logger.warn("File not found", fnfe);
+        } catch (IOException ioe) {
+            logger.warn("I/O Exception", ioe);
         } catch (ClassNotFoundException c) {
-            System.out.println("Class not found");
-            c.printStackTrace();
+            logger.warn("Class not found.", c);
         } finally {
             try {
                 if (objectIn != null) objectIn.close();
                 if (fileIn != null) fileIn.close();
-            } catch (IOException e) {
-                // TODO - log resource closed for each
-                System.out.println("IOE Exception");
-                e.printStackTrace();
+                logger.info("In resources closed.");
+            } catch (IOException ioe) {
+                logger.warn("I/O Exception", ioe);
             }
-
         }
-        return u;
+        return user;
     }
 }

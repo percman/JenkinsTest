@@ -1,6 +1,9 @@
 package BankApp;
 
-import java.io.*;
+import org.apache.log4j.Logger;
+
+import java.io.File;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,45 +11,34 @@ import java.util.Objects;
 
 // Implements Serializable
 public class User implements Serializable {
-    // Private variables/data
-    private static final long serialVersionUID = 8042201454532240354L;
-    private List<User> listOfUsers = new ArrayList<>();
-    private int identityNumber;
+    // Private data field
+    private static final long serialVersionUID = 4283633998630427366L;
+    //final static Logger logger = Logger.getLogger(KLBankLogger.class);
+    private String username;
+    private String password;        //Encrypt
     private String email;
-    private String password;                // Encrypt
     private String firstName;
     private String lastName;
     private LocalDate birthday;
-    private String street;                  // Move to CustomerCheckingAccount
-    private String state;                   // Move to CustomerCheckingAccount
-    private String country;                 // Move to CustomerCheckingAccount
-    private String zipcode;                 // Move to CustomerCheckingAccount
-    private String socialSecurityNumber;    // Encrypt and move to CustomerCheckingAccount
+    private double balance;
     private String role;
+    private int lock; // -1 = new, 1 = locked,  0 = unlocked
 
-    // No arg constructor
-    public User() {
+    // No arg Constructor
+    User() {
     }
 
-    // Setters and Getters
+    //Setters and Getters
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
 
-    public List<User> getListOfUsers() {
-        return listOfUsers;
+    public String getUsername() {
+        return username;
     }
 
-    public void setListOfUsers(List<User> listOfUsers) {
-        this.listOfUsers = listOfUsers;
-    }
-
-    public int getIdentityNumber() {
-        return identityNumber;
-    }
-
-    public void setIdentityNumber(int identityNumber) {
-        this.identityNumber = identityNumber;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -89,44 +81,12 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
-    public String getStreet() {
-        return street;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
-    }
-
-    public String getSocialSecurityNumber() {
-        return socialSecurityNumber;
-    }
-
-    public void setSocialSecurityNumber(String socialSecurityNumber) {
-        this.socialSecurityNumber = socialSecurityNumber;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public String getRole() {
@@ -137,93 +97,50 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    // Hashcode and equals
+    public int getLock() {
+        return lock;
+    }
 
+    public void setLock(int lock) {
+        this.lock = lock;
+    }
 
+    // hashCode() and equals()
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return identityNumber == user.identityNumber &&
-                Objects.equals(listOfUsers, user.listOfUsers) &&
-                Objects.equals(email, user.email) &&
+        return Double.compare(user.balance, balance) == 0 &&
+                lock == user.lock &&
+                Objects.equals(username, user.username) &&
                 Objects.equals(password, user.password) &&
+                Objects.equals(email, user.email) &&
                 Objects.equals(firstName, user.firstName) &&
                 Objects.equals(lastName, user.lastName) &&
                 Objects.equals(birthday, user.birthday) &&
-                Objects.equals(street, user.street) &&
-                Objects.equals(state, user.state) &&
-                Objects.equals(country, user.country) &&
-                Objects.equals(zipcode, user.zipcode) &&
-                Objects.equals(socialSecurityNumber, user.socialSecurityNumber) &&
                 Objects.equals(role, user.role);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(listOfUsers, identityNumber, email, password, firstName, lastName, birthday, street, state, country, zipcode, socialSecurityNumber, role);
+        return Objects.hash(username, password, email, firstName, lastName, birthday, balance, role, lock);
     }
 
-    // Methods
-    // Static Instance Initializer
-    // Check if file exists if not create a new one.
-    static {
-        File file = new File("Project_00/src/main/resources/Users.ser");
-
-        if (file.exists()) {
-            //todo log Users.ser exist.
-        } else {
-            User u = new User();
-            Serialization.serializeUsers(u);
-        }
+    public static boolean checkLogin(String username, String password) {
+        User u = Serialization.deserializeUser(username);
+        if (u.getPassword() != null) {
+            return u.getPassword().equals(password);
+        } else
+            return false;
     }
 
-    /**********************************
-
-     Start of masterUser methods.
-
-     **********************************/
-
-    // Add a user to the listOfUsers
-    void addUserToList(User u) {
-        this.listOfUsers.add(u);
+    public static User getUser(String username, String password) {
+        User u = Serialization.deserializeUser(username);
+        if (u.getPassword() == password) {
+            return u;
+        } else
+            return null;
     }
-
-    // Check email for login
-    boolean checkLogin(String email, String password) {
-        boolean result = false;
-        for (User u : this.listOfUsers) {
-            if (u.getEmail().equals(email) && u.getPassword().equals(password)) {
-                result = true;
-                break;
-            }
-        }
-        return result;
-    }
-
-    User getUser(String email) {
-        User user = new User();
-        for (User u : listOfUsers){
-            if (u.getEmail().equals(email)) {
-                user = u;
-                break;
-            }
-            else{
-                //todo log that user was not found
-            }
-        }
-        return user;
-    }
-    /**********************************
-
-     End of masterUser methods.
-
-     **********************************/
-
-//    // main used to quick test
-//    public static void main(String[] args) {
-//
-//    }
 }
