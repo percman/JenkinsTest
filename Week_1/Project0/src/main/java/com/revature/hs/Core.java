@@ -81,6 +81,12 @@ public class Core {
 				case DUST_EXTRAS:
 					player.dustExtras();
 					break;
+				case VIEW_CARDS:
+					player.viewCards();
+					break;
+				case CRAFT_CARD:
+					player.craftCard();
+					break;
 				case LOGOUT:
 					return;
 			}

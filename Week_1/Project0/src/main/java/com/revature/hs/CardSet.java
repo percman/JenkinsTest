@@ -63,6 +63,10 @@ public class CardSet {
 		withCommons = new EnumeratedDistribution(weightList);
 	}
 
+	public List<Card> getCardList(Rarity r) {
+		return this.cards.get(r);
+	}
+
 	private void generateNoCommons() {
 		List<Pair<Rarity, Double>> weightList = new LinkedList<>();
 		weightList.add(new Pair(RARE, NC_RARE_PERCENTAGE));

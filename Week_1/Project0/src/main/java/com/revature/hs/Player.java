@@ -8,6 +8,9 @@ import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import com.revature.hs.Rarity.*;
+
+import static com.revature.hs.Rarity.*;
 
 public class Player extends User {
 	private HashMap<String, Card> myCards;
@@ -100,6 +103,42 @@ public class Player extends User {
 		saveState();
 	}
 
+	public void craftCard() {
+		TextIO textIO = TextIoFactory.getTextIO();
+		TextTerminal terminal = textIO.getTextTerminal();
+		logger.debug("Entering crafting");
+		Card card;
+
+		terminal.println("Crafting costs are as follows: ");
+		terminal.println(COMMON.name() + ": " + CardCollector.getCraftCost(COMMON));
+		terminal.println(RARE.name() + ": " + CardCollector.getCraftCost(RARE));
+		terminal.println(EPIC.name() + ": " + CardCollector.getCraftCost(EPIC));
+		terminal.println(LEGENDARY.name() + ": " + CardCollector.getCraftCost(LEGENDARY));
+		terminal.println("Your dust: " + this.dust);
+
+		Rarity whatRarity = textIO.newEnumInputReader(Rarity.class).read(
+				"What rarity do you want to craft?");
+		if (CardCollector.getCraftCost(whatRarity) > this.dust) {
+			terminal.println("You can't afford that.");
+			return;
+		}
+		SetOptions whatSet = textIO.newEnumInputReader(SetOptions.class).read(
+				"What set do you want to craft from?");
+
+		List<Card> cardList = CardCollector.getInstance().getCardList(whatSet, whatRarity);
+		CardCollector.printCardList(cardList);
+		terminal.println("");
+		String numString = textIO.newStringInputReader().read("type the number of the card you want to craft" +
+				", or anything else to cancel");
+		try {
+			this.addCard(cardList.get(Integer.parseInt(numString)));
+			this.dust -= CardCollector.getCraftCost(whatRarity);
+		}catch ( NumberFormatException e){ }
+		catch (IndexOutOfBoundsException e){}
+		saveState();
+
+	}
+
 	public void dustExtras() {
 		TextIO textIO = TextIoFactory.getTextIO();
 		TextTerminal terminal = textIO.getTextTerminal();
@@ -113,6 +152,21 @@ public class Player extends User {
 		}
 		saveState();
 	}
+
+	public void viewCards() {
+		TextIO textIO = TextIoFactory.getTextIO();
+		TextTerminal terminal = textIO.getTextTerminal();
+		List<Card> ll = new LinkedList<>(myCards.values());
+		ll.sort(new CardSorter());
+		logger.info("Printing user's cards.");
+		terminal.println("My Collection:");
+		terminal.println();
+		for (Card c: ll) {
+			terminal.println(c.getRarity().name() + ": " + c.getName());
+		}
+	}
+
+
 
 	public void saveState() {
 		UserDB.getInstance().setUser(this);

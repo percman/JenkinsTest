@@ -1,6 +1,9 @@
 package com.revature.hs;
 
 import org.apache.log4j.Logger;
+import org.beryx.textio.TextIO;
+import org.beryx.textio.TextIoFactory;
+import org.beryx.textio.TextTerminal;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -97,6 +100,19 @@ public class CardCollector {
 		return allCards.get(cardName);
 	}
 
+	public List<Card> getCardList(SetOptions set, Rarity rarity) {
+    	return setMap.get(convertSetName(set)).getCardList(rarity);
+	}
+
+	public static void printCardList(List<Card> cdList) {
+		TextIO textIO = TextIoFactory.getTextIO();
+		TextTerminal terminal = textIO.getTextTerminal();
+    	cdList.sort(new CardSorter());
+    	for (int i = 0; i < cdList.size(); i++) {
+    		terminal.println(i + ": " + cdList.get(i).getName());
+		}
+	}
+
 	private static String convertSetName(String n) {
     	switch (n) {
 			case "GILNEAS":
@@ -160,6 +176,10 @@ public class CardCollector {
 
     public static int getCraftCost(Card card) {
     	Rarity r = card.getRarity();
+		return getCraftCost(r);
+	}
+
+	public static int getCraftCost(Rarity r) {
 		switch (r) {
 			case COMMON:
 				return 40;
