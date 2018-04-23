@@ -1,15 +1,15 @@
-#Instructions
+# Readme
 ## Running the program
 The main is in core.java
 You might want to change the log4j.properties file to log somewhere of your choosing.
 
 ## Existing Logins
-An existing admin login is
-Username: `admin`
+An existing admin login is  
+Username: `admin`  
 Password: `admins`
 
-An existing player login is
-Username: `walkindude`
+An existing player login is  
+Username: `walkindude`  
 Password: `walkinwalkin`
 
 ## Background
