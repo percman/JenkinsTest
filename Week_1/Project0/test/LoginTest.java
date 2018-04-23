@@ -58,7 +58,7 @@ public class LoginTest {
 	public void test5() {
 		assertTrue(User.isStringInteger("123"));
 	}
-	
+	@Test
 	public void test6() {
 		assertFalse(User.isStringInteger("12a"));
 	}
