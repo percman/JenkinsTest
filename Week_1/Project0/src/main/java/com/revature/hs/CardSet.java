@@ -28,12 +28,13 @@ public class CardSet {
 	public static final double NC_LEGENDARY_PERCENTAGE = 1.0;
 
 	public CardSet(String name) {
+		logger.info("Preparing CardSet " + name);
 		this.name = name;
-		logger.info("Generating Rarity Distributions");
+		logger.debug("Generating Rarity Distributions");
 		generateRarityDistributions();
-		logger.info("Preparing Rarity Lists");
+		logger.debug("Preparing Rarity Lists");
 		prepareRarityLists();
-		logger.info("Generating RNG");
+		logger.debug("Generating RNG");
 		rng = new Random();
 	}
 

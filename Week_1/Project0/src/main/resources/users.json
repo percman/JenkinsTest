@@ -1,0 +1,1 @@
+{ "admin":{"username": "admin", "passwordHash": 12533215, "isLocked": false, "role":"admin"}, "player":{"username": "player", "passwordHash": 3, "isLocked": false, "role":"player", "dust": 1600, "isApproved": true}}

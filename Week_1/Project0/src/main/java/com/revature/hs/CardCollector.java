@@ -29,6 +29,7 @@ public class CardCollector {
 	}
 
 	private CardCollector() {
+		long timer = System.currentTimeMillis();
 		FileReader fr = null;
 		JSONArray js = null;
 		try {
@@ -44,13 +45,14 @@ public class CardCollector {
 			}
 		}
 		initializeCardDB(js);
+		logger.info("CardCollector created, took " + ((System.currentTimeMillis() - timer) / 1000.0) + "seconds");
 	}
 
 	// Grabs the Hearthstone card information from a file.
 	// In the interest of readability, know that a release group of cards is called a "set"
 	private void initializeCardDB(JSONArray jsa) {
 		JSONObject js;
-		String setName;
+		String setName = null;
 		Card card;
 
 		setMap = new HashMap<>();
@@ -58,7 +60,12 @@ public class CardCollector {
 
     	for (Object o: jsa) {
 			js = (JSONObject) o;
-			setName = convertSetName(js.getString("set"));
+			try {
+				setName = convertSetName(js.getString("set"));
+			} catch (JSONException jse) {
+				logger.warn("Couldn't get set of card " + js.getString("name"));
+				System.exit(1);
+			}
 			if ("Non-expansion".equals(setName)) {
 				continue;
 			}

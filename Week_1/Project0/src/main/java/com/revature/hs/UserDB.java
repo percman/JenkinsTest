@@ -18,7 +18,7 @@ public class UserDB {
 	
 	private static final Logger logger = Logger.getLogger(UserDB.class);
 	
-	private static UserDB getInstance() {
+	public static UserDB getInstance() {
 		if (instance == null) {
 			instance = new UserDB();
 		}
@@ -63,12 +63,15 @@ public class UserDB {
 	
 	
 	private UserDB() {
+		long timer = System.currentTimeMillis();
 		FileReader fr = null;
 		try {
 			fr = new FileReader(new File("src/main/resources/users.json"));
 			DB = new JSONObject(new JSONTokener(fr));
 		} catch (FileNotFoundException fnfe) {
 			logger.warn("Couldn't find users.json", fnfe);
+		} catch (JSONException jse) {
+			logger.warn("Invalid JSON", jse);
 		} finally {
 			try {
 				fr.close();
@@ -76,6 +79,7 @@ public class UserDB {
 			logger.warn(ioe.getMessage());
 		}
 		}
+		logger.info("UserDB created, took " + ((System.currentTimeMillis() - timer) / 1000.0) + " seconds" );
 	}
 	
 	private boolean isUser(String username) {
