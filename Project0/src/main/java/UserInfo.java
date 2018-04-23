@@ -7,8 +7,7 @@ public class UserInfo implements Serializable{
 	String password = null;
 	boolean approved = false;
 	boolean locked = false;
-	GroceryList myGroceryList = new GroceryList();
-	
+	Shop myShop = new Shop();
 	UserInfo(){}
 	
 	UserInfo(String newUsername, String newPassword)
@@ -18,16 +17,15 @@ public class UserInfo implements Serializable{
 		password = newPassword;
 		approved = false;
 		locked = false;
-		myGroceryList = new GroceryList();
+		myShop = new Shop();
 	}
 
-	
-	public GroceryList getMyGroceryList() {
-		return myGroceryList;
+	public Shop getMyShop() {
+		return myShop;
 	}
 
-	public void setMyGroceryList(GroceryList myGroceryList) {
-		this.myGroceryList = myGroceryList;
+	public void setMyShop(Shop myShop) {
+		this.myShop = myShop;
 	}
 
 	public String getUsername() {
@@ -63,10 +61,15 @@ public class UserInfo implements Serializable{
 		this.locked = locked;
 	}
 
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + (approved ? 1231 : 1237);
+		result = prime * result + (locked ? 1231 : 1237);
+		result = prime * result + ((myShop == null) ? 0 : myShop.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
@@ -81,6 +84,15 @@ public class UserInfo implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		UserInfo other = (UserInfo) obj;
+		if (approved != other.approved)
+			return false;
+		if (locked != other.locked)
+			return false;
+		if (myShop == null) {
+			if (other.myShop != null)
+				return false;
+		} else if (!myShop.equals(other.myShop))
+			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;

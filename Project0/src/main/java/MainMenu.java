@@ -103,23 +103,20 @@ public class MainMenu implements Serializable{
 
 			switch(ifHaveAnAccount)
 			{
+			
 			case 1:
-				while(correctInput!=true)
-				{
-				System.out.println("Please enter valid user information");
-				}
-	
-				System.out.println("\nWelcome Back!");
-				System.out.println("Please enter your Username.In option 1.");
+				System.out.println("Please enter your Username.");
 				username = scan.next();
 				System.out.println("Please enter your Password.");
 				password = scan.next();
+			
+				if	((username.equals("Admin"))
+						&& (password.equals("Login"))){
 				
-				
-					for (int i = 0; i < createdUsers.size(); i ++) 
-					{
-						if	((createdUsers.get(i).getUsername().equals("Admin"))
-								&& (createdUsers.get(i).getPassword().equals("Login"))) {
+//					for (int i = 0; i < createdUsers.size(); i ++) 
+//					{
+//						if	((createdUsers.get(i).getUsername().equals("Admin"))
+//								&& (createdUsers.get(i).getPassword().equals("Login"))) {
 							
 							System.out.println("\nPlease select one of the following: ");
 							System.out.println("1. Approve Account.");
@@ -143,10 +140,10 @@ public class MainMenu implements Serializable{
 											&& (createdUsers.get(j).getPassword().equals(password)) 
 											&& (createdUsers.get(j).isApproved() == false)){
 										createdUsers.get(j).setApproved(true);
-										
 										System.out.println(createdUsers.get(j));
 									}
-								}
+								}	
+								break;
 							}
 							
 							//Lock Account
@@ -195,9 +192,12 @@ public class MainMenu implements Serializable{
 								}	
 							}
 						}
+			
 	
 						//Makes sure user is both approved and their account isn't locked
-						else if((createdUsers.get(i).getUsername().equals(username))
+				for (int i = 0; i < createdUsers.size(); i ++) {
+					
+						if((createdUsers.get(i).getUsername().equals(username))
 								&& (createdUsers.get(i).getPassword().equals(password)) 
 								&& (createdUsers.get(i).isApproved() == true) 
 								&& (createdUsers.get(i).isLocked() == false) ){
@@ -205,6 +205,7 @@ public class MainMenu implements Serializable{
 							System.out.println("1. Add to your cart.");
 							System.out.println("2. Remove from your cart.");
 							System.out.println("3. View cart.");
+						
 							
 							int takenInput = scan.nextInt();
 							if(takenInput == 1)
@@ -226,18 +227,18 @@ public class MainMenu implements Serializable{
 									Shop.addToCart(myList.getItem(addItemNumber));
 									//System.out.println(myList.getItem(addItemNumber));
 								}
-						break;
+						//break;
 							}
 							if(takenInput == 2)
 							{
 							System.out.println("Which of the following items would you like to remove?");
 							System.out.println(Shop.cart);
-							String toBeRemoved = scan.nextLine();
-							if(cart.contains(toBeRemoved))
-							{
-							  int index=cart.indexOf(toBeRemoved);
-							  Shop.removeFromCart(cart.get(index));
-							}
+							int toBeRemoved = scan.nextInt();
+//							if(cart.contains(toBeRemoved))
+//							{
+//							  int index=cart.indexOf(toBeRemoved);
+//							  Shop.removeFromCart(cart.get(index));
+//							}
 							
 							
 								
@@ -261,6 +262,7 @@ public class MainMenu implements Serializable{
 						}
 					}				
 				break;
+		
 				
 			case 2:
 				//Account Creation

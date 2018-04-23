@@ -1,16 +1,17 @@
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Shop {
+public class Shop implements Serializable{
 
-//	removeFromCart
-	public static ArrayList<Item> cart = new ArrayList<>();
-	public static int numItems = 1;
+	private static final long serialVersionUID = -3749034210857064800L;
+	//public static ArrayList<Item> cart = new ArrayList<>();
+	public static int numItems = 0;
 	public static double total = 0.0;
-	
-	
+	static Map <Integer,Item> cart = new HashMap<>();
 	public static void addToCart(Item newItem) {
 		total += newItem.getPrice();
-		cart.add(newItem);
+		cart.put(numItems,newItem);
 		numItems++;		
 	}
 
