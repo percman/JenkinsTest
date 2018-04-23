@@ -1,16 +1,52 @@
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-public class GroceryList {
+public class GroceryList implements Serializable{
+
+
+	private static final long serialVersionUID = 1541672010742004469L;
 
 	String item = null;
 	double price = 0.00;
 	int numberInStock = 0;
 	
+	Item icecream = new Item("Ice cream", 3.26, 30);
+	Item flour = new Item("Flour", 4.00, 10);
+	Item butter = new Item("Butter", 1.23, 16);
+	Item sugar = new Item("Sugar", 5.00, 15);
+	Item vanilla = new Item("Vanilla", 2.13, 60);
+	Item bakingPowder = new Item("Baking Powder", 2.50, 100);
+	Item salt = new Item("Salt", 2.79, 100);
+	Item cream = new Item("Cream", 6.73, 5);
+	Item cinnamon = new Item("Cinnamon", .95, 30);
+	Item bacon = new Item("Bacon", 15.95, 4);
+	Item milk = new Item("Milk", 3.28, 35);
+
+	Map <Integer,Item> items = new HashMap<>();
+	
+	public GroceryList(Item item) {
+		items.put(0, item);
+	}
+	
 	public GroceryList() {
 		super();
+		items.put(1,icecream);
+		items.put(2,flour);
+		items.put(3,butter);
+		items.put(4,sugar);
+		items.put(5,vanilla);
+		items.put(6,bakingPowder);
+		items.put(7,salt);
+		items.put(8,cream);
+		items.put(9,cinnamon);
+		items.put(10,bacon);
+		items.put(11,milk);
 	}
 
-	public String getItem() {
-		return item;
+	public Item getItem(int key) {
+		return items.get(key);
 	}
 
 	public void setItem(String item) {
@@ -38,20 +74,4 @@ public class GroceryList {
 		price = newPrice;
 		numberInStock = newNumberInStock;
 	}
-
-	//Creates a grocery list
-	GroceryList icecream = new GroceryList("Ice cream", 3.26, 30);
-	GroceryList flour = new GroceryList("Flour", 4.00, 10);
-	GroceryList butter = new GroceryList("Butter", 1.23, 16);
-	GroceryList milk = new GroceryList("Milk", 3.28, 35);
-	GroceryList sugar = new GroceryList("Sugar", 5.00, 15);
-	GroceryList vanilla = new GroceryList("Vanilla", 2.13, 60);
-	GroceryList bakingPowder = new GroceryList("Baking Powder", 2.50, 100);
-	GroceryList salt = new GroceryList("Salt", 2.79, 100);
-	GroceryList cream = new GroceryList("Cream", 6.73, 5);
-	GroceryList cinnamon = new GroceryList("Cinnamon", .95, 30);
-	GroceryList bacon = new GroceryList("Bacon", 15.95, 4);
-	//GroceryList bacon = new GroceryList("Cheese", 9.95, 12);
-	
-
 }

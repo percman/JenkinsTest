@@ -6,7 +6,8 @@ public class UserInfo implements Serializable{
 	String username = null;
 	String password = null;
 	boolean approved = false;
-	boolean admin = false;
+	boolean locked = false;
+	GroceryList myGroceryList = new GroceryList();
 	
 	UserInfo(){}
 	
@@ -16,10 +17,19 @@ public class UserInfo implements Serializable{
 		username = newUsername;
 		password = newPassword;
 		approved = false;
-		admin = false;
+		locked = false;
+		myGroceryList = new GroceryList();
 	}
 
 	
+	public GroceryList getMyGroceryList() {
+		return myGroceryList;
+	}
+
+	public void setMyGroceryList(GroceryList myGroceryList) {
+		this.myGroceryList = myGroceryList;
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -35,8 +45,24 @@ public class UserInfo implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public boolean isApproved() {
+		return approved;
+	}
+
+	public void setApproved(boolean approved) {
+		this.approved = approved;
+	}
 
 	
+	public boolean isLocked() {
+		return locked;
+	}
+
+	public void setLocked(boolean locked) {
+		this.locked = locked;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -70,8 +96,13 @@ public class UserInfo implements Serializable{
 
 	@Override
 	public String toString() {
-		return "-UserInfo-\nUsername: " + username + " Password:" + password;
+		return "Username: " + username + "\nPassword: " + password 
+				+ "\nApproved: " + approved + "\nlocked:"
+				+ locked + "\n\n";
 	}
+
+
+
 	
 	
 
