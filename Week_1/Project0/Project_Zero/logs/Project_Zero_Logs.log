@@ -56739,3 +56739,160 @@
 2018-04-22 13:08:54 INFO  LogThis:30 - Principal Account Created
 2018-04-22 13:08:54 INFO  LogThis:30 - Principal Menu
 2018-04-22 13:08:54 WARN  LogThis:34 - NoSuchElementException null
+2018-04-22 13:32:56 INFO  LogThis:30 - Create Principal
+2018-04-22 13:33:01 INFO  LogThis:30 - Principal Account Created
+2018-04-22 13:33:01 INFO  LogThis:30 - Principal Menu
+2018-04-22 13:33:01 WARN  LogThis:34 - NoSuchElementException null
+2018-04-22 13:37:26 INFO  LogThis:30 - Create Principal
+2018-04-22 13:37:30 INFO  LogThis:30 - Principal Account Created
+2018-04-22 13:37:30 INFO  LogThis:30 - Principal Menu
+2018-04-22 13:39:56 INFO  LogThis:30 - Create Principal
+2018-04-22 13:40:04 INFO  LogThis:30 - Principal Account Created
+2018-04-22 13:40:04 INFO  LogThis:30 - Principal Menu
+2018-04-22 13:40:04 WARN  LogThis:34 - NoSuchElementException null
+2018-04-22 13:40:47 INFO  LogThis:30 - Create Principal
+2018-04-22 13:40:55 INFO  LogThis:30 - Principal Account Created
+2018-04-22 13:40:55 INFO  LogThis:30 - Principal Menu
+2018-04-22 13:40:55 WARN  LogThis:34 - NoSuchElementException in Principal Menunull
+2018-04-22 13:48:44 INFO  LogThis:30 - Create Principal
+2018-04-22 13:48:52 INFO  LogThis:30 - Principal Account Created
+2018-04-22 13:48:52 INFO  LogThis:30 - Principal Menu
+2018-04-22 13:48:52 WARN  LogThis:34 - NoSuchElementException in Principal Menu null
+2018-04-22 13:55:58 INFO  LogThis:30 - Create Principal
+2018-04-22 13:56:07 INFO  LogThis:30 - Principal Account Created
+2018-04-22 13:56:07 INFO  LogThis:30 - Principal Menu
+2018-04-22 13:56:25 INFO  LogThis:30 - Create Principal
+2018-04-22 13:56:32 INFO  LogThis:30 - Principal Account Created
+2018-04-22 13:56:32 INFO  LogThis:30 - Principal Menu
+2018-04-22 13:56:32 WARN  LogThis:34 - NoSuchElementException in Principal Menu No line found
+2018-04-22 13:58:21 INFO  LogThis:30 - Create Principal
+2018-04-22 13:58:26 INFO  LogThis:30 - Principal Account Created
+2018-04-22 13:58:26 INFO  LogThis:30 - Principal Menu
+2018-04-22 13:59:06 INFO  LogThis:30 - Create Principal
+2018-04-22 13:59:14 INFO  LogThis:30 - Principal Account Created
+2018-04-22 13:59:14 INFO  LogThis:30 - Principal Menu
+2018-04-22 13:59:14 WARN  LogThis:34 - NoSuchElementException in Principal Menu null
+2018-04-22 14:03:06 INFO  LogThis:30 - Create Principal
+2018-04-22 14:03:15 INFO  LogThis:30 - Principal Account Created
+2018-04-22 14:03:15 INFO  LogThis:30 - Principal Menu
+2018-04-22 14:03:15 WARN  LogThis:34 - NoSuchElementException in Principal Menu null
+2018-04-22 14:09:25 INFO  LogThis:30 - Start Menu
+2018-04-22 14:09:29 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-22 14:09:37 INFO  LogThis:30 - Teacher Account Created
+2018-04-22 14:09:37 INFO  LogThis:30 - Teacher Menu
+2018-04-22 14:09:37 WARN  LogThis:34 - 
+2018-04-22 14:11:33 INFO  LogThis:30 - Start Menu
+2018-04-22 14:11:38 INFO  LogThis:30 - Create a New Student Profile
+2018-04-22 14:11:46 INFO  LogThis:30 - Student Account Created
+2018-04-22 14:11:46 INFO  LogThis:30 - Student Menu
+2018-04-22 14:11:46 WARN  LogThis:34 - 
+2018-04-22 14:15:39 INFO  LogThis:30 - Start Menu
+2018-04-22 14:15:51 INFO  LogThis:30 - Create a New Student Profile
+2018-04-22 14:16:02 INFO  LogThis:30 - Student Account Created
+2018-04-22 14:16:02 INFO  LogThis:30 - Start Menu
+2018-04-22 14:16:02 WARN  LogThis:34 - 
+2018-04-22 14:20:53 INFO  LogThis:30 - Start Menu
+2018-04-22 14:21:28 INFO  LogThis:30 - Create Principal
+2018-04-22 14:21:55 INFO  LogThis:30 - Principal Account Created
+2018-04-22 14:21:55 INFO  LogThis:30 - Principal Menu
+2018-04-22 14:22:14 INFO  LogThis:30 - Approve Teacher Menu
+2018-04-22 14:22:36 INFO  LogThis:30 - All teachers were approved
+2018-04-22 14:22:36 INFO  LogThis:30 - Approve Teacher Menu
+2018-04-22 14:22:45 INFO  LogThis:30 - Principal Menu
+2018-04-22 14:22:53 INFO  LogThis:30 - You have successfully logged out.
+2018-04-22 14:22:53 INFO  LogThis:30 - Start Menu
+2018-04-22 14:22:53 WARN  LogThis:34 - 
+2018-04-22 14:23:17 INFO  LogThis:30 - Create Principal
+2018-04-22 14:25:51 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 14:25:51 INFO  LogThis:30 - Create Principal
+2018-04-22 14:26:20 INFO  LogThis:30 - Principal Account Created
+2018-04-22 14:26:20 INFO  LogThis:30 - Principal Menu
+2018-04-22 14:26:29 INFO  LogThis:30 - You have successfully logged out.
+2018-04-22 14:26:29 INFO  LogThis:30 - Start Menu
+2018-04-22 14:26:29 WARN  LogThis:34 - 
+2018-04-22 14:32:02 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 14:32:02 INFO  LogThis:30 - Create Principal
+2018-04-22 14:32:23 INFO  LogThis:30 - Principal Account Created
+2018-04-22 14:32:23 INFO  LogThis:30 - Principal Menu
+2018-04-22 14:32:39 INFO  LogThis:30 - You have successfully logged out.
+2018-04-22 14:32:39 INFO  LogThis:30 - Start Menu
+2018-04-22 14:32:41 INFO  LogThis:30 - Data was Serialized.
+2018-04-22 14:32:49 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 14:32:49 INFO  LogThis:30 - Start Menu
+2018-04-22 15:09:41 INFO  LogThis:30 - Data was Serialized.
+2018-04-22 19:39:25 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 19:39:25 INFO  LogThis:30 - Start Menu
+2018-04-22 19:39:35 INFO  LogThis:30 - Login Menu
+2018-04-22 19:39:45 INFO  LogThis:30 - Your username and/or password are incorrect
+2018-04-22 19:40:11 INFO  LogThis:30 - Your username and/or password are incorrect
+2018-04-22 20:55:18 INFO  LogThis:30 - Create Principal
+2018-04-22 20:56:21 INFO  LogThis:30 - Principal Account Created
+2018-04-22 20:58:50 INFO  LogThis:30 - Create Principal
+2018-04-22 20:59:07 INFO  LogThis:30 - Principal Account Created
+2018-04-22 20:59:07 INFO  LogThis:30 - Principal Menu
+2018-04-22 20:59:15 INFO  LogThis:30 - Approve Teacher Menu
+2018-04-22 21:00:34 INFO  LogThis:30 - Principal Menu
+2018-04-22 21:02:35 INFO  LogThis:30 - You have successfully logged out.
+2018-04-22 21:02:35 INFO  LogThis:30 - Start Menu
+2018-04-22 21:02:36 INFO  LogThis:30 - Data was Serialized.
+2018-04-22 21:02:47 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:02:47 INFO  LogThis:30 - Start Menu
+2018-04-22 21:02:54 INFO  LogThis:30 - Login Menu
+2018-04-22 21:03:33 INFO  LogThis:30 - Your username and/or password are incorrect
+2018-04-22 21:07:58 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:07:58 INFO  LogThis:30 - Start Menu
+2018-04-22 21:08:01 INFO  LogThis:30 - Login Menu
+2018-04-22 21:09:27 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:09:27 INFO  LogThis:30 - Start Menu
+2018-04-22 21:09:29 INFO  LogThis:30 - Login Menu
+2018-04-22 21:09:40 INFO  LogThis:30 - Your username and/or password are incorrect
+2018-04-22 21:10:07 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:10:07 INFO  LogThis:30 - Start Menu
+2018-04-22 21:10:11 INFO  LogThis:30 - Login Menu
+2018-04-22 21:10:42 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:10:42 INFO  LogThis:30 - Start Menu
+2018-04-22 21:10:44 INFO  LogThis:30 - Login Menu
+2018-04-22 21:11:07 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:11:07 INFO  LogThis:30 - Start Menu
+2018-04-22 21:11:11 INFO  LogThis:30 - Login Menu
+2018-04-22 21:11:11 INFO  LogThis:30 - Your username and/or password are incorrect
+2018-04-22 21:12:42 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:12:42 INFO  LogThis:30 - Start Menu
+2018-04-22 21:13:17 INFO  LogThis:30 - Login Menu
+2018-04-22 21:13:44 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:13:44 INFO  LogThis:30 - Start Menu
+2018-04-22 21:13:48 INFO  LogThis:30 - Login Menu
+2018-04-22 21:17:28 INFO  LogThis:30 - Principal Menu
+2018-04-22 21:17:36 INFO  LogThis:30 - Principal Menu
+2018-04-22 21:17:40 INFO  LogThis:30 - Lock Teacher Menu
+2018-04-22 21:17:43 INFO  LogThis:30 - Principal Menu
+2018-04-22 21:17:45 INFO  LogThis:30 - Unlock Teacher Menu
+2018-04-22 21:17:52 INFO  LogThis:30 - Principal Menu
+2018-04-22 21:17:54 INFO  LogThis:30 - You have successfully logged out.
+2018-04-22 21:17:54 INFO  LogThis:30 - Start Menu
+2018-04-22 21:18:01 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-22 21:18:33 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:18:33 INFO  LogThis:30 - Start Menu
+2018-04-22 21:18:37 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-22 21:19:22 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:19:22 INFO  LogThis:30 - Start Menu
+2018-04-22 21:20:13 INFO  LogThis:30 - Data was Serialized.
+2018-04-22 21:20:39 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:20:39 INFO  LogThis:30 - Start Menu
+2018-04-22 21:20:47 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-22 21:21:45 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:21:45 INFO  LogThis:30 - Start Menu
+2018-04-22 21:21:49 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-22 21:22:20 INFO  LogThis:30 - Teacher Account Created
+2018-04-22 21:22:20 INFO  LogThis:30 - Start Menu
+2018-04-22 21:24:15 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:24:15 INFO  LogThis:30 - Start Menu
+2018-04-22 21:24:18 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-22 21:24:31 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:24:31 INFO  LogThis:30 - Start Menu
+2018-04-22 21:24:34 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-22 21:32:25 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:32:25 INFO  LogThis:30 - Start Menu
+2018-04-22 21:33:12 INFO  LogThis:30 - Data was deserialized.
+2018-04-22 21:33:12 INFO  LogThis:30 - Start Menu
+2018-04-22 21:33:14 INFO  LogThis:30 - Create a New Teacher Profile

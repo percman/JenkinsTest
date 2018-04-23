@@ -20,9 +20,9 @@ public abstract class Person implements Serializable {
 	private String userName;
 	private String password;
 	private String type;
-	
-	private boolean isApproved;
-	private boolean isLocked;
+
+	private boolean isApproved = false;
+	private boolean isLocked = false;
 
 	public Person() {
 		super();
@@ -62,7 +62,7 @@ public abstract class Person implements Serializable {
 	public String getType() {
 		return type;
 	}
-	
+
 	public void setType(String type) {
 		this.type = type;
 	}
@@ -82,7 +82,6 @@ public abstract class Person implements Serializable {
 	public void setLocked(boolean isLocked) {
 		this.isLocked = isLocked;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -138,28 +137,26 @@ public abstract class Person implements Serializable {
 		System.out.println("2. No");
 
 		Scanner sc = new Scanner(System.in);
-		int choice = sc.nextInt();
 
 		try {
+			int choice = sc.nextInt();
+
 			while (true) {
 				if (choice == 1) {
 					LogThis.info("You have successfully logged out.");
-					sc.close();
 					StartMenu.startMenu();
-					} else if (choice == 2) {
-					sc.close();
+				} else if (choice == 2) {
 					if (user.getType().equals("student")) {
-						StudentMenu.studentMenu((Student) user );
+						StudentMenu.studentMenu((Student) user);
 					} else if (user.getType().equals("teacher")) {
 						TeacherMenu.teacherMenu((Teacher) user);
 					} else {
 						PrincipalMenu.principalMenu((Principal) user);
 					}
-					
+
 				} else {
 					LogThis.info("Invalid Choice");
 					System.out.println("Please enter a 1 to log out or a 2 to return to main menu.");
-					choice = sc.nextInt();
 				}
 			}
 		} catch (InputMismatchException ime) {
@@ -168,8 +165,6 @@ public abstract class Person implements Serializable {
 			LogThis.warn(nsee.getMessage());
 		} catch (IllegalStateException ise) {
 			LogThis.warn(ise.getMessage());
-		} finally {
-			sc.close();
 		}
 
 	}

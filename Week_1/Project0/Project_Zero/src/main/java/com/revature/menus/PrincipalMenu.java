@@ -10,24 +10,24 @@ import com.revature.users.Person;
 import com.revature.users.Principal;
 
 public class PrincipalMenu {
+	
+	private static Scanner sc = new Scanner(System.in);
+	private static AccountData ad = AccountData.getInstance();
+
 
 	public static void principalMenu(Principal principal) {
 		LogThis.info("Principal Menu");
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Your options are:");
 		System.out.println("1. Approve new Teacher Profiles");
 		System.out.println("2. Lock Teacher Profile");
 		System.out.println("3. Unlock Teacher Profile");
 		System.out.println("0. Logout");
-
-		
-		int choice;
 		
 		try {
-			choice = sc.nextInt();
-
-			while (sc.hasNext()) {
-
+			int choice = sc.nextInt();
+			
+			while (true) {
 				switch (choice) {
 				case 1:
 					approveTeacher(principal);
@@ -48,20 +48,18 @@ public class PrincipalMenu {
 					System.out.println("2. Lock Teacher Profile");
 					System.out.println("3. Unlock Teacher Profile");
 					System.out.println("0. Logout");
+					choice = sc.nextInt();
 					break;
 				}
 				
-				choice = sc.nextInt();
 			}
 		} catch(InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException " + ime.getMessage());
+			LogThis.warn("InpupMismatchException in Principal Menu " + ime.getMessage());
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn("NoSuchElementException " + nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Principal Menu " + nsee.getMessage());
 		} catch (IllegalStateException ise) {
-			LogThis.warn("IllegalStateException " + ise.getMessage());
-		} finally {
-			sc.close();
-		}
+			LogThis.warn("IllegalStateException in Principal Menu " + ise.getMessage());
+		} 
 
 	}
 
@@ -69,15 +67,8 @@ public class PrincipalMenu {
 	private static void approveTeacher(Principal principal) {
 		LogThis.info("Approve Teacher Menu");
 
-		AccountData ad = AccountData.getInstance();
-
-		Scanner sc = new Scanner(System.in);
-
 		try {
-			int choice = sc.nextInt();
-
 			System.out.println("The following Teachers need to be approved:");
-
 			for (Person p : ad.values()) {
 				if (p.getType() == "teacher" && !p.isApproved()) {
 					System.out.println(p.getName());
@@ -86,6 +77,8 @@ public class PrincipalMenu {
 			System.out.println("1. Approve All");
 			System.out.println("2. Approve a specific teacher");
 			System.out.println("0. Return to Principal Menu");
+			
+			int choice = sc.nextInt();
 
 			while (true) {
 				switch (choice) {
@@ -100,7 +93,7 @@ public class PrincipalMenu {
 					return;
 				case 2:
 					System.out.println("What is the name of the teacher you would like to approve?");
-					String name = sc.nextLine();
+					String name = sc.next();
 					for (Person p : ad.values()) {
 						if (p.getName() == name && !p.isApproved()) {
 							p.setApproved(true);
@@ -131,27 +124,19 @@ public class PrincipalMenu {
 			}
 
 		} catch(InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException " + ime.getMessage());
+			LogThis.warn("InpupMismatchException in Approve Teacher Menu " + ime.getMessage());
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn("NoSuchElementException " + nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Approve Teacher Menu " + nsee.getMessage());
 		} catch (IllegalStateException ise) {
-			LogThis.warn("IllegalStateException " + ise.getMessage());
-		} finally {
-			sc.close();
-		}
+			LogThis.warn("IllegalStateException in Approve Teacher Menu " + ise.getMessage());
+		} 
 	}
 
 	// Lock teacher
 	private static void lockTeacher(Principal principal) {
 		LogThis.info("Lock Teacher Menu");
 
-		AccountData ad = AccountData.getInstance();
-
-		Scanner sc = new Scanner(System.in);
-
 		try {
-			int choice = sc.nextInt();
-
 			System.out.println("The following Teachers are unlocked:");
 
 			for (Person p : ad.values()) {
@@ -159,14 +144,16 @@ public class PrincipalMenu {
 					System.out.println(p.getName());
 				}
 			}
-			System.out.println("1. Approve a specific teacher");
+			System.out.println("1. Lock a specific teacher");
 			System.out.println("0. Return to Principal Menu");
+
+			int choice = sc.nextInt();
 
 			while (true) {
 				switch (choice) {
 				case 1:
 					System.out.println("What is the name of the teacher you would like to lock?");
-					String name = sc.nextLine();
+					String name = sc.next();
 					for (Person p : ad.values()) {
 						if (p.getName() == name && !p.isLocked()) {
 							p.setLocked(true);
@@ -188,7 +175,7 @@ public class PrincipalMenu {
 							System.out.println(p.getName());
 						}
 					}
-					System.out.println("1. Approve a specific teacher");
+					System.out.println("1. Lock a specific teacher");
 					System.out.println("0. Return to Principal Menu");
 					choice = sc.nextInt();
 					break;
@@ -197,14 +184,12 @@ public class PrincipalMenu {
 			}
 
 		} catch(InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException " + ime.getMessage());
+			LogThis.warn("InpupMismatchException in Lock Teacher Menu " + ime.getMessage());
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn("NoSuchElementException " + nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Lock Teacher Menu " + nsee.getMessage());
 		} catch (IllegalStateException ise) {
-			LogThis.warn("IllegalStateException " + ise.getMessage());
-		} finally {
-			sc.close();
-		}
+			LogThis.warn("IllegalStateException in Lock Teacher Menu " + ise.getMessage());
+		} 
 
 	}
 
@@ -212,13 +197,7 @@ public class PrincipalMenu {
 	private static void unlockTeacher(Principal principal) {
 		LogThis.info("Unlock Teacher Menu");
 
-		AccountData ad = AccountData.getInstance();
-
-		Scanner sc = new Scanner(System.in);
-
 		try {
-			int choice = sc.nextInt();
-
 			System.out.println("The following Teachers need to be unlocked:");
 
 			for (Person p : ad.values()) {
@@ -230,12 +209,14 @@ public class PrincipalMenu {
 			System.out.println("2. Unlock a specific teacher");
 			System.out.println("0. Return to Principal Menu");
 
+			int choice = sc.nextInt();
+
 			while (true) {
 				switch (choice) {
 				case 1:
 					for (Person p : ad.values()) {
 						if (p.getType() == "teacher" && p.isLocked()) {
-							p.setLocked(true);
+							p.setLocked(false);
 						}
 					}
 					LogThis.info("All teachers were unlocked");
@@ -243,10 +224,10 @@ public class PrincipalMenu {
 					return;
 				case 2:
 					System.out.println("What is the name of the teacher you would like to unlock?");
-					String name = sc.nextLine();
+					String name = sc.next();
 					for (Person p : ad.values()) {
 						if (p.getName() == name && p.isLocked()) {
-							p.setLocked(true);
+							p.setLocked(false);
 							break;
 						}
 					}
@@ -274,14 +255,12 @@ public class PrincipalMenu {
 			}
 
 		} catch(InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException " + ime.getMessage());
+			LogThis.warn("InpupMismatchException in Unlock Teacher Menu " + ime.getMessage());
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn("NoSuchElementException " + nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Unlock Teacher Menu " + nsee.getMessage());
 		} catch (IllegalStateException ise) {
-			LogThis.warn("IllegalStateException " + ise.getMessage());
-		} finally {
-			sc.close();
-		}
+			LogThis.warn("IllegalStateException in Unlock Teacher Menu " + ise.getMessage());
+		} 
 	}
 
 }

@@ -8,10 +8,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.revature.singletons.AccountData;
+
 public class Tests {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		AccountData ad = AccountData.getInstance();
+		
 	}
 
 	@AfterClass
@@ -27,7 +31,7 @@ public class Tests {
 	}
 
 	@Test
-	public void test() {
+	public void testSerialization() {
 		fail("Not yet implemented");
 	}
 

@@ -12,16 +12,20 @@ public class StudentMenu {
 
 	public static void studentMenu(Student student) {
 
-		if (student.isApproved()) {
+		if (!student.isApproved()) {
 			System.out.println("Your account has not been approved by your teacher.");
 			System.out.println("Please try to login again later.");
+			StartMenu.startMenu();
+			return;
 		} else if (student.isLocked()) {
 			System.out.println("Your account has been locked.");
 			System.out.println("Please talk to your teacher.");
+			StartMenu.startMenu();
+			return;
 		} else {
 			LogThis.info("Student Menu");
-			System.out.println("Your options are:");
 			System.out.println("You have " + student.getCoins() + " coins!");
+			System.out.println("Your options are:");
 			System.out.println("1. Earn more coins by completing arithmetic problems");
 			System.out.println("2. Buy more arithmetic problems with your coins");
 			System.out.println("0. Logout");
@@ -34,11 +38,14 @@ public class StudentMenu {
 				int choice = sc.nextInt();
 				switch (choice) {
 				case 1:
-					break;
+					EarnCoinsMenu.earnCoinsMenu(student);
+					return;
 				case 2:
-					break;
+					SpendCoinsMenu.spendCoinsMenu(student);
+					return;
 				case 0:
 					Person.logout(student);
+					return;
 				default:
 					LogThis.info("Invalid Choice");
 					System.out.println("Your options are:");
@@ -55,9 +62,7 @@ public class StudentMenu {
 			LogThis.warn(nsee.getMessage());
 		} catch (IllegalStateException ise) {
 			LogThis.warn(ise.getMessage());
-		} finally {
-			sc.close();
-		}
+		} 
 
 	}
 
