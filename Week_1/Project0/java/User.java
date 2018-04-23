@@ -92,7 +92,8 @@ public class User extends Account implements Serializable {
 	public static boolean isStringInteger(String number ){
 	    try{
 	        Integer.parseInt(number);
-	    }catch(Exception e ){
+	    }catch(NumberFormatException nfe){
+	    	logger.warn(nfe.getMessage());
 	        return false;
 	    }
 	    return true;
