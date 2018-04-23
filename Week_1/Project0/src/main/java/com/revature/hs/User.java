@@ -1,16 +1,17 @@
 package com.revature.hs;
 
+import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 public abstract class User {
 	private String userName;
-	private int passwordHash;
+	private String passwordHash;
 	private boolean isLocked;
 	private String role;
+	private static final Logger logger = Logger.getLogger(User.class);
 	
 	
-	
-	public User(String userName, int passwordHash, String role) {
+	public User(String userName, String passwordHash, String role) {
 		this.userName = userName;
 		this.passwordHash = passwordHash;
 		this.isLocked = false;
@@ -19,8 +20,9 @@ public abstract class User {
 	
 	public User(JSONObject jso) {
 		this.userName = jso.getString("username");
-		this.passwordHash = jso.getInt("passwordHash");
+		this.passwordHash = jso.getString("passwordHash");
 		this.isLocked = jso.getBoolean("isLocked");
+		this.role = jso.getString("role");
 	}
 
 	public String getRole() {
@@ -39,7 +41,7 @@ public abstract class User {
 		this.isLocked = isLocked;
 	}
 
-	public int getPasswordHash() {
+	public String getPasswordHash() {
 		return passwordHash;
 	}
 

@@ -120,6 +120,29 @@ public class CardCollector {
 		}
 	}
 
+	public static String convertSetName(SetOptions n) {
+		switch (n) {
+			case Witchwood:
+				return "The Witchwood";
+			case KobaldsAndCatacombs:
+				return "Kobalds and Catacombs";
+			case KnightsOfTheFrozenThrone:
+				return "Knights of the Frozen Throne";
+			case UnGoro:
+				return "Journey to Un'Goro";
+			case MeanStreetsOfGadgetzan:
+				return "Mean Streets of Gadgetzan";
+			case WhispersOfTheOldGods:
+				return "Whispers of the Old Gods";
+			case TheGrandTournament:
+				return "The Grand Tournament";
+			case GoblinsVsGnomes:
+				return "Goblins vs. Gnomes";
+			default:
+				return "Non-expansion";
+		}
+	}
+
 	public static Rarity stringToRarity(String s) throws RarityNotFoundException {
         switch (s) {
 			case "LEGENDARY":
@@ -135,7 +158,7 @@ public class CardCollector {
 		}
     }
 
-    private static int getCraftCost(Card card) {
+    public static int getCraftCost(Card card) {
     	Rarity r = card.getRarity();
 		switch (r) {
 			case COMMON:
@@ -152,7 +175,7 @@ public class CardCollector {
 		}
 	}
 
-	private static int getDustAmount(Card card) {
+	public static int getDustAmount(Card card) {
 		Rarity r = card.getRarity();
 		switch (r) {
 			case COMMON:

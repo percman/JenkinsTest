@@ -9,7 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-
+import org.mindrot.jbcrypt.BCrypt;
 
 
 public class UserDB {
@@ -25,11 +25,11 @@ public class UserDB {
 		return instance;
 	}
 	
-	public User login(String username, int passwordHash) throws NoSuchUserException, WrongPasswordException,
+	public User login(String username, String password) throws NoSuchUserException, WrongPasswordException,
 		LockedAccountException, UnApprovedUserException {
 
 		User us = getUser(username);
-		if (us.getPasswordHash() != passwordHash) {
+		if (!BCrypt.checkpw(password, us.getPasswordHash())) {
 			throw new WrongPasswordException();
 		}
 		if (us.isLocked()) {
@@ -38,7 +38,7 @@ public class UserDB {
 		if (us instanceof Player && !((Player) us).isApproved()) {
 			throw new UnApprovedUserException();
 		}
-		logger.debug("User " + username + "logged in successfully!");
+		logger.debug("User " + username + " logged in successfully!");
 		return us;
 	}
 
@@ -91,7 +91,7 @@ public class UserDB {
 		}
 	}
 
-	private User getUser(String username) throws NoSuchUserException {
+	public User getUser(String username) throws NoSuchUserException {
 		JSONObject jso;
 		try {
 			jso = DB.getJSONObject(username);

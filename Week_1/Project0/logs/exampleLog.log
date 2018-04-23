@@ -49,3 +49,837 @@
 2018-04-22 20:58:14 DEBUG CardSet:35 - Preparing Rarity Lists
 2018-04-22 20:58:14 DEBUG CardSet:37 - Generating RNG
 2018-04-22 20:58:14 INFO  CardCollector:48 - CardCollector created, took 0.099seconds
+2018-04-22 21:12:32 INFO  UserDB:82 - UserDB created, took 0.011 seconds
+2018-04-22 21:12:32 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 21:12:32 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:12:33 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:12:33 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:12:33 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 21:12:33 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:12:33 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:12:33 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:12:33 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 21:12:33 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:12:33 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:12:33 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:12:33 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 21:12:33 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:12:33 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:12:33 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:12:33 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 21:12:33 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:12:33 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:12:33 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:12:33 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 21:12:33 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:12:33 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:12:33 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:12:33 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 21:12:33 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:12:33 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:12:33 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:12:33 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 21:12:33 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:12:33 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:12:33 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:12:33 INFO  CardCollector:48 - CardCollector created, took 0.281seconds
+2018-04-22 21:15:59 INFO  UserDB:82 - UserDB created, took 0.014 seconds
+2018-04-22 21:15:59 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 21:15:59 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:15:59 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:15:59 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:15:59 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 21:15:59 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:15:59 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:15:59 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:15:59 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 21:15:59 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:15:59 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:15:59 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:15:59 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 21:15:59 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:15:59 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:15:59 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:15:59 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 21:15:59 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:15:59 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:15:59 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:15:59 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 21:15:59 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:15:59 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:15:59 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:15:59 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 21:15:59 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:15:59 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:15:59 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:15:59 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 21:15:59 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:15:59 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:15:59 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:15:59 INFO  CardCollector:48 - CardCollector created, took 0.11seconds
+2018-04-22 21:17:08 INFO  UserDB:82 - UserDB created, took 0.013 seconds
+2018-04-22 21:17:08 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 21:17:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:17:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:17:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:17:08 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 21:17:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:17:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:17:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:17:08 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 21:17:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:17:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:17:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:17:08 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 21:17:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:17:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:17:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:17:08 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 21:17:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:17:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:17:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:17:08 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 21:17:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:17:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:17:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:17:08 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 21:17:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:17:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:17:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:17:08 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 21:17:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:17:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:17:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:17:08 INFO  CardCollector:48 - CardCollector created, took 0.146seconds
+2018-04-22 21:39:32 INFO  UserDB:82 - UserDB created, took 0.011 seconds
+2018-04-22 21:39:32 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 21:39:32 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:39:32 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:39:32 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:39:32 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 21:39:32 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:39:32 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:39:32 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:39:32 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 21:39:32 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:39:32 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:39:32 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:39:32 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 21:39:32 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:39:32 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:39:32 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:39:32 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 21:39:32 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:39:32 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:39:32 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:39:32 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 21:39:32 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:39:32 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:39:32 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:39:32 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 21:39:32 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:39:32 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:39:32 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:39:32 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 21:39:32 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:39:32 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:39:32 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:39:32 INFO  CardCollector:48 - CardCollector created, took 0.13seconds
+2018-04-22 21:45:47 INFO  UserDB:82 - UserDB created, took 0.007 seconds
+2018-04-22 21:45:47 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 21:45:47 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:45:47 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:45:47 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:45:47 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 21:45:47 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:45:47 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:45:47 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:45:47 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 21:45:47 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:45:47 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:45:47 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:45:47 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 21:45:47 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:45:47 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:45:47 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:45:47 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 21:45:47 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:45:47 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:45:47 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:45:47 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 21:45:47 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:45:47 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:45:47 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:45:47 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 21:45:47 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:45:47 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:45:47 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:45:47 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 21:45:47 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:45:47 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:45:47 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:45:47 INFO  CardCollector:48 - CardCollector created, took 0.102seconds
+2018-04-22 21:47:26 INFO  UserDB:82 - UserDB created, took 0.014 seconds
+2018-04-22 21:47:26 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 21:47:26 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:47:26 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:47:26 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:47:26 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 21:47:26 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:47:26 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:47:26 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:47:26 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 21:47:26 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:47:26 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:47:26 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:47:26 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 21:47:26 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:47:26 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:47:26 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:47:26 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 21:47:26 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:47:26 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:47:26 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:47:26 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 21:47:26 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:47:26 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:47:26 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:47:26 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 21:47:26 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:47:26 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:47:26 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:47:26 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 21:47:26 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 21:47:26 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 21:47:26 DEBUG CardSet:37 - Generating RNG
+2018-04-22 21:47:26 INFO  CardCollector:48 - CardCollector created, took 0.128seconds
+2018-04-22 21:47:40 INFO  Core:44 - Created new user walkindude
+2018-04-22 22:10:21 INFO  UserDB:82 - UserDB created, took 0.012 seconds
+2018-04-22 22:10:21 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:10:21 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:10:21 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:10:21 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:10:21 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:10:21 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:10:21 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:10:21 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:10:21 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:10:21 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:10:21 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:10:21 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:10:21 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:10:21 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:10:21 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:10:21 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:10:21 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:10:21 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:10:21 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:10:21 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:10:21 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:10:21 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:10:21 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:10:21 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:10:21 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:10:21 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:10:21 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:10:21 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:10:21 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:10:21 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:10:21 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:10:21 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:10:21 INFO  CardCollector:48 - CardCollector created, took 0.152seconds
+2018-04-22 22:10:28 INFO  Core:61 - Attempting login with user admin
+2018-04-22 22:10:28 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 22:10:28 INFO  Core:63 - Logged in!
+2018-04-22 22:11:00 INFO  Core:61 - Attempting login with user walkindude
+2018-04-22 22:12:57 INFO  UserDB:82 - UserDB created, took 0.014 seconds
+2018-04-22 22:12:57 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:12:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:12:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:12:57 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:12:57 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:12:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:12:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:12:57 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:12:57 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:12:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:12:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:12:57 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:12:57 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:12:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:12:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:12:57 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:12:57 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:12:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:12:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:12:57 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:12:57 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:12:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:12:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:12:57 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:12:57 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:12:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:12:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:12:57 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:12:57 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:12:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:12:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:12:57 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:12:57 INFO  CardCollector:48 - CardCollector created, took 0.111seconds
+2018-04-22 22:13:13 INFO  Core:46 - Created new user tester
+2018-04-22 22:13:21 INFO  Core:61 - Attempting login with user tester
+2018-04-22 22:15:48 INFO  UserDB:82 - UserDB created, took 0.011 seconds
+2018-04-22 22:15:48 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:15:48 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:15:48 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:15:48 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:15:48 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:15:48 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:15:48 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:15:48 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:15:48 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:15:48 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:15:48 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:15:48 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:15:48 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:15:48 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:15:48 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:15:48 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:15:48 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:15:48 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:15:48 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:15:48 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:15:48 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:15:48 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:15:48 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:15:48 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:15:48 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:15:48 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:15:48 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:15:48 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:15:48 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:15:48 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:15:48 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:15:48 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:15:48 INFO  CardCollector:48 - CardCollector created, took 0.142seconds
+2018-04-22 22:16:01 INFO  Core:46 - Created new user walkindude
+2018-04-22 22:16:11 INFO  Core:61 - Attempting login with user walkindude
+2018-04-22 22:16:11 INFO  Core:74 - unapproved user attempted login
+2018-04-22 22:18:43 INFO  UserDB:82 - UserDB created, took 0.009 seconds
+2018-04-22 22:18:43 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:18:43 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:18:43 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:18:43 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:18:43 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:18:43 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:18:43 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:18:43 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:18:43 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:18:43 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:18:43 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:18:43 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:18:43 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:18:43 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:18:43 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:18:43 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:18:43 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:18:43 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:18:43 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:18:43 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:18:43 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:18:43 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:18:43 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:18:43 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:18:43 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:18:43 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:18:43 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:18:43 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:18:43 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:18:43 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:18:43 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:18:43 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:18:43 INFO  CardCollector:48 - CardCollector created, took 0.12seconds
+2018-04-22 22:18:50 INFO  Core:61 - Attempting login with user admin
+2018-04-22 22:18:50 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 22:18:50 INFO  Core:63 - Logged in!
+2018-04-22 22:41:30 INFO  UserDB:82 - UserDB created, took 0.012 seconds
+2018-04-22 22:41:30 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:41:30 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:30 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:30 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:30 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:41:30 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:30 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:30 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:30 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:41:30 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:30 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:30 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:30 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:41:30 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:30 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:30 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:30 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:41:30 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:30 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:30 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:30 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:41:30 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:30 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:30 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:30 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:41:30 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:30 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:30 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:30 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:41:30 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:30 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:30 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:30 INFO  CardCollector:48 - CardCollector created, took 0.146seconds
+2018-04-22 22:41:46 INFO  UserDB:82 - UserDB created, took 0.012 seconds
+2018-04-22 22:41:46 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:41:46 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:46 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:46 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:46 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:41:46 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:46 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:46 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:46 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:41:46 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:46 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:46 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:46 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:41:46 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:46 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:46 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:46 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:41:46 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:46 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:46 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:46 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:41:46 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:46 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:46 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:46 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:41:46 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:46 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:46 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:46 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:41:46 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:41:46 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:41:46 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:41:46 INFO  CardCollector:48 - CardCollector created, took 0.098seconds
+2018-04-22 22:42:01 INFO  UserDB:82 - UserDB created, took 0.014 seconds
+2018-04-22 22:42:01 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:42:01 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:42:01 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:42:01 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:42:01 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:42:01 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:42:01 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:42:01 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:42:01 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:42:01 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:42:01 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:42:01 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:42:01 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:42:01 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:42:01 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:42:01 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:42:01 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:42:01 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:42:01 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:42:01 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:42:01 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:42:01 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:42:01 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:42:01 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:42:01 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:42:01 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:42:01 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:42:01 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:42:01 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:42:01 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:42:01 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:42:01 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:42:01 INFO  CardCollector:48 - CardCollector created, took 0.118seconds
+2018-04-22 22:42:10 INFO  Core:92 - Attempting login with user admin
+2018-04-22 22:42:10 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 22:42:10 INFO  Core:94 - Logged in!
+2018-04-22 22:42:37 INFO  Core:92 - Attempting login with user admin
+2018-04-22 22:42:38 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 22:42:38 INFO  Core:94 - Logged in!
+2018-04-22 22:46:38 INFO  UserDB:82 - UserDB created, took 0.017 seconds
+2018-04-22 22:46:38 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:46:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:46:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:46:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:46:38 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:46:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:46:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:46:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:46:38 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:46:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:46:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:46:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:46:38 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:46:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:46:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:46:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:46:38 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:46:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:46:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:46:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:46:38 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:46:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:46:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:46:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:46:38 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:46:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:46:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:46:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:46:38 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:46:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:46:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:46:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:46:38 INFO  CardCollector:48 - CardCollector created, took 0.109seconds
+2018-04-22 22:46:44 INFO  Core:91 - Attempting login with user admin
+2018-04-22 22:46:45 INFO  Core:99 - Wrong pw for admin
+2018-04-22 22:46:57 INFO  Core:91 - Attempting login with user walkindude
+2018-04-22 22:46:57 INFO  Core:99 - Wrong pw for walkindude
+2018-04-22 22:48:14 INFO  UserDB:82 - UserDB created, took 0.009 seconds
+2018-04-22 22:48:14 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:48:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:48:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:48:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:48:14 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:48:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:48:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:48:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:48:14 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:48:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:48:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:48:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:48:14 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:48:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:48:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:48:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:48:14 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:48:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:48:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:48:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:48:14 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:48:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:48:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:48:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:48:14 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:48:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:48:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:48:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:48:14 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:48:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:48:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:48:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:48:14 INFO  CardCollector:48 - CardCollector created, took 0.117seconds
+2018-04-22 22:48:31 INFO  Core:77 - Created new user wawkindude
+2018-04-22 22:48:39 INFO  Core:91 - Attempting login with user wawkindude
+2018-04-22 22:48:39 INFO  Core:99 - Wrong pw for wawkindude
+2018-04-22 22:49:54 INFO  Core:91 - Attempting login with user wawkindude
+2018-04-22 22:49:54 INFO  Core:105 - unapproved user attempted login
+2018-04-22 22:50:08 INFO  UserDB:82 - UserDB created, took 0.011 seconds
+2018-04-22 22:50:08 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:50:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:50:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:50:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:50:08 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:50:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:50:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:50:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:50:08 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:50:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:50:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:50:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:50:08 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:50:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:50:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:50:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:50:08 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:50:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:50:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:50:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:50:08 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:50:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:50:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:50:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:50:08 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:50:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:50:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:50:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:50:08 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:50:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:50:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:50:08 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:50:08 INFO  CardCollector:48 - CardCollector created, took 0.107seconds
+2018-04-22 22:50:15 INFO  Core:91 - Attempting login with user admin
+2018-04-22 22:50:15 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 22:50:15 INFO  Core:93 - Logged in!
+2018-04-22 22:50:35 INFO  Admin:84 - walkindude approved.
+2018-04-22 22:50:43 INFO  Core:91 - Attempting login with user walkindude
+2018-04-22 22:53:03 INFO  UserDB:82 - UserDB created, took 0.013 seconds
+2018-04-22 22:53:03 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 22:53:03 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:53:03 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:53:03 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:53:03 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 22:53:03 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:53:03 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:53:03 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:53:03 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 22:53:03 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:53:03 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:53:03 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:53:03 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 22:53:03 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:53:03 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:53:03 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:53:03 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 22:53:03 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:53:03 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:53:03 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:53:03 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 22:53:03 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:53:03 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:53:03 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:53:03 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 22:53:03 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:53:03 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:53:03 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:53:03 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 22:53:03 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 22:53:03 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 22:53:03 DEBUG CardSet:37 - Generating RNG
+2018-04-22 22:53:03 INFO  CardCollector:48 - CardCollector created, took 0.138seconds
+2018-04-22 22:53:14 INFO  Core:91 - Attempting login with user wawkindude
+2018-04-22 22:53:14 INFO  Core:105 - unapproved user attempted login
+2018-04-22 22:53:19 INFO  Core:91 - Attempting login with user admin
+2018-04-22 22:53:19 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 22:53:19 INFO  Core:93 - Logged in!
+2018-04-22 22:53:32 INFO  Admin:84 - wawkindude approved.
+2018-04-22 22:53:45 INFO  Core:91 - Attempting login with user wawkindude
+2018-04-22 23:02:37 INFO  UserDB:82 - UserDB created, took 0.013 seconds
+2018-04-22 23:02:38 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 23:02:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:02:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:02:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:02:38 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 23:02:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:02:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:02:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:02:38 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 23:02:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:02:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:02:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:02:38 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 23:02:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:02:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:02:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:02:38 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 23:02:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:02:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:02:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:02:38 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 23:02:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:02:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:02:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:02:38 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 23:02:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:02:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:02:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:02:38 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 23:02:38 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:02:38 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:02:38 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:02:38 INFO  CardCollector:48 - CardCollector created, took 0.142seconds
+2018-04-22 23:02:48 INFO  Core:77 - Created new user walkindude
+2018-04-22 23:02:57 INFO  Core:91 - Attempting login with user admin
+2018-04-22 23:02:57 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 23:02:57 INFO  Core:93 - Logged in!
+2018-04-22 23:03:03 INFO  Admin:84 - walkindude approved.
+2018-04-22 23:03:13 INFO  Core:91 - Attempting login with user walkindude
+2018-04-22 23:03:13 INFO  Core:105 - unapproved user attempted login
+2018-04-22 23:04:24 INFO  UserDB:82 - UserDB created, took 0.013 seconds
+2018-04-22 23:04:24 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 23:04:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:04:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:04:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:04:24 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 23:04:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:04:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:04:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:04:24 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 23:04:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:04:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:04:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:04:24 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 23:04:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:04:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:04:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:04:24 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 23:04:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:04:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:04:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:04:24 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 23:04:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:04:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:04:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:04:24 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 23:04:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:04:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:04:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:04:24 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 23:04:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:04:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:04:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:04:24 INFO  CardCollector:48 - CardCollector created, took 0.134seconds
+2018-04-22 23:04:30 INFO  Core:91 - Attempting login with user admin
+2018-04-22 23:04:30 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 23:04:30 INFO  Core:93 - Logged in!
+2018-04-22 23:04:35 INFO  Admin:84 - walkindude approved.
+2018-04-22 23:07:14 INFO  UserDB:82 - UserDB created, took 0.015 seconds
+2018-04-22 23:07:14 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 23:07:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:07:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:07:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:07:14 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 23:07:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:07:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:07:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:07:14 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 23:07:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:07:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:07:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:07:14 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 23:07:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:07:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:07:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:07:14 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 23:07:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:07:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:07:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:07:14 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 23:07:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:07:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:07:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:07:14 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 23:07:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:07:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:07:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:07:14 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 23:07:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:07:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:07:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:07:14 INFO  CardCollector:48 - CardCollector created, took 0.114seconds
+2018-04-22 23:07:20 INFO  Core:91 - Attempting login with user admin
+2018-04-22 23:07:20 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 23:07:20 INFO  Core:93 - Logged in!
+2018-04-22 23:07:25 INFO  Admin:84 - walkindude approved.
+2018-04-22 23:07:37 INFO  Core:91 - Attempting login with user walkinwalkin
+2018-04-22 23:07:37 WARN  UserDB:99 - User "walkinwalkin"doesn't exist
+2018-04-22 23:07:37 INFO  Core:96 - That user doesn't exist! walkinwalkin
+2018-04-22 23:07:44 INFO  Core:91 - Attempting login with user walkin
+2018-04-22 23:07:44 WARN  UserDB:99 - User "walkin"doesn't exist
+2018-04-22 23:07:44 INFO  Core:96 - That user doesn't exist! walkin
+2018-04-22 23:07:52 INFO  Core:91 - Attempting login with user walkindude
+2018-04-22 23:07:52 DEBUG UserDB:41 - User walkindudelogged in successfully!
+2018-04-22 23:07:52 INFO  Core:93 - Logged in!
+2018-04-22 23:08:08 INFO  Core:91 - Attempting login with user admin
+2018-04-22 23:08:08 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 23:08:08 INFO  Core:93 - Logged in!
+2018-04-22 23:08:14 INFO  Admin:46 - walkindude locked.
+2018-04-22 23:08:23 INFO  Core:91 - Attempting login with user walkindude
+2018-04-22 23:08:23 INFO  Core:102 - locked account walkindude
+2018-04-22 23:08:31 INFO  Core:91 - Attempting login with user admins
+2018-04-22 23:08:31 WARN  UserDB:99 - User "admins"doesn't exist
+2018-04-22 23:08:31 INFO  Core:96 - That user doesn't exist! admins
+2018-04-22 23:08:40 INFO  Core:91 - Attempting login with user admin
+2018-04-22 23:08:40 DEBUG UserDB:41 - User adminlogged in successfully!
+2018-04-22 23:08:40 INFO  Core:93 - Logged in!
+2018-04-22 23:08:53 INFO  Admin:65 - walkindude unlocked.
+2018-04-22 23:09:01 INFO  Core:91 - Attempting login with user walkindude
+2018-04-22 23:09:02 DEBUG UserDB:41 - User walkindudelogged in successfully!
+2018-04-22 23:09:02 INFO  Core:93 - Logged in!
+2018-04-22 23:36:24 INFO  UserDB:82 - UserDB created, took 0.029 seconds
+2018-04-22 23:36:24 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 23:36:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:36:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:36:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:36:24 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 23:36:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:36:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:36:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:36:24 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 23:36:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:36:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:36:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:36:24 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 23:36:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:36:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:36:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:36:24 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 23:36:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:36:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:36:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:36:24 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 23:36:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:36:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:36:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:36:24 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 23:36:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:36:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:36:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:36:24 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 23:36:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:36:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:36:24 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:36:24 INFO  CardCollector:48 - CardCollector created, took 0.183seconds
+2018-04-22 23:36:32 INFO  Core:114 - Attempting login with user walkindude
+2018-04-22 23:36:32 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-22 23:36:32 INFO  Core:116 - Logged in!
+2018-04-22 23:38:13 INFO  UserDB:82 - UserDB created, took 0.015 seconds
+2018-04-22 23:38:14 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 23:38:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:38:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:38:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:38:14 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 23:38:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:38:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:38:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:38:14 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 23:38:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:38:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:38:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:38:14 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 23:38:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:38:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:38:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:38:14 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 23:38:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:38:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:38:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:38:14 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 23:38:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:38:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:38:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:38:14 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 23:38:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:38:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:38:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:38:14 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 23:38:14 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:38:14 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:38:14 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:38:14 INFO  CardCollector:48 - CardCollector created, took 0.13seconds
+2018-04-22 23:38:30 INFO  Core:114 - Attempting login with user walkindude
+2018-04-22 23:38:30 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-22 23:38:30 INFO  Core:116 - Logged in!
