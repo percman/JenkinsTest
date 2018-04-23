@@ -109,13 +109,15 @@ public class SpendCoinsMenu {
 				}
 			}
 		} catch (InputMismatchException ime) {
-			LogThis.warn(ime.getMessage());
+			LogThis.warn("InputMismatchException in Spend Coins Menu " + ime.getMessage());
+			spendCoinsMenu(student);
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn(nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Spend Coins Menu " + nsee.getMessage());
+			spendCoinsMenu(student);
 		} catch (IllegalStateException ise) {
-			LogThis.warn(ise.getMessage());
-		} 
-
+			LogThis.warn("IllegalStateExcdeption in Spend Coins Menu " + ise.getMessage());
+			spendCoinsMenu(student);
+		}
 	}
 
 }

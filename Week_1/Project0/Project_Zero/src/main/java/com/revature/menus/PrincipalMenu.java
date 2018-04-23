@@ -54,11 +54,14 @@ public class PrincipalMenu {
 				
 			}
 		} catch(InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException in Principal Menu " + ime.getMessage());
+			LogThis.warn("InputMismatchException in Principal Menu " + ime.getMessage());
+			principalMenu(principal);
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn("NoSuchElementException in Principal Menu " + nsee.getMessage());
+			principalMenu(principal);
 		} catch (IllegalStateException ise) {
 			LogThis.warn("IllegalStateException in Principal Menu " + ise.getMessage());
+			principalMenu(principal);
 		} 
 
 	}
@@ -124,11 +127,14 @@ public class PrincipalMenu {
 			}
 
 		} catch(InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException in Approve Teacher Menu " + ime.getMessage());
+			LogThis.warn("InputMismatchException in Approve Teacher Menu " + ime.getMessage());
+			approveTeacher(principal);
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn("NoSuchElementException in Approve Teacher Menu " + nsee.getMessage());
+			approveTeacher(principal);
 		} catch (IllegalStateException ise) {
 			LogThis.warn("IllegalStateException in Approve Teacher Menu " + ise.getMessage());
+			approveTeacher(principal);
 		} 
 	}
 
@@ -184,11 +190,14 @@ public class PrincipalMenu {
 			}
 
 		} catch(InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException in Lock Teacher Menu " + ime.getMessage());
+			LogThis.warn("InputMismatchException in Lock Teacher Menu " + ime.getMessage());
+			lockTeacher(principal);
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn("NoSuchElementException in Lock Teacher Menu " + nsee.getMessage());
+			lockTeacher(principal);
 		} catch (IllegalStateException ise) {
 			LogThis.warn("IllegalStateException in Lock Teacher Menu " + ise.getMessage());
+			lockTeacher(principal);
 		} 
 
 	}
@@ -256,10 +265,13 @@ public class PrincipalMenu {
 
 		} catch(InputMismatchException ime) {
 			LogThis.warn("InpupMismatchException in Unlock Teacher Menu " + ime.getMessage());
+			unlockTeacher(principal);
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn("NoSuchElementException in Unlock Teacher Menu " + nsee.getMessage());
+			unlockTeacher(principal);
 		} catch (IllegalStateException ise) {
 			LogThis.warn("IllegalStateException in Unlock Teacher Menu " + ise.getMessage());
+			unlockTeacher(principal);
 		} 
 	}
 

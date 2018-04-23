@@ -10,6 +10,9 @@ import com.revature.users.Person;
 import com.revature.users.Teacher;
 
 public class TeacherMenu {
+	
+	private static AccountData ad = AccountData.getInstance();
+	private static Scanner sc = new Scanner(System.in);
 
 	public static void teacherMenu(Teacher teacher) {
 
@@ -32,7 +35,6 @@ public class TeacherMenu {
 			System.out.println("0. Logout");
 		}
 
-		Scanner sc = new Scanner(System.in);
 
 		try {
 			while (true) {
@@ -61,11 +63,14 @@ public class TeacherMenu {
 				}
 			}
 		} catch (InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException in Teacher Menu " + ime.getMessage());
+			LogThis.warn("InputMismatchException in Teacher Menu " + ime.getMessage());
+			teacherMenu(teacher);
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn("NoSuchElementException in Teacher Menu " + nsee.getMessage());
+			teacherMenu(teacher);
 		} catch (IllegalStateException ise) {
 			LogThis.warn("IllegalStateException in Teacher Menu " + ise.getMessage());
+			teacherMenu(teacher);
 		}
 
 	}
@@ -74,9 +79,6 @@ public class TeacherMenu {
 	private static void approveStudent(Teacher teacher) {
 		LogThis.info("Approve Student Menu");
 
-		AccountData ad = AccountData.getInstance();
-
-		Scanner sc = new Scanner(System.in);
 
 		try {
 			System.out.println("The following students need to be approved:");
@@ -135,11 +137,14 @@ public class TeacherMenu {
 			}
 
 		} catch (InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException in Approve Teacher Menu " + ime.getMessage());
+			LogThis.warn("InputMismatchException in Approve Student Menu " + ime.getMessage());
+			approveStudent(teacher);
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn("NoSuchElementException in Approve Teacher Menu " + nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Approve Student Menu " + nsee.getMessage());
+			approveStudent(teacher);
 		} catch (IllegalStateException ise) {
-			LogThis.warn("IllegalStateException in Approve Teacher Menu " + ise.getMessage());
+			LogThis.warn("IllegalStateException in Approve Student Menu " + ise.getMessage());
+			approveStudent(teacher);
 		}
 
 	}
@@ -147,10 +152,6 @@ public class TeacherMenu {
 	// Lock Student
 	private static void lockStudent(Teacher teacher) {
 		LogThis.info("Lock Student Menu");
-
-		AccountData ad = AccountData.getInstance();
-
-		Scanner sc = new Scanner(System.in);
 
 		try {
 			System.out.println("The following students are unlocked:");
@@ -200,11 +201,14 @@ public class TeacherMenu {
 			}
 
 		} catch (InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException in Lock Teacher Menu " + ime.getMessage());
+			LogThis.warn("InpupMismatchException in Lock Student Menu " + ime.getMessage());
+			lockStudent(teacher);
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn("NoSuchElementException in Lock Teacher Menu " + nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Lock Student Menu " + nsee.getMessage());
+			lockStudent(teacher);
 		} catch (IllegalStateException ise) {
-			LogThis.warn("IllegalStateException in Lock Teacher Menu " + ise.getMessage());
+			LogThis.warn("IllegalStateException in Lock Student Menu " + ise.getMessage());
+			lockStudent(teacher);
 		}
 
 	}
@@ -213,9 +217,6 @@ public class TeacherMenu {
 	private static void unlockStudent(Teacher teacher) {
 		LogThis.info("Unlock Student Menu");
 
-		AccountData ad = AccountData.getInstance();
-
-		Scanner sc = new Scanner(System.in);
 
 		try {
 			System.out.println("The following students need to be unlocked:");
@@ -275,11 +276,14 @@ public class TeacherMenu {
 			}
 
 		} catch (InputMismatchException ime) {
-			LogThis.warn("InpupMismatchException in Unlock Teacher Menu " + ime.getMessage());
+			LogThis.warn("InpupMismatchException in Unlock Student Menu " + ime.getMessage());
+			unlockStudent(teacher);
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn("NoSuchElementException in Unlock Teacher Menu " + nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Unlock Student Menu " + nsee.getMessage());
+			unlockStudent(teacher);
 		} catch (IllegalStateException ise) {
-			LogThis.warn("IllegalStateException in Unlock Teacher Menu " + ise.getMessage());
+			LogThis.warn("IllegalStateException in Unlock Student Menu " + ise.getMessage());
+			unlockStudent(teacher);
 		}
 	}
 

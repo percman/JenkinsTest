@@ -131,12 +131,14 @@ public abstract class Person implements Serializable {
 	//
 	//
 
+	private static Scanner sc = new Scanner(System.in);
+	
 	public static void logout(Person user) {
 		System.out.println("Are you sure you want to log out?");
 		System.out.println("1. Yes");
 		System.out.println("2. No");
 
-		Scanner sc = new Scanner(System.in);
+		
 
 		try {
 			int choice = sc.nextInt();
@@ -160,11 +162,14 @@ public abstract class Person implements Serializable {
 				}
 			}
 		} catch (InputMismatchException ime) {
-			LogThis.warn(ime.getMessage());
+			LogThis.warn("InputMismatchException in Logout " + ime.getMessage());
+			logout(user);
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn(nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Logout " + nsee.getMessage());
+			logout(user);
 		} catch (IllegalStateException ise) {
-			LogThis.warn(ise.getMessage());
+			LogThis.warn("IllegalStateException in Logout " + ise.getMessage());
+			logout(user);
 		}
 
 	}

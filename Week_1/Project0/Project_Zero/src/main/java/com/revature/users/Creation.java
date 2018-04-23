@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 import com.revature.menus.PrincipalMenu;
 import com.revature.menus.StartMenu;
-import com.revature.menus.StudentMenu;
-import com.revature.menus.TeacherMenu;
 import com.revature.singletons.AccountData;
 import com.revature.singletons.LogThis;
 
@@ -37,9 +35,11 @@ public class Creation {
 			ad.put(username + ":" + password, student);
 
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn(nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Create a New Student " + nsee.getMessage());
+			createStudent();
 		} catch (IllegalStateException ise) {
-			LogThis.warn(ise.getMessage());
+			LogThis.warn("IllegalStateException in Create a New Student" + ise.getMessage());
+			createStudent();
 		}
 
 		LogThis.info("Student Account Created");
@@ -69,9 +69,11 @@ public class Creation {
 			ad.put(username + ":" + password, teacher);
 
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn(nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Create a New Teacher " + nsee.getMessage());
+			createTeacher();
 		} catch (IllegalStateException ise) {
-			LogThis.warn(ise.getMessage());
+			LogThis.warn("IllegalStateException in Create a New Teacher" + ise.getMessage());
+			createTeacher();
 		}
 
 		LogThis.info("Teacher Account Created");
@@ -85,7 +87,7 @@ public class Creation {
 
 		try {
 			System.out.println("Please enter your first and last name");
-			principal.setName(sc.next());
+			principal.setName(sc.nextLine());
 
 			System.out.println("Please choose a username");
 			principal.setUserName(sc.next());
@@ -100,9 +102,11 @@ public class Creation {
 			ad.put(username + ":" + password, principal);
 
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn(nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Create a New Principal " + nsee.getMessage());
+			createPrincipal();
 		} catch (IllegalStateException ise) {
-			LogThis.warn(ise.getMessage());
+			LogThis.warn("IllegalStateException in Create a New Principal" + ise.getMessage());
+			createPrincipal();
 		}
 
 		LogThis.info("Principal Account Created");

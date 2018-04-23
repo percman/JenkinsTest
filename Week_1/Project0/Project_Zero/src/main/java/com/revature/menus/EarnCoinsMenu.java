@@ -116,11 +116,14 @@ public class EarnCoinsMenu {
 				}
 			}
 		} catch (InputMismatchException ime) {
-			LogThis.warn(ime.getMessage());
+			LogThis.warn("InputMismatchException in Earn Coins Menu " + ime.getMessage());
+			earnCoinsMenu(student);
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn(nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Earn Coins Menu " + nsee.getMessage());
+			earnCoinsMenu(student);
 		} catch (IllegalStateException ise) {
-			LogThis.warn(ise.getMessage());
+			LogThis.warn("IllegalStateExcdeption in Earn Coins Menu " + ise.getMessage());
+			earnCoinsMenu(student);
 		} 
 
 

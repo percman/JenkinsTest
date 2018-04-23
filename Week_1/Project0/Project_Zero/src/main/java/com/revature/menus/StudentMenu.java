@@ -10,6 +10,8 @@ import com.revature.users.Student;
 
 public class StudentMenu {
 
+	private static Scanner sc = new Scanner(System.in);
+
 	public static void studentMenu(Student student) {
 
 		if (!student.isApproved()) {
@@ -31,7 +33,6 @@ public class StudentMenu {
 			System.out.println("0. Logout");
 		}
 		
-		Scanner sc = new Scanner(System.in);
 
 		try {
 			while (true) {
@@ -57,11 +58,14 @@ public class StudentMenu {
 				}
 			}
 		} catch (InputMismatchException ime) {
-			LogThis.warn(ime.getMessage());
+			LogThis.warn("InputMismatchException in Student Menu " + ime.getMessage());
+			studentMenu(student);
 		} catch (NoSuchElementException nsee) {
-			LogThis.warn(nsee.getMessage());
+			LogThis.warn("NoSuchElementException in Student Menu " + nsee.getMessage());
+			studentMenu(student);
 		} catch (IllegalStateException ise) {
-			LogThis.warn(ise.getMessage());
+			LogThis.warn("IllegalStateExcdeption in Student Menu " + ise.getMessage());
+			studentMenu(student);
 		} 
 
 	}

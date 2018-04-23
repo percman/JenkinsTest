@@ -34,7 +34,10 @@ public class LogThis {
 		logger.warn(msg);
 	}
 
-	
+	public static void warn(String msg, Exception e) {
+		logger.warn(msg, e);
+	}
+
 
 	
 	

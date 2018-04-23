@@ -93,7 +93,7 @@ public class StartMenu {
 
 	}
 
-	public static void login() {
+	private static void login() {
 
 		LogThis.info("Login Menu");
 
@@ -145,29 +145,13 @@ public class StartMenu {
 		}
 	}
 
-//	private static void createNewStudent() {
-//		Person newStudent = Creation.createStudent();
-//
-//		ad.put(newStudent.getUserName() + ":" + newStudent.getPassword(), newStudent);
-//
-//		startMenu();
-//
-//	}
-//
-//	private static void createNewTeacher() {
-//		Person newTeacher = Creation.createTeacher();
-//
-//
-//		startMenu();
-//	}
-
-	public static void serializeAccountData(Map<String, Person> data, File file) {
-		LogThis.info("Data was Serialized.");
+	private static void serializeAccountData(Map<String, Person> data, File file) {
 
 		ObjectOutputStream save = null;
 		try {
 			save = new ObjectOutputStream(new FileOutputStream(new File(file.getPath())));
 			save.writeObject(data);
+			LogThis.info("Data was Serialized.");
 		} catch (IOException ioe) {
 			LogThis.warn(ioe.getMessage());
 		} finally {
@@ -183,7 +167,7 @@ public class StartMenu {
 
 	@SuppressWarnings("unchecked")
 	// The suppressed warning comes from casting the object being read to a map
-	public static void deserializeAccountData(File file) {
+	private static void deserializeAccountData(File file) {
 
 		if (file.exists()) {
 			ObjectInputStream savedData = null;
@@ -195,9 +179,9 @@ public class StartMenu {
 				LogThis.info("Data was deserialized.");
 
 			} catch (IOException ioe) {
-				ioe.printStackTrace();
+				LogThis.warn(ioe.getMessage());
 			} catch (ClassNotFoundException cnfe) {
-				cnfe.printStackTrace();
+				LogThis.warn(cnfe.getMessage());
 			} finally {
 				// I will beat this dead horse
 				// close that resource
