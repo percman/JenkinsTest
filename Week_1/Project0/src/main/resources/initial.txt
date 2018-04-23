@@ -1,4 +1,4 @@
-false
+true
 administrator:andrew:password
 user:andy:password:0:locked
 user:cameron:password:20:unlocked

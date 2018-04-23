@@ -9,12 +9,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import org.apache.log4j.Logger;
+
 public class Bank implements Serializable{
 	private static final long serialVersionUID = 2935074951441032623L;
 	private Map<String, Administrator> administrators;
 	private Map<String, User> users;
 
-	public Bank() {
+	public Bank(Logger logger) {
 		try(BufferedReader br = new BufferedReader(
 									new FileReader(
 											new File("src/main/resources/initial.txt")))) {
@@ -23,10 +25,8 @@ public class Bank implements Serializable{
 			if(initialized.equals("false"))
 				initialize(br);
 			else {
-				administrators = Serialize.deserializeAdministrators(
-						new File("src/main/resources/administrators.txt"));
-				users = Serialize.deserializeUsers(
-						new File("src/main/resources/bank.txt"));
+				administrators = Serialize.deserializeAdministrators(logger);
+				users = Serialize.deserializeUsers(logger);
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -148,7 +148,8 @@ public class Bank implements Serializable{
 		return administrators;
 	}
 
-	public void serialize() {
-		Serialize.serialize(this, new File("src/main/resources/bank.txt"));
+	public void serialize(Logger logger) {
+		Serialize.serializeUsers(users, logger);
+		Serialize.serializeAdministrators(administrators, logger);
 	}
 }

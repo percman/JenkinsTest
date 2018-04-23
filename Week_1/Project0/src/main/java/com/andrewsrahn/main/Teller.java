@@ -183,7 +183,7 @@ public class Teller {
 		switch(Teller.scanner.nextLine()) {
 		case "e":
 			Teller.scanner.close();
-			Teller.bank.serialize();
+			Teller.bank.serialize(logger);
 			logger.trace("logout");
 			System.out.println("goodbye!");
 			break;
@@ -301,7 +301,7 @@ public class Teller {
 
 	public static void main(String[] args) {
 		Teller.scanner = new Scanner(System.in);
-		Teller.bank = new Bank();
+		Teller.bank = new Bank(logger);
 		Teller.greet();
 	}
 }
