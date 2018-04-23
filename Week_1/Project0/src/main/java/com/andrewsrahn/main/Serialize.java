@@ -13,7 +13,7 @@ public class Serialize{
 				new ObjectOutputStream(
 						new FileOutputStream(
 								new File( f.getPath() )))){
-			
+			out.writeObject(b);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

@@ -65,4 +65,18 @@ public class Stream {
 			.reduce("unlocked: ", String::concat);
 		return string.substring(0, string.length()-2);
 	}
+	
+	public static String existingAdministrators(Map<String, Administrator> map) {
+		String string = map.values().stream()
+				.map( a -> a.getName() )
+				.reduce("existing administrators: ", String::concat);
+		return string.substring(0, string.length()-2);
+	}
+
+	public static String existingUsers(Map<String, User> users) {
+		String string = users.values().stream()
+				.map( a -> a.getName() )
+				.reduce("existing users: ", String::concat);
+		return string.substring(0, string.length()-2);
+	}
 }

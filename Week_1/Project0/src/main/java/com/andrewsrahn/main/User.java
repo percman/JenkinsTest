@@ -1,6 +1,10 @@
 package com.andrewsrahn.main;
 
 public class User extends Person{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7198920942951582120L;
 	private int balance;
 	private boolean locked;
 	private Administrator approvedBy;
@@ -20,7 +24,7 @@ public class User extends Person{
 	public void setLocked(boolean locked) {
 		this.locked = locked;
 	}
-	public float getBalance() {
+	public int getBalance() {
 		return balance;
 	}
 	public Administrator getApprovedBy() {
