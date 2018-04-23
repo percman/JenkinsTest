@@ -16,7 +16,7 @@ public class Script {
 	// handles the basic start up for the application
 	public static void start(Reader stream) {
 		read = new BufferedReader(stream);
-		Record.loadData();
+		Record.getInstance().loadData();
 		System.out.print("Type login to login or new user to create a new user:");
 		try {
 			input = read.readLine().toLowerCase();

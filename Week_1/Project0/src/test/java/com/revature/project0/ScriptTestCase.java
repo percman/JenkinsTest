@@ -17,7 +17,7 @@ public class ScriptTestCase {
 	public void startStreams() {
 	    System.setOut(new PrintStream(printOut));
 	    System.setErr(new PrintStream(printErr));
-	    Record.loadData();
+	    Record.getInstance().loadData();
 	}
 
 	@After

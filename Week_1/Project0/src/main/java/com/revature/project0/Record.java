@@ -12,8 +12,21 @@ public class Record {
 	public  static Set<Admin> admins;
 	public  static Set<String> lockedUsers;
 	public  static Set<String> unApprovedUsers;
+	private static Record instance;
 	
-	public static void backup() {
+private Record() {
+	loadData();
+}
+	
+	public static Record getInstance() {
+		if(instance == null) {
+			instance = new Record();
+		}
+		return instance;
+	}
+	
+	
+	public  void backup() {
 		if(users.size() > 0) {
 			UserSerializer.serializeUser(users, new File("src/main/resources/userData.txt"));
 			users.clear();
@@ -32,7 +45,7 @@ public class Record {
 			unApprovedUsers.clear();
 		
 	}
-	public static void loadData() {
+	public  void loadData() {
 		File userFile = new File("src/main/resources/userData.txt");
 		File adminFile = new File("src/main/resources/adminData.txt");
 		File passFile = new File("src/main/resources/passData.txt");
