@@ -1268,3 +1268,1131 @@
 2018-04-23 00:50:00 DEBUG UserDB:41 - User walkindude logged in successfully!
 2018-04-23 00:50:00 INFO  Core:122 - Logged in!
 2018-04-23 00:50:04 INFO  Player:161 - Printing user's cards.
+2018-04-23 00:55:57 INFO  UserDB:82 - UserDB created, took 0.01 seconds
+2018-04-23 00:55:57 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 00:55:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:55:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:55:57 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:55:57 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 00:55:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:55:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:55:57 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:55:57 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 00:55:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:55:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:55:57 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:55:57 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 00:55:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:55:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:55:57 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:55:57 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 00:55:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:55:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:55:57 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:55:57 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 00:55:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:55:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:55:57 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:55:57 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 00:55:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:55:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:55:57 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:55:57 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 00:55:57 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:55:57 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:55:57 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:55:57 INFO  CardCollector:51 - CardCollector created, took 0.112seconds
+2018-04-23 00:56:04 INFO  Core:121 - Attempting login with user walkindude
+2018-04-23 00:56:04 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-23 00:56:04 INFO  Core:123 - Logged in!
+2018-04-23 00:56:09 INFO  Player:161 - Printing user's cards.
+2018-04-23 00:57:18 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 00:57:18 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:57:18 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:57:18 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:57:18 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 00:57:18 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:57:18 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:57:18 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:57:18 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 00:57:18 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:57:18 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:57:18 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:57:18 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 00:57:18 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:57:18 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:57:18 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:57:18 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 00:57:18 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:57:18 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:57:18 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:57:18 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 00:57:18 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:57:18 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:57:18 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:57:18 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 00:57:18 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:57:18 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:57:18 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:57:18 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 00:57:18 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:57:18 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:57:18 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:57:18 INFO  CardCollector:51 - CardCollector created, took 0.026seconds
+2018-04-23 00:57:26 INFO  Core:107 - Created new user tester
+2018-04-23 00:57:32 INFO  Core:121 - Attempting login with user admin
+2018-04-23 00:57:32 DEBUG UserDB:41 - User admin logged in successfully!
+2018-04-23 00:57:32 INFO  Core:123 - Logged in!
+2018-04-23 00:57:47 INFO  Core:121 - Attempting login with user admini
+2018-04-23 00:57:47 DEBUG UserDB:41 - User admini logged in successfully!
+2018-04-23 00:57:47 INFO  Core:123 - Logged in!
+2018-04-23 00:57:57 INFO  Admin:84 - tester approved.
+2018-04-23 00:58:07 INFO  Core:121 - Attempting login with user tester
+2018-04-23 00:58:07 DEBUG UserDB:41 - User tester logged in successfully!
+2018-04-23 00:58:07 INFO  Core:123 - Logged in!
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ultrasaur
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Giant Wasp
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Igneous Elemental
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ornery Direhorn
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Vinecleaver
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Pterrordax Hatchling
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ornery Direhorn
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Sabretooth Stalker
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ravasaur Runt
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Volcano
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Creeper
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Direhorn Hatchling
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Giant Wasp
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Stormwatcher
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a EPIC: Bloodbloom
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Nesting Roc
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Grievous Bite
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Jeweled Macaw
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Hydrologist
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Vicious Fledgling
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Thunder Lizard
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Eggnapper
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Fire Fly
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Eggnapper
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Direhorn Hatchling
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Stegodon
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Obsidian Shard
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Molten Blade
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Lord
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Spikeridged Steed
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ultrasaur
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Hot Spring Guardian
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Fire Plume Phoenix
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Giant Wasp
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Spikeridged Steed
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Giant Mastodon
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Elder Longneck
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Lurker
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Razorpetal Lasher
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a LEGENDARY: The Last Kaleidosaur
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Earthen Scales
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ultrasaur
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Eggnapper
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Shimmering Tempest
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Molten Reflection
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Stegodon
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ravasaur Runt
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Rockpool Hunter
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Elder Longneck
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Golakka Crawler
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Servant of Kalimos
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Steam Surger
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Glacial Shard
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Pterrordax Hatchling
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Vinecleaver
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Pterrordax Hatchling
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ornery Direhorn
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ravasaur Runt
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tortollan Forager
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Volcano
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Verdant Longneck
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Lurker
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ornery Direhorn
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Hot Spring Guardian
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Stonehill Defender
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Lord
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a EPIC: Chittering Tunneler
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tortollan Forager
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Sabretooth Stalker
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Cruel Dinomancer
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a LEGENDARY: The Last Kaleidosaur
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Verdant Longneck
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Crystalline Oracle
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Giant Mastodon
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Obsidian Shard
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Glacial Shard
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Emerald Reaver
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Thunder Lizard
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Volatile Elemental
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Corrupting Mist
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Lakkari Felhound
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Lurker
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a LEGENDARY: King Mosh
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Frozen Crusher
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Earthen Scales
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Air Elemental
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tortollan Shellraiser
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Fire Plume Phoenix
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Adaptation
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Mimic Pod
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tortollan Forager
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Grievous Bite
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Iron Hide
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Rockpool Hunter
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a EPIC: Primordial Drake
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Grievous Bite
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Humongous Razorleaf
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Lost in the Jungle
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Terrorscale Stalker
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Corrupting Mist
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Feeding Time
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Nesting Roc
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Grievous Bite
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Rockpool Hunter
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Spikeridged Steed
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Stegodon
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Volatile Elemental
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Iron Hide
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Stegodon
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Volcano
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Lightfused Stegodon
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Spikeridged Steed
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Elder Longneck
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Arcanologist
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a EPIC: Living Mana
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ornery Direhorn
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Adaptation
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Stubborn Gastropod
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Creeper
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Lightfused Stegodon
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Sabretooth Stalker
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Igneous Elemental
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Lurker
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Evolving Spores
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Spikeridged Steed
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Lost in the Jungle
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Iron Hide
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Stonehill Defender
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Arcanologist
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a EPIC: Living Mana
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ultrasaur
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tortollan Forager
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Emerald Reaver
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Crackling Razormaw
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a EPIC: Bloodbloom
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Hydrologist
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Lord
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tar Creeper
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Ravasaur Runt
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Mirage Caller
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Verdant Longneck
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Razorpetal Lasher
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Adaptation
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Stegodon
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Earthen Scales
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Fire Fly
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Tidal Surge
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a RARE: Volcanosaur
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a COMMON: Sabretooth Stalker
+2018-04-23 00:58:16 DEBUG Player:99 - Unpacked a EPIC: Blazecaller
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Pterrordax Hatchling
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Tar Lurker
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Tar Lurker
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Sabretooth Stalker
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Sabretooth Stalker
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Iron Hide
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Volcano
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Tar Creeper
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Earthen Scales
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Elder Longneck
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Ravasaur Runt
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Ravasaur Runt
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Grievous Bite
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Grievous Bite
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Rockpool Hunter
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Spikeridged Steed
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Spikeridged Steed
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Spikeridged Steed
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Stegodon
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Stegodon
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Stegodon
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Tortollan Forager
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Tortollan Forager
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Tar Lord
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Adaptation
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Ornery Direhorn
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Ornery Direhorn
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Ornery Direhorn
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Ultrasaur
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Ultrasaur
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Eggnapper
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Giant Wasp
+2018-04-23 00:58:20 DEBUG Player:150 - Dusted a Verdant Longneck
+2018-04-23 00:58:31 DEBUG Player:109 - Entering crafting
+2018-04-23 00:58:52 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 00:58:52 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:58:52 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:58:52 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:58:52 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 00:58:52 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:58:52 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:58:52 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:58:52 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 00:58:52 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:58:52 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:58:52 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:58:52 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 00:58:52 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:58:52 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:58:52 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:58:52 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 00:58:52 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:58:52 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:58:52 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:58:52 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 00:58:52 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:58:52 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:58:52 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:58:52 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 00:58:52 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:58:52 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:58:52 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:58:52 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 00:58:52 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 00:58:52 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 00:58:52 DEBUG CardSet:37 - Generating RNG
+2018-04-23 00:58:52 INFO  CardCollector:51 - CardCollector created, took 0.022seconds
+2018-04-23 01:00:44 INFO  UserDB:82 - UserDB created, took 0.016 seconds
+2018-04-23 01:00:44 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:00:44 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:00:44 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:00:44 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:00:44 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:00:44 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:00:44 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:00:44 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:00:44 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:00:44 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:00:44 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:00:44 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:00:44 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:00:44 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:00:44 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:00:44 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:00:44 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:00:44 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:00:44 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:00:44 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:00:44 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:00:44 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:00:44 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:00:44 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:00:44 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:00:44 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:00:44 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:00:44 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:00:44 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:00:44 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:00:44 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:00:44 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:00:44 INFO  CardCollector:51 - CardCollector created, took 0.171seconds
+2018-04-23 01:00:53 INFO  Core:121 - Attempting login with user walkindude
+2018-04-23 01:00:53 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-23 01:00:53 INFO  Core:123 - Logged in!
+2018-04-23 01:00:59 INFO  Player:161 - Printing user's cards.
+2018-04-23 01:01:16 INFO  UserDB:82 - UserDB created, took 0.016 seconds
+2018-04-23 01:01:16 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:01:16 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:16 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:16 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:16 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:01:16 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:16 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:16 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:16 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:01:16 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:16 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:16 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:16 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:01:16 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:16 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:16 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:16 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:01:16 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:16 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:16 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:16 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:01:16 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:16 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:16 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:16 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:01:16 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:16 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:16 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:16 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:01:16 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:16 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:16 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:16 INFO  CardCollector:51 - CardCollector created, took 0.099seconds
+2018-04-23 01:01:24 INFO  UserDB:82 - UserDB created, took 0.011 seconds
+2018-04-23 01:01:24 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:01:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:24 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:24 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:01:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:24 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:24 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:01:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:24 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:24 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:01:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:24 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:24 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:01:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:24 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:24 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:01:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:24 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:24 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:01:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:24 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:24 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:01:24 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:01:24 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:01:24 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:01:24 INFO  CardCollector:51 - CardCollector created, took 0.095seconds
+2018-04-23 01:01:36 INFO  Core:121 - Attempting login with user walkindude
+2018-04-23 01:01:36 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-23 01:01:36 INFO  Core:123 - Logged in!
+2018-04-23 01:01:41 INFO  Player:161 - Printing user's cards.
+2018-04-23 01:02:00 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:02:00 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:02:00 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:02:00 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:02:00 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:02:00 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:02:00 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:02:00 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:02:00 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:02:00 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:02:00 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:02:00 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:02:00 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:02:00 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:02:00 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:02:00 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:02:00 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:02:00 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:02:00 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:02:00 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:02:00 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:02:00 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:02:00 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:02:00 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:02:00 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:02:00 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:02:00 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:02:00 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:02:00 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:02:00 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:02:00 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:02:00 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:02:00 INFO  CardCollector:51 - CardCollector created, took 0.028seconds
+2018-04-23 01:03:42 INFO  UserDB:82 - UserDB created, took 0.007 seconds
+2018-04-23 01:03:42 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:03:42 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:03:42 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:03:42 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:03:42 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:03:42 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:03:42 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:03:42 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:03:42 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:03:42 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:03:42 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:03:42 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:03:42 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:03:42 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:03:42 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:03:42 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:03:42 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:03:42 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:03:42 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:03:42 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:03:42 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:03:42 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:03:42 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:03:42 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:03:42 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:03:42 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:03:42 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:03:42 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:03:42 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:03:42 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:03:42 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:03:42 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:03:42 INFO  CardCollector:51 - CardCollector created, took 0.277seconds
+2018-04-23 01:03:53 INFO  Core:121 - Attempting login with user walkindude
+2018-04-23 01:03:53 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-23 01:03:53 INFO  Core:123 - Logged in!
+2018-04-23 01:03:56 INFO  Player:161 - Printing user's cards.
+2018-04-23 01:04:06 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:04:06 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:04:06 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:04:06 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:04:06 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:04:06 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:04:06 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:04:06 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:04:06 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:04:06 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:04:06 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:04:06 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:04:06 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:04:06 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:04:06 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:04:06 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:04:06 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:04:06 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:04:06 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:04:06 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:04:06 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:04:06 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:04:06 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:04:06 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:04:06 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:04:06 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:04:06 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:04:06 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:04:06 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:04:06 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:04:06 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:04:06 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:04:06 INFO  CardCollector:51 - CardCollector created, took 0.026seconds
+2018-04-23 01:09:05 INFO  UserDB:82 - UserDB created, took 0.016 seconds
+2018-04-23 01:09:05 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:09:05 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:09:05 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:09:05 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:09:05 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:09:05 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:09:05 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:09:05 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:09:05 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:09:05 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:09:05 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:09:05 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:09:05 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:09:05 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:09:05 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:09:05 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:09:05 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:09:05 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:09:05 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:09:05 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:09:05 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:09:05 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:09:05 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:09:05 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:09:05 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:09:05 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:09:05 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:09:05 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:09:05 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:09:05 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:09:05 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:09:05 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:09:05 INFO  CardCollector:51 - CardCollector created, took 0.118seconds
+2018-04-23 01:09:11 INFO  Core:121 - Attempting login with user admin
+2018-04-23 01:09:11 INFO  Core:129 - Wrong pw for admin
+2018-04-23 01:09:15 INFO  Core:121 - Attempting login with user admin
+2018-04-23 01:09:15 DEBUG UserDB:41 - User admin logged in successfully!
+2018-04-23 01:09:15 INFO  Core:123 - Logged in!
+2018-04-23 01:12:07 INFO  UserDB:82 - UserDB created, took 0.015 seconds
+2018-04-23 01:12:07 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:12:07 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:07 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:07 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:07 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:12:07 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:07 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:07 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:07 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:12:07 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:07 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:07 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:07 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:12:07 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:07 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:07 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:07 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:12:07 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:07 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:07 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:07 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:12:07 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:07 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:07 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:07 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:12:07 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:07 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:07 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:07 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:12:07 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:07 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:07 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:07 INFO  CardCollector:51 - CardCollector created, took 0.119seconds
+2018-04-23 01:12:14 INFO  Core:121 - Attempting login with user walkindude
+2018-04-23 01:12:14 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-23 01:12:14 INFO  Core:123 - Logged in!
+2018-04-23 01:12:20 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:12:20 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:20 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:20 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:20 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:12:20 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:20 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:20 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:20 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:12:20 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:20 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:20 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:20 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:12:20 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:20 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:20 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:20 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:12:20 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:20 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:20 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:20 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:12:20 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:20 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:20 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:20 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:12:20 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:20 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:20 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:20 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:12:20 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:12:20 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:12:20 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:12:20 INFO  CardCollector:51 - CardCollector created, took 0.026seconds
+2018-04-23 01:13:39 INFO  UserDB:82 - UserDB created, took 0.014 seconds
+2018-04-23 01:13:39 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:13:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:13:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:13:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:13:39 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:13:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:13:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:13:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:13:39 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:13:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:13:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:13:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:13:39 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:13:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:13:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:13:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:13:39 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:13:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:13:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:13:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:13:39 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:13:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:13:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:13:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:13:39 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:13:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:13:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:13:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:13:39 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:13:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:13:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:13:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:13:39 INFO  CardCollector:51 - CardCollector created, took 0.105seconds
+2018-04-23 01:13:49 INFO  Core:121 - Attempting login with user walkindude
+2018-04-23 01:13:49 INFO  Core:129 - Wrong pw for walkindude
+2018-04-23 01:13:56 INFO  Core:121 - Attempting login with user walkindude
+2018-04-23 01:13:56 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-23 01:13:56 INFO  Core:123 - Logged in!
+2018-04-23 01:46:25 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:46:25 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:25 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:25 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:25 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:46:25 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:25 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:25 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:25 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:46:25 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:25 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:25 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:25 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:46:25 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:25 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:25 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:25 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:46:25 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:25 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:25 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:25 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:46:25 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:25 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:25 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:25 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:46:25 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:25 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:25 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:25 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:46:25 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:25 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:25 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:25 INFO  CardCollector:51 - CardCollector created, took 0.026seconds
+2018-04-23 01:46:39 INFO  UserDB:82 - UserDB created, took 0.014 seconds
+2018-04-23 01:46:39 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:46:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:39 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:46:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:39 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:46:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:39 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:46:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:39 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:46:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:39 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:46:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:39 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:46:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:39 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:46:39 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:46:39 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:46:39 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:46:39 INFO  CardCollector:51 - CardCollector created, took 0.116seconds
+2018-04-23 01:46:47 INFO  Core:121 - Attempting login with user walkindude
+2018-04-23 01:46:47 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-23 01:46:47 INFO  Core:123 - Logged in!
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Arcane Nullifier X-21
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gnomeregan Infantry
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Mech-Bear-Cat
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinker's Sharpsword Oil
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Bomb Lobber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Burly Rockjaw Trogg
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Puddlestomper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Glaivezooka
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Explosive Sheep
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Fel Reaver
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cogmaster
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinker's Sharpsword Oil
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Anodized Robo Cub
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Anodized Robo Cub
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Bomb Lobber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Whirling Zap-o-matic
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Snowchugger
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Brute
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Ancestor's Call
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: King of Beasts
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Piloted Shredder
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Stonesplinter Trogg
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Warbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Explosive Sheep
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Shadowboxer
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Lost Tallstrider
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Puddlestomper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gilblin Stalker
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Upgraded Repair Bot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Iron Sensei
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Stonesplinter Trogg
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Snowchugger
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Spider Tank
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cobra Shot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Cogmaster's Wrench
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Annoy-o-Tron
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Clockwork Gnome
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Shielded Minibot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Floating Watcher
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Vitality Totem
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinker's Sharpsword Oil
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Shielded Minibot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Annoy-o-Tron
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Crackle
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Mistress of Pain
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cobra Shot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cogmaster
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinkertown Technician
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Salty Dog
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a LEGENDARY: Mekgineer Thermaplugg
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Crackle
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Flying Machine
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Seal of Light
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Puddlestomper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Clockwork Giant
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Crackle
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Annoy-o-Tron
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Warmaul
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinker's Sharpsword Oil
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Goblin Blastmage
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cogmaster
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Darkbomb
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gnomeregan Infantry
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: One-eyed Cheat
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Arcane Nullifier X-21
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Burly Rockjaw Trogg
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cobra Shot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ship's Cannon
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gilblin Stalker
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Metaltooth Leaper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Antique Healbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Antique Healbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Glaivezooka
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Micro Machine
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: King of Beasts
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Druid of the Fang
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gilblin Stalker
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cobra Shot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Spider Tank
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Vitality Totem
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Anodized Robo Cub
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Brute
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Spider Tank
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Warbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Crush
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Annoy-o-Tron
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Floating Watcher
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Flamecannon
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Velen's Chosen
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Vitality Totem
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Puddlestomper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Burly Rockjaw Trogg
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Warbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Salty Dog
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Recycle
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Flamecannon
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Lost Tallstrider
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Fel Reaver
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Goblin Sapper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Imp-losion
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Flamecannon
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Whirling Zap-o-matic
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Whirling Zap-o-matic
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Goblin Blastmage
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Jeeves
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Screwjank Clunker
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Spider Tank
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Shadowboxer
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Mechwarper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Ogre Ninja
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Glaivezooka
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gnomeregan Infantry
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Druid of the Fang
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Tree of Life
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Lil' Exorcist
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Warmaul
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Screwjank Clunker
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Warmaul
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Druid of the Fang
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Goblin Blastmage
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ship's Cannon
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Mechanical Yeti
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Goblin Blastmage
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Anodized Robo Cub
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Target Dummy
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Crush
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Seal of Light
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Goblin Auto-Barber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Cobalt Guardian
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Target Dummy
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Darkbomb
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Floating Watcher
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Mistress of Pain
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Warmaul
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Mech-Bear-Cat
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Snowchugger
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gilblin Stalker
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Velen's Chosen
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Floating Watcher
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Grove Tender
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Flying Machine
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: King of Beasts
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Micro Machine
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinkertown Technician
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Madder Bomber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Floating Watcher
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Antique Healbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gilblin Stalker
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Lost Tallstrider
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Steamwheedle Sniper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Darkbomb
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Warbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Shrinkmeister
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Explosive Sheep
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Illuminator
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Antique Healbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cobra Shot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Snowchugger
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Brute
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Soot Spewer
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Puddlestomper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinkertown Technician
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Clockwork Gnome
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Warmaul
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Iron Sensei
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Warmaul
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Goblin Auto-Barber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Druid of the Fang
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Warbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Powermace
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cogmaster
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinkertown Technician
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinker's Sharpsword Oil
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Annoy-o-Tron
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Light of the Naaru
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinker's Sharpsword Oil
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Mechanical Yeti
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Micro Machine
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Spider Tank
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Scarlet Purifier
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinkertown Technician
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Goblin Auto-Barber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Brute
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Clockwork Gnome
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a LEGENDARY: Bolvar Fordragon
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Flamecannon
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Floating Watcher
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Goblin Auto-Barber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Puddlestomper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Arcane Nullifier X-21
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Shielded Minibot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Velen's Chosen
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Darkbomb
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Mechanical Yeti
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Kezan Mystic
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Soot Spewer
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Lost Tallstrider
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Warbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Velen's Chosen
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Scarlet Purifier
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Floating Watcher
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Antique Healbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Puddlestomper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gnomeregan Infantry
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Light of the Naaru
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ship's Cannon
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Warbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Brute
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinkertown Technician
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Madder Bomber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Micro Machine
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Goblin Sapper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Stonesplinter Trogg
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Glaivezooka
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Sabotage
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Warbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinker's Sharpsword Oil
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Druid of the Fang
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Madder Bomber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Mini-Mage
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Seal of Light
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Brute
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Velen's Chosen
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Warmaul
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Powermace
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Glaivezooka
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Micro Machine
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Seal of Light
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Siege Engine
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Jeeves
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Clockwork Gnome
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Puddlestomper
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cobra Shot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Tinkertown Technician
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Dunemaul Shaman
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Stonesplinter Trogg
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Seal of Light
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Mistress of Pain
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Mech-Bear-Cat
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a RARE: Target Dummy
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cobra Shot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Goblin Auto-Barber
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Warbot
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Gilblin Stalker
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Dark Wispers
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Cogmaster
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Ogre Brute
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Glaivezooka
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a COMMON: Snowchugger
+2018-04-23 01:47:03 DEBUG Player:99 - Unpacked a EPIC: Anima Golem
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Seal of Light
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Seal of Light
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Seal of Light
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Micro Machine
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Micro Machine
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Micro Machine
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Mistress of Pain
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Warmaul
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Warmaul
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Warmaul
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Warmaul
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Warmaul
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Snowchugger
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Snowchugger
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Snowchugger
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Antique Healbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Antique Healbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Antique Healbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Gnomeregan Infantry
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Gnomeregan Infantry
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Arcane Nullifier X-21
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Stonesplinter Trogg
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Stonesplinter Trogg
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Stonesplinter Trogg
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Burly Rockjaw Trogg
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinkertown Technician
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinkertown Technician
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinkertown Technician
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinkertown Technician
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinkertown Technician
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Goblin Auto-Barber
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Goblin Auto-Barber
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Goblin Auto-Barber
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Lost Tallstrider
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Lost Tallstrider
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Cobra Shot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Cobra Shot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Cobra Shot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Cobra Shot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Cobra Shot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Shielded Minibot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Clockwork Gnome
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Clockwork Gnome
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Velen's Chosen
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Velen's Chosen
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Velen's Chosen
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Druid of the Fang
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Druid of the Fang
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Druid of the Fang
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Flamecannon
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Flamecannon
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Mechanical Yeti
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Mechanical Yeti
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Whirling Zap-o-matic
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ship's Cannon
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Mech-Bear-Cat
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Floating Watcher
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Floating Watcher
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Floating Watcher
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Floating Watcher
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Floating Watcher
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Gilblin Stalker
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Gilblin Stalker
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Gilblin Stalker
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Gilblin Stalker
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Gilblin Stalker
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Anodized Robo Cub
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Anodized Robo Cub
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a King of Beasts
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Darkbomb
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Darkbomb
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Goblin Blastmage
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Goblin Blastmage
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Annoy-o-Tron
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Annoy-o-Tron
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Annoy-o-Tron
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Target Dummy
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Madder Bomber
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Explosive Sheep
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Brute
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Brute
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Brute
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Brute
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Ogre Brute
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Glaivezooka
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Glaivezooka
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Glaivezooka
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Glaivezooka
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Cogmaster
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Cogmaster
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Cogmaster
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Spider Tank
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Spider Tank
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Spider Tank
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Crackle
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinker's Sharpsword Oil
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinker's Sharpsword Oil
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinker's Sharpsword Oil
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinker's Sharpsword Oil
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Tinker's Sharpsword Oil
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Puddlestomper
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Puddlestomper
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Puddlestomper
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Puddlestomper
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Puddlestomper
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Puddlestomper
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Warbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Warbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Warbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Warbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Warbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Warbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Warbot
+2018-04-23 01:47:14 DEBUG Player:150 - Dusted a Vitality Totem
+2018-04-23 01:48:08 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-23 01:48:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:48:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:48:08 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:48:08 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-23 01:48:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:48:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:48:08 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:48:08 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-23 01:48:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:48:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:48:08 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:48:08 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-23 01:48:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:48:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:48:08 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:48:08 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-23 01:48:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:48:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:48:08 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:48:08 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-23 01:48:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:48:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:48:08 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:48:08 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-23 01:48:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:48:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:48:08 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:48:08 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-23 01:48:08 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-23 01:48:08 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-23 01:48:08 DEBUG CardSet:37 - Generating RNG
+2018-04-23 01:48:08 INFO  CardCollector:51 - CardCollector created, took 0.023seconds

@@ -162,7 +162,7 @@ public class Player extends User {
 		terminal.println("My Collection:");
 		terminal.println();
 		for (Card c: ll) {
-			terminal.println(c.getRarity().name() + ": " + c.getName());
+			terminal.println(c.getRarity().name() + ": " + c.getName() + " x" + c.getOwned());
 		}
 	}
 

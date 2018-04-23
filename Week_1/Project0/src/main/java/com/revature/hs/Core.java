@@ -88,6 +88,7 @@ public class Core {
 					player.craftCard();
 					break;
 				case LOGOUT:
+					CardCollector.refresh();
 					return;
 			}
 		}

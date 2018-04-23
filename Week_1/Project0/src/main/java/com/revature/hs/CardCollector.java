@@ -51,6 +51,10 @@ public class CardCollector {
 		logger.info("CardCollector created, took " + ((System.currentTimeMillis() - timer) / 1000.0) + "seconds");
 	}
 
+	public static void refresh() {
+    	cc = new CardCollector();
+	}
+
 	// Grabs the Hearthstone card information from a file.
 	// In the interest of readability, know that a release group of cards is called a "set"
 	private void initializeCardDB(JSONArray jsa) {
@@ -199,13 +203,13 @@ public class CardCollector {
 		Rarity r = card.getRarity();
 		switch (r) {
 			case COMMON:
-				return 40;
+				return 5;
 			case EPIC:
-				return 400;
+				return 20;
 			case RARE:
 				return 100;
 			case LEGENDARY:
-				return 1600;
+				return 400;
 			default:
 				logger.error("Attempted to get crafting cost of unknown rarity");
 				throw new RuntimeException("Attempted to get crafting cost of unknown rarity");
