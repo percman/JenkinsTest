@@ -76,6 +76,7 @@ public class Player extends User {
 		terminal.println("UNPACKING");
 		for(Card c : cd) {
 			terminal.println(c.getRarity().name() + ": " + c.getName());
+			logger.debug("Unpacked a " + c.getRarity().name() + ": " + c.getName());
 			addCard(c);
 		}
 		saveState();
@@ -92,6 +93,7 @@ public class Player extends User {
 			terminal.println("UNPACKING");
 			for (Card c : cd) {
 				terminal.println(c.getRarity().name() + ": " + c.getName());
+				logger.debug("Unpacked a " + c.getRarity().name() + ": " + c.getName());
 				addCard(c);
 			}
 		}
@@ -106,6 +108,7 @@ public class Player extends User {
 				c.setOwned(c.getOwned() - 1);
 				addDust(CardCollector.getDustAmount(c));
 				terminal.println("Dusted a " + c.getName());
+				logger.debug("Dusted a " + c.getName());
 			}
 		}
 		saveState();

@@ -883,3 +883,40 @@
 2018-04-22 23:38:30 INFO  Core:114 - Attempting login with user walkindude
 2018-04-22 23:38:30 DEBUG UserDB:41 - User walkindude logged in successfully!
 2018-04-22 23:38:30 INFO  Core:116 - Logged in!
+2018-04-22 23:47:58 INFO  UserDB:82 - UserDB created, took 0.012 seconds
+2018-04-22 23:47:58 INFO  CardSet:31 - Preparing CardSet The Grand Tournament
+2018-04-22 23:47:58 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:47:58 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:47:58 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:47:58 INFO  CardSet:31 - Preparing CardSet Mean Streets of Gadgetzan
+2018-04-22 23:47:58 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:47:58 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:47:58 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:47:58 INFO  CardSet:31 - Preparing CardSet The Witchwood
+2018-04-22 23:47:58 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:47:58 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:47:58 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:47:58 INFO  CardSet:31 - Preparing CardSet Goblins vs. Gnomes
+2018-04-22 23:47:58 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:47:58 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:47:58 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:47:58 INFO  CardSet:31 - Preparing CardSet Knights of the Frozen Throne
+2018-04-22 23:47:58 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:47:58 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:47:58 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:47:58 INFO  CardSet:31 - Preparing CardSet Kobalds and Catacombs
+2018-04-22 23:47:58 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:47:58 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:47:58 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:47:58 INFO  CardSet:31 - Preparing CardSet Whispers of the Old Gods
+2018-04-22 23:47:58 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:47:58 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:47:58 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:47:58 INFO  CardSet:31 - Preparing CardSet Journey to Un'Goro
+2018-04-22 23:47:58 DEBUG CardSet:33 - Generating Rarity Distributions
+2018-04-22 23:47:58 DEBUG CardSet:35 - Preparing Rarity Lists
+2018-04-22 23:47:58 DEBUG CardSet:37 - Generating RNG
+2018-04-22 23:47:58 INFO  CardCollector:48 - CardCollector created, took 0.089seconds
+2018-04-22 23:48:09 INFO  Core:114 - Attempting login with user walkindude
+2018-04-22 23:48:09 DEBUG UserDB:41 - User walkindude logged in successfully!
+2018-04-22 23:48:09 INFO  Core:116 - Logged in!
