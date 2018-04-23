@@ -6,10 +6,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Map;
 import java.util.HashMap;
 
+import org.apache.log4j.Logger;
+
+
+
 public class Serialize {
+	private static final Logger logger = Logger.getLogger(Serialize.class);
 
 	// Serialize Admin
 	public static void serializeAdmin(File file) {
@@ -21,7 +25,7 @@ public class Serialize {
 			
 			
 		}catch(IOException ioe) {
-			ioe.printStackTrace();
+			logger.warn(ioe.getMessage());
 		}
 		finally {
 			try {
@@ -29,7 +33,7 @@ public class Serialize {
 				out.close();
 			}
 			catch(IOException ioe) {
-				ioe.printStackTrace();
+				logger.warn(ioe.getMessage());
 			}
 		}
 	}
@@ -41,17 +45,17 @@ public class Serialize {
 		
 		try {
 			in = new ObjectInputStream(new FileInputStream(new File(file.getPath())));
-			Admin.adminMap = (HashMap) in.readObject();
+			Admin.adminMap = (HashMap<String, Admin>) in.readObject();
 		}catch(IOException ioe) {
-			ioe.printStackTrace();
+			logger.warn(ioe.getMessage());
 		}catch(ClassNotFoundException cnfe) {
-			cnfe.printStackTrace();
+			logger.warn(cnfe.getMessage());
 		}
 		finally {
 			try {
 				in.close();
 			}catch(IOException ioe) {
-				ioe.printStackTrace();
+				logger.warn(ioe.getMessage());;
 			}
 		}
 	}
@@ -64,7 +68,7 @@ public class Serialize {
 			// Serializes Person object to file destination
 			out.writeObject(User.userMap);
 		}catch(IOException ioe) {
-			ioe.printStackTrace();
+			logger.warn(ioe.getMessage());
 		}
 		finally {
 			try {
@@ -72,7 +76,7 @@ public class Serialize {
 				out.close();
 			}
 			catch(IOException ioe) {
-				ioe.printStackTrace();
+				logger.warn(ioe.getMessage());
 			}
 		}
 	}
@@ -83,17 +87,17 @@ public class Serialize {
 		ObjectInputStream in = null;
 		try {
 			in = new ObjectInputStream(new FileInputStream(new File(file.getPath())));
-			User.userMap = (HashMap) in.readObject();
+			User.userMap = (HashMap<String, User>) in.readObject();
 		}catch(IOException ioe) {
-			ioe.printStackTrace();
+			logger.warn(ioe.getMessage());
 		}catch(ClassNotFoundException cnfe) {
-			cnfe.printStackTrace();
+			logger.warn(cnfe.getMessage());
 		}
 		finally {
 			try {
 				in.close();
 			}catch(IOException ioe) {
-				ioe.printStackTrace();
+				logger.warn(ioe.getMessage());;
 			}
 		}
 	}

@@ -10,7 +10,7 @@ public class User extends Person{
 	 */
 	private static final long serialVersionUID = 2431287459106300670L;
 	private double balance;
-	boolean locked;
+	public boolean locked;
 	
 	public User(String username, String password) {
 		super();
@@ -27,11 +27,11 @@ public class User extends Person{
 		userMap.put(username, user);
 	}
 	
-	double getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 	
-	void withdraw(double cash) {
+	public void withdraw(double cash) {
 		if(cash<=0) System.out.println("You must enter a positive number.");
 		else if(balance >= cash) {
 			balance =  balance-cash;
@@ -39,7 +39,7 @@ public class User extends Person{
 		}
 		else System.out.println("You do not have enough in your account");
 	}
-	void deposit(double cash) {
+	public void deposit(double cash) {
 		if(cash<=0) System.out.println("You must enter a positive number.");
 		else {
 			balance+=cash;

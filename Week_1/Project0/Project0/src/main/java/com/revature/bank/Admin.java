@@ -13,7 +13,7 @@ public class Admin extends Person{
 		this.username = username;
 		this.password = password;
 		approved = false;
-		loggedIn = true;
+
 	}
 	public static Map<String, Admin> adminMap = new HashMap<>();
 	
@@ -21,19 +21,19 @@ public class Admin extends Person{
 		adminMap.put(username, admin);
 	}
 	
-	void approveUser(User user) {
+	public void approveUser(User user) {
 		user.approved = true;
 	}
 	
-	void approveAdmin(Admin admin) {
+	public void approveAdmin(Admin admin) {
 		admin.approved = true;
 	}
 	
-	void lockUser(User user) {
+	public void lockUser(User user) {
 		user.locked = true;
 	}
 	
-	void unlockUser(User user) {
+	public void unlockUser(User user) {
 		user.locked = false;
 	}
 
