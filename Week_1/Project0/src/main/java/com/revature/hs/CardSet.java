@@ -1,6 +1,8 @@
 package com.revature.hs;
 
 import org.apache.commons.math3.distribution.EnumeratedDistribution;
+import org.apache.commons.math3.util.Pair;
+import org.apache.log4j.Logger;
 
 import java.util.*;
 
@@ -10,52 +12,66 @@ import static java.lang.Math.min;
 public class CardSet {
 	private HashMap<Rarity, List<Card>> cards;
 	private String name;
-	private Random rng;
-
-	// A list that contains each Rarity a number of times equal to
-	// percentage to find in a pack / 100
-	 private List<Rarity> rarityTable;
-	 private List<Rarity> rareOrBetterTable;
+	private static final Logger logger = Logger.getLogger(CardSet.class);
 
 	private EnumeratedDistribution withCommons;
 	private EnumeratedDistribution noCommons;
+	private Random rng;
 
-	public static final int COMMON_PERCENTAGE = 71;
-	public static final int RARE_PERCENTAGE = 23;
-	public static final int EPIC_PERCENTAGE = 5;
-	public static final int LEGENDARY_PERCENTAGE = 1;
+	public static final double COMMON_PERCENTAGE = 88.75;
+	public static final double RARE_PERCENTAGE = 8.922;
+	public static final double EPIC_PERCENTAGE = 1.939;
+	public static final double LEGENDARY_PERCENTAGE = .388;
 
-	private void generateRarityTable() {
-		HashMap<Rarity, Integer> rarityMap = new HashMap<>();
-		rarityTable = new ArrayList<>();
-		rareOrBetterTable = new ArrayList<>();
+	public static final double NC_RARE_PERCENTAGE = 23.0;
+	public static final double NC_EPIC_PERCENTAGE = 5.0;
+	public static final double NC_LEGENDARY_PERCENTAGE = 1.0;
 
-		rarityMap.put(COMMON, COMMON_PERCENTAGE);
-		rarityMap.put(RARE, RARE_PERCENTAGE);
-		rarityMap.put(EPIC, EPIC_PERCENTAGE);
-		rarityMap.put(LEGENDARY, LEGENDARY_PERCENTAGE);
+	public CardSet(String name) {
+		this.name = name;
+		logger.info("Generating Rarity Distributions");
+		generateRarityDistributions();
+		logger.info("Preparing Rarity Lists");
+		prepareRarityLists();
+		logger.info("Generating RNG");
+		rng = new Random();
+	}
 
-		for (Rarity r : rarityMap.keySet()) {
-			for (int i = 0; i < rarityMap.get(r); i++) {
-				rarityTable.add(r);
-			}
+	public void addCard(Card card) {
+		cards.get(card.getRarity()).add(card);
+	}
+
+	private void prepareRarityLists() {
+		cards = new HashMap<>();
+		for (Rarity r: Rarity.values()) {
+			cards.put(r, new LinkedList<>());
 		}
-		rarityMap.remove(COMMON);
-		for (Rarity r : rarityMap.keySet()) {
-			for (int i = 0; i < rarityMap.get(r); i++) {
-				rareOrBetterTable.add(r);
-			}
-		}
-
 	}
 
 	private void generateRarityDistributions() {
-		List rarityWeight =
+		generateNoCommons();
+		generateWithCommons();
+	}
+
+	private void generateWithCommons() {
+		List<Pair<Rarity, Double>> weightList = new LinkedList<>();
+		weightList.add(new Pair(COMMON, COMMON_PERCENTAGE));
+		weightList.add(new Pair(RARE, RARE_PERCENTAGE));
+		weightList.add(new Pair(EPIC, EPIC_PERCENTAGE));
+		weightList.add(new Pair(LEGENDARY, LEGENDARY_PERCENTAGE));
+		withCommons = new EnumeratedDistribution(weightList);
+	}
+
+	private void generateNoCommons() {
+		List<Pair<Rarity, Double>> weightList = new LinkedList<>();
+		weightList.add(new Pair(RARE, NC_RARE_PERCENTAGE));
+		weightList.add(new Pair(EPIC, NC_EPIC_PERCENTAGE));
+		weightList.add(new Pair(LEGENDARY, NC_LEGENDARY_PERCENTAGE));
+		noCommons = new EnumeratedDistribution(weightList);
 	}
 
 	private Card getCard() {
-		int rarityDex = min((int) rng.nextFloat() * 100, 99);
-		return getCard(rarityTable.get(rarityDex));
+		return getCard((Rarity) withCommons.sample());
 	}
 
 	private Card getCard(Rarity r) {
@@ -64,28 +80,18 @@ public class CardSet {
 	}
 
 	private Card getRareOrBetter() {
-		int rarityDex = min((int) rng.nextFloat() * 100, 99);
-		return getCard(rareOrBetterTable.get(rarityDex));
+		return getCard((Rarity) noCommons.sample());
 	}
 
-	// NOTE: This method of pack generation may lead to slightly more rare-or-better cards than
-	// you would get opening packs in hearthstone
+	//TODO: test the probability distribution to confirm it conforms to that of Hearthstone.
 	public Deque<Card> openPack() {
 		Deque<Card> out = new ArrayDeque<>();
-		boolean nonCommon = false;
-		Card c;
 
-		for (int i = 0; i < 5; i++) {
-			c = getCard();
-			if (!nonCommon && c.getRarity() != COMMON) {
-				nonCommon = true;
-			}
-			out.offer(c);
+		for (int i = 0; i < 4; i++) {
+			out.offer(getCard());
 		}
-		if (!nonCommon) {
-			out.pollLast();
-			out.offer(getRareOrBetter());
-		}
+
+		out.offer(getRareOrBetter());
 
 		return out;
 	}

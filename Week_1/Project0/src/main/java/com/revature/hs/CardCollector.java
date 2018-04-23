@@ -2,6 +2,7 @@ package com.revature.hs;
 
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -10,14 +11,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+
+import static com.revature.hs.Rarity.COMMON;
 
 public class CardCollector {
     private static CardCollector cc;
-    private List<String> setList;
+    private HashMap<String, CardSet> setMap;
 	private static final Logger logger = Logger.getLogger(CardCollector.class);
+	private HashMap<String, Card> allCards;
 
     public static CardCollector getInstance() {
     	if (cc == null) {
@@ -26,60 +28,14 @@ public class CardCollector {
 		return cc;
 	}
 
-	private HashMap<Rarity, List<Card>> prepareSet() {
-		HashMap<Rarity, List<Card>> out = new HashMap<>();
-    	for (Rarity r: Rarity.values()) {
-			out.put(r, new LinkedList<Card>());
-		}
-		return out;
-	}
-
-	private void initializeCardDB(JSONArray jsa) {
-		JSONObject js;
-		Card c;
-		String rarityString;
-    	for (Object o: jsa) {
-			js = (JSONObject) o;
-			rarityString = js.getString("rarity");
-			if ("FREE".equals(rarityString)) {
-				continue;
-			}
-		}
-	}
-
-	private String convertSetName(String n) {
-    	if(n.equals("GILNEAS")) {
-    		return "The Witchwood";
-		}
-		if(n.equals("LOOTAPALOOZA")) {
-    		return "Kobalds and Catacombs";
-		}
-		if (n.equals("ICECROWN")) {
-    		return "Knights of the Frozen Throne";
-		}
-		if (n.equals("UNGORO")) {
-    		return "Journey to Un'Goro";
-		}
-		if (n.equals("GANGS")) {
-    		return "Mean Streets of Gadgetzan";
-		}
-		if (n.equals("KARA")) {
-    		return "One Night in Karazhan";
-		}
-		if (n.equals("OG")) {
-    		return "Whispers of the Old Gods";
-		}
-		if (n.equals())
-	}
-
 	private CardCollector() {
-    	FileReader fr = null;
-    	JSONArray js = null;
-    	try {
-    		fr = new FileReader(new File("src/main/resources/cards.collectible.json"));
-    		js = new JSONArray(new JSONTokener(fr));
+		FileReader fr = null;
+		JSONArray js = null;
+		try {
+			fr = new FileReader(new File("src/main/resources/cards.collectible.json"));
+			js = new JSONArray(new JSONTokener(fr));
 		} catch (FileNotFoundException e) {
-    		logger.warn("Couldn't find cards.collectible.json");
+			logger.warn("Couldn't find cards.collectible.json");
 		} finally {
 			try {
 				fr.close();
@@ -90,20 +46,122 @@ public class CardCollector {
 		initializeCardDB(js);
 	}
 
+	// Grabs the Hearthstone card information from a file.
+	// In the interest of readability, know that a release group of cards is called a "set"
+	private void initializeCardDB(JSONArray jsa) {
+		JSONObject js;
+		String setName;
+		Card card;
+
+		setMap = new HashMap<>();
+		allCards = new HashMap<>();
+
+    	for (Object o: jsa) {
+			js = (JSONObject) o;
+			setName = convertSetName(js.getString("set"));
+			if ("Non-expansion".equals(setName)) {
+				continue;
+			}
+			if (!setMap.keySet().contains(setName)) {
+				setMap.put(setName, new CardSet(setName));
+			}
+
+			try {
+				card = new Card(js);
+				setMap.get(setName).addCard(card);
+				allCards.put(card.getName(), card);
+			} catch (RarityNotFoundException e) {
+				try {
+					logger.warn(
+							js.getString("name") + " has invalid rarity \"" + js.getString("rarity") + "\"");
+
+				} catch (JSONException je) {
+					logger.warn("Error when trying to report invalid rarity");
+				}
+			}
+		}
+	}
+
+	public Deque<Card> openPack(String set) {
+		return setMap.get(set).openPack();
+	}
+
+	public Card getCard(String cardName) {
+		return allCards.get(cardName);
+	}
+
+	private static String convertSetName(String n) {
+    	switch (n) {
+			case "GILNEAS":
+				return "The Witchwood";
+			case "LOOTAPALOOZA":
+				return "Kobalds and Catacombs";
+			case "ICECROWN":
+				return "Knights of the Frozen Throne";
+			case "UNGORO":
+				return "Journey to Un'Goro";
+			case "GANGS":
+				return "Mean Streets of Gadgetzan";
+			case "OG":
+				return "Whispers of the Old Gods";
+			case "TGT":
+				return "The Grand Tournament";
+			case "GVG":
+				return "Goblins vs. Gnomes";
+			default:
+				return "Non-expansion";
+		}
+	}
+
 	public static Rarity stringToRarity(String s) throws RarityNotFoundException {
-        if (s.equals("LEGENDARY")) {
-            return Rarity.LEGENDARY;
-        }
-        if (s.equals("EPIC")){
-            return Rarity.EPIC;
-        }
-        if (s.equals("RARE")) {
-            return Rarity.RARE;
-        }
-        if (s.equals("COMMON")) {
-            return Rarity.COMMON;
-        }
-        throw new RarityNotFoundException();
+        switch (s) {
+			case "LEGENDARY":
+				return Rarity.LEGENDARY;
+			case "EPIC":
+				return Rarity.EPIC;
+			case "RARE":
+				return Rarity.RARE;
+			case "COMMON":
+				return COMMON;
+			default:
+				throw new RarityNotFoundException();
+		}
     }
+
+    private static int getCraftCost(Card card) {
+    	Rarity r = card.getRarity();
+		switch (r) {
+			case COMMON:
+				return 40;
+			case EPIC:
+				return 400;
+			case RARE:
+				return 100;
+			case LEGENDARY:
+				return 1600;
+			default:
+				logger.error("Attempted to get crafting cost of unknown rarity");
+				throw new RuntimeException("Attempted to get crafting cost of unknown rarity");
+		}
+	}
+
+	private static int getDustAmount(Card card) {
+		Rarity r = card.getRarity();
+		switch (r) {
+			case COMMON:
+				return 40;
+			case EPIC:
+				return 400;
+			case RARE:
+				return 100;
+			case LEGENDARY:
+				return 1600;
+			default:
+				logger.error("Attempted to get crafting cost of unknown rarity");
+				throw new RuntimeException("Attempted to get crafting cost of unknown rarity");
+		}
+	}
+
+
 
 }

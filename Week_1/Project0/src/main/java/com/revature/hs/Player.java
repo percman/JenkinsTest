@@ -16,7 +16,7 @@ public class Player extends User {
 	public Player(JSONObject jso) {
 		super(jso);
 		JSONArray ja = jso.getJSONArray("myCards");
-		this.myCards = new ArrayList<Card>;
+		this.myCards = new HashMap<>();
 		CardCollector cc = CardCollector.getInstance();
 		for (Object o: ja) {
 			this.addCard(cc.getCard((String) o));
