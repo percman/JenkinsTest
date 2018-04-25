@@ -23,11 +23,11 @@ SELECT albumid, COUNT(*) AS tracksonalbum FROM track
 SELECT * FROM track;
 SELECT * FROM album;
 SELECT * FROM artist;
-SELECT artist.name, COUNT(*) AS tracksproduced FROM track;
+-- SELECT artist.name, COUNT(*) AS tracksproduced FROM track;
     
 -- Write a SQL Query that returns the most purchased media type
-SELECT * FROM mediatype
-    WHERE mediatype.mediatypeid = ;
+-- SELECT * FROM mediatype
+--    WHERE mediatype.mediatypeid = ;
 
     
 -- Write a SQL Query showing customers not in the US
@@ -41,9 +41,9 @@ SELECT DISTINCT billingcountry FROM invoice;
 SELECT * FROM customer;
 SELECT * FROM invoice;
 SELECT * FROM employee;
-SELECT invoice.total, customer.firstname, customer.lastname, customer.country, employee.firstname, employee.lastname FROM customer
-    WHERE customer.invoiceid = invoice.invoiceid
-    AND customer.supportrepid = employee.employeeid;
+-- SELECT invoice.total, customer.firstname, customer.lastname, customer.country, employee.firstname, employee.lastname FROM customer
+--    WHERE customer.invoiceid = invoice.invoiceid
+--    AND customer.supportrepid = employee.employeeid;
 
 -- Write a SQL Query that shows all Tracks, but displays no IDs. Should also include the Album name, Media Type, and Genre
 SELECT * FROM track;
