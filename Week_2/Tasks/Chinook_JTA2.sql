@@ -14,19 +14,40 @@ SELECT *
 FROM employee 
 WHERE hiredate BETWEEN to_date('06-01-2003', 'mm-dd-yyyy')
     AND to_date('03-01-2004', 'mm-dd-yyyy');
+    
 --5. Delete a record in Customer table where the name is Robert Walter (There may be constraints that rely on this, find out how to resolve them). 
 
---6. Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId. 
 
+--6. Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId. 
+SELECT customer.firstname,customer.lastname,invoice.invoiceid 
+FROM customer
+INNER JOIN invoice
+ON invoice.customerid = customer.customerid;
 
 --7. Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, lastname, invoiceId, and total. 
+SELECT customer.customerid, customer.firstname, customer.lastname, customer.customerid, invoice.total
+FROM customer
+FULL OUTER JOIN invoice
+ON invoice.customerid = customer.customerid;
 
 --8. Create a right join that joins album and artist specifying artist name and title.
+SELECT artist.name, album.title
+FROM artist
+RIGHT JOIN album
+ON artist.artistid =  album.artistid;
 
 --9. Create a cross join that joins album and artist and sorts by artist name in ascending order.
 
---10. Perform a self-join on the employee table, joining on the reportsto column. 
+SELECT *
+FROM artist
+CROSS JOIN album
+ORDER BY artist.name ASC;
 
+--10. Perform a self-join on the employee table, joining on the reportsto column. 
+SELECT * 
+FROM employee e1 
+JOIN employee e2
+ON e1.reportsto = e2.reportsto;
 
 
     
