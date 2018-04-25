@@ -10,7 +10,7 @@ private static final long serialVersionUID = -9008338397651161896L;
 String username, password; // the users username and password
 Set<String> movies;// the users library of movies
 public User() {
-	
+
 }
 public User(String name,String pass) {
 	movies = new HashSet<>();
