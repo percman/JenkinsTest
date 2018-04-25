@@ -35,7 +35,7 @@ SELECT * FROM invoiceline;                      -- checking the whole invoicelin
 SELECT * FROM invoiceline
     JOIN invoice ON invoice.invoiceid = invoiceline.invoiceid 
     WHERE invoice.customerid = 32;              -- checking for only Robert's entries in the invoiceline table
-/**    
+/**  -- this answer is not finished yet  
 DELETE FROM customer
     WHERE EXISTS (
         SELECT * FROM invoice
@@ -45,7 +45,7 @@ DELETE FROM customer
                 JOIN invoice ON invoice.invoiceid = invoiceline.invoiceid 
                 WHERE invoice.customerid = 32));
                 */
-/**
+/** -- this answer is finished
 DELETE FROM invoiceline WHERE invoiceline.invoiceid IN
     (SELECT invoiceline.invoiceid FROM invoiceline
         JOIN invoice ON invoice.invoiceid = invoiceline.invoiceid 
