@@ -35,17 +35,7 @@ SELECT * FROM invoiceline;                      -- checking the whole invoicelin
 SELECT * FROM invoiceline
     JOIN invoice ON invoice.invoiceid = invoiceline.invoiceid 
     WHERE invoice.customerid = 32;              -- checking for only Robert's entries in the invoiceline table
-/**  -- this answer is not finished yet  
-DELETE FROM customer
-    WHERE EXISTS (
-        SELECT * FROM invoice
-        WHERE customerid =32
-        AND EXISTS(
-            SELECT * FROM invoiceline
-                JOIN invoice ON invoice.invoiceid = invoiceline.invoiceid 
-                WHERE invoice.customerid = 32));
-                */
-/** -- this answer is finished
+
 DELETE FROM invoiceline WHERE invoiceline.invoiceid IN
     (SELECT invoiceline.invoiceid FROM invoiceline
         JOIN invoice ON invoice.invoiceid = invoiceline.invoiceid 
@@ -53,7 +43,7 @@ DELETE FROM invoiceline WHERE invoiceline.invoiceid IN
 DELETE FROM invoice WHERE customerid = 32;      -- deleting all of Robert's entries from the invoice table
 DELETE FROM customer WHERE customerid = 32;     -- deleting Robert from the customer table
 SELECT * FROM customer;                         -- making sure Robert is no longer on the customer table
-*/
+
 
  -- Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId. 
 SELECT * FROM customer;
