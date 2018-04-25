@@ -1,20 +1,14 @@
 # Main-Batch 
 ## Useful Links
+* [Code Ranch](https://coderanch.com/)
 * [Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
 * [Git Basics](https://youtu.be/0fKg7e37bQE)
 * [Git Team Basics](https://youtu.be/oFYyTZwMyAg)
 ## Environment Setup
-* [github](https://github.com)
-  * www.github.com
-  * Create an account
-  * We will use this for version control, class examples, and submission of your assignments
-* [Slack](https://slack.com)
-  * www.slack.com
-  * Create a slack account.
-  * We will use this for communications between the group outside of work hours. Hell, even during.
-* **AT THIS POINT EMAIL ME THE FOLLOWING**
-  * Github username
-  * The email I receive this from will be the one I invite you to slack with!
+* [github](https://github.com/RevatureLessley/1804-jta)
+  * ww.github.com/RevatureLessley/1804-jta
+* [Slack](https://1804-jta.slack.com/)
+  * www.1804-jta.slack.com
 * [GIT](https://git-scm.com/downloads)
 * [Enthuware](http://www.enthuware.com/)
   * Download and setup enthuware for 1Z0-808 JA+ V8
