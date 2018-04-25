@@ -1,6 +1,6 @@
-package application;
+package save_0;
 
-public class User  {
+public class User {
     //private static final long serialVersionUID = 5058997999481525938L;
     private final int balance;
     private final String name;
