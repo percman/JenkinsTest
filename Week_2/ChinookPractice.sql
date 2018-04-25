@@ -3,6 +3,7 @@
 --andrewsrahn@gmail.com
 --Revature
 --JTA 1804
+--April 25, 2018
 
 --	1. Select all records from the Employee table where first name is Andrew and REPORTSTO is NULL. 
 select * from employee where firstname='Andrew' and reportsto is null;
