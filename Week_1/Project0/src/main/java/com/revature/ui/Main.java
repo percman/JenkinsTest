@@ -1,7 +1,6 @@
 package com.revature.ui;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,22 +11,24 @@ import java.util.List;
 import java.util.Scanner;
 import com.revature.bank.Admin;
 import com.revature.bank.BankingSystem;
-import com.revature.bank.User;
+import com.revature.bank.User;	
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-		System.out.print("Enter [1 for admin] [2 for customer] ");
+		System.out.print("Enter [1 for admin] [2 for customer]");
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();
 		
-		
+	
 		if(s.equals("1")) {
 			
 			if(Admin.AdminVerify()) {
 				System.out.println("**admin verified** ");
+				while(true) {
 				adminMenu();
+				}
 			}
 						
 		} //if admin
@@ -38,12 +39,12 @@ public class Main {
 		
 	} // main
 
-
+	
 
 	private static void adminMenu() throws IOException {
 	
 	
-		System.out.println("Menu options: Create a user(1)/lock a user(2)/display all users(3)/unlock a user(4)");
+		System.out.println("Menu options: Create a user(1)/lock a user(2)/display all users(3)/unlock a user(4)/exit(5)");
 		Scanner sc = new Scanner(System.in);
 		String st = sc.nextLine();
 		
@@ -78,6 +79,10 @@ public class Main {
 			
 			if(st.equals("4")) {
 				User.unlockUser();
+			}
+			
+			if(st.equals("5")) {
+				System.exit(0);
 			}
 		
 	} //admin menu
@@ -149,6 +154,7 @@ public class Main {
 		          ObjectInputStream in = new ObjectInputStream(fileIn);
 		          userList1 = (ArrayList<User>)in.readObject();
 				  BankingSystem.userList = userList1;		// assigning to original arraylist
+				  userList1 = null;
 				  in.close();
 		          fileIn.close();
 		      }
@@ -161,6 +167,8 @@ public class Main {
 			  System.out.println("ClassNotFoundException is caught");
 		  }	
 	}
+	
+	
 	
 }
 

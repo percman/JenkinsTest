@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import com.revature.ui.Main;
 
 public class User implements Serializable {
-		
+	
+	private static final Logger logger = Logger.getLogger(User.class);	
 	private static final long serialVersionUID = 4074750338527691338L;
 	private String uName;
 	private String uPwd;
@@ -109,6 +112,7 @@ public class User implements Serializable {
 				default: 
 					
 					System.out.println("Wrong option");
+					logger.warn("wrong option - please select valid options to withdraw/deposit or check balance.");
 					System.exit(0);
 				} // switch
 				
