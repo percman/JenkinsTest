@@ -20,24 +20,32 @@ select t.albumid, count(t.albumid) as numberofsongs from album a left join track
 
 --Write a SQL query that contains artist's names and the number of tracks they have produced (assume an artist produced a track 
 --if it appears in one of their albums)
-select * from album;
+
 
 --Write a SQL Query that returns the most purchased media type
---	
+
 --Write a SQL Query showing customers not in the US
---
+
+
 --Write a SQL Query showing a unique list of billing countries on the Invoice table
---
+
+
 --Write a SQL Query that shows the Invoice Total, Customer Name, Country, and Sales agent for all invoices and customers 
---
+
+
 --Write a SQL Query that shows all Tracks, but displays no IDs. Should also include the Album name, Media Type, and Genre
---
+
+
 --Write a SQL Query that returns the Top 40 Songs for 2013
---
+
+
 --Write a SQL Query that shows which sales agent made the most in sales overall
---
+
+
 --Write a SQL Query that shows the top 3 best selling artists 
---
+
+
 --Write a SQL Query that returns which albums have no Heavy Metal tracks
---
+
+
 --Write a SQL Query to find the the managers of employees supporting Brazilian customers 

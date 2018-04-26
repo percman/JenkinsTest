@@ -19,3 +19,7 @@ Project 1 Requirements
 7. 2 triggers
 8. create custom checked exceptions where applicable
 9. single and factory
+10. tables must be in 3nf
+11. must include startup sql script
+
+due Monday, April 30, 9:00am
