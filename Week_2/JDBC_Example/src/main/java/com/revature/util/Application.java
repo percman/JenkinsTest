@@ -5,11 +5,31 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+
+import com.revature.model.Pokemon;
+import com.revature.service.PokemonService;
 
 public class Application {
 
 	public static void main(String[] args) {
+		//Pokemon pokemon = new Pokemon(1432135, "Vaporeon", "Water");
+		//System.out.println("Was the pokemon inserted? " + PokemonService.insertPokemon(pokemon));
 		
+//		for (Pokemon p : PokemonService.getAllPokemon()) {
+//			System.out.println(p);
+//		}
+//		System.out.println();
+		
+//		Pokemon jiggly = PokemonService.getPokemon(11);
+//		System.out.println(jiggly);
+		
+		System.out.println("Was the pokemon deleted? " + PokemonService.deletePokemon(28));
+		for (Pokemon p : PokemonService.getAllPokemon()) {
+			System.out.println(p);
+		}
+		System.out.println();
+
 	}
 	
 	public static void selectAllPokemon() {
