@@ -14,4 +14,9 @@ GRANT UPDATE ANY TABLE TO master_trainer;
 GRANT DELETE ANY TABLE TO master_trainer;
 GRANT INSERT ANY TABLE TO master_trainer;
 GRANT UNLIMITED TABLESPACE TO master_trainer;
+GRANT CREATE ANY TABLE TO  master_trainer;
+GRANT DROP ANY TABLE TO master_trainer;
+GRANT CREATE ANY TRIGGER TO master_trainer;
+GRANT CREATE ANY SEQUENCE TO master_trainer;
+GRANT CREATE ANY PROCEDURE TO master_trainer;
 
