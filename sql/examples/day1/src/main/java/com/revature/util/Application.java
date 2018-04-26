@@ -5,12 +5,41 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+
+import com.revature.model.Pokemon;
+import com.revature.service.PokemonService;
 
 public class Application {
 
 	public static void main(String[] args) {
+		System.out.println("Initial size of pokemon in DB: " + PokemonService.getAllPokemon().size());
+		
+		// Arbitrary id, doesnt matter because it is handled in the insert_pokemon stored procedure 
+		Pokemon pokemon = new Pokemon(1234098, "Test", "Pokemon");
+		System.out.println("Was the pokemon inserted? " + PokemonService.insertPokemon(pokemon));
+		
+		System.out.println("Current size of pokemon in DB: " + PokemonService.getAllPokemon().size());
+		Pokemon getPokemon = PokemonService.getPokemon("Test");
+		System.out.println("Pokemon that was retrieved => " + getPokemon);
+		
+		getPokemon.setName("Updated");
+		getPokemon.setType("Updated");
+		
+		System.out.println("Was the pokemon updated? " + PokemonService.updatePokemon(getPokemon));
+		
+		System.out.println("Was the pokemon deleted? " + PokemonService.deletePokemon(getPokemon.getId()));
+		
+		System.out.println("Final size of pokemon in DB: " + PokemonService.getAllPokemon().size());
 		
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	public static void selectAllPokemon() {
 		try (Connection conn = ConnectionUtil.getConnection()) {
