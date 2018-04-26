@@ -60,6 +60,7 @@ public class User implements Serializable {
 		
 		Main.deserialize();
 		
+	
 		Scanner uN = new Scanner(System.in);
 		System.out.print("Please enter user Name ");
 		String uName1 = uN.nextLine();
@@ -67,6 +68,8 @@ public class User implements Serializable {
 		Scanner uP = new Scanner(System.in);
 		System.out.print("Please enter user password ");
 		String uPwd1 = uP.nextLine();
+		
+		while(true) {
 		for(int i=0; i<BankingSystem.userList.size();i++) {
 				
 			/*IF VERIFIED*/
@@ -78,7 +81,7 @@ public class User implements Serializable {
 						if(BankingSystem.userList.get(i).isUserStatus()) {
 				
 				System.out.println(BankingSystem.userList.get(i).getuName() + " Logged in");
-				System.out.println("Please enter options: 1)withdraw	2)deposit	3)Balance  ");
+				System.out.println("Please enter options: 1)withdraw	2)deposit	3)Balance  4)Exit");
 				Scanner o = new Scanner(System.in);
 				String option = o.nextLine();
 				
@@ -108,6 +111,10 @@ public class User implements Serializable {
 						System.out.println("Your balance is: " + BankingSystem.userList.get(i).bank.getBalance() );
 						break;
 						
+				case "4":
+					System.exit(0);
+					
+						
 	
 				default: 
 					
@@ -125,7 +132,7 @@ public class User implements Serializable {
 		} // for
 		
 		Main.serializeUser();
-				
+		}		
 	}
 	
 	public static void lockUser() {

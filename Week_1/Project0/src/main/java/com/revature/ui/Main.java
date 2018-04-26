@@ -34,7 +34,7 @@ public class Main {
 		} //if admin
 		
 		if(s.equals("2")) {
-			User.UserVerify();
+				User.UserVerify();
 		}
 		
 	} // main
