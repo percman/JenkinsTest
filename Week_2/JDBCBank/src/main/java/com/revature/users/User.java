@@ -11,6 +11,7 @@ public class User implements Serializable, NewUser{
 private static final long serialVersionUID = -9008338397651161896L;
 private String username; // the users username and password
 private String password;
+private int moviesOut;
 private Set<String> movies;// the users library of movies
 public User() {
 
@@ -86,6 +87,12 @@ public boolean equals(Object obj) {
 	} else if (!username.equals(other.username))
 		return false;
 	return true;
+}
+public int getMoviesOut() {
+	return moviesOut;
+}
+public void setMoviesOut(int moviesOut) {
+	this.moviesOut = moviesOut;
 }
 
 }

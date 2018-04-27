@@ -9,7 +9,7 @@ import com.revature.users.User;
 public class Login {
 // checks if a user is currently in the list of users	
  public static boolean userExists(String name) {
-	 for(User user : UserService.getInstance().getUsers()) {
+	 for(User user : UserService.getUsers()) {
 		 if(user.getUsername().equals(name)) {
 			 return true;
 		 }
@@ -18,7 +18,7 @@ public class Login {
 }
 //checks if a user is currently in the list of users	
 public static boolean adminExists(String name) {
-	for(Admin admin : AdminService.getInstance().getAdmins()) {
+	for(Admin admin : AdminService.getAdmins()) {
 		 if(admin.getUsername().equals(name)) {
 			 return true;
 		 }

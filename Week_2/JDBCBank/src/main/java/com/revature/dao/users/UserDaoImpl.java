@@ -2,10 +2,22 @@ package com.revature.dao.users;
 
 import java.util.ArrayList;
 
+
 import com.revature.users.User;
 
-public class UserDaoImplementation implements UserDao {
+public class UserDaoImpl implements UserDao {
 
+	private static UserDaoImpl instance;
+	
+	private UserDaoImpl() {}
+	
+	public static UserDaoImpl getInstance() {
+		if(instance == null) {
+			instance = new UserDaoImpl();
+		}
+		return instance;
+	}
+	
 	@Override
 	public boolean addUser(User user) {
 		// TODO add User to database

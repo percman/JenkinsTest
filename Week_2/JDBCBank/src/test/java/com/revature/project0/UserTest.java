@@ -6,6 +6,10 @@ import java.util.Iterator;
 
 import org.junit.Test;
 
+import com.revature.exceptions.AlreadyHaveMovieException;
+import com.revature.exceptions.MovieNotFoundException;
+import com.revature.exceptions.NoMovieException;
+
 public class UserTest {
 
 	@Test

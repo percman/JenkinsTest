@@ -1,9 +1,8 @@
-package com.revature.project0;
+package com.revature.exceptions;
 
 public class AlreadyHaveMovieException extends Exception {
-	
-private static final long serialVersionUID = 925607534058303810L;
-	
+	private static final long serialVersionUID = 5423048731088460635L;
+
 	public AlreadyHaveMovieException() {
 		super();
 	}

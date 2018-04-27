@@ -7,6 +7,23 @@ import java.util.StringTokenizer;
 
 import org.apache.log4j.Logger;
 
+import com.revature.dao.users.AdminService;
+import com.revature.dao.users.UserService;
+import com.revature.data.FileIO;
+import com.revature.data.Login;
+import com.revature.exceptions.AlreadyHaveMovieException;
+import com.revature.exceptions.ApprovalPendingException;
+import com.revature.exceptions.LockedAccountException;
+import com.revature.exceptions.MovieNotFoundException;
+import com.revature.exceptions.NoMovieException;
+import com.revature.exceptions.PasswordIncorrectException;
+import com.revature.exceptions.UserNotFoundException;
+import com.revature.exceptions.UserTypeNotFoundException;
+import com.revature.users.Admin;
+import com.revature.users.NewUser;
+import com.revature.users.NewUserFactory;
+import com.revature.users.User;
+
 public class Script {
 	private static BufferedReader read;// reads from console for all interactions
 	static StringTokenizer tokenizer;// tokenizer for all inputs
@@ -16,7 +33,6 @@ public class Script {
 	// handles the basic start up for the application
 	public static void start(Reader stream) {
 		read = new BufferedReader(stream);
-		Record.getInstance().loadData();
 		System.out.print("Type login to login or new user to create a new user:");
 		try {
 			input = read.readLine().toLowerCase();
@@ -48,11 +64,11 @@ public class Script {
 			String password = read.readLine().replaceAll("\\s+", "");
 			NewUser user = NewUserFactory.getUser(type, username, password);
 			if (type.equals("admin")) {
-				FileIO.addAdmin((Admin) user);
+				AdminService.addAdmin((Admin) user);
 				logger.info("new admin " + username + " created");
-				adminHub(FileIO.getAdmin(username));
+				adminHub(AdminService.getAdmin(username));
 			} else if (type.equals("user")) {
-				FileIO.addNewUser((User) user);
+				UserService.addUser((User)user);
 				logger.info("new user " + username + " created");
 				System.out.println("Your account has been created and is now pending admin approval");
 			}
@@ -80,16 +96,16 @@ public class Script {
 				System.out.print("Please enter your password:");
 				String password = read.readLine();
 				if (Login.checkPassword(password, username)) {
-					User user = FileIO.getUser(username);
-					if (user.isUserUnapproved()) {
+					User user = UserService.getUser(username);
+					if (UserService.isUserUnapproved(user)) {
 						throw new ApprovalPendingException();
 					}
-					if (user.isUserLocked()) {
+					if (UserService.isUserLocked(user)){
 						throw new LockedAccountException();
 					}
 					System.out.println("Welcome " + username);
 					logger.info("user " + username + "logged in");
-					userHub(FileIO.getUser(username));
+					userHub(user);
 				}
 				throw new PasswordIncorrectException();
 			}
@@ -99,7 +115,7 @@ public class Script {
 				if (Login.checkPassword(password, username)) {
 					System.out.println("you have been successfully logged in as an admin.");
 					logger.info("admin " + username + "logged in");
-					adminHub(FileIO.getAdmin(username));
+					adminHub(AdminService.getAdmin(username));
 				}
 				throw new PasswordIncorrectException();
 			} else {
@@ -139,7 +155,7 @@ public class Script {
 					while (tokenizer.hasMoreTokens()) {
 						String title = tokenizer.nextToken();
 						user.addMovie(title);
-						logger.info("user " + user.username + "added movie " + title);
+						logger.info("user " + user.getUsername() + "added movie " + title);
 					}
 					
 					break;
@@ -150,7 +166,7 @@ public class Script {
 					while (tokenizer.hasMoreTokens()) {
 						String title = tokenizer.nextToken();
 						user.removeMovie(title);
-						logger.info("user " + user.username + "added movie " + title);
+						logger.info("user " + user.getUsername() + "added movie " + title);
 					}
 					break;
 				case "view":
@@ -159,11 +175,11 @@ public class Script {
 					break;
 				case "quit":
 					System.out.print("You have quit the application.");
-					logger.info("user " + user.username + "logged out");
+					logger.info("user " + user.getUsername() + "logged out");
 					break;
 				case "q":
 					System.out.print("You have quit the application.");
-					logger.info("user " + user.username + "logged out");
+					logger.info("user " + user.getUsername() + "logged out");
 					break;
 				default:
 					System.out.println("please enter add,remove or view.");
@@ -203,8 +219,8 @@ public class Script {
 					tokenizer = new StringTokenizer(user, ",");
 					while (tokenizer.hasMoreTokens()) {
 						String username = tokenizer.nextToken();
-						admin.setLocked(true, FileIO.getUser(username));
-						logger.info("admin " + admin.username + "locked " + username);
+						UserService.lockUser(UserService.getUser(username));
+						logger.info("admin " + admin.getUsername() + "locked " + username);
 					}
 					break;
 				case "unlock":
@@ -215,8 +231,9 @@ public class Script {
 					tokenizer = new StringTokenizer(user, ",");
 					while (tokenizer.hasMoreTokens()) {
 						String username = tokenizer.nextToken();
-						admin.setLocked(false, FileIO.getUser(username));
-						logger.info("admin " + admin.username + "unlocked " + username);
+						
+						UserService.unlockUser(UserService.getUser(username));
+						logger.info("admin " + admin.getUsername() + "unlocked " + username);
 					}
 					break;
 				case "approve":
@@ -227,17 +244,17 @@ public class Script {
 					tokenizer = new StringTokenizer(user, ",");
 					while (tokenizer.hasMoreTokens()) {
 						String username = tokenizer.nextToken();
-						admin.approve(FileIO.getUser(username));
-						logger.info("admin " + admin.username + "approved " + username);
+						UserService.approveUser(UserService.getUser(username));
+						logger.info("admin " + admin.getUsername() + "approved " + username);
 					}
 					break;
 				case "quit":
 					System.out.print("You have quit the application.");
-					logger.info("admin " + admin.username + "logged out");
+					logger.info("admin " + admin.getUsername() + "logged out");
 					break;
 				case "q":
 					System.out.print("You have quit the application.");
-					logger.info("admin " + admin.username + "logged out");
+					logger.info("admin " + admin.getUsername() + "logged out");
 					break;
 				default:
 					System.out.println("please enter lock,unlock or approve.");

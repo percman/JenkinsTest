@@ -5,8 +5,10 @@ import java.io.Serializable;
 public class Movie implements Serializable {
 	private static final long serialVersionUID = 8173025665216010437L;
 	private String title;
-	public Movie(String title) {
+	private int inStock;
+	public Movie(String title,int inStock) {
 		super();
+		this.inStock = inStock;
 		this.title = title;
 	}
 	
@@ -43,5 +45,14 @@ public class Movie implements Serializable {
 			return false;
 		return true;
 	}
+
+	public int getInStock() {
+		return inStock;
+	}
+
+	public void setInStock(int inStock) {
+		this.inStock = inStock;
+	}
+	
 	
 }

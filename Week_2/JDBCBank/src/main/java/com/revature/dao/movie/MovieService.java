@@ -3,7 +3,7 @@ package com.revature.dao.movie;
 
 
 public class MovieService {
-private static MovieDao dao = new MovieDaoImplementation();
+private static MovieDao dao = MovieDaoImpl.getInstance();
 
 private static MovieService instance;
 private MovieService() {};

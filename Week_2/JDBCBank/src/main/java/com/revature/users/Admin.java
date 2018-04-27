@@ -21,7 +21,7 @@ public class Admin implements Serializable,NewUser {
 	
 	// approves a user
 	public void approve(User user) {
-		UserService.getInstance().approveUser(user);
+		UserService.approveUser(user);
 	}
 
 	public String getUsername() {

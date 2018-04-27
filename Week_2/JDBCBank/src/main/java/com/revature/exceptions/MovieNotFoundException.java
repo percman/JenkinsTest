@@ -1,8 +1,8 @@
-package com.revature.project0;
+package com.revature.exceptions;
 
 public class MovieNotFoundException extends Exception {
-	private static final long serialVersionUID = 925607534058303810L;
-	
+	private static final long serialVersionUID = 7854841564574540746L;
+
 	public MovieNotFoundException() {
 		super();
 	}

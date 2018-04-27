@@ -9,6 +9,8 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import com.revature.exceptions.AlreadyHaveMovieException;
+
 public class SerializationTest {
 
 	@Test
