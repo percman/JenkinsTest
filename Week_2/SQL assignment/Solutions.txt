@@ -1,0 +1,10 @@
+--Write a query that will delete duplicate entries in a table
+DELETE FROM pokemon 
+    WHERE pokemon.id NOT IN 
+    (SELECT MIN(pokemon.id) FROM pokemon
+    GROUP BY pokemon.name, pokemon.type);
+    
+--Write a query that will select the nth record in a table
+SELECT * FROM 
+    (SELECT * FROM pokemon ORDER BY pokemon.name FETCH FIRST 10 ROWS ONLY) 
+    ORDER BY name DESC FETCH FIRST 1 ROWS ONLY;
