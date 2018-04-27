@@ -34,11 +34,17 @@ public class UserDaolmplementation implements UserDao{
 	@Override
 	public ArrayList<User> getAllUsers() {
 		try (Connection conn = ConnectionUtil.getConnection()) {
+			System.out.println("In get all users");
 			ArrayList<User> userList = new ArrayList<>();
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM USERTABLE");
 			ResultSet rs = stmt.executeQuery();
+			
 			while(rs.next()) {
-				userList.add(new User(rs.getString("name"), rs.getInt("budget"), false, false, true));
+				System.out.println(rs.getString("USERNAME"));
+				boolean isAdmin = rs.getInt("ISADMIN") == 1;
+				boolean isLocked = rs.getInt("ISLOCKED") == 1;
+				boolean isApproved = rs.getInt("ISAPPROVED") == 1;
+				userList.add(new User(rs.getString("USERNAME"), rs.getInt("BALANCE"), isAdmin, isLocked, isApproved));
 			}
 			return userList;
 		} catch(SQLException sqle) {

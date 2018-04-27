@@ -38,10 +38,6 @@ public class User implements Serializable {
 		try {
 			ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
 			ArrayList<User> userList = (ArrayList<User>) in.readObject();
-			System.out.println("Current users:");
-			for(User user: userList) {
-				System.out.println(user.getName());
-			}
 			return userList;
 		} catch (Exception e) {
 		}

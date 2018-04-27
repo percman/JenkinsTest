@@ -306,9 +306,10 @@ public class App {
     	//User user = new User("Aragorn", 40, false, false, true);
     	//UserService.insertUser(user);
 
-    	ArrayList<User> userList = UserService.getAllUsers();
-    	for(User u : userList) {
-    		System.out.println("Hello I am" + u.getName());
+    	ArrayList<User> users = UserService.getAllUsers();
+    	for(User u : users) {
+    		System.out.println("Hello I am " + u.getName() + " and I have $" + 
+    	u.getBalance() + " " + u.isAdmin() + " " + u.isLocked() + " " + u.isApproved());
     		
     	}
     	/*Scanner input = new Scanner(System.in);
