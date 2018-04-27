@@ -23,3 +23,5 @@ Project 1 Requirements
 11. must include startup sql script
 
 due Monday, April 30, 9:00am
+
+-- use prepared statements for delete in jdbc
