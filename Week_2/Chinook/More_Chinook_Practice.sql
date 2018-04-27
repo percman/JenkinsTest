@@ -48,20 +48,29 @@ select count(i.trackid), t.name
     on i.trackid=t.trackid 
     group by t.name
     order by count(i.trackid) desc
-    limit 40;
---ORA-00933: SQL command not properly ended
---00933. 00000 -  "SQL command not properly ended"
---*Cause:    
---*Action:
---Error at Line: 51 Column: 5
+    fetch first 40 rows only;
 
 --Write a SQL Query that shows which sales agent made the most in sales overall
-
+select e.firstname || e.lastname as sales, sum(i.total) as total
+    from employee e, customer c, invoice i
+    where e.employeeid=c.supportrepid and i.customerid=c.customerid
+    group by e.firstname || e.lastname
+    order by sum(i.total) desc; 
 
 --Write a SQL Query that shows the top 3 best selling artists 
-
+select t.composer
+    from invoiceline i, track t
+    where i.trackid=t.trackid
+    group by t.composer
+    order by count(i.trackid) desc
+    fetch first 4 rows only;
 
 --Write a SQL Query that returns which albums have no Heavy Metal tracks
+select a.title from genre g, track t, album a
+    where g.name<>'Heavy Metal' and g.genreid=t.genreid
+    group by a.title;
 
-
---Write a SQL Query to find the the managers of employees supporting Brazilian customers 
+--Write a SQL Query to find the the managers of employees supporting Brazilian customers
+select * from employee where employeeid in (
+    select reportsto from employee where employeeid in (
+        select supportrepid from customer c where c.country='Brazil'));

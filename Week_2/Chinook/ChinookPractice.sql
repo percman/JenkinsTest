@@ -25,7 +25,8 @@ alter table invoice drop constraint FK_INVOICECUSTOMERID;
 delete from customer where customerid=
     (select customerid from customer where firstname='Robert' and lastname='Walter');
 
-alter table invoice add constraint FK_INVOICECUSTOMERID foreign key (customerid) references customer(customerid);
+alter table customer add constraint PK_CUSTOMER primary key (customerid);
+alter table invoice add constraint FK_INVOICECUSTOMERID foreign key (customerid) references customer(PK_CUSTOMER);
 --Error report -
 --ORA-02298: cannot validate (CHINOOK.FK_INVOICECUSTOMERID) - parent keys not found
 --02298. 00000 - "cannot validate (%s.%s) - parent keys not found"
