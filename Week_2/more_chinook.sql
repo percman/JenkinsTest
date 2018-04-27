@@ -7,9 +7,11 @@ select * FROM album WHERE albumid IN(
 select albumid FROM track WHERE MILLISECONDS > 360000
 );
 --Write a SQL Query that contains the albumId and number of songs in the album 
-
+select albumid, COUNT(albumid) FROM (
+select album.albumid FROM album, track WHERE album.albumid = track.albumid )
+GROUP BY albumid HAVING COUNT(albumid) > 1;
 --Write a SQL query that contains artist's names and the number of tracks they have produced (assume an artist produced a track if it appears in one of their albums)
-	
+
 --Write a SQL Query that returns the most purchased media type
 	
 --Write a SQL Query showing customers not in the US
