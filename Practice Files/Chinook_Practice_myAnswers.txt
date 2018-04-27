@@ -1,0 +1,163 @@
+-- 1. Select all records from the Employee table where first name is Andrew and REPORTSTO is NULL.
+
+SELECT *
+from EMPLOYEE
+WHERE FIRSTNAME = 'Andrew' AND REPORTSTO is NULL;
+
+-- 2. Select all albums in Album table and sort result set in descending order by title.
+
+SELECT *
+FROM ALBUM
+ORDER BY TITLE;
+
+-- 3. Update Aaron Mitchell in Customer table to Robert Walter
+SELECT *
+FROM CUSTOMER
+WHERE FIRSTNAME = 'Aaron' AND LASTNAME = 'Mitchell';
+
+UPDATE CUSTOMER
+SET FIRSTNAME = 'Robert', LASTNAME = 'Walter'
+WHERE CUSTOMERID = 32;
+
+SELECT *
+FROM CUSTOMER
+WHERE CUSTOMERID = 32;
+
+-- 4. Select all employees hired between 1st of June 2003 and 1st of March 2004
+
+SELECT
+  EMPLOYEEID,
+  FIRSTNAME,
+  HIREDATE
+FROM EMPLOYEE
+WHERE HIREDATE BETWEEN to_date('06-01-2003', 'mm-dd-yyyy') AND to_date('03-01-2004', 'mm-dd-yyyy');
+
+-- 5. Delete a record in Customer table where the name is Robert Walter (There may be constraints that rely on this, find out how to resolve them).
+
+-- To find the records of Robert within Customer and Invoice table.
+SELECT *
+FROM CUSTOMER C INNER JOIN INVOICE I on C.CUSTOMERID = I.CUSTOMERID
+WHERE C.CUSTOMERID = 32;
+
+-- To find the records of Robert within InvoiceLine and Invoice table.
+SELECT *
+FROM INVOICE I INNER JOIN INVOICELINE I2 ON I.INVOICEID = I2.INVOICEID
+WHERE I.CUSTOMERID = 32;
+
+-- Join all of them
+SELECT *
+FROM INVOICE I INNER JOIN INVOICELINE IL on I.INVOICEID = IL.INVOICEID
+  INNER JOIN CUSTOMER C on C.CUSTOMERID = I.CUSTOMERID
+WHERE I.CUSTOMERID = 32;
+
+-- Delete
+DELETE FROM (SELECT *
+             FROM INVOICE I INNER JOIN INVOICELINE IL on I.INVOICEID = IL.INVOICEID
+               INNER JOIN CUSTOMER C on C.CUSTOMERID = I.CUSTOMERID
+             WHERE I.CUSTOMERID = 32);
+
+-- 6. Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId.
+
+SELECT
+  FIRSTNAME,
+  LASTNAME
+FROM CUSTOMER; -- 59 records
+
+SELECT INVOICEID
+FROM INVOICE; -- 412 records
+
+-- There should be 412 invoices with their corresponding customers.
+SELECT
+  C.FIRSTNAME,
+  C.LASTNAME,
+  I.INVOICEID
+FROM CUSTOMER C INNER JOIN INVOICE I ON C.CUSTOMERID = I.CUSTOMERID;
+
+-- 7. Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, lastname, invoiceId, and total.
+
+SELECT *
+FROM CUSTOMER;
+SELECT *
+FROM INVOICE;
+
+-- There should be more than 412 record because the record set includes the
+-- 412 invoice and the customers that do not have invoices.
+SELECT
+  C.CUSTOMERID,
+  C.FIRSTNAME,
+  C.LASTNAME,
+  I.INVOICEID,
+  I.TOTAL
+FROM CUSTOMER C FULL OUTER JOIN INVOICE I on C.CUSTOMERID = I.CUSTOMERID;
+
+-- Check for records with NULL values.
+SELECT
+  C.CUSTOMERID,
+  C.FIRSTNAME,
+  C.LASTNAME,
+  I.INVOICEID,
+  I.TOTAL
+FROM CUSTOMER C FULL OUTER JOIN INVOICE I on C.CUSTOMERID = I.CUSTOMERID
+WHERE I.INVOICEID IS NULL OR I.TOTAL IS NULL;
+-- No records containing NULL thus all customers have invoices.
+
+--8. Create a right join that joins album and artist specifying artist name and title.
+
+SELECT *
+FROM ALBUM; -- 347 records
+SELECT *
+FROM ARTIST; -- 275 records
+-- There should be atleast 347 records + the records of artists that don't have titles.
+SELECT
+  Ar.NAME,
+  Al.TITLE
+FROM ALBUM Al RIGHT JOIN ARTIST Ar ON Al.ARTISTID = Ar.ARTISTID;
+-- Total 418 records. 71 artists do not have titles
+-- Why are the records without titles ordered like those with titles?
+
+--9. Create a cross join that joins album and artist and sorts by artist name in ascending order.
+
+SELECT
+  Ar.NAME,
+  Al.TITLE
+FROM ALBUM Al CROSS JOIN ARTIST Ar;
+-- Order by ascending is default.
+-- Too many records.
+
+-- 10. Perform a self-join on the employee table, joining on the reportsto column.
+
+SELECT *
+FROM EMPLOYEE;
+SELECT *
+FROM EMPLOYEE E
+  JOIN EMPLOYEE E2 on E.REPORTSTO = E2.REPORTSTO;
+-- Table can't clearly tell the who reports to who. Thus specify.
+
+SELECT
+  E.EMPLOYEEID,
+  E.FIRSTNAME  AS REPORTER,
+  E.REPORTSTO,
+  E2.EMPLOYEEID,
+  E2.FIRSTNAME AS COLLECTOR,
+  E2.REPORTSTO
+FROM EMPLOYEE E
+  JOIN EMPLOYEE E2 on E.REPORTSTO = E2.EMPLOYEEID
+ORDER BY E.FIRSTNAME;
+
+create or replace PROCEDURE inName(id IN NUMBER, n IN VARCHAR2, l IN VARCHAR2) AS
+  BEGIN
+    INSERT INTO EMPLOYEE (EMPLOYEEID, FIRSTNAME,LASTNAME) VALUES (id,n,l);
+  END;
+
+  create or replace PROCEDURE outName(id IN NUMBER) AS
+  BEGIN
+    DELETE EMPLOYEE WHERE EMPLOYEEID = id;
+  END;
+
+BEGIN
+  --INNAME(117,'Kirk','Legarda');
+  outName('117');
+
+end;
+
+  SELECT * FROM  EMPLOYEE;
