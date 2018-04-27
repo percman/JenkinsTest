@@ -5,8 +5,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.Serializable;
 import org.apache.log4j.Logger;
-
-
+import com.revature.*;
+import com.revature.exceptions.*;
 /**
  * Cameron Skaggs Project Zero
  * March 2017
@@ -44,6 +44,7 @@ public class App {
 		//ask user for user name
 		System.out.println("Enter Username: ");
 		String userName = input.next();
+		//ensure user truly exists
 		for(User u : userList) {
 			if(u.getName().equals(userName)) {
 				System.out.println("welcome back " + userName);
@@ -100,12 +101,18 @@ public class App {
 			}
 		}
 	}	
+	/*****************************************************
+	 * New User Method : the method for new users actions
+	 *****************************************************/
 	public static void newAdmin(String userName, Scanner input) {
 		User user = new User(userName, 0, true, false, true);
 		userList.add(user);
-		User.serializeUser(userList, bankData);
+		UserService.insertUser(user);
 		adminMethod(input, user);
 	}
+	/*************************************************
+	 * User Method : the method for all admin actions
+	 *************************************************/
 	public static void userMethod(User u, Scanner input) throws InputMismatchException {
 		int response = 0;
 			while (response !=4) {
@@ -129,11 +136,11 @@ public class App {
 				}
 				if (response == 1) {
 					System.out.println("Deposit money");
-					depositMoney(u);
+					depositMoney(u, input);
 				}
 				if (response == 2) {
 					System.out.println("Withdraw money");
-					withdrawMoney(u);
+					withdrawMoney(u, input);
 				}
 				if (response == 3) {
 					System.out.println("View balance");
@@ -147,19 +154,22 @@ public class App {
 	public static void adminMethod(Scanner input, User u) {
 		int response = 0;
 
-		while (response != 3) {
+		while (response != 5) {
 			System.out.println("Would you like to");
 			System.out.println("Approve/Reject Users? (1)");
 			System.out.println("Lock/Unlock Users? (2)");
-			System.out.println("Quit (3)");
+			System.out.println("Deposit Money? (3)");
+			System.out.println("Withdraw Money? (4)");
+			System.out.println("Quit (5)");
 			try {
 				response = input.nextInt();
 			} catch(InputMismatchException e) {
 				System.out.println("Invalid value");
 				logger.warn(u.getName() + " entered a bad value " , e);
-				return;
-			}			// Loop until a valid response is given
-			while (response > 3 | response < 1) {
+				adminMethod(input, u);
+			}			
+			// Loop until a valid response is given
+			while (response > 6 | response < 1) {
 				System.out.println("Please enter a valid number");
 				response = input.nextInt();
 			}
@@ -177,18 +187,24 @@ public class App {
 				System.out.println("----------------------");
 				lockOrUnlock(input);
 			}
+			if (response == 3) {
+				depositMoney(u, input);
+			}
+			if (response == 4) {
+				withdrawMoney(u, input);
+			}
 		}
 	}
-	public static void depositMoney(User u) {
+	public static void depositMoney(User u, Scanner input) {
 		System.out.println("Enter amount you wish to deposit");
-		Scanner input = new Scanner(System.in);
+		input = new Scanner(System.in);
 		int n = input.nextInt();
 		u.addBalance(n);
 		System.out.println("You successfully added $" + n +"s " + "your current balance is $" + u.getBalance());
 	}
-	public static void withdrawMoney(User u) {
+	public static void withdrawMoney(User u, Scanner input) {
 		System.out.println("Enter amount you wish to withdraw");
-		Scanner input = new Scanner(System.in);
+		input = new Scanner(System.in);
 		int n = input.nextInt();
 		u.subtractBalance(n);
 		System.out.println("You successfully withdrew $" + n +"s " + "your current balance is $" + u.getBalance());
@@ -263,7 +279,6 @@ public class App {
 		}
 	}
 	//this method will return a user that shares 
-	//the name with the parameter 'name'
 	public static User returnUserByName(String name) {
 		for (User u: userList) {
 			if (u.getName().equals(name)) {
@@ -288,9 +303,17 @@ public class App {
 		}
 	}
     public static void main ( String[] args ) {
-		Scanner input = new Scanner(System.in);
+    	//User user = new User("Aragorn", 40, false, false, true);
+    	//UserService.insertUser(user);
+
+    	ArrayList<User> userList = UserService.getAllUsers();
+    	for(User u : userList) {
+    		System.out.println("Hello I am" + u.getName());
+    		
+    	}
+    	/*Scanner input = new Scanner(System.in);
     	while (true) {
     		welcome(input);
-    	}
+    	}*/
     }
 }

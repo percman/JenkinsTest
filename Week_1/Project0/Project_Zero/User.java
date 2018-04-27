@@ -8,7 +8,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+import com.revature.zero.Project_Zero.ConnectionUtil;
 
 public class User implements Serializable {
 	private final long serialVersionUID = -3703230509509286756L;
@@ -17,7 +22,8 @@ public class User implements Serializable {
 	private boolean locked;
 	private String name;
 	private boolean approved;
-	
+
+	//Method which serializes the user
 	public static void serializeUser(ArrayList<User> userList, File file) {
 		try {
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
@@ -27,6 +33,7 @@ public class User implements Serializable {
 			ioe.printStackTrace();
 		}
 	}
+	//The method which takes a file and turns it into an array list
 	public static ArrayList<User> getUserList(File file) {
 		try {
 			ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
@@ -50,6 +57,7 @@ public class User implements Serializable {
 		this.locked = locked;
 		this.approved = approved;
 	}
+	
 	public int getBalance() {
 		return balance;
 	}
@@ -100,5 +108,4 @@ public class User implements Serializable {
 	public boolean isAdmin() {
 		return admin;
 	}
-	
 }
