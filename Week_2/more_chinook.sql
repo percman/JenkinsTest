@@ -13,9 +13,11 @@ GROUP BY albumid HAVING COUNT(albumid) > 1;
 --Write a SQL query that contains artist's names and the number of tracks they have produced (assume an artist produced a track if it appears in one of their albums)
 
 --Write a SQL Query that returns the most purchased media type
-	
+SELECT mediatypeid, COUNT(mediatypeid), name FROM (
+SELECT track.mediatypeid, mediatype.NAME FROM mediatype, track WHERE mediatype.mediatypeid = track.mediatypeid)
+GROUP BY mediatypeid, name HAVING COUNT(mediatypeid) > 1;
 --Write a SQL Query showing customers not in the US
-
+SELECT * FROM customer WHERE country <> 'USA';
 --Write a SQL Query showing a unique list of billing countries on the Invoice table
 
 --Write a SQL Query that shows the Invoice Total, Customer Name, Country, and Sales agent for all invoices and customers 
