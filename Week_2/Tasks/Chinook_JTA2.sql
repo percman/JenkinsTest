@@ -24,6 +24,16 @@ FROM customer
 INNER JOIN invoice
 ON invoice.customerid = customer.customerid;
 
+SELECT CONCAT(CONCAT(c.firstname, ' '), c.lastname) as name, i.invoiceid
+    FROM customer c
+    INNER JOIN invoice i 
+    ON c.customerid = i.customerid;
+    
+SELECT c.firstname || ' ' || c.lastname as customer_name, i.invoiceid
+    FROM customer c
+    INNER JOIN invoice i 
+    ON c.customerid = i.customerid;
+
 --7. Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, lastname, invoiceId, and total. 
 SELECT customer.customerid, customer.firstname, customer.lastname, customer.customerid, invoice.total
 FROM customer
@@ -50,8 +60,6 @@ JOIN employee e2
 ON e1.reportsto = e2.reportsto;
 
 
-    
-    
     
     
 
@@ -163,9 +171,120 @@ FROM (
 WHERE ROWNUM <= 4;
     
 --Write a SQL Query that returns which albums have no Heavy Metal tracks
+SELECT * 
+FROM album
+JOIN track 
+ON album.albumid = track.albumid;
+
+SELECT *
+FROM track
+JOIN genre
+ON track.genreid = track.genreid;
+
+-- very close! having problem with attribute names 
+SELECT * FROM 
+    (SELECT * 
+    FROM album
+    JOIN track 
+    ON album.albumid = track.albumid) t1
+    JOIN 
+    (SELECT *
+    FROM track
+    JOIN genre
+    ON track.genreid = track.genreid) t2
+ON t1.composer = t2.composer;
+
+SELECT album.albumid FROM ALBUM 
+UNION 
+SELECT track.albumid FROM TRACK;
+
+SELECT *
+FROM track 
+INNER JOIN genre 
+ON genre.genreid = track.genreid
+INNER JOIN album 
+ON album.albumid = track.trackid
+WHERE genre.genreid = 1
+ORDER BY genre.genreid;
 
 
 --Write a SQL Query to find the the managers of employees supporting Brazilian customers 
+
+
+
+
+
+
+
+
+--Create a function that returns the returns the current time 
+CREATE OR REPLACE FUNCTION get_current_time RETURN TIMESTAMP 
+AS 
+    time_right_now TIMESTAMP; 
+BEGIN 
+    SELECT CURRENT_TIMESTAMP INTO time_right_now FROM dual;
+    dbms_output.put_line('The current time is ' || time_right_now);
+    RETURN time_right_now;
+END;
+/
+
+SELECT get_current_time 
+FROM dual;
+
+
+--Create a function that returns the length of a mediatype from the mediatype table
+CREATE OR REPLACE FUNCTION length_media (medianame VARCHAR2) RETURN number 
+AS 
+    length_of number; 
+BEGIN 
+    SELECT length(medianame) INTO length_of from dual;
+    RETURN length_of;
+END;
+/
+
+SELECT length_media(name) 
+FROM mediatype;
+
+--Create a function that returns the average total of all invoices
+
+
+--Create a function that returns the average price of invoiceline items in the invoiceline table 
+
+
+--Create a function that returns all employees born after 1968
+
+--Create a stored procedure that selects the first and last names from the employee table 
+
+--Create a stored procedure that returns the name and company of a customer 
+
+--Create a transaction that given an invoice id will delete that invoice 
+
+--Create a transaction that inserts a new record into the Customer table
+
+--Create an after trigger on the employee table that executes after a record is inserted 
+
+--Create an after trigger on the customer table that executes after a record is inserted 
+
+--Create an before trigger on the employee table that executes after a record is inserted 
+
+--Create a audit table and delete trigger on the customer table before a record is deleted 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
