@@ -11,9 +11,9 @@ end;
 
 -- Create a function that returns the length of a mediatype from the mediatype table
 select * from mediatype;
-select len(name) from mediatype;
 
 -- Create a function that returns the average total of all invoices
+
 
 -- Create a function that returns the average price of invoiceline items in the invoiceline table 
 
