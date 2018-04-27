@@ -13,8 +13,8 @@ import com.revature.service.PokemonService;
 public class Application {
 
 	public static void main(String[] args) {
-		//Pokemon pokemon = new Pokemon(1432135, "Vaporeon", "Water");
-		//System.out.println("Was the pokemon inserted? " + PokemonService.insertPokemon(pokemon));
+//		Pokemon pokemon = new Pokemon(1432135, "Vaporeon", "Water");
+//		System.out.println("Was the pokemon inserted? " + PokemonService.insertPokemon(pokemon));
 		
 //		for (Pokemon p : PokemonService.getAllPokemon()) {
 //			System.out.println(p);
@@ -24,11 +24,11 @@ public class Application {
 //		Pokemon jiggly = PokemonService.getPokemon(11);
 //		System.out.println(jiggly);
 		
-		System.out.println("Was the pokemon deleted? " + PokemonService.deletePokemon(28));
-		for (Pokemon p : PokemonService.getAllPokemon()) {
-			System.out.println(p);
-		}
-		System.out.println();
+//		System.out.println("Was the pokemon deleted? " + PokemonService.deletePokemon(28));
+//		for (Pokemon p : PokemonService.getAllPokemon()) {
+//			System.out.println(p);
+//		}
+//		System.out.println();
 
 	}
 	
