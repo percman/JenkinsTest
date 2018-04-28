@@ -20,6 +20,11 @@ GRANT CREATE ANY PROCEDURE TO jdbcbank_user;
 Run the following code in the new jdbcbank_user connection
 **************************************************************/
 
+-- Drop tables if they have been created before
+DROP TABLE principal;
+DROP TABLE teacher;
+DROP TABLE student;
+
 -- Create the necessary tables
 CREATE TABLE principal (
     p_id NUMBER (1), 
@@ -54,11 +59,17 @@ CREATE TABLE student (
     s_coins NUMBER (10),
     s_approved NUMBER (1),
     s_locked NUMBER (1),
+    s_bought_sub NUMBER (1),
+    s_bought_mult NUMBER (1),
+    s_bought_div NUMBER (1),
     CONSTRAINT PK_S_ID PRIMARY KEY (s_id),
     CONSTRAINT UK_S_USERNAME UNIQUE (s_username),
     CONSTRAINT CK_S_COINS CHECK (s_coins >= 0),
     CONSTRAINT CK_S_APPROVED CHECK (s_approved = 0 OR s_approved = 1),
-    CONSTRAINT CK_S_LOCKED CHECK (s_locked = 0 OR s_locked = 1)
+    CONSTRAINT CK_S_LOCKED CHECK (s_locked = 0 OR s_locked = 1),
+    CONSTRAINT CK_S_BOUGHT_SUB CHECK (s_bought_sub = 0 OR s_bought_sub = 1),
+    CONSTRAINT CK_S_BOUGHT_MULT CHECK (s_bought_mult = 0 OR s_bought_mult = 1),
+    CONSTRAINT CK_S_BOUGHT_DIV CHECK (s_bought_div = 0 OR s_bought_div = 1)
 );
 
 
@@ -76,7 +87,8 @@ CREATE SEQUENCE student_id_sequence
 
 
 -- Hashing function that combines username, password, and a special word    
-CREATE OR REPLACE FUNCTION GET_USER_HASH(USERNAME VARCHAR2, PASSWORD VARCHAR2) RETURN VARCHAR2
+CREATE OR REPLACE FUNCTION GET_USER_HASH(USERNAME VARCHAR2, PASSWORD VARCHAR2) 
+                                            RETURN VARCHAR2
     IS
         EXTRA VARCHAR2(10) := 'MATH';
     BEGIN
@@ -131,8 +143,9 @@ CREATE OR REPLACE PROCEDURE insert_student (username IN VARCHAR2, new_password I
     AS
     BEGIN
         INSERT INTO student (s_id, s_username, s_password, s_firstname, s_lastname, 
-                                s_coins, s_approved, s_locked)
-            VALUES (null, username, new_password, firstname, lastname, 0, 0, 0);
+                                s_coins, s_approved, s_locked, s_bought_sub, 
+                                s_bought_mult, s_bought_div)
+            VALUES (null, username, new_password, firstname, lastname, 0, 0, 0, 0, 0, 0);
             COMMIT;
     END;
     /
