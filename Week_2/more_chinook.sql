@@ -19,9 +19,9 @@ GROUP BY mediatypeid, name HAVING COUNT(mediatypeid) > 1;
 --Write a SQL Query showing customers not in the US
 SELECT * FROM customer WHERE country <> 'USA';
 --Write a SQL Query showing a unique list of billing countries on the Invoice table
-
+SELECT DISTINCT billingcountry FROM invoice;
 --Write a SQL Query that shows the Invoice Total, Customer Name, Country, and Sales agent for all invoices and customers 
-
+SELECT invoice.total, invoice.billingcountry, customer.CUSTOMERID FROM invoice, customer WHERE customer.CUSTOMERID = invoice.CUSTOMERID ;
 --Write a SQL Query that shows all Tracks, but displays no IDs. Should also include the Album name, Media Type, and Genre
 
 --Write a SQL Query that returns the Top 40 Songs for 2013
