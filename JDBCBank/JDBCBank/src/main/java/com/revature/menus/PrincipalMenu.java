@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import com.revature.exceptions.InvalidChoiceException;
 import com.revature.singletons.AccountData;
 import com.revature.singletons.LogThis;
 import com.revature.users.Person;
@@ -42,18 +43,14 @@ public class PrincipalMenu {
 					Person.logout(principal);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("Your options are:");
-					System.out.println("1. Approve new Teacher Profiles");
-					System.out.println("2. Lock Teacher Profile");
-					System.out.println("3. Unlock Teacher Profile");
-					System.out.println("0. Logout");
-					choice = sc.nextInt();
-					break;
+					throw new InvalidChoiceException();
 				}
 				
 			}
-		} catch(InputMismatchException ime) {
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			principalMenu(principal);
+		} catch (InputMismatchException ime) {
 			LogThis.warn("InputMismatchException in Principal Menu " + ime.getMessage());
 			principalMenu(principal);
 		} catch (NoSuchElementException nsee) {
@@ -109,24 +106,15 @@ public class PrincipalMenu {
 					principalMenu(principal);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("The following Teachers need to be approved:");
-
-					for (Person p : ad.values()) {
-						if (p.getType() == "teacher" && !p.isApproved()) {
-							System.out.println(p.getName());
-						}
-					}
-					System.out.println("1. Approve All");
-					System.out.println("2. Approve a specific teacher");
-					System.out.println("0. Return to Principal Menu");
-					choice = sc.nextInt();
-					break;
+					throw new InvalidChoiceException();
 				}
 
 			}
 
-		} catch(InputMismatchException ime) {
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			approveTeacher(principal);
+		} catch (InputMismatchException ime) {
 			LogThis.warn("InputMismatchException in Approve Teacher Menu " + ime.getMessage());
 			approveTeacher(principal);
 		} catch (NoSuchElementException nsee) {
@@ -173,23 +161,15 @@ public class PrincipalMenu {
 					principalMenu(principal);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("The following Teachers are unlocked:");
-
-					for (Person p : ad.values()) {
-						if (p.getType() == "teacher" && p.isLocked()) {
-							System.out.println(p.getName());
-						}
-					}
-					System.out.println("1. Lock a specific teacher");
-					System.out.println("0. Return to Principal Menu");
-					choice = sc.nextInt();
-					break;
+					throw new InvalidChoiceException();
 
 				}
 			}
 
-		} catch(InputMismatchException ime) {
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			lockTeacher(principal);
+		} catch (InputMismatchException ime) {
 			LogThis.warn("InputMismatchException in Lock Teacher Menu " + ime.getMessage());
 			lockTeacher(principal);
 		} catch (NoSuchElementException nsee) {
@@ -246,24 +226,15 @@ public class PrincipalMenu {
 					principalMenu(principal);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("The following Teachers need to be unlocked:");
-
-					for (Person p : ad.values()) {
-						if (p.getType() == "teacher" && p.isLocked()) {
-							System.out.println(p.getName());
-						}
-					}
-					System.out.println("1. Unlock All");
-					System.out.println("2. Unlock a specific teacher");
-					System.out.println("0. Return to Principal Menu");
-					choice = sc.nextInt();
-					break;
+					throw new InvalidChoiceException();
 				}
 
 			}
 
-		} catch(InputMismatchException ime) {
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			unlockTeacher(principal);
+		} catch (InputMismatchException ime) {
 			LogThis.warn("InpupMismatchException in Unlock Teacher Menu " + ime.getMessage());
 			unlockTeacher(principal);
 		} catch (NoSuchElementException nsee) {

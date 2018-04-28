@@ -11,7 +11,7 @@ import com.revature.users.Person;
 import com.revature.users.Teacher;
 
 public class TeacherMenu {
-	
+
 	private static AccountData ad = AccountData.getInstance();
 	private static Scanner sc = new Scanner(System.in);
 
@@ -35,7 +35,6 @@ public class TeacherMenu {
 			System.out.println("3. Unlock Student Profile");
 			System.out.println("0. Logout");
 		}
-
 
 		try {
 			while (true) {
@@ -76,7 +75,6 @@ public class TeacherMenu {
 	// Approve student
 	private static void approveStudent(Teacher teacher) {
 		LogThis.info("Approve Student Menu");
-
 
 		try {
 			System.out.println("The following students need to be approved:");
@@ -173,22 +171,13 @@ public class TeacherMenu {
 					teacherMenu(teacher);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("The following students are unlocked:");
-
-					for (Person p : ad.values()) {
-						if (p.getType() == "student" && p.isLocked()) {
-							System.out.println(p.getName());
-						}
-					}
-					System.out.println("1. Lock a specific student");
-					System.out.println("0. Return to Teacher Menu");
-					choice = sc.nextInt();
-					break;
-
+					throw new InvalidChoiceException();
 				}
 			}
 
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			lockStudent(teacher);
 		} catch (InputMismatchException ime) {
 			LogThis.warn("InpupMismatchException in Lock Student Menu " + ime.getMessage());
 			lockStudent(teacher);
@@ -205,7 +194,6 @@ public class TeacherMenu {
 	// Unlock Student
 	private static void unlockStudent(Teacher teacher) {
 		LogThis.info("Unlock Student Menu");
-
 
 		try {
 			System.out.println("The following students need to be unlocked:");
@@ -247,23 +235,14 @@ public class TeacherMenu {
 					teacherMenu(teacher);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("The following students need to be unlocked:");
-
-					for (Person p : ad.values()) {
-						if (p.getType() == "student" && p.isLocked()) {
-							System.out.println(p.getName());
-						}
-					}
-					System.out.println("1. Unlock All");
-					System.out.println("2. Unlock a specific student");
-					System.out.println("0. Return to Teacher Menu");
-					choice = sc.nextInt();
-					break;
+					throw new InvalidChoiceException();
 				}
 
 			}
 
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			unlockStudent(teacher);
 		} catch (InputMismatchException ime) {
 			LogThis.warn("InpupMismatchException in Unlock Student Menu " + ime.getMessage());
 			unlockStudent(teacher);
