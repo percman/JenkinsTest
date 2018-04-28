@@ -2,6 +2,7 @@ package com.revature.service;
 
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoImpl;
+import com.revature.logstatus.LogHere;
 import com.revature.users.User;
 
 public class UserService {
@@ -18,15 +19,36 @@ public class UserService {
 		return dao.insertUser(user);
 	}
 	
-	public static String login(User user) {
-		User temp = dao.getUser(user.getUsername());
-		
-		if (temp.getPassword().equals(dao.getPasswordHash(user))) {
-			System.out.println("You are a valid user, " + temp.getUsername());
-			return user.getUsername();
-		}
-		System.err.println("YOU ARE NOT A VALID USER, " + user.getUsername());
-		return "fail";
+	public static boolean insertAdmin(User user) {
+		return dao.insertAdmin(user);
 	}
+	
+	public static String login(User user) {
+		User newuser = dao.getUser(user.getUsername());
+		
+		try {
+			System.out.println("lock status");
+			System.out.println(newuser.isLocked());
+			
+			if(newuser.getPassword().equals(dao.getPasswordHash(user))){
+				if(newuser.isLocked()) {
+					System.out.println("You are a valid user, " + newuser.getUsername());
+					return "locked";
+				} else {
+					System.out.println("You are a valid user, " + newuser.getUsername());
+					return "valid";
+				}
+			}
+		} catch(NullPointerException npe) {
+			LogHere.warn(npe.getMessage());
+			System.out.println("The username or password combination is invalid.");
+			return "invalid";
+		}
+
+		System.out.println("The username or password combination is invalid.");
+		return "invalid";
+	}
+
+
 
 }

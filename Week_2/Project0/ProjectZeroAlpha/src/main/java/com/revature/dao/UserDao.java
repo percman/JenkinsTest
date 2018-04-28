@@ -13,4 +13,5 @@ public interface UserDao {
 	boolean updateUser(User user);
 	boolean deleteUser(String username);
 	String getPasswordHash(User user);
+	boolean insertAdmin(User user);
 }

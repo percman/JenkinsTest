@@ -39,7 +39,7 @@ public class UserDaoImpl implements UserDao{
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
 				return new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), 
-						(rs.getInt("lockstatus") < 0), rs.getDouble("balance"));
+						(rs.getInt("lockstatus") == 1), rs.getDouble("balance"), (rs.getInt("adminstatus") == 1));
 			}
 				
 		}  catch (SQLException sqle) {
@@ -115,6 +115,23 @@ public class UserDaoImpl implements UserDao{
 			System.err.println("Error code: " + sqle.getErrorCode());
 		}
 		return null;
+	}
+
+	@Override
+	public boolean insertAdmin(User user) {
+		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			CallableStatement stmt = conn.prepareCall("{CALL insert_admin(?, ?, ?)}");
+			stmt.setString(++index, user.getUsername());
+			stmt.setString(++index, user.getPassword());
+			stmt.setDouble(++index, user.getBalance());
+			return stmt.executeUpdate() > 0;
+		}  catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQLE State: " + sqle.getSQLState());
+			System.err.println("Error code: " + sqle.getErrorCode());
+		} 
+		return false;
 	}
 	
 }

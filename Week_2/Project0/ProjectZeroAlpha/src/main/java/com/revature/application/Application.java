@@ -1,5 +1,8 @@
 package com.revature.application;
 
+import static com.revature.menu.Menus.*;
+
+import com.revature.users.User;
 
 /**
  * 
@@ -14,9 +17,14 @@ public class Application{
 	
 	public static void main(String[] args) {	
 				
-//		com.revature.menu.Menus.firstRun();
+//		firstRun();
 		
-//		com.revature.menu.Menus.loginAttempt();
+//		loginAttempt();
+	
+		
+		User curruser = welcomeScreen();
+		
+		
 		
 	}
 

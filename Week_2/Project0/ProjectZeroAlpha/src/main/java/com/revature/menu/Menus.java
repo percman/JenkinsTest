@@ -1,54 +1,31 @@
 package com.revature.menu;
 
 import static com.revature.readwrite.ReadWrite.inputLine;
+import static com.revature.menu.SpecialUserMethods.createAdmin;
+import static com.revature.menu.SpecialUserMethods.createUser;
+import static com.revature.service.UserService.login;
 
-import com.revature.exceptions.InvalidBalanceException;
+import com.revature.exceptions.ChoiceInputException;
 import com.revature.logstatus.LogHere;
-import com.revature.service.UserService;
 import com.revature.users.User;
 
 public class Menus {
 
 	
-	/* A first run method which should only run given no userFile
+	/* A first run method
 	 * The first welcome screen! 
 	 */
 	public static void firstRun() {
 		
 		System.out.println("Hello! Welcome to the first run of Adam Lahey's Project Zero!");
-		System.out.println("Note that the first time login requires creation of a new user.");
-		System.out.println("To begin, please enter your username: ");
-		String username = inputLine();
-		System.out.println("Please enter your password, and I promise not to store in plain text.");
-		String password = inputLine();
-		System.out.println("If you would like to enter a starting balance, please do so now.");
+		System.out.println("Note that the first time login requires creation of a new admin.");
 		
-		double startingbalance = 0;
-		
-		try {
-			String balancestring = inputLine();
-			Double doubleObject = new Double(balancestring);
-			startingbalance = doubleObject.doubleValue();
-			if(startingbalance < 0)
-				throw new InvalidBalanceException();
-		} catch(NumberFormatException nfe) {
-			System.out.println("You have entered an invalid balance.");
-			LogHere.warn(nfe.getMessage());
-		} catch (InvalidBalanceException ibe) {
-			System.out.println("You have entered a negative balance.");
-			LogHere.warn(ibe.getMessage());
-		}
-		
-		System.out.println("Please wait while the connection is processed");
-		
-		User newuser = new User(username, password, startingbalance);
-		
-		System.out.println("Was the user created successfully? " + UserService.insertUser(newuser));
+		createAdmin();
 	}
 	
 
 	/* Allows a User to login 
-	 * Takes a HashMap 'userHashData' of all current Users, and compares to see if they are eligible for access 
+	 * 
 	 */
 	public static User loginAttempt() {
 		User newuser = new User(); 
@@ -61,10 +38,22 @@ public class Menus {
 		newuser.setName(username);
 		newuser.setPassword(password);
 		
-		if(com.revature.service.UserService.login(newuser).equals("fail"))
-			loginAttempt();
-		else
-			return newuser;
+		String logintest = login(newuser);
+		
+		if(logintest.equals("invalid")) {
+			System.out.println("Continue? T or F");
+			String cont = inputLine();
+			if(cont.equals("T") || cont.equals("t") || cont.equals("true"))
+				loginAttempt();
+			System.out.println("Program is now exiting. You may create a new user upon login.");
+			System.exit(0);
+		}
+		
+		if(logintest.equals("locked")) {
+			System.out.println("However, you appear to be locked. Please speak to an admin.");
+			System.out.println("Note that new users must be approved by admins.\n");
+			newuser = welcomeScreen();
+		}
 		
 		return newuser;
 	}
@@ -73,58 +62,58 @@ public class Menus {
 	/* Standard welcome screen
 	 * Takes HashMap 'userHashData' for login and user creation purposes (to check against)
 	 */
-//	public static String welcomeScreen(HashMap<Integer, User> userHashData) {
-//		int choice = 100;
-//		String newUser = "";
-//		
-//		System.out.println("Hello! Welcome to Adam Lahey's Project Zero!\n");
-//		System.out.println("1. Login");
-//		System.out.println("2. Create new account");
-//		System.out.println("0. Exit");
-//		System.out.println();
-//		
-//		try {
-//			String input = inputLine();
-//			Integer inputObject = new Integer(input); 
-//			choice = inputObject.intValue();			
-//		} catch (NumberFormatException nfe) {
-//			System.out.println("That's not even a number!");
-//			LogHere.warn(nfe.getMessage());
-//		}
-//		
-//		switch(choice) {
-//		
-//		case 0: choice = 0;
-//			System.out.println("Thank you for testing out Adam Lahey's Project Zero!");
-//			System.out.println("Later!");
-//			System.exit(0);
-//		break;
-//		
-//		case 1: choice = 1;
-//		return login(userHashData);
-//		
-//		case 2: choice = 2;
-//			createUser();
-//		return welcomeScreen(userHashData);
-//		
-//		default:
-//	        try {
-//				throw new ChoiceInputException();
-//			} catch (ChoiceInputException cie) {
-//				LogHere.warn(cie.getMessage());
-//			}
-//	        return welcomeScreen(userHashData);
-//		}
-//		
-//		return newUser;
-//	}
-//	
-//	
+	public static User welcomeScreen() {
+		int choice = 100;
+		User curruser = null;
+		
+		System.out.println("Hello! Welcome to Adam Lahey's Project Zero!\n");
+		System.out.println("1. Login");
+		System.out.println("2. Create new account");
+		System.out.println("0. Exit");
+		System.out.println();
+		
+		try {
+			String input = inputLine();
+			Integer inputObject = new Integer(input); 
+			choice = inputObject.intValue();			
+		} catch (NumberFormatException nfe) {
+			System.out.println("That's not even a number!");
+			LogHere.warn(nfe.getMessage());
+		}
+		
+		switch(choice) {
+		
+		case 0: choice = 0;
+			System.out.println("Thank you for testing out Adam Lahey's Project Zero!");
+			System.out.println("Later!");
+			System.exit(0);
+		break;
+		
+		case 1: choice = 1;
+		return curruser = loginAttempt();
+		
+		case 2: choice = 2;
+			createUser();
+		return curruser = welcomeScreen();
+		
+		default:
+	        try {
+				throw new ChoiceInputException();
+			} catch (ChoiceInputException cie) {
+				LogHere.warn(cie.getMessage());
+			}
+	        return curruser = welcomeScreen();
+		}
+		
+		return curruser;
+	}
+	
+	
 	/* The Main Menu
 	 * easy to adjust :)
 	 * Takes HashMap 'userHashData' for given to other methods 
 	 */
-//	public static void mainMenu(HashMap<Integer, User> userHashData, String currentUser) {
+//	public static void mainMenu(User currentUser) {
 //		
 //		int choice = 100;
 //		
@@ -144,7 +133,7 @@ public class Menus {
 //		System.out.println("3. Withdraw");
 //		System.out.println("4. Switch user");
 //		System.out.println("5. Create new account");
-//		if(adminCheck(userHashData, currentUser)) {
+//		if(currentUser.isAdminstatus()) {
 //			System.out.println("6. Approve or reject new user or admin");
 //			System.out.println("7. Lock or unlock account");
 //			System.out.println("8. Upgrade account to admin");
@@ -254,7 +243,7 @@ public class Menus {
 //		userHashData = hashMapUserData(userFile);
 //	    mainMenu(userHashData, currentUser);
 //	}
-//	
+	
 
 	
 	
