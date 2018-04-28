@@ -14,6 +14,11 @@ public class User implements Serializable, Person{
 	private double balance;
 	private boolean adminstatus;
 	
+	public User(String username, boolean locked) {
+		super();
+		this.username = username;
+		this.locked = locked;
+	}
 	
 	public User(String username, String password, double balance) {
 		super();

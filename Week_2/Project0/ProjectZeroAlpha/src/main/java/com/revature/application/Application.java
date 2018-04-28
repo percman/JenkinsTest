@@ -24,6 +24,8 @@ public class Application{
 		
 		User curruser = welcomeScreen();
 		
+		mainMenu(curruser);
+		
 		
 		
 	}

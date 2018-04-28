@@ -37,9 +37,9 @@ public class UserDaoImpl implements UserDao{
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM usertable WHERE username = ?");
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
-			if(rs.next()) {
+			if(rs.next()) {				
 				return new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), 
-						(rs.getInt("lockstatus") == 1), rs.getDouble("balance"), (rs.getInt("adminstatus") == 1));
+						(rs.getInt("lockstatus")>0), rs.getDouble("balance"), (rs.getInt("adminstatus")>0));
 			}
 				
 		}  catch (SQLException sqle) {
@@ -77,11 +77,17 @@ public class UserDaoImpl implements UserDao{
 				locked = 1;
 			else
 				locked = 0;
+			int admined;
+			if(user.isAdminstatus())
+				admined = 1;
+			else
+				admined = 0;
 			
-			CallableStatement stmt = conn.prepareCall("{CALL update_user(?, ?, ?, ?)}");
+			CallableStatement stmt = conn.prepareCall("{CALL update_user(?, ?, ?, ?, ?)}");
 			stmt.setString(++index, user.getUsername());
 			stmt.setString(++index, user.getPassword());
 			stmt.setInt(++index, locked);
+			stmt.setInt(++index, admined);
 			stmt.setDouble(++index, user.getBalance());
 			return stmt.executeUpdate() > 0;
 		}  catch (SQLException sqle) {

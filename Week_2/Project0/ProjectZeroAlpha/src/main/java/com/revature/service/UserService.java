@@ -19,34 +19,35 @@ public class UserService {
 		return dao.insertUser(user);
 	}
 	
+	public static boolean updateUser(User user) {
+		return dao.updateUser(user);
+	}
+	
 	public static boolean insertAdmin(User user) {
 		return dao.insertAdmin(user);
 	}
 	
-	public static String login(User user) {
+	public static User login(User user) {
 		User newuser = dao.getUser(user.getUsername());
 		
-		try {
-			System.out.println("lock status");
-			System.out.println(newuser.isLocked());
-			
+		try {			
 			if(newuser.getPassword().equals(dao.getPasswordHash(user))){
 				if(newuser.isLocked()) {
 					System.out.println("You are a valid user, " + newuser.getUsername());
-					return "locked";
+					return newuser;
 				} else {
 					System.out.println("You are a valid user, " + newuser.getUsername());
-					return "valid";
+					return newuser;
 				}
 			}
 		} catch(NullPointerException npe) {
 			LogHere.warn(npe.getMessage());
 			System.out.println("The username or password combination is invalid.");
-			return "invalid";
+			return null;
 		}
 
 		System.out.println("The username or password combination is invalid.");
-		return "invalid";
+		return null;
 	}
 
 
