@@ -14,14 +14,15 @@ public class UserDaolmplementation implements UserDao{
 		int index = 0;
 		try (Connection c = ConnectionUtil.getConnection()) {
 			System.out.println("Name as seen " + name);
-			PreparedStatement stmt = c.prepareStatement("SELECT * FROM USERTABLE WHERE username =  (?)");
-			stmt.setString(++index, name);
+			PreparedStatement stmt = c.prepareStatement("SELECT * FROM USERTABLE WHERE USERNAME = '" + name +"'");
+			//stmt.setString(++index, name);
 			ResultSet rs = stmt.executeQuery();
 			User u = null;
 			while(rs.next()) {
-				u = new User(rs.getString("name"), rs.getInt("balance"), 
-						rs.getInt("isAdmin") == 1, rs.getInt("isLocked") == 1, rs.getInt("isApproved")==1);
+				u = new User(rs.getString("USERNAME"), rs.getInt("BALANCE"), 
+						rs.getInt("ISADMIN") == 1, rs.getInt("ISLOCKED") == 1, rs.getInt("ISAPPROVED")==1);
 			}
+			return u;
 			
 		} catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
@@ -80,7 +81,23 @@ public class UserDaolmplementation implements UserDao{
 
 	@Override
 	public boolean updateUser(User user) {
-		// TODO Auto-generated method stub
+		
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			String userName = user.getName();
+			int balance = user.getBalance();
+			int admin = user.isAdmin() ? 1 : 0;
+			int locked = user.isLocked() ? 1 : 0;
+			int approved = user.isApproved() ? 1 : 0;
+			PreparedStatement stmt = conn.prepareStatement("UPDATE USERTABLE SET username = '" + userName
+					+ "', Balance = " + balance + ", isAdmin = " + admin + 
+					", isLocked = " + locked  + ", isApproved = " + approved + " WHERE username = '" + userName + "'");
+			int rowsAffected = stmt.executeUpdate();
+			return rowsAffected > 0;
+		}catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+		}
 		return false;
 	}
 
@@ -89,5 +106,4 @@ public class UserDaolmplementation implements UserDao{
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }

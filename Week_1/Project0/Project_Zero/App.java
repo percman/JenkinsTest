@@ -15,8 +15,9 @@ import com.revature.exceptions.*;
 public class App {
 
 	private static final Logger logger = Logger.getLogger(App.class);
-	public static File bankData = new File("src/main/java/users3.txt");
-	public static ArrayList<User> userList = User.getUserList(bankData);
+	//public static File bankData = new File("src/main/java/users3.txt");
+	public static ArrayList<User> userList = UserService.getAllUsers();
+	
 	//Initial page for welcoming new and returning users
 	public static void welcome (Scanner input) {
 		
@@ -95,7 +96,7 @@ public class App {
 				else {
 					User user = new User(userName, 0, false, false, false);
 					userList.add(user);
-					User.serializeUser(userList, bankData);
+					UserService.insertUser(user);
 					System.out.println("Please wait to be approved by admin");
 				}
 			}
@@ -303,18 +304,15 @@ public class App {
 		}
 	}
     public static void main ( String[] args ) {
-    	//User user = new User("Aragorn", 40, false, false, true);
-    	//UserService.insertUser(user);
 
-    	ArrayList<User> users = UserService.getAllUsers();
-    	for(User u : users) {
+    	for(User u : userList) {
     		System.out.println("Hello I am " + u.getName() + " and I have $" + 
     	u.getBalance() + " " + u.isAdmin() + " " + u.isLocked() + " " + u.isApproved());
     		
     	}
-    	/*Scanner input = new Scanner(System.in);
+    	Scanner input = new Scanner(System.in);
     	while (true) {
     		welcome(input);
-    	}*/
+    	}
     }
 }
