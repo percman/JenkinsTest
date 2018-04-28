@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 
 import org.apache.log4j.Logger;
 
+import com.revature.dao.movie.MovieService;
 import com.revature.dao.users.AdminService;
 import com.revature.dao.users.UserService;
 import com.revature.data.FileIO;
@@ -14,11 +15,13 @@ import com.revature.data.Login;
 import com.revature.exceptions.AlreadyHaveMovieException;
 import com.revature.exceptions.ApprovalPendingException;
 import com.revature.exceptions.LockedAccountException;
-import com.revature.exceptions.MovieNotFoundException;
 import com.revature.exceptions.NoMovieException;
+import com.revature.exceptions.NotRentingMovieException;
+import com.revature.exceptions.OutOfStockException;
 import com.revature.exceptions.PasswordIncorrectException;
 import com.revature.exceptions.UserNotFoundException;
 import com.revature.exceptions.UserTypeNotFoundException;
+import com.revature.exceptions.tooManyMoviesOutException;
 import com.revature.users.Admin;
 import com.revature.users.NewUser;
 import com.revature.users.NewUserFactory;
@@ -154,7 +157,7 @@ public class Script {
 					tokenizer = new StringTokenizer(titles, ",");
 					while (tokenizer.hasMoreTokens()) {
 						String title = tokenizer.nextToken();
-						user.addMovie(title);
+						MovieService.RentMovie(user,title);
 						logger.info("user " + user.getUsername() + "added movie " + title);
 					}
 					
@@ -165,13 +168,13 @@ public class Script {
 					tokenizer = new StringTokenizer(titles, ",");
 					while (tokenizer.hasMoreTokens()) {
 						String title = tokenizer.nextToken();
-						user.removeMovie(title);
+						MovieService.ReturnMovie(user,title);
 						logger.info("user " + user.getUsername() + "added movie " + title);
 					}
 					break;
 				case "view":
 					System.out.println("Your collection currently consists of");
-					user.viewMovies();
+					MovieService.viewRentedMovies(user);
 					break;
 				case "quit":
 					System.out.print("You have quit the application.");
@@ -189,10 +192,14 @@ public class Script {
 			logger.error(ioe.getMessage(), ioe);
 		} catch (NoMovieException nme) {
 			logger.error(nme.getMessage(), nme);
-		} catch (MovieNotFoundException mnfe) {
-			logger.error(mnfe.getMessage(), mnfe);
 		} catch (AlreadyHaveMovieException ahme) {
 			logger.error(ahme.getMessage(), ahme);
+		} catch (tooManyMoviesOutException tmmoe) {
+			logger.error(tmmoe.getMessage(), tmmoe);
+		} catch (OutOfStockException oose) {
+			logger.error(oose.getMessage(), oose);
+		} catch (NotRentingMovieException nrme) {
+			logger.error(nrme.getMessage(), nrme);
 		} finally {
 			try {
 				read.close();

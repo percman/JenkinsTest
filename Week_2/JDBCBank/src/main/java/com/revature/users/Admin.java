@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 import com.revature.dao.users.UserService;
+import com.revature.exceptions.UserNotFoundException;
 
 
 public class Admin implements Serializable,NewUser {
@@ -20,7 +21,7 @@ public class Admin implements Serializable,NewUser {
 	}
 	
 	// approves a user
-	public void approve(User user) {
+	public void approve(User user) throws UserNotFoundException {
 		UserService.approveUser(user);
 	}
 

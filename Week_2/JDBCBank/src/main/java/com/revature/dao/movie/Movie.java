@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Movie implements Serializable {
 	private static final long serialVersionUID = 8173025665216010437L;
 	private String title;
-	private int inStock;
+	private int inStock,id;
 	public Movie(String title,int inStock) {
 		super();
 		this.inStock = inStock;
@@ -52,6 +52,13 @@ public class Movie implements Serializable {
 
 	public void setInStock(int inStock) {
 		this.inStock = inStock;
+	}
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	
