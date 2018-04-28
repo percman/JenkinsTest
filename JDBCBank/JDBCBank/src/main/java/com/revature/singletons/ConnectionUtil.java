@@ -1,4 +1,4 @@
-package com.revature.util;
+package com.revature.singletons;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,7 +11,6 @@ import java.util.Properties;
 
 public class ConnectionUtil {
 
-
 	private ConnectionUtil() {}
 
 	public static Connection getConnection() {
@@ -23,29 +22,15 @@ public class ConnectionUtil {
 						props.getProperty("jdbc.password"));
 				
 			} catch (FileNotFoundException fnfe) {
-				fnfe.printStackTrace();
-				
+				LogThis.warn("FileNotFoundException in ConnectionUtil " + fnfe.getMessage());
 			} catch (IOException ioe) {
-				ioe.printStackTrace();
-				
+				LogThis.warn("IOException in ConnectionUtil " + ioe.getMessage());
 			} catch (SQLException sqle) {
-				System.err.println(sqle.getMessage());
-				System.err.println("SQL State: " + sqle.getSQLState());
-				System.err.println("Error Code: " + sqle.getErrorCode());
+				LogThis.warn(sqle.getMessage());
+				LogThis.warn("SQL State: " + sqle.getSQLState());
+				LogThis.warn("Error Code: " + sqle.getErrorCode());
 			}
 		return null;
 	}
-	
-	
-//	public static void main(String[] args) {
-//		Connection conn = ConnectionUtil.getConnection();
-//		System.out.println(conn);
-//		try {
-//			conn.close();
-//		} catch (SQLException sqle) {
-//			System.err.println(sqle.getMessage());
-//			System.err.println("SQL State: " + sqle.getSQLState());
-//			System.err.println("Error Code: " + sqle.getErrorCode());
-//		}
-//	}
+
 }

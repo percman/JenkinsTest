@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import com.revature.exceptions.InvalidChoiceException;
 import com.revature.singletons.AccountData;
 import com.revature.singletons.LogThis;
 import com.revature.users.Person;
@@ -53,15 +54,12 @@ public class TeacherMenu {
 					Person.logout(teacher);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("Your options are:");
-					System.out.println("1. Approve new Student Profiles");
-					System.out.println("2. Lock Student Profile");
-					System.out.println("3. Unlock Student Profile");
-					System.out.println("0. Logout");
-					break;
+					throw new InvalidChoiceException();
 				}
 			}
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			teacherMenu(teacher);
 		} catch (InputMismatchException ime) {
 			LogThis.warn("InputMismatchException in Teacher Menu " + ime.getMessage());
 			teacherMenu(teacher);
@@ -119,23 +117,14 @@ public class TeacherMenu {
 					teacherMenu(teacher);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("The following students need to be approved:");
-
-					for (Person p : ad.values()) {
-						if (p.getType() == "student" && !p.isApproved()) {
-							System.out.println(p.getName());
-						}
-					}
-					System.out.println("1. Approve All");
-					System.out.println("2. Approve a specific student");
-					System.out.println("0. Return to Teacher Menu");
-					choice = sc.nextInt();
-					break;
+					throw new InvalidChoiceException();
 				}
 
 			}
 
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			approveStudent(teacher);
 		} catch (InputMismatchException ime) {
 			LogThis.warn("InputMismatchException in Approve Student Menu " + ime.getMessage());
 			approveStudent(teacher);

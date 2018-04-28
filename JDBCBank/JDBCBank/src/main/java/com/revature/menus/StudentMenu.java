@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import com.revature.exceptions.InvalidChoiceException;
 import com.revature.singletons.LogThis;
 import com.revature.users.Person;
 import com.revature.users.Student;
@@ -32,7 +33,6 @@ public class StudentMenu {
 			System.out.println("2. Buy more arithmetic problems with your coins");
 			System.out.println("0. Logout");
 		}
-		
 
 		try {
 			while (true) {
@@ -48,15 +48,12 @@ public class StudentMenu {
 					Person.logout(student);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("Your options are:");
-					System.out.println("You have " + student.getCoins() + " coins!");
-					System.out.println("1. Earn more coins by completing arithmetic problems");
-					System.out.println("2. Buy more arithmetic problems with your coins");
-					System.out.println("0. Logout");
-					break;
+					throw new InvalidChoiceException();
 				}
 			}
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			studentMenu(student);
 		} catch (InputMismatchException ime) {
 			LogThis.warn("InputMismatchException in Student Menu " + ime.getMessage());
 			studentMenu(student);
@@ -66,7 +63,7 @@ public class StudentMenu {
 		} catch (IllegalStateException ise) {
 			LogThis.warn("IllegalStateExcdeption in Student Menu " + ise.getMessage());
 			studentMenu(student);
-		} 
+		}
 
 	}
 

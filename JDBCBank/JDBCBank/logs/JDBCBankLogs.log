@@ -1,0 +1,19 @@
+2018-04-27 20:58:18 INFO  LogThis:30 - Data was deserialized.
+2018-04-27 20:58:18 INFO  LogThis:30 - Start Menu
+2018-04-27 20:58:29 WARN  LogThis:34 - 
+2018-04-27 20:58:29 INFO  LogThis:30 - Start Menu
+2018-04-27 20:58:40 INFO  LogThis:30 - Login Menu
+2018-04-27 20:58:49 INFO  LogThis:30 - Your username and/or password are incorrect
+2018-04-27 21:07:53 INFO  LogThis:30 - Data was deserialized.
+2018-04-27 21:07:53 INFO  LogThis:30 - Start Menu
+2018-04-27 21:07:56 INFO  LogThis:30 - Login Menu
+2018-04-27 21:08:00 WARN  LogThis:34 - 
+2018-04-27 21:08:05 INFO  LogThis:30 - Start Menu
+2018-04-27 21:08:21 WARN  LogThis:34 - 
+2018-04-27 21:08:21 INFO  LogThis:30 - Start Menu
+2018-04-27 21:08:54 INFO  LogThis:30 - Data was Serialized.
+2018-04-27 21:09:58 INFO  LogThis:30 - Data was deserialized.
+2018-04-27 21:09:58 INFO  LogThis:30 - Start Menu
+2018-04-27 21:10:01 WARN  LogThis:34 - The number you chose was not an option on this menu.
+2018-04-27 21:10:01 INFO  LogThis:30 - Start Menu
+2018-04-27 21:10:05 INFO  LogThis:30 - Data was Serialized.

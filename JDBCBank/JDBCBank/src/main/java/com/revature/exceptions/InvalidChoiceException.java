@@ -22,5 +22,12 @@ public class InvalidChoiceException extends Exception{
 	public InvalidChoiceException(String msg, Throwable cause) {
 		super(msg, cause);
 	}
+	
+	@Override
+	public String getMessage() {
+		return "The number you chose was not an option on this menu.";
+	}
+	
+	
 
 }

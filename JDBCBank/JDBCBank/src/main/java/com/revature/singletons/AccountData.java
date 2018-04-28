@@ -13,8 +13,10 @@ public class AccountData implements Serializable {
 	private static final long serialVersionUID = 5022202839677821505L;
 
 	/*
-	 * 3 things we need for a Singleton: - private static field, matching the type
-	 * of out class - private constructor - public static getInstance() method,
+	 * 3 things we need for a Singleton: 
+	 * - private static field, matching the type of out class 
+	 * - private constructor 
+	 * - public static getInstance() method,
 	 * which will either instantiate or return the existing object in memory
 	 */
 

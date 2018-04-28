@@ -1,20 +1,17 @@
 package com.revature.menus;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
-import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import com.revature.exceptions.InvalidChoiceException;
+import com.revature.exceptions.InvalidLoginException;
+import com.revature.serialization.Deserialize;
+import com.revature.serialization.Serialize;
 import com.revature.singletons.AccountData;
 import com.revature.singletons.LogThis;
 import com.revature.users.Creation;
-import com.revature.users.Person;
 import com.revature.users.Principal;
 import com.revature.users.Student;
 import com.revature.users.Teacher;
@@ -31,7 +28,7 @@ public class StartMenu {
 		// if the data has not been deserialized yet, this statement will run
 		// it will not run if someone logs out and returns to the start menu
 		if (!wasDeserialized) {
-			deserializeAccountData(new File("src/main/resources/data.txt"));
+			Deserialize.deserializeAccountData(new File("src/main/resources/data.txt"));
 			wasDeserialized = true;
 		}
 
@@ -64,22 +61,18 @@ public class StartMenu {
 					Creation.createTeacher();
 					return;
 				case 0:
-					serializeAccountData(ad.getHashMap(), new File("src/main/resources/data.txt"));
+					Serialize.serializeAccountData(ad.getHashMap(), new File("src/main/resources/data.txt"));
 					//
 					sc.close(); // this is the only place in my application that I call sc.close
 					//
 					System.exit(0);
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("Your options are:");
-					System.out.println("1. Login");
-					System.out.println("2. Create new student profile");
-					System.out.println("3. Create new teacher profile");
-					System.out.println("0. Exit");
-					choice = sc.nextInt();
-					break;
+					throw new InvalidChoiceException();
 				}
 			}
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			startMenu();
 		} catch (InputMismatchException ime) {
 			LogThis.warn("InpupMismatchException in Start Menu " + ime.getMessage());
 			startMenu();
@@ -101,41 +94,59 @@ public class StartMenu {
 		String password;
 
 		try {
+			System.out.println("Please enter your username:");
+			name = sc.next();
 
-			while (true) {
-				System.out.println("Please enter your username:");
-				name = sc.next();
-				
-				System.out.println("Please enter your password:");
-				password = sc.next();
+			System.out.println("Please enter your password:");
+			password = sc.next();
 
-				String keyCheck = name + ":" + password;
+			String keyCheck = name + ":" + password;
 
-				if (ad.containsKey(keyCheck)) {
-					if (ad.get(keyCheck).getType().equals("student")) {
-						StudentMenu.studentMenu((Student) ad.get(keyCheck));
-					} else if (ad.get(keyCheck).getType().equals("teacher")) {
-						TeacherMenu.teacherMenu((Teacher) ad.get(keyCheck));
-					} else {
-						PrincipalMenu.principalMenu((Principal) ad.get(keyCheck));
-					}
-				}
-
-				LogThis.info("Your username and/or password are incorrect");
-				try {
-					System.out.println("Please enter your username:");
-					name = sc.next();
-					System.out.println("Please enter your password:");
-					password = sc.next();
-
-				} catch (NoSuchElementException nsee) {
-					LogThis.warn(nsee.getMessage());
-					login();
-				} catch (IllegalStateException ise) {
-					LogThis.warn(ise.getMessage());
-					login();
+			if (ad.containsKey(keyCheck)) {
+				if (ad.get(keyCheck).getType().equals("student")) {
+					StudentMenu.studentMenu((Student) ad.get(keyCheck));
+				} else if (ad.get(keyCheck).getType().equals("teacher")) {
+					TeacherMenu.teacherMenu((Teacher) ad.get(keyCheck));
+				} else {
+					PrincipalMenu.principalMenu((Principal) ad.get(keyCheck));
 				}
 			}
+			
+			throw new InvalidLoginException();
+		} catch (InvalidLoginException ile) {
+			LogThis.warn(ile.getMessage());
+			
+			System.out.println("1. Try to login again");
+			System.out.println("0. Return to Start Menu");
+			
+			try {
+				int choice = sc.nextInt();
+
+				while (true) {
+					switch (choice) {
+					case 1:
+						login();
+						return;
+					case 0:
+						startMenu();
+					default:
+						throw new InvalidChoiceException();
+					}
+				}
+			} catch (InvalidChoiceException ice) {
+				LogThis.warn(ice.getMessage());
+				login();
+			} catch (InputMismatchException ime) {
+				LogThis.warn("InpupMismatchException in Login Menu " + ime.getMessage());
+				login();
+			} catch (NoSuchElementException nsee) {
+				LogThis.warn("NoSuchElementException in Login Menu " + nsee.getMessage());
+				login();
+			} catch (IllegalStateException ise) {
+				LogThis.warn("IllegalStateException in Login Menu " + ise.getMessage());
+				login();
+			}
+			
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn(nsee.getMessage());
 			login();
@@ -145,52 +156,4 @@ public class StartMenu {
 		}
 	}
 
-	private static void serializeAccountData(Map<String, Person> data, File file) {
-
-		ObjectOutputStream save = null;
-		try {
-			save = new ObjectOutputStream(new FileOutputStream(new File(file.getPath())));
-			save.writeObject(data);
-			LogThis.info("Data was Serialized.");
-		} catch (IOException ioe) {
-			LogThis.warn(ioe.getMessage());
-		} finally {
-			// gotta close those resources
-			try {
-				save.close();
-			} catch (IOException ioe) {
-				LogThis.warn(ioe.getMessage());
-			}
-		}
-
-	}
-
-	@SuppressWarnings("unchecked")
-	// The suppressed warning comes from casting the object being read to a map
-	private static void deserializeAccountData(File file) {
-
-		if (file.exists()) {
-			ObjectInputStream savedData = null;
-			try {
-				savedData = new ObjectInputStream(new FileInputStream(new File(file.getPath())));
-
-				ad.setHashMap((Map<String, Person>) savedData.readObject());
-
-				LogThis.info("Data was deserialized.");
-
-			} catch (IOException ioe) {
-				LogThis.warn(ioe.getMessage());
-			} catch (ClassNotFoundException cnfe) {
-				LogThis.warn(cnfe.getMessage());
-			} finally {
-				// I will beat this dead horse
-				// close that resource
-				try {
-					savedData.close();
-				} catch (IOException ioe) {
-					LogThis.warn(ioe.getMessage());
-				}
-			}
-		}
-	}
 }
