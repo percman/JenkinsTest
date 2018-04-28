@@ -20,3 +20,129 @@ GRANT CREATE ANY PROCEDURE TO jdbcbank_user;
 Run the following code in the new jdbcbank_user connection
 **************************************************************/
 
+-- Create the necessary tables
+CREATE TABLE principal (
+    p_id NUMBER (1), 
+    p_username VARCHAR2 (45),
+    p_password VARCHAR2 (100),
+    p_firstname VARCHAR2 (45),
+    p_lastname VARCHAR2 (45),
+    CONSTRAINT PK_P_ID PRIMARY KEY (p_id),
+    CONSTRAINT CK_P_ID CHECK (p_id = 1)
+);
+
+CREATE TABLE teacher (
+    t_id NUMBER (10), 
+    t_username VARCHAR2 (45),
+    t_password VARCHAR2 (100),
+    t_firstname VARCHAR2 (45),
+    t_lastname VARCHAR2 (45),
+    t_approved NUMBER (1),
+    t_locked NUMBER (1),
+    CONSTRAINT PK_T_ID PRIMARY KEY (t_id),
+    CONSTRAINT UK_T_USERNAME UNIQUE (t_username),
+    CONSTRAINT CK_T_APPROVED CHECK (t_approved = 0 OR t_approved = 1),
+    CONSTRAINT CK_T_LOCKED CHECK (t_locked = 0 OR t_locked = 1)
+);
+
+CREATE TABLE student (
+    s_id NUMBER (10), 
+    s_username VARCHAR2 (45),
+    s_password VARCHAR2 (100),
+    s_firstname VARCHAR2 (45),
+    s_lastname VARCHAR2 (45),
+    s_coins NUMBER (10),
+    s_approved NUMBER (1),
+    s_locked NUMBER (1),
+    CONSTRAINT PK_S_ID PRIMARY KEY (s_id),
+    CONSTRAINT UK_S_USERNAME UNIQUE (s_username),
+    CONSTRAINT CK_S_COINS CHECK (s_coins >= 0),
+    CONSTRAINT CK_S_APPROVED CHECK (s_approved = 0 OR s_approved = 1),
+    CONSTRAINT CK_S_LOCKED CHECK (s_locked = 0 OR s_locked = 1)
+);
+
+
+-- Create the sequences for teacher_id and student_id
+-- principal_id does not need a sequence because there is only one principal
+CREATE SEQUENCE teacher_id_sequence
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+CREATE SEQUENCE student_id_sequence
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+
+-- Hashing function that combines username, password, and a special word    
+CREATE OR REPLACE FUNCTION GET_USER_HASH(USERNAME VARCHAR2, PASSWORD VARCHAR2) RETURN VARCHAR2
+    IS
+        EXTRA VARCHAR2(10) := 'MATH';
+    BEGIN
+        RETURN TO_CHAR(DBMS_OBFUSCATION_TOOLKIT.MD5(
+        INPUT => UTL_I18N.STRING_TO_RAW(DATA => USERNAME || PASSWORD || EXTRA)));
+    END;
+    /
+
+
+-- Create triggers for before inserting into the teacher and student tables
+CREATE OR REPLACE TRIGGER teacher_b_insert
+    BEFORE INSERT
+    ON teacher
+    FOR EACH ROW
+    BEGIN
+        IF :new.t_id IS NULL THEN
+            SELECT teacher_id_sequence.nextval INTO :new.t_id FROM dual;
+        END IF;
+        SELECT GET_USER_HASH(:new.t_username, :new.t_password) 
+            INTO :new.t_password FROM dual;
+    END;
+    /
+
+CREATE OR REPLACE TRIGGER student_b_insert
+    BEFORE INSERT
+    ON student
+    FOR EACH ROW
+    BEGIN
+        IF :new.s_id IS NULL THEN
+            SELECT student_id_sequence.nextval INTO :new.s_id FROM dual;
+        END IF;
+        SELECT GET_USER_HASH(:new.s_username, :new.s_password) 
+            INTO :new.s_password FROM dual;
+    END;
+    /
+
+
+-- Create stored procedures to insert teachers and students
+CREATE OR REPLACE PROCEDURE insert_teacher (username IN VARCHAR2, new_password IN VARCHAR2, 
+                                    firstname IN VARCHAR2, lastname IN VARCHAR2)
+    AS
+    BEGIN
+        INSERT INTO teacher (t_id, t_username, t_password, t_firstname, t_lastname, 
+                                t_approved, t_locked)
+            VALUES (null, username, new_password, firstname, lastname, 0, 0);
+            COMMIT;
+    END;
+    /
+    
+CREATE OR REPLACE PROCEDURE insert_student (username IN VARCHAR2, new_password IN VARCHAR2, 
+                                    firstname IN VARCHAR2, lastname IN VARCHAR2)
+    AS
+    BEGIN
+        INSERT INTO student (s_id, s_username, s_password, s_firstname, s_lastname, 
+                                s_coins, s_approved, s_locked)
+            VALUES (null, username, new_password, firstname, lastname, 0, 0, 0);
+            COMMIT;
+    END;
+    /
+
+
+
+
+
+
+
+
+
+

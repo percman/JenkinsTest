@@ -118,3 +118,10 @@ BEGIN
 END;
 /
 
+
+SELECT extractvalue(column_value, '/ROW/poke_id') poke_id,
+        extractvalue(column_value, '/ROW/poke_name') poke_name,
+        extractvalue(column_value, '/ROW/poke_type') poke_type
+FROM TABLE(xmlsequence(pokemon_by_type('Electric')));
+
+SELECT pokemon_by_type('Electric') FROM dual;

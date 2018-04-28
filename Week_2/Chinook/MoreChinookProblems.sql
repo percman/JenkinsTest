@@ -95,11 +95,11 @@ SELECT * FROM track;
 -- Write a SQL Query that shows which sales agent made the most in sales overall
 SELECT * FROM employee;
 SELECT * FROM customer;
-SELECT e.* FROM employee e
-    WHERE e.employeeid IN (
-        SELECT 
-
-;
+--SELECT e.* FROM employee e
+--    WHERE e.employeeid IN (
+--        SELECT 
+--
+--;
 
 
 
