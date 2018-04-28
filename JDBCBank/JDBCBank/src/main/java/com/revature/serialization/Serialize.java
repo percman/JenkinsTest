@@ -21,7 +21,6 @@ public class Serialize {
 		} catch (IOException ioe) {
 			LogThis.warn(ioe.getMessage());
 		} finally {
-			// gotta close those resources
 			try {
 				save.close();
 			} catch (IOException ioe) {

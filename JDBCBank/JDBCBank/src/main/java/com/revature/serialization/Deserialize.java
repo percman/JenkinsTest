@@ -32,8 +32,6 @@ public class Deserialize {
 			} catch (ClassNotFoundException cnfe) {
 				LogThis.warn(cnfe.getMessage());
 			} finally {
-				// I will beat this dead horse
-				// close that resource
 				try {
 					savedData.close();
 				} catch (IOException ioe) {
