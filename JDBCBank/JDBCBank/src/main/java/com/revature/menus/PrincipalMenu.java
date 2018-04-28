@@ -71,7 +71,7 @@ public class PrincipalMenu {
 			System.out.println("The following Teachers need to be approved:");
 			for (Person p : ad.values()) {
 				if (p.getType() == "teacher" && !p.isApproved()) {
-					System.out.println(p.getName());
+					System.out.println(p.getFirstname());
 				}
 			}
 			System.out.println("1. Approve All");
@@ -95,7 +95,7 @@ public class PrincipalMenu {
 					System.out.println("What is the name of the teacher you would like to approve?");
 					String name = sc.next();
 					for (Person p : ad.values()) {
-						if (p.getName() == name && !p.isApproved()) {
+						if (p.getFirstname() == name && !p.isApproved()) {
 							p.setApproved(true);
 							break;
 						}
@@ -135,7 +135,7 @@ public class PrincipalMenu {
 
 			for (Person p : ad.values()) {
 				if (p.getType() == "teacher" && p.isLocked()) {
-					System.out.println(p.getName());
+					System.out.println(p.getFirstname());
 				}
 			}
 			System.out.println("1. Lock a specific teacher");
@@ -149,7 +149,7 @@ public class PrincipalMenu {
 					System.out.println("What is the name of the teacher you would like to lock?");
 					String name = sc.next();
 					for (Person p : ad.values()) {
-						if (p.getName() == name && !p.isLocked()) {
+						if (p.getFirstname() == name && !p.isLocked()) {
 							p.setLocked(true);
 							LogThis.info("The teacher account for " + name + " was locked.");
 							break;
@@ -191,7 +191,7 @@ public class PrincipalMenu {
 
 			for (Person p : ad.values()) {
 				if (p.getType() == "teacher" && p.isLocked()) {
-					System.out.println(p.getName());
+					System.out.println(p.getFirstname() + " " + p.getLastname());
 				}
 			}
 			System.out.println("1. Unlock All");
@@ -212,10 +212,10 @@ public class PrincipalMenu {
 					unlockTeacher(principal);
 					return;
 				case 2:
-					System.out.println("What is the name of the teacher you would like to unlock?");
-					String name = sc.next();
+					System.out.println("What is the first name of the teacher you would like to unlock?");
+					String firstname = sc.next();
 					for (Person p : ad.values()) {
-						if (p.getName() == name && p.isLocked()) {
+						if (p.getFirstname() == firstname && p.isLocked()) {
 							p.setLocked(false);
 							break;
 						}

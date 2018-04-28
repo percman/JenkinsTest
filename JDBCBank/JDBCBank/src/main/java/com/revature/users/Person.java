@@ -16,8 +16,9 @@ public abstract class Person implements Serializable {
 	private static final long serialVersionUID = -7837235030867746015L;
 
 	// These are variables that all Person classes have
-	private String name;
-	private String userName;
+	private String firstname;
+	private String lastname;
+	private String username;
 	private String password;
 	private String type;
 
@@ -28,19 +29,28 @@ public abstract class Person implements Serializable {
 		super();
 	}
 
-	public Person(String name, String password) {
+	public Person(String firstname, String password) {
 		super();
-		this.name = name;
+		this.firstname = firstname;
 		this.password = password;
 	}
 
 	// getters and setters
-	public String getName() {
-		return name;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstname(String name) {
+		this.firstname = name;
+	}
+	
+	public String getLastname() {
+		return lastname;
+	}
+
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getPassword() {
@@ -51,12 +61,12 @@ public abstract class Person implements Serializable {
 		this.password = password;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getType() {
@@ -87,9 +97,13 @@ public abstract class Person implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
+		result = prime * result + (isApproved ? 1231 : 1237);
+		result = prime * result + (isLocked ? 1231 : 1237);
+		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
@@ -102,34 +116,57 @@ public abstract class Person implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Person other = (Person) obj;
-		if (name == null) {
-			if (other.name != null)
+		if (firstname == null) {
+			if (other.firstname != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!firstname.equals(other.firstname))
+			return false;
+		if (isApproved != other.isApproved)
+			return false;
+		if (isLocked != other.isLocked)
+			return false;
+		if (lastname == null) {
+			if (other.lastname != null)
+				return false;
+		} else if (!lastname.equals(other.lastname))
 			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (userName == null) {
-			if (other.userName != null)
+		if (type == null) {
+			if (other.type != null)
 				return false;
-		} else if (!userName.equals(other.userName))
+		} else if (!type.equals(other.type))
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", userName=" + userName + "]";
+		return "Person [firstname=" + firstname + ", lastname=" + lastname + ", username=" + username + ", type=" + type
+				+ ", isApproved=" + isApproved + ", isLocked=" + isLocked + "]";
 	}
 
+	
+	
+	
+	
+	
+	
+	
 	//
 	//
 	// Method(s) that all Person classes have
 	//
 	//
+
 
 	private static Scanner sc = new Scanner(System.in);
 	

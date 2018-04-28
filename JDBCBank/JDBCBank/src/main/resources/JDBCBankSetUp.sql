@@ -14,3 +14,9 @@ GRANT DROP ANY TABLE TO jdbcbank_user;
 GRANT CREATE ANY TRIGGER TO jdbcbank_user;
 GRANT CREATE ANY SEQUENCE TO jdbcbank_user;
 GRANT CREATE ANY PROCEDURE TO jdbcbank_user;
+
+
+/*************************************************************
+Run the following code in the new jdbcbank_user connection
+**************************************************************/
+

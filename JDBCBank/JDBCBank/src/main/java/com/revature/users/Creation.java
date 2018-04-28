@@ -19,12 +19,15 @@ public class Creation {
 		Person student = new Student();
 
 		try {
-			System.out.println("Please enter your first and last name");
-			student.setName(sc.nextLine());
+			System.out.println("Please enter your first name");
+			student.setFirstname(sc.nextLine());
+			
+			System.out.println("Please enter your last name");
+			student.setLastname(sc.nextLine());
 
 			System.out.println("Please choose a username");
 			String username = sc.next();
-			student.setUserName(username);
+			student.setUsername(username);
 
 			System.out.println("Please enter a password");
 			String password = sc.next();
@@ -52,13 +55,15 @@ public class Creation {
 		Person teacher = new Teacher();
 
 		try {
-			System.out.println("Please enter your first and last name");
-			String name = sc.nextLine();
-			teacher.setName(name);
+			System.out.println("Please enter your first name");
+			teacher.setFirstname(sc.nextLine());
+			
+			System.out.println("Please enter your last name");
+			teacher.setLastname(sc.nextLine());
 
 			System.out.println("Please choose a username");
 			String username = sc.next();
-			teacher.setUserName(username);
+			teacher.setUsername(username);
 
 			System.out.println("Please enter a password");
 			String password = sc.next();
@@ -86,12 +91,15 @@ public class Creation {
 		Person principal = new Principal();
 
 		try {
-			System.out.println("Please enter your first and last name");
-			principal.setName(sc.nextLine());
+			System.out.println("Please enter your first name");
+			principal.setFirstname(sc.nextLine());
+			
+			System.out.println("Please enter your last name");
+			principal.setLastname(sc.nextLine());
 
 			System.out.println("Please choose a username");
-			principal.setUserName(sc.next());
-			String username = principal.getUserName();
+			String username = sc.next();
+			principal.setUsername(username);
 
 			System.out.println("Please enter a password");
 			principal.setPassword(sc.next());

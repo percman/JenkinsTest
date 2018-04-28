@@ -133,7 +133,7 @@ public class EarnCoinsMenu {
 		int coins = student.getCoins();
 		if(EarnCoins.addition()) {
 			student.setCoins(coins + 1);
-			LogThis.info(student.getName() + " earned a coin!");
+			LogThis.info(student.getFirstname() + " earned a coin!");
 		} else {
 			System.out.println("Sorry, your answer was incorrect.");
 			System.out.println("You did not earn a coin, try again.");
@@ -145,7 +145,7 @@ public class EarnCoinsMenu {
 		int coins = student.getCoins();
 		if(EarnCoins.subtraction()) {
 			student.setCoins(coins + 1);
-			LogThis.info(student.getName() + " earned a coin!");
+			LogThis.info(student.getFirstname() + " earned a coin!");
 		} else {
 			System.out.println("Sorry, your answer was incorrect.");
 			System.out.println("You did not earn a coin, try again.");
@@ -157,7 +157,7 @@ public class EarnCoinsMenu {
 		int coins = student.getCoins();
 		if(EarnCoins.multiplication()) {
 			student.setCoins(coins + 1);
-			LogThis.info(student.getName() + " earned a coin!");
+			LogThis.info(student.getFirstname() + " earned a coin!");
 		} else {
 			System.out.println("Sorry, your answer was incorrect.");
 			System.out.println("You did not earn a coin, try again.");
@@ -169,7 +169,7 @@ public class EarnCoinsMenu {
 		int coins = student.getCoins();
 		if(EarnCoins.division()) {
 			student.setCoins(coins + 1);
-			LogThis.info(student.getName() + " earned a coin!");
+			LogThis.info(student.getFirstname() + " earned a coin!");
 		} else {
 			System.out.println("Sorry, your answer was incorrect.");
 			System.out.println("You did not earn a coin, try again.");

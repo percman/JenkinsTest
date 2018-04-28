@@ -80,7 +80,7 @@ public class TeacherMenu {
 			System.out.println("The following students need to be approved:");
 			for (Person p : ad.values()) {
 				if (p.getType() == "student" && !p.isApproved()) {
-					System.out.println(p.getName());
+					System.out.println(p.getFirstname());
 				}
 			}
 			System.out.println("1. Approve All");
@@ -104,7 +104,7 @@ public class TeacherMenu {
 					System.out.println("What is the name of the student you would like to approve?");
 					String name = sc.next();
 					for (Person p : ad.values()) {
-						if (p.getName() == name && !p.isApproved()) {
+						if (p.getFirstname() == name && !p.isApproved()) {
 							p.setApproved(true);
 							break;
 						}
@@ -145,7 +145,7 @@ public class TeacherMenu {
 
 			for (Person p : ad.values()) {
 				if (p.getType() == "student" && !p.isLocked()) {
-					System.out.println(p.getName());
+					System.out.println(p.getFirstname());
 				}
 			}
 			System.out.println("1. Lock a specific student");
@@ -159,7 +159,7 @@ public class TeacherMenu {
 					System.out.println("What is the name of the student you would like to lock?");
 					String name = sc.next();
 					for (Person p : ad.values()) {
-						if (p.getName() == name && !p.isLocked()) {
+						if (p.getFirstname() == name && !p.isLocked()) {
 							p.setLocked(true);
 							LogThis.info("The student account for " + name + " was locked.");
 							break;
@@ -200,7 +200,7 @@ public class TeacherMenu {
 
 			for (Person p : ad.values()) {
 				if (p.getType() == "student" && p.isLocked()) {
-					System.out.println(p.getName());
+					System.out.println(p.getFirstname() + " " + p.getLastname());
 				}
 			}
 			System.out.println("1. Unlock All");
@@ -221,10 +221,10 @@ public class TeacherMenu {
 					unlockStudent(teacher);
 					return;
 				case 2:
-					System.out.println("What is the name of the student you would like to unlock?");
-					String name = sc.next();
+					System.out.println("What is the first name of the student you would like to unlock?");
+					String firstname = sc.next();
 					for (Person p : ad.values()) {
-						if (p.getName() == name && p.isLocked()) {
+						if (p.getFirstname() == firstname && p.isLocked()) {
 							p.setLocked(false);
 							break;
 						}
