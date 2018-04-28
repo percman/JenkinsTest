@@ -1,6 +1,6 @@
-package SpendCoins;
+package com.revature.spendCoinsTest;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -8,8 +8,8 @@ import org.junit.Test;
 import com.revature.transactions.SpendCoins;
 import com.revature.users.Student;
 
-public class Multiplication {
-
+public class Subtraction {
+	
 	private static Student student = new Student();
 
 	@BeforeClass
@@ -17,13 +17,13 @@ public class Multiplication {
 		student.setCoins(40);
 	}
 
-
 	@Test
-	public void testBuyMultiplication() {
+	public void testBuySubtraction() {
+
+		SpendCoins.subtraction(student);
 		
-		SpendCoins.multiplication(student);
+		assertTrue(student.getCoins() == 30 && student.isBoughtSubtraction());
 		
-		assertTrue(student.getCoins() == 20 && student.isBoughtMultiplication());
 	}
 
 }

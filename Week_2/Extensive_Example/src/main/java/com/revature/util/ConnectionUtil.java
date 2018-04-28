@@ -37,15 +37,15 @@ public class ConnectionUtil {
 	}
 	
 	
-//	public static void main(String[] args) {
-//		Connection conn = ConnectionUtil.getConnection();
-//		System.out.println(conn);
-//		try {
-//			conn.close();
-//		} catch (SQLException sqle) {
-//			System.err.println(sqle.getMessage());
-//			System.err.println("SQL State: " + sqle.getSQLState());
-//			System.err.println("Error Code: " + sqle.getErrorCode());
-//		}
-//	}
+	public static void main(String[] args) {
+		Connection conn = ConnectionUtil.getConnection();
+		System.out.println(conn);
+		try {
+			conn.close();
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State: " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+		}
+	}
 }
