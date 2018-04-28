@@ -72,6 +72,15 @@ CREATE TABLE student (
     CONSTRAINT CK_S_BOUGHT_DIV CHECK (s_bought_div = 0 OR s_bought_div = 1)
 );
 
+CREATE TABLE username (
+    username VARCHAR2 (45),
+    user_type VARCHAR2 (9),
+    CONSTRAINT UK_USERNAME UNIQUE (username),
+    CONSTRAINT CK_USER_TYPE CHECK (user_type = 'student'
+                                OR user_type = 'teacher'
+                                OR user_type = 'principal')
+);
+
 
 -- Create the sequences for teacher_id and student_id
 -- principal_id does not need a sequence because there is only one principal
