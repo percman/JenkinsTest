@@ -1,0 +1,15 @@
+2018-04-27 21:51:48 TRACE BankLogger:17 - Initializing...
+2018-04-27 21:55:46 TRACE BankLogger:17 - Initializing...
+2018-04-27 21:56:04 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-27 21:56:27 TRACE BankLogger:33 - New Account: Han Solo
+2018-04-27 21:56:50 TRACE BankLogger:33 - New Account: Heath Ledger
+2018-04-27 21:57:22 TRACE BankLogger:33 - New Account: Christian Bale
+2018-04-27 21:57:42 TRACE BankLogger:237 - Administator: Jesse Skipper approved all pending accounts.
+2018-04-27 21:58:19 TRACE BankLogger:153 - Administator: Jesse Skipper deleted an account.
+2018-04-27 21:58:24 TRACE BankLogger:119 - Administator: Jesse Skipper locked an account.
+2018-04-27 21:58:37 TRACE BankLogger:119 - Administator: Jesse Skipper locked an account.
+2018-04-27 21:58:42 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-27 21:58:49 TRACE BankLogger:101 - User: Allison Skipper logged out.
+2018-04-27 21:58:55 TRACE BankLogger:15 - Storing data...
+2018-04-27 21:58:55 TRACE BankLogger:16 - Data stored. System close.
+2018-04-27 21:58:55 TRACE BankLogger:17 - =============================
