@@ -218,6 +218,7 @@ public class App {
 			u.addBalance(n);
 		}
 		UserService.updateUser(u);
+    	UserService.updateTransactions(UserService.getTotalBalance());
 		System.out.println("You successfully added $" + n +"s " + "your current balance is $" + u.getBalance());
 	}
 	public static void withdrawMoney(User u, Scanner input) {
@@ -231,6 +232,7 @@ public class App {
 			u.subtractBalance(n);
 		}
 		UserService.updateUser(u);
+    	UserService.updateTransactions(UserService.getTotalBalance());
 		System.out.println("You successfully withdrew $" + n +"s " + "your current balance is $" + u.getBalance());
 	}
 	public static void viewBalance(User u) {
@@ -333,12 +335,10 @@ public class App {
 	}
     public static void main ( String[] args ) {
     	
-    	
-    	int i = UserService.getTotalBalance();
-    	System.out.println(i);
-    	//Scanner input = new Scanner(System.in);
-//    	while (true) {
-//    		welcome(input);
-//    	}
+    	UserService.updateTransactions(UserService.getTotalBalance());
+    	Scanner input = new Scanner(System.in);
+    	while (true) {
+    		welcome(input);
+    	}
     }
 }

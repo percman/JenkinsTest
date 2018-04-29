@@ -11,5 +11,6 @@ public interface UserDao {
 	public boolean deleteUser(String name);
 	public int getTotalUsers();
 	public int getTotalBalance();
+	public boolean updateTransaction(int total);
 
 }

@@ -29,4 +29,7 @@ public class UserService {
 	public static int getTotalBalance() {
 		return dao.getTotalBalance();
 	}
+	public static boolean updateTransactions(int total) {
+		return dao.updateTransaction(total); 
+	}
 }

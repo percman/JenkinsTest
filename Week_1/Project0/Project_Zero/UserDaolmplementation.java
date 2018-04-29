@@ -156,4 +156,20 @@ public class UserDaolmplementation implements UserDao{
 		}
 		return 0;
 	}
+
+	@Override
+	public boolean updateTransaction(int total) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("INSERT INTO TRANSACTIONS VALUES(null, " + total + ")");
+			ResultSet rs = stmt.executeQuery();
+			int rowsAffected = stmt.executeUpdate();
+			return rowsAffected > 0;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+		}
+		return false;
+	}
 }
