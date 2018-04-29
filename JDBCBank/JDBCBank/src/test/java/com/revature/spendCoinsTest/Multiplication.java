@@ -23,7 +23,7 @@ public class Multiplication {
 		
 		SpendCoins.multiplication(student);
 		
-		assertTrue(student.getCoins() == 20 && student.isBoughtMultiplication());
+		assertTrue(student.getCoins() == 20 && student.isBoughtMultiplication() == 1);
 	}
 
 }

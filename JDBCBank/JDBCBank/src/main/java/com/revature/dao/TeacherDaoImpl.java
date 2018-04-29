@@ -175,31 +175,72 @@ public class TeacherDaoImpl implements TeacherDao {
 
 	@Override
 	public boolean approveAllStudents() {
-		// TODO Auto-generated method stub
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("Update student SET s_approved = 1 ");
+			return stmt.executeUpdate() > 0;
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
 		return false;
 	}
 
 	@Override
 	public boolean approveStudent(String username) {
-		// TODO Auto-generated method stub
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("Update student SET s_approved = 1 WHERE s_username = ?");
+			stmt.setString(++index, username);
+			return stmt.executeUpdate() > 0;
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
 		return false;
 	}
 
 	@Override
 	public boolean lockStudent(String username) {
-		// TODO Auto-generated method stub
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("Update student SET s_locked = 1 WHERE s_username = ? ");
+			stmt.setString(++index, username);
+			return stmt.executeUpdate() > 0;
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
 		return false;
 	}
 	
 	@Override
 	public boolean unlockAllStudent(String username) {
-		// TODO Auto-generated method stub
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("Update student SET s_locked = 0 ");
+			return stmt.executeUpdate() > 0;
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
 		return false;
 	}
 
 	@Override
 	public boolean unlockStudent(String username) {
-		// TODO Auto-generated method stub
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("Update student SET s_locked = 0 WHERE s_username = ? ");
+			stmt.setString(++index, username);
+			return stmt.executeUpdate() > 0;
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
 		return false;
 	}
 	

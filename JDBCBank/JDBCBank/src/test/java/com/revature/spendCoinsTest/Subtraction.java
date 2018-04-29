@@ -22,7 +22,7 @@ public class Subtraction {
 
 		SpendCoins.subtraction(student);
 		
-		assertTrue(student.getCoins() == 30 && student.isBoughtSubtraction());
+		assertTrue(student.getCoins() == 30 && student.isBoughtSubtraction() == 1);
 		
 	}
 

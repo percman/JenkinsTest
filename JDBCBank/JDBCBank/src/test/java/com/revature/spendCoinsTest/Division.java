@@ -22,7 +22,7 @@ public class Division {
 		
 		SpendCoins.division(student);
 		
-		assertTrue(student.getCoins() == 10 && student.isBoughtDivision());
+		assertTrue(student.getCoins() == 10 && student.isBoughtDivision() == 1);
 	}
 
 }

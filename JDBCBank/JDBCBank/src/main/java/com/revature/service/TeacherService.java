@@ -1,5 +1,7 @@
 package com.revature.service;
 
+import java.util.List;
+
 import com.revature.dao.TeacherDao;
 import com.revature.dao.TeacherDaoImpl;
 import com.revature.users.Student;
@@ -10,18 +12,7 @@ public class TeacherService {
 	private static TeacherDao dao = TeacherDaoImpl.getInstance();
 	
 	private TeacherService() {}
-	
-//	List<Student> getAllStudents();
-//	List<Student> getUnapprovedStudents();
-//	List<Student> getUnlockedStudents();
-//	List<Student> getLockedStudents();
-//	
-//	boolean approveAllStudents();
-//	boolean approveStudent(String username);
-//	boolean lockStudent(String username);
-//	boolean unlockStudent(String username);
-//	boolean deleteStudent(String username);
-	
+		
 	public static Teacher getTeacher(String username) {
 		return dao.getTeacher(username);
 	}
@@ -48,7 +39,48 @@ public class TeacherService {
 		return null;
 	}
 	
+	public static List<Student> getAllStudents(){
+		return dao.getAllStudents();
+	}
 	
+	public static List<Student> getUnapprovedStudents(){
+		return dao.getUnapprovedStudents();
+	}
+	
+	public static List<Student> getUnlockedStudents(){
+		return dao.getUnlockedStudents();
+	}
+	
+	public static List<Student> getLockedStudents(){
+		return dao.getLockedStudents();
+	}
+	
+	public static boolean approveAllStudents() {
+		return dao.approveAllStudents();
+	}
+	
+	public static boolean approveStudent(String username) {
+		return dao.approveStudent(username);
+	}
+	
+	public static boolean lockStudent(String username) {
+		return dao.lockStudent(username);
+	}
+	
+	public static boolean unlockAllStudent(String username) {
+		return dao.unlockAllStudent(username);
+	}
+
+	
+	public static boolean unlockStudent(String username) {
+		return dao.unlockStudent(username);
+	}
+		
+	
+	public static boolean deleteStudent(String username) {
+		return dao.deleteStudent(username);
+	}
+
 	
 
 }
