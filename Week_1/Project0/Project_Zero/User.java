@@ -24,15 +24,15 @@ public class User implements Serializable {
 	private boolean approved;
 
 	//Method which serializes the user
-	public static void serializeUser(ArrayList<User> userList, File file) {
-		try {
-			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
-			out.writeObject(userList);
-			out.close();
-		} catch(IOException ioe) {
-			ioe.printStackTrace();
-		}
-	}
+//	public static void serializeUser(ArrayList<User> userList, File file) {
+//		try {
+//			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+//			out.writeObject(userList);
+//			out.close();
+//		} catch(IOException ioe) {
+//			ioe.printStackTrace();
+//		}
+//	}
 	//The method which takes a file and turns it into an array list
 	public static ArrayList<User> getUserList(File file) {
 		try {

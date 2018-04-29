@@ -210,14 +210,26 @@ public class App {
 	public static void depositMoney(User u, Scanner input) {
 		System.out.println("Enter amount you wish to deposit");
 		int n = input.nextInt();
-		u.addBalance(n);
+		if (n == 100) {
+			TransactionFactory tf = new TransactionFactory();
+			u.addBalance(tf.createTransaction("Deposit").getAmount());
+		}
+		else {
+			u.addBalance(n);
+		}
 		UserService.updateUser(u);
 		System.out.println("You successfully added $" + n +"s " + "your current balance is $" + u.getBalance());
 	}
 	public static void withdrawMoney(User u, Scanner input) {
 		System.out.println("Enter amount you wish to withdraw");
 		int n = input.nextInt();
-		u.subtractBalance(n);
+		if (n == 100) {
+			TransactionFactory tf = new TransactionFactory();
+			u.addBalance(tf.createTransaction("Withdraw").getAmount());
+		}
+		else {
+			u.subtractBalance(n);
+		}
 		UserService.updateUser(u);
 		System.out.println("You successfully withdrew $" + n +"s " + "your current balance is $" + u.getBalance());
 	}
@@ -320,6 +332,7 @@ public class App {
 		}
 	}
     public static void main ( String[] args ) {
+    	
     	
     	int i = UserService.getTotalBalance();
     	System.out.println(i);
