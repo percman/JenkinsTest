@@ -25,8 +25,6 @@ public class PrincipalDaoImpl implements PrincipalDao{
 		}
 		return instance;
 	}
-
-	
 	
 	@Override
 	public Principal getPrincipal(String username) {
@@ -36,8 +34,8 @@ public class PrincipalDaoImpl implements PrincipalDao{
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				return new Principal(rs.getString("s_firstname"), rs.getString("s_lastname"), rs.getString("s_username"),
-						rs.getString("s_password"));
+				return new Principal(rs.getString("p_firstname"), rs.getString("p_lastname"), rs.getString("p_username"),
+						rs.getString("p_password"));
 			}
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());

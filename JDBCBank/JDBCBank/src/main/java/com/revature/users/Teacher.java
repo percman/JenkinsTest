@@ -110,11 +110,6 @@ public class Teacher extends Person implements Serializable {
 				return false;
 		} else if (!lastname.equals(other.lastname))
 			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
 		if (username == null) {
 			if (other.username != null)
 				return false;

@@ -11,7 +11,7 @@ import com.revature.dao.StudentDao;
 import com.revature.dao.StudentDaoImpl;
 import com.revature.users.Student;
 
-public class StudentDaoImplTests {
+public class StudentDaoImplTest {
 
 	static Student student;
 
