@@ -1,0 +1,59 @@
+
+Function GET_USER_HASH compiled
+
+
+Trigger USER_B_INSERT compiled
+
+LINE/COL  ERROR
+--------- -------------------------------------------------------------
+5/26      PLS-00049: bad bind variable 'NEW.USER_USERNAME'
+Errors: check compiler log
+
+Function GET_USER_HASH compiled
+
+
+Trigger USER_B_INSERT compiled
+
+
+Procedure INSERT_USER compiled
+
+
+Procedure INSERT_USER compiled
+
+
+Procedure INSERT_USER compiled
+
+
+Procedure INSERT_PRODUCT compiled
+
+LINE/COL  ERROR
+--------- -------------------------------------------------------------
+2/19      PLS-00103: Encountered the symbol "N" when expecting one of the following:     := . ) , @ % default character The symbol "," was substituted for "N" to continue. 
+Errors: check compiler log
+
+Procedure INSERT_PRODUCT compiled
+
+
+Procedure INSERT_JUNCTION compiled
+
+LINE/COL  ERROR
+--------- -------------------------------------------------------------
+5/5       PL/SQL: SQL Statement ignored
+5/60      PL/SQL: ORA-00984: column not allowed here
+Errors: check compiler log
+
+Procedure INSERT_JUNCTION compiled
+
+LINE/COL  ERROR
+--------- -------------------------------------------------------------
+5/5       PL/SQL: SQL Statement ignored
+5/58      PL/SQL: ORA-00984: column not allowed here
+Errors: check compiler log
+
+Procedure INSERT_JUNCTION compiled
+
+LINE/COL  ERROR
+--------- -------------------------------------------------------------
+5/5       PL/SQL: SQL Statement ignored
+5/57      PL/SQL: ORA-00984: column not allowed here
+Errors: check compiler log
