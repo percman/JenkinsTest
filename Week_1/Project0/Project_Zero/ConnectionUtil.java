@@ -12,7 +12,16 @@ import java.util.Properties;
 public class ConnectionUtil {
 
 	private ConnectionUtil() {}
+
+	private static ConnectionUtil instance;
 	
+	public static ConnectionUtil getInstance() {
+		if (instance == null) {
+			instance = new ConnectionUtil();
+		}
+		return instance;
+	}
+
 	public static Connection getConnection() {
 		InputStream in = null;
 		Properties props = new Properties();

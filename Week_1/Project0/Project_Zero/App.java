@@ -18,7 +18,7 @@ public class App {
 	public static ArrayList<User> userList = UserService.getAllUsers();
 	
 	//Initial page for welcoming new and returning users
-	public static void welcome (Scanner input) {
+	public static void welcome (Scanner input) throws UserNameTakenException {
 		
 		System.out.println("Hello, new user? (Y/N) or Q to Quit");
 		String response = input.next();
@@ -75,10 +75,11 @@ public class App {
 	}
 	//method for creating a new user
 	@SuppressWarnings("resource")
-	public static void newUser(Scanner input) {
+	public static void newUser(Scanner input) throws UserNameTakenException {
 		boolean taken = true;
 		while (taken == true) {	
 			taken = false;
+			
 			System.out.println("Create Username: ");
 			String userName = input.next();
 			for(User u : userList) {
