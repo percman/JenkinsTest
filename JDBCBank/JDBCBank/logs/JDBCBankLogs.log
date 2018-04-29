@@ -23,3 +23,72 @@ ORA-06512: at line 1
 
 2018-04-28 21:43:51 WARN  LogThis:34 - SQL state: 23000
 2018-04-28 21:43:51 WARN  LogThis:34 - Error Code: 1400
+2018-04-28 22:55:03 WARN  LogThis:34 - ORA-00904: "USERNAME": invalid identifier
+
+2018-04-28 22:55:03 WARN  LogThis:34 - SQL state: 42000
+2018-04-28 22:55:03 WARN  LogThis:34 - Error Code: 904
+2018-04-28 22:55:04 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-28 22:55:04 WARN  LogThis:34 - SQL state: 23000
+2018-04-28 22:55:04 WARN  LogThis:34 - Error Code: 1
+2018-04-28 22:55:58 WARN  LogThis:34 - ORA-00904: "USERNAME": invalid identifier
+
+2018-04-28 22:55:58 WARN  LogThis:34 - SQL state: 42000
+2018-04-28 22:55:58 WARN  LogThis:34 - Error Code: 904
+2018-04-28 22:56:22 WARN  LogThis:34 - ORA-00904: "USERNAME": invalid identifier
+
+2018-04-28 22:56:22 WARN  LogThis:34 - SQL state: 42000
+2018-04-28 22:56:22 WARN  LogThis:34 - Error Code: 904
+2018-04-28 23:02:10 WARN  LogThis:34 - Invalid column name
+2018-04-28 23:02:10 WARN  LogThis:34 - SQL state: 99999
+2018-04-28 23:02:10 WARN  LogThis:34 - Error Code: 17006
+2018-04-28 23:03:21 WARN  LogThis:34 - Invalid column name
+2018-04-28 23:03:21 WARN  LogThis:34 - SQL state: 99999
+2018-04-28 23:03:21 WARN  LogThis:34 - Error Code: 17006
+2018-04-28 23:07:24 WARN  LogThis:34 - Invalid column name
+2018-04-28 23:07:24 WARN  LogThis:34 - SQL state: 99999
+2018-04-28 23:07:24 WARN  LogThis:34 - Error Code: 17006
+2018-04-28 23:07:59 WARN  LogThis:34 - Invalid column name
+2018-04-28 23:07:59 WARN  LogThis:34 - SQL state: 99999
+2018-04-28 23:07:59 WARN  LogThis:34 - Error Code: 17006
+2018-04-28 23:08:19 WARN  LogThis:34 - Invalid column name
+2018-04-28 23:08:19 WARN  LogThis:34 - SQL state: 99999
+2018-04-28 23:08:19 WARN  LogThis:34 - Error Code: 17006
+2018-04-28 23:08:19 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-28 23:08:19 WARN  LogThis:34 - SQL state: 23000
+2018-04-28 23:08:19 WARN  LogThis:34 - Error Code: 1
+2018-04-28 23:11:10 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-28 23:11:10 WARN  LogThis:34 - SQL state: 23000
+2018-04-28 23:11:10 WARN  LogThis:34 - Error Code: 1
+2018-04-28 23:11:54 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-28 23:11:54 WARN  LogThis:34 - SQL state: 23000
+2018-04-28 23:11:54 WARN  LogThis:34 - Error Code: 1
+2018-04-28 23:13:04 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-28 23:13:04 WARN  LogThis:34 - SQL state: 23000
+2018-04-28 23:13:04 WARN  LogThis:34 - Error Code: 1
+2018-04-28 23:14:47 WARN  LogThis:34 - Invalid column name
+2018-04-28 23:14:47 WARN  LogThis:34 - SQL state: 99999
+2018-04-28 23:14:47 WARN  LogThis:34 - Error Code: 17006
+2018-04-28 23:17:29 WARN  LogThis:34 - Invalid column name
+2018-04-28 23:17:29 WARN  LogThis:34 - SQL state: 99999
+2018-04-28 23:17:29 WARN  LogThis:34 - Error Code: 17006
+2018-04-28 23:27:41 WARN  LogThis:34 - ResultSet.next was not called
+2018-04-28 23:27:41 WARN  LogThis:34 - SQL state: 99999
+2018-04-28 23:27:41 WARN  LogThis:34 - Error Code: 17014
+2018-04-28 23:28:32 WARN  LogThis:34 - Invalid column name
+2018-04-28 23:28:32 WARN  LogThis:34 - SQL state: 99999
+2018-04-28 23:28:32 WARN  LogThis:34 - Error Code: 17006

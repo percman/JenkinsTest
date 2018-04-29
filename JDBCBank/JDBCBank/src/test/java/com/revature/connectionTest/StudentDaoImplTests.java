@@ -1,13 +1,13 @@
 package com.revature.connectionTest;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.revature.dao.StudentDao;
 import com.revature.dao.StudentDaoImpl;
-import com.revature.users.Person;
 import com.revature.users.Student;
 
 public class StudentDaoImplTests {
@@ -19,12 +19,14 @@ public class StudentDaoImplTests {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		student = new Student("sFirstname", "sLastname", "sUsername", "sPassword");
+//		dao.truncateStudent();
 	}
 
 //	@AfterClass
 //	public static void tearDownAfterClass() throws Exception {
+//		dao.truncateStudent();
 //	}
-//
+
 //	@Before
 //	public void setUp() throws Exception {
 //	}
@@ -35,7 +37,13 @@ public class StudentDaoImplTests {
 
 	@Test
 	public void testInsert() {
+		dao.truncateStudent();
 		assertTrue(dao.insertStudent(student));
+	}
+	
+	@Test
+	public void testGetStudent() {
+		assertTrue(dao.getStudent("sUsername").equals(student));
 	}
 
 }

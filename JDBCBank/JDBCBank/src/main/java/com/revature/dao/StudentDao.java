@@ -16,5 +16,7 @@ public interface StudentDao {
 	boolean boughtSubtraction(String username);
 	boolean boughtMultiplication(String username);
 	boolean boughtDivision(String username);
+	
+	void truncateStudent();
 
 }

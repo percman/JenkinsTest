@@ -26,15 +26,28 @@ public class StudentDaoImpl implements StudentDao {
 	
 	
 	@Override
-	public Person getStudent(String username) {
+	public Student getStudent(String username) {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("Select * FROM student WHERE username = ? ");
+			PreparedStatement stmt = conn.prepareStatement("Select * FROM student WHERE s_username = ? ");
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
+			boolean sub = false;
+			boolean mult = false;
+			boolean div = false;
+			
 			if (rs.next()) {
-				return new Student(rs.getString("s_firstname"), rs.getString("s_lastname"), rs.getString("s_username"), rs.getString("password"), 
-						rs.getInt("s_coins"), rs.getBoolean("s_bought_sub"), rs.getBoolean("s_bought_mult"), rs.getBoolean("s_bought_div"));
+				if(rs.getInt("s_bought_sub") == 1) {
+					sub = true;
+				}
+				if(rs.getInt("s_bought_mult") == 1) {
+					mult = true;
+				}
+				if(rs.getInt("s_bought_div") == 1) {
+					div = true;
+				}
+				return new Student(rs.getString("s_firstname"), rs.getString("s_lastname"), rs.getString("s_username"), rs.getString("s_password"), 
+						rs.getInt("s_coins"), sub, mult, div);
 			}
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());
@@ -66,7 +79,16 @@ public class StudentDaoImpl implements StudentDao {
 	public boolean updateStudent(Student student) {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			
+			CallableStatement stmt = conn.prepareCall("{CALL update_student (?, ?, ?, ?, ?, ?, ?, ?)}");
+			stmt.setString(++index, student.getUsername());
+			stmt.setString(++index, student.getPassword());
+			stmt.setString(++index, student.getFirstname());
+			stmt.setString(++index, student.getLastname());
+			stmt.setInt(++index, student.getCoins());
+			stmt.setBoolean(++index, student.isBoughtSubtraction());
+			stmt.setBoolean(++index, student.isBoughtMultiplication());
+			stmt.setBoolean(++index, student.isBoughtDivision());
+			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());
 			LogThis.warn("SQL state: " + sqle.getSQLState());
@@ -96,14 +118,6 @@ public class StudentDaoImpl implements StudentDao {
 
 	@Override
 	public boolean earnCoin(Student student) {
-		int index = 0;
-		try (Connection conn = ConnectionUtil.getConnection()) {
-			
-		} catch (SQLException sqle) {
-			LogThis.warn(sqle.getMessage());
-			LogThis.warn("SQL state: " + sqle.getSQLState());
-			LogThis.warn("Error Code: " + sqle.getErrorCode());
-		}
 		return false;
 	}
 
@@ -130,5 +144,23 @@ public class StudentDaoImpl implements StudentDao {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	
+	@Override
+	public void truncateStudent() {
+		try (Connection conn = ConnectionUtil.getConnection()){
+			PreparedStatement stmt = conn.prepareStatement("TRUNCATE TABLE student");
+			stmt.executeQuery();
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
+	}
+
+	
+	
+	
+	
 
 }

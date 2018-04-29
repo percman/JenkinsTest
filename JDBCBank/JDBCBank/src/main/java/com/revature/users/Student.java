@@ -128,14 +128,6 @@ public class Student extends Person implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Student other = (Student) obj;
-		if (boughtDivision != other.boughtDivision)
-			return false;
-		if (boughtMultiplication != other.boughtMultiplication)
-			return false;
-		if (boughtSubtraction != other.boughtSubtraction)
-			return false;
-		if (coins != other.coins)
-			return false;
 		if (firstname == null) {
 			if (other.firstname != null)
 				return false;
@@ -145,11 +137,6 @@ public class Student extends Person implements Serializable {
 			if (other.lastname != null)
 				return false;
 		} else if (!lastname.equals(other.lastname))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
 			return false;
 		if (username == null) {
 			if (other.username != null)
