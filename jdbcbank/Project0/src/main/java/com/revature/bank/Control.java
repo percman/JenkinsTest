@@ -115,6 +115,10 @@ public class Control {
 		System.out.println("An administrative account will be created for you.");
 		System.out.print("Create username (no spaces allowed, min. 2 characters): ");
 		String username = sc.next();
+		if(username.length()<2) {
+			System.out.println("Username must be at least 2 characters.");
+			addFirst();
+		}
 		System.out.print("Create password (no spaces allowed: ");
 		String password = sc.next();
 		Admin first = new Admin (username, password);
@@ -129,6 +133,10 @@ public class Control {
 			wrongLetter = false;
 			System.out.println("Enter a username (no spaces, min. 2 characters): ");
 			String username = sc.next();
+			if(username.length()<2) {
+				System.out.println("Username must be at least 2 characters.");
+				break;
+			}
 			System.out.println("Enter a password (no spaces): ");
 			String password = sc.next();
 			if(UserService.getPerson(username)!=null) {
