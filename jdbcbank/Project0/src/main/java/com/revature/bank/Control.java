@@ -118,10 +118,8 @@ public class Control {
 		System.out.print("Create password (no spaces allowed: ");
 		String password = sc.next();
 		Admin first = new Admin (username, password);
-		System.out.println("Account added?" + AdminService.insertAdmin(first));
 		AdminService.approvePerson(first.getUsername());
 		current = first;
-		System.out.println("You have been added.");
 	}
 	
 	// Account creation. Checks if account already exists so as to not replace prior user in hash map
@@ -135,8 +133,9 @@ public class Control {
 			String password = sc.next();
 			if(UserService.getPerson(username)!=null) {
 				System.out.println("Account already exists.");
+				break;
 			}
-			System.out.print("Type 'A' for Admin or 'U' for User, 'P' for Back: ");
+			System.out.print("Type 'A' for Admin or 'U' for User, 'P' for Previous: ");
 			String userType=sc.next();
 			try {
 				if(userType.equals("A")) {
