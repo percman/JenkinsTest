@@ -16,16 +16,16 @@ public class SpendCoinsMenu {
 		LogThis.info("Spend Your Coins Menu");
 		System.out.println("You have " + student.getCoins() + " coins!");
 		System.out.println("You can use coins to gain access to more types of arithmetic problems.");
-		if(!student.isBoughtSubtraction()) {
+		if(student.isBoughtSubtraction() == 1) {
 			System.out.println("1. Buy subtraction problems for 10 coins");
 		}
-		if(!student.isBoughtMultiplication()) {
+		if(student.isBoughtMultiplication() == 1) {
 			System.out.println("2. Buy multiplication problems for 20 coins");
 		}
-		if (!student.isBoughtDivision()) {
+		if (student.isBoughtDivision() == 1) {
 			System.out.println("3. Buy division problems 30 coins");
 		}
-		if(student.isBoughtSubtraction() && student.isBoughtMultiplication() && student.isBoughtDivision()) {
+		if(student.isBoughtSubtraction() == 1 && student.isBoughtMultiplication() == 1 && student.isBoughtDivision() == 1) {
 			System.out.println("There are no more types of arithmetic problems left for you to buy");
 		}
 		System.out.println("0. Return to Student Menu");
@@ -35,7 +35,7 @@ public class SpendCoinsMenu {
 				int choice = sc.nextInt();
 				switch (choice) {
 				case 1:
-					if (student.isBoughtSubtraction()) {
+					if (student.isBoughtSubtraction() == 1) {
 						System.out.println("You have already bought subtraction problems");
 						spendCoinsMenu(student);
 						return;
@@ -52,7 +52,7 @@ public class SpendCoinsMenu {
 					spendCoinsMenu(student);
 					return;
 				case 2:
-					if (student.isBoughtMultiplication()) {
+					if (student.isBoughtMultiplication() == 1) {
 						System.out.println("You have already bought multiplication problems");
 						spendCoinsMenu(student);
 						return;
@@ -69,7 +69,7 @@ public class SpendCoinsMenu {
 					spendCoinsMenu(student);
 					return;
 				case 3:
-					if (student.isBoughtDivision()) {
+					if (student.isBoughtDivision() == 1) {
 						System.out.println("You have already bought division problems");
 						spendCoinsMenu(student);
 						return;
@@ -91,16 +91,16 @@ public class SpendCoinsMenu {
 				default:
 					LogThis.info("Invalid Choice");
 					System.out.println("Your options are:");
-					if(!student.isBoughtSubtraction()) {
+					if(student.isBoughtSubtraction() == 1) {
 						System.out.println("1. Buy subtraction problems for 10 coins");
 					}
-					if(!student.isBoughtMultiplication()) {
+					if(student.isBoughtMultiplication() == 1) {
 						System.out.println("2. Buy multiplication problems for 20 coins");
 					}
-					if (!student.isBoughtDivision()) {
+					if (student.isBoughtDivision() == 1) {
 						System.out.println("3. Buy division problems 30 coins");
 					}
-					if(student.isBoughtSubtraction() && student.isBoughtMultiplication() && student.isBoughtDivision()) {
+					if(student.isBoughtSubtraction() == 1 && student.isBoughtMultiplication() == 1 && student.isBoughtDivision() == 1) {
 						System.out.println("There are no more types of arithmetic problems left for you to buy");
 					}
 

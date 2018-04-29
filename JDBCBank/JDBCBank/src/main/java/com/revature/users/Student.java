@@ -11,10 +11,14 @@ public class Student extends Person implements Serializable {
 	private String lastname;
 	private String username;
 	private String password;
+	
 	private int coins;
-	private boolean boughtSubtraction;
-	private boolean boughtMultiplication;
-	private boolean boughtDivision;
+	private int boughtSubtraction;
+	private int boughtMultiplication;
+	private int boughtDivision;
+	
+	private int isApproved;
+	private int isLocked;
 	
 	
 	public Student () {}
@@ -26,9 +30,25 @@ public class Student extends Person implements Serializable {
 		this.username = username;
 		this.password = password;
 	}
+	
+	public Student(String firstname, String lastname, String username, int isApproved, int isLocked) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
+		this.isApproved = isApproved;
+		this.isLocked = isLocked;
+	}
+
+	public Student(String firstname, String lastname, String username) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
+	}
 
 	public Student(String firstname, String lastname, String username, String password, 
-			int coins, boolean boughtSubtraction, boolean boughtMultiplication, boolean boughtDivision) {
+			int coins, int boughtSubtraction, int boughtMultiplication, int boughtDivision) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -39,6 +59,7 @@ public class Student extends Person implements Serializable {
 		this.boughtMultiplication = boughtMultiplication;
 		this.boughtDivision = boughtDivision;
 	}
+
 
 	public String getFirstname() {
 		return firstname;
@@ -80,37 +101,53 @@ public class Student extends Person implements Serializable {
 		this.coins = coins;
 	}
 
-	public boolean isBoughtSubtraction() {
+	public int isBoughtSubtraction() {
 		return boughtSubtraction;
 	}
 
-	public void setBoughtSubtraction(boolean boughtSubtraction) {
+	public void setBoughtSubtraction(int boughtSubtraction) {
 		this.boughtSubtraction = boughtSubtraction;
 	}
 
-	public boolean isBoughtMultiplication() {
+	public int isBoughtMultiplication() {
 		return boughtMultiplication;
 	}
 
-	public void setBoughtMultiplication(boolean boughtMultiplication) {
+	public void setBoughtMultiplication(int boughtMultiplication) {
 		this.boughtMultiplication = boughtMultiplication;
 	}
 
-	public boolean isBoughtDivision() {
+	public int isBoughtDivision() {
 		return boughtDivision;
 	}
 
-	public void setBoughtDivision(boolean boughtDivision) {
+	public void setBoughtDivision(int boughtDivision) {
 		this.boughtDivision = boughtDivision;
+	}
+
+	public int getIsApproved() {
+		return isApproved;
+	}
+
+	public void setIsApproved(int isApproved) {
+		this.isApproved = isApproved;
+	}
+
+	public int getIsLocked() {
+		return isLocked;
+	}
+
+	public void setIsLocked(int isLocked) {
+		this.isLocked = isLocked;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + (boughtDivision ? 1231 : 1237);
-		result = prime * result + (boughtMultiplication ? 1231 : 1237);
-		result = prime * result + (boughtSubtraction ? 1231 : 1237);
+		result = prime * result + boughtDivision;
+		result = prime * result + boughtMultiplication;
+		result = prime * result + boughtSubtraction;
 		result = prime * result + coins;
 		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());

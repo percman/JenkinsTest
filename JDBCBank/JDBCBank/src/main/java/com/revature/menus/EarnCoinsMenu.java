@@ -17,13 +17,13 @@ public class EarnCoinsMenu {
 		System.out.println("You have " + student.getCoins() + " coins!");
 		System.out.println("You earn more coins by correctly answering arithmetic problems.");
 		System.out.println("1. Solve an addition problem");
-		if(student.isBoughtSubtraction()) {
+		if(student.isBoughtSubtraction() == 1) {
 			System.out.println("2. Solve a subtraction problem");
 		}
-		if(student.isBoughtMultiplication()) {
+		if(student.isBoughtMultiplication() == 1) {
 			System.out.println("3. Solve a multiplication problem");
 		}
-		if (student.isBoughtDivision()) {
+		if (student.isBoughtDivision() == 1) {
 			System.out.println("4. Solve a division problem");
 		}
 		System.out.println("0. Return to Student Menu");
@@ -36,60 +36,60 @@ public class EarnCoinsMenu {
 					solveAddition(student);
 					return;
 				case 2:
-					if(student.isBoughtSubtraction()) {
+					if(student.isBoughtSubtraction() == 1) {
 						solveSubtraction(student);
 						return;
 					} else {
 						LogThis.info("Invalid Choice");
 						System.out.println("Your options are:");
 						System.out.println("1. Solve an addition problem");
-						if(student.isBoughtSubtraction()) {
+						if(student.isBoughtSubtraction() == 1) {
 							System.out.println("2. Solve a subtraction problem");
 						}
-						if(student.isBoughtMultiplication()) {
+						if(student.isBoughtMultiplication() == 1) {
 							System.out.println("3. Solve a multiplication problem");
 						}
-						if (student.isBoughtDivision()) {
+						if (student.isBoughtDivision() == 1) {
 							System.out.println("4. Solve a division problem");
 						}
 						System.out.println("0. Return to Student Menu");
 					}
 					break;
 				case 3:
-					if(student.isBoughtMultiplication()) {
+					if(student.isBoughtMultiplication() == 1) {
 						solveMultiplication(student);
 						return;
 					} else {
 						LogThis.info("Invalid Choice");
 						System.out.println("Your options are:");
 						System.out.println("1. Solve an addition problem");
-						if(student.isBoughtSubtraction()) {
+						if(student.isBoughtSubtraction() == 1) {
 							System.out.println("2. Solve a subtraction problem");
 						}
-						if(student.isBoughtMultiplication()) {
+						if(student.isBoughtMultiplication() == 1) {
 							System.out.println("3. Solve a multiplication problem");
 						}
-						if (student.isBoughtDivision()) {
+						if (student.isBoughtDivision() == 1) {
 							System.out.println("4. Solve a division problem");
 						}
 						System.out.println("0. Return to Student Menu");
 					}
 					break;
 				case 4:
-					if (student.isBoughtDivision()) {
+					if (student.isBoughtDivision() == 1) {
 						solveDivision(student);
 						return;
 					} else {
 						LogThis.info("Invalid Choice");
 						System.out.println("Your options are:");
 						System.out.println("1. Solve an addition problem");
-						if(student.isBoughtSubtraction()) {
+						if(student.isBoughtSubtraction() == 1) {
 							System.out.println("2. Solve a subtraction problem");
 						}
-						if(student.isBoughtMultiplication()) {
+						if(student.isBoughtMultiplication() == 1) {
 							System.out.println("3. Solve a multiplication problem");
 						}
-						if (student.isBoughtDivision()) {
+						if (student.isBoughtDivision() == 1) {
 							System.out.println("4. Solve a division problem");
 						}
 						System.out.println("0. Return to Student Menu");
@@ -102,13 +102,13 @@ public class EarnCoinsMenu {
 					LogThis.info("Invalid Choice");
 					System.out.println("Your options are:");
 					System.out.println("1. Solve an addition problem");
-					if(student.isBoughtSubtraction()) {
+					if(student.isBoughtSubtraction() == 1) {
 						System.out.println("2. Solve a subtraction problem");
 					}
-					if(student.isBoughtMultiplication()) {
+					if(student.isBoughtMultiplication() == 1) {
 						System.out.println("3. Solve a multiplication problem");
 					}
-					if (student.isBoughtDivision()) {
+					if (student.isBoughtDivision() == 1) {
 						System.out.println("4. Solve a division problem");
 					}
 					System.out.println("0. Return to Student Menu");

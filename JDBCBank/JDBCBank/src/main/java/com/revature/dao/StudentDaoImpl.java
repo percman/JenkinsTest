@@ -32,22 +32,10 @@ public class StudentDaoImpl implements StudentDao {
 			PreparedStatement stmt = conn.prepareStatement("Select * FROM student WHERE s_username = ? ");
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
-			boolean sub = false;
-			boolean mult = false;
-			boolean div = false;
-
 			if (rs.next()) {
-				if (rs.getInt("s_bought_sub") == 1) {
-					sub = true;
-				}
-				if (rs.getInt("s_bought_mult") == 1) {
-					mult = true;
-				}
-				if (rs.getInt("s_bought_div") == 1) {
-					div = true;
-				}
 				return new Student(rs.getString("s_firstname"), rs.getString("s_lastname"), rs.getString("s_username"),
-						rs.getString("s_password"), rs.getInt("s_coins"), sub, mult, div);
+						rs.getString("s_password"), rs.getInt("s_coins"), rs.getInt("s_bought_sub"), 
+						rs.getInt("s_bought_mult"), rs.getInt("s_bought_div"));
 			}
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());
@@ -85,9 +73,9 @@ public class StudentDaoImpl implements StudentDao {
 			stmt.setString(++index, student.getFirstname());
 			stmt.setString(++index, student.getLastname());
 			stmt.setInt(++index, student.getCoins());
-			stmt.setBoolean(++index, student.isBoughtSubtraction());
-			stmt.setBoolean(++index, student.isBoughtMultiplication());
-			stmt.setBoolean(++index, student.isBoughtDivision());
+			stmt.setInt(++index, student.isBoughtSubtraction());
+			stmt.setInt(++index, student.isBoughtMultiplication());
+			stmt.setInt(++index, student.isBoughtDivision());
 			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());

@@ -193,6 +193,7 @@ CREATE OR REPLACE PROCEDURE update_student(new_username IN VARCHAR2, new_passwor
             s_bought_mult = bought_mult,
             s_bought_div = bought_div
         WHERE s_username = new_username;
+        COMMIT;
     END;
     /
 
@@ -207,6 +208,3 @@ CREATE OR REPLACE FUNCTION get_principal RETURN NUMBER
     /
 
 
-SELECT * FROM student;
-SELECT * FROM student WHERE s_username = 'sUsername';
-DELETE FROM student WHERE s_username = 'sUsername';

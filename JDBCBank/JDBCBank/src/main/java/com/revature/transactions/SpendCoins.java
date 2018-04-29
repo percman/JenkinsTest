@@ -8,21 +8,21 @@ public class SpendCoins {
 	public static void subtraction(Student student) {
 		int coins = student.getCoins();
 		student.setCoins(coins - 10);
-		student.setBoughtSubtraction(true);
+		student.setBoughtSubtraction(1);
 		SpendCoinsMenu.spendCoinsMenu(student);
 	}
 	
 	public static void multiplication(Student student) {
 		int coins = student.getCoins();
 		student.setCoins(coins - 20);
-		student.setBoughtMultiplication(true);
+		student.setBoughtMultiplication(1);
 		SpendCoinsMenu.spendCoinsMenu(student);
 	}
 	
 	public static void division(Student student) {
 		int coins = student.getCoins();
 		student.setCoins(coins - 30);
-		student.setBoughtDivision(true);
+		student.setBoughtDivision(1);
 		SpendCoinsMenu.spendCoinsMenu(student);
 	}
 	
