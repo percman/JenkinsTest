@@ -63,3 +63,37 @@ CREATE OR REPLACE TRIGGER user_before_insert
         dbms_output.put_line('User inserted' || user_sequence.currval);
     END;
     /
+    
+SELECT COUNT(username) FROM USERTABLE;
+
+--Function for getting total users
+CREATE OR REPLACE FUNCTION get_total_users RETURN INT
+IS
+    total_users INT; 
+BEGIN
+    SELECT COUNT(username) INTO total_users FROM usertable;
+    return total_users;
+END;
+
+COMMIT;
+--Function for getting total total balance
+CREATE OR REPLACE FUNCTION get_total_balance RETURN INT
+IS
+    total_balance INT; 
+    CURSOR c1 IS SELECT SUM(balance) FROM USERTABLE;
+BEGIN
+    OPEN c1;
+    FETCH c1 INTO total_balance;
+    return total_balance;
+END;
+
+SELECT * FROM USERTABLE;
+
+SELECT get_total_balance FROM USERTABLE;
+
+CREATE OR REPLACE PROCEDURE callTotalUsers AS
+    n INT(11);
+BEGIN 
+    n := get_total_users;
+END;
+/

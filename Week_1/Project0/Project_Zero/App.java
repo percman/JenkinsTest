@@ -15,15 +15,14 @@ import com.revature.exceptions.*;
 public class App {
 
 	private static final Logger logger = Logger.getLogger(App.class);
-	//public static File bankData = new File("src/main/java/users3.txt");
 	public static ArrayList<User> userList = UserService.getAllUsers();
 	
 	//Initial page for welcoming new and returning users
 	public static void welcome (Scanner input) {
 		
-		System.out.println("Hello, new user? (Y/N) ");
+		System.out.println("Hello, new user? (Y/N) or Q to Quit");
 		String response = input.next();
-		while ((!response.equals("Y")) & (!response.equals("N"))) {
+		while ((!response.equals("Y")) & (!response.equals("N")) & !response.equals("Q")) {
 			System.out.println("Please enter Y or N");
 			response = input.next();
 		}
@@ -33,9 +32,11 @@ public class App {
 			newUser(input);
 		}
 		//returning user
-		else {
+		if(response.equals("N")) {
 			System.out.println("Welcome Back");
 			returnUser(input);
+		} if(response.equals("Q")) {
+			System.exit(0);
 		}
 	}
 	//user has already been created
@@ -127,13 +128,18 @@ public class App {
 					response = input.nextInt();
 				} catch (InputMismatchException e) {
 					System.out.println("Invalid value");
-					logger.warn(u.getName() + " entered a bad value" , e);
+					logger.warn(u.getName() + " entered a bad value");
 					return;
 				}
 
 				while (response > 4 | response < 1) {
 					System.out.println("Please enter a valid number");
-					response = input.nextInt();
+					try {
+						response = input.nextInt();
+					} catch(InputMismatchException e) {
+						System.out.println("Invalid vale");
+						logger.warn(u.getName() + " entered a bad value");
+					}
 				}
 				if (response == 1) {
 					System.out.println("Deposit money");
@@ -149,9 +155,9 @@ public class App {
 				}
 			}
 	}
-	/**************************************
+	/***************************************************
 	 * Admin Method : the method for all admin actions
-	 **************************************/
+	 ***************************************************/
 	public static void adminMethod(Scanner input, User u) {
 		int response = 0;
 
@@ -167,13 +173,18 @@ public class App {
 			} catch(InputMismatchException e) {
 				System.out.println("Invalid value");
 				logger.warn(u.getName() + " entered a bad value " , e);
-				adminMethod(input, u);
+				return;
 			}			
 			// Loop until a valid response is given
 			while (response > 6 | response < 1) {
 				System.out.println("Please enter a valid number");
-				response = input.nextInt();
-			}
+				try {
+					response = input.nextInt();
+				} catch(InputMismatchException e) {
+					System.out.println("Invalid value");
+					logger.warn(u.getName() + " entered a bad value " , e);
+					return;
+				}				}
 			// Approve or reject users
 			if (response == 1) {
 				System.out.println("----------------------");
@@ -198,16 +209,16 @@ public class App {
 	}
 	public static void depositMoney(User u, Scanner input) {
 		System.out.println("Enter amount you wish to deposit");
-		input = new Scanner(System.in);
 		int n = input.nextInt();
 		u.addBalance(n);
+		UserService.updateUser(u);
 		System.out.println("You successfully added $" + n +"s " + "your current balance is $" + u.getBalance());
 	}
 	public static void withdrawMoney(User u, Scanner input) {
 		System.out.println("Enter amount you wish to withdraw");
-		input = new Scanner(System.in);
 		int n = input.nextInt();
 		u.subtractBalance(n);
+		UserService.updateUser(u);
 		System.out.println("You successfully withdrew $" + n +"s " + "your current balance is $" + u.getBalance());
 	}
 	public static void viewBalance(User u) {
@@ -244,6 +255,7 @@ public class App {
 			User user = returnUserByName(who);
 			user.setApproved(true);
 			System.out.println(who + " has been approved!");
+			UserService.updateUser(user);
 		}
 		else {
 			System.out.println(who + " has been rejected!");
@@ -259,6 +271,8 @@ public class App {
 		}
 		String lockOrUnlock = input.next();
 		String who = input.next();
+		lockOrUnlock = lockOrUnlock.toLowerCase();
+		who = who.toLowerCase();
 		while (!lockOrUnlock.equals("lock") & !lockOrUnlock.equals("unlock")) {
 			System.out.println("Please enter 'lock' or unlock' followed by user name");
 			lockOrUnlock = input.next();
@@ -271,11 +285,13 @@ public class App {
 		if (lockOrUnlock.equals("lock")) {
 			User user = returnUserByName(who);
 			user.setLocked(true);
+			UserService.updateUser(user);
 			System.out.println("User " + user.getName() + " has been locked");
 		}
 		else {
 			User user = returnUserByName(who);
 			user.setLocked(false);
+			UserService.updateUser(user);
 			System.out.println("User " + user.getName() + " has been unlocked");
 		}
 	}
@@ -304,15 +320,12 @@ public class App {
 		}
 	}
     public static void main ( String[] args ) {
-
-    	for(User u : userList) {
-    		System.out.println("Hello I am " + u.getName() + " and I have $" + 
-    	u.getBalance() + " " + u.isAdmin() + " " + u.isLocked() + " " + u.isApproved());
-    		
-    	}
-    	Scanner input = new Scanner(System.in);
-    	while (true) {
-    		welcome(input);
-    	}
+    	
+    	int i = UserService.getTotalBalance();
+    	System.out.println(i);
+    	//Scanner input = new Scanner(System.in);
+//    	while (true) {
+//    		welcome(input);
+//    	}
     }
 }

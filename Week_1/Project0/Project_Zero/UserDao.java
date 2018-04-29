@@ -9,5 +9,7 @@ public interface UserDao {
 	public boolean insertUser(User user);
 	public boolean updateUser(User user);
 	public boolean deleteUser(String name);
+	public int getTotalUsers();
+	public int getTotalBalance();
 
 }

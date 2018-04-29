@@ -1,5 +1,6 @@
 package com.revature.zero.Project_Zero;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +36,6 @@ public class UserDaolmplementation implements UserDao{
 	@Override
 	public ArrayList<User> getAllUsers() {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			System.out.println("In get all users");
 			ArrayList<User> userList = new ArrayList<>();
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM USERTABLE");
 			ResultSet rs = stmt.executeQuery();
@@ -60,7 +60,7 @@ public class UserDaolmplementation implements UserDao{
 	public boolean insertUser(User user) {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("INSERT INTO USERTABLE VALUES (?, ?, ?, ?, ?)");
+			PreparedStatement stmt = conn.prepareStatement("{CALL insert_user(?, ?, ?, ?, ?)  }");
 			stmt.setString(++index, user.getName());
 			stmt.setInt(++index, user.getBalance());
 			int admin = user.isAdmin() ? 1 : 0;
@@ -81,19 +81,22 @@ public class UserDaolmplementation implements UserDao{
 
 	@Override
 	public boolean updateUser(User user) {
-		
+		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			String userName = user.getName();
 			int balance = user.getBalance();
 			int admin = user.isAdmin() ? 1 : 0;
 			int locked = user.isLocked() ? 1 : 0;
 			int approved = user.isApproved() ? 1 : 0;
-			PreparedStatement stmt = conn.prepareStatement("UPDATE USERTABLE SET username = '" + userName
-					+ "', Balance = " + balance + ", isAdmin = " + admin + 
-					", isLocked = " + locked  + ", isApproved = " + approved + " WHERE username = '" + userName + "'");
+			PreparedStatement stmt = conn.prepareStatement("{CALL update_user(?, ?, ?, ?, ?)  }");
+			stmt.setString(++index, userName);
+			stmt.setInt(++index, balance);
+			stmt.setInt(++index, admin);
+			stmt.setInt(++index, locked);
+			stmt.setInt(++index, approved);
 			int rowsAffected = stmt.executeUpdate();
 			return rowsAffected > 0;
-		}catch (SQLException sqle) {
+		} catch (SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println(sqle.getSQLState());
 			System.err.println(sqle.getErrorCode());
@@ -103,7 +106,54 @@ public class UserDaolmplementation implements UserDao{
 
 	@Override
 	public boolean deleteUser(String name) {
-		// TODO Auto-generated method stub
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			CallableStatement stmt =  conn.prepareCall("{CALL delete_user(?)}");
+			stmt.setString(1, name);
+			int rowsAffected = stmt.executeUpdate();
+			return rowsAffected > 0;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+		}
 		return false;
+	}
+
+	@Override
+	public int getTotalUsers() {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT get_total_users FROM USERTABLE");
+			ResultSet rs = stmt.executeQuery();
+			int output = 0;
+			if(rs.next()) {
+				output = rs.getInt("get_total_users");
+			}
+			return output;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+		}
+		return 0;
+	}
+
+	@Override
+	public int getTotalBalance() {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT get_total_balance FROM USERTABLE");
+			ResultSet rs = stmt.executeQuery();
+			int output = 0;
+			if(rs.next()) {
+				output = rs.getInt("get_total_balance");
+			}
+			return output;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+		}
+		return 0;
 	}
 }

@@ -23,4 +23,10 @@ public class UserService {
 	public static boolean deleteUser(String name) {
 		return dao.deleteUser(name);
 	}
+	public static int getTotalUsers() {
+		return dao.getTotalUsers();
+	}
+	public static int getTotalBalance() {
+		return dao.getTotalBalance();
+	}
 }
