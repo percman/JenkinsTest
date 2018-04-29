@@ -1,14 +1,14 @@
-package com.revature.hs;
+package com.revature.hs.user;
 
 import java.util.*;
 
+import com.revature.hs.*;
 import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import com.revature.hs.Rarity.*;
 
 import static com.revature.hs.Rarity.*;
 
