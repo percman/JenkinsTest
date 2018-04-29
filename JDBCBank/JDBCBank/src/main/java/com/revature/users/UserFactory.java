@@ -4,15 +4,15 @@ import com.revature.exceptions.InvalidUserTypeException;
 
 public class UserFactory {
 	
-	public static Person getNewUser(String type) throws InvalidUserTypeException {
+	public static void getNewUser(String type) throws InvalidUserTypeException {
 		
 		switch(type.toLowerCase()) {
 			case "student":
-				return new Student();
+				// go to student login
 			case "teacher":
-				return new Teacher();
+				// go to teacher login
 			case "principal":
-				return new Principal();
+				// go to principal login
 			default:
 				throw new InvalidUserTypeException();	
 		}

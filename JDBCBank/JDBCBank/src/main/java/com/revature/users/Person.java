@@ -28,12 +28,16 @@ public abstract class Person implements Serializable {
 	public Person() {
 		super();
 	}
-
-	public Person(String firstname, String password) {
+	
+	public Person(String firstname, String lastname, String username, String password, String type) {
 		super();
 		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
 		this.password = password;
+		this.type = type;
 	}
+
 
 	// getters and setters
 	public String getFirstname() {

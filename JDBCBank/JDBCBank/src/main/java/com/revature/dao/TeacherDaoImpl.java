@@ -8,6 +8,18 @@ import com.revature.users.Teacher;
 
 public class TeacherDaoImpl implements TeacherDao {
 
+	private static TeacherDaoImpl instance;
+	
+	private TeacherDaoImpl() {}
+	
+	public static TeacherDaoImpl getInstance() {
+		if (instance == null) {
+			instance = new TeacherDaoImpl();
+		}
+		return instance;
+	}
+
+	
 	@Override
 	public Person getTeacher(String username) {
 		// TODO Auto-generated method stub

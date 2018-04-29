@@ -12,5 +12,9 @@ public interface StudentDao {
 	
 	boolean earnCoin(Student student);
 	boolean spendCoin(Student student, int cost);
+	
+	boolean boughtSubtraction(String username);
+	boolean boughtMultiplication(String username);
+	boolean boughtDivision(String username);
 
 }

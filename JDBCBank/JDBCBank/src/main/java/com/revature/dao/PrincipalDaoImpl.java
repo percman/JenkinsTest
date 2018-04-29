@@ -8,6 +8,19 @@ import com.revature.users.Teacher;
 
 public class PrincipalDaoImpl implements PrincipalDao{
 
+	private static PrincipalDaoImpl instance;
+	
+	private PrincipalDaoImpl() {}
+	
+	public static PrincipalDaoImpl getInstance() {
+		if (instance == null) {
+			instance = new PrincipalDaoImpl();
+		}
+		return instance;
+	}
+
+	
+	
 	@Override
 	public Person getPrincipal(String username) {
 		// TODO Auto-generated method stub
