@@ -64,7 +64,14 @@ public class StudentDaoImpl implements StudentDao {
 
 	@Override
 	public boolean updateStudent(Student student) {
-		// TODO Auto-generated method stub
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
 		return false;
 	}
 
@@ -80,16 +87,23 @@ public class StudentDaoImpl implements StudentDao {
 				return rs.getString("HASH");
 			}
 		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State: " + sqle.getSQLState());
-			System.err.println("Error Code: " + sqle.getErrorCode());
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
 		}
 		return null;
 	}
 
 	@Override
 	public boolean earnCoin(Student student) {
-		// TODO Auto-generated method stub
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
 		return false;
 	}
 

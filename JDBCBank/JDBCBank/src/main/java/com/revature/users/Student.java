@@ -18,6 +18,14 @@ public class Student extends Person implements Serializable {
 	
 	
 	public Student () {}
+	
+	public Student(String firstname, String lastname, String username, String password) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
+		this.password = password;
+	}
 
 	public Student(String firstname, String lastname, String username, String password, 
 			int coins, boolean boughtSubtraction, boolean boughtMultiplication, boolean boughtDivision) {

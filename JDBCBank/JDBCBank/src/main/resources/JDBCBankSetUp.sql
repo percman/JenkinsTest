@@ -94,7 +94,6 @@ CREATE SEQUENCE student_id_sequence
     INCREMENT BY 1
     NOCACHE;
 
-
 -- Hashing function that combines username, password, and a special word    
 CREATE OR REPLACE FUNCTION GET_USER_HASH(USERNAME VARCHAR2, PASSWORD VARCHAR2) 
                                             RETURN VARCHAR2
@@ -108,6 +107,16 @@ CREATE OR REPLACE FUNCTION GET_USER_HASH(USERNAME VARCHAR2, PASSWORD VARCHAR2)
 
 
 -- Create triggers for before inserting into the teacher and student tables
+CREATE OR REPLACE TRIGGER principal_b_insert
+    BEFORE INSERT
+    ON principal
+    FOR EACH ROW
+    BEGIN
+        SELECT GET_USER_HASH(:new.p_username, :new.p_password) 
+            INTO :new.p_password FROM dual;
+    END;
+    /
+    
 CREATE OR REPLACE TRIGGER teacher_b_insert
     BEFORE INSERT
     ON teacher
@@ -135,36 +144,53 @@ CREATE OR REPLACE TRIGGER student_b_insert
     /
 
 
--- Create stored procedures to insert teachers and students
-CREATE OR REPLACE PROCEDURE insert_teacher (username IN VARCHAR2, new_password IN VARCHAR2, 
-                                    firstname IN VARCHAR2, lastname IN VARCHAR2)
+-- Create stored procedures to insert a principal, teachers, and students
+CREATE OR REPLACE PROCEDURE insert_principal (new_username IN VARCHAR2, new_password IN VARCHAR2,
+                                                firstname IN VARCHAR2, lastname IN VARCHAR2)
+    AS
+    BEGIN
+        INSERT INTO principal (p_id, p_username, p_password, p_firstname, p_lastname)
+            VALUES (1, new_username, new_password, firstname, lastname);
+        COMMIT;
+    END;
+    /
+
+CREATE OR REPLACE PROCEDURE insert_teacher (new_username IN VARCHAR2, new_password IN VARCHAR2, 
+                                            firstname IN VARCHAR2, lastname IN VARCHAR2)
     AS
     BEGIN
         INSERT INTO teacher (t_id, t_username, t_password, t_firstname, t_lastname, 
                                 t_approved, t_locked)
-            VALUES (null, username, new_password, firstname, lastname, 0, 0);
-            COMMIT;
+            VALUES (null, new_username, new_password, firstname, lastname, 0, 0);
+        COMMIT;
     END;
     /
     
-CREATE OR REPLACE PROCEDURE insert_student (username IN VARCHAR2, new_password IN VARCHAR2, 
-                                    firstname IN VARCHAR2, lastname IN VARCHAR2)
+CREATE OR REPLACE PROCEDURE insert_student (new_username IN VARCHAR2, new_password IN VARCHAR2, 
+                                            firstname IN VARCHAR2, lastname IN VARCHAR2)
     AS
     BEGIN
         INSERT INTO student (s_id, s_username, s_password, s_firstname, s_lastname, 
                                 s_coins, s_approved, s_locked, s_bought_sub, 
                                 s_bought_mult, s_bought_div)
-            VALUES (null, username, new_password, firstname, lastname, 0, 0, 0, 0, 0, 0);
-            COMMIT;
+            VALUES (null, new_username, new_password, firstname, lastname, 0, 0, 0, 0, 0, 0);
+        COMMIT;
     END;
     /
 
 
+-- Create a function that will return 1 if there is already a principal
+CREATE OR REPLACE FUNCTION get_principal RETURN NUMBER
+    AS
+        p_exists NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO p_exists FROM principal;
+    RETURN p_exists;
+    END;
+    /
 
 
-
-
-
+SELECT get_principal FROM dual;
 
 
 
