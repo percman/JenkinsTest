@@ -1,0 +1,20 @@
+package com.bank.app;
+
+import com.bank.dao.UserDaoImpl;
+import com.bank.model.User;
+import com.bank.service.UserService;
+
+public class App {
+
+	public static void main(String[] args) {
+		User user = new User("Firstname", "Lastname", "Password", 0, 0);
+		System.out.println("User successfully inserted? " + UserService.insertUser(user));
+		System.out.println("Firstname: " + user.getFirst_name());
+		System.out.println("Lastname: " + user.getLast_name());
+		System.out.println("Password: " + user.getPassword());
+		System.out.println("Result when hashing: " + UserDaoImpl.getInstance().getPasswordHash(new User("Firstname", "Password")));
+		System.out.println("Are they the same? " + 
+		(user.getPassword().equals(UserDaoImpl.getInstance().getPasswordHash(new User("Firstname", "Password")))));
+		UserService.login(new User("Firstname", "Lastname", "Password"));
+	}
+}

@@ -1,0 +1,12 @@
+package com.bank.app;
+
+import com.bank.model.User;
+import com.bank.service.UserService;
+
+public class App {
+
+	public static void main(String[] args) {
+		User user = new User(0, "Firstname", "Lastname", "Password", 0, 0);
+		System.out.println("User successfully inserted? " + UserService.insertUser(user));
+	}
+}
