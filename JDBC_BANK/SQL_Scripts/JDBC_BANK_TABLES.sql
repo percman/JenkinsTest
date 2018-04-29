@@ -10,7 +10,6 @@ CREATE TABLE credentials(
     CONSTRAINT PK_USER PRIMARY KEY(id)
     );
     
-ALTER TABLE account MODIFY funds FLOAT;
 
     
 CREATE TABLE account (
@@ -35,7 +34,3 @@ CREATE TABLE account_access(
 INSERT INTO credentials (username,password) VALUES('andy','boss');
 INSERT INTO account_access(username,permissions,pending) VALUES('andy','true','false');
 COMMIT;
-
-SELECT * FROM credentials;
-SELECT * FROM account_access;
-SELECT * FROM account;
