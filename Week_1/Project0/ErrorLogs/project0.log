@@ -3395,3 +3395,13 @@ ORA-06512: at line 1
 2018-04-29 10:28:45 WARN  LogHere:27 - Error code: 17003
 2018-04-29 10:32:14 WARN  LogHere:27 - 
 2018-04-29 10:49:47 WARN  LogHere:27 - 
+2018-04-29 11:16:10 WARN  LogHere:27 - 
+2018-04-29 11:16:15 WARN  LogHere:27 - 
+2018-04-29 18:09:49 WARN  LogHere:27 - Invalid Choice Select
+2018-04-29 18:13:50 WARN  LogHere:27 - Invalid Balance Entry
+2018-04-29 18:18:01 WARN  LogHere:27 - You are going negative! Process denied!
+2018-04-29 18:19:06 WARN  LogHere:27 - You are going negative! Process denied!
+2018-04-29 18:20:33 WARN  LogHere:27 - You are going negative! Process denied!
+2018-04-29 18:20:40 WARN  LogHere:27 - 
+2018-04-29 18:23:24 WARN  LogHere:27 - You are going negative! Process denied!
+2018-04-29 18:34:23 WARN  LogHere:27 - Invalid Choice Select
