@@ -2,7 +2,7 @@ package com.revature.users;
 
 import java.io.Serializable;
 
-public class User implements Serializable, Person{
+public class User implements Serializable{
 
 
 	private static final long serialVersionUID = 9099886195893877291L;
@@ -35,7 +35,6 @@ public class User implements Serializable, Person{
 		this.adminstatus = adminstatus;
 	}
 
-
 	public User(int id, String username, String password, boolean locked, double balance, boolean adminstatus) {
 		super();
 		this.id = id;
@@ -45,7 +44,6 @@ public class User implements Serializable, Person{
 		this.balance = balance;
 		this.adminstatus = adminstatus;
 	}
-
 	
 	public User() {}
 
@@ -96,8 +94,6 @@ public class User implements Serializable, Person{
 	public void setAdminstatus(boolean adminstatus) {
 		this.adminstatus = adminstatus;
 	}
-
-	
 	
 	@Override
 	public int hashCode() {
@@ -150,11 +146,7 @@ public class User implements Serializable, Person{
 				+ ", balance=" + balance + ", adminstatus=" + adminstatus + "]";
 	}
 
-	@Override
-	public double generateInterest() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 	
 		
 

@@ -5,8 +5,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.logstatus.LogHere;
 import com.revature.users.User;
 import com.revature.util.ConnectionUtil;
 
@@ -26,8 +29,41 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		List<User> userlist = new ArrayList<>();
+//		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM usertable");
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {				
+				userlist.add(new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), 
+						(rs.getInt("lockstatus")>0), rs.getDouble("balance"), (rs.getInt("adminstatus")>0)));
+			}
+			return userlist;	
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} 
+		return null;		
+	}
+	
+	@Override
+	public User getAnyUser() {
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			System.out.println("Testing the connection. Please wait.");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM usertable");
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {			
+				System.out.println("Success!");
+				return new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), 
+						(rs.getInt("lockstatus")>0), rs.getDouble("balance"), (rs.getInt("adminstatus")>0));
+			}
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} 
+		return null;	
 	}
 
 	@Override
@@ -43,9 +79,9 @@ public class UserDaoImpl implements UserDao{
 			}
 				
 		}  catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQLE State: " + sqle.getSQLState());
-			System.err.println("Error code: " + sqle.getErrorCode());
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
 		} 
 		return null;
 	}
@@ -60,9 +96,9 @@ public class UserDaoImpl implements UserDao{
 			stmt.setDouble(++index, user.getBalance());
 			return stmt.executeUpdate() > 0;
 		}  catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQLE State: " + sqle.getSQLState());
-			System.err.println("Error code: " + sqle.getErrorCode());
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
 		} 
 		return false;
 	}
@@ -91,9 +127,9 @@ public class UserDaoImpl implements UserDao{
 			stmt.setDouble(++index, user.getBalance());
 			return stmt.executeUpdate() > 0;
 		}  catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQLE State: " + sqle.getSQLState());
-			System.err.println("Error code: " + sqle.getErrorCode());
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
 		} 
 		return false;
 	}
@@ -116,9 +152,9 @@ public class UserDaoImpl implements UserDao{
 				return rs.getString("HASH");
 			}
 		}  catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQLE State: " + sqle.getSQLState());
-			System.err.println("Error code: " + sqle.getErrorCode());
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
 		}
 		return null;
 	}
@@ -133,11 +169,57 @@ public class UserDaoImpl implements UserDao{
 			stmt.setDouble(++index, user.getBalance());
 			return stmt.executeUpdate() > 0;
 		}  catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQLE State: " + sqle.getSQLState());
-			System.err.println("Error code: " + sqle.getErrorCode());
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
 		} 
 		return false;
 	}
+	
+	@Override
+	public Timestamp getUserTime(User user) {
+		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT time FROM userrecord WHERE username = ?");
+			stmt.setString(++index, user.getUsername());
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				return rs.getTimestamp(1);
+			}
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} catch (NullPointerException npe) {
+			LogHere.warn(npe.getMessage());
+			System.out.println("You have entered an invalid user");
+		}
+		return null;
+	}
+
+	@Override
+	public boolean generateUserInterest(User user) {
+		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT time FROM userrecord WHERE username = ?");
+			stmt.setString(++index, user.getUsername());
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				System.out.println(rs.getTime(0));
+				return true;
+			}
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} 
+		
+		
+		return false;
+	}
+	
+	
+
+
 	
 }

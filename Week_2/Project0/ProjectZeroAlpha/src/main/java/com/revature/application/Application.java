@@ -1,6 +1,12 @@
 package com.revature.application;
 
-import static com.revature.menu.Menus.*;
+import static com.revature.menu.Menus.firstRun;
+import static com.revature.menu.Menus.mainMenu;
+import static com.revature.menu.Menus.welcomeScreen;
+import static com.revature.service.UserService.getAllUsers;
+import static com.revature.service.UserService.getAnyUser;
+import static com.revature.service.UserService.generateUserInterest;
+
 
 import com.revature.users.User;
 
@@ -13,20 +19,19 @@ import com.revature.users.User;
  *
  */
 
+@SuppressWarnings("unused")
 public class Application{
 	
 	public static void main(String[] args) {	
-				
-//		firstRun();
 		
-//		loginAttempt();
-	
-		
+		if(getAnyUser() == null)
+			firstRun();
 		User curruser = welcomeScreen();
 		
+		
+		//System.out.println(generateUserInterest(curruser));
+		
 		mainMenu(curruser);
-		
-		
 		
 	}
 

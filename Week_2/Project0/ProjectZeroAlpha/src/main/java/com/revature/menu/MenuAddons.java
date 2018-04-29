@@ -7,7 +7,7 @@ import com.revature.logstatus.LogHere;
 import com.revature.service.UserService;
 import com.revature.users.User;
 
-public class SpecialUserMethods {
+public class MenuAddons {
 
 	public static void createUser() {
 		System.out.println("Please enter the username: ");
@@ -36,11 +36,17 @@ public class SpecialUserMethods {
 		
 		User newuser = new User(username, password, startingbalance);
 		
-		System.out.println("Was the user created successfully? " + UserService.insertUser(newuser));
-		System.out.println("Note: all new users have to be approved by an admin.");
+		if(UserService.insertUser(newuser)) {
+			System.out.println(newuser.getUsername() + " was created successfully.");
+			System.out.println("Note: all new users have to be approved by an admin.");
+		}
+		else {
+			System.out.println("User creation failed.");
+			System.out.println("Please choose another name.");
+		}
+		
 		
 	}
-	
 	
 	public static void createAdmin() {
 		System.out.println("Please enter the username: ");
@@ -73,4 +79,5 @@ public class SpecialUserMethods {
 		System.out.println("Note: all new users have to be approved by an admin.");
 		
 	}
+
 }

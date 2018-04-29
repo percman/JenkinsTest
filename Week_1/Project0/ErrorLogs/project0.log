@@ -3376,3 +3376,22 @@
 2018-04-28 13:44:11 WARN  LogHere:27 - 
 2018-04-28 13:46:32 WARN  LogHere:27 - 
 2018-04-28 15:27:42 WARN  LogHere:27 - 
+2018-04-29 09:41:55 WARN  LogHere:27 - 
+2018-04-29 10:14:20 WARN  LogHere:27 - ORA-00001: unique constraint (ADMINEW.UK_USERNAME) violated
+ORA-06512: at "ADMINEW.INSERT_USER", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:16:55 WARN  LogHere:27 - ORA-00001: unique constraint (ADMINEW.UK_USERNAME) violated
+ORA-06512: at "ADMINEW.INSERT_USER", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:16:55 WARN  LogHere:27 - SQLE State: 23000
+2018-04-29 10:16:55 WARN  LogHere:27 - Error code: 1
+2018-04-29 10:28:37 WARN  LogHere:27 - Invalid column index
+2018-04-29 10:28:37 WARN  LogHere:27 - SQLE State: 99999
+2018-04-29 10:28:37 WARN  LogHere:27 - Error code: 17003
+2018-04-29 10:28:45 WARN  LogHere:27 - Invalid column index
+2018-04-29 10:28:45 WARN  LogHere:27 - SQLE State: 99999
+2018-04-29 10:28:45 WARN  LogHere:27 - Error code: 17003
+2018-04-29 10:32:14 WARN  LogHere:27 - 
+2018-04-29 10:49:47 WARN  LogHere:27 - 

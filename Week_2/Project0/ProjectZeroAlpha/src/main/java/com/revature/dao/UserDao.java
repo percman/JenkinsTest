@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import com.revature.users.User;
@@ -14,4 +15,7 @@ public interface UserDao {
 	boolean deleteUser(String username);
 	String getPasswordHash(User user);
 	boolean insertAdmin(User user);
+	User getAnyUser();
+	boolean generateUserInterest(User user);
+	Timestamp getUserTime(User user);
 }
