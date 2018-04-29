@@ -179,6 +179,34 @@ CREATE OR REPLACE PROCEDURE insert_student (new_username IN VARCHAR2, new_passwo
     /
 
 -- Create a function that will update the principal, teacher, and student
+CREATE OR REPLACE PROCEDURE update_principal(new_username IN VARCHAR2, new_password IN VARCHAR2, firstname IN VARCHAR2,
+                                            lastname IN VARCHAR2)
+    AS
+    BEGIN
+        UPDATE principal SET
+            p_password = get_user_hash(new_username, new_password),
+            p_firstname = firstname,
+            p_lastname = lastname
+        WHERE p_username = new_username;
+        COMMIT;
+
+    END;
+    /
+
+CREATE OR REPLACE PROCEDURE update_teacher(new_username IN VARCHAR2, new_password IN VARCHAR2, firstname IN VARCHAR2,
+                                            lastname IN VARCHAR2)
+    AS
+    BEGIN
+        UPDATE teacher SET
+            t_password = get_user_hash(new_username, new_password),
+            t_firstname = firstname,
+            t_lastname = lastname
+        WHERE t_username = new_username;
+        COMMIT;
+
+    END;
+    /
+
 CREATE OR REPLACE PROCEDURE update_student(new_username IN VARCHAR2, new_password IN VARCHAR2, firstname IN VARCHAR2,
                                             lastname IN VARCHAR2, coins IN NUMBER, bought_sub IN NUMBER,
                                             bought_mult IN NUMBER, bought_div IN NUMBER)
@@ -207,4 +235,10 @@ CREATE OR REPLACE FUNCTION get_principal RETURN NUMBER
     END;
     /
 
+SELECT * FROM student;
+BEGIN
+    insert_student('sUsername', 'sPassword', 'sFirstname', 'sLastname');
+END;
+/
 
+UPDATE student SET s_approved = 1;

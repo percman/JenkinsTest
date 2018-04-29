@@ -35,8 +35,8 @@ public class TeacherDaoImpl implements TeacherDao {
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				return new Teacher(rs.getString("s_firstname"), rs.getString("s_lastname"), rs.getString("s_username"),
-						rs.getString("s_password"));
+				return new Teacher(rs.getString("t_firstname"), rs.getString("t_lastname"), rs.getString("t_username"),
+						rs.getString("t_password"));
 			}
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());
@@ -68,7 +68,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	public boolean updateTeacher(Teacher teacher) {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			CallableStatement stmt = conn.prepareCall("{CALL update_teacher (?, ?, ?, ?, ?, ?, ?, ?)}");
+			CallableStatement stmt = conn.prepareCall("{CALL update_teacher (?, ?, ?, ?)}");
 			stmt.setString(++index, teacher.getUsername());
 			stmt.setString(++index, teacher.getPassword());
 			stmt.setString(++index, teacher.getFirstname());
@@ -217,7 +217,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	}
 	
 	@Override
-	public boolean unlockAllStudent(String username) {
+	public boolean unlockAllStudent() {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("Update student SET s_locked = 0 ");
 			return stmt.executeUpdate() > 0;

@@ -185,8 +185,10 @@ public class Student extends Person implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Student [firstname=" + firstname + ", lastname=" + lastname + ", username=" + username + "]";
+		return "Student [firstname=" + firstname + ", lastname=" + lastname + ", username=" + username + ", coins="
+				+ coins + "]";
 	}
+
 
 	
 	

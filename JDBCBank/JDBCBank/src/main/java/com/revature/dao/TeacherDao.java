@@ -21,7 +21,7 @@ public interface TeacherDao {
 	boolean approveAllStudents();
 	boolean approveStudent(String username);
 	boolean lockStudent(String username);
-	boolean unlockAllStudent(String username);
+	boolean unlockAllStudent();
 	boolean unlockStudent(String username);
 	boolean deleteStudent(String username);
 	

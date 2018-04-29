@@ -67,8 +67,8 @@ public class TeacherService {
 		return dao.lockStudent(username);
 	}
 	
-	public static boolean unlockAllStudent(String username) {
-		return dao.unlockAllStudent(username);
+	public static boolean unlockAllStudent() {
+		return dao.unlockAllStudent();
 	}
 
 	
