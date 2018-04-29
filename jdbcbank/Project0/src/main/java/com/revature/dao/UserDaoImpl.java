@@ -6,13 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import com.revature.model.Person;
 import com.revature.model.User;
 import com.revature.util.ConnectionUtil;
 import com.revature.util.Factory;
 
+	
 public class UserDaoImpl implements UserDao {
 
+	private static final Logger logger = Logger.getLogger(UserDaoImpl.class);
+	
 	private static UserDaoImpl instance;
 	private UserDaoImpl() {}
 	public static UserDaoImpl getInstance() {
@@ -36,6 +41,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 	}
@@ -54,6 +60,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return 0;
 	}
@@ -70,6 +77,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 	}
@@ -86,6 +94,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 		
@@ -107,6 +116,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return null;
 	}
@@ -124,6 +134,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return null;
 	}
@@ -143,6 +154,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return null;
 	}
@@ -162,6 +174,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 	}
@@ -181,6 +194,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 	}

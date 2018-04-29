@@ -9,8 +9,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 public class ConnectionUtil {
 
+	private static final Logger logger = Logger.getLogger(ConnectionUtil.class);
+	
 	private ConnectionUtil() {}
 	public static Connection getConnection() {
 			Properties props = new Properties();
@@ -26,6 +30,7 @@ public class ConnectionUtil {
 				System.err.println(sqle.getMessage());
 				System.err.println("SQL State: " + sqle.getSQLState());
 				System.err.println("Error Code: " + sqle.getErrorCode());
+				logger.warn(sqle.getMessage());
 			}
 		return null;
 	}

@@ -8,11 +8,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.revature.model.Admin;
 import com.revature.util.ConnectionUtil;
 
 public class AdminDaoImpl implements AdminDao{
 
+	private static final Logger logger = Logger.getLogger(AdminDaoImpl.class);
+	
 	private static AdminDaoImpl instance;
 	private AdminDaoImpl() {}
 	public static AdminDaoImpl getInstance() {
@@ -35,6 +39,7 @@ public class AdminDaoImpl implements AdminDao{
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 	}
@@ -51,6 +56,7 @@ public class AdminDaoImpl implements AdminDao{
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 	}
@@ -67,6 +73,7 @@ public class AdminDaoImpl implements AdminDao{
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 	}
@@ -83,6 +90,7 @@ public class AdminDaoImpl implements AdminDao{
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 	}
@@ -93,6 +101,8 @@ public class AdminDaoImpl implements AdminDao{
 			PreparedStatement stmt = conn.prepareStatement("SELECT username FROM person WHERE "
 					+ "approved = 'F' ORDER BY username");
 			ResultSet rs = stmt.executeQuery();
+			System.out.println("Username");
+			System.out.println("---------------------------------");
 			while(rs.next()) {
 				unapproved.add(rs.getString("username"));
 			}
@@ -101,6 +111,7 @@ public class AdminDaoImpl implements AdminDao{
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return null;
 	}
@@ -111,14 +122,17 @@ public class AdminDaoImpl implements AdminDao{
 			PreparedStatement stmt = conn.prepareStatement("SELECT username, last_transaction(user_id) "
 					+ "FROM person WHERE locked = 'T' AND role = 'User' ORDER BY username");
 			ResultSet rs = stmt.executeQuery();
+			System.out.println("Username     Last Transaction Time");
+			System.out.println("-----------------------------------");
 			while(rs.next()) {
-				locked.add(rs.getString("username")+ " " + rs.getTimestamp("last_transaction(user_id)"));
+				locked.add(rs.getString("username")+ "    " + rs.getTimestamp("last_transaction(user_id)"));
 			}
 			return locked;
 		}catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return null;
 	}
@@ -138,6 +152,7 @@ public class AdminDaoImpl implements AdminDao{
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return null;
 	}
@@ -153,6 +168,7 @@ public class AdminDaoImpl implements AdminDao{
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return false;
 	}
@@ -164,14 +180,17 @@ public class AdminDaoImpl implements AdminDao{
 			PreparedStatement stmt = conn.prepareStatement("SELECT username, last_transaction(user_id) "
 					+ "FROM person WHERE locked = 'F' AND role = 'User' ORDER BY username");
 			ResultSet rs = stmt.executeQuery();
+			System.out.println("Username     Last Transaction Time");
+			System.out.println("----------------------------------");
 			while(rs.next()) {
-				unlocked.add(rs.getString("username") + " " + rs.getTimestamp("last_transaction(user_id)"));
+				unlocked.add(rs.getString("username") + "   " + rs.getTimestamp("last_transaction(user_id)"));
 			}
 			return unlocked;
 		}catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return null;
 	}

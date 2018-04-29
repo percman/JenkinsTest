@@ -7,10 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.revature.model.User;
 import com.revature.util.ConnectionUtil;
 
 public class TransactionDaoImpl implements TransactionDao{
+	
+	private static final Logger logger = Logger.getLogger(TransactionDaoImpl.class);
 	
 	private static TransactionDaoImpl instance;
 	private TransactionDaoImpl() {}
@@ -43,6 +47,7 @@ public class TransactionDaoImpl implements TransactionDao{
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
 			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
 		}
 		return null;
 	}

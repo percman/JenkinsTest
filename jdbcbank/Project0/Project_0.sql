@@ -41,6 +41,9 @@ CONSTRAINT DEP_WITH CHECK (action IN ('Deposit', 'Withdrawal')),
 CONSTRAINT POSITIVE_ONLY CHECK (amount > 0)
 );
 
+ALTER TABLE person
+ADD CONSTRAINT username_length CHECK (LENGTH(username) >=2);
+
 CREATE SEQUENCE person_id_sequence
     START WITH 1
     INCREMENT BY 1

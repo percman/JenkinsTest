@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
+import com.revature.exception.InvalidInputException;
+import com.revature.exception.NotValidUserException;
 import com.revature.model.Admin;
 import com.revature.model.Person;
 import com.revature.model.User;
@@ -42,7 +44,9 @@ public class Control {
 	// When no user logged in, asks for user creation or sign-in
 	public static void directory() {
 		boolean wrongLetter;
+		try {
 		do {
+			
 			wrongLetter = false;
 			System.out.print("Type 'L' for Login or 'N' for new User: ");
 			String direct = sc.next();
@@ -51,10 +55,15 @@ public class Control {
 				createUser();
 			}
 			else {
-				System.out.println("Only enter one of the approved letters.");
 				wrongLetter = true;
+				throw new InvalidInputException("Only enter one of the approved letters.");
 			}
+			
 		}while (wrongLetter);	
+		}catch(InvalidInputException iie) {
+			iie.printStackTrace();
+			logger.warn(iie.getMessage());
+		}
 	}
 	
 	// User login
@@ -65,6 +74,7 @@ public class Control {
 		System.out.print("Enter password: ");
 		String password = sc.next();
 		Person person = UserService.getPerson(username);
+		try {
 		if(UserService.getPerson(username)!=null) {
 			if(person.getPassword().equals(UserService.getPasswordHash(new User(username, password)))) {
 				
@@ -82,7 +92,13 @@ public class Control {
 				}
 			}	
 		}
-		else System.out.println("The type/username/password combination does not exist.");
+		else {
+			throw new NotValidUserException("The username/password combination does not exist.");
+		}
+		}catch(NotValidUserException nvue) {
+			nvue.printStackTrace();
+			logger.warn(nvue.getMessage());
+		}
 	}
 
 	
@@ -97,7 +113,7 @@ public class Control {
 	public static void addFirst() {
 		System.out.println("Welcome! You're the first user!");
 		System.out.println("An administrative account will be created for you.");
-		System.out.print("Create username (no spaces allowed): ");
+		System.out.print("Create username (no spaces allowed, min. 2 characters): ");
 		String username = sc.next();
 		System.out.print("Create password (no spaces allowed: ");
 		String password = sc.next();
@@ -113,28 +129,36 @@ public class Control {
 		boolean wrongLetter;
 		do{
 			wrongLetter = false;
-			System.out.println("Enter a username (no spaces): ");
+			System.out.println("Enter a username (no spaces, min. 2 characters): ");
 			String username = sc.next();
 			System.out.println("Enter a password (no spaces): ");
 			String password = sc.next();
 			if(UserService.getPerson(username)!=null) {
 				System.out.println("Account already exists.");
 			}
-			System.out.print("Type 'A' for Admin or 'U' for User: ");
+			System.out.print("Type 'A' for Admin or 'U' for User, 'P' for Back: ");
 			String userType=sc.next();
-			if(userType.equals("A")) {
-				Admin admin = new Admin(username, password);
-				AdminService.insertAdmin(admin);
-				System.out.println("You will need to wait for admin approval to log in.");
-			}
-			else if (userType.equals("U")) {
-				User user = new User(username, password);
-				UserService.insertUser(user);
-				System.out.println("You will need to wait for admin approval to log in.");
-			}
-			else {
-				System.out.println("Only enter one of the approved letters.");
-				wrongLetter=true;
+			try {
+				if(userType.equals("A")) {
+					Admin admin = new Admin(username, password);
+					AdminService.insertAdmin(admin);
+					System.out.println("You will need to wait for admin approval to log in.");
+				}
+				else if (userType.equals("U")) {
+					User user = new User(username, password);
+					UserService.insertUser(user);
+					System.out.println("You will need to wait for admin approval to log in.");
+				}
+				else if(userType.equals("P")) {
+					break;
+				}
+				else {
+					wrongLetter=true;
+					throw new InvalidInputException("Only enter one of the approved letters.");
+				}
+			}catch(InvalidInputException iie) {
+				iie.getStackTrace();
+				logger.warn(iie.getMessage());
 			}
 		}while(wrongLetter);
 	}
@@ -148,65 +172,72 @@ public class Control {
 			if(current.getClass().getName().equals("com.revature.model.User")) {
 			System.out.println("Welcome, "+current.getUsername() + ".");
 			System.out.println("You are logged in.");			
-			do{
-				wrongLetter = false;
-				System.out.println("Enter 'D' for deposit, 'W' for withdrawal.");
-				System.out.println("'B' for balance, 'T' for transactions");
-				System.out.println("'O' for log out.");
-				String entry = sc.next();
-				// Deposit cash
-				if(entry.equals("D")) {
-					System.out.println("How much do you wish to deposit?");
-					try {
-						double depositAmount = sc.nextDouble();
-						UserService.deposit((User) current, depositAmount);
-					}catch(InputMismatchException ime) {
-						System.out.println("Only numbers!");
-						logger.warn(ime.getMessage());
-					}
-				}
-				// Withdraw cash
-				else if(entry.equals("W")) {
-					System.out.println("How much do you wish to withdraw?");
-					try {
-						double withdrawAmount = sc.nextDouble();
-						UserService.withdraw((User) current, withdrawAmount);
-					}catch(InputMismatchException ime) {
-						System.out.println("Only numbers!");
-						logger.warn(ime.getMessage());
-					}
-				}
-				// Get balance
-				else if(entry.equals("B")) {
-					DecimalFormat df = new DecimalFormat("###.##");
-					System.out.println("Your current balance is: " + df.format(UserService.getBalance((User) current)) + ".");
-				}
-				// List of transactions
-				else if(entry.equals("T")) {
-					List<String> transactions = TransactionService.transactions((User) current);
-					if(transactions!=null) {
-						for(String t:transactions) {
-							System.out.println(t);
+			try {
+				do{
+					wrongLetter = false;
+					System.out.println("Enter 'D' for deposit, 'W' for withdrawal");
+					System.out.println("'B' for balance, 'T' for transactions");
+					System.out.println("'O' for log out");
+					String entry = sc.next();
+					// Deposit cash
+					if(entry.equals("D")) {
+						System.out.println("How much do you wish to deposit?");
+						try {
+							double depositAmount = sc.nextDouble();
+							UserService.deposit((User) current, depositAmount);
+						}catch(InputMismatchException ime) {
+							ime.printStackTrace();
+							logger.warn("Only numbers!");
+							sc.next();
 						}
 					}
-				}
-				// Log out
-				else if(entry.equals("O")) logOut();
-				else {
-					System.out.println("Only enter one of the approved letters.");
-					wrongLetter = true;
-				}
-			}while(wrongLetter);
+					// Withdraw cash
+					else if(entry.equals("W")) {
+						System.out.println("How much do you wish to withdraw?");
+						try {
+							double withdrawAmount = sc.nextDouble();
+							UserService.withdraw((User) current, withdrawAmount);
+						}catch(InputMismatchException ime) {
+							ime.printStackTrace();
+							logger.warn("Only numbers!");
+							sc.next(); 
+						}
+					}
+					// Get balance
+					else if(entry.equals("B")) {
+						DecimalFormat df = new DecimalFormat("###.##");
+						System.out.println("Your current balance is: " + df.format(UserService.getBalance((User) current)) + ".");
+					}
+					// List of transactions
+					else if(entry.equals("T")) {
+						List<String> transactions = TransactionService.transactions((User) current);
+						if(transactions!=null) {
+							for(String t:transactions) {
+								System.out.println(t);
+							}
+						}
+					}
+					// Log out
+					else if(entry.equals("O")) logOut();
+					else {
+						wrongLetter = true;
+						throw new InvalidInputException("Only enter one of the approved letters.");
+					}
+				}while(wrongLetter);
+			}catch(InvalidInputException iie) {
+				iie.getStackTrace();
+				logger.warn(iie.getMessage());
+			}
 		}
 		// Admin page
 		else {
 			System.out.println("Welcome, "+ current.getUsername() + ".");
 			System.out.println("You are logged in.");
-			
+			try {
 				do{
 					wrongLetter = false;
 					System.out.println("Enter 'A' to approve users, 'L' to lock users");
-					System.out.println("'U' to unlock users, 'O' for log out.");
+					System.out.println("'U' to unlock users, 'O' for log out");
 					String entry = sc.next();
 					// Approve users
 					if(entry.equals("A")) {
@@ -218,8 +249,10 @@ public class Control {
 								System.out.println(u);
 							}
 						}
+						try {
 						System.out.println();
-						System.out.println("Enter the username you'd like to approve.");
+						System.out.println("Enter the username you'd like to approve");
+						System.out.println("Or enter 'P' for previous");
 						String username = sc.next();
 						if(UserService.getPerson(username)!=null) {
 							if(username.equals(UserService.getPerson(username).getUsername())) {
@@ -227,7 +260,14 @@ public class Control {
 								System.out.println(username + " has been approved.");
 							}
 						}
-						else System.out.println(username + " is not a valid username.");
+						else if (username.equals("P")) break;
+						else {
+							throw new NotValidUserException(username + " is not a valid username.");
+						}
+						}catch(NotValidUserException nvue) {
+							nvue.printStackTrace();
+							logger.warn(nvue.getMessage());
+						}
 					}		
 					// Lock users
 					else if(entry.equals("L")) {
@@ -238,14 +278,23 @@ public class Control {
 								System.out.println(u);
 							}
 						}
-						System.out.println();
-						System.out.println("Enter the username of the account you wish to lock.");
-						String lockName = sc.next();
-						if(UserService.getPerson(lockName)!=null) {
-							AdminService.lockUser(lockName);
-							System.out.println(lockName + "'s account has been locked.");
+						try {
+							System.out.println();
+							System.out.println("Enter the username of the account you wish to lock");
+							System.out.println("Or enter 'P' for previous");
+							String lockName = sc.next();
+							if (lockName.equals("P")) break;
+							if(UserService.getPerson(lockName)!=null) {
+								AdminService.lockUser(lockName);
+								System.out.println(lockName + "'s account has been locked.");
+							}
+							else {
+								throw new NotValidUserException("That is not a valid username.");
+							}
+						}catch(NotValidUserException nvue) {
+							nvue.printStackTrace();
+							logger.warn(nvue.getMessage());
 						}
-						else System.out.println("That is not a valid username.");
 					}
 					// Unlock users
 					else if(entry.equals("U")) {
@@ -256,22 +305,36 @@ public class Control {
 								System.out.println(l);
 							}
 						}
-						System.out.println();
-						System.out.println("Enter the username of the account you wish to unlock.");
-						String unlockName = sc.next();
-						if(UserService.getPerson(unlockName)!=null) {
-							AdminService.unlockUser(unlockName);
-							System.out.println(unlockName + "'s account has been unlocked.");
+						try {
+							System.out.println();
+							System.out.println("Enter the username of the account you wish to unlock");
+							System.out.println("Or enter 'P' for previous");
+							String unlockName = sc.next();
+							if(unlockName.equals("P")) break;
+							if(UserService.getPerson(unlockName)!=null) {
+								AdminService.unlockUser(unlockName);
+								System.out.println(unlockName + "'s account has been unlocked.");
+							}
+							else {
+								throw new NotValidUserException("That is not a valid username.");
+							}
+						}catch(NotValidUserException nvue) {
+							nvue.printStackTrace();
+							logger.warn(nvue.getMessage());
 						}
-						else System.out.println("That is not a valid username.");
 					}
 					// Log out
 					else if(entry.equals("O")) logOut();
+					else if(entry.equals("P")) break;
 					else {
-						System.out.println("Only enter one of the approved letters.");
 						wrongLetter = true;
+						throw new InvalidInputException("Only enter one of the approved letters.");
 					}
 				}while(wrongLetter);
+			}catch(InvalidInputException iie) {
+				iie.getStackTrace();
+				logger.warn(iie.getMessage());
+			}
 			}
 		}
 	}
