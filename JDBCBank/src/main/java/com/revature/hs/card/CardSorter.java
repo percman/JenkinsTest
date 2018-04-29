@@ -1,4 +1,4 @@
-package com.revature.hs;
+package com.revature.hs.card;
 
 import java.util.Comparator;
 import java.util.LinkedList;

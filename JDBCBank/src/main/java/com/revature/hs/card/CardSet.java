@@ -1,4 +1,4 @@
-package com.revature.hs;
+package com.revature.hs.card;
 
 import org.apache.commons.math3.distribution.EnumeratedDistribution;
 import org.apache.commons.math3.util.Pair;
@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 
 import java.util.*;
 
-import static com.revature.hs.Rarity.*;
+import static com.revature.hs.card.Rarity.*;
 import static java.lang.Math.min;
 
 public class CardSet {

@@ -1,4 +1,4 @@
-package com.revature.hs;
+package com.revature.hs.user;
 
 import java.io.*;
 import java.util.ArrayDeque;
@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.mindrot.jbcrypt.BCrypt;
+import com.revature.hs.user.exceptions.*;
 
 
 public class UserDB {

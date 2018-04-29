@@ -7,6 +7,7 @@ import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
 import org.mindrot.jbcrypt.BCrypt;
+import com.revature.hs.user.exceptions.*;
 
 public class Admin extends User {
 	private static final Logger logger = Logger.getLogger(Admin.class);

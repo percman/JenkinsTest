@@ -1,8 +1,9 @@
 package com.revature.hs;
 
+import com.revature.hs.card.CardCollector;
 import org.junit.Test;
 
-import static com.revature.hs.SetOptions.*;
+import static com.revature.hs.ui.SetOptions.*;
 import static org.junit.Assert.*;
 
 public class ConvertSetTest {

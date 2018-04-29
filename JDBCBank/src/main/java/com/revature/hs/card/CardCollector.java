@@ -1,5 +1,6 @@
-package com.revature.hs;
+package com.revature.hs.card;
 
+import com.revature.hs.ui.SetOptions;
 import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
@@ -16,7 +17,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-import static com.revature.hs.Rarity.COMMON;
 
 public class CardCollector {
     private static CardCollector cc;
@@ -172,7 +172,7 @@ public class CardCollector {
 			case "RARE":
 				return Rarity.RARE;
 			case "COMMON":
-				return COMMON;
+				return Rarity.COMMON;
 			default:
 				throw new RarityNotFoundException();
 		}

@@ -1,4 +1,4 @@
-package com.revature.hs;
+package com.revature.hs.user.exceptions;
 
 public class DuplicateUserNameException extends Exception {
 

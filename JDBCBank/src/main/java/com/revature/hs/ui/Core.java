@@ -1,8 +1,11 @@
-package com.revature.hs;
+package com.revature.hs.ui;
 
 import com.revature.hs.user.Admin;
 import com.revature.hs.user.Player;
 import com.revature.hs.user.User;
+import com.revature.hs.user.UserDB;
+import com.revature.hs.card.*;
+import com.revature.hs.user.exceptions.*;
 import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;

@@ -3,6 +3,11 @@ package com.revature.hs.user;
 import java.util.*;
 
 import com.revature.hs.*;
+import com.revature.hs.card.Card;
+import com.revature.hs.card.CardCollector;
+import com.revature.hs.card.CardSorter;
+import com.revature.hs.card.Rarity;
+import com.revature.hs.ui.SetOptions;
 import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
@@ -10,7 +15,7 @@ import org.beryx.textio.TextTerminal;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import static com.revature.hs.Rarity.*;
+import static com.revature.hs.card.Rarity.*;
 
 public class Player extends User {
 	private HashMap<String, Card> myCards;
