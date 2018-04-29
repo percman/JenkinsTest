@@ -178,6 +178,24 @@ CREATE OR REPLACE PROCEDURE insert_student (new_username IN VARCHAR2, new_passwo
     END;
     /
 
+-- Create a function that will update the principal, teacher, and student
+CREATE OR REPLACE PROCEDURE update_student(new_username IN VARCHAR2, new_password IN VARCHAR2, firstname IN VARCHAR2,
+                                            lastname IN VARCHAR2, coins IN NUMBER, bought_sub IN NUMBER,
+                                            bought_mult IN NUMBER, bought_div IN NUMBER)
+    AS
+    BEGIN
+        UPDATE student SET 
+            s_password = new_password,
+            s_firstname = firstname,
+            s_lastname = lastname,
+            s_coins = coins,
+            s_bought_sub = bought_sub,
+            s_bought_mult = bought_mult,
+            s_bought_div = bought_div
+        WHERE s_username = new_username;
+    END;
+    /
+
 
 -- Create a function that will return 1 if there is already a principal
 CREATE OR REPLACE FUNCTION get_principal RETURN NUMBER
@@ -190,7 +208,6 @@ CREATE OR REPLACE FUNCTION get_principal RETURN NUMBER
     /
 
 
-SELECT get_principal FROM dual;
 
 
 
