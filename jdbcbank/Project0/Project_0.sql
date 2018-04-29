@@ -115,7 +115,7 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE withdraw_cash(user_name IN VARCHAR, cash IN NUMBER)
+CREATE OR REPLACE PROCEDURE withdraw_cash(user_name IN VARCHAR2, cash IN NUMBER)
 AS
     userid NUMBER(10);
 BEGIN
@@ -126,7 +126,7 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE deposit_cash(user_name IN VARCHAR, cash IN NUMBER)
+CREATE OR REPLACE PROCEDURE deposit_cash(user_name IN VARCHAR2, cash IN NUMBER)
 AS
     userid NUMBER(10);
 BEGIN
@@ -134,5 +134,33 @@ BEGIN
     INSERT INTO transaction (user_id, action, amount) VALUES (userid, 'Deposit', cash);
     UPDATE person SET balance = (balance+cash) WHERE username = user_name; 
     COMMIT;
+END;
+/
+
+CREATE OR REPLACE FUNCTION last_transaction(userid IN VARCHAR2) RETURN TIMESTAMP
+AS
+    last_time TIMESTAMP;
+BEGIN
+    SELECT MAX(transaction_time) INTO last_time FROM transaction
+    WHERE user_id = userid;
+    RETURN last_time;
+END;
+/
+
+CREATE OR REPLACE FUNCTION ledger_balance(t_time IN TIMESTAMP) RETURN NUMBER
+AS
+    current_balance NUMBER(10, 2);
+BEGIN
+
+    SELECT SUM(
+        CASE
+            WHEN action = 'Deposit' THEN amount
+            ELSE amount*-1
+        END)       
+    INTO current_balance
+    FROM transaction
+    WHERE t_time>=transaction_time;
+    
+    RETURN current_balance;
 END;
 /

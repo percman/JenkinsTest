@@ -59,30 +59,11 @@ public class Control {
 	
 	// User login
 	public static void login() {
-//		boolean wrongLetter;
-//		String type;
-		// Input user type
-//		do{
-//			wrongLetter = false;
-//			System.out.println("Enter 'A' for Admin or 'U' for User: ");
-//			type = sc.next();
-//			if (!type.equals("A") && !type.equals("U")) {
-//				System.out.println("Only enter one of the approved letters.");
-//				wrongLetter = true;
-//				type = sc.next();
-//			}
-//		} while (wrongLetter);
-		// Input user name & password, checks against appropriate HashMap
 		// Tests if user's account is approved. If so, logs them in
 		System.out.print("Enter username: ");
 		String username = sc.next();
 		System.out.print("Enter password: ");
 		String password = sc.next();
-//		if(type.equals("A")) {
-//			if (Admin.adminMap.containsKey(username) && 
-//					password.equals(Admin.adminMap.get(username).password)){				
-//				if(Admin.adminMap.get(username).approved) {
-//					currentAdmin = Admin.adminMap.get(username);
 		Person person = UserService.getPerson(username);
 		if(UserService.getPerson(username)!=null) {
 			if(person.getPassword().equals(UserService.getPasswordHash(new User(username, password)))) {
@@ -102,29 +83,8 @@ public class Control {
 			}	
 		}
 		else System.out.println("The type/username/password combination does not exist.");
-//				}
-		
-			//}
-		}
-//		else if(type.equals("U")) {
-//			if (User.userMap.containsKey(username) && 
-//					password.equals(User.userMap.get(username).password)){				
-//				if(User.userMap.get(username).approved) {
-//					if(!User.userMap.get(username).locked) {
-//						currentUser = User.userMap.get(username);
-//						welcomePage();
-//					}
-//					else System.out.println("Your account has been locked. "
-//							+ "An admin must unlock your account.");
-//				}
-//				else System.out.println("You will need to wait for admin approval to log in.");
-//			}
-//			else System.out.println("The type/username/password combination does not exist.");
-//		}
-		
-		
-		
-	//}
+	}
+
 	
 	// Logs user out
 	public static void logOut() {
@@ -301,7 +261,7 @@ public class Control {
 						String unlockName = sc.next();
 						if(UserService.getPerson(unlockName)!=null) {
 							AdminService.unlockUser(unlockName);
-							System.out.println(unlockName + "'s account has been locked.");
+							System.out.println(unlockName + "'s account has been unlocked.");
 						}
 						else System.out.println("That is not a valid username.");
 					}

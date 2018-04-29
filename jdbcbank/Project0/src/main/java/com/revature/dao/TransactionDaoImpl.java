@@ -26,13 +26,16 @@ public class TransactionDaoImpl implements TransactionDao{
 		try(Connection conn = ConnectionUtil.getConnection()){
 			int index = 0;
 			List<String> trans = new ArrayList<>();
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM transaction "
+			PreparedStatement stmt = conn.prepareStatement("SELECT action, amount, "
+					+ "ledger_balance(transaction_time), transaction_time FROM transaction "
 					+ "NATURAL JOIN person "
 					+ "WHERE username = ? ORDER BY transaction_time");
 			stmt.setString(++index, user.getUsername());
 			ResultSet rs = stmt.executeQuery();
+			System.out.println("Action  Amount  Ledger  Timestamp");
 			while(rs.next()) {
-				trans.add(rs.getString("action") + " " + rs.getDouble("amount") +  " " +
+				trans.add(rs.getString("action") + "  " + rs.getDouble("amount") +  "  " +
+						rs.getDouble("ledger_balance(transaction_time)") + "  " + 
 						rs.getTimestamp("transaction_time"));
 			}
 			return trans;

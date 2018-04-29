@@ -13,7 +13,7 @@ public class Factory {
 			approval = true;
 		}
 		else approval = false;
-		if(role == "Admin") return new Admin(username, password, approval);
+		if(role.equals("Admin")) return new Admin(username, password, approval);
 		else {
 			boolean lock;
 			if (locked.equals("T")) lock = true;

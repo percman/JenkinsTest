@@ -59,7 +59,7 @@ public class AdminDaoImpl implements AdminDao{
 	public boolean lockUser(String username) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("UPDATE person SET locked TO 'T' "
+			PreparedStatement stmt = conn.prepareStatement("UPDATE person SET locked = 'T' "
 					+ "WHERE username = ?");
 			stmt.setString(++index, username);
 			return stmt.executeUpdate()>0;
@@ -75,7 +75,7 @@ public class AdminDaoImpl implements AdminDao{
 	public boolean unlockUser(String username) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("UPDATE person SET locked TO 'F' "
+			PreparedStatement stmt = conn.prepareStatement("UPDATE person SET locked = 'F' "
 					+ "WHERE username = ?");
 			stmt.setString(++index, username);
 			return stmt.executeUpdate()>0;
@@ -108,12 +108,13 @@ public class AdminDaoImpl implements AdminDao{
 	public List<String> getLocked() {
 		try(Connection conn = ConnectionUtil.getConnection()){
 			List<String> locked = new ArrayList<>();
-			PreparedStatement stmt = conn.prepareStatement("SELECT username FROM person WHERE "
-					+ "locked = 'T', role = 'User' ORDER BY username");
+			PreparedStatement stmt = conn.prepareStatement("SELECT username, last_transaction(user_id) "
+					+ "FROM person WHERE locked = 'T' AND role = 'User' ORDER BY username");
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				locked.add(rs.getString("username"));
+				locked.add(rs.getString("username")+ " " + rs.getTimestamp("last_transaction(user_id)"));
 			}
+			return locked;
 		}catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
@@ -160,12 +161,13 @@ public class AdminDaoImpl implements AdminDao{
 	public List<String> getUnlocked() {
 		try(Connection conn = ConnectionUtil.getConnection()){
 			List<String> unlocked = new ArrayList<>();
-			PreparedStatement stmt = conn.prepareStatement("SELECT username FROM person WHERE "
-					+ "locked = 'F', role = 'User' ORDER BY username");
+			PreparedStatement stmt = conn.prepareStatement("SELECT username, last_transaction(user_id) "
+					+ "FROM person WHERE locked = 'F' AND role = 'User' ORDER BY username");
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				unlocked.add(rs.getString("username"));
+				unlocked.add(rs.getString("username") + " " + rs.getTimestamp("last_transaction(user_id)"));
 			}
+			return unlocked;
 		}catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());
