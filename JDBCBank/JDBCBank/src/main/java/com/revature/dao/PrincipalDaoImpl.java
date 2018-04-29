@@ -22,7 +22,7 @@ public class PrincipalDaoImpl implements PrincipalDao{
 	
 	
 	@Override
-	public Person getPrincipal(String username) {
+	public Principal getPrincipal(String username) {
 		// TODO Auto-generated method stub
 		return null;
 	}

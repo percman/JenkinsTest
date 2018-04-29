@@ -8,7 +8,7 @@ import com.revature.users.Teacher;
 
 public interface TeacherDao {
 	
-	Person getTeacher(String username);
+	Teacher getTeacher(String username);
 	boolean insertTeacher(Teacher teacher);
 	boolean updateTeacher(Teacher teacher);
 	String getPasswordHash(Teacher teacher);
@@ -17,6 +17,7 @@ public interface TeacherDao {
 	List<Student> getUnapprovedStudents();
 	List<Student> getUnlockedStudents();
 	List<Student> getLockedStudents();
+	
 	boolean approveAllStudents();
 	boolean approveStudent(String username);
 	boolean lockStudent(String username);

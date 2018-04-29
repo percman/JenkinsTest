@@ -8,7 +8,7 @@ import com.revature.users.Teacher;
 
 public interface PrincipalDao {
 
-	Person getPrincipal(String username);
+	Principal getPrincipal(String username);
 	boolean insertPrincipal(Principal principal);
 	boolean updatePrincipal(Principal principal);
 	String getPasswordHash(Principal principal);

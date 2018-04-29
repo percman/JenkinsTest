@@ -92,3 +92,87 @@ ORA-06512: at line 1
 2018-04-28 23:28:32 WARN  LogThis:34 - Invalid column name
 2018-04-28 23:28:32 WARN  LogThis:34 - SQL state: 99999
 2018-04-28 23:28:32 WARN  LogThis:34 - Error Code: 17006
+2018-04-29 10:21:47 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:21:47 WARN  LogThis:34 - SQL state: 23000
+2018-04-29 10:21:47 WARN  LogThis:34 - Error Code: 1
+2018-04-29 10:43:41 WARN  LogThis:34 - ORA-00903: invalid table name
+
+2018-04-29 10:43:41 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 10:43:41 WARN  LogThis:34 - Error Code: 903
+2018-04-29 10:43:41 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:43:41 WARN  LogThis:34 - SQL state: 23000
+2018-04-29 10:43:41 WARN  LogThis:34 - Error Code: 1
+2018-04-29 10:45:47 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:45:47 WARN  LogThis:34 - SQL state: 23000
+2018-04-29 10:45:47 WARN  LogThis:34 - Error Code: 1
+2018-04-29 10:45:49 WARN  LogThis:34 - ORA-00903: invalid table name
+
+2018-04-29 10:45:49 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 10:45:49 WARN  LogThis:34 - Error Code: 903
+2018-04-29 10:45:49 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:45:49 WARN  LogThis:34 - SQL state: 23000
+2018-04-29 10:45:49 WARN  LogThis:34 - Error Code: 1
+2018-04-29 10:48:24 WARN  LogThis:34 - ORA-00903: invalid table name
+
+2018-04-29 10:48:24 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 10:48:24 WARN  LogThis:34 - Error Code: 903
+2018-04-29 10:48:24 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:48:24 WARN  LogThis:34 - SQL state: 23000
+2018-04-29 10:48:24 WARN  LogThis:34 - Error Code: 1
+2018-04-29 10:49:13 WARN  LogThis:34 - ORA-00903: invalid table name
+
+2018-04-29 10:49:13 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 10:49:13 WARN  LogThis:34 - Error Code: 903
+2018-04-29 10:49:13 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:49:13 WARN  LogThis:34 - SQL state: 23000
+2018-04-29 10:49:13 WARN  LogThis:34 - Error Code: 1
+2018-04-29 10:50:02 WARN  LogThis:34 - ORA-00903: invalid table name
+
+2018-04-29 10:50:02 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 10:50:02 WARN  LogThis:34 - Error Code: 903
+2018-04-29 10:50:02 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:50:02 WARN  LogThis:34 - SQL state: 23000
+2018-04-29 10:50:02 WARN  LogThis:34 - Error Code: 1
+2018-04-29 10:50:03 WARN  LogThis:34 - ORA-00903: invalid table name
+
+2018-04-29 10:50:03 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 10:50:03 WARN  LogThis:34 - Error Code: 903
+2018-04-29 10:51:28 WARN  LogThis:34 - ORA-00903: invalid table name
+
+2018-04-29 10:51:28 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 10:51:28 WARN  LogThis:34 - Error Code: 903
+2018-04-29 10:51:28 WARN  LogThis:34 - ORA-00903: invalid table name
+
+2018-04-29 10:51:28 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 10:51:28 WARN  LogThis:34 - Error Code: 903
+2018-04-29 10:51:28 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_S_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_STUDENT", line 5
+ORA-06512: at line 1
+
+2018-04-29 10:51:28 WARN  LogThis:34 - SQL state: 23000
+2018-04-29 10:51:28 WARN  LogThis:34 - Error Code: 1
+2018-04-29 10:51:29 WARN  LogThis:34 - ORA-00903: invalid table name
+
+2018-04-29 10:51:29 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 10:51:29 WARN  LogThis:34 - Error Code: 903

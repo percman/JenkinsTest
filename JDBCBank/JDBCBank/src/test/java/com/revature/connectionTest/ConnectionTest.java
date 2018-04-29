@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.revature.singletons.ConnectionUtil;
 
 
-public class Connection {
+public class ConnectionTest {
 
 	static java.sql.Connection conn;
 	

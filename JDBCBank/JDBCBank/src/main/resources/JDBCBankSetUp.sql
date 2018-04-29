@@ -185,7 +185,7 @@ CREATE OR REPLACE PROCEDURE update_student(new_username IN VARCHAR2, new_passwor
     AS
     BEGIN
         UPDATE student SET 
-            s_password = new_password,
+            s_password = get_user_hash(new_username, new_password),
             s_firstname = firstname,
             s_lastname = lastname,
             s_coins = coins,
@@ -196,7 +196,6 @@ CREATE OR REPLACE PROCEDURE update_student(new_username IN VARCHAR2, new_passwor
     END;
     /
 
-SELECT S_ID , S_USERNAME , S_PASSWORD , S_FIRSTNAME , S_LASTNAME , S_COINS , S_APPROVED , S_LOCKED , S_BOUGHT_SUB , S_BOUGHT_MULT , S_BOUGHT_DIV  FROM student;
 -- Create a function that will return 1 if there is already a principal
 CREATE OR REPLACE FUNCTION get_principal RETURN NUMBER
     AS
@@ -208,5 +207,6 @@ CREATE OR REPLACE FUNCTION get_principal RETURN NUMBER
     /
 
 
-
-
+SELECT * FROM student;
+SELECT * FROM student WHERE s_username = 'sUsername';
+DELETE FROM student WHERE s_username = 'sUsername';
