@@ -1,5 +1,6 @@
-package com.revature.hs.card;
+package com.revature.hs.card.dao;
 
+import com.revature.hs.card.*;
 import com.revature.hs.ui.SetOptions;
 import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
@@ -18,20 +19,20 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class CardCollector {
-    private static CardCollector cc;
+public class CardService {
+    private static CardService cc;
     private HashMap<String, CardSet> setMap;
-	private static final Logger logger = Logger.getLogger(CardCollector.class);
+	private static final Logger logger = Logger.getLogger(CardService.class);
 	private HashMap<String, Card> allCards;
 
-    public static CardCollector getInstance() {
+    public static CardService getInstance() {
     	if (cc == null) {
-    		cc = new CardCollector();
+    		cc = new CardService();
 		}
 		return cc;
 	}
 
-	private CardCollector() {
+	private CardService() {
 		long timer = System.currentTimeMillis();
 		FileReader fr = null;
 		JSONArray js = null;
@@ -48,11 +49,11 @@ public class CardCollector {
 			}
 		}
 		initializeCardDB(js);
-		logger.info("CardCollector created, took " + ((System.currentTimeMillis() - timer) / 1000.0) + "seconds");
+		logger.info("CardService created, took " + ((System.currentTimeMillis() - timer) / 1000.0) + "seconds");
 	}
 
 	public static void refresh() {
-    	cc = new CardCollector();
+    	cc = new CardService();
 	}
 
 	// Grabs the Hearthstone card information from a file.

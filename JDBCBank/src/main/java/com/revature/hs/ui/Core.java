@@ -1,10 +1,10 @@
 package com.revature.hs.ui;
 
+import com.revature.hs.card.dao.CardService;
 import com.revature.hs.user.Admin;
 import com.revature.hs.user.Player;
 import com.revature.hs.user.User;
-import com.revature.hs.user.UserDB;
-import com.revature.hs.card.*;
+import com.revature.hs.user.dao.UserService;
 import com.revature.hs.user.exceptions.*;
 import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
@@ -13,9 +13,9 @@ import org.beryx.textio.TextTerminal;
 import org.mindrot.jbcrypt.BCrypt;
 
 public class Core {
-	private UserDB users;
+	private UserService users;
 	private User activeUser;
-	private CardCollector collector;
+	private CardService collector;
 	private static final Logger logger = Logger.getLogger(Core.class);
 	private static TextIO textIO;
 	private static TextTerminal terminal;
@@ -94,7 +94,7 @@ public class Core {
 					player.craftCard();
 					break;
 				case LOGOUT:
-					CardCollector.refresh();
+					CardService.refresh();
 					return;
 			}
 		}
@@ -109,7 +109,7 @@ public class Core {
 				BCrypt.gensalt());
 
 		try {
-			UserDB.getInstance().addUser(new Player(user, passwordHash, "player"));
+			UserService.getInstance().addUser(new Player(user, passwordHash, "player"));
 			logger.info("Created new user " + user);
 		} catch (DuplicateUserNameException e) {
 			logger.info("Attempted user creation with duplicate username " + user);
@@ -146,8 +146,8 @@ public class Core {
 	
 	public static void main(String[] args) {
 		Core c = new Core();
-		c.users = UserDB.getInstance();
-		c.collector = CardCollector.getInstance();
+		c.users = UserService.getInstance();
+		c.collector = CardService.getInstance();
 		c.initializeInteractions();
 	}
 }

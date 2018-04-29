@@ -2,12 +2,12 @@ package com.revature.hs.user;
 
 import java.util.*;
 
-import com.revature.hs.*;
 import com.revature.hs.card.Card;
-import com.revature.hs.card.CardCollector;
+import com.revature.hs.card.dao.CardService;
 import com.revature.hs.card.CardSorter;
 import com.revature.hs.card.Rarity;
 import com.revature.hs.ui.SetOptions;
+import com.revature.hs.user.dao.UserService;
 import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
@@ -27,7 +27,7 @@ public class Player extends User {
 		super(jso);
 		JSONArray ja = jso.getJSONArray("myCards");
 		this.myCards = new HashMap<>();
-		CardCollector cc = CardCollector.getInstance();
+		CardService cc = CardService.getInstance();
 		for (Object o: ja) {
 			this.addCard(cc.getCard((String) o));
 		}
@@ -80,7 +80,7 @@ public class Player extends User {
 		SetOptions whatToDo = textIO.newEnumInputReader(SetOptions.class).read(
 				"Which pack do you want to open?");
 
-		Deque<Card> cd = CardCollector.getInstance().openPack(CardCollector.convertSetName(whatToDo));
+		Deque<Card> cd = CardService.getInstance().openPack(CardService.convertSetName(whatToDo));
 		terminal.println("UNPACKING");
 		for(Card c : cd) {
 			terminal.println(c.getRarity().name() + ": " + c.getName());
@@ -97,7 +97,7 @@ public class Player extends User {
 				"Which pack do you want to open?");
 		int howMany = textIO.newIntInputReader().read("How many do you want to open?");
 		while (howMany-- > 0) {
-			Deque<Card> cd = CardCollector.getInstance().openPack(CardCollector.convertSetName(whatToDo));
+			Deque<Card> cd = CardService.getInstance().openPack(CardService.convertSetName(whatToDo));
 			terminal.println("UNPACKING");
 			for (Card c : cd) {
 				terminal.println(c.getRarity().name() + ": " + c.getName());
@@ -115,29 +115,29 @@ public class Player extends User {
 		Card card;
 
 		terminal.println("Crafting costs are as follows: ");
-		terminal.println(COMMON.name() + ": " + CardCollector.getCraftCost(COMMON));
-		terminal.println(RARE.name() + ": " + CardCollector.getCraftCost(RARE));
-		terminal.println(EPIC.name() + ": " + CardCollector.getCraftCost(EPIC));
-		terminal.println(LEGENDARY.name() + ": " + CardCollector.getCraftCost(LEGENDARY));
+		terminal.println(COMMON.name() + ": " + CardService.getCraftCost(COMMON));
+		terminal.println(RARE.name() + ": " + CardService.getCraftCost(RARE));
+		terminal.println(EPIC.name() + ": " + CardService.getCraftCost(EPIC));
+		terminal.println(LEGENDARY.name() + ": " + CardService.getCraftCost(LEGENDARY));
 		terminal.println("Your dust: " + this.dust);
 
 		Rarity whatRarity = textIO.newEnumInputReader(Rarity.class).read(
 				"What rarity do you want to craft?");
-		if (CardCollector.getCraftCost(whatRarity) > this.dust) {
+		if (CardService.getCraftCost(whatRarity) > this.dust) {
 			terminal.println("You can't afford that.");
 			return;
 		}
 		SetOptions whatSet = textIO.newEnumInputReader(SetOptions.class).read(
 				"What set do you want to craft from?");
 
-		List<Card> cardList = CardCollector.getInstance().getCardList(whatSet, whatRarity);
-		CardCollector.printCardList(cardList);
+		List<Card> cardList = CardService.getInstance().getCardList(whatSet, whatRarity);
+		CardService.printCardList(cardList);
 		terminal.println("");
 		String numString = textIO.newStringInputReader().read("type the number of the card you want to craft" +
 				", or anything else to cancel");
 		try {
 			this.addCard(cardList.get(Integer.parseInt(numString)));
-			this.dust -= CardCollector.getCraftCost(whatRarity);
+			this.dust -= CardService.getCraftCost(whatRarity);
 		}catch ( NumberFormatException e){ }
 		catch (IndexOutOfBoundsException e){}
 		saveState();
@@ -150,7 +150,7 @@ public class Player extends User {
 		for (Card c: myCards.values()) {
 			while(c.getOwned() > 2) {
 				c.setOwned(c.getOwned() - 1);
-				addDust(CardCollector.getDustAmount(c));
+				addDust(CardService.getDustAmount(c));
 				terminal.println("Dusted a " + c.getName());
 				logger.debug("Dusted a " + c.getName());
 			}
@@ -187,7 +187,7 @@ public class Player extends User {
 
 
 	public void saveState() {
-		UserDB.getInstance().setUser(this);
+		UserService.getInstance().setUser(this);
 	}
 
 	@Override

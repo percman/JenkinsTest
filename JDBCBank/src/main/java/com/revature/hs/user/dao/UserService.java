@@ -1,4 +1,4 @@
-package com.revature.hs.user;
+package com.revature.hs.user.dao;
 
 import java.io.*;
 import java.util.ArrayDeque;
@@ -15,15 +15,15 @@ import org.mindrot.jbcrypt.BCrypt;
 import com.revature.hs.user.exceptions.*;
 
 
-public class UserDB {
+public class UserService {
 	private JSONObject DB;
-	private static UserDB instance = null;
+	private static UserService instance = null;
 	
-	private static final Logger logger = Logger.getLogger(UserDB.class);
+	private static final Logger logger = Logger.getLogger(UserService.class);
 	
-	public static UserDB getInstance() {
+	public static UserService getInstance() {
 		if (instance == null) {
-			instance = new UserDB();
+			instance = new UserService();
 		}
 		return instance;
 	}
@@ -65,7 +65,7 @@ public class UserDB {
 	}
 	
 	
-	private UserDB() {
+	private UserService() {
 		long timer = System.currentTimeMillis();
 		FileReader fr = null;
 		try {
@@ -82,7 +82,7 @@ public class UserDB {
 			logger.warn(ioe.getMessage());
 		}
 		}
-		logger.info("UserDB created, took " + ((System.currentTimeMillis() - timer) / 1000.0) + " seconds" );
+		logger.info("UserService created, took " + ((System.currentTimeMillis() - timer) / 1000.0) + " seconds" );
 	}
 	
 	private boolean isUser(String username) {

@@ -1,6 +1,6 @@
 package com.revature.hs.user;
 
-import com.revature.hs.*;
+import com.revature.hs.user.dao.UserService;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 import org.beryx.textio.TextIO;
@@ -26,7 +26,7 @@ public class Admin extends User {
 		String passwordHash = BCrypt.hashpw(textIO.newStringInputReader().withMinLength(6).read("enter password"),
 				BCrypt.gensalt());
 		try {
-			UserDB.getInstance().addUser(new Admin(user, passwordHash, "admin"));
+			UserService.getInstance().addUser(new Admin(user, passwordHash, "admin"));
 		} catch (DuplicateUserNameException e) {
 			logger.info("Attempted admin creation with duplicate username " + user);
 			TextTerminal terminal = textIO.getTextTerminal();
@@ -38,7 +38,7 @@ public class Admin extends User {
 	public void lockUser() {
 		TextIO textIO = TextIoFactory.getTextIO();
 		TextTerminal terminal = textIO.getTextTerminal();
-		UserDB DB = UserDB.getInstance();
+		UserService DB = UserService.getInstance();
 		String user = textIO.newStringInputReader().withMinLength(4).withIgnoreCase().read(
 				"Which user do you want to lock?");
 		try {
@@ -57,7 +57,7 @@ public class Admin extends User {
 	public void unlockUser() {
 		TextIO textIO = TextIoFactory.getTextIO();
 		TextTerminal terminal = textIO.getTextTerminal();
-		UserDB DB = UserDB.getInstance();
+		UserService DB = UserService.getInstance();
 		String user = textIO.newStringInputReader().withMinLength(4).withIgnoreCase().read(
 				"Which user do you want to unlock?");
 		try {
@@ -76,7 +76,7 @@ public class Admin extends User {
 	public void approveUsers() {
 		TextIO textIO = TextIoFactory.getTextIO();
 		TextTerminal terminal = textIO.getTextTerminal();
-		UserDB DB = UserDB.getInstance();
+		UserService DB = UserService.getInstance();
 		String user = textIO.newStringInputReader().withMinLength(4).withIgnoreCase().read(
 				"Which user do you want to approve?");
 		try {

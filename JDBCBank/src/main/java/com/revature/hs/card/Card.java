@@ -1,5 +1,6 @@
 package com.revature.hs.card;
 
+import com.revature.hs.card.dao.CardService;
 import org.json.JSONObject;
 
 public class Card {
@@ -11,10 +12,8 @@ public class Card {
 
     public Card(JSONObject jso) throws RarityNotFoundException {
         this.name = jso.getString("name");
-        this.rarity = CardCollector.stringToRarity(jso.getString("rarity"));
-        this.mana = jso.getInt("cost");
+        this.rarity = CardService.stringToRarity(jso.getString("rarity"));
         this.owned = 1;
-        this.json = jso;
     }
 
     public void addCopy() {
@@ -35,22 +34,6 @@ public class Card {
 
 	public void setRarity(Rarity rarity) {
 		this.rarity = rarity;
-	}
-
-	public int getMana() {
-		return mana;
-	}
-
-	public void setMana(int mana) {
-		this.mana = mana;
-	}
-
-	public JSONObject getJson() {
-		return json;
-	}
-
-	public void setJson(JSONObject json) {
-		this.json = json;
 	}
 
 	public int getOwned() {
