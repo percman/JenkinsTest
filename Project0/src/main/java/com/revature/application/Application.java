@@ -18,10 +18,11 @@ import com.revature.util.ConnectionUtil;
 public class Application {
 
 	public static void main(String[] args) {
-		MainMenu();
+		Scanner scanner = new Scanner(System.in);
+		MainMenu(scanner);
 	}
 	
-	public static void MainMenu() {
+	public static void MainMenu(Scanner scanner) {
 	//Print out command options
 	System.out.println("=====================");
 	System.out.println("Please type number of desired action");
@@ -31,74 +32,88 @@ public class Application {
 	System.out.println("0. End Program");
 
 	//Open reader for reading input
-	Scanner reading = new Scanner(System.in);
+//	Scanner reading = new Scanner(System.in);
 	
 	//Read input
-	int inputVal = reading.nextInt();
+	String inputVal = scanner.nextLine();
 	
 	//Close the reader
-	reading.close();
+//	reading.close();
+	
+//	if("1".equals(inputVal)) {
+//		SignUp();
+//	} else 	if("2".equals(inputVal)) {
+//		Login();
+//	} else 	if("3".equals(inputVal)) {
+//		EmployeeLogin();
+//	} else 	if("0".equals(inputVal)) {
+//		System.out.println("OK, ending program.");
+//		System.exit(0);		
+//	} else {
+//		System.err.println("Invalid action.");	
+//		MainMenu();		
+//	}
 	
 	//Use user input
 	switch(inputVal) {
-		case 1:
+		case "1":
 			//Go to sign up page
-			SignUp();
+			SignUp(scanner);
 			break;
-		case 2:
+		case "2":
 			//Go to login page
-			Login();
+			Login(scanner);
 			break;
-		case 3:
-			EmployeeLogin();
+		case "3":
+			EmployeeLogin(scanner);
 			break;
-		case 0:
+		case "0":
 			//End Program
+			scanner.close();
+			System.out.println("OK, ending program.");
 			System.exit(0);
 		default:
 			//If one of the options wasn't selected, print out error
 			//Then return to MainMenu
 			System.err.println("Invalid action.");	
-			MainMenu();
-		}
+			MainMenu(scanner);
 	}
-	
+}
+
 	//Asks for the desired username, password, first name, and last name from the applying customer
 	//And stores it in the Applying table
-	public static void SignUp() {
+	public static void SignUp(Scanner scanner) {
 		System.out.println("=====================");
 		System.out.println("Welcome!");
 		System.out.println("To create your new account, please enter your desired"
 							+ " username, password, first name, and last name seperated with spaces.");
 
-		Scanner reading = new Scanner(System.in);
-		String userName = reading.next();
-		String password = reading.next();
-		String fname = reading.next();
-		String lname = reading.next();
-		reading.close();
+//		Scanner reading = new Scanner(System.in);
+		String userName = scanner.next();
+		String password = scanner.next();
+		String fname = scanner.next();
+		String lname = scanner.next();
 		
 		Applying applying = new Applying(userName, password, fname, lname);
 		System.out.println("Did the application go through? " + ApplyingService.insertApplying(applying));
 		System.out.println("Returning to Main Menu.");
-		MainMenu();
+		MainMenu(scanner);
 		
 	}
 	
-	public static void Login() {
+	public static void Login(Scanner scanner) {
 		System.out.println("=====================");
 		System.out.println("Welcome back! Please enter your username and password.");
 		
-		Scanner reading = new Scanner(System.in);
-		String userName = reading.next();
-		String password = reading.next();
-		reading.close();
+//		Scanner reading = new Scanner(System.in);
+		String userName = scanner.next();
+		String password = scanner.next();
 		
 		Customer customer = new Customer(userName, password);
 		
 		if (CustomerService.login(customer)) {
 			if(lockCheck(customer)) {
-				LoginMenu(customer);
+				LoginMenu(customer, scanner);
 			}
 			else {
 				try {
@@ -106,35 +121,35 @@ public class Application {
 				} catch (UserLockedOutException uloe) {
 					System.err.println(uloe.getMessage());
 					System.out.println("Returning to Main Menu");
-					MainMenu();
+					MainMenu(scanner);
 				}
 				
 			}
 			
 		}
 			System.out.println("Sorry, but the username and password that were entered do not match or the user doesn't exist.");
-			MainMenu();
+			MainMenu(scanner);
 	}
 		
-	public static void EmployeeLogin() {
+	public static void EmployeeLogin(Scanner scanner) {
 		System.out.println("=====================");
 		System.out.println("Welcome back! Please enter your username and password.");
 		
-		Scanner reading = new Scanner(System.in);
-		String userName = reading.next();
-		String password = reading.next();
-		reading.close();
+//		Scanner reading = new Scanner(System.in);
+		String userName = scanner.next();
+		String password = scanner.next();
+//		reading.close();
 		
 		Employee employee = new Employee(userName, password);
 		
 		if (EmployeeService.login(employee)) {
-			EmployeeMenu(employee);
+			EmployeeMenu(employee, scanner);
 		}
 			System.out.println("Sorry, but the username and password that were entered do not match or the user doesn't exist.");
-			MainMenu();		
+			MainMenu(scanner);		
 	}
 	
-	public static void LoginMenu(Customer customer) {
+	public static void LoginMenu(Customer customer, Scanner scanner) {
 		System.out.println("=====================");
 		System.out.println("What would you like to do?");
 		System.out.println("1. Deposit");
@@ -142,62 +157,69 @@ public class Application {
 		System.out.println("3. View Balance");
 		System.out.println("0. Logout");
 		
-		Scanner reading = new Scanner(System.in);
-		int inputVal = reading.nextInt();
-		reading.close();
+//		Scanner reading = new Scanner(System.in);
+		int inputVal = scanner.nextInt();
+//		reading.close();
 		
 		switch(inputVal) {
 			case 1:
-				Deposit(customer);
+				Deposit(customer, scanner);
+				ViewBalance(customer);
+				LoginMenu(customer, scanner);
 			case 2:
-				Withdraw(customer);
+				Withdraw(customer, scanner);
+				ViewBalance(customer);
+				LoginMenu(customer, scanner);
 			case 3:
 				ViewBalance(customer);
+				LoginMenu(customer, scanner);
 			case 0:
 				System.out.println("Thank you, and please have a great day!");
+				MainMenu(scanner);
 			default:
 				System.out.println("Invalid action. Please try again!");
-				LoginMenu(customer);
+				LoginMenu(customer,scanner);
 		}
 	}
 	
-	public static void EmployeeMenu(Employee employee) {
+	public static void EmployeeMenu(Employee employee, Scanner scanner) {
 		System.out.println("=====================");
 		System.out.println("What would you like to do?");
 		System.out.println("1. Lock an account");
 		System.out.println("2. View applications");
 		System.out.println("0. Logout");
 		
-		Scanner reading = new Scanner(System.in);
-		int inputVal = reading.nextInt();
-		reading.close();
+//		Scanner reading = new Scanner(System.in);
+		int inputVal = scanner.nextInt();
+//		reading.close();
 		
 		switch(inputVal) {
 			case 1:
 				System.out.println("Please enter the id number of the account you would like to lock or unlock.");
 				System.out.println("Alternatively, you can type 0 to cancel");
 
-				Scanner reading2 = new Scanner(System.in);
-				int id = reading2.nextInt();
-				reading2.close();
+//				Scanner reading2 = new Scanner(System.in);
+				int id = scanner.nextInt();
+//				reading2.close();
 				
 				if (id == 0) {
-					EmployeeMenu(employee);
+					EmployeeMenu(employee, scanner);
 				}
 				else {
 					changeLock(employee.getId());
 				}
 				
 			case 2:
-				ViewApplications(employee);
+				ViewApplications(employee, scanner);
+				EmployeeMenu(employee, scanner);
 				break;
 			case 0:
 				System.out.println("Returning to Main Menu.");
-				MainMenu();
+				MainMenu(scanner);
 				break;
 			default:
 				System.out.println("Invalid action. Please try again.");
-				EmployeeMenu(employee);
+				EmployeeMenu(employee, scanner);
 				break;
 		}
 		
@@ -215,25 +237,20 @@ public class Application {
 		}		
 	}
 
-	public static void Deposit(Customer customer) {
+	public static void Deposit(Customer customer, Scanner scanner) {
 		System.out.println("=====================");
 		System.out.println("Ok, how much would you like to deposit (Type without commas)?");
 		
-		Scanner reading = new Scanner(System.in);
-		int amount = reading.nextInt();
-		reading.close();
+		int amount = scanner.nextInt();
 		
 		depositCustomer(customer ,amount);
-		
 	}
 	
-	public static void Withdraw(Customer customer) {
+	public static void Withdraw(Customer customer, Scanner scanner) {
 		System.out.println("=====================");
 		System.out.println("Ok, how much would you like to withdraw (Type without commas)?");
 		
-		Scanner reading = new Scanner(System.in);
-		int amount = reading.nextInt();
-		reading.close();
+		int amount = scanner.nextInt();
 		
 		withdrawCustomer(customer ,amount);
 		
@@ -253,7 +270,7 @@ public class Application {
 		}	
 	}
 	
-	public static void ViewApplications(Employee employee) {
+	public static void ViewApplications(Employee employee, Scanner scanner) {
 		try(Connection conn = ConnectionUtil.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customers WHERE ROWNUM = 1");
 			ResultSet rs = stmt.executeQuery();
@@ -262,9 +279,7 @@ public class Application {
 			System.out.println("2. No");
 			System.out.println("0. Return to Employee Menu");
 			
-			Scanner reading = new Scanner(System.in);
-			int inputVal = reading.nextInt();
-			reading.close();
+			int inputVal = scanner.nextInt();
 			
 			switch(inputVal) {
 				case 1:
@@ -272,19 +287,19 @@ public class Application {
 													rs.getString("fname"), rs.getString("lname"));
 					PreparedStatement stmt2 = conn.prepareStatement("DELETE * FROM customers WHERE ROWNUM = 1");
 					stmt2.executeQuery();
-					ViewApplications(employee);
+					ViewApplications(employee, scanner);
 					break;
 				case 2:
 					PreparedStatement stmt3 = conn.prepareStatement("DELETE * FROM customers WHERE ROWNUM = 1");
 					stmt3.executeQuery();
-					ViewApplications(employee);
+					ViewApplications(employee, scanner);
 					break;
 				case 0:
-					EmployeeMenu(employee);
+					EmployeeMenu(employee, scanner);
 					break;
 				default:
 					System.out.println("Invalid action. Please try again.");
-					ViewApplications(employee);
+					ViewApplications(employee, scanner);
 			}
 			
 			
