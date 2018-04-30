@@ -18,7 +18,7 @@ create table project_administrator(
     password varchar2(100) not null,
     approveadminid number,
     rejectadminid number,
-    lock boolean,
+    is_locked number,
     constraint pk_user primary key(userid),
     constraint fk_approveadmin 
         foreign key (approveadminid)
@@ -63,6 +63,15 @@ extra varchar2(10) := 'pepper';
 begin
     return to_char(DBMS_OBFUSCATION_TOOLKIT.MD5(
         input => UTL_I18N.STRING_TO_RAW(data => in_user || in_password || extra)));
+end;
+/
+
+create or replace function read_user_balance(in_name varchar2) return number
+is
+    return_balance number;
+begin
+    select sum(t.amount) into return_balance from project_transaction t, project_user u where u.name=in_name and u.userid=t.transactionid;
+    return return_balance;
 end;
 /
 
@@ -115,8 +124,8 @@ create or replace procedure create_user
 as 
     calculated_hash varchar(100);
 begin
-    insert into project_user (userid, name, password, approveadminid, rejectadminid)
-        values (null, in_name, in_password, null, null);
+    insert into project_user (userid, approveadminid, rejectadminid, name, password, is_locked)
+        values (null, null, null, in_name, in_password, 0);
 end;
 /
 
@@ -129,18 +138,37 @@ begin
 end;
 /
 
---	create or replace procedure lock_user(in_name)
---	create or replace procedure get_user_balance(in_name)
+create or replace procedure lock_user
+    (in_name in varchar2)
+as
+begin
+    update project_user
+    set is_locked=1
+    where name=in_name;
+end;
+/
+
+create or replace procedure unlock_user
+    (in_name in varchar2)
+as
+begin
+    update project_user
+    set is_locked=0
+    where name=in_name;
+end;
+/
 --	create or replace procedure reject_user(in_user_name, in_admin_name)
 --	create or replace procedure approve_user(in_user_name, in_admin_name)
-
-create or replace procedure lock_user
-    (in_name varchar2)
-as 
+create or replace procedure reject_user
+    (in_user_name varchar2, in_admin_name varchar2)
+as
+    administrator_id number;
 begin
-    insert into 
-    
-
+    select a.administratorid into administrator_id from project_user u, project_administrator a where name=in_admin_name;
+    update project_user
+    set approveadminid=administrator_id;
+end;
+/
 
 begin
     create_administrator('andrew', 'password');
