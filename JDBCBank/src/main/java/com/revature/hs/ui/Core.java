@@ -12,6 +12,8 @@ import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
 import org.mindrot.jbcrypt.BCrypt;
 
+import static com.revature.hs.user.dao.UserService.addUser;
+
 public class Core {
 	private UserService users;
 	private User activeUser;
@@ -104,11 +106,10 @@ public class Core {
 		terminal.println("Welcome, new player! If you're looking for admin credentials, check the readme." +
 		" In this system, only an admin can create another admin");
 		String user = textIO.newStringInputReader().withMinLength(4).withIgnoreCase().read("enter username");
-		String passwordHash = BCrypt.hashpw(textIO.newStringInputReader().withMinLength(5).read("enter password"),
-				BCrypt.gensalt());
+		String password = textIO.newStringInputReader().withMinLength(5).read("enter password");
 
 		try {
-			UserService.getInstance().addUser(new Player(user, passwordHash, "player"));
+			addUser(new Player(user, password, "player"));
 			logger.info("Created new user " + user);
 		} catch (DuplicateUserNameException e) {
 			logger.info("Attempted user creation with duplicate username " + user);

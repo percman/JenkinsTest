@@ -41,7 +41,7 @@ public abstract class User {
 		this.isLocked = isLocked;
 	}
 
-	public String getPassword() {return this.password}
+	public String getPassword() {return this.password;}
 
 	public void setPassword(String pw) {
 		this.password = pw;

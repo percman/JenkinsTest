@@ -50,6 +50,7 @@ public class Player extends User {
 		else {
 			myCards.put(cardName, card);
 		}
+		UserService.addCard(this, card);
 	}
 
 	public int getDust() {

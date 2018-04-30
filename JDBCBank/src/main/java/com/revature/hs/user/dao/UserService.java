@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+import com.revature.hs.card.Card;
 import com.revature.hs.user.Admin;
 import com.revature.hs.user.Player;
 import com.revature.hs.user.User;
@@ -75,7 +76,15 @@ public class UserService {
 		if (isUser(user.getUserName())) {
 			throw new DuplicateUserNameException();
 		}
-		setUser(user);
+		if (user.getRole().equals("player")) {
+			dao.addPlayer((Player) user);
+		} else {
+			dao.addAdmin((Admin) user);
+		}
+	}
+
+	public static void addCard(Player player, Card card) {
+		dao.addCard(player, card);
 	}
 
 	public static void setUser(User user) {

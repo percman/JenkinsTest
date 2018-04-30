@@ -10,5 +10,4 @@ public interface CardDao {
 	List<Card> getAllCards(String rarityString, String cardSetString);
 	Card getCard(String rarityString, String cardSetString);
 	Card getCard(int id);
-	boolean addCard(
 }

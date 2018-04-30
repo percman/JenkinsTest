@@ -9,6 +9,7 @@ import org.beryx.textio.TextTerminal;
 import org.mindrot.jbcrypt.BCrypt;
 import com.revature.hs.user.exceptions.*;
 
+import static com.revature.hs.user.dao.UserService.addUser;
 import static com.revature.hs.user.dao.UserService.getUser;
 import static com.revature.hs.user.dao.UserService.setUser;
 
@@ -29,7 +30,7 @@ public class Admin extends User {
 		String passwordHash = BCrypt.hashpw(textIO.newStringInputReader().withMinLength(6).read("enter password"),
 				BCrypt.gensalt());
 		try {
-			UserService.getInstance().addUser(new Admin(user, passwordHash, "admin"));
+			addUser(new Admin(user, passwordHash, "admin"));
 		} catch (DuplicateUserNameException e) {
 			logger.info("Attempted admin creation with duplicate username " + user);
 			TextTerminal terminal = textIO.getTextTerminal();

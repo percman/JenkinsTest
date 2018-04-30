@@ -14,6 +14,8 @@ public interface UserDao {
 	boolean updatePlayer(Player player);
 	boolean isUser(String username);
 	boolean addCard(Player player, Card card);
+	boolean addPlayer(Player player);
+	boolean addAdmin(Admin admin);
 	String hashPassword(String username, String password);
 	String getStoredHash(String username);
 }

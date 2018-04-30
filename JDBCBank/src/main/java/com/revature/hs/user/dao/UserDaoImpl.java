@@ -171,6 +171,38 @@ public class UserDaoImpl implements UserDao {
 
 
 	@Override
+	public boolean addPlayer(Player player) {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT insert_player(?, ?) FROM DUAL");
+			stmt.setString(1, player.getUserName());
+			stmt.setString(2, player.getPassword());
+			return stmt.executeUpdate() > 0;
+
+		} catch (SQLException e) {
+			logger.error(e.getMessage());
+			logger.error("SQL STATE: " + e.getSQLState());
+			logger.error("ERROR CODE: " + e.getErrorCode());
+		}
+		return false;
+	}
+
+	@Override
+	public boolean addAdmin(Admin admin) {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT insert_admin(?, ?) FROM DUAL");
+			stmt.setString(1, admin.getUserName());
+			stmt.setString(2, admin.getPassword());
+			return stmt.executeUpdate() > 0;
+
+		} catch (SQLException e) {
+			logger.error(e.getMessage());
+			logger.error("SQL STATE: " + e.getSQLState());
+			logger.error("ERROR CODE: " + e.getErrorCode());
+		}
+		return false;
+	}
+
+	@Override
 	public boolean isUser(String username) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT is_user(?) FROM DUAL");
