@@ -21,7 +21,8 @@ Project 1 Requirements
 9. single and factory
 10. tables must be in 3nf
 11. must include startup sql script
+12. use prepared statements for delete in jdbc
 
 due Monday, April 30, 9:00am
 
--- use prepared statements for delete in jdbc
+-- 3 minutes for presentation

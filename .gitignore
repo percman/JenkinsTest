@@ -83,3 +83,6 @@ Thumbs.db
 # examples
 Week_2/examples/*
 Week_2/sql/*
+
+#db passwords
+Week_2/JDBCBank/src/main/resources/db.properties
