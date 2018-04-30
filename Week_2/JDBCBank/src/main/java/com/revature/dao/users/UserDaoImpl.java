@@ -8,12 +8,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.revature.users.User;
 import com.revature.connection.ConnectionUtil;
 import com.revature.exceptions.UserNotFoundException;
+import com.revature.project0.Script;
 
 public class UserDaoImpl implements UserDao {
 
+	private static final Logger logger = Logger.getLogger(Script.class);
 	private static UserDaoImpl instance;
 	
 	private UserDaoImpl() {}
@@ -34,11 +38,11 @@ public class UserDaoImpl implements UserDao {
 			stmt.setString(++index, user.getUsername());
 			stmt.setString(++index, user.getPassword());
 			return stmt.executeUpdate() > 0;
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State:" + sqle.getSQLState());
-			System.err.println("SQL Code:" + sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		return false;
 	}
 
@@ -50,11 +54,11 @@ public class UserDaoImpl implements UserDao {
 			CallableStatement stmt = conn.prepareCall("{CALL lock_user(?)}");
 			stmt.setString(++index, user.getUsername());
 			return stmt.executeUpdate() > 0;
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State:" + sqle.getSQLState());
-			System.err.println("SQL Code:" + sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		
 		throw new UserNotFoundException();
 	}
@@ -67,11 +71,11 @@ public class UserDaoImpl implements UserDao {
 			CallableStatement stmt = conn.prepareCall("{CALL unlock_user(?)}");
 			stmt.setString(++index, user.getUsername());
 			return stmt.executeUpdate() > 0;
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State:" + sqle.getSQLState());
-			System.err.println("SQL Code:" + sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		
 		throw new UserNotFoundException();
 	}
@@ -84,11 +88,11 @@ public class UserDaoImpl implements UserDao {
 			CallableStatement stmt = conn.prepareCall("{CALL approve_user(?)}");
 			stmt.setString(++index, user.getUsername());
 			return stmt.executeUpdate() > 0;
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State:" + sqle.getSQLState());
-			System.err.println("SQL Code:" + sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		
 		throw new UserNotFoundException();
 	}
@@ -104,11 +108,11 @@ public class UserDaoImpl implements UserDao {
 				user.add(new User(rs.getString("user_username"),rs.getString("user_password")));
 			}
 			return user;
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State: "+sqle.getSQLState());
-			System.err.println("Error message: "+sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		return null;
 	}
 
@@ -123,11 +127,11 @@ public class UserDaoImpl implements UserDao {
 			
 			if (rs.next())
 				return new User(rs.getString("user_username"), rs.getString("user_password"), rs.getInt("user_id"));
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State: "+sqle.getSQLState());
-			System.err.println("Error message: "+sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		throw new UserNotFoundException();
 	}
 
@@ -142,11 +146,11 @@ public class UserDaoImpl implements UserDao {
 				int lock = rs.getInt("locked");
 				return rs.getInt("locked") == 1;
 			}
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State: "+sqle.getSQLState());
-			System.err.println("Error message: "+sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		throw new UserNotFoundException();
 	}
 
@@ -160,11 +164,11 @@ public class UserDaoImpl implements UserDao {
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next())
 				return rs.getInt("approved") == 0;
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State: "+sqle.getSQLState());
-			System.err.println("Error message: "+sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		throw new UserNotFoundException();
 	}
 	
@@ -178,11 +182,11 @@ public class UserDaoImpl implements UserDao {
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next())
 				return rs.getString("HASH");
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State:" + sqle.getSQLState());
-			System.err.println("SQL Code:" + sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		return null;
 	}
 	

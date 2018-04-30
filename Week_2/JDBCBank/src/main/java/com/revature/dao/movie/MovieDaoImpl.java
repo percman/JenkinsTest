@@ -8,17 +8,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.revature.connection.ConnectionUtil;
 import com.revature.exceptions.AlreadyHaveMovieException;
 import com.revature.exceptions.MovieNotFoundException;
 import com.revature.exceptions.NoMovieException;
 import com.revature.exceptions.NotRentingMovieException;
+import com.revature.project0.Script;
 import com.revature.users.User;
 
 public class MovieDaoImpl implements MovieDao {
 
-	
-private static MovieDaoImpl instance;
+	private static final Logger logger = Logger.getLogger(Script.class);
+	private static MovieDaoImpl instance;
 	
 	private MovieDaoImpl() {}
 	
@@ -40,11 +43,11 @@ private static MovieDaoImpl instance;
 			while (rs.next())
 				 movie.add(new Movie(rs.getString("title")));
 			return movie;
-		}catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State:" + sqle.getSQLState());
-			System.err.println("SQL Code:" + sqle.getErrorCode());
-		}
+		}catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		return null;
 	}
 	@Override
@@ -57,11 +60,11 @@ private static MovieDaoImpl instance;
 				stmt.setString(++index, user.getUsername());
 				stmt.setString(++index, title);
 				return stmt.executeUpdate() > 0;
-			} catch (SQLException sqle) {
-				System.err.println(sqle.getMessage());
-				System.err.println("SQL State:" + sqle.getSQLState());
-				System.err.println("SQL Code:" + sqle.getErrorCode());
-			}
+			} catch(SQLException sqle) {
+				logger.error(sqle.getMessage(), sqle);
+				logger.error(sqle.getSQLState(),sqle);
+				logger.error(sqle.getErrorCode(),sqle);
+			} 
 		return false;
 	}
 	@Override
@@ -77,11 +80,11 @@ private static MovieDaoImpl instance;
 						stmt.setString(++index, user.getUsername());
 						stmt.setString(++index, title);
 						return stmt.executeUpdate() > 0;
-					} catch (SQLException sqle) {
-						System.err.println(sqle.getMessage());
-						System.err.println("SQL State:" + sqle.getSQLState());
-						System.err.println("SQL Code:" + sqle.getErrorCode());
-					}
+					}catch(SQLException sqle) {
+						logger.error(sqle.getMessage(), sqle);
+						logger.error(sqle.getSQLState(),sqle);
+						logger.error(sqle.getErrorCode(),sqle);
+					} 
 					}
 						throw new NotRentingMovieException();
 					}
@@ -96,11 +99,11 @@ private static MovieDaoImpl instance;
 			while(rs.next()) {
 				System.out.println(rs.getString("title"));
 			}
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State: "+sqle.getSQLState());
-			System.err.println("Error message: "+sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 	}
 
 	@Override
@@ -113,11 +116,11 @@ private static MovieDaoImpl instance;
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next())
 				return new Movie(rs.getString("title"),rs.getInt("movie_id"));
-		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State: "+sqle.getSQLState());
-			System.err.println("Error message: "+sqle.getErrorCode());
-		}
+		} catch(SQLException sqle) {
+			logger.error(sqle.getMessage(), sqle);
+			logger.error(sqle.getSQLState(),sqle);
+			logger.error(sqle.getErrorCode(),sqle);
+		} 
 		throw new MovieNotFoundException();
 	}
 

@@ -130,12 +130,16 @@ public class Script {
 			logger.error(ioe.getMessage(), ioe);
 		} catch (UserNotFoundException unfe) {
 			logger.error(unfe.getMessage(), unfe);
+			System.out.println("Your username was not found");
 		} catch (PasswordIncorrectException pie) {
 			logger.error(pie.getMessage(), pie);
+			System.out.println("Your password incorrect");
 		} catch (LockedAccountException lae) {
 			logger.error(lae.getMessage(), lae);
+			System.out.println("Your account has been currently locked by an admin");
 		} catch (ApprovalPendingException ape) {
 			logger.error(ape.getMessage(), ape);
+			System.out.println("Your account is currently pending approval");
 		} finally {
 			try {
 				read.close();
