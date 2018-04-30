@@ -9,14 +9,13 @@ import java.util.*;
 import static com.revature.hs.card.Rarity.*;
 import static java.lang.Math.min;
 
-public class CardSet {
-	private HashMap<Rarity, List<Card>> cards;
-	private String name;
-	private static final Logger logger = Logger.getLogger(CardSet.class);
+public class PackSim {
+	private static final Logger logger = Logger.getLogger(PackSim.class);
 
 	private EnumeratedDistribution withCommons;
 	private EnumeratedDistribution noCommons;
 	private Random rng;
+	private String name;
 
 	public static final double COMMON_PERCENTAGE = 88.75;
 	public static final double RARE_PERCENTAGE = 8.922;
@@ -27,26 +26,12 @@ public class CardSet {
 	public static final double NC_EPIC_PERCENTAGE = 5.0;
 	public static final double NC_LEGENDARY_PERCENTAGE = 1.0;
 
-	public CardSet(String name) {
-		logger.info("Preparing CardSet " + name);
-		this.name = name;
+	public PackSim() {
+		logger.info("Preparing PackSim ");
 		logger.debug("Generating Rarity Distributions");
 		generateRarityDistributions();
-		logger.debug("Preparing Rarity Lists");
-		prepareRarityLists();
 		logger.debug("Generating RNG");
 		rng = new Random();
-	}
-
-	public void addCard(Card card) {
-		cards.get(card.getRarity()).add(card);
-	}
-
-	private void prepareRarityLists() {
-		cards = new HashMap<>();
-		for (Rarity r: Rarity.values()) {
-			cards.put(r, new LinkedList<>());
-		}
 	}
 
 	private void generateRarityDistributions() {
@@ -63,9 +48,6 @@ public class CardSet {
 		withCommons = new EnumeratedDistribution(weightList);
 	}
 
-	public List<Card> getCardList(Rarity r) {
-		return this.cards.get(r);
-	}
 
 	private void generateNoCommons() {
 		List<Pair<Rarity, Double>> weightList = new LinkedList<>();
@@ -75,14 +57,10 @@ public class CardSet {
 		noCommons = new EnumeratedDistribution(weightList);
 	}
 
-	private Card getCard() {
+	private Card getCard(String setName) {
 		return getCard((Rarity) withCommons.sample());
 	}
 
-	private Card getCard(Rarity r) {
-		List<Card> cardList = cards.get(r);
-		return cardList.get(rng.nextInt(cardList.size()));
-	}
 
 	private Card getRareOrBetter() {
 		return getCard((Rarity) noCommons.sample());

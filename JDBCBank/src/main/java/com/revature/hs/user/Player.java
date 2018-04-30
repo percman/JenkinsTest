@@ -22,18 +22,6 @@ public class Player extends User {
 	private int dust;
 	private boolean isApproved;
 	private static final Logger logger = Logger.getLogger(Player.class);
-	
-	public Player(JSONObject jso) {
-		super(jso);
-		JSONArray ja = jso.getJSONArray("myCards");
-		this.myCards = new HashMap<>();
-		CardService cc = CardService.getInstance();
-		for (Object o: ja) {
-			this.addCard(cc.getCard((String) o));
-		}
-		this.dust = jso.getInt("dust");
-		this.isApproved = jso.getBoolean("isApproved");
-	}
 
 	public Player(String userName, String passwordHash, String role) {
 		super(userName, passwordHash, role);

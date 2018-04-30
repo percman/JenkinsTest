@@ -6,10 +6,6 @@ import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 
 
 import java.io.File;
@@ -21,88 +17,13 @@ import java.util.*;
 
 public class CardService {
     private static CardService cc;
-    private HashMap<String, CardSet> setMap;
+    private HashMap<String, PackSim> setMap;
 	private static final Logger logger = Logger.getLogger(CardService.class);
 	private HashMap<String, Card> allCards;
 
-    public static CardService getInstance() {
-    	if (cc == null) {
-    		cc = new CardService();
-		}
-		return cc;
-	}
 
-	private CardService() {
-		long timer = System.currentTimeMillis();
-		FileReader fr = null;
-		JSONArray js = null;
-		try {
-			fr = new FileReader(new File("src/main/resources/cards.collectible.json"));
-			js = new JSONArray(new JSONTokener(fr));
-		} catch (FileNotFoundException e) {
-			logger.warn("Couldn't find cards.collectible.json");
-		} finally {
-			try {
-				fr.close();
-			} catch (IOException ioe){
-				logger.warn(ioe.getMessage());
-			}
-		}
-		initializeCardDB(js);
-		logger.info("CardService created, took " + ((System.currentTimeMillis() - timer) / 1000.0) + "seconds");
-	}
+	public static Deque<Card> openPack(String set) {
 
-	public static void refresh() {
-    	cc = new CardService();
-	}
-
-	// Grabs the Hearthstone card information from a file.
-	// In the interest of readability, know that a release group of cards is called a "set"
-	private void initializeCardDB(JSONArray jsa) {
-		JSONObject js;
-		String setName = null;
-		Card card;
-
-		setMap = new HashMap<>();
-		allCards = new HashMap<>();
-
-    	for (Object o: jsa) {
-			js = (JSONObject) o;
-			try {
-				setName = convertSetName(js.getString("set"));
-			} catch (JSONException jse) {
-				logger.warn("Couldn't get set of card " + js.getString("name"));
-				System.exit(1);
-			}
-			if ("Non-expansion".equals(setName)) {
-				continue;
-			}
-			if (!setMap.keySet().contains(setName)) {
-				setMap.put(setName, new CardSet(setName));
-			}
-
-			try {
-				card = new Card(js);
-				setMap.get(setName).addCard(card);
-				allCards.put(card.getName(), card);
-			} catch (RarityNotFoundException e) {
-				try {
-					logger.warn(
-							js.getString("name") + " has invalid rarity \"" + js.getString("rarity") + "\"");
-
-				} catch (JSONException je) {
-					logger.warn("Error when trying to report invalid rarity");
-				}
-			}
-		}
-	}
-
-	public Deque<Card> openPack(String set) {
-		return setMap.get(set).openPack();
-	}
-
-	public Card getCard(String cardName) {
-		return allCards.get(cardName);
 	}
 
 	public List<Card> getCardList(SetOptions set, Rarity rarity) {

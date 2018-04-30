@@ -16,10 +16,10 @@ import com.revature.hs.user.exceptions.*;
 
 
 public class UserService {
-	private JSONObject DB;
 	private static UserService instance = null;
 	
 	private static final Logger logger = Logger.getLogger(UserService.class);
+	private static UserDao dao;
 	
 	public static UserService getInstance() {
 		if (instance == null) {
@@ -45,64 +45,12 @@ public class UserService {
 		return us;
 	}
 
-	public Deque<User> getUsers() {
-		Deque<User> dd = new ArrayDeque<>();
-		JSONObject jso;
-		String role = null;
-
-		for (String s: DB.keySet()) {
-			jso = DB.getJSONObject(s);
-			role = jso.getString("role");
-			if (role.equals("admin")) {
-				dd.add(new Admin(jso));
-			}
-			else {
-				dd.add(new Player(jso));
-			}
-		}
-
-		return dd;
-	}
-	
-	
-	private UserService() {
-		long timer = System.currentTimeMillis();
-		FileReader fr = null;
-		try {
-			fr = new FileReader(new File("src/main/resources/users.json"));
-			DB = new JSONObject(new JSONTokener(fr));
-		} catch (FileNotFoundException fnfe) {
-			logger.warn("Couldn't find users.json", fnfe);
-		} catch (JSONException jse) {
-			logger.warn("Invalid JSON", jse);
-		} finally {
-			try {
-				fr.close();
-		} catch (IOException ioe){
-			logger.warn(ioe.getMessage());
-		}
-		}
-		logger.info("UserService created, took " + ((System.currentTimeMillis() - timer) / 1000.0) + " seconds" );
-	}
-	
 	private boolean isUser(String username) {
-		try {
-			DB.get(username);
-			return true;
-		} catch (JSONException e) {
-			return false;
-		}
+		return dao.isUser(username);
 	}
 
-	public User getUser(String username) throws NoSuchUserException {
-		JSONObject jso;
-		try {
-			jso = DB.getJSONObject(username);
-		} catch (JSONException e) {
-			logger.warn("User \"" + username +"\"doesn't exist");
-			throw new NoSuchUserException("User \"" + username +"\"doesn't exist");
-		}
-		String role = jso.getString("role");
+	public static User getUser(String username) throws NoSuchUserException {
+
 		if (role.equals("player")) {
 			return new Player(jso);
 		}
@@ -118,33 +66,10 @@ public class UserService {
 		setUser(user);
 	}
 
+
 	public void setUser(User user) {
-		DB.put(user.getUserName(), user.toJSONObject());
-		writeToFile();
+		dao.setUser(user);
 	}
 
 
-	public void removeUser(String username) throws NoSuchUserException {
-		if (isUser(username)) {
-			DB.remove(username);
-			writeToFile();
-		}
-		throw new NoSuchUserException();
-	}
-
-	private void writeToFile() {
-		FileWriter fw = null;
-		try {
-			fw = new FileWriter(new File("src/main/resources/users.json"));
-			fw.write(DB.toString());
-		} catch (IOException e) {
-			logger.warn("Couldn't write userDB to file");
-		} finally {
-			try {
-				fw.close();
-			} catch (IOException e) {
-				logger.warn("Failed to close FileWriter after printing userDB to file");
-			}
-		}
-	}
 }

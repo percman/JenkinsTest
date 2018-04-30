@@ -11,9 +11,9 @@ public abstract class User {
 	private static final Logger logger = Logger.getLogger(User.class);
 	
 	
-	public User(String userName, String passwordHash, String role) {
+	public User(String userName, String password, String role) {
 		this.userName = userName;
-		this.passwordHash = passwordHash;
+		this.password = password;
 		this.isLocked = false;
 		this.role = role;
 	}
