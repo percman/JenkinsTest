@@ -155,6 +155,7 @@ END;
 
 BEGIN
     insert_admin('admin', 'admins');
+    insert_player('walkindude', 'walkinwalkin');
 END;
 /
 
