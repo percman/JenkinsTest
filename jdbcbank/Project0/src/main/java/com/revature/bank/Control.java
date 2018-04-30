@@ -122,6 +122,7 @@ public class Control {
 		System.out.print("Create password (no spaces allowed: ");
 		String password = sc.next();
 		Admin first = new Admin (username, password);
+		AdminService.insertAdmin(first);
 		AdminService.approvePerson(first.getUsername());
 		current = first;
 	}
@@ -191,6 +192,11 @@ public class Control {
 						System.out.println("How much do you wish to deposit?");
 						try {
 							double depositAmount = sc.nextDouble();
+							double centCheck = depositAmount*1000;
+							if(centCheck%10!=0) {
+								System.out.println("Only enter to the hundredths place to eliminate rounding errors.");
+								break;
+							}
 							UserService.deposit((User) current, depositAmount);
 						}catch(InputMismatchException ime) {
 							ime.printStackTrace();
@@ -203,6 +209,11 @@ public class Control {
 						System.out.println("How much do you wish to withdraw?");
 						try {
 							double withdrawAmount = sc.nextDouble();
+							double centCheck = withdrawAmount*1000;
+							if(centCheck%10!=0) {
+								System.out.println("Only enter to the hundredths place to eliminate rounding errors.");
+								break;
+							}
 							UserService.withdraw((User) current, withdrawAmount);
 						}catch(InputMismatchException ime) {
 							ime.printStackTrace();
