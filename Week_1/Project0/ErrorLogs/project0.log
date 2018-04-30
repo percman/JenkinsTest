@@ -3419,3 +3419,10 @@ ORA-06512: at line 1
 2018-04-30 06:10:44 WARN  LogHere:27 - 
 2018-04-30 06:10:55 WARN  LogHere:27 - 
 2018-04-30 06:12:00 WARN  LogHere:27 - 
+2018-04-30 06:22:22 WARN  LogHere:27 - For input string: "lfdlka"
+2018-04-30 06:22:31 WARN  LogHere:27 - 
+2018-04-30 06:22:45 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:22:46 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:22:46 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:22:47 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:22:47 WARN  LogHere:27 - Invalid Choice Select
