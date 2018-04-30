@@ -147,7 +147,7 @@ public class Admin extends Account implements Serializable, Menu {
 							index++;
 							break;
 						default:
-							System.out.println("User will remain locked");
+							System.out.println("User will remain unlocked");
 							index++;
 							break;
 					}

@@ -6,6 +6,7 @@ import java.util.Scanner;
 import org.apache.log4j.Logger;
 
 import com.revature.exception.InvalidInputException;
+import com.revature.exception.UserNotFoundException;
 import com.revature.model.Account;
 import com.revature.model.AccountFactory;
 import com.revature.model.Menu;
@@ -59,8 +60,9 @@ public class Login {
 				System.out.print("Enter your password: ");
 				String pword = scan.nextLine();
 				account = CredentialsService.login(new Account(name,pword));	
-				if(account == null)
-					System.out.println("Invalid username/password");
+				if(account == null) {
+					throw new UserNotFoundException();
+				}
 				else if(AccountAccessService.isAdmin(account)==true) {
 					Menu admin = AccountFactory.createAccount(account,true);
 					admin.Home(admin);
@@ -79,7 +81,11 @@ public class Login {
 			}catch(InvalidInputException iie) {
 				System.err.println("Invalid input: "+iie.getMessage());
 				logger.warn(iie.getMessage());
-			}finally {
+			}catch(UserNotFoundException unf) {
+				System.err.println("That username does not exist");
+				logger.warn(unf.getMessage());
+			}
+			finally {
 				menu();
 			}
 				
@@ -126,11 +132,9 @@ public class Login {
 				}
 			}catch(NoSuchElementException e) {
 				logger.warn("There is no Scanner!", e);
-			}catch(Exception e) {
-				logger.warn("That file does not exists", e);
 			}finally {
 					menu();
 			}
 		}
-
+		
 }
