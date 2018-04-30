@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.bank.model.User;
@@ -25,7 +26,19 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
+		List<User> users = new ArrayList<>();
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM user_table ");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				users.add(new User(rs.getString("user_firstname"), rs.getString("user_lastname"), rs.getInt("user_approved"), rs.getInt("user_locked")));
+			}
+			return users;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State: " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+		}
 		return null;
 	}
 

@@ -1,0 +1,20 @@
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+import com.bank.model.Product;
+import com.bank.model.User;
+import com.bank.service.UserService;
+
+public class junit {
+
+	User user = new User();
+	Product product = new Product();
+	
+	@Test
+	public void test() {
+		user = new User("Firstname", "Lastname", "Password");
+		assertTrue(UserService.insertUser(user));
+	}
+
+}

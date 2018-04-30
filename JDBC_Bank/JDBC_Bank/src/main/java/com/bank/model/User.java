@@ -18,6 +18,13 @@ public class User implements Serializable{
 		this.last_name = last_name;
 		this.password = password;
 	}
+	public User(String first_name, String last_name, int approved, int locked) {
+		super();
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.approved = approved;
+		this.locked = locked;
+	}
 	
 	public User(String first_name, String last_name, String password, int approved, int locked) {
 		super();

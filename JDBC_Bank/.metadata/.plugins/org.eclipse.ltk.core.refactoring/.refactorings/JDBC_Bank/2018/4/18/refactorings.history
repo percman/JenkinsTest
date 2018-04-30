@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.bank.dao.UserProductIJunctionDao.java&apos; to &apos;UserProductJunctionDao.java&apos;&#x0D;&#x0A;- Original project: &apos;JDBC_Bank&apos;&#x0D;&#x0A;- Original element: &apos;com.bank.dao.UserProductIJunctionDao.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.bank.dao.UserProductJunctionDao.java&apos;" description="Rename compilation unit &apos;UserProductIJunctionDao.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java&lt;com.bank.dao{UserProductIJunctionDao.java" name="UserProductJunctionDao.java" references="false" stamp="1525042564964" version="1.0"/>
+</session>

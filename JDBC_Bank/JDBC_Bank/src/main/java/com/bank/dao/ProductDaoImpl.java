@@ -5,9 +5,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.bank.model.Product;
+import com.bank.model.User;
 import com.bank.util.ConnectionUtil;
 
 public class ProductDaoImpl implements ProductDao{
@@ -25,7 +27,19 @@ public class ProductDaoImpl implements ProductDao{
 
 	@Override
 	public List<Product> getAllProducts() {
-		// TODO Auto-generated method stub
+		List<Product> products = new ArrayList<>();
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM product ");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				products.add(new Product(rs.getString("product_name"), rs.getDouble("product_price"),rs.getInt("product_quantity")));
+			}
+			return products;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State: " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+		}
 		return null;
 	}
 

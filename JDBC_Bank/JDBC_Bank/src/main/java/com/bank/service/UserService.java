@@ -1,5 +1,7 @@
 package com.bank.service;
 
+import java.util.List;
+
 import com.bank.dao.UserDao;
 import com.bank.dao.UserDaoImpl;
 import com.bank.model.User;
@@ -16,6 +18,10 @@ private static UserDao dao = UserDaoImpl.getInstance();
 	
 	public static boolean insertUser(User user) {
 		return dao.insertUser(user);
+	}
+	
+	public static List<User> getUsers() {
+		return dao.getAllUsers();
 	}
 	
 	public static User login(User user) {
