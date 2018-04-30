@@ -86,6 +86,23 @@ public class ProductDaoImpl implements ProductDao{
 		return false;
 	}
 	
+	public int getProductId(Product product) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT product_id FROM product WHERE product_name = ?");
+			stmt.setString(++index, product.getProduct_name());
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt("product_id");
+			}
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State: " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+		}
+		return 0;
+		}
+	
 	
 	
 }

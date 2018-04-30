@@ -10,6 +10,11 @@ public class User implements Serializable{
 	private String password;
 	private int approved;
 	private int locked;
+	private int id;
+	
+	public User(int id) {
+		this.id = id;
+	}
 	
 	public User() {}
 	
@@ -33,6 +38,15 @@ public class User implements Serializable{
 		this.password = password;
 		this.approved = approved;
 		this.locked = locked;
+	}
+
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getFirst_name() {

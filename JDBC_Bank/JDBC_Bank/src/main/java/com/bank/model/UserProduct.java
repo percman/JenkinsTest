@@ -11,6 +11,10 @@ public class UserProduct implements Serializable{
 	
 	public UserProduct() {}
 
+	public UserProduct(int user_id, int product_id) {
+		this.user_id = user_id;
+		this.product_id = product_id;
+	}
 	public UserProduct(int cart_id, int user_id, int product_id) {
 		super();
 		this.cart_id = cart_id;

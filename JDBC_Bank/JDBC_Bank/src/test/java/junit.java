@@ -1,9 +1,11 @@
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 import com.bank.model.Product;
 import com.bank.model.User;
+import com.bank.service.JunctionService;
 import com.bank.service.ProductService;
 import com.bank.service.UserService;
 
@@ -25,10 +27,11 @@ public class junit {
 	}
 	
 	@Test
-	public void testProductRetrieval(){
-		for (Product p : ProductService.getAllProducts()) {
-			System.out.println(p);
-		}		
+	public void testJunctionAddToCart() {
+		User user3 = new User("Samantha", "King", "Seaking");
+		UserService.insertUser(user3);
+		Product product3 = new Product("Turtles", .99, 20);
+		ProductService.insertProduct(product3);
+		assertTrue(JunctionService.addToCart(user3,product3));
 	}
-
 }

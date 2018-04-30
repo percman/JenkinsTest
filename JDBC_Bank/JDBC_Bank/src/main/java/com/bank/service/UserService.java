@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.bank.dao.UserDao;
 import com.bank.dao.UserDaoImpl;
+import com.bank.model.Product;
 import com.bank.model.User;
 
 public class UserService {
@@ -35,5 +36,8 @@ private static UserDao dao = UserDaoImpl.getInstance();
 		return null;
 	}
 	
+	public static int getUserId(User user) {
+		return dao.getUserId(user);
+	}
 	
 }

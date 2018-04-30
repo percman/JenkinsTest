@@ -1,6 +1,8 @@
 package com.bank.dao;
 
 import java.util.List;
+
+import com.bank.model.Product;
 import com.bank.model.User;
 
 public interface UserDao {
@@ -9,4 +11,6 @@ public interface UserDao {
 	User getUser(String firstname, String lastname);
 	boolean insertUser(User user);
 	String getPasswordHash(User user);
+	int getUserId(User user);
+	int getProductId(Product product);
 }
