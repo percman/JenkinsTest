@@ -30,8 +30,8 @@ public class MenuDaoImpl implements MenuDao{
 			PreparedStatement stmt = conn.prepareStatement("Select COUNT(*) AS answer FROM username WHERE username = ? ");
 			stmt.setString(++index, newUsername);
 			ResultSet rs = stmt.executeQuery();
-			if (rs.getInt("answer") > 0) {
-				return true;
+			if (rs.next()) {
+				return rs.getInt("answer") > 0;
 			}
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());
@@ -74,9 +74,11 @@ public class MenuDaoImpl implements MenuDao{
 	}
 
 	@Override
-	public String getType() {
+	public String getType(String username) {
+		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("Select get_type AS ye_ol_user_type FROM dual ");
+			PreparedStatement stmt = conn.prepareStatement("Select get_type(?) AS ye_ol_user_type FROM dual ");
+			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				return rs.getString("ye_ol_user_type");

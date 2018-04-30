@@ -21,8 +21,8 @@ public class MenuService {
 		return dao.principalExists();
 	}
 	
-	public static String getType() {
-		return dao.getType();
+	public static String getType(String username) {
+		return dao.getType(username);
 	}
 
 }

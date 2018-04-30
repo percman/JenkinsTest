@@ -213,3 +213,22 @@ ORA-06512: at line 1
 2018-04-29 19:13:28 WARN  LogThis:34 - Invalid column name
 2018-04-29 19:13:28 WARN  LogThis:34 - SQL state: 99999
 2018-04-29 19:13:28 WARN  LogThis:34 - Error Code: 17006
+2018-04-29 20:51:42 WARN  LogThis:34 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_USERNAME' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-04-29 20:51:42 WARN  LogThis:34 - SQL state: 65000
+2018-04-29 20:51:42 WARN  LogThis:34 - Error Code: 6550
+2018-04-29 20:56:09 WARN  LogThis:34 - ResultSet.next was not called
+2018-04-29 20:56:09 WARN  LogThis:34 - SQL state: 99999
+2018-04-29 20:56:09 WARN  LogThis:34 - Error Code: 17014
+2018-04-29 20:56:09 WARN  LogThis:34 - ResultSet.next was not called
+2018-04-29 20:56:09 WARN  LogThis:34 - SQL state: 99999
+2018-04-29 20:56:09 WARN  LogThis:34 - Error Code: 17014
+2018-04-29 20:58:08 WARN  LogThis:34 - ORA-00001: unique constraint (JDBCBANK_USER.UK_USERNAME) violated
+ORA-06512: at "JDBCBANK_USER.INSERT_USERNAME", line 4
+ORA-06512: at line 1
+
+2018-04-29 20:58:08 WARN  LogThis:34 - SQL state: 23000
+2018-04-29 20:58:08 WARN  LogThis:34 - Error Code: 1

@@ -8,5 +8,5 @@ public interface MenuDao {
 	
 	int principalExists();
 	
-	String getType();
+	String getType(String username);
 }
