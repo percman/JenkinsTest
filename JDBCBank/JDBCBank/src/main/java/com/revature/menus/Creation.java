@@ -1,22 +1,23 @@
-package com.revature.users;
+package com.revature.menus;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-import com.revature.menus.PrincipalMenu;
-import com.revature.menus.StartMenu;
 import com.revature.service.MenuService;
 import com.revature.service.PrincipalService;
 import com.revature.service.StudentService;
 import com.revature.service.TeacherService;
-import com.revature.singletons.AccountData;
 import com.revature.singletons.LogThis;
+import com.revature.users.Principal;
+import com.revature.users.Student;
+import com.revature.users.Teacher;
 
 public class Creation {
 
 	private static Scanner sc = new Scanner(System.in);
 
 	public static void createStudent() {
+		System.out.println();
 		LogThis.info("Create a New Student Profile");
 
 		Student student = new Student();
@@ -30,17 +31,17 @@ public class Creation {
 
 			System.out.println("Please choose a username ");
 			System.out.println("You will not be able to change this later and must be unique to you");
-			String username = sc.next();
+			String username = sc.nextLine();
 			
 			while(MenuService.usernameTaken(username)) {
 				System.out.println("That username has already been taken, please choose a different one");
-				username = sc.next();
+				username = sc.nextLine();
 			}
 			
 			student.setUsername(username);
 
 			System.out.println("Please enter a password");
-			String password = sc.next();
+			String password = sc.nextLine();
 			student.setPassword(password);
 
 			MenuService.insertUsername(username, "student");
@@ -59,6 +60,7 @@ public class Creation {
 	}
 
 	public static void createTeacher() {
+		System.out.println();
 		LogThis.info("Create a New Teacher Profile");
 
 		Teacher teacher = new Teacher();
@@ -71,17 +73,17 @@ public class Creation {
 			teacher.setLastname(sc.nextLine());
 
 			System.out.println("Please choose a username");
-			String username = sc.next();
+			String username = sc.nextLine();
 			
 			while(MenuService.usernameTaken(username)) {
 				System.out.println("That username has already been taken, please choose a different one");
-				username = sc.next();
+				username = sc.nextLine();
 			}
 
 			teacher.setUsername(username);
 
 			System.out.println("Please enter a password");
-			String password = sc.next();
+			String password = sc.nextLine();
 			teacher.setPassword(password);
 
 			MenuService.insertUsername(username, "teacher");
@@ -100,6 +102,7 @@ public class Creation {
 	}
 
 	public static Principal createPrincipal() {
+		System.out.println();
 		LogThis.info("Create Principal");
 
 		Principal principal = new Principal();
@@ -112,7 +115,7 @@ public class Creation {
 			principal.setLastname(sc.nextLine());
 
 			System.out.println("Please choose a username");
-			String username = sc.next();
+			String username = sc.nextLine();
 			
 			while(MenuService.usernameTaken(username)) {
 				System.out.println("That username has already been taken, please choose a different one");
@@ -122,8 +125,7 @@ public class Creation {
 			principal.setUsername(username);
 
 			System.out.println("Please enter a password");
-			principal.setPassword(sc.next());
-			String password = principal.getPassword();
+			principal.setPassword(sc.nextLine());
 
 			MenuService.insertUsername(username, "principal");
 

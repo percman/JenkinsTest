@@ -9,4 +9,6 @@ public interface MenuDao {
 	int principalExists();
 	
 	String getType(String username);
+	
+	
 }

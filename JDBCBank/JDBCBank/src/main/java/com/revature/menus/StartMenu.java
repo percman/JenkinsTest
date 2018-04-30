@@ -8,7 +8,6 @@ import com.revature.exceptions.InvalidChoiceException;
 import com.revature.exceptions.InvalidUserTypeException;
 import com.revature.service.MenuService;
 import com.revature.singletons.LogThis;
-import com.revature.users.Creation;
 import com.revature.users.Principal;
 
 public class StartMenu {
@@ -75,7 +74,7 @@ public class StartMenu {
 	}
 
 	private static void login() {
-
+		System.out.println();
 		LogThis.info("Login Menu");
 
 		String username;
@@ -92,7 +91,7 @@ public class StartMenu {
 			type = MenuService.getType(username);
 			
 			LoginFactory.chooseLogin(username, password, type);
-			
+			return;
 			
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn(nsee.getMessage());

@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 import com.revature.singletons.ConnectionUtil;
 import com.revature.singletons.LogThis;
-import com.revature.users.Person;
 import com.revature.users.Student;
 
 public class StudentDaoImpl implements StudentDao {
@@ -118,6 +117,41 @@ public class StudentDaoImpl implements StudentDao {
 			LogThis.warn("Error Code: " + sqle.getErrorCode());
 		}
 		return false;
+	}
+
+	@Override
+	public int getApproved(String username) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("Select s_approved FROM student WHERE s_username = ? ");
+			stmt.setString(++index, username);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt("s_approved");
+			}
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
+		return 0;
+	}
+
+	@Override
+	public int getLocked(String username) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("Select s_locked FROM student WHERE s_username = ? ");
+			stmt.setString(++index, username);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt("s_locked");			}
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
+		return 0;
 	}
 
 }

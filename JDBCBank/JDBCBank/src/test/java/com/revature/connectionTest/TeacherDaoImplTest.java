@@ -1,17 +1,14 @@
 package com.revature.connectionTest;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -160,6 +157,16 @@ public class TeacherDaoImplTest {
 	@Test
 	public void testGetLocked() {
 		assertTrue(locked.containsAll(dao.getLockedStudents()) && dao.getLockedStudents().containsAll(locked));
+	}
+	
+	@Test
+	public void testIfApproved() {
+		assertTrue(dao.getApproved(teacher.getUsername()) == 0);
+	}
+	
+	@Test
+	public void testIfLocked() {
+		assertTrue(dao.getLocked(teacher.getUsername()) == 0);
 	}
 
 }

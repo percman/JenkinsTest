@@ -8,7 +8,6 @@ import java.util.Scanner;
 import com.revature.exceptions.InvalidChoiceException;
 import com.revature.service.PrincipalService;
 import com.revature.service.TeacherService;
-import com.revature.singletons.AccountData;
 import com.revature.singletons.LogThis;
 import com.revature.users.Person;
 import com.revature.users.Principal;
@@ -20,6 +19,7 @@ public class PrincipalMenu {
 
 
 	public static void principalMenu(Principal principal) {
+		System.out.println();
 		LogThis.info("Principal Menu");
 		
 		System.out.println("Your options are:");
@@ -68,14 +68,16 @@ public class PrincipalMenu {
 
 	// Approve teacher
 	private static void approveTeacher(Principal principal) {
+		System.out.println();
 		LogThis.info("Approve Teacher Menu");
 
 		try {
 			System.out.println("The following Teachers need to be approved:");
-			List<Teacher> approve = PrincipalService.getUnapprovedTeachers();
-			for (Teacher t : approve) {
+			List<Teacher> unapproved = PrincipalService.getUnapprovedTeachers();
+			for (Teacher t : unapproved) {
 					System.out.println(t.getFirstname() + " " + t.getLastname() + ", username: " + t.getUsername());
 			}
+			System.out.println();
 			System.out.println("1. Approve All");
 			System.out.println("2. Approve a specific teacher");
 			System.out.println("0. Return to Principal Menu");
@@ -87,12 +89,13 @@ public class PrincipalMenu {
 				case 1:
 					PrincipalService.approveAllTeachers();
 					LogThis.info("All teachers were approved");
+					approveTeacher(principal);
 					return;
 				case 2:
 					System.out.println("What is the username of the teacher you would like to approve?");
 					String username = sc.next();
 					PrincipalService.approveTeacher(username);
-					System.out.println(TeacherService.getTeacher(username).getFirstname() + " " 
+					LogThis.info(TeacherService.getTeacher(username).getFirstname() + " " 
 							+ TeacherService.getTeacher(username).getLastname() + " was approved");
 					approveTeacher(principal);
 					return;
@@ -122,16 +125,16 @@ public class PrincipalMenu {
 
 	// Lock teacher
 	private static void lockTeacher(Principal principal) {
+		System.out.println();
 		LogThis.info("Lock Teacher Menu");
 
 		try {
 			System.out.println("The following Teachers are unlocked:");
-
-			for (Person p : ad.values()) {
-				if (p.getType() == "teacher" && p.isLocked()) {
-					System.out.println(p.getFirstname());
-				}
+			List<Teacher> unlocked = PrincipalService.getUnlockedTeachers();
+			for (Teacher t : unlocked) {
+					System.out.println(t.getFirstname() + " " + t.getLastname() + ", username: " + t.getUsername());
 			}
+			System.out.println();
 			System.out.println("1. Lock a specific teacher");
 			System.out.println("0. Return to Principal Menu");
 
@@ -140,15 +143,11 @@ public class PrincipalMenu {
 			while (true) {
 				switch (choice) {
 				case 1:
-					System.out.println("What is the name of the teacher you would like to lock?");
-					String name = sc.next();
-					for (Person p : ad.values()) {
-						if (p.getFirstname() == name && !p.isLocked()) {
-							p.setLocked(true);
-							LogThis.info("The teacher account for " + name + " was locked.");
-							break;
-						}
-					}
+					System.out.println("What is the username of the teacher you would like to lock?");
+					String username = sc.next();
+					PrincipalService.lockTeacher(username);
+					LogThis.info(TeacherService.getTeacher(username).getFirstname() + " " 
+							+ TeacherService.getTeacher(username).getLastname() + " was locked");
 					lockTeacher(principal);
 					return;
 				case 0:
@@ -178,16 +177,16 @@ public class PrincipalMenu {
 
 	// Unlock teacher
 	private static void unlockTeacher(Principal principal) {
+		System.out.println();
 		LogThis.info("Unlock Teacher Menu");
 
 		try {
 			System.out.println("The following Teachers need to be unlocked:");
-
-			for (Person p : ad.values()) {
-				if (p.getType() == "teacher" && p.isLocked()) {
-					System.out.println(p.getFirstname() + " " + p.getLastname());
-				}
+			List<Teacher> locked = PrincipalService.getUnlockedTeachers();
+			for (Teacher t : locked) {
+				System.out.println(t.getFirstname() + " " + t.getLastname() + ", username: " + t.getUsername());
 			}
+			System.out.println();
 			System.out.println("1. Unlock All");
 			System.out.println("2. Unlock a specific teacher");
 			System.out.println("0. Return to Principal Menu");
@@ -197,23 +196,16 @@ public class PrincipalMenu {
 			while (true) {
 				switch (choice) {
 				case 1:
-					for (Person p : ad.values()) {
-						if (p.getType() == "teacher" && p.isLocked()) {
-							p.setLocked(false);
-						}
-					}
+					PrincipalService.approveAllTeachers();
 					LogThis.info("All teachers were unlocked");
 					unlockTeacher(principal);
 					return;
 				case 2:
-					System.out.println("What is the first name of the teacher you would like to unlock?");
-					String firstname = sc.next();
-					for (Person p : ad.values()) {
-						if (p.getFirstname() == firstname && p.isLocked()) {
-							p.setLocked(false);
-							break;
-						}
-					}
+					System.out.println("What is the username of the teacher you would like to unlock?");
+					String username = sc.next();
+					PrincipalService.unlockTeacher(username);
+					LogThis.info(TeacherService.getTeacher(username).getFirstname() + " " 
+							+ TeacherService.getTeacher(username).getLastname() + " was unlocked");
 					unlockTeacher(principal);
 					return;
 				case 0:

@@ -4,6 +4,8 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import com.revature.exceptions.InvalidChoiceException;
+import com.revature.service.StudentService;
 import com.revature.singletons.LogThis;
 import com.revature.transactions.EarnCoins;
 import com.revature.users.Student;
@@ -13,6 +15,7 @@ public class EarnCoinsMenu {
 	private static Scanner sc = new Scanner(System.in);
 
 	public static void earnCoinsMenu(Student student) {
+		System.out.println();
 		LogThis.info("Get Coins Menu");
 		System.out.println("You have " + student.getCoins() + " coins!");
 		System.out.println("You earn more coins by correctly answering arithmetic problems.");
@@ -34,6 +37,7 @@ public class EarnCoinsMenu {
 				switch (choice) {
 				case 1:
 					solveAddition(student);
+					
 					return;
 				case 2:
 					if(student.isBoughtSubtraction() == 1) {
@@ -99,22 +103,12 @@ public class EarnCoinsMenu {
 					StudentMenu.studentMenu(student);
 					return;
 				default:
-					LogThis.info("Invalid Choice");
-					System.out.println("Your options are:");
-					System.out.println("1. Solve an addition problem");
-					if(student.isBoughtSubtraction() == 1) {
-						System.out.println("2. Solve a subtraction problem");
-					}
-					if(student.isBoughtMultiplication() == 1) {
-						System.out.println("3. Solve a multiplication problem");
-					}
-					if (student.isBoughtDivision() == 1) {
-						System.out.println("4. Solve a division problem");
-					}
-					System.out.println("0. Return to Student Menu");
-					break;
+					throw new InvalidChoiceException();
 				}
 			}
+		} catch (InvalidChoiceException ice) {
+			LogThis.warn(ice.getMessage());
+			earnCoinsMenu(student);
 		} catch (InputMismatchException ime) {
 			LogThis.warn("InputMismatchException in Earn Coins Menu " + ime.getMessage());
 			earnCoinsMenu(student);
@@ -138,6 +132,7 @@ public class EarnCoinsMenu {
 			System.out.println("Sorry, your answer was incorrect.");
 			System.out.println("You did not earn a coin, try again.");
 		}
+		StudentService.updateStudent(student);
 		earnCoinsMenu(student);
 	}
 	
@@ -150,6 +145,7 @@ public class EarnCoinsMenu {
 			System.out.println("Sorry, your answer was incorrect.");
 			System.out.println("You did not earn a coin, try again.");
 		}
+		StudentService.updateStudent(student);
 		earnCoinsMenu(student);
 	}
 
@@ -162,6 +158,7 @@ public class EarnCoinsMenu {
 			System.out.println("Sorry, your answer was incorrect.");
 			System.out.println("You did not earn a coin, try again.");
 		}
+		StudentService.updateStudent(student);
 		earnCoinsMenu(student);
 	}
 
@@ -174,6 +171,7 @@ public class EarnCoinsMenu {
 			System.out.println("Sorry, your answer was incorrect.");
 			System.out.println("You did not earn a coin, try again.");
 		}
+		StudentService.updateStudent(student);
 		earnCoinsMenu(student);
 	}
 

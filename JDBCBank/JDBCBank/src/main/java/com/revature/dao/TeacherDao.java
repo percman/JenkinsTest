@@ -2,7 +2,6 @@ package com.revature.dao;
 
 import java.util.List;
 
-import com.revature.users.Person;
 import com.revature.users.Student;
 import com.revature.users.Teacher;
 
@@ -24,5 +23,8 @@ public interface TeacherDao {
 	boolean unlockAllStudent();
 	boolean unlockStudent(String username);
 	boolean deleteStudent(String username);
+	
+	int getApproved(String username);
+	int getLocked(String username);
 	
 }

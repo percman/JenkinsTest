@@ -19,6 +19,7 @@ public class LoginFactory {
 				try {
 				Student student = StudentService.login(new Student(username, password));
 				StudentMenu.studentMenu(student);
+				return;
 				} catch (InvalidLoginException ile) {
 					LogThis.warn(ile.getMessage());
 					StartMenu.startMenu();
@@ -27,6 +28,7 @@ public class LoginFactory {
 				try {
 				Teacher teacher = TeacherService.login(new Teacher(username, password));
 				TeacherMenu.teacherMenu(teacher);
+				return;
 				} catch (InvalidLoginException ile) {
 					LogThis.warn(ile.getMessage());
 					StartMenu.startMenu();
@@ -35,6 +37,7 @@ public class LoginFactory {
 				try {
 				Principal principal = PrincipalService.login(new Principal(username, password));
 				PrincipalMenu.principalMenu(principal);
+				return;
 				} catch (InvalidLoginException ile) {
 					LogThis.warn(ile.getMessage());
 					StartMenu.startMenu();

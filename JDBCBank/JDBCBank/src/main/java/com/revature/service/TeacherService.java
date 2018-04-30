@@ -79,6 +79,14 @@ public class TeacherService {
 	public static boolean deleteStudent(String username) {
 		return dao.deleteStudent(username);
 	}
+	
+	public static int getApproved(String username) {
+		return dao.getApproved(username);
+	}
+	
+	public static int getLocked(String username) {
+		return dao.getLocked(username);
+	}
 
 	
 

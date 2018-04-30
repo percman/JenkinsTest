@@ -10,5 +10,7 @@ public interface StudentDao {
 	String getPasswordHash(Student student);
 		
 	boolean deleteStudent(String username);
+	int getApproved(String username);
+	int getLocked(String username);
 
 }

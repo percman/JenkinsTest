@@ -20,6 +20,20 @@ GRANT CREATE ANY PROCEDURE TO jdbcbank_user;
 Run the following code in the new jdbcbank_user connection
 **************************************************************/
 
+-- Create the sequences for teacher_id and student_id
+-- principal_id does not need a sequence because there is only one principal
+CREATE SEQUENCE teacher_id_sequence
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+CREATE SEQUENCE student_id_sequence
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+
+
 -- Drop tables if they have been created before
 DROP TABLE principal;
 DROP TABLE teacher;
@@ -84,17 +98,6 @@ CREATE TABLE username (
 );
 
 
--- Create the sequences for teacher_id and student_id
--- principal_id does not need a sequence because there is only one principal
-CREATE SEQUENCE teacher_id_sequence
-    START WITH 1
-    INCREMENT BY 1
-    NOCACHE;
-
-CREATE SEQUENCE student_id_sequence
-    START WITH 1
-    INCREMENT BY 1
-    NOCACHE;
 
 -- Hashing function that combines username, password, and a special word    
 CREATE OR REPLACE FUNCTION GET_USER_HASH(USERNAME VARCHAR2, PASSWORD VARCHAR2) 

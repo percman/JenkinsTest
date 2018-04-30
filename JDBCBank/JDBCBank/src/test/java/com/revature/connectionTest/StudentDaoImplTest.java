@@ -66,4 +66,14 @@ public class StudentDaoImplTest {
 	public void testDeleteStudent() {
 		assertTrue(dao.deleteStudent(student.getUsername()));
 	}
+	
+	@Test
+	public void testIfApproved() {
+		assertTrue(dao.getApproved(student.getUsername()) == 0);
+	}
+	
+	@Test
+	public void testIfLocked() {
+		assertTrue(dao.getLocked(student.getUsername()) == 0);
+	}
 }

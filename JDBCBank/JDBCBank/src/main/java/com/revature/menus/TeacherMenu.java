@@ -1,13 +1,16 @@
 package com.revature.menus;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import com.revature.exceptions.InvalidChoiceException;
-import com.revature.singletons.AccountData;
+import com.revature.service.StudentService;
+import com.revature.service.TeacherService;
 import com.revature.singletons.LogThis;
 import com.revature.users.Person;
+import com.revature.users.Student;
 import com.revature.users.Teacher;
 
 public class TeacherMenu {
@@ -16,17 +19,20 @@ public class TeacherMenu {
 
 	public static void teacherMenu(Teacher teacher) {
 
-		if (!teacher.isApproved()) {
+		if (TeacherService.getApproved(teacher.getUsername()) == 0) {
+			System.out.println();
 			System.out.println("Your account has not been approved by your principal.");
 			System.out.println("Please try to login again later.");
 			StartMenu.startMenu();
 			return;
-		} else if (teacher.isLocked()) {
+		} else if (TeacherService.getLocked(teacher.getUsername()) == 1) {
+			System.out.println();
 			System.out.println("Your account has been locked.");
 			System.out.println("Please talk to your teacher.");
 			StartMenu.startMenu();
 			return;
 		} else {
+			System.out.println();
 			LogThis.info("Teacher Menu");
 			System.out.println("Your options are:");
 			System.out.println("1. Approve new Student Profiles");
@@ -73,15 +79,16 @@ public class TeacherMenu {
 
 	// Approve student
 	private static void approveStudent(Teacher teacher) {
+		System.out.println();
 		LogThis.info("Approve Student Menu");
 
 		try {
 			System.out.println("The following students need to be approved:");
-			for (Person p : ad.values()) {
-				if (p.getType() == "student" && !p.isApproved()) {
-					System.out.println(p.getFirstname());
-				}
+			List<Student> unapproved = TeacherService.getUnapprovedStudents();
+			for (Student s : unapproved) {
+					System.out.println(s.getFirstname() + " " + s.getLastname() + ", username: " + s.getUsername());
 			}
+			System.out.println();
 			System.out.println("1. Approve All");
 			System.out.println("2. Approve a specific student");
 			System.out.println("0. Return to Teacher Menu");
@@ -91,23 +98,16 @@ public class TeacherMenu {
 			while (true) {
 				switch (choice) {
 				case 1:
-					for (Person p : ad.values()) {
-						if (p.getType() == "student" && !p.isApproved()) {
-							p.setApproved(true);
-						}
-					}
+					TeacherService.approveAllStudents();
 					LogThis.info("All students were approved");
 					approveStudent(teacher);
 					return;
 				case 2:
-					System.out.println("What is the name of the student you would like to approve?");
-					String name = sc.next();
-					for (Person p : ad.values()) {
-						if (p.getFirstname() == name && !p.isApproved()) {
-							p.setApproved(true);
-							break;
-						}
-					}
+					System.out.println("What is the username of the student you would like to approve?");
+					String username = sc.next();
+					TeacherService.approveStudent(username);
+					LogThis.info(StudentService.getStudent(username).getFirstname() + " " 
+							+ StudentService.getStudent(username).getLastname() + " was approved");
 					approveStudent(teacher);
 					return;
 				case 0:
@@ -137,16 +137,16 @@ public class TeacherMenu {
 
 	// Lock Student
 	private static void lockStudent(Teacher teacher) {
+		System.out.println();
 		LogThis.info("Lock Student Menu");
 
 		try {
 			System.out.println("The following students are unlocked:");
-
-			for (Person p : ad.values()) {
-				if (p.getType() == "student" && !p.isLocked()) {
-					System.out.println(p.getFirstname());
-				}
+			List<Student> unlocked = TeacherService.getUnlockedStudents();
+			for (Student s : unlocked) {
+				System.out.println(s.getFirstname() + " " + s.getLastname() + ", username: " + s.getUsername());
 			}
+			System.out.println();
 			System.out.println("1. Lock a specific student");
 			System.out.println("0. Return to Teacher Menu");
 
@@ -155,15 +155,11 @@ public class TeacherMenu {
 			while (true) {
 				switch (choice) {
 				case 1:
-					System.out.println("What is the name of the student you would like to lock?");
-					String name = sc.next();
-					for (Person p : ad.values()) {
-						if (p.getFirstname() == name && !p.isLocked()) {
-							p.setLocked(true);
-							LogThis.info("The student account for " + name + " was locked.");
-							break;
-						}
-					}
+					System.out.println("What is the username of the student you would like to lock?");
+					String username = sc.next();
+					TeacherService.lockStudent(username);
+					LogThis.info(StudentService.getStudent(username).getFirstname() + " " 
+							+ StudentService.getStudent(username).getLastname() + " was locked");
 					lockStudent(teacher);
 					return;
 				case 0:
@@ -192,16 +188,16 @@ public class TeacherMenu {
 
 	// Unlock Student
 	private static void unlockStudent(Teacher teacher) {
+		System.out.println();
 		LogThis.info("Unlock Student Menu");
 
 		try {
 			System.out.println("The following students need to be unlocked:");
-
-			for (Person p : ad.values()) {
-				if (p.getType() == "student" && p.isLocked()) {
-					System.out.println(p.getFirstname() + " " + p.getLastname());
-				}
+			List<Student> locked = TeacherService.getLockedStudents();
+			for (Student s : locked) {
+				System.out.println(s.getFirstname() + " " + s.getLastname() + ", username: " + s.getUsername());
 			}
+			System.out.println();
 			System.out.println("1. Unlock All");
 			System.out.println("2. Unlock a specific student");
 			System.out.println("0. Return to Teacher Menu");
@@ -211,23 +207,16 @@ public class TeacherMenu {
 			while (true) {
 				switch (choice) {
 				case 1:
-					for (Person p : ad.values()) {
-						if (p.getType() == "student" && p.isLocked()) {
-							p.setLocked(false);
-						}
-					}
+					TeacherService.unlockAllStudent();
 					LogThis.info("All students were unlocked");
 					unlockStudent(teacher);
 					return;
 				case 2:
-					System.out.println("What is the first name of the student you would like to unlock?");
-					String firstname = sc.next();
-					for (Person p : ad.values()) {
-						if (p.getFirstname() == firstname && p.isLocked()) {
-							p.setLocked(false);
-							break;
-						}
-					}
+					System.out.println("What is the username of the student you would like to unlock?");
+					String username = sc.next();
+					TeacherService.unlockStudent(username);
+					LogThis.info(StudentService.getStudent(username).getFirstname() + " " 
+							+ StudentService.getStudent(username).getLastname() + " was unlocked");
 					unlockStudent(teacher);
 					return;
 				case 0:

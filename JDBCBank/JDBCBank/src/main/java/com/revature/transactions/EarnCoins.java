@@ -20,6 +20,7 @@ public class EarnCoins {
 		int a = random.nextInt(11);
 		int b = random.nextInt(11);
 
+		System.out.println();
 		System.out.println(a + " + " + b + " =");
 		try {
 			int c = sc.nextInt();
@@ -50,6 +51,7 @@ public class EarnCoins {
 		int b = random.nextInt(11);
 
 		if (a >= b) {
+			System.out.println();
 			System.out.println(a + " - " + b + " =");
 			try {
 				int c = sc.nextInt();
@@ -70,6 +72,7 @@ public class EarnCoins {
 				subtraction();
 			}
 		} else {
+			System.out.println();
 			System.out.println(b + " - " + a + " =");
 			try {
 				int c = sc.nextInt();
@@ -100,6 +103,7 @@ public class EarnCoins {
 		int a = random.nextInt(11);
 		int b = random.nextInt(11);
 
+		System.out.println();
 		System.out.println(a + " x " + b + " =");
 		try {
 			int c = sc.nextInt();
@@ -130,6 +134,7 @@ public class EarnCoins {
 		int b = random.nextInt(11);
 
 		if (a >= b) {
+			System.out.println();
 			System.out.println(a + " / " + b + " =");
 			try {
 				int c = sc.nextInt();
@@ -152,6 +157,7 @@ public class EarnCoins {
 				division();
 			}
 		} else {
+			System.out.println();
 			System.out.println(b + " - " + a + " =");
 			try {
 				int c = sc.nextInt();

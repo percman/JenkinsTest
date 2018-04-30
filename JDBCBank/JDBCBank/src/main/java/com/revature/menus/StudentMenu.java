@@ -16,17 +16,20 @@ public class StudentMenu {
 
 	public static void studentMenu(Student student) {
 
-		if (!student.isApproved()) {
+		if (StudentService.getApproved(student.getUsername()) == 0) {
+			System.out.println();
 			System.out.println("Your account has not been approved by your teacher.");
 			System.out.println("Please try to login again later.");
 			StartMenu.startMenu();
 			return;
-		} else if (student.isLocked()) {
+		} else if (StudentService.getLocked(student.getUsername()) == 1) {
+			System.out.println();
 			System.out.println("Your account has been locked.");
 			System.out.println("Please talk to your teacher.");
 			StartMenu.startMenu();
 			return;
 		} else {
+			System.out.println();
 			LogThis.info("Student Menu");
 			System.out.println("You have " + student.getCoins() + " coins!");
 			System.out.println("Your options are:");

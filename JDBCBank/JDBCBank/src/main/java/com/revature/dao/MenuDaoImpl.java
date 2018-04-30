@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 import com.revature.singletons.ConnectionUtil;
 import com.revature.singletons.LogThis;
-import com.revature.users.Principal;
 
 public class MenuDaoImpl implements MenuDao{
 

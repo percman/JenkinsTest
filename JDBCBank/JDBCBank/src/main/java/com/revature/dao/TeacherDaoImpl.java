@@ -259,6 +259,41 @@ public class TeacherDaoImpl implements TeacherDao {
 		return false;
 	}
 
+	@Override
+	public int getApproved(String username) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("Select t_approved FROM teacher WHERE t_username = ? ");
+			stmt.setString(++index, username);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt("t_approved");
+			}
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
+		return 0;
+	}
+
+	@Override
+	public int getLocked(String username) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("Select t_locked FROM teacher WHERE t_username = ? ");
+			stmt.setString(++index, username);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt("t_locked");			}
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
+		return 0;
+	}
+
 
 
 

@@ -232,3 +232,46 @@ ORA-06512: at line 1
 
 2018-04-29 20:58:08 WARN  LogThis:34 - SQL state: 23000
 2018-04-29 20:58:08 WARN  LogThis:34 - Error Code: 1
+2018-04-29 23:35:46 WARN  LogThis:34 - ORA-00904: "T_USERNAME": invalid identifier
+
+2018-04-29 23:35:46 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 23:35:46 WARN  LogThis:34 - Error Code: 904
+2018-04-29 23:35:51 WARN  LogThis:34 - ORA-00904: "T_USERNAME": invalid identifier
+
+2018-04-29 23:35:51 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 23:35:51 WARN  LogThis:34 - Error Code: 904
+2018-04-29 23:37:12 WARN  LogThis:34 - ORA-00904: "T_USERNAME": invalid identifier
+
+2018-04-29 23:37:12 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 23:37:12 WARN  LogThis:34 - Error Code: 904
+2018-04-29 23:39:04 WARN  LogThis:34 - ORA-00904: "T_USERNAME": invalid identifier
+
+2018-04-29 23:39:04 WARN  LogThis:34 - SQL state: 42000
+2018-04-29 23:39:04 WARN  LogThis:34 - Error Code: 904
+2018-04-30 00:13:27 INFO  LogThis:30 - Create Principal
+2018-04-30 00:13:51 INFO  LogThis:30 - Principal Account Created
+2018-04-30 00:13:51 INFO  LogThis:30 - Principal Menu
+2018-04-30 00:14:00 INFO  LogThis:30 - You have successfully logged out.
+2018-04-30 00:14:00 INFO  LogThis:30 - Start Menu
+2018-04-30 00:14:07 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-30 00:14:24 INFO  LogThis:30 - Teacher Account Created
+2018-04-30 00:14:24 INFO  LogThis:30 - Start Menu
+2018-04-30 00:14:29 INFO  LogThis:30 - Login Menu
+2018-04-30 00:14:39 INFO  LogThis:30 - Principal Menu
+2018-04-30 00:14:52 INFO  LogThis:30 - Approve Teacher Menu
+2018-04-30 00:15:12 INFO  LogThis:30 - Principal Menu
+2018-04-30 00:15:15 INFO  LogThis:30 - You have successfully logged out.
+2018-04-30 00:15:15 INFO  LogThis:30 - Start Menu
+2018-04-30 00:15:18 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-30 00:16:12 INFO  LogThis:30 - Teacher Account Created
+2018-04-30 00:16:12 INFO  LogThis:30 - Start Menu
+2018-04-30 00:16:22 INFO  LogThis:30 - Start Menu
+2018-04-30 00:16:25 INFO  LogThis:30 - Create a New Teacher Profile
+2018-04-30 00:17:05 INFO  LogThis:30 - Teacher Account Created
+2018-04-30 00:17:05 INFO  LogThis:30 - Start Menu
+2018-04-30 00:17:08 INFO  LogThis:30 - Login Menu
+2018-04-30 00:17:14 INFO  LogThis:30 - Principal Menu
+2018-04-30 00:17:18 INFO  LogThis:30 - Approve Teacher Menu
+2018-04-30 00:17:27 INFO  LogThis:30 - All teachers were approved
+2018-04-30 00:17:27 WARN  LogThis:34 - That is not a valid type of user.
+2018-04-30 00:17:27 INFO  LogThis:30 - Login Menu
