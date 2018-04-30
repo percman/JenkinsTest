@@ -1,12 +1,11 @@
 package com.revature.hs.card;
 
 import com.revature.hs.card.dao.CardService;
-import org.json.JSONObject;
+
 
 public class Card {
     private String name;
     private Rarity rarity;
-    private JSONObject json;
     private int owned;
     private int id;
     private String set;

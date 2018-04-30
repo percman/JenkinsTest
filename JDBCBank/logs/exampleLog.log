@@ -2881,3 +2881,7 @@
 2018-04-29 15:55:05 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
 2018-04-29 15:55:05 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
 2018-04-29 15:55:05 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 00:44:59 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 00:44:59 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 00:44:59 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 00:44:59 DEBUG AbstractTextTerminal:118 - Using only default properties.

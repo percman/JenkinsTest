@@ -1,19 +1,11 @@
 package com.revature.hs.user.dao;
 
-import java.io.*;
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 import com.revature.hs.card.Card;
 import com.revature.hs.user.Admin;
 import com.revature.hs.user.Player;
 import com.revature.hs.user.User;
-import org.apache.log4j.Logger;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-import org.mindrot.jbcrypt.BCrypt;
 import com.revature.hs.user.exceptions.*;
+import org.apache.log4j.Logger;
 
 
 public class UserService {

@@ -1,23 +1,21 @@
 package com.revature.hs.user;
 
 import com.revature.hs.user.dao.UserService;
+import com.revature.hs.user.exceptions.DuplicateUserNameException;
+import com.revature.hs.user.exceptions.NoSuchUserException;
 import org.apache.log4j.Logger;
-import org.json.JSONObject;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
-import org.mindrot.jbcrypt.BCrypt;
-import com.revature.hs.user.exceptions.*;
 
-import static com.revature.hs.user.dao.UserService.addUser;
-import static com.revature.hs.user.dao.UserService.getUser;
-import static com.revature.hs.user.dao.UserService.setUser;
+
+import static com.revature.hs.user.dao.UserService.*;
 
 public class Admin extends User {
 	private static final Logger logger = Logger.getLogger(Admin.class);
 
-	public Admin(String userName, String passwordHash, String role) {
-		super(userName, passwordHash, role);
+	public Admin(String userName, String password, String role) {
+		super(userName, password, role);
 	}
 
 	public Admin(int id, String username, boolean isLocked) {
@@ -27,10 +25,9 @@ public class Admin extends User {
 	public void addAdmin() {
 		TextIO textIO = TextIoFactory.getTextIO();
 		String user = textIO.newStringInputReader().withMinLength(4).withIgnoreCase().read("enter username");
-		String passwordHash = BCrypt.hashpw(textIO.newStringInputReader().withMinLength(6).read("enter password"),
-				BCrypt.gensalt());
+		String password = textIO.newStringInputReader().withMinLength(6).read("enter password");
 		try {
-			addUser(new Admin(user, passwordHash, "admin"));
+			addUser(new Admin(user, password, "admin"));
 		} catch (DuplicateUserNameException e) {
 			logger.info("Attempted admin creation with duplicate username " + user);
 			TextTerminal terminal = textIO.getTextTerminal();
@@ -61,7 +58,6 @@ public class Admin extends User {
 	public void unlockUser() {
 		TextIO textIO = TextIoFactory.getTextIO();
 		TextTerminal terminal = textIO.getTextTerminal();
-		UserService DB = UserService.getInstance();
 		String user = textIO.newStringInputReader().withMinLength(4).withIgnoreCase().read(
 				"Which user do you want to unlock?");
 		try {

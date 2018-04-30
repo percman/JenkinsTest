@@ -1,7 +1,7 @@
 package com.revature.hs.user;
 
 import org.apache.log4j.Logger;
-import org.json.JSONObject;
+
 
 public abstract class User {
 	private int id;

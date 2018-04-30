@@ -12,10 +12,10 @@ import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
-import org.json.JSONArray;
-import org.json.JSONObject;
+
 
 import static com.revature.hs.card.Rarity.*;
+import static com.revature.hs.user.dao.UserService.updatePlayer;
 
 public class Player extends User {
 	private HashMap<String, Card> myCards;
@@ -187,7 +187,7 @@ public class Player extends User {
 
 
 	public void saveState() {
-		UserService.getInstance().setUser(this);
+		updatePlayer(this);
 	}
 
 	public HashMap<String, Card> getMyCards() {

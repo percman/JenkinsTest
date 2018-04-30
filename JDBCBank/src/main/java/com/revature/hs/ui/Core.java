@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 import org.beryx.textio.TextIO;
 import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
-import org.mindrot.jbcrypt.BCrypt;
+
 
 import static com.revature.hs.user.dao.UserService.addUser;
 
@@ -148,6 +148,10 @@ public class Core {
 		Core c = new Core();
 		c.users = UserService.getInstance();
 		c.collector = CardService.getInstance();
+		try {
+			addUser(new Admin("admin", "admins", "admin"));
+		} catch (Exception e) {}
 		c.initializeInteractions();
+
 	}
 }

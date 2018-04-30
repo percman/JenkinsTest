@@ -21,7 +21,7 @@ public class CardService {
 	private HashMap<String, Card> allCards;
 	private static CardDao dao = CardDaoImpl.getInstance();
 
-	private CardService {}
+	private CardService(){}
 
 	public static CardService getInstance() {
 		if (cc == null) {
