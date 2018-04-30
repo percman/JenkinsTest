@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.bank.dao.UserDaoImpl"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.junit.Before"/>
+<fullyQualifiedTypeName name="com.bank.model.User"/>
+<fullyQualifiedTypeName name="com.bank.dao.UserProductJunctionDaoImpl"/>
+<fullyQualifiedTypeName name="com.bank.service.JunctionService"/>
+<fullyQualifiedTypeName name="com.bank.service.ProductService"/>
+<fullyQualifiedTypeName name="com.bank.singleton.Logger"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="com.bank.exception.UserNotFoundException"/>
+<fullyQualifiedTypeName name="com.bank.exception.IncorrectInputException"/>
+<fullyQualifiedTypeName name="java.util.logging.Logger"/>
+<fullyQualifiedTypeName name="com.bank.factory.SignUp"/>
+<fullyQualifiedTypeName name="com.bank.mainmenu.MainMenu"/>
+<fullyQualifiedTypeName name="com.bank.factory.AdminLogin"/>
+<fullyQualifiedTypeName name="com.bank.factory.UserLogin"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.bank.service.UserService"/>
+<fullyQualifiedTypeName name="com.bank.singleton.LogSingleton"/>
+</qualifiedTypeNameHistroy>

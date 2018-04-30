@@ -40,19 +40,19 @@ private static UserDao dao = UserDaoImpl.getInstance();
 		return dao.getUserId(user);
 	}
 	
-	int getApproved(User user) {
+	public static int getApproved(User user) {
 		return dao.getApproved(user);
 	}
-	int getLocked(User user) {
+	public static int getLocked(User user) {
 		return dao.getLocked(user);
 	}
-	boolean approveAccount(User user) {
+	public static boolean approveAccount(User user) {
 		return dao.approveAccount(user);
 	}
-	boolean lockAccount(User user) {
+	public static boolean lockAccount(User user) {
 		return dao.lockAccount(user);
 	}
-	boolean unlockAccount(User user) {
+	public static boolean unlockAccount(User user) {
 		return dao.unlockAccount(user);
 	}
 	

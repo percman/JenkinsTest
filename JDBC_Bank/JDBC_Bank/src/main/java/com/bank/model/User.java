@@ -18,6 +18,11 @@ public class User implements Serializable{
 	
 	public User() {}
 	
+	public User(String first_name, String last_name) {
+		this.first_name = first_name;
+		this.last_name = last_name;
+	}
+	
 	public User(String first_name,String last_name, String password) {
 		this.first_name = first_name;
 		this.last_name = last_name;
@@ -135,7 +140,7 @@ public class User implements Serializable{
 	@Override
 	public String toString() {
 		return "User [first_name=" + first_name + ", last_name=" + last_name + ", password=" + password
-				+ ", approved=" + approved + ", locked=" + locked + "]";
+				+ ", approved=" + approved + ", locked=" + locked + "]\n";
 	}
 	
 	
