@@ -9,15 +9,16 @@ import java.util.List;
 
 import com.revature.model.Account;
 import com.revature.model.User;
-import com.revature.utility.ConnectionUtil;
+import com.revature.utility.ConnectionUtility;
 
 public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public Double getFunds(int accountID, User user) {
+		ConnectionUtility.getInstance();
 		String sql = "SELECT get_account_funds(?,?) AS money FROM dual";
 		int index =0;
-		try(Connection conn = ConnectionUtil.getConnection()){
+		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(++index, accountID);
 			stmt.setString(++index, user.getUserName());
@@ -34,9 +35,10 @@ public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public boolean setFunds(int accountID, Double funds) {
+		ConnectionUtility.getInstance();
 		String sql = "UPDATE account SET funds = ? WHERE account_id =?";
 		int index = 0;
-		try(Connection conn = ConnectionUtil.getConnection()){
+		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setDouble(++index, funds);
 			stmt.setInt(++index, accountID);
@@ -51,10 +53,11 @@ public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public List<User> getAllAccounts(User user) {
+		ConnectionUtility.getInstance();
 		String sql = "SELECT * FROM account WHERE username =?";
 		int index = 0;
 		List<User> accounts = new ArrayList<>();
-		try(Connection conn = ConnectionUtil.getConnection()){
+		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(++index, user.getUserName());
 			ResultSet rs = stmt.executeQuery();
@@ -72,9 +75,10 @@ public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public boolean insertAccount(Account user) {
+		ConnectionUtility.getInstance();
 		String sql = "INSERT INTO account(username,funds) VALUES(?,?)";
 		int index = 0;
-		try(Connection conn = ConnectionUtil.getConnection()){
+		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(++index, user.getUserName());
 			stmt.setDouble(++index, user.getFunds());

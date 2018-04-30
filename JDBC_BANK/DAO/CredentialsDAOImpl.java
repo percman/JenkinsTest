@@ -7,16 +7,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.revature.model.Account;
-import com.revature.utility.ConnectionUtil;
+import com.revature.utility.ConnectionUtility;
 
 public class CredentialsDAOImpl implements CredentialsDAO {
 	
 	//Returns the credentials of a user based on their username
 	@Override
 	public Account getCredentials(String name) {
+		ConnectionUtility.getInstance();
 		String sql = "SELECT * FROM credentials WHERE username = ?";
 		int index = 0;
-		try(Connection conn = ConnectionUtil.getConnection()){
+		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(++index, name);
 			ResultSet rs = stmt.executeQuery();
@@ -33,9 +34,10 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 
 	@Override
 	public boolean insertCredentials(Account user) {
+		ConnectionUtility.getInstance();
 		String sql = "{CALL insert_credentials(?,?)}";
 		int index = 0;
-		try(Connection conn = ConnectionUtil.getConnection()){
+		try(Connection conn = ConnectionUtility.getConnection()){
 			CallableStatement stmt = conn.prepareCall(sql);
 			stmt.setString(++index, user.getUserName());
 			stmt.setString(++index, user.getPassword());
@@ -51,9 +53,10 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 
 	@Override
 	public boolean deleteCredentials(String username) {
+		ConnectionUtility.getInstance();
 		String sql = "{CALL delete_credentials(?)}";
 		int index = 0;
-		try(Connection conn = ConnectionUtil.getConnection()){
+		try(Connection conn = ConnectionUtility.getConnection()){
 			CallableStatement stmt = conn.prepareCall(sql);
 			stmt.setString(++index, username);
 			int rowsAffected = stmt.executeUpdate();
@@ -68,9 +71,10 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 
 	@Override
 	public String getPasswordHash(Account user) {
+		ConnectionUtility.getInstance();
 		int index = 0;
 		String sql = "SELECT get_user_hash(?,?) AS HASH FROM dual";
-		try(Connection conn = ConnectionUtil.getConnection()){
+		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(++index, user.getUserName());
 			stmt.setString(++index, user.getPassword());
@@ -89,9 +93,10 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 	//Checks whether the username is already taken.
 	@Override
 	public boolean CheckAvailablility(String username) {
+		ConnectionUtility.getInstance();
 		String sql = "SELECT username FROM credentials WHERE username = ?";
 		int index = 0;
-		try(Connection conn = ConnectionUtil.getConnection()){
+		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
