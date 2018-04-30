@@ -1,19 +1,22 @@
 package com.revature.menus;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import com.revature.exceptions.InvalidChoiceException;
+import com.revature.service.PrincipalService;
+import com.revature.service.TeacherService;
 import com.revature.singletons.AccountData;
 import com.revature.singletons.LogThis;
 import com.revature.users.Person;
 import com.revature.users.Principal;
+import com.revature.users.Teacher;
 
 public class PrincipalMenu {
 	
 	private static Scanner sc = new Scanner(System.in);
-	private static AccountData ad = AccountData.getInstance();
 
 
 	public static void principalMenu(Principal principal) {
@@ -69,10 +72,9 @@ public class PrincipalMenu {
 
 		try {
 			System.out.println("The following Teachers need to be approved:");
-			for (Person p : ad.values()) {
-				if (p.getType() == "teacher" && !p.isApproved()) {
-					System.out.println(p.getFirstname());
-				}
+			List<Teacher> approve = PrincipalService.getUnapprovedTeachers();
+			for (Teacher t : approve) {
+					System.out.println(t.getFirstname() + " " + t.getLastname() + ", username: " + t.getUsername());
 			}
 			System.out.println("1. Approve All");
 			System.out.println("2. Approve a specific teacher");
@@ -83,23 +85,15 @@ public class PrincipalMenu {
 			while (true) {
 				switch (choice) {
 				case 1:
-					for (Person p : ad.values()) {
-						if (p.getType() == "teacher" && !p.isApproved()) {
-							p.setApproved(true);
-						}
-					}
+					PrincipalService.approveAllTeachers();
 					LogThis.info("All teachers were approved");
-					approveTeacher(principal);
 					return;
 				case 2:
-					System.out.println("What is the name of the teacher you would like to approve?");
-					String name = sc.next();
-					for (Person p : ad.values()) {
-						if (p.getFirstname() == name && !p.isApproved()) {
-							p.setApproved(true);
-							break;
-						}
-					}
+					System.out.println("What is the username of the teacher you would like to approve?");
+					String username = sc.next();
+					PrincipalService.approveTeacher(username);
+					System.out.println(TeacherService.getTeacher(username).getFirstname() + " " 
+							+ TeacherService.getTeacher(username).getLastname() + " was approved");
 					approveTeacher(principal);
 					return;
 				case 0:

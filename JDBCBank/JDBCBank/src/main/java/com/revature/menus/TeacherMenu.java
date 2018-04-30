@@ -12,7 +12,6 @@ import com.revature.users.Teacher;
 
 public class TeacherMenu {
 
-	private static AccountData ad = AccountData.getInstance();
 	private static Scanner sc = new Scanner(System.in);
 
 	public static void teacherMenu(Teacher teacher) {

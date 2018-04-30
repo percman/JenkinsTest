@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import com.revature.exceptions.InvalidChoiceException;
+import com.revature.service.StudentService;
 import com.revature.singletons.LogThis;
 import com.revature.users.Person;
 import com.revature.users.Student;
@@ -45,6 +46,7 @@ public class StudentMenu {
 					SpendCoinsMenu.spendCoinsMenu(student);
 					return;
 				case 0:
+					StudentService.updateStudent(student);
 					Person.logout(student);
 					return;
 				default:
