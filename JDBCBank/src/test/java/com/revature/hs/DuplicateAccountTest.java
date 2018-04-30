@@ -9,7 +9,8 @@ import static org.junit.Assert.*;
 
 public class DuplicateAccountTest {
 
-	//NOTE, to maintain good data practices, there's currently no user delete function for cleanup.
+	// NOTE, to maintain good data practices I didn't implement a "delete user"
+	// there's currently no user delete function to be used in cleanup.
 	@Test
 	public void createDuplicates () {
 		User usr = new Admin("test", "testpass", "admin");
