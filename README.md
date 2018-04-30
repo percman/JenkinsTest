@@ -33,7 +33,5 @@ I used log4j for logging, ojdbc for db connectivity, math3 from apache commons f
 
 ## Other things
 
-user data is stored in /src/main/resources/users.json
-card data is stored in /src/main/resources/cards.collectible.json
 card data is modified from a file downloaded from hearthstonejson.com, and pack rates were taken from a hearthstone wiki.
 
