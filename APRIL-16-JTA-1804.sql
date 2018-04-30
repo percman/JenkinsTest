@@ -1,0 +1,1 @@
+--Select all records from the Employee table where first name is Andrew and EPORSTO is NULL.

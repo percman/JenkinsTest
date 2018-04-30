@@ -1,0 +1,7 @@
+CREATE TABLE pokemon(
+--col-name COL_TYPE
+id NUMBER(6),
+name VARCHAR2(60),
+type VARCHAR2(10),
+CONSTRAINT PK_POKEMON PRIMARY KEY (id)
+);
