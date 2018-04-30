@@ -6,6 +6,12 @@ import com.revature.factory.UserInterface;
 import com.revature.trade.Trade;
 import com.revature.user.User;
 
+/**
+ * All the method for communicating with the SQL server
+ * @author Jesse
+ *
+ */
+
 public interface AccountDAO {
 	
 	User getUser(int id);

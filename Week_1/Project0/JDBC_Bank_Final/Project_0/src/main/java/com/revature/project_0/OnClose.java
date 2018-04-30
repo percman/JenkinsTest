@@ -8,6 +8,12 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Class for any closing duties to be performed. Currently empty.
+ * @author Jesse
+ *
+ */
+
 public class OnClose {
 	
 	public static void programHouseKeeping() {

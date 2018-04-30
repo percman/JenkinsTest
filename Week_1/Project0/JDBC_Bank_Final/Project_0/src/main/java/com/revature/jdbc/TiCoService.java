@@ -1,7 +1,12 @@
 package com.revature.jdbc;
 
-public class TiCoService {
+/**
+ * Service class for the TiCo DAO
+ * @author Jesse
+ *
+ */
 
+public class TiCoService {
 	
 	private TiCoService() {}
 	

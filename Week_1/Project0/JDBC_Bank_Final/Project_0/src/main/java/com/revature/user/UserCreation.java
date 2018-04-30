@@ -7,6 +7,12 @@ import com.revature.jdbc.AccountService;
 
 import Exceptions.UsernameAlreadyExistsException;
 
+/**
+ * Class responsible for creating a new user
+ * @author Jesse
+ *
+ */
+
 public class UserCreation {
 
 	public static void createUser() {

@@ -9,6 +9,12 @@ import com.revature.factory.UserInterface;
 import com.revature.jdbc.AccountService;
 import com.revature.project_0.OnClose;
 
+/**
+ * Class responsible for user login and validation
+ * @author Jesse
+ *
+ */
+
 public class UserLogin {
 
 	// Method that directs user login
@@ -57,23 +63,23 @@ public class UserLogin {
 			if(currentUser.getAdmin() == true) {
 				UserInterface userType = UserFactory.getUserType(2);
 				if(userType instanceof Admin) {
-					AdminMenu.menu(currentUser);
+					AdminMenu.menu(currentUser); // If the user is an admin send them to the admin menu
 					return;
 				}
 				return;
 			}
-			if(currentUser.isLocked() == true) {
+			if(currentUser.isLocked() == true) { // Check for locked accounts
 				System.out.println("\n\n\t\t***THIS ACCOUNT IS LOCKED. PLEASE CONTACT YOUR ADMINISTRATOR***\n\n");
 				return;
 			}
 			if(currentUser.isApproved() == 1) {
 				UserInterface userType = UserFactory.getUserType(1);
 				if(userType instanceof User) {
-					UserMenu.menu(currentUser);
+					UserMenu.menu(currentUser); // If the user is a user send them to the user menu
 					return;
 				}		
 			}
-			else {
+			else { // Check for pending accounts
 				System.out.println("\n\n\t\tHi " + currentUser.getFirstName() + ". Your account is currently awaiting approval\n\n");
 			}
 		}

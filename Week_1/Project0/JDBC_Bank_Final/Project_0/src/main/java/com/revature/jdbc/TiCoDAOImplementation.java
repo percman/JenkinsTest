@@ -8,11 +8,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * All the implementations for the DAO methods
+ * @author Jesse
+ *
+ */
+
 public class TiCoDAOImplementation implements TiCoDAO {
 
 	Connection conn = ConnectionObject.getInstance();
 	
-	@Override
+	@Override // Generates a new timestamp (TiCo)
 	public boolean generateTimestamp(int id) {
 		int index = 0;
 		try {
@@ -29,7 +35,7 @@ public class TiCoDAOImplementation implements TiCoDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Gets the number of TiCos for a user
 	public int getBalance(int id) {
 		try {
 			PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(user_timestamp)AS balance FROM user_TiCo WHERE accountnumber "
@@ -47,7 +53,7 @@ public class TiCoDAOImplementation implements TiCoDAO {
 		return 0;
 	}
 
-	@Override
+	@Override // Get the total number of TiCos in the bank
 	public int getTotalBalance() {
 		try {
 			PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(user_timestamp)AS balance FROM user_TiCo");

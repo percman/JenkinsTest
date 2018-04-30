@@ -15,6 +15,12 @@ import com.revature.trade.Trade;
 import Exceptions.InsufficientTicosException;
 import Exceptions.TiCoAlreadyGeneratedException;
 
+/**
+ * Menu that specifies all the options available to the user
+ * @author Jesse
+ *
+ */
+
 public class UserMenu {
 	// All the options available to the user once logged in
 	public static void menu(UserInterface currentUser) {
@@ -24,7 +30,7 @@ public class UserMenu {
 			System.out.println("  USER MENU");
 			System.out.println("=============");
 			System.out.println("To display account information\tEnter 1");
-			System.out.println("To make a generate a TiCo\tEnter 2");
+			System.out.println("To generate a TiCo\t\tEnter 2");
 			System.out.println("To make a trade\t\t\tEnter 3");
 			System.out.println("To view pending trades\t\tEnter 4");
 			System.out.println("\n\t\tTo log out\tEnter 9");
@@ -51,7 +57,7 @@ public class UserMenu {
 			
 			
 
-			case "2": { // Allow the user to generate a time stamp
+			case "2": { // Allow the user to generate a TiCo
 				System.out.println("==============");
 				System.out.println("    TICOS");
 				System.out.println("==============");
@@ -61,7 +67,7 @@ public class UserMenu {
 				if(input.next().equals("1")) {
 					System.out.println("Generating...");
 					if (!TiCoService.generateTimestamp(currentUser.getAccountNumber())) {
-						try {
+						try { // Can only generate 1 TiCo per hour
 							throw new TiCoAlreadyGeneratedException();
 						} catch (TiCoAlreadyGeneratedException e) {
 							break;
@@ -88,14 +94,14 @@ public class UserMenu {
 				System.out.println("\nPlease specify how many TiCos to trade: ");
 				int tradeAmount = input.nextInt();
 				if (TiCoService.getBalance(currentUser.getAccountNumber()) < tradeAmount) {
-					try {
+					try { // Check that the user has enough TiCos
 						throw new InsufficientTicosException();
 					} catch (InsufficientTicosException e) {
 						logger.warn(currentUser.getUsername() + " did not have enough TiCos for trade");
 						break;
 					}
 				}
-				if (tradeAmount < 1) {
+				if (tradeAmount < 1) { // Ensure the user isn't trading negative TiCos
 					System.out.println("\n\n\t\tYou must trade at least 1 TiCo!\n");
 				}
 				TradeService.makeTradeRequest(currentUser.getAccountNumber(), tradeTo, tradeAmount);
@@ -111,7 +117,7 @@ public class UserMenu {
 				System.out.println("Current Balance: " + TiCoService.getBalance(currentUser.getAccountNumber()) + " TiCos");
 				System.out.println("Trades can only be offered, not requested\n");
 				List<Trade> eligibleTrades = new ArrayList<>();
-				for (Trade trade : TradeService.getTradeRequest()) {
+				for (Trade trade : TradeService.getTradeRequest()) { // Print out available trades
 					if (trade.getIdAcceptor() == currentUser.getAccountNumber()) {
 						System.out.println(trade);
 						eligibleTrades.add(trade);
@@ -133,17 +139,17 @@ public class UserMenu {
 					
 				}
 				if (!tradeAvailable) {
-					System.out.println("\n\n\t\tYou have current trades with the account");
+					System.out.println("\n\n\t\tYou have no current trades with that account");
 					break;
 				}
 				System.out.println("\n\tEnter 1 to confirm trade\t\tEnter 2 to reject trade");
 				int accept = input.nextInt();
-				if(accept == 1) {
+				if(accept == 1) { // accept a trade
 					
 					TradeService.acceptTradeRequest(requester, currentUser.getAccountNumber(), tradeAmount);
 					break;
 				}
-				else if(accept == 2) {
+				else if(accept == 2) { // decline a trade
 					TradeService.denyTradeRequest(requester, currentUser.getAccountNumber(), tradeAmount);
 					break;
 				}

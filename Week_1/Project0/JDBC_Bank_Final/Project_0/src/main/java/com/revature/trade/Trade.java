@@ -2,6 +2,12 @@ package com.revature.trade;
 
 import java.io.Serializable;
 
+/**
+ * Trade object that contains all the important information necessary for user trading
+ * @author Jesse
+ *
+ */
+
 public class Trade implements Serializable {
 
 

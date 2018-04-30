@@ -14,11 +14,17 @@ import com.revature.factory.UserInterface;
 import com.revature.trade.Trade;
 import com.revature.user.User;
 
+/**
+ * Implementations for all the methods described in the DAO
+ * @author Jesse
+ *
+ */
+
 public class AccountDAOImplementation implements AccountDAO {
 
 	Connection conn = ConnectionObject.getInstance();
 	
-	@Override
+	@Override // returns a user by account number
 	public User getUser(int id) {
 		try {
 			User user = new User();
@@ -39,7 +45,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return null;
 	}
 	
-	@Override
+	@Override // returns a user by username
 	public User getUser(String username) {
 		try {
 			User user = new User();
@@ -59,7 +65,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return null;
 	}
 
-	@Override
+	@Override // returns all the users in the database
 	public List<User> getAllUsers() {
 		try {
 			List<User> users = new ArrayList<>();
@@ -80,7 +86,7 @@ public class AccountDAOImplementation implements AccountDAO {
 	}
 	
 
-	@Override
+	@Override // returns all the pending users in the database
 	public List<User> getPendingUsers() {
 		try {
 			List<User> users = new ArrayList<>();
@@ -100,7 +106,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return null;
 	}
 
-	@Override
+	@Override // inserts a user in the database
 	public boolean insertUser(User user) {
 		int index = 0;
 		try {
@@ -119,7 +125,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Approves a user in the database
 	public boolean approveUser(int id) {
 		try {
 			CallableStatement stmt = conn.prepareCall("{CALL approve_user(?)}");
@@ -135,7 +141,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Denies a user in the database - not this does not delete them
 	public boolean denyUser(int id) {
 		try {
 			CallableStatement stmt = conn.prepareCall("{CALL deny_user(?)}");
@@ -151,7 +157,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Locks a user in the database
 	public boolean lockUser(int id) {
 		try {
 			CallableStatement stmt = conn.prepareCall("{CALL lock_user(?)}");
@@ -167,7 +173,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Unlocks a user in the database
 	public boolean unlockUser(int id) {
 		try {
 			CallableStatement stmt = conn.prepareCall("{CALL unlock_user(?)}");
@@ -183,7 +189,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Make a monetary deposit into the database - not currently implemented
 	public boolean deposit(int id, int deposit) {
 		try {
 			PreparedStatement stmt = conn.prepareStatement("UPDATE account SET balance=balance + " + deposit + " WHERE accountnumber=" + id);
@@ -198,7 +204,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Make a monetary withdrawal from the database - not currently implemented
 	public boolean withdraw(int id, int withdrawal) {
 		try {
 			PreparedStatement stmt = conn.prepareStatement("UPDATE account SET balance=balance - " + withdrawal + " WHERE accountnumber=" + id);
@@ -213,7 +219,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // delete a user from the database - will only work on users with no TiCos
 	public boolean deleteUser(int id) {
 		try {
 			CallableStatement stmt = conn.prepareCall("{CALL delete_user(?)}");
@@ -229,7 +235,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 	
-	@Override
+	@Override // Get the hashed password from the database
 	public String getPasswordHash(UserInterface user) {
 		int index = 0;
 		try {
@@ -248,7 +254,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return null;
 	}
 
-	@Override
+	@Override // Get for an admin in the database
 	public boolean checkForAdmin() {
 		try {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM account WHERE admin = 1");
@@ -264,7 +270,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // promote a user to admin status
 	public boolean promoteAdmin(int id) {
 		try {
 			CallableStatement stmt = conn.prepareCall("{CALL promote_admin(?)}");
@@ -280,7 +286,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // change a users status back to pending
 	public boolean pendUser(int id) {
 		try {
 			CallableStatement stmt = conn.prepareCall("{CALL pend_user(?)}");
@@ -296,7 +302,7 @@ public class AccountDAOImplementation implements AccountDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Return the total of pending users in the database as a number using a function
 	public int getNumberOfPendingUsers() {
 		try {
 			PreparedStatement stmt = conn.prepareCall("SELECT get_number_of_pending_users FROM dual");

@@ -1,5 +1,9 @@
 package com.revature.jdbc;
 
+/**
+ * Implementations for the methods specified by the DAO
+ */
+
 import static com.revature.logger.BankLogger.logger;
 
 import java.sql.CallableStatement;
@@ -16,7 +20,7 @@ public class TradeDAOImplementation implements TradeDAO {
 
 	Connection conn = ConnectionObject.getInstance();
 	
-	@Override
+	@Override // makes a trade request from one user to another user specifying an amount
 	public boolean makeTradeRequest(int idRequestor, int idAcceptor, int amount) {
 		int index = 0;
 		try {
@@ -35,7 +39,7 @@ public class TradeDAOImplementation implements TradeDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Accepts a trade request from a user
 	public boolean acceptTradeRequest(int idRequestor, int idAcceptor, int amount) {
 		int index = 0;
 		try {
@@ -54,7 +58,7 @@ public class TradeDAOImplementation implements TradeDAO {
 		return false;
 	}
 
-	@Override
+	@Override // Denies a trade request from a user
 	public boolean denyTradeRequest(int idRequestor, int idAcceptor, int amount) {
 		int index = 0;
 		try {
@@ -73,7 +77,7 @@ public class TradeDAOImplementation implements TradeDAO {
 		return false;
 	}
 	
-	@Override
+	@Override // Shows the active trade requests from a user
 	public List<Trade> getTradeRequest() {
 		try {
 			List<Trade> trade = new ArrayList<>();

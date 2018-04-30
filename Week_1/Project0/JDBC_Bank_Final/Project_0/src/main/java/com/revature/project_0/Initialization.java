@@ -10,6 +10,13 @@ import java.util.Scanner;
 import com.revature.jdbc.AccountService;
 import com.revature.user.User;
 
+/**
+ * This class contains the steps for checking if a first time setup is needed and also
+ * for running that first time setup if necessary. Any additional initialization methods
+ * in the future will go here.
+ * @author Allison
+ *
+ */
 
 public class Initialization {
 	

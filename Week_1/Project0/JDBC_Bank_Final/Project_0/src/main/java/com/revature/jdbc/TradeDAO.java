@@ -1,5 +1,9 @@
 package com.revature.jdbc;
 
+/**
+ * Methods for communicating with the SQL database
+ */
+
 import java.util.List;
 
 import com.revature.trade.Trade;

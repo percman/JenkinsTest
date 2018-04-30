@@ -6,6 +6,13 @@ import java.text.DecimalFormat;
 import com.revature.factory.UserInterface;
 import com.revature.jdbc.TiCoService;
 
+/**
+ * Admin class object. In the current implementation this class is hardly used but is here for demonstration
+ * that the factory is properly implemented.
+ * @author Jesse
+ *
+ */
+
 public class Admin implements Serializable, UserInterface {
 
 	private static final long serialVersionUID = 5360196251001293837L;

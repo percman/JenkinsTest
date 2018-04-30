@@ -1,5 +1,11 @@
 package com.revature.factory;
 
+/**
+ * All the method contained with in user and Admin classes
+ * @author Jesse
+ *
+ */
+
 public interface UserInterface {
 
 	void promoteAdmin();

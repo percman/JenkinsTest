@@ -8,6 +8,12 @@ import com.revature.user.User;
 
 import Exceptions.UsernameDoesNotExistException;
 
+/**
+ * Service class for all the DAO methods
+ * @author Jesse
+ *
+ */
+
 public class AccountService {
 
 	private static AccountDAO dao = new AccountDAOImplementation();

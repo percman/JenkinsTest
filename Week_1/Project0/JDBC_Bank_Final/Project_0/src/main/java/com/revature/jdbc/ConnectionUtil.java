@@ -9,6 +9,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * Class to obtain a connection to the database. A reference is passed to the singleton connection object
+ * @author Jesse
+ *
+ */
+
 public class ConnectionUtil {
 	
 	private ConnectionUtil() {

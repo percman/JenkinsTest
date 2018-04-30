@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.revature.trade.Trade;
 
+/**
+ * Service class for the trade DAO
+ * @author Jesse
+ *
+ */
+
 public class TradeService {
 
 	private TradeService() {}

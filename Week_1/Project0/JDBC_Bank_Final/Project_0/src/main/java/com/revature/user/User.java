@@ -6,6 +6,12 @@ import java.text.DecimalFormat;
 import com.revature.factory.UserInterface;
 import com.revature.jdbc.TiCoService;
 
+/**
+ * User class that defines all the important values for a user
+ * @author Jesse
+ *
+ */
+
 public class User implements Serializable, UserInterface
 {
 

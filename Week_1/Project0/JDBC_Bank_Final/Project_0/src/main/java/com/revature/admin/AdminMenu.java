@@ -9,12 +9,13 @@ import com.revature.jdbc.TiCoService;
 import com.revature.user.User;
 import com.revature.user.UserMenu;
 
-public class AdminMenu {
+/**-
+ * This class contains all the options that the Admin has to manage the users in the database.
+ * @author Jesse
+ *
+ */
 
-	/*
-	 * public static void menu(MainAdmin admin) { System.out.println("Main Admin");
-	 * } under construction
-	 */
+public class AdminMenu {
 
 	// All of the admins options are here
 	public static void menu(UserInterface currentUser) {
