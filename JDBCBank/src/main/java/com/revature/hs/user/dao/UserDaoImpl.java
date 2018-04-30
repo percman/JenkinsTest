@@ -39,14 +39,14 @@ public class UserDaoImpl implements UserDao {
 				tmp = getCard(rs.getInt("card_id"));
 				tmp.setOwned(rs.getInt("owned"));
 				cardList.add(tmp);
-				return cardList;
 			}
+			return cardList;
 		} catch (SQLException e) {
 			logger.error(e.getMessage());
 			logger.error("SQL STATE: " + e.getSQLState());
 			logger.error("ERROR CODE: " + e.getErrorCode());
 		}
-		return null;
+		return cardList;
 	}
 
 	@Override
@@ -61,9 +61,9 @@ public class UserDaoImpl implements UserDao {
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				id = rs.getInt(++index);
-				role = rs.getString(++index);
-				isLocked = rs.getString(++index) == "1" ? true : false;
+				id = rs.getInt("id");
+				role = rs.getString("role");
+				isLocked = rs.getString("is_locked").equals("1") ? true : false;
 				if (role.equals("admin")) {
 					return new Admin(id, username, isLocked);
 				}
@@ -84,12 +84,12 @@ public class UserDaoImpl implements UserDao {
 		boolean isApproved;
 
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT dust, isApproved FROM player WHERE id = ?");
+			PreparedStatement stmt = conn.prepareStatement("SELECT dust, is_Approved FROM player WHERE id = ?");
 			stmt.setInt(++index, id);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				dust = rs.getInt("dust");
-				isApproved = rs.getString("isApproved") == "1";
+				isApproved = rs.getString("is_Approved").equals("1");
 				return new Player(id, username, isLocked, isApproved, dust, getUserCards(id));
 			}
 			throw new SQLException("ResultSet contained no results");
@@ -110,9 +110,8 @@ public class UserDaoImpl implements UserDao {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("UPDATE hs_user set username=?," +
-					" password=?, is_locked=? WHERE id=?");
+					" is_locked=? WHERE id=?");
 			stmt.setString(++index, user.getUserName());
-			stmt.setString(++index, user.getPassword());
 			stmt.setString(++index, user.isLocked() ? "1" : "0");
 			stmt.setInt(++index, user.getId());
 			return stmt.executeUpdate() > 0;
@@ -173,7 +172,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public boolean addPlayer(Player player) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT insert_player(?, ?) FROM DUAL");
+			CallableStatement stmt = conn.prepareCall("{CALL insert_player(?, ?)}");
 			stmt.setString(1, player.getUserName());
 			stmt.setString(2, player.getPassword());
 			return stmt.executeUpdate() > 0;
@@ -189,7 +188,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public boolean addAdmin(Admin admin) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT insert_admin(?, ?) FROM DUAL");
+			CallableStatement stmt = conn.prepareCall("{CALL insert_admin(?, ?)}");
 			stmt.setString(1, admin.getUserName());
 			stmt.setString(2, admin.getPassword());
 			return stmt.executeUpdate() > 0;

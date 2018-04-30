@@ -3,6 +3,8 @@ package com.revature.hs.card.dao;
 import com.revature.hs.card.Card;
 import com.revature.hs.card.RarityNotFoundException;
 import com.revature.hs.util.ConnectionUtil;
+import oracle.jdbc.internal.OracleTypes;
+import oracle.jdbc.oracore.OracleType;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -74,22 +76,25 @@ public class CardDaoImpl implements CardDao {
 	@Override
 	public Card getCard(String rarityString, String cardSetString) {
 		int index = 0;
+		logger.debug("rarity: " + rarityString );
+		logger.debug("set: " + cardSetString);
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			CallableStatement cs = conn.prepareCall("{CALL get_card_by_rarity(?, ?)}");
+			PreparedStatement cs = conn.prepareCall("SELECT get_card_by_rarity(?, ?) num FROM dual");
 			cs.setString(++index, rarityString);
 			cs.setString(++index, cardSetString);
 			ResultSet rs = cs.executeQuery();
 			if (rs.next()) {
-				return new Card(rs.getInt("id"), rs.getString("name"),
-						rarityString, cardSetString);
+				return getCard(rs.getInt("num"));
 			}
+//			if (cc.next()) {
+//				logger.debug("cur.next");
+//
+//			}
 
 		} catch (SQLException e) {
 			logger.error(e.getMessage());
 			logger.error("SQL STATE: " + e.getSQLState());
 			logger.error("ERROR CODE: " + e.getErrorCode());
-		} catch (RarityNotFoundException e) {
-			logger.error("Invalid rarity.");
 		}
 		return null;
 	}

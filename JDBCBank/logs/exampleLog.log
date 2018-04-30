@@ -2885,3 +2885,1064 @@
 2018-04-30 00:44:59 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
 2018-04-30 00:44:59 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
 2018-04-30 00:44:59 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 00:50:11 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 00:50:11 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 00:50:11 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 00:50:11 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 00:50:17 INFO  Core:127 - Attempting login with user admin
+2018-04-30 00:56:19 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 00:56:19 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 00:56:19 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 00:56:19 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 00:56:24 INFO  Core:127 - Attempting login with user admin
+2018-04-30 00:58:41 ERROR UserDaoImpl:198 - ORA-00904: "INSERT_ADMIN": invalid identifier
+
+2018-04-30 00:58:41 ERROR UserDaoImpl:199 - SQL STATE: 42000
+2018-04-30 00:58:41 ERROR UserDaoImpl:200 - ERROR CODE: 904
+2018-04-30 00:58:41 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 00:58:41 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 00:58:41 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 00:58:41 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 00:58:48 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:02:17 INFO  UserService:75 - Adding new admin...
+2018-04-30 01:02:17 ERROR UserDaoImpl:198 - ORA-00904: "INSERT_ADMIN": invalid identifier
+
+2018-04-30 01:02:17 ERROR UserDaoImpl:199 - SQL STATE: 42000
+2018-04-30 01:02:17 ERROR UserDaoImpl:200 - ERROR CODE: 904
+2018-04-30 01:02:17 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:02:17 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:02:17 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:02:17 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:03:31 INFO  UserService:75 - Adding new admin...
+2018-04-30 01:03:31 ERROR UserDaoImpl:198 - ORA-00904: "INSERT_ADMIN": invalid identifier
+
+2018-04-30 01:03:31 ERROR UserDaoImpl:199 - SQL STATE: 42000
+2018-04-30 01:03:31 ERROR UserDaoImpl:200 - ERROR CODE: 904
+2018-04-30 01:03:31 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:03:31 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:03:31 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:03:31 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:15:03 INFO  UserService:75 - Adding new admin...
+2018-04-30 01:15:04 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:15:04 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:15:04 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:15:04 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:15:36 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:15:36 ERROR UserDaoImpl:74 - Fail to convert to internal representation
+2018-04-30 01:15:36 ERROR UserDaoImpl:75 - SQL STATE: 99999
+2018-04-30 01:15:36 ERROR UserDaoImpl:76 - ERROR CODE: 17059
+2018-04-30 01:21:13 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:21:13 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:21:13 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:21:13 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:21:18 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:21:19 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:21:19 INFO  Core:129 - Logged in!
+2018-04-30 01:21:45 INFO  UserService:75 - Adding new admin...
+2018-04-30 01:21:53 INFO  Core:127 - Attempting login with user bird
+2018-04-30 01:21:54 DEBUG UserService:50 - User bird logged in successfully!
+2018-04-30 01:21:54 INFO  Core:129 - Logged in!
+2018-04-30 01:22:06 INFO  Admin:49 - admin locked.
+2018-04-30 01:22:12 INFO  Admin:67 - admin unlocked.
+2018-04-30 01:22:17 INFO  Admin:49 - admin locked.
+2018-04-30 01:22:25 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:22:25 INFO  Core:135 - Wrong pw for admin
+2018-04-30 01:22:30 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:22:31 INFO  Core:135 - Wrong pw for admin
+2018-04-30 01:22:47 INFO  Core:127 - Attempting login with user bird
+2018-04-30 01:22:47 DEBUG UserService:50 - User bird logged in successfully!
+2018-04-30 01:22:47 INFO  Core:129 - Logged in!
+2018-04-30 01:22:54 INFO  Admin:67 - admin unlocked.
+2018-04-30 01:23:01 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:23:01 INFO  Core:135 - Wrong pw for admin
+2018-04-30 01:29:27 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:29:27 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:29:27 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:29:27 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:29:35 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:29:37 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:29:37 INFO  Core:129 - Logged in!
+2018-04-30 01:29:43 INFO  UserService:75 - Adding new admin...
+2018-04-30 01:29:55 INFO  Core:127 - Attempting login with user bird
+2018-04-30 01:29:56 DEBUG UserService:50 - User bird logged in successfully!
+2018-04-30 01:29:56 INFO  Core:129 - Logged in!
+2018-04-30 01:30:02 INFO  Admin:49 - admin locked.
+2018-04-30 01:30:08 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:30:09 INFO  Core:135 - Wrong pw for admin
+2018-04-30 01:35:09 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:35:09 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:35:09 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:35:09 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:35:19 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:35:20 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:35:20 INFO  Core:129 - Logged in!
+2018-04-30 01:35:30 INFO  UserService:75 - Adding new admin...
+2018-04-30 01:35:40 INFO  Admin:49 - admin locked.
+2018-04-30 01:35:48 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:35:48 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:35:48 INFO  Core:129 - Logged in!
+2018-04-30 01:37:30 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:37:30 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:37:30 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:37:30 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:37:36 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:37:38 INFO  Core:138 - locked account admin
+2018-04-30 01:37:43 INFO  Core:127 - Attempting login with user bird
+2018-04-30 01:37:44 DEBUG UserService:50 - User bird logged in successfully!
+2018-04-30 01:37:44 INFO  Core:129 - Logged in!
+2018-04-30 01:37:48 INFO  Admin:67 - admin unlocked.
+2018-04-30 01:37:55 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:37:56 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:37:56 INFO  Core:129 - Logged in!
+2018-04-30 01:38:06 INFO  UserService:72 - Adding new player...
+2018-04-30 01:38:06 ERROR UserDaoImpl:181 - ORA-00904: "INSERT_PLAYER": invalid identifier
+
+2018-04-30 01:38:06 ERROR UserDaoImpl:182 - SQL STATE: 42000
+2018-04-30 01:38:06 ERROR UserDaoImpl:183 - ERROR CODE: 904
+2018-04-30 01:38:06 INFO  Core:113 - Created new user walkindude
+2018-04-30 01:39:50 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:39:50 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:39:50 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:39:50 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:39:58 INFO  UserService:72 - Adding new player...
+2018-04-30 01:39:58 ERROR UserDaoImpl:181 - ORA-12899: value too large for column "BLIZZARD"."HS_USER"."ROLE" (actual: 6, maximum: 5)
+ORA-06512: at "BLIZZARD.INSERT_PLAYER", line 4
+ORA-06512: at line 1
+
+2018-04-30 01:39:58 ERROR UserDaoImpl:182 - SQL STATE: 72000
+2018-04-30 01:39:58 ERROR UserDaoImpl:183 - ERROR CODE: 12899
+2018-04-30 01:39:58 INFO  Core:113 - Created new user walkindude
+2018-04-30 01:45:36 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:45:36 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:45:36 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:45:36 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:45:50 INFO  UserService:72 - Adding new player...
+2018-04-30 01:45:50 INFO  Core:113 - Created new user walkindude
+2018-04-30 01:45:57 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:45:57 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:45:57 INFO  Core:129 - Logged in!
+2018-04-30 01:46:07 ERROR UserDaoImpl:97 - ORA-00904: "ISAPPROVED": invalid identifier
+
+2018-04-30 01:46:07 ERROR UserDaoImpl:98 - SQL STATE: 42000
+2018-04-30 01:46:07 ERROR UserDaoImpl:99 - ERROR CODE: 904
+2018-04-30 01:47:20 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:47:20 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:47:20 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:47:20 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:47:26 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:47:27 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:47:27 INFO  Core:129 - Logged in!
+2018-04-30 01:47:43 ERROR UserDaoImpl:97 - ORA-00904: "ISAPPROVED": invalid identifier
+
+2018-04-30 01:47:43 ERROR UserDaoImpl:98 - SQL STATE: 42000
+2018-04-30 01:47:43 ERROR UserDaoImpl:99 - ERROR CODE: 904
+2018-04-30 01:47:57 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:47:57 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:47:57 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:47:57 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:48:02 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:48:04 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:48:04 INFO  Core:129 - Logged in!
+2018-04-30 01:52:35 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:52:35 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:52:35 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:52:35 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:52:40 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:52:41 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:52:41 INFO  Core:129 - Logged in!
+2018-04-30 01:54:53 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 01:54:53 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 01:54:53 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 01:54:53 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 01:54:58 INFO  Core:127 - Attempting login with user admin
+2018-04-30 01:54:59 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 01:54:59 INFO  Core:129 - Logged in!
+2018-04-30 01:55:04 INFO  Admin:86 - walkindude approved.
+2018-04-30 01:55:13 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 01:55:14 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 01:55:14 INFO  Core:129 - Logged in!
+2018-04-30 01:55:18 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 01:55:18 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 01:55:18 DEBUG PackSim:35 - Generating RNG
+2018-04-30 01:55:18 ERROR CardDaoImpl:88 - ORA-06550: line 1, column 7:
+PLS-00221: 'GET_CARD_BY_RARITY' is not a procedure or is undefined
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-04-30 01:55:18 ERROR CardDaoImpl:89 - SQL STATE: 65000
+2018-04-30 01:55:18 ERROR CardDaoImpl:90 - ERROR CODE: 6550
+2018-04-30 02:02:55 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:02:55 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:02:55 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:02:55 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:03:05 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:03:06 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:03:06 INFO  Core:129 - Logged in!
+2018-04-30 02:03:10 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:03:10 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:03:10 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:03:11 ERROR CardDaoImpl:89 - ResultSet.next was not called
+2018-04-30 02:03:11 ERROR CardDaoImpl:90 - SQL STATE: 99999
+2018-04-30 02:03:11 ERROR CardDaoImpl:91 - ERROR CODE: 17014
+2018-04-30 02:03:49 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:03:49 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:03:49 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:03:49 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:03:55 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:03:57 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:03:57 INFO  Core:129 - Logged in!
+2018-04-30 02:03:59 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:03:59 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:03:59 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:04:46 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:04:46 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:04:46 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:04:46 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:04:53 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:04:54 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:04:54 INFO  Core:129 - Logged in!
+2018-04-30 02:04:56 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:04:56 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:04:56 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:04:56 ERROR CardDaoImpl:91 - Invalid column name
+2018-04-30 02:04:56 ERROR CardDaoImpl:92 - SQL STATE: 99999
+2018-04-30 02:04:56 ERROR CardDaoImpl:93 - ERROR CODE: 17006
+2018-04-30 02:16:00 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:16:00 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:16:00 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:16:00 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:16:11 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:16:12 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:16:12 INFO  Core:129 - Logged in!
+2018-04-30 02:16:15 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:16:15 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:16:15 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:17:44 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:17:44 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:17:44 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:17:44 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:17:53 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:17:55 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:17:55 INFO  Core:129 - Logged in!
+2018-04-30 02:17:57 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:17:57 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:17:57 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:17:57 DEBUG CardDaoImpl:85 - getting cur
+2018-04-30 02:18:58 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:18:58 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:18:58 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:18:58 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:19:07 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:19:08 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:19:08 INFO  Core:129 - Logged in!
+2018-04-30 02:19:11 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:19:11 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:19:11 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:19:11 DEBUG CardDaoImpl:86 - getting cur
+2018-04-30 02:20:03 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:20:03 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:20:03 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:20:03 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:20:10 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:20:11 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:20:11 INFO  Core:129 - Logged in!
+2018-04-30 02:20:14 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:20:14 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:20:14 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:20:14 DEBUG CardDaoImpl:86 - getting cur
+2018-04-30 02:20:14 ERROR CardDaoImpl:97 - ResultSet.next was not called
+2018-04-30 02:20:14 ERROR CardDaoImpl:98 - SQL STATE: 99999
+2018-04-30 02:20:14 ERROR CardDaoImpl:99 - ERROR CODE: 17014
+2018-04-30 02:23:47 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:23:47 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:23:47 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:23:47 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:23:53 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:23:55 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:23:55 INFO  Core:129 - Logged in!
+2018-04-30 02:23:58 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:23:58 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:23:58 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:23:58 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:23:58 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:23:58 DEBUG CardDaoImpl:88 - getting cur
+2018-04-30 02:23:58 ERROR CardDaoImpl:99 - ResultSet.next was not called
+2018-04-30 02:23:58 ERROR CardDaoImpl:100 - SQL STATE: 99999
+2018-04-30 02:23:58 ERROR CardDaoImpl:101 - ERROR CODE: 17014
+2018-04-30 02:27:53 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:27:53 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:27:53 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:27:53 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:28:01 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:28:02 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:28:02 INFO  Core:129 - Logged in!
+2018-04-30 02:28:05 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:28:05 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:28:05 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:28:05 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:28:05 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:28:06 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:28:06 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:28:06 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:28:06 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:28:06 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:28:06 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:28:07 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:28:07 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:28:07 DEBUG Player:88 - Unpacked a COMMON: Snap Freeze
+2018-04-30 02:28:07 DEBUG Player:88 - Unpacked a COMMON: Unpowered Steambot
+2018-04-30 02:28:07 DEBUG Player:88 - Unpacked a COMMON: Rebuke
+2018-04-30 02:28:08 DEBUG Player:88 - Unpacked a COMMON: Snap Freeze
+2018-04-30 02:28:08 ERROR UserDaoImpl:231 - ORA-00001: unique constraint (BLIZZARD.PK_IDS) violated
+ORA-06512: at "BLIZZARD.ADD_CARD_TO_PLAYER", line 9
+ORA-06512: at line 1
+
+2018-04-30 02:28:08 ERROR UserDaoImpl:232 - SQL STATE: 23000
+2018-04-30 02:28:08 ERROR UserDaoImpl:233 - ERROR CODE: 1
+2018-04-30 02:28:08 DEBUG Player:88 - Unpacked a RARE: Festeroot Hulk
+2018-04-30 02:33:32 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:33:32 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:33:32 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:33:32 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:33:41 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:33:43 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:33:43 INFO  Core:129 - Logged in!
+2018-04-30 02:33:50 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:33:50 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:33:50 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:33:50 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:50 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:50 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:33:50 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:50 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:50 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:51 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:51 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:51 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:33:51 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:51 DEBUG Player:105 - Unpacked a COMMON: Dire Frenzy
+2018-04-30 02:33:51 DEBUG Player:105 - Unpacked a RARE: Curse of Weakness
+2018-04-30 02:33:51 DEBUG Player:105 - Unpacked a COMMON: Blink Fox
+2018-04-30 02:33:52 DEBUG Player:105 - Unpacked a COMMON: Duskbat
+2018-04-30 02:33:52 DEBUG Player:105 - Unpacked a RARE: Cinderstorm
+2018-04-30 02:33:52 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:52 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:52 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:52 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:52 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:52 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:53 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:53 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:53 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:33:53 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:53 DEBUG Player:105 - Unpacked a COMMON: Ghostly Charger
+2018-04-30 02:33:53 DEBUG Player:105 - Unpacked a COMMON: Duskbat
+2018-04-30 02:33:54 DEBUG Player:105 - Unpacked a COMMON: Unpowered Steambot
+2018-04-30 02:33:54 DEBUG Player:105 - Unpacked a COMMON: Sound the Bells!
+2018-04-30 02:33:54 DEBUG Player:105 - Unpacked a RARE: Cursed Castaway
+2018-04-30 02:33:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:56 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-04-30 02:33:56 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:56 DEBUG Player:105 - Unpacked a COMMON: Pumpkin Peasant
+2018-04-30 02:33:56 DEBUG Player:105 - Unpacked a COMMON: Lost Spirit
+2018-04-30 02:33:56 DEBUG Player:105 - Unpacked a COMMON: Unpowered Steambot
+2018-04-30 02:33:57 DEBUG Player:105 - Unpacked a COMMON: Swift Messenger
+2018-04-30 02:33:57 DEBUG Player:105 - Unpacked a EPIC: Sandbinder
+2018-04-30 02:33:57 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:57 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:57 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:57 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:57 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:33:57 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:58 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:58 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:58 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:33:58 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:58 DEBUG Player:105 - Unpacked a COMMON: Clockwork Automaton
+2018-04-30 02:33:58 DEBUG Player:105 - Unpacked a COMMON: Wyrmguard
+2018-04-30 02:33:59 DEBUG Player:105 - Unpacked a RARE: Festeroot Hulk
+2018-04-30 02:33:59 DEBUG Player:105 - Unpacked a COMMON: Squashling
+2018-04-30 02:33:59 DEBUG Player:105 - Unpacked a RARE: Night Prowler
+2018-04-30 02:33:59 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:59 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:33:59 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:33:59 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:00 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:00 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:00 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:00 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:00 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:00 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:00 DEBUG Player:105 - Unpacked a COMMON: Deranged Doctor
+2018-04-30 02:34:01 DEBUG Player:105 - Unpacked a COMMON: Rabid Worgen
+2018-04-30 02:34:01 DEBUG Player:105 - Unpacked a COMMON: Blink Fox
+2018-04-30 02:34:01 DEBUG Player:105 - Unpacked a COMMON: Black Cat
+2018-04-30 02:34:01 DEBUG Player:105 - Unpacked a RARE: Carrion Drake
+2018-04-30 02:34:01 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:01 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:01 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:01 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:02 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:02 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:02 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-04-30 02:34:02 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:02 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-04-30 02:34:02 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:03 DEBUG Player:105 - Unpacked a COMMON: Cutthroat Buccaneer
+2018-04-30 02:34:03 DEBUG Player:105 - Unpacked a COMMON: Felsoul Inquisitor
+2018-04-30 02:34:03 DEBUG Player:105 - Unpacked a COMMON: Witchwood Apple
+2018-04-30 02:34:03 DEBUG Player:105 - Unpacked a EPIC: Town Crier
+2018-04-30 02:34:03 DEBUG Player:105 - Unpacked a EPIC: Hidden Wisdom
+2018-04-30 02:34:03 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:03 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:04 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:04 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:04 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:04 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:04 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:04 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:05 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:05 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:05 DEBUG Player:105 - Unpacked a COMMON: Hench-Clan Thug
+2018-04-30 02:34:05 DEBUG Player:105 - Unpacked a RARE: Carrion Drake
+2018-04-30 02:34:05 DEBUG Player:105 - Unpacked a COMMON: Ferocious Howl
+2018-04-30 02:34:05 DEBUG Player:105 - Unpacked a COMMON: Deranged Doctor
+2018-04-30 02:34:05 DEBUG Player:105 - Unpacked a RARE: Silver Sword
+2018-04-30 02:34:06 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:06 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:06 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:06 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:06 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:06 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:06 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:06 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:07 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:07 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:07 DEBUG Player:105 - Unpacked a COMMON: Wyrmguard
+2018-04-30 02:34:07 DEBUG Player:105 - Unpacked a COMMON: Deranged Doctor
+2018-04-30 02:34:07 DEBUG Player:105 - Unpacked a COMMON: Witchwood Imp
+2018-04-30 02:34:07 DEBUG Player:105 - Unpacked a COMMON: Clockwork Automaton
+2018-04-30 02:34:08 DEBUG Player:105 - Unpacked a RARE: Festeroot Hulk
+2018-04-30 02:34:08 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:08 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:08 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:08 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:08 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:08 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:09 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:09 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:09 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:09 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:09 DEBUG Player:105 - Unpacked a COMMON: Cheap Shot
+2018-04-30 02:34:09 DEBUG Player:105 - Unpacked a COMMON: Walnut Sprite
+2018-04-30 02:34:09 DEBUG Player:105 - Unpacked a COMMON: Darkmire Moonkin
+2018-04-30 02:34:10 DEBUG Player:105 - Unpacked a RARE: Earthen Might
+2018-04-30 02:34:10 DEBUG Player:105 - Unpacked a RARE: Holy Water
+2018-04-30 02:34:10 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:10 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:10 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:10 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:10 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:10 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:11 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:11 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:11 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:11 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:11 DEBUG Player:105 - Unpacked a RARE: Earthen Might
+2018-04-30 02:34:11 DEBUG Player:105 - Unpacked a COMMON: Quartz Elemental
+2018-04-30 02:34:12 DEBUG Player:105 - Unpacked a COMMON: Ravencaller
+2018-04-30 02:34:12 DEBUG Player:105 - Unpacked a COMMON: Unpowered Steambot
+2018-04-30 02:34:12 DEBUG Player:105 - Unpacked a RARE: Wing Blast
+2018-04-30 02:34:12 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:12 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:12 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:12 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:13 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:13 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:13 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:13 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:13 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:13 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:14 DEBUG Player:105 - Unpacked a COMMON: Rabid Worgen
+2018-04-30 02:34:14 DEBUG Player:105 - Unpacked a COMMON: Duskbat
+2018-04-30 02:34:14 DEBUG Player:105 - Unpacked a COMMON: Witch's Apprentice
+2018-04-30 02:34:14 DEBUG Player:105 - Unpacked a COMMON: Swift Messenger
+2018-04-30 02:34:14 DEBUG Player:105 - Unpacked a RARE: Bellringer Sentry
+2018-04-30 02:34:14 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:14 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:15 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:15 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:15 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:15 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:15 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:15 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:15 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:15 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:16 DEBUG Player:105 - Unpacked a COMMON: Unpowered Steambot
+2018-04-30 02:34:16 DEBUG Player:105 - Unpacked a COMMON: Unpowered Steambot
+2018-04-30 02:34:16 DEBUG Player:105 - Unpacked a COMMON: Dire Frenzy
+2018-04-30 02:34:16 DEBUG Player:105 - Unpacked a COMMON: Dire Frenzy
+2018-04-30 02:34:16 DEBUG Player:105 - Unpacked a RARE: Night Prowler
+2018-04-30 02:34:16 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:16 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:17 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:17 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:17 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:17 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:17 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:17 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:17 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-04-30 02:34:17 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:18 DEBUG Player:105 - Unpacked a COMMON: Witch's Apprentice
+2018-04-30 02:34:18 DEBUG Player:105 - Unpacked a COMMON: Vex Crow
+2018-04-30 02:34:18 DEBUG Player:105 - Unpacked a COMMON: Swift Messenger
+2018-04-30 02:34:18 DEBUG Player:105 - Unpacked a COMMON: Spellshifter
+2018-04-30 02:34:18 DEBUG Player:105 - Unpacked a EPIC: Glitter Moth
+2018-04-30 02:34:19 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:19 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:19 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:19 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:19 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:19 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:19 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:19 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:20 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:20 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:20 DEBUG Player:105 - Unpacked a COMMON: Swamp Dragon Egg
+2018-04-30 02:34:20 DEBUG Player:105 - Unpacked a RARE: Paragon of Light
+2018-04-30 02:34:20 DEBUG Player:105 - Unpacked a COMMON: Unpowered Steambot
+2018-04-30 02:34:20 DEBUG Player:105 - Unpacked a RARE: Chief Inspector
+2018-04-30 02:34:21 DEBUG Player:105 - Unpacked a RARE: Forest Guide
+2018-04-30 02:34:21 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:21 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:21 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:21 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:21 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:21 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:22 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:22 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:22 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:22 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:22 DEBUG Player:105 - Unpacked a COMMON: Blackwald Pixie
+2018-04-30 02:34:22 DEBUG Player:105 - Unpacked a COMMON: Ferocious Howl
+2018-04-30 02:34:22 DEBUG Player:105 - Unpacked a COMMON: Squashling
+2018-04-30 02:34:23 DEBUG Player:105 - Unpacked a COMMON: Druid of the Scythe
+2018-04-30 02:34:23 DEBUG Player:105 - Unpacked a RARE: Duskhaven Hunter
+2018-04-30 02:34:23 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:23 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:23 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-04-30 02:34:23 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:23 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:23 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:24 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:24 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:24 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:24 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:24 DEBUG Player:105 - Unpacked a COMMON: Pumpkin Peasant
+2018-04-30 02:34:24 DEBUG Player:105 - Unpacked a EPIC: Deathweb Spider
+2018-04-30 02:34:25 DEBUG Player:105 - Unpacked a COMMON: Witch's Apprentice
+2018-04-30 02:34:25 DEBUG Player:105 - Unpacked a COMMON: Witch's Apprentice
+2018-04-30 02:34:25 DEBUG Player:105 - Unpacked a RARE: Curse of Weakness
+2018-04-30 02:34:25 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:25 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:25 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:25 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:26 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:26 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:26 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:26 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:26 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:26 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:26 DEBUG Player:105 - Unpacked a COMMON: Druid of the Scythe
+2018-04-30 02:34:27 DEBUG Player:105 - Unpacked a COMMON: Deranged Doctor
+2018-04-30 02:34:27 DEBUG Player:105 - Unpacked a COMMON: Divine Hymn
+2018-04-30 02:34:27 DEBUG Player:105 - Unpacked a COMMON: Blackwald Pixie
+2018-04-30 02:34:27 DEBUG Player:105 - Unpacked a RARE: Holy Water
+2018-04-30 02:34:27 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:27 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:27 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:27 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:28 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:28 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:28 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:28 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:28 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:28 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:29 DEBUG Player:105 - Unpacked a COMMON: Darkmire Moonkin
+2018-04-30 02:34:29 DEBUG Player:105 - Unpacked a COMMON: Duskbat
+2018-04-30 02:34:29 DEBUG Player:105 - Unpacked a COMMON: Druid of the Scythe
+2018-04-30 02:34:29 DEBUG Player:105 - Unpacked a COMMON: Cutthroat Buccaneer
+2018-04-30 02:34:29 DEBUG Player:105 - Unpacked a RARE: Mistwraith
+2018-04-30 02:34:29 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:29 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:30 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:30 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:30 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:30 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:30 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:30 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:30 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:30 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:31 DEBUG Player:105 - Unpacked a COMMON: Zap!
+2018-04-30 02:34:31 DEBUG Player:105 - Unpacked a COMMON: Vicious Scalehide
+2018-04-30 02:34:31 DEBUG Player:105 - Unpacked a COMMON: Blackwald Pixie
+2018-04-30 02:34:32 DEBUG Player:105 - Unpacked a COMMON: Cauldron Elemental
+2018-04-30 02:34:32 DEBUG Player:105 - Unpacked a RARE: Curse of Weakness
+2018-04-30 02:34:32 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:32 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:33 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:33 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:33 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:33 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:33 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:33 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:34 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:34 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:34 DEBUG Player:105 - Unpacked a COMMON: Blink Fox
+2018-04-30 02:34:34 DEBUG Player:105 - Unpacked a COMMON: Blink Fox
+2018-04-30 02:34:34 DEBUG Player:105 - Unpacked a COMMON: Duskbat
+2018-04-30 02:34:34 DEBUG Player:105 - Unpacked a COMMON: Hench-Clan Thug
+2018-04-30 02:34:34 DEBUG Player:105 - Unpacked a RARE: Bewitched Guardian
+2018-04-30 02:34:35 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:35 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:35 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:35 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:35 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:35 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:36 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:36 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:36 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:36 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:36 DEBUG Player:105 - Unpacked a RARE: Witchwood Piper
+2018-04-30 02:34:36 DEBUG Player:105 - Unpacked a COMMON: Witchwood Imp
+2018-04-30 02:34:37 DEBUG Player:105 - Unpacked a COMMON: Hunting Mastiff
+2018-04-30 02:34:37 DEBUG Player:105 - Unpacked a COMMON: Vicious Scalehide
+2018-04-30 02:34:37 DEBUG Player:105 - Unpacked a RARE: Phantom Militia
+2018-04-30 02:34:37 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:37 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:37 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:37 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:38 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:38 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:38 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:38 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:38 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:38 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:38 DEBUG Player:105 - Unpacked a COMMON: Spellshifter
+2018-04-30 02:34:39 DEBUG Player:105 - Unpacked a COMMON: Felsoul Inquisitor
+2018-04-30 02:34:39 DEBUG Player:105 - Unpacked a COMMON: Swift Messenger
+2018-04-30 02:34:39 DEBUG Player:105 - Unpacked a COMMON: Darkmire Moonkin
+2018-04-30 02:34:39 DEBUG Player:105 - Unpacked a RARE: Mistwraith
+2018-04-30 02:34:39 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:39 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:39 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:39 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:40 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:40 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:40 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:40 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:40 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-04-30 02:34:40 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:41 DEBUG Player:105 - Unpacked a COMMON: Fiendish Circle
+2018-04-30 02:34:41 DEBUG Player:105 - Unpacked a COMMON: Furious Ettin
+2018-04-30 02:34:41 DEBUG Player:105 - Unpacked a COMMON: Ferocious Howl
+2018-04-30 02:34:41 DEBUG Player:105 - Unpacked a COMMON: Swamp Dragon Egg
+2018-04-30 02:34:41 DEBUG Player:105 - Unpacked a EPIC: Worgen Abomination
+2018-04-30 02:34:41 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:41 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:42 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:42 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:42 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:42 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:42 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:42 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:43 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:43 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:43 DEBUG Player:105 - Unpacked a RARE: Bewitched Guardian
+2018-04-30 02:34:43 DEBUG Player:105 - Unpacked a COMMON: Swamp Dragon Egg
+2018-04-30 02:34:43 DEBUG Player:105 - Unpacked a COMMON: Cutthroat Buccaneer
+2018-04-30 02:34:43 DEBUG Player:105 - Unpacked a COMMON: Vex Crow
+2018-04-30 02:34:43 DEBUG Player:105 - Unpacked a RARE: Phantom Militia
+2018-04-30 02:34:44 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:44 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:44 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:44 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:45 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:45 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:45 DEBUG Player:105 - Unpacked a COMMON: Swift Messenger
+2018-04-30 02:34:45 DEBUG Player:105 - Unpacked a COMMON: Hench-Clan Thug
+2018-04-30 02:34:45 DEBUG Player:105 - Unpacked a COMMON: Blackwald Pixie
+2018-04-30 02:34:45 DEBUG Player:105 - Unpacked a COMMON: Vilebrood Skitterer
+2018-04-30 02:34:45 DEBUG Player:105 - Unpacked a RARE: Curio Collector
+2018-04-30 02:34:46 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:46 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:46 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:46 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:46 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:46 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:47 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:47 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:47 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:47 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:47 DEBUG Player:105 - Unpacked a COMMON: Woodcutter's Axe
+2018-04-30 02:34:47 DEBUG Player:105 - Unpacked a COMMON: Felsoul Inquisitor
+2018-04-30 02:34:47 DEBUG Player:105 - Unpacked a COMMON: Divine Hymn
+2018-04-30 02:34:48 DEBUG Player:105 - Unpacked a COMMON: Witch's Apprentice
+2018-04-30 02:34:48 DEBUG Player:105 - Unpacked a RARE: Blood Witch
+2018-04-30 02:34:48 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:48 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:48 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:48 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:48 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:48 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:49 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:49 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:49 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:49 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:49 DEBUG Player:105 - Unpacked a COMMON: Witchwood Imp
+2018-04-30 02:34:49 DEBUG Player:105 - Unpacked a RARE: Witchwood Grizzly
+2018-04-30 02:34:50 DEBUG Player:105 - Unpacked a COMMON: Swamp Leech
+2018-04-30 02:34:50 DEBUG Player:105 - Unpacked a COMMON: Furious Ettin
+2018-04-30 02:34:50 DEBUG Player:105 - Unpacked a RARE: Chief Inspector
+2018-04-30 02:34:50 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:50 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:50 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:50 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:51 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:51 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:51 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-04-30 02:34:51 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:51 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:51 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:51 DEBUG Player:105 - Unpacked a COMMON: Witchwood Imp
+2018-04-30 02:34:52 DEBUG Player:105 - Unpacked a COMMON: Dire Frenzy
+2018-04-30 02:34:52 DEBUG Player:105 - Unpacked a COMMON: Walnut Sprite
+2018-04-30 02:34:52 DEBUG Player:105 - Unpacked a EPIC: Arcane Keysmith
+2018-04-30 02:34:52 DEBUG Player:105 - Unpacked a RARE: Dark Possession
+2018-04-30 02:34:52 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:52 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:52 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:52 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:53 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:53 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:53 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:53 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:53 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:34:53 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:54 DEBUG Player:105 - Unpacked a COMMON: Unpowered Steambot
+2018-04-30 02:34:54 DEBUG Player:105 - Unpacked a COMMON: Spellshifter
+2018-04-30 02:34:54 DEBUG Player:105 - Unpacked a COMMON: Cutthroat Buccaneer
+2018-04-30 02:34:54 DEBUG Player:105 - Unpacked a COMMON: Unpowered Steambot
+2018-04-30 02:34:54 DEBUG Player:105 - Unpacked a RARE: Nightscale Matriarch
+2018-04-30 02:34:54 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:54 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:34:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:34:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:35:15 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:35:15 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:35:15 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:35:15 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:35:22 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:35:24 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:35:24 INFO  Core:129 - Logged in!
+2018-04-30 02:35:31 INFO  Player:180 - Printing user's cards.
+2018-04-30 02:35:44 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:35:44 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:35:44 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:35:44 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:35:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:35:44 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:35:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:35:44 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:35:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:35:45 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:35:45 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:35:45 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:35:45 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:35:45 DEBUG Player:88 - Unpacked a RARE: Festeroot Hulk
+2018-04-30 02:35:45 DEBUG Player:88 - Unpacked a COMMON: Duskbat
+2018-04-30 02:35:46 DEBUG Player:88 - Unpacked a COMMON: Rotten Applebaum
+2018-04-30 02:35:46 DEBUG Player:88 - Unpacked a COMMON: Marsh Drake
+2018-04-30 02:35:46 DEBUG Player:88 - Unpacked a RARE: Bellringer Sentry
+2018-04-30 02:37:15 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:37:15 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:37:15 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:37:15 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:37:23 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:37:24 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:37:24 INFO  Core:129 - Logged in!
+2018-04-30 02:37:44 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:37:44 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:37:44 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:37:44 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:44 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:45 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:45 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:45 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:45 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:45 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:37:45 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:46 DEBUG Player:105 - Unpacked a COMMON: Felsoul Inquisitor
+2018-04-30 02:37:46 DEBUG Player:105 - Unpacked a COMMON: Divine Hymn
+2018-04-30 02:37:46 DEBUG Player:105 - Unpacked a COMMON: Witchwood Imp
+2018-04-30 02:37:46 DEBUG Player:105 - Unpacked a COMMON: Squashling
+2018-04-30 02:37:46 DEBUG Player:105 - Unpacked a RARE: Night Prowler
+2018-04-30 02:37:46 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:46 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:47 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:47 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:47 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:47 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:47 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:47 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:47 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:37:47 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:48 DEBUG Player:105 - Unpacked a COMMON: Vicious Scalehide
+2018-04-30 02:37:48 DEBUG Player:105 - Unpacked a COMMON: Woodcutter's Axe
+2018-04-30 02:37:48 DEBUG Player:105 - Unpacked a COMMON: Furious Ettin
+2018-04-30 02:37:48 DEBUG Player:105 - Unpacked a COMMON: Pumpkin Peasant
+2018-04-30 02:37:48 DEBUG Player:105 - Unpacked a RARE: Witchwood Piper
+2018-04-30 02:37:48 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:37:48 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:49 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:49 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:49 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:37:49 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:49 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:37:49 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:50 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:37:50 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:37:50 DEBUG Player:105 - Unpacked a RARE: Murkspark Eel
+2018-04-30 02:37:50 DEBUG Player:105 - Unpacked a COMMON: Felsoul Inquisitor
+2018-04-30 02:37:50 DEBUG Player:105 - Unpacked a COMMON: Blackwald Pixie
+2018-04-30 02:37:50 DEBUG Player:105 - Unpacked a RARE: Dark Possession
+2018-04-30 02:37:50 DEBUG Player:105 - Unpacked a RARE: Bonfire Elemental
+2018-04-30 02:37:59 INFO  Player:180 - Printing user's cards.
+2018-04-30 02:40:17 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:40:17 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:40:17 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:40:17 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:40:17 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:40:17 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:40:18 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:40:18 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:40:18 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:40:18 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:40:18 DEBUG Player:88 - Unpacked a COMMON: Duskbat
+2018-04-30 02:40:18 DEBUG Player:88 - Unpacked a COMMON: Ferocious Howl
+2018-04-30 02:40:19 DEBUG Player:88 - Unpacked a COMMON: Hench-Clan Thug
+2018-04-30 02:40:19 DEBUG Player:88 - Unpacked a COMMON: Black Cat
+2018-04-30 02:40:19 DEBUG Player:88 - Unpacked a RARE: Bellringer Sentry
+2018-04-30 02:40:44 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:40:44 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:40:44 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:40:44 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:40:50 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:40:52 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:40:52 INFO  Core:129 - Logged in!
+2018-04-30 02:41:03 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:41:03 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:41:03 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:41:03 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:41:03 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:41:03 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:41:03 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:41:03 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:41:03 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:41:04 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:41:04 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:41:04 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-04-30 02:41:04 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:41:04 DEBUG Player:88 - Unpacked a COMMON: Divine Hymn
+2018-04-30 02:41:04 DEBUG Player:88 - Unpacked a COMMON: Fiendish Circle
+2018-04-30 02:41:04 DEBUG Player:88 - Unpacked a COMMON: Rabid Worgen
+2018-04-30 02:41:05 DEBUG Player:88 - Unpacked a COMMON: Divine Hymn
+2018-04-30 02:41:05 DEBUG Player:88 - Unpacked a EPIC: Worgen Abomination
+2018-04-30 02:42:53 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:42:53 DEBUG CardDaoImpl:80 - set: LOOTAPALOOZA
+2018-04-30 02:42:54 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:42:54 DEBUG CardDaoImpl:80 - set: LOOTAPALOOZA
+2018-04-30 02:42:54 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:42:54 DEBUG CardDaoImpl:80 - set: LOOTAPALOOZA
+2018-04-30 02:42:54 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:42:54 DEBUG CardDaoImpl:80 - set: LOOTAPALOOZA
+2018-04-30 02:42:54 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:42:54 DEBUG CardDaoImpl:80 - set: LOOTAPALOOZA
+2018-04-30 02:42:55 DEBUG Player:88 - Unpacked a COMMON: Silver Vanguard
+2018-04-30 02:42:55 DEBUG Player:88 - Unpacked a COMMON: Cavern Shinyfinder
+2018-04-30 02:42:55 DEBUG Player:88 - Unpacked a COMMON: Cheat Death
+2018-04-30 02:42:55 DEBUG Player:88 - Unpacked a COMMON: Cave Hydra
+2018-04-30 02:42:55 DEBUG Player:88 - Unpacked a RARE: Lesser Sapphire Spellstone
+2018-04-30 02:43:33 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:43:33 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:43:33 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:43:33 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:43:49 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:43:51 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:43:51 INFO  Core:129 - Logged in!
+2018-04-30 02:43:54 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:43:54 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:43:54 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:43:54 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:43:54 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:43:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:43:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:43:55 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:43:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:43:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:43:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:43:56 DEBUG CardDaoImpl:79 - rarity: LEGENDARY
+2018-04-30 02:43:56 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:43:56 DEBUG Player:88 - Unpacked a RARE: Silver Sword
+2018-04-30 02:43:56 DEBUG Player:88 - Unpacked a COMMON: Snap Freeze
+2018-04-30 02:43:56 DEBUG Player:88 - Unpacked a RARE: Night Prowler
+2018-04-30 02:43:56 DEBUG Player:88 - Unpacked a COMMON: Swift Messenger
+2018-04-30 02:43:56 DEBUG Player:88 - Unpacked a LEGENDARY: Houndmaster Shaw
+2018-04-30 02:44:24 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:44:25 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:44:25 INFO  Core:129 - Logged in!
+2018-04-30 02:44:27 INFO  Player:180 - Printing user's cards.
+2018-04-30 02:45:33 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:45:33 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:45:33 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:45:33 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:45:41 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:45:43 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:45:43 INFO  Core:129 - Logged in!
+2018-04-30 02:45:55 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:45:55 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:45:55 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:45:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:45:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:45:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:45:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:45:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:45:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:45:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:45:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:45:56 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:45:56 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:45:56 DEBUG Player:88 - Unpacked a COMMON: Rebuke
+2018-04-30 02:45:56 DEBUG Player:88 - Unpacked a COMMON: Ravencaller
+2018-04-30 02:45:56 DEBUG Player:88 - Unpacked a COMMON: Blackwald Pixie
+2018-04-30 02:45:56 DEBUG Player:88 - Unpacked a COMMON: Black Cat
+2018-04-30 02:45:57 DEBUG Player:88 - Unpacked a RARE: Night Prowler
+2018-04-30 02:46:07 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:46:08 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:46:08 INFO  Core:129 - Logged in!
+2018-04-30 02:46:11 INFO  Player:180 - Printing user's cards.
+2018-04-30 02:46:24 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:46:24 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:46:24 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:46:24 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:46:24 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:46:24 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:46:25 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:46:25 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:46:25 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:46:25 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:46:25 DEBUG Player:88 - Unpacked a COMMON: Fiendish Circle
+2018-04-30 02:46:25 DEBUG Player:88 - Unpacked a COMMON: Witchwood Imp
+2018-04-30 02:46:26 DEBUG Player:88 - Unpacked a COMMON: Spellshifter
+2018-04-30 02:46:26 DEBUG Player:88 - Unpacked a COMMON: Rebuke
+2018-04-30 02:46:26 DEBUG Player:88 - Unpacked a RARE: Night Prowler
+2018-04-30 02:46:30 INFO  Player:180 - Printing user's cards.
+2018-04-30 02:46:40 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:46:41 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:46:41 INFO  Core:129 - Logged in!
+2018-04-30 02:46:46 INFO  Player:180 - Printing user's cards.
+2018-04-30 02:48:53 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:48:53 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:48:53 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:48:53 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:48:59 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:49:13 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:49:13 INFO  Core:129 - Logged in!
+2018-04-30 02:49:28 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:49:28 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:49:28 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:49:28 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:49:28 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:49:28 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:49:28 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:49:28 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:49:28 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:49:29 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:49:29 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:49:29 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:49:29 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:49:29 DEBUG Player:88 - Unpacked a RARE: Cinderstorm
+2018-04-30 02:49:29 DEBUG Player:88 - Unpacked a COMMON: Walnut Sprite
+2018-04-30 02:49:29 DEBUG Player:88 - Unpacked a COMMON: Squashling
+2018-04-30 02:49:30 DEBUG Player:88 - Unpacked a COMMON: Blink Fox
+2018-04-30 02:49:30 DEBUG Player:88 - Unpacked a RARE: Holy Water
+2018-04-30 02:49:48 INFO  Player:180 - Printing user's cards.
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Curse of Weakness
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Swamp Dragon Egg
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Dire Frenzy
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Dire Frenzy
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Cutthroat Buccaneer
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Cutthroat Buccaneer
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Druid of the Scythe
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Witch's Apprentice
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Witch's Apprentice
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Witch's Apprentice
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Walnut Sprite
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Deranged Doctor
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Deranged Doctor
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Swift Messenger
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Swift Messenger
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Swift Messenger
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Swift Messenger
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Blink Fox
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Blink Fox
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Blink Fox
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Darkmire Moonkin
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Snap Freeze
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Unpowered Steambot
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Unpowered Steambot
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Unpowered Steambot
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Unpowered Steambot
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Unpowered Steambot
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Unpowered Steambot
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Unpowered Steambot
+2018-04-30 02:50:47 DEBUG Player:156 - Dusted a Holy Water
+2018-04-30 02:53:06 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 02:53:06 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 02:53:06 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 02:53:06 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 02:53:16 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 02:53:30 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 02:53:30 INFO  Core:129 - Logged in!
+2018-04-30 02:53:35 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 02:53:35 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 02:53:35 DEBUG PackSim:35 - Generating RNG
+2018-04-30 02:53:35 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:53:35 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:53:35 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:53:35 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:53:35 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 02:53:35 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:53:35 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:53:35 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:53:36 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 02:53:36 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 02:53:36 DEBUG Player:88 - Unpacked a RARE: Witching Hour
+2018-04-30 02:53:36 DEBUG Player:88 - Unpacked a COMMON: Cheap Shot
+2018-04-30 02:53:36 DEBUG Player:88 - Unpacked a COMMON: Lost Spirit
+2018-04-30 02:53:36 DEBUG Player:88 - Unpacked a RARE: Bonfire Elemental
+2018-04-30 02:53:37 DEBUG Player:88 - Unpacked a RARE: Coffin Crasher
+2018-04-30 02:53:37 INFO  Player:191 - Saving state

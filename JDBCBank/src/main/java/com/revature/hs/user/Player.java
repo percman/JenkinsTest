@@ -35,6 +35,7 @@ public class Player extends User {
 		this.isApproved = isApproved;
 		this.dust = dust;
 		this.myCards = new HashMap<>();
+
 		for (Card c : userCards) {
 			this.myCards.put(c.getName(), c);
 		}
@@ -187,6 +188,7 @@ public class Player extends User {
 
 
 	public void saveState() {
+		logger.info("Saving state");
 		updatePlayer(this);
 	}
 

@@ -148,9 +148,6 @@ public class Core {
 		Core c = new Core();
 		c.users = UserService.getInstance();
 		c.collector = CardService.getInstance();
-		try {
-			addUser(new Admin("admin", "admins", "admin"));
-		} catch (Exception e) {}
 		c.initializeInteractions();
 
 	}

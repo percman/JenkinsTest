@@ -1,25 +1,17 @@
--- DROP ORDER:
---DROP TABLE player_card;
---DROP TABLE card;
---DROP TABLE player;
---DROP TABLE hs_user;
---DROP SEQUENCE card_id_sequence;
---DROP SEQUENCE user_id_sequence;
-
--- Create a user for the DB connection, do this in admin
-CREATE USER blizzard identified by hunter2;
-
-GRANT CONNECT to blizzard;
-GRANT CREATE ANY TABLE to blizzard;
-GRANT INSERT ANY TABLE TO blizzard;
-GRANT UPDATE ANY TABLE TO blizzard;
-GRANT DELETE ANY TABLE TO blizzard;
-GRANT CREATE ANY PROCEDURE TO blizzard;
-GRANT CREATE ANY TRIGGER TO blizzard;
-GRANT CREATE ANY SEQUENCE TO blizzard;
-GRANT UNLIMITED TABLESPACE TO blizzard;
-
-conn blizzard/hunter2
+ -- Create a user for the DB connection, do this in admin
+--CREATE USER blizzard identified by hunter2;
+--
+--GRANT CONNECT to blizzard;
+--GRANT CREATE ANY TABLE to blizzard;
+--GRANT INSERT ANY TABLE TO blizzard;
+--GRANT UPDATE ANY TABLE TO blizzard;
+--GRANT DELETE ANY TABLE TO blizzard;
+--GRANT CREATE ANY PROCEDURE TO blizzard;
+--GRANT CREATE ANY TRIGGER TO blizzard;
+--GRANT CREATE ANY SEQUENCE TO blizzard;
+--GRANT UNLIMITED TABLESPACE TO blizzard;
+--
+--conn blizzard/hunter2
 
 /*******************************************************************************
    Create Tables
@@ -30,7 +22,7 @@ id NUMBER NOT NULL,
 username VARCHAR2(20) NOT NULL,
 password VARCHAR2(100) NOT NULL,
 is_locked CHAR(1)  DEFAULT '0' CHECK(is_locked in ('0', '1')),
-role VARCHAR2(5) CHECK( role in ('admin', 'player')),
+role VARCHAR2(6) CHECK( role in ('admin', 'player')),
 CONSTRAINT PK_USERID PRIMARY KEY (id)
 );
 
@@ -61,7 +53,13 @@ CONSTRAINT FK_PLAYERID_CARD FOREIGN KEY (player_id) REFERENCES player(id),
 CONSTRAINT FK_CARDID FOREIGN KEY (card_id) REFERENCES card(id)
 );
 
-
+-- DROP ORDER:
+-- DROP TABLE player_card;
+-- DROP TABLE card;
+-- DROP TABLE player;
+-- DROP TABLE hs_user;
+-- DROP SEQUENCE card_id_sequence;
+-- DROP SEQUENCE user_id_sequence;
 
 -- For login.
 CREATE OR REPLACE FUNCTION GET_USER_HASH(USERNAME VARCHAR2, PASSWORD VARCHAR2) RETURN VARCHAR2
@@ -74,7 +72,7 @@ END;
 /
 
 
-CREATE OR REPLACE FUNCTION GET_CARD_BY_RARITY(RARITY VARCHAR2) RETURN SYS_REFCURSOR
+CREATE OR REPLACE FUNCTION GET_CARD_BY_RARITY(RARITYSTRING VARCHAR2, SETSTRING VARCHAR2) RETURN SYS_REFCURSOR
 IS
     rarity_cursor SYS_REFCURSOR;
 BEGIN
@@ -83,7 +81,7 @@ BEGIN
         FROM   (
             SELECT *
             FROM   card
-            WHERE rarity = RARITY
+            WHERE rarity = RARITYSTRING AND card_set = SETSTRING
             ORDER BY DBMS_RANDOM.VALUE)
         WHERE  rownum < 2;
     RETURN rarity_cursor;
@@ -130,6 +128,7 @@ BEGIN
     SELECT GET_USER_HASH(:new.username, :new.password) INTO :new.password FROM dual;
 END;
 /
+
     
 CREATE OR REPLACE PROCEDURE add_card_to_player(player_in NUMBER, card_in NUMBER) 
 IS
@@ -154,11 +153,23 @@ BEGIN
 END;
 /
 
+BEGIN
+    insert_admin('admin', 'admins');
+END;
+/
+SELECT * FROM hs_user;
+//DELETE  FROM hs_user;
+
+
+
+
+
 CREATE OR REPLACE PROCEDURE insert_player(username_in VARCHAR, password_in VARCHAR)
 IS
 BEGIN
     INSERT INTO hs_user (username, password, role) VALUES (username_in, password_in, 'player');
     INSERT INTO player (id, dust) VALUES ((SELECT id FROM hs_user WHERE username = username_in), 0);
+    COMMIT;
 END;
 /
 
@@ -1778,3 +1789,5 @@ INSERT INTO Card (id, name, rarity, card_set) VALUES (null,'Lost in the Jungle',
 INSERT INTO Card (id, name, rarity, card_set) VALUES (null,'Adaptation','COMMON','UNGORO');
 INSERT INTO Card (id, name, rarity, card_set) VALUES (null,'Lightfused Stegodon','RARE','UNGORO');
 INSERT INTO Card (id, name, rarity, card_set) VALUES (null,'Lyra the Sunshard','LEGENDARY','UNGORO');
+
+SELECT * FROM hs_user;

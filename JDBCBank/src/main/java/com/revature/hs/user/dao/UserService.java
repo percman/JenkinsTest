@@ -12,7 +12,7 @@ public class UserService {
 	private static UserService instance = null;
 	
 	private static final Logger logger = Logger.getLogger(UserService.class);
-	private static UserDao dao;
+	private static UserDao dao = UserDaoImpl.getInstance();
 	
 	public static UserService getInstance() {
 		if (instance == null) {
@@ -69,8 +69,10 @@ public class UserService {
 			throw new DuplicateUserNameException();
 		}
 		if (user.getRole().equals("player")) {
+			logger.info("Adding new player...");
 			dao.addPlayer((Player) user);
 		} else {
+			logger.info("Adding new admin...");
 			dao.addAdmin((Admin) user);
 		}
 	}
