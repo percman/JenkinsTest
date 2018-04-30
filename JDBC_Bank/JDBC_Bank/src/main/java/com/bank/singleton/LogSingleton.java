@@ -8,6 +8,8 @@ public class LogSingleton {
 	
 	private LogSingleton() {}
 	
+	private static final Logger logger = Logger.getLogger(Logger.class);
+	
 	public static LogSingleton getInstance() {
 		if (instance == null) {
 			instance = new LogSingleton();
@@ -15,5 +17,12 @@ public class LogSingleton {
 		return instance;
 	}
 	
-	private static final Logger logger = Logger.getLogger(Logger.class);
+	public static void info(String msg) {
+		logger.info(msg);
+	}
+	
+	public static void warn(String msg, Exception e) {
+		logger.warn(msg);
+	}
+
 }

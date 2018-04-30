@@ -1,0 +1,37 @@
+package com.main.application;
+
+import java.util.Scanner;
+
+import com.bank.exception.IncorrectInputException;
+import com.bank.model.User;
+import com.bank.singleton.LogSingleton;
+
+public class Application 
+{
+		
+
+	User temporaryUser = new User();
+	
+	public static void main(String[] args) {
+		LogSingleton.getInstance();
+		User temporaryUser = new User();
+		System.out.println("Welcome!");
+		System.out.println("Please select an option by number: ");
+		System.out.println("1. Login");
+		System.out.println("2. Sign Up");
+		
+		
+		try (Scanner scan = new Scanner(System.in))
+		{
+			int mainOption = scan.nextInt();
+			if(mainOption != 1 ||mainOption !=2) 
+			{
+				LogSingleton.info("You have not input correct data");
+				mainOption = scan.nextInt();
+			}
+		}
+		
+	}
+}
+
+
