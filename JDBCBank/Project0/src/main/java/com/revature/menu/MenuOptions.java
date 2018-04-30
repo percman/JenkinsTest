@@ -88,9 +88,13 @@ public class MenuOptions {
 					approved = true;
 				else
 					approved = false;
-				
-				approvedUser.setLocked(approved);
-				updateUser(approvedUser);
+				try {
+					approvedUser.setLocked(approved);
+					updateUser(approvedUser);
+				} catch(NullPointerException npe) {
+					System.out.println("Invalid user!");
+					LogHere.warn(npe.getMessage());
+				}
 			break;
 			
 	        case 5: choice = 5;
@@ -104,8 +108,13 @@ public class MenuOptions {
 					locked = false;
 				else
 					locked = true;
-				lockedUser.setLocked(locked);
-				updateUser(lockedUser);
+				try {
+					lockedUser.setLocked(locked);
+					updateUser(lockedUser);
+				} catch(NullPointerException npe) {
+					System.out.println("Invalid user!");
+					LogHere.warn(npe.getMessage());
+				}
 	        break;	     
 	        
 	        case 6: choice = 6;
@@ -113,14 +122,24 @@ public class MenuOptions {
 				String upgraded = inputLine();
 				User upgradeUser = getUser(upgraded);
 				upgradeUser.setAdminstatus(true);
-				updateUser(upgradeUser);
+				try {
+					updateUser(upgradeUser);
+				} catch(NullPointerException npe) {
+					System.out.println("Invalid user!");
+					LogHere.warn(npe.getMessage());
+				}
 			break;
 			
 	        case 7: choice = 7;
 	        	System.out.println("Which user would you like to see the time of creation? Enter a username");
 	        	String usertimed = inputLine();
 	        	User userTime = getUser(usertimed);
-	        	System.out.println(getUserTime(userTime));
+				try {
+		        	System.out.println(getUserTime(userTime));
+				} catch(NullPointerException npe) {
+					System.out.println("Invalid user!");
+					LogHere.warn(npe.getMessage());
+				}
 	        break;
 	        
 	        case 8: choice = 8;

@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao{
 		List<User> userlist = new ArrayList<>();
 //		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM usertable");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM usertable ORDER BY id");
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {				
 				userlist.add(new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), 
