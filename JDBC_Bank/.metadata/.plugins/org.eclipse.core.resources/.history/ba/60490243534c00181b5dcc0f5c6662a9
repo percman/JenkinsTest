@@ -12,11 +12,5 @@ public interface UserDao {
 	boolean insertUser(User user);
 	String getPasswordHash(User user);
 	int getUserId(User user);
-	//int getProductId(Product product);
-	int getApproved(User user);
-	int getLocked(User user);
-	boolean approveAccount(User user);
-	boolean lockAccount(User user);
-	boolean unlockAccount(User user);
-	
+	int getProductId(Product product);
 }

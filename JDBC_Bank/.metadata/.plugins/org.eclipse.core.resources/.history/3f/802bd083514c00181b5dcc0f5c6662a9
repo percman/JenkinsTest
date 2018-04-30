@@ -54,7 +54,6 @@ public class MainMenu {
 					User tempUser = new User(firstName1, lastName1, password1);
 					
 					UserService.login(tempUser);
-					UserLogin.userLogin();
 					
 					break;
 				}

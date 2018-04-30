@@ -1,0 +1,3 @@
+Admin first name: Marilyn
+Admin last name: monroe
+Admin password: skirts

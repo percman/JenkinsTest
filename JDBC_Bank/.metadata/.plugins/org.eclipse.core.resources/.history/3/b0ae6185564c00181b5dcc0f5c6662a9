@@ -136,38 +136,15 @@ public class UserDaoImpl implements UserDao{
 			return 0;
 			}
 
-		public int getApproved(User user) {
-			int index = 0;
-			try (Connection conn = ConnectionUtil.getConnection()) {
-				PreparedStatement stmt = conn.prepareStatement("SELECT user_approved FROM user_table WHERE user_id = ? ");
-				stmt.setInt(++index, user.getId());
-				ResultSet rs = stmt.executeQuery();
-				if (rs.next()) {
-					return rs.getInt("user_approved");
-				}
-			} catch (SQLException sqle) {
-				System.err.println(sqle.getMessage());
-				System.err.println("SQL State: " + sqle.getSQLState());
-				System.err.println("Error Code: " + sqle.getErrorCode());
-			}
+		@Override
+		public int getApproved(int userId) {
+			// TODO Auto-generated method stub
 			return 0;
 		}
 
 		@Override
-		public int getLocked(User user) {
-			int index = 0;
-			try (Connection conn = ConnectionUtil.getConnection()) {
-				PreparedStatement stmt = conn.prepareStatement("SELECT user_locked FROM user_table WHERE user_id = ? ");
-				stmt.setInt(++index, user.getId());
-				ResultSet rs = stmt.executeQuery();
-				if (rs.next()) {
-					return rs.getInt("user_locked");
-				}
-			} catch (SQLException sqle) {
-				System.err.println(sqle.getMessage());
-				System.err.println("SQL State: " + sqle.getSQLState());
-				System.err.println("Error Code: " + sqle.getErrorCode());
-			}
+		public int getLocked(int userId) {
+			// TODO Auto-generated method stub
 			return 0;
 		}
 
@@ -191,21 +168,6 @@ public class UserDaoImpl implements UserDao{
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				PreparedStatement stmt = conn.prepareStatement("Update user_table SET user_locked = 1 WHERE user_id = ? ");
-				stmt.setInt(++index, user.getId());
-				return stmt.executeUpdate() > 0;
-			} catch (SQLException sqle) {
-				System.err.println(sqle.getMessage());
-				System.err.println("SQL State: " + sqle.getSQLState());
-				System.err.println("Error Code: " + sqle.getErrorCode());
-			}
-			return false;
-		}
-
-		@Override
-		public boolean unlockAccount(User user) {
-			int index = 0;
-			try (Connection conn = ConnectionUtil.getConnection()) {
-				PreparedStatement stmt = conn.prepareStatement("Update user_table SET user_locked = 0 WHERE user_id = ? ");
 				stmt.setInt(++index, user.getId());
 				return stmt.executeUpdate() > 0;
 			} catch (SQLException sqle) {

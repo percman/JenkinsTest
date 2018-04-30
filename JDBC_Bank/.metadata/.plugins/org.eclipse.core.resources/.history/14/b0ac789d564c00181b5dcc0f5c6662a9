@@ -136,6 +136,7 @@ public class UserDaoImpl implements UserDao{
 			return 0;
 			}
 
+		@Override
 		public int getApproved(User user) {
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
