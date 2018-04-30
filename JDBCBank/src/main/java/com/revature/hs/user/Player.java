@@ -81,14 +81,14 @@ public class Player extends User {
 		SetOptions whatToDo = textIO.newEnumInputReader(SetOptions.class).read(
 				"Which pack do you want to open?");
 
-		Deque<Card> cd = CardService.getInstance().openPack(CardService.convertSetName(whatToDo));
+		Deque<Card> cd = CardService.openPack(CardService.convertSetName(whatToDo));
 		terminal.println("UNPACKING");
 		for(Card c : cd) {
 			terminal.println(c.getRarity().name() + ": " + c.getName());
 			logger.debug("Unpacked a " + c.getRarity().name() + ": " + c.getName());
 			addCard(c);
 		}
-		saveState();
+		//saveState();
 	}
 
 	public void openPacks() {
@@ -98,7 +98,7 @@ public class Player extends User {
 				"Which pack do you want to open?");
 		int howMany = textIO.newIntInputReader().read("How many do you want to open?");
 		while (howMany-- > 0) {
-			Deque<Card> cd = CardService.getInstance().openPack(CardService.convertSetName(whatToDo));
+			Deque<Card> cd = CardService.openPack(CardService.convertSetName(whatToDo));
 			terminal.println("UNPACKING");
 			for (Card c : cd) {
 				terminal.println(c.getRarity().name() + ": " + c.getName());
@@ -106,7 +106,7 @@ public class Player extends User {
 				addCard(c);
 			}
 		}
-		saveState();
+		//saveState();
 	}
 
 	public void craftCard() {
@@ -188,8 +188,10 @@ public class Player extends User {
 
 
 	public void saveState() {
+		long logTime = System.currentTimeMillis();
 		logger.info("Saving state");
 		updatePlayer(this);
+		logger.info("Done. State saving took " + ((System.currentTimeMillis() - logTime)/1000) + " seconds");
 	}
 
 	public HashMap<String, Card> getMyCards() {

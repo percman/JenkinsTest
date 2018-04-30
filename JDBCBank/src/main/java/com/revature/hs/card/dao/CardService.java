@@ -20,6 +20,7 @@ public class CardService {
 	private static final Logger logger = Logger.getLogger(CardService.class);
 	private HashMap<String, Card> allCards;
 	private static CardDao dao = CardDaoImpl.getInstance();
+	private static PackSim packer = PackSim.getInstance();
 
 	private CardService(){}
 
@@ -31,7 +32,7 @@ public class CardService {
 	}
 
 	public static Deque<Card> openPack(String set) {
-		return PackSim.getInstance().openPack(set);
+		return packer.openPack(set);
 	}
 
 	public List<Card> getCardList(SetOptions set, Rarity rarity) {

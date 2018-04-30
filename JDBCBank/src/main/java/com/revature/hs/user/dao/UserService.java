@@ -78,6 +78,7 @@ public class UserService {
 	}
 
 	public static void addCard(Player player, Card card) {
+		logger.debug("Adding card to player...");
 		dao.addCard(player, card);
 	}
 
