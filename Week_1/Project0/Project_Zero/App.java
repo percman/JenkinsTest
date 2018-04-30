@@ -18,7 +18,7 @@ public class App {
 	public static ArrayList<User> userList = UserService.getAllUsers();
 	
 	//Initial page for welcoming new and returning users
-	public static void welcome (Scanner input) throws UserNameTakenException {
+	public static void welcome (Scanner input) {
 		
 		System.out.println("Hello, new user? (Y/N) or Q to Quit");
 		String response = input.next();
@@ -85,8 +85,9 @@ public class App {
 			for(User u : userList) {
 				//check if the user name is taken
 				if (u.getName().equals(userName)) {
-					System.out.println("Username " + userName + " is taken");
-					taken = true;
+					throw new UserNameTakenException("Username " + userName + " is taken") {
+						taken = true;
+					}
 				}
 			}
 			if(taken == false) {
