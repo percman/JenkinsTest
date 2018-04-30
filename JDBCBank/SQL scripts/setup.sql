@@ -1,17 +1,17 @@
  -- Create a user for the DB connection, do this in admin
---CREATE USER blizzard identified by hunter2;
---
---GRANT CONNECT to blizzard;
---GRANT CREATE ANY TABLE to blizzard;
---GRANT INSERT ANY TABLE TO blizzard;
---GRANT UPDATE ANY TABLE TO blizzard;
---GRANT DELETE ANY TABLE TO blizzard;
---GRANT CREATE ANY PROCEDURE TO blizzard;
---GRANT CREATE ANY TRIGGER TO blizzard;
---GRANT CREATE ANY SEQUENCE TO blizzard;
---GRANT UNLIMITED TABLESPACE TO blizzard;
---
---conn blizzard/hunter2
+CREATE USER blizzard identified by hunter2;
+
+GRANT CONNECT to blizzard;
+GRANT CREATE ANY TABLE to blizzard;
+GRANT INSERT ANY TABLE TO blizzard;
+GRANT UPDATE ANY TABLE TO blizzard;
+GRANT DELETE ANY TABLE TO blizzard;
+GRANT CREATE ANY PROCEDURE TO blizzard;
+GRANT CREATE ANY TRIGGER TO blizzard;
+GRANT CREATE ANY SEQUENCE TO blizzard;
+GRANT UNLIMITED TABLESPACE TO blizzard;
+
+conn blizzard/hunter2
 
 /*******************************************************************************
    Create Tables
