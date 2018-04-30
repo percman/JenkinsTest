@@ -2,7 +2,7 @@ package com.revature.users;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+public class User implements Serializable, BankUser{
 
 
 	private static final long serialVersionUID = 9099886195893877291L;
@@ -144,6 +144,11 @@ public class User implements Serializable{
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", locked=" + locked
 				+ ", balance=" + balance + ", adminstatus=" + adminstatus + "]";
+	}
+
+	@Override
+	public double generateInterest(User user) {
+		return 0;
 	}
 
 

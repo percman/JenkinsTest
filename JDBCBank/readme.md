@@ -1,5 +1,5 @@
 # Project 0 Read Me 
-This contains the Maven Project folder with the *entire* project0 data.
+##This contains the Maven Project folder with the *entire* project0 data.
 
 ## Quick Notes
 * Uploaded here at Week 2, so as to preserve the purely Java version of my Project0
