@@ -28,7 +28,7 @@ public abstract class Person implements Serializable {
 	public Person() {
 		super();
 	}
-	
+
 	public Person(String firstname, String lastname, String username, String password, String type) {
 		super();
 		this.firstname = firstname;
@@ -38,6 +38,11 @@ public abstract class Person implements Serializable {
 		this.type = type;
 	}
 
+	public Person(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
 
 	// getters and setters
 	public String getFirstname() {
@@ -47,11 +52,10 @@ public abstract class Person implements Serializable {
 	public void setFirstname(String name) {
 		this.firstname = name;
 	}
-	
+
 	public String getLastname() {
 		return lastname;
 	}
-
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
@@ -158,28 +162,18 @@ public abstract class Person implements Serializable {
 				+ ", isApproved=" + isApproved + ", isLocked=" + isLocked + "]";
 	}
 
-	
-	
-	
-	
-	
-	
-	
 	//
 	//
 	// Method(s) that all Person classes have
 	//
 	//
 
-
 	private static Scanner sc = new Scanner(System.in);
-	
+
 	public static void logout(Person user) {
 		System.out.println("Are you sure you want to log out?");
 		System.out.println("1. Yes");
 		System.out.println("2. No");
-
-		
 
 		try {
 			int choice = sc.nextInt();

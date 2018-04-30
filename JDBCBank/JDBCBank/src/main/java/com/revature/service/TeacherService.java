@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.revature.dao.TeacherDao;
 import com.revature.dao.TeacherDaoImpl;
+import com.revature.exceptions.InvalidLoginException;
 import com.revature.users.Student;
 import com.revature.users.Teacher;
 
@@ -25,18 +26,16 @@ public class TeacherService {
 		return dao.updateTeacher(teacher);
 	}
 	
-	public static Teacher login(Teacher teacher) {
+	public static Teacher login(Teacher teacher) throws InvalidLoginException{
 		Teacher temp = dao.getTeacher(teacher.getUsername());
 		if (dao.getTeacher(teacher.getUsername()) == null) {
-			System.err.println("NOT A VALID USERNAME");
-			return null;
+			throw new InvalidLoginException();
 		}
 		if (temp.getPassword().equals(dao.getPasswordHash(teacher))) {
 			System.out.println("You are a valid user, " + temp.getUsername());
 			return temp;
 		}
-		System.err.println("YOU ARE NOT A VALID USER, " + teacher.getUsername());
-		return null;
+		throw new InvalidLoginException();
 	}
 	
 	public static List<Student> getAllStudents(){

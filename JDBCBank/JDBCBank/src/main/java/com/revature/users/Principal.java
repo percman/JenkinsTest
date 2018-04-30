@@ -2,26 +2,31 @@ package com.revature.users;
 
 import java.io.Serializable;
 
-public class Principal extends Person implements Serializable{
+public class Principal extends Person implements Serializable {
 
 	private static final long serialVersionUID = 2014530413085450221L;
-		
-	
+
 	private String firstname;
 	private String lastname;
 	private String username;
 	private String password;
-	
+
 	private boolean isApproved = true;
 	private boolean isLocked = false;
 
-	
-	public Principal () {}
+	public Principal() {
+	}
 
 	public Principal(String firstname, String lastname, String username, String password) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
+		this.username = username;
+		this.password = password;
+	}
+
+	public Principal(String username, String password) {
+		super();
 		this.username = username;
 		this.password = password;
 	}
@@ -128,11 +133,4 @@ public class Principal extends Person implements Serializable{
 		return "Principal [firstname=" + firstname + ", lastname=" + lastname + ", username=" + username + "]";
 	}
 
-	
-	
-	
-	
-	
-	
-	
 }

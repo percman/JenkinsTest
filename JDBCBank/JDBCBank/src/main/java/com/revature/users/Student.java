@@ -6,23 +6,22 @@ public class Student extends Person implements Serializable {
 
 	private static final long serialVersionUID = -5944401087659678976L;
 
-	
 	private String firstname;
 	private String lastname;
 	private String username;
 	private String password;
-	
+
 	private int coins;
 	private int boughtSubtraction;
 	private int boughtMultiplication;
 	private int boughtDivision;
-	
+
 	private int isApproved;
 	private int isLocked;
-	
-	
-	public Student () {}
-	
+
+	public Student() {
+	}
+
 	public Student(String firstname, String lastname, String username, String password) {
 		super();
 		this.firstname = firstname;
@@ -30,7 +29,7 @@ public class Student extends Person implements Serializable {
 		this.username = username;
 		this.password = password;
 	}
-	
+
 	public Student(String firstname, String lastname, String username, int isApproved, int isLocked) {
 		super();
 		this.firstname = firstname;
@@ -47,8 +46,14 @@ public class Student extends Person implements Serializable {
 		this.username = username;
 	}
 
-	public Student(String firstname, String lastname, String username, String password, 
-			int coins, int boughtSubtraction, int boughtMultiplication, int boughtDivision) {
+	public Student(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
+	public Student(String firstname, String lastname, String username, String password, int coins,
+			int boughtSubtraction, int boughtMultiplication, int boughtDivision) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -59,7 +64,6 @@ public class Student extends Person implements Serializable {
 		this.boughtMultiplication = boughtMultiplication;
 		this.boughtDivision = boughtDivision;
 	}
-
 
 	public String getFirstname() {
 		return firstname;
@@ -188,10 +192,5 @@ public class Student extends Person implements Serializable {
 		return "Student [firstname=" + firstname + ", lastname=" + lastname + ", username=" + username + ", coins="
 				+ coins + "]";
 	}
-
-
-	
-	
-	
 
 }

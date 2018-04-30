@@ -32,6 +32,12 @@ public class Teacher extends Person implements Serializable {
 		this.username = username;
 	}
 
+	public Teacher(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
 	public String getFirstname() {
 		return firstname;
 	}

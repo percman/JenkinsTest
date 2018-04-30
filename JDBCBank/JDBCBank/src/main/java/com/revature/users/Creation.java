@@ -5,18 +5,21 @@ import java.util.Scanner;
 
 import com.revature.menus.PrincipalMenu;
 import com.revature.menus.StartMenu;
+import com.revature.service.MenuService;
+import com.revature.service.PrincipalService;
+import com.revature.service.StudentService;
+import com.revature.service.TeacherService;
 import com.revature.singletons.AccountData;
 import com.revature.singletons.LogThis;
 
 public class Creation {
 
-	private static AccountData ad = AccountData.getInstance();
 	private static Scanner sc = new Scanner(System.in);
 
 	public static void createStudent() {
 		LogThis.info("Create a New Student Profile");
 
-		Person student = new Student();
+		Student student = new Student();
 
 		try {
 			System.out.println("Please enter your first name");
@@ -25,17 +28,24 @@ public class Creation {
 			System.out.println("Please enter your last name");
 			student.setLastname(sc.nextLine());
 
-			System.out.println("Please choose a username");
+			System.out.println("Please choose a username ");
+			System.out.println("You will not be able to change this later and must be unique to you");
 			String username = sc.next();
+			
+			while(MenuService.usernameTaken(username)) {
+				System.out.println("That username has already been taken, please choose a different one");
+				username = sc.next();
+			}
+			
 			student.setUsername(username);
 
 			System.out.println("Please enter a password");
 			String password = sc.next();
 			student.setPassword(password);
 
-			student.setType("student");
+			MenuService.insertUsername(username, "student");
 
-			ad.put(username + ":" + password, student);
+			StudentService.insertStudent(student);
 
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn("NoSuchElementException in Create a New Student " + nsee.getMessage());
@@ -46,13 +56,12 @@ public class Creation {
 		}
 
 		LogThis.info("Student Account Created");
-		StartMenu.startMenu();
 	}
 
 	public static void createTeacher() {
 		LogThis.info("Create a New Teacher Profile");
 
-		Person teacher = new Teacher();
+		Teacher teacher = new Teacher();
 
 		try {
 			System.out.println("Please enter your first name");
@@ -63,15 +72,21 @@ public class Creation {
 
 			System.out.println("Please choose a username");
 			String username = sc.next();
+			
+			while(MenuService.usernameTaken(username)) {
+				System.out.println("That username has already been taken, please choose a different one");
+				username = sc.next();
+			}
+
 			teacher.setUsername(username);
 
 			System.out.println("Please enter a password");
 			String password = sc.next();
 			teacher.setPassword(password);
 
-			teacher.setType("teacher");
+			MenuService.insertUsername(username, "teacher");
 
-			ad.put(username + ":" + password, teacher);
+			TeacherService.insertTeacher(teacher);
 
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn("NoSuchElementException in Create a New Teacher " + nsee.getMessage());
@@ -82,13 +97,12 @@ public class Creation {
 		}
 
 		LogThis.info("Teacher Account Created");
-		StartMenu.startMenu();
 	}
 
-	public static void createPrincipal() {
+	public static Principal createPrincipal() {
 		LogThis.info("Create Principal");
 
-		Person principal = new Principal();
+		Principal principal = new Principal();
 
 		try {
 			System.out.println("Please enter your first name");
@@ -99,15 +113,21 @@ public class Creation {
 
 			System.out.println("Please choose a username");
 			String username = sc.next();
+			
+			while(MenuService.usernameTaken(username)) {
+				System.out.println("That username has already been taken, please choose a different one");
+				username = sc.next();
+			}
+
 			principal.setUsername(username);
 
 			System.out.println("Please enter a password");
 			principal.setPassword(sc.next());
 			String password = principal.getPassword();
 
-			principal.setType("principal");
+			MenuService.insertUsername(username, "principal");
 
-			ad.put(username + ":" + password, principal);
+			PrincipalService.insertPrincipal(principal);
 
 		} catch (NoSuchElementException nsee) {
 			LogThis.warn("NoSuchElementException in Create a New Principal " + nsee.getMessage());
@@ -118,7 +138,7 @@ public class Creation {
 		}
 
 		LogThis.info("Principal Account Created");
-		PrincipalMenu.principalMenu((Principal) principal);
+		return principal;
 	}
 
 }
