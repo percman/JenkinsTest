@@ -1,18 +1,9 @@
 package model;
 
 public class User extends Person{
-	private Administrator approve;
-	private Administrator reject;
-	private int balance;
-	private boolean lock;
-	public User(String name, String password, int i, boolean b) {
-		super();
-		super.setName(name);
-		super.setPassword(password);
-		this.approve = null;
-		this.reject = null;
-		this.lock = b;
-	}
+	Administrator approve;
+	Administrator reject;
+	
 	public Administrator getApprove() {
 		return approve;
 	}
@@ -25,16 +16,5 @@ public class User extends Person{
 	public void setReject(Administrator reject) {
 		this.reject = reject;
 	}
-	public boolean isLocked() {
-		return lock;
-	}
-	public int getBalance() {
-		return balance;
-	}
-	public void setBalance(int newBalance) {
-		this.balance = newBalance;
-	}
-	public void setLocked(boolean b) {
-		this.lock = b;
-	}
+	
 }
