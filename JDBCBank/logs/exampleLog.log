@@ -4145,3 +4145,48 @@ ORA-06512: at line 1
 2018-04-30 03:10:10 INFO  Player:192 - Saving state
 2018-04-30 03:10:24 INFO  Player:194 - Done. State saving took 14 seconds
 2018-04-30 03:10:57 INFO  Player:180 - Printing user's cards.
+2018-04-30 03:22:40 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 03:22:40 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 03:22:41 DEBUG PackSim:35 - Generating RNG
+2018-04-30 03:22:41 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-04-30 03:22:41 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-04-30 03:22:41 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-04-30 03:22:41 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-04-30 03:22:47 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 03:22:51 INFO  Core:141 - unapproved user attempted login
+2018-04-30 03:22:57 INFO  Core:127 - Attempting login with user admin
+2018-04-30 03:22:57 DEBUG UserService:50 - User admin logged in successfully!
+2018-04-30 03:22:57 INFO  Core:129 - Logged in!
+2018-04-30 03:23:04 INFO  Admin:86 - walkindude approved.
+2018-04-30 03:23:16 INFO  Core:127 - Attempting login with user walkindude
+2018-04-30 03:23:17 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-04-30 03:23:17 INFO  Core:129 - Logged in!
+2018-04-30 03:23:22 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 03:23:22 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 03:23:23 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 03:23:23 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 03:23:23 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 03:23:23 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 03:23:23 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-04-30 03:23:23 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 03:23:24 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-04-30 03:23:24 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-04-30 03:23:24 DEBUG Player:88 - Unpacked a COMMON: Swift Messenger
+2018-04-30 03:23:24 DEBUG UserService:81 - Adding card to player...
+2018-04-30 03:23:24 DEBUG Player:88 - Unpacked a COMMON: Darkmire Moonkin
+2018-04-30 03:23:24 DEBUG UserService:81 - Adding card to player...
+2018-04-30 03:23:24 DEBUG Player:88 - Unpacked a COMMON: Rabid Worgen
+2018-04-30 03:23:24 DEBUG UserService:81 - Adding card to player...
+2018-04-30 03:23:24 DEBUG Player:88 - Unpacked a COMMON: Swamp Dragon Egg
+2018-04-30 03:23:24 DEBUG UserService:81 - Adding card to player...
+2018-04-30 03:23:24 DEBUG Player:88 - Unpacked a RARE: Dark Possession
+2018-04-30 03:23:24 DEBUG UserService:81 - Adding card to player...
+2018-04-30 03:28:12 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 03:28:12 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 03:28:12 DEBUG PackSim:35 - Generating RNG
+2018-04-30 03:28:55 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 03:28:55 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 03:28:55 DEBUG PackSim:35 - Generating RNG
+2018-04-30 03:29:30 INFO  PackSim:32 - Preparing PackSim 
+2018-04-30 03:29:30 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-04-30 03:29:30 DEBUG PackSim:35 - Generating RNG

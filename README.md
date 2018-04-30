@@ -12,6 +12,8 @@ An existing player login is
 Username: `walkindude`  
 Password: `walkinwalkin`
 
+Note: player needs to be approved before logging in.
+
 ## Background
 This was based on the card crafting system of Hearthstone, Blizzard Entertainment's collectible card game. It's been simplified in some places for ease of implementation.
 
@@ -24,10 +26,10 @@ The "banked" resource is called "dust". You get this dust from turning spare car
 
 You get cards by opening "card packs". In any given card pack you're going to have a high chance of getting a "common" quality card, a lower chance of getting a "rare", ditto for "epic", then "legendary". Each card pack draws from a particular "set", a batch of cards that Blizzard released at once. 
 
-For the purposes of this program, I've made it so you can open up many packs at once without the ingame gold (or real life money) this would cost in Hearthstone. Opening up 80 packs or so from a given set will probably give you enough dust to craft anything you want, (after using the "dust extras" feature). That allows you to spend the dust, using the "craft card" feature. The rates to spend are listed in-app. Turning the duplicates into dust gets you less dust than it costs to craft a card, I didn't bother listing the rates in-app but you can see them in CardCollector.getDustAmount(Card card) in a pretty readable format if you want to know the rates.
+For the purposes of this program, I've made it so you can open up many packs at once without the ingame gold (or real life money) this would cost in Hearthstone. As of the current version this is reasonably slow, it takes roughly two seconds per pack to open, so don't go too crazy. For ease of testing player accounts are start at 1600 dust so you can craft anything you want. You can spend the dust, using the "craft card" feature. The rates to spend are listed in-app. Turning the duplicates into dust gets you less dust than it costs to craft a card.
 
 ## Libraries used
-I used org.json for json parsing, jbcrypt for password encryption, log4j for logging, math3 from apache commons for card rarity rates for pack opening, text-io for IO and jUnit for testing.
+I used log4j for logging, ojdbc for db connectivity, math3 from apache commons for card rarity rates for pack opening, text-io for IO and jUnit for testing.
 
 ## Other things
 

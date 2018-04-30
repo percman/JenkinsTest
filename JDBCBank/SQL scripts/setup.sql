@@ -54,12 +54,13 @@ CONSTRAINT FK_CARDID FOREIGN KEY (card_id) REFERENCES card(id)
 );
 
 -- DROP ORDER:
--- DROP TABLE player_card;
--- DROP TABLE card;
--- DROP TABLE player;
--- DROP TABLE hs_user;
--- DROP SEQUENCE card_id_sequence;
--- DROP SEQUENCE user_id_sequence;
+--DROP TABLE player_card;
+--DROP TABLE card;
+--DROP TABLE player;
+--DROP TABLE hs_user;
+--DROP SEQUENCE card_id_sequence;
+--DROP SEQUENCE user_id_sequence;
+
 
 -- For login.
 CREATE OR REPLACE FUNCTION GET_USER_HASH(USERNAME VARCHAR2, PASSWORD VARCHAR2) RETURN VARCHAR2
@@ -72,19 +73,18 @@ END;
 /
 
 
-CREATE OR REPLACE FUNCTION GET_CARD_BY_RARITY(RARITYSTRING VARCHAR2, SETSTRING VARCHAR2) RETURN SYS_REFCURSOR
+CREATE OR REPLACE FUNCTION GET_CARD_BY_RARITY(RARITYSTRING VARCHAR2, SETSTRING VARCHAR2) RETURN NUMBER
 IS
-    rarity_cursor SYS_REFCURSOR;
+which NUMBER;
 BEGIN
-    OPEN rarity_cursor FOR
-        SELECT *
+        SELECT id into which
         FROM   (
             SELECT *
             FROM   card
             WHERE rarity = RARITYSTRING AND card_set = SETSTRING
             ORDER BY DBMS_RANDOM.VALUE)
         WHERE  rownum < 2;
-    RETURN rarity_cursor;
+    RETURN which;
 END;
 /
 
@@ -138,12 +138,12 @@ BEGIN
     IF ( ct = 0) THEN
         INSERT INTO player_card VALUES (player_in, card_in, 1);
     ELSE    
-        INSERT INTO player_card VALUES (player_in, card_in, 
-            (SELECT owned FROM player_card WHERE player_id = player_in AND card_in = card_id) + 1);
+        UPDATE player_card SET owned = owned + 1 WHERE player_id = player_in AND card_id = card_in;
     END IF;        
     COMMIT;
 END;
 /
+
 
 CREATE OR REPLACE PROCEDURE insert_admin(username_in VARCHAR, password_in VARCHAR)
 IS
@@ -157,8 +157,8 @@ BEGIN
     insert_admin('admin', 'admins');
 END;
 /
-SELECT * FROM hs_user;
-//DELETE  FROM hs_user;
+
+-- DELETE  FROM hs_user;
 
 
 
