@@ -4190,3 +4190,4 @@ ORA-06512: at line 1
 2018-04-30 03:29:30 INFO  PackSim:32 - Preparing PackSim 
 2018-04-30 03:29:30 DEBUG PackSim:33 - Generating Rarity Distributions
 2018-04-30 03:29:30 DEBUG PackSim:35 - Generating RNG
+2018-04-30 16:23:11 INFO  UserService:75 - Adding new admin...
