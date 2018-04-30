@@ -6,17 +6,28 @@ import org.json.JSONObject;
 public class Card {
     private String name;
     private Rarity rarity;
-    private int mana;
     private JSONObject json;
     private int owned;
+    private int id;
+    private String set;
 
-    public Card(JSONObject jso) throws RarityNotFoundException {
-        this.name = jso.getString("name");
-        this.rarity = CardService.stringToRarity(jso.getString("rarity"));
-        this.owned = 1;
-    }
+	public Card(int id, String name, String rarityString, String cardSetString) throws RarityNotFoundException {
+		this.id = id;
+		this.name = name;
+		this.rarity = CardService.stringToRarity(rarityString);
+		this.owned = 1;
+		this.set = cardSetString;
+	}
 
-    public void addCopy() {
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void addCopy() {
     	this.owned += 1;
 	}
 

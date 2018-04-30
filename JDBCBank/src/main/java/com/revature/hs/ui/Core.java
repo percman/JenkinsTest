@@ -94,7 +94,6 @@ public class Core {
 					player.craftCard();
 					break;
 				case LOGOUT:
-					CardService.refresh();
 					return;
 			}
 		}

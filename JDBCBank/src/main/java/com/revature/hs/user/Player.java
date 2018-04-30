@@ -23,11 +23,22 @@ public class Player extends User {
 	private boolean isApproved;
 	private static final Logger logger = Logger.getLogger(Player.class);
 
-	public Player(String userName, String passwordHash, String role) {
-		super(userName, passwordHash, role);
+	public Player(String userName, String password, String role) {
+		super(userName, password, role);
 		this.dust = 0;
 		this.isApproved = false;
 		this.myCards = new HashMap<>();
+	}
+
+	public Player(int id, String username, boolean isLocked, boolean isApproved, int dust, List<Card> userCards) {
+		super(id, username, isLocked, "player");
+		this.isApproved = isApproved;
+		this.dust = dust;
+		this.myCards = new HashMap<>();
+		for (Card c : userCards) {
+			this.myCards.put(c.getName(), c);
+		}
+
 	}
 
 	// Adds a card to myCards, if the card exists it increments the owned count by one.
@@ -178,21 +189,7 @@ public class Player extends User {
 		UserService.getInstance().setUser(this);
 	}
 
-	@Override
-	public JSONObject toJSONObject() {
-		JSONObject jso = super.toJSONObject();
-		List<String> cardList = new LinkedList<>();
-		for (String s : myCards.keySet()) {
-			Card card = myCards.get(s);
-			int cardCount = card.getOwned();
-			while(cardCount-- > 0) {
-				cardList.add(s);
-			}
-		}
-		jso.put("myCards", cardList);
-		jso.put("dust", dust);
-		jso.put("isApproved", isApproved);
-
-		return jso;
+	public HashMap<String, Card> getMyCards() {
+		return myCards;
 	}
 }

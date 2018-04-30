@@ -10,7 +10,10 @@ import java.util.List;
 public interface UserDao {
 	List<Card> getUserCards(int id);
 	User getUser(String username);
-	void updateAdmin(Admin admin);
-	void updatePlayer(Player player);
+	boolean updateAdmin(Admin admin);
+	boolean updatePlayer(Player player);
 	boolean isUser(String username);
+	boolean addCard(Player player, Card card);
+	String hashPassword(String username, String password);
+	String getStoredHash(String username);
 }

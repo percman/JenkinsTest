@@ -27,14 +27,27 @@ public class UserService {
 		}
 		return instance;
 	}
-	
-	public User login(String username, String password) throws NoSuchUserException, WrongPasswordException,
-		LockedAccountException, UnApprovedUserException {
 
-		User us = getUser(username);
-		if (!BCrypt.checkpw(password, us.getPasswordHash())) {
+	public static String getStoredHash(String username) {
+		return dao.getStoredHash(username);
+	}
+
+	public static String hashPassword(String username, String password) {
+		return dao.hashPassword(username, password);
+	}
+
+	public static User login(String username, String password) throws NoSuchUserException, WrongPasswordException,
+		LockedAccountException, UnApprovedUserException {
+		User us;
+		String storedHash = getStoredHash(username);
+		String freshHash = hashPassword(username, password);
+
+		if (!storedHash.equals(freshHash)) {
 			throw new WrongPasswordException();
 		}
+		us = getUser(username);
+		us.setPassword(password);
+
 		if (us.isLocked()) {
 			throw new LockedAccountException();
 		}
@@ -45,30 +58,41 @@ public class UserService {
 		return us;
 	}
 
-	private boolean isUser(String username) {
+
+	// This is my factory method, getUser will return either a Player or an Admin, determined at runtime.
+	public static User getUser(String username) throws NoSuchUserException {
+		if (isUser(username)) {
+			return dao.getUser(username);
+		}
+		throw new NoSuchUserException();
+	}
+
+	public static boolean isUser(String username) {
 		return dao.isUser(username);
 	}
 
-	public static User getUser(String username) throws NoSuchUserException {
-
-		if (role.equals("player")) {
-			return new Player(jso);
-		}
-		else {
-			return new Admin(jso);
-		}
-	}
-
-	public void addUser(User user) throws DuplicateUserNameException {
+	public static void addUser(User user) throws DuplicateUserNameException {
 		if (isUser(user.getUserName())) {
 			throw new DuplicateUserNameException();
 		}
 		setUser(user);
 	}
 
+	public static void setUser(User user) {
+		if (user.getRole().equals("player")) {
+			updatePlayer((Player) user);
+		}
+		else {
+			updateAdmin((Admin) user);
+		}
+	}
 
-	public void setUser(User user) {
-		dao.setUser(user);
+	public static void updateAdmin(Admin admin) {
+		dao.updateAdmin(admin);
+	}
+
+	public static void updatePlayer(Player player) {
+		dao.updatePlayer(player);
 	}
 
 

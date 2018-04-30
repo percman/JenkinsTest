@@ -1,5 +1,6 @@
 package com.revature.hs.card;
 
+import com.revature.hs.card.dao.CardService;
 import org.apache.commons.math3.distribution.EnumeratedDistribution;
 import org.apache.commons.math3.util.Pair;
 import org.apache.log4j.Logger;
@@ -16,6 +17,7 @@ public class PackSim {
 	private EnumeratedDistribution noCommons;
 	private Random rng;
 	private String name;
+	private static PackSim instance;
 
 	public static final double COMMON_PERCENTAGE = 88.75;
 	public static final double RARE_PERCENTAGE = 8.922;
@@ -26,12 +28,19 @@ public class PackSim {
 	public static final double NC_EPIC_PERCENTAGE = 5.0;
 	public static final double NC_LEGENDARY_PERCENTAGE = 1.0;
 
-	public PackSim() {
+	private PackSim() {
 		logger.info("Preparing PackSim ");
 		logger.debug("Generating Rarity Distributions");
 		generateRarityDistributions();
 		logger.debug("Generating RNG");
 		rng = new Random();
+	}
+
+	public static PackSim getInstance() {
+		if (instance == null) {
+			instance = new PackSim();
+		}
+		return instance;
 	}
 
 	private void generateRarityDistributions() {
@@ -58,23 +67,23 @@ public class PackSim {
 	}
 
 	private Card getCard(String setName) {
-		return getCard((Rarity) withCommons.sample());
+		return CardService.getCard((Rarity) withCommons.sample(), setName);
 	}
 
 
-	private Card getRareOrBetter() {
-		return getCard((Rarity) noCommons.sample());
+	private Card getRareOrBetter(String setName) {
+		return CardService.getCard((Rarity) noCommons.sample(), setName);
 	}
 
 	//TODO: test the probability distribution to confirm it conforms to that of Hearthstone.
-	public Deque<Card> openPack() {
+	public Deque<Card> openPack(String setName) {
 		Deque<Card> out = new ArrayDeque<>();
 
 		for (int i = 0; i < 4; i++) {
-			out.offer(getCard());
+			out.offer(getCard(setName));
 		}
 
-		out.offer(getRareOrBetter());
+		out.offer(getRareOrBetter(setName));
 
 		return out;
 	}

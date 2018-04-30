@@ -9,15 +9,18 @@ import org.beryx.textio.TextTerminal;
 import org.mindrot.jbcrypt.BCrypt;
 import com.revature.hs.user.exceptions.*;
 
+import static com.revature.hs.user.dao.UserService.getUser;
+import static com.revature.hs.user.dao.UserService.setUser;
+
 public class Admin extends User {
 	private static final Logger logger = Logger.getLogger(Admin.class);
 
-	public Admin(JSONObject jso) {
-		super(jso);
-	}
-
 	public Admin(String userName, String passwordHash, String role) {
 		super(userName, passwordHash, role);
+	}
+
+	public Admin(int id, String username, boolean isLocked) {
+		super(id, username, isLocked, "admin");
 	}
 
 	public void addAdmin() {
@@ -38,13 +41,13 @@ public class Admin extends User {
 	public void lockUser() {
 		TextIO textIO = TextIoFactory.getTextIO();
 		TextTerminal terminal = textIO.getTextTerminal();
-		UserService DB = UserService.getInstance();
+
 		String user = textIO.newStringInputReader().withMinLength(4).withIgnoreCase().read(
 				"Which user do you want to lock?");
 		try {
-			User us = DB.getUser(user);
+			User us = getUser(user);
 			us.setLocked(true);
-			DB.setUser(us);
+			setUser(us);
 			logger.info(user + " locked.");
 			terminal.println("User locked!");
 		} catch (NoSuchUserException e) {
@@ -61,9 +64,9 @@ public class Admin extends User {
 		String user = textIO.newStringInputReader().withMinLength(4).withIgnoreCase().read(
 				"Which user do you want to unlock?");
 		try {
-			User us = DB.getUser(user);
+			User us = getUser(user);
 			us.setLocked(false);
-			DB.setUser(us);
+			setUser(us);
 			logger.info(user + " unlocked.");
 			terminal.println("User unlocked!");
 		} catch (NoSuchUserException e) {
@@ -80,9 +83,9 @@ public class Admin extends User {
 		String user = textIO.newStringInputReader().withMinLength(4).withIgnoreCase().read(
 				"Which user do you want to approve?");
 		try {
-			User us = DB.getUser(user);
+			User us = getUser(user);
 			((Player) us).setApproved(true);
-			DB.setUser(us);
+			setUser(us);
 			logger.info(user + " approved.");
 			terminal.println("User approved!");
 		} catch (NoSuchUserException e) {

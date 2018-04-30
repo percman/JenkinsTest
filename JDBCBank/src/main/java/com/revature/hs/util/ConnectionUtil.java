@@ -1,5 +1,7 @@
 package com.revature.hs.util;
 
+import org.apache.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,9 +12,10 @@ import java.util.Properties;
 
 
 // This class was taken directly from my notes of an example written by my instructor William.
-// I only changed the package name.
+// I only changed the package name and log statements
 public class ConnectionUtil {
 	private ConnectionUtil(){}
+	private static final Logger logger = Logger.getLogger(ConnectionUtil.class);
 
 	public static Connection getConnection() {
 		Connection conn = null;
@@ -24,9 +27,9 @@ public class ConnectionUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-			System.err.println(e.getMessage());
-			System.err.println("SQL STATE: " + e.getSQLState());
-			System.err.println("ERROR CODE: " + e.getErrorCode());
+			logger.error(e.getMessage());
+			logger.error("SQL STATE: " + e.getSQLState());
+			logger.error("ERROR CODE: " + e.getErrorCode());
 		}
 		return conn;
 	}
@@ -37,9 +40,9 @@ public class ConnectionUtil {
 		try {
 			conn.close();
 		}catch (SQLException e) {
-			System.err.println(e.getMessage());
-			System.err.println("SQL STATE: " + e.getSQLState());
-			System.err.println("ERROR CODE: " + e.getErrorCode());
+			logger.error(e.getMessage());
+			logger.error("SQL STATE: " + e.getSQLState());
+			logger.error("ERROR CODE: " + e.getErrorCode());
 		}
 	}
 }

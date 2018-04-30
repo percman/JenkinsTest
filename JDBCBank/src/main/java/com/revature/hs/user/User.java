@@ -4,12 +4,12 @@ import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 public abstract class User {
+	private int id;
 	private String userName;
-	private String passwordHash;
+	private String password;
 	private boolean isLocked;
 	private String role;
 	private static final Logger logger = Logger.getLogger(User.class);
-	
 	
 	public User(String userName, String password, String role) {
 		this.userName = userName;
@@ -17,12 +17,12 @@ public abstract class User {
 		this.isLocked = false;
 		this.role = role;
 	}
-	
-	public User(JSONObject jso) {
-		this.userName = jso.getString("username");
-		this.passwordHash = jso.getString("passwordHash");
-		this.isLocked = jso.getBoolean("isLocked");
-		this.role = jso.getString("role");
+
+	public User(int id, String username, boolean isLocked, String role) {
+		this.id = id;
+		this.userName = username;
+		this.isLocked = isLocked;
+		this.role = role;
 	}
 
 	public String getRole() {
@@ -41,20 +41,22 @@ public abstract class User {
 		this.isLocked = isLocked;
 	}
 
-	public String getPasswordHash() {
-		return passwordHash;
+	public String getPassword() {return this.password}
+
+	public void setPassword(String pw) {
+		this.password = pw;
 	}
 
 	public String getUserName() {
 		return userName;
 	}
 
-	public JSONObject toJSONObject() {
-		JSONObject jso = new JSONObject();
-		jso.put("username", userName);
-		jso.put("passwordHash", passwordHash);
-		jso.put("isLocked", isLocked);
-		jso.put("role", role);
-		return jso;
-	};
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 }

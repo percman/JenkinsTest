@@ -17,17 +17,25 @@ import java.util.*;
 
 public class CardService {
     private static CardService cc;
-    private HashMap<String, PackSim> setMap;
 	private static final Logger logger = Logger.getLogger(CardService.class);
 	private HashMap<String, Card> allCards;
+	private static CardDao dao = CardDaoImpl.getInstance();
 
+	private CardService {}
+
+	public static CardService getInstance() {
+		if (cc == null) {
+			cc = new CardService();
+		}
+		return cc;
+	}
 
 	public static Deque<Card> openPack(String set) {
-
+		return PackSim.getInstance().openPack(set);
 	}
 
 	public List<Card> getCardList(SetOptions set, Rarity rarity) {
-    	return setMap.get(convertSetName(set)).getCardList(rarity);
+    	return dao.getAllCards(rarityToString(rarity), convertSetName(set));
 	}
 
 	public static void printCardList(List<Card> cdList) {
@@ -65,28 +73,28 @@ public class CardService {
 	public static String convertSetName(SetOptions n) {
 		switch (n) {
 			case Witchwood:
-				return "The Witchwood";
+				return "GILNEAS";
 			case KobaldsAndCatacombs:
-				return "Kobalds and Catacombs";
+				return "LOOTAPALOOZA";
 			case KnightsOfTheFrozenThrone:
-				return "Knights of the Frozen Throne";
+				return "ICECROWN";
 			case UnGoro:
-				return "Journey to Un'Goro";
+				return "UNGORO";
 			case MeanStreetsOfGadgetzan:
-				return "Mean Streets of Gadgetzan";
+				return "GANGS";
 			case WhispersOfTheOldGods:
-				return "Whispers of the Old Gods";
+				return "OG";
 			case TheGrandTournament:
-				return "The Grand Tournament";
+				return "TGT";
 			case GoblinsVsGnomes:
-				return "Goblins vs. Gnomes";
+				return "GVG";
 			default:
 				return "Non-expansion";
 		}
 	}
 
 	public static Rarity stringToRarity(String s) throws RarityNotFoundException {
-        switch (s) {
+		switch (s) {
 			case "LEGENDARY":
 				return Rarity.LEGENDARY;
 			case "EPIC":
@@ -98,7 +106,22 @@ public class CardService {
 			default:
 				throw new RarityNotFoundException();
 		}
-    }
+	}
+
+	public static String rarityToString(Rarity r) {
+		switch (r) {
+			case LEGENDARY:
+				return "LEGENDARY";
+			case EPIC:
+				return "EPIC";
+			case RARE:
+				return "RARE";
+			case COMMON:
+				return "COMMON";
+			default:
+				return null;
+		}
+	}
 
     public static int getCraftCost(Card card) {
     	Rarity r = card.getRarity();
@@ -138,6 +161,16 @@ public class CardService {
 		}
 	}
 
+	public static Card getCard(int id) {
+		return dao.getCard(id);
+	}
 
+	public static Card getCard(Rarity r, String cardSetString) {
+		return dao.getCard(rarityToString(r), cardSetString);
+	}
+
+	public static List<Card> getAllCards(String cardSetString) {
+		return dao.getAllCards(cardSetString);
+	}
 
 }
