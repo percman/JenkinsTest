@@ -15,7 +15,7 @@ CREATE TABLE credentials(
 CREATE TABLE account (
     account_id NUMBER,
     username VARCHAR2(20),
-    funds NUMBER(12,2),
+    funds FLOAT ,
     CONSTRAINT PK_ACCOUNT PRIMARY KEY(account_id),
     CONSTRAINT FK_ACCOUNT FOREIGN KEY (username) REFERENCES credentials(username)
     ON DELETE CASCADE
