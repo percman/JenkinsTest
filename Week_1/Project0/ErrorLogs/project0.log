@@ -3405,3 +3405,17 @@ ORA-06512: at line 1
 2018-04-29 18:20:40 WARN  LogHere:27 - 
 2018-04-29 18:23:24 WARN  LogHere:27 - You are going negative! Process denied!
 2018-04-29 18:34:23 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:04:37 WARN  LogHere:27 - You are going negative! Process denied!
+2018-04-30 06:04:51 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:04:54 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:04:55 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:05:16 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:05:17 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:05:17 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:05:18 WARN  LogHere:27 - Invalid Choice Select
+2018-04-30 06:05:25 WARN  LogHere:27 - You are going negative! Process denied!
+2018-04-30 06:09:23 WARN  LogHere:27 - 
+2018-04-30 06:10:20 WARN  LogHere:27 - 
+2018-04-30 06:10:44 WARN  LogHere:27 - 
+2018-04-30 06:10:55 WARN  LogHere:27 - 
+2018-04-30 06:12:00 WARN  LogHere:27 - 

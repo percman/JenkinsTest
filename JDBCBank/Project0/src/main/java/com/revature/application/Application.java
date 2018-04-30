@@ -14,8 +14,7 @@ import com.revature.users.User;
  * 
  * @author Adalah
  *
- * Wow I can't believe it's all done with!
- * Had a blast writing this. Hope you like it!
+ * 
  *
  */
 
