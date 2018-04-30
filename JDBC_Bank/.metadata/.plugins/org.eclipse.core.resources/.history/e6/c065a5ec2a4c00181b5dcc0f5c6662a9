@@ -1,0 +1,17 @@
+package com.bank.exception;
+
+public class UserNotFoundException extends Exception{
+	
+	public PokemonNotFoundException() {
+		super();
+	}
+	
+	public PokemonNotFoundException(String msg) {
+		super(msg);
+	}
+	
+	public PokemonNotFoundException(String msg, Throwable cause) {
+		super(msg, cause);
+	}
+
+}

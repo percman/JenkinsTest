@@ -1,0 +1,17 @@
+package com.bank.singleton;
+
+public class LogSingleton {
+	
+	private static Logger instance;
+	
+	private Logger() {}
+	
+	public static Logger getInstance() {
+		if (instance == null) {
+			instance = new Logger();
+		}
+		return instance;
+	}
+	
+	private static final Logger logger = Logger.getLogger(Logger.class);
+}
