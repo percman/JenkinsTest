@@ -12,13 +12,10 @@ public class UserFactory {
 		switch(type.toLowerCase()) {
 			case "student":
 				return StudentService.login((Student) person);
-				// go to student login
 			case "teacher":
 				return TeacherService.login((Teacher) person);
-				// go to teacher login
 			case "principal":
 				return PrincipalService.login((Principal) person);
-				// go to principal login
 			default:
 				throw new InvalidUserTypeException();	
 		}

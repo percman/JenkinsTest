@@ -24,6 +24,8 @@ Run the following code in the new jdbcbank_user connection
 DROP TABLE principal;
 DROP TABLE teacher;
 DROP TABLE student;
+DROP TABLE username;
+
 
 -- Create the necessary tables
 CREATE TABLE principal (
@@ -241,4 +243,22 @@ BEGIN
 END;
 /
 
-UPDATE student SET s_approved = 1;
+
+-- Create a function that will return the type corresponding to specific username
+CREATE OR REPLACE FUNCTION get_type (new_username IN VARCHAR2) RETURN VARCHAR2
+    AS
+        return_type VARCHAR2 (9);
+    BEGIN
+        SELECT user_type INTO return_type FROM username WHERE username = new_username;
+        RETURN return_type;
+    END;
+    /
+
+-- Create a stored procedure that will insert the username and type into the username table
+CREATE OR REPLACE PROCEDURE insert_username (new_username IN VARCHAR2, new_type IN VARCHAR2)
+    AS
+    BEGIN
+        INSERT INTO username (username, user_type) VALUES (new_username, new_type);
+        COMMIT;
+    END;
+    /
