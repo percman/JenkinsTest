@@ -237,12 +237,6 @@ CREATE OR REPLACE FUNCTION get_principal RETURN NUMBER
     END;
     /
 
-SELECT * FROM student;
-BEGIN
-    insert_student('sUsername', 'sPassword', 'sFirstname', 'sLastname');
-END;
-/
-
 
 -- Create a function that will return the type corresponding to specific username
 CREATE OR REPLACE FUNCTION get_type (new_username IN VARCHAR2) RETURN VARCHAR2
