@@ -1,0 +1,16 @@
+package com.bank.factory;
+
+import com.bank.mainmenu.MainMenu;
+
+public class AdminLogin {
+
+	public static void adminLogin(){
+		System.out.println("You are in admin");
+		
+		
+		
+		
+		
+		MainMenu.startMenu();
+	}
+}

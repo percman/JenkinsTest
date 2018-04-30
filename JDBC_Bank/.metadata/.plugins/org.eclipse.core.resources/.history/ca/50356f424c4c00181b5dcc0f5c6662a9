@@ -1,0 +1,8 @@
+package com.bank.factory;
+
+public class AdminLogin {
+
+	public static void adminLogin(){
+		System.out.println("You are in admin");
+	}
+}

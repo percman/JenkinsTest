@@ -1,11 +1,10 @@
 package com.bank.factory;
 
-import com.bank.exception.UserNotFoundException;
 import com.bank.mainmenu.MainMenu;
 
 public class UserLogin {
 	
-	public static void userLogin() throws UserNotFoundException {
+	public static void userLogin() {
 		System.out.println("You are in user");
 		
 		

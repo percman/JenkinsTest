@@ -1,0 +1,9 @@
+package com.bank.factory;
+
+public class UserLogin {
+	
+	public static void userLogin() {
+		System.out.println("You are in user");
+	}
+
+}

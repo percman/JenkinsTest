@@ -33,28 +33,23 @@ public class MainMenu {
 				switch(loginAs) {
 				case 1:
 					System.out.println("What is your first name?");
-					String firstName = scan.next();
+					String firstName = scan.nextLine();
 					System.out.println("What is your last name?");
-					String lastName = scan.next();
+					String lastName = scan.nextLine();
 					System.out.println("What is your password?");
-					String password = scan.next();
+					String password = scan.nextLine();
 				
 				if (firstName.equals("Marilyn") && lastName.equals("Monroe")&& password.equals("Skirts")) {
 					AdminLogin.adminLogin();
 				}
-				else
+				else {
+					User temporaryUser = new User(firstName,lastName,password);
+					
+					UserService.login(temporaryUser);
+					
+				}
 					break;
 				case 2:
-					System.out.println("What is your first name?");
-					String firstName1 = scan.next();
-					System.out.println("What is your last name?");
-					String lastName1 = scan.next();
-					System.out.println("What is your password?");
-					String password1 = scan.next();
-					User tempUser = new User(firstName1, lastName1, password1);
-					
-					UserService.login(tempUser);
-					
 					break;
 				}
 			}

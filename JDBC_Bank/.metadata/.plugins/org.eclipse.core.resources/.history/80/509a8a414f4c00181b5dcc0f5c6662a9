@@ -3,7 +3,6 @@ package com.bank.factory;
 import java.util.Scanner;
 
 import com.bank.exception.IncorrectInputException;
-import com.bank.exception.UserNotFoundException;
 import com.bank.mainmenu.MainMenu;
 import com.bank.model.User;
 import com.bank.service.UserService;
@@ -11,7 +10,7 @@ import com.bank.singleton.LogSingleton;
 
 public class SignUp {
 	
-	public static void signUp() throws IncorrectInputException, UserNotFoundException {
+	public static void signUp() throws IncorrectInputException {
 		try(Scanner scan = new Scanner(System.in)){
 			
 			System.out.println("Please answer the following questions.");
