@@ -1,0 +1,455 @@
+2018-04-27 21:51:48 TRACE BankLogger:17 - Initializing...
+2018-04-27 21:55:46 TRACE BankLogger:17 - Initializing...
+2018-04-27 21:56:04 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-27 21:56:27 TRACE BankLogger:33 - New Account: Han Solo
+2018-04-27 21:56:50 TRACE BankLogger:33 - New Account: Heath Ledger
+2018-04-27 21:57:22 TRACE BankLogger:33 - New Account: Christian Bale
+2018-04-27 21:57:42 TRACE BankLogger:237 - Administator: Jesse Skipper approved all pending accounts.
+2018-04-27 21:58:19 TRACE BankLogger:153 - Administator: Jesse Skipper deleted an account.
+2018-04-27 21:58:24 TRACE BankLogger:119 - Administator: Jesse Skipper locked an account.
+2018-04-27 21:58:37 TRACE BankLogger:119 - Administator: Jesse Skipper locked an account.
+2018-04-27 21:58:42 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-27 21:58:49 TRACE BankLogger:101 - User: Allison Skipper logged out.
+2018-04-27 21:58:55 TRACE BankLogger:15 - Storing data...
+2018-04-27 21:58:55 TRACE BankLogger:16 - Data stored. System close.
+2018-04-27 21:58:55 TRACE BankLogger:17 - =============================
+2018-04-28 14:41:10 TRACE BankLogger:17 - Initializing...
+2018-04-28 14:41:16 TRACE BankLogger:15 - Storing data...
+2018-04-28 14:41:16 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 14:41:16 TRACE BankLogger:17 - =============================
+2018-04-28 14:42:07 TRACE BankLogger:17 - Initializing...
+2018-04-28 14:43:02 TRACE BankLogger:15 - Storing data...
+2018-04-28 14:43:02 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 14:43:02 TRACE BankLogger:17 - =============================
+2018-04-28 14:44:26 TRACE BankLogger:17 - Initializing...
+2018-04-28 14:45:19 TRACE BankLogger:17 - Initializing...
+2018-04-28 14:45:48 TRACE BankLogger:15 - Storing data...
+2018-04-28 14:45:48 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 14:45:48 TRACE BankLogger:17 - =============================
+2018-04-28 14:46:15 TRACE BankLogger:17 - Initializing...
+2018-04-28 14:46:40 TRACE BankLogger:78 - User: Allison Skipper logged out.
+2018-04-28 14:46:42 TRACE BankLogger:15 - Storing data...
+2018-04-28 14:46:42 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 14:46:42 TRACE BankLogger:17 - =============================
+2018-04-28 15:07:45 TRACE BankLogger:17 - Initializing...
+2018-04-28 15:08:33 TRACE BankLogger:87 - User: Allison Skipper logged out.
+2018-04-28 15:08:34 TRACE BankLogger:15 - Storing data...
+2018-04-28 15:08:34 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 15:08:34 TRACE BankLogger:17 - =============================
+2018-04-28 15:11:06 TRACE BankLogger:17 - Initializing...
+2018-04-28 15:11:19 TRACE BankLogger:17 - Initializing...
+2018-04-28 15:11:53 TRACE BankLogger:87 - User: Allison Skipper logged out.
+2018-04-28 15:11:53 TRACE BankLogger:15 - Storing data...
+2018-04-28 15:11:53 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 15:11:53 TRACE BankLogger:17 - =============================
+2018-04-28 15:44:19 TRACE BankLogger:17 - Initializing...
+2018-04-28 15:44:31 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 15:45:40 TRACE BankLogger:17 - Initializing...
+2018-04-28 15:45:49 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 15:46:04 TRACE BankLogger:103 - User: Jesse Skipper logged out.
+2018-04-28 15:46:05 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 15:50:41 TRACE BankLogger:17 - Initializing...
+2018-04-28 15:50:49 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 15:50:56 TRACE BankLogger:108 - User: Jesse Skipper logged out.
+2018-04-28 15:50:57 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 15:51:09 TRACE BankLogger:108 - User: Allison Skipper logged out.
+2018-04-28 15:51:10 TRACE BankLogger:15 - Storing data...
+2018-04-28 15:51:10 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 15:51:10 TRACE BankLogger:17 - =============================
+2018-04-28 16:04:15 TRACE BankLogger:17 - Initializing...
+2018-04-28 16:04:25 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 16:05:43 TRACE BankLogger:122 - User: Jesse Skipper logged out.
+2018-04-28 16:05:44 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 16:05:46 TRACE BankLogger:15 - Storing data...
+2018-04-28 16:05:46 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 16:05:46 TRACE BankLogger:17 - =============================
+2018-04-28 16:07:28 TRACE BankLogger:17 - Initializing...
+2018-04-28 16:07:36 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 16:17:38 TRACE BankLogger:122 - User: Jesse Skipper logged out.
+2018-04-28 16:17:38 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 16:17:39 TRACE BankLogger:15 - Storing data...
+2018-04-28 16:17:39 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 16:17:39 TRACE BankLogger:17 - =============================
+2018-04-28 16:17:41 TRACE BankLogger:17 - Initializing...
+2018-04-28 16:17:58 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 16:18:06 TRACE BankLogger:122 - User: Jesse Skipper logged out.
+2018-04-28 16:18:06 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 16:18:08 TRACE BankLogger:15 - Storing data...
+2018-04-28 16:18:08 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 16:18:08 TRACE BankLogger:17 - =============================
+2018-04-28 16:18:30 TRACE BankLogger:17 - Initializing...
+2018-04-28 16:18:39 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 16:19:10 TRACE BankLogger:122 - User: Jesse Skipper logged out.
+2018-04-28 16:19:12 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 16:19:28 TRACE BankLogger:122 - User: Allison Skipper logged out.
+2018-04-28 16:19:28 TRACE BankLogger:15 - Storing data...
+2018-04-28 16:19:28 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 16:19:28 TRACE BankLogger:17 - =============================
+2018-04-28 16:52:25 TRACE BankLogger:17 - Initializing...
+2018-04-28 16:52:34 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 16:54:29 TRACE BankLogger:123 - User: Jesse Skipper logged out.
+2018-04-28 16:54:30 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 16:56:32 TRACE BankLogger:123 - User: Allison Skipper logged out.
+2018-04-28 16:56:34 TRACE BankLogger:15 - Storing data...
+2018-04-28 16:56:34 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 16:56:34 TRACE BankLogger:17 - =============================
+2018-04-28 16:56:41 TRACE BankLogger:17 - Initializing...
+2018-04-28 16:57:50 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 16:57:51 TRACE BankLogger:15 - Storing data...
+2018-04-28 16:57:51 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 16:57:51 TRACE BankLogger:17 - =============================
+2018-04-28 16:57:55 TRACE BankLogger:17 - Initializing...
+2018-04-28 16:59:36 TRACE BankLogger:17 - Initializing...
+2018-04-28 16:59:46 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 17:00:52 TRACE BankLogger:122 - User: Jesse Skipper logged out.
+2018-04-28 17:00:53 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 17:00:53 TRACE BankLogger:15 - Storing data...
+2018-04-28 17:00:53 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 17:00:53 TRACE BankLogger:17 - =============================
+2018-04-28 17:01:24 TRACE BankLogger:17 - Initializing...
+2018-04-28 17:12:33 TRACE BankLogger:122 - User: Allison Skipper logged out.
+2018-04-28 17:12:33 TRACE BankLogger:15 - Storing data...
+2018-04-28 17:12:33 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 17:12:33 TRACE BankLogger:17 - =============================
+2018-04-28 17:12:36 TRACE BankLogger:17 - Initializing...
+2018-04-28 17:17:46 TRACE BankLogger:124 - User: Allison Skipper logged out.
+2018-04-28 17:17:46 TRACE BankLogger:15 - Storing data...
+2018-04-28 17:17:46 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 17:17:46 TRACE BankLogger:17 - =============================
+2018-04-28 17:17:48 TRACE BankLogger:17 - Initializing...
+2018-04-28 17:23:42 TRACE BankLogger:134 - User: Allison Skipper logged out.
+2018-04-28 17:23:47 TRACE BankLogger:63 - User: Jesse Skipper logged in.
+2018-04-28 17:24:21 TRACE BankLogger:134 - User: Jesse Skipper logged out.
+2018-04-28 17:24:22 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 17:35:09 TRACE BankLogger:17 - Initializing...
+2018-04-28 17:36:04 TRACE BankLogger:17 - Initializing...
+2018-04-28 17:37:29 TRACE BankLogger:17 - Initializing...
+2018-04-28 17:38:16 TRACE BankLogger:15 - Storing data...
+2018-04-28 17:38:16 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 17:38:16 TRACE BankLogger:17 - =============================
+2018-04-28 17:38:19 TRACE BankLogger:17 - Initializing...
+2018-04-28 17:45:34 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 17:46:42 TRACE BankLogger:72 - Admin: Jesse Skipper logged out.
+2018-04-28 17:47:07 TRACE BankLogger:15 - Storing data...
+2018-04-28 17:47:07 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 17:47:07 TRACE BankLogger:17 - =============================
+2018-04-28 17:47:11 TRACE BankLogger:17 - Initializing...
+2018-04-28 17:48:26 TRACE BankLogger:137 - Administator: Jesse Skipper unlocked an account.
+2018-04-28 17:48:30 TRACE BankLogger:154 - Administator: Jesse Skipper deleted an account.
+2018-04-28 17:48:46 TRACE BankLogger:73 - Admin: Jesse Skipper logged out.
+2018-04-28 17:49:22 TRACE BankLogger:137 - Administator: Jesse Skipper unlocked an account.
+2018-04-28 17:49:27 TRACE BankLogger:73 - Admin: Jesse Skipper logged out.
+2018-04-28 17:50:57 TRACE BankLogger:134 - User: Kinsey Webb logged out.
+2018-04-28 17:58:57 TRACE BankLogger:73 - Admin: Jesse Skipper logged out.
+2018-04-28 17:58:58 TRACE BankLogger:15 - Storing data...
+2018-04-28 17:58:58 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 17:58:58 TRACE BankLogger:17 - =============================
+2018-04-28 17:59:01 TRACE BankLogger:17 - Initializing...
+2018-04-28 17:59:57 TRACE BankLogger:129 - Administator: Jesse Skipper unlocked an account.
+2018-04-28 18:00:58 TRACE BankLogger:211 - Administator: Jesse Skipper approved an account.
+2018-04-28 18:01:10 TRACE BankLogger:55 - User: Jesse Skipper logged in.
+2018-04-28 18:01:33 TRACE BankLogger:134 - User: Jesse Skipper logged out.
+2018-04-28 18:01:34 TRACE BankLogger:65 - Admin: Jesse Skipper logged out.
+2018-04-28 18:03:33 TRACE BankLogger:17 - Initializing...
+2018-04-28 18:03:53 TRACE BankLogger:55 - User: Jesse Skipper logged in.
+2018-04-28 18:05:05 TRACE BankLogger:134 - User: Jesse Skipper logged out.
+2018-04-28 18:05:06 TRACE BankLogger:65 - Admin: Jesse Skipper logged out.
+2018-04-28 18:05:08 TRACE BankLogger:15 - Storing data...
+2018-04-28 18:05:08 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 18:05:08 TRACE BankLogger:17 - =============================
+2018-04-28 18:10:49 TRACE BankLogger:17 - Initializing...
+2018-04-28 18:10:57 TRACE BankLogger:55 - User: Jesse Skipper logged in.
+2018-04-28 18:11:22 WARN  BankLogger:83 - Skip_a_few did not have enough TiCos for trade
+2018-04-28 18:11:36 WARN  BankLogger:83 - Skip_a_few did not have enough TiCos for trade
+2018-04-28 18:11:47 WARN  BankLogger:83 - Skip_a_few did not have enough TiCos for trade
+2018-04-28 18:14:00 TRACE BankLogger:147 - User: Jesse Skipper logged out.
+2018-04-28 18:14:09 TRACE BankLogger:55 - User: Jesse Skipper logged in.
+2018-04-28 18:14:21 TRACE BankLogger:147 - User: Jesse Skipper logged out.
+2018-04-28 18:14:23 TRACE BankLogger:65 - Admin: Jesse Skipper logged out.
+2018-04-28 18:17:27 TRACE BankLogger:147 - User: Allison Skipper logged out.
+2018-04-28 18:19:05 TRACE BankLogger:147 - User: Kinsey Webb logged out.
+2018-04-28 18:19:05 TRACE BankLogger:15 - Storing data...
+2018-04-28 18:19:05 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 18:19:05 TRACE BankLogger:17 - =============================
+2018-04-28 18:19:12 TRACE BankLogger:17 - Initializing...
+2018-04-28 18:20:19 TRACE BankLogger:33 - New Account: Skip_a_few penguins
+2018-04-28 18:21:11 TRACE BankLogger:15 - Storing data...
+2018-04-28 18:21:11 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 18:21:11 TRACE BankLogger:17 - =============================
+2018-04-28 18:24:09 TRACE BankLogger:17 - Initializing...
+2018-04-28 18:24:26 TRACE BankLogger:15 - Storing data...
+2018-04-28 18:24:26 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 18:24:26 TRACE BankLogger:17 - =============================
+2018-04-28 18:26:30 TRACE BankLogger:17 - Initializing...
+2018-04-28 18:26:45 WARN  BankLogger:113 - ORA-00001: unique constraint (JESSESKIPPER14.SYS_C005285) violated
+ORA-06512: at "JESSESKIPPER14.INSERT_USER", line 5
+ORA-06512: at line 1
+
+2018-04-28 18:26:45 WARN  BankLogger:114 - SQL State: 23000
+2018-04-28 18:26:45 WARN  BankLogger:115 - Error Code: 1
+2018-04-28 18:27:56 WARN  BankLogger:313 - ORA-00001: unique constraint (JESSESKIPPER14.SYS_C005320) violated
+ORA-06512: at "JESSESKIPPER14.INSERT_TIMESTAMP", line 4
+ORA-06512: at line 1
+
+2018-04-28 18:27:56 WARN  BankLogger:314 - SQL State: 23000
+2018-04-28 18:27:56 WARN  BankLogger:315 - Error Code: 1
+2018-04-28 18:33:33 TRACE BankLogger:17 - Initializing...
+2018-04-28 18:33:44 WARN  BankLogger:313 - ORA-00001: unique constraint (JESSESKIPPER14.SYS_C005320) violated
+ORA-06512: at "JESSESKIPPER14.INSERT_TIMESTAMP", line 4
+ORA-06512: at line 1
+
+2018-04-28 18:33:44 WARN  BankLogger:314 - SQL State: 23000
+2018-04-28 18:33:44 WARN  BankLogger:315 - Error Code: 1
+2018-04-28 18:33:47 TRACE BankLogger:154 - User: Allison Skipper logged out.
+2018-04-28 18:33:52 TRACE BankLogger:55 - User: Jesse Skipper logged in.
+2018-04-28 18:33:55 WARN  BankLogger:313 - ORA-00001: unique constraint (JESSESKIPPER14.SYS_C005320) violated
+ORA-06512: at "JESSESKIPPER14.INSERT_TIMESTAMP", line 4
+ORA-06512: at line 1
+
+2018-04-28 18:33:55 WARN  BankLogger:314 - SQL State: 23000
+2018-04-28 18:33:55 WARN  BankLogger:315 - Error Code: 1
+2018-04-28 18:34:09 TRACE BankLogger:154 - User: Jesse Skipper logged out.
+2018-04-28 18:34:10 TRACE BankLogger:65 - Admin: Jesse Skipper logged out.
+2018-04-28 18:34:20 WARN  BankLogger:313 - ORA-00001: unique constraint (JESSESKIPPER14.SYS_C005320) violated
+ORA-06512: at "JESSESKIPPER14.INSERT_TIMESTAMP", line 4
+ORA-06512: at line 1
+
+2018-04-28 18:34:20 WARN  BankLogger:314 - SQL State: 23000
+2018-04-28 18:34:20 WARN  BankLogger:315 - Error Code: 1
+2018-04-28 18:34:47 TRACE BankLogger:154 - User: Kinsey Webb logged out.
+2018-04-28 18:35:31 TRACE BankLogger:42 - New Account: Timmy Turner
+2018-04-28 18:35:46 TRACE BankLogger:230 - Administator: Jesse Skipper approved all pending accounts.
+2018-04-28 18:35:49 TRACE BankLogger:65 - Admin: Jesse Skipper logged out.
+2018-04-28 18:36:11 TRACE BankLogger:154 - User: Timmy Turner logged out.
+2018-04-28 18:36:14 TRACE BankLogger:15 - Storing data...
+2018-04-28 18:36:14 TRACE BankLogger:16 - Data stored. System close.
+2018-04-28 18:36:14 TRACE BankLogger:17 - =============================
+2018-04-29 11:39:37 TRACE BankLogger:17 - Initializing...
+2018-04-29 11:39:52 TRACE BankLogger:56 - User: Jesse Skipper logged in.
+2018-04-29 11:40:01 TRACE BankLogger:155 - User: Jesse Skipper logged out.
+2018-04-29 11:40:04 TRACE BankLogger:66 - Admin: Jesse Skipper logged out.
+2018-04-29 11:40:27 TRACE BankLogger:155 - User: Allison Skipper logged out.
+2018-04-29 11:40:34 TRACE BankLogger:56 - User: Jesse Skipper logged in.
+2018-04-29 11:40:44 WARN  BankLogger:347 - ORA-04098: trigger 'JESSESKIPPER14.TRADE_REQUEST_A_ACCEPT' is invalid and failed re-validation
+ORA-06512: at "JESSESKIPPER14.ACCEPT_TRADE_REQUEST", line 4
+ORA-06512: at line 1
+
+2018-04-29 11:40:44 WARN  BankLogger:348 - SQL State: 42000
+2018-04-29 11:40:44 WARN  BankLogger:349 - Error Code: 4098
+2018-04-29 11:40:55 TRACE BankLogger:155 - User: Jesse Skipper logged out.
+2018-04-29 11:40:57 TRACE BankLogger:66 - Admin: Jesse Skipper logged out.
+2018-04-29 11:41:05 TRACE BankLogger:15 - Storing data...
+2018-04-29 11:41:05 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 11:41:05 TRACE BankLogger:17 - =============================
+2018-04-29 14:28:21 TRACE BankLogger:17 - Initializing...
+2018-04-29 14:29:36 TRACE BankLogger:42 - New Account: Patrick Star
+2018-04-29 14:30:10 TRACE BankLogger:56 - User: Jesse Skipper logged in.
+2018-04-29 14:30:12 WARN  BankLogger:383 - ORA-00942: table or view does not exist
+
+2018-04-29 14:30:12 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:30:12 WARN  BankLogger:385 - Error Code: 942
+2018-04-29 14:30:15 WARN  BankLogger:309 - ORA-00001: unique constraint (JESSESKIPPER14.SYS_C005350) violated
+ORA-06512: at "JESSESKIPPER14.INSERT_TICO", line 4
+ORA-06512: at line 1
+
+2018-04-29 14:30:15 WARN  BankLogger:310 - SQL State: 23000
+2018-04-29 14:30:15 WARN  BankLogger:311 - Error Code: 1
+2018-04-29 14:30:22 TRACE BankLogger:155 - User: Jesse Skipper logged out.
+2018-04-29 14:30:25 WARN  BankLogger:383 - ORA-00942: table or view does not exist
+
+2018-04-29 14:30:25 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:30:25 WARN  BankLogger:385 - Error Code: 942
+2018-04-29 14:30:31 TRACE BankLogger:212 - Administator: Jesse Skipper approved an account.
+2018-04-29 14:30:35 TRACE BankLogger:66 - Admin: Jesse Skipper logged out.
+2018-04-29 14:30:42 WARN  BankLogger:383 - ORA-00942: table or view does not exist
+
+2018-04-29 14:30:42 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:30:42 WARN  BankLogger:385 - Error Code: 942
+2018-04-29 14:30:45 TRACE BankLogger:155 - User: Patrick Star logged out.
+2018-04-29 14:30:47 TRACE BankLogger:15 - Storing data...
+2018-04-29 14:30:47 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 14:30:47 TRACE BankLogger:17 - =============================
+2018-04-29 14:30:51 TRACE BankLogger:17 - Initializing...
+2018-04-29 14:31:01 WARN  BankLogger:383 - ORA-00942: table or view does not exist
+
+2018-04-29 14:31:01 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:31:01 WARN  BankLogger:385 - Error Code: 942
+2018-04-29 14:31:14 WARN  BankLogger:383 - ORA-00942: table or view does not exist
+
+2018-04-29 14:31:14 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:31:14 WARN  BankLogger:385 - Error Code: 942
+2018-04-29 14:31:17 WARN  BankLogger:383 - ORA-00942: table or view does not exist
+
+2018-04-29 14:31:17 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:31:17 WARN  BankLogger:385 - Error Code: 942
+2018-04-29 14:31:20 TRACE BankLogger:155 - User: Allison Skipper logged out.
+2018-04-29 14:31:20 TRACE BankLogger:15 - Storing data...
+2018-04-29 14:31:20 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 14:31:20 TRACE BankLogger:17 - =============================
+2018-04-29 14:35:40 TRACE BankLogger:17 - Initializing...
+2018-04-29 14:35:51 WARN  BankLogger:383 - ORA-00904: "USER_TICO": invalid identifier
+
+2018-04-29 14:35:51 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:35:51 WARN  BankLogger:385 - Error Code: 904
+2018-04-29 14:35:55 WARN  BankLogger:383 - ORA-00904: "USER_TICO": invalid identifier
+
+2018-04-29 14:35:55 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:35:55 WARN  BankLogger:385 - Error Code: 904
+2018-04-29 14:35:58 WARN  BankLogger:383 - ORA-00904: "USER_TICO": invalid identifier
+
+2018-04-29 14:35:58 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:35:58 WARN  BankLogger:385 - Error Code: 904
+2018-04-29 14:36:03 TRACE BankLogger:155 - User: Kinsey Webb logged out.
+2018-04-29 14:36:11 WARN  BankLogger:399 - ORA-00904: "USER_TICO": invalid identifier
+
+2018-04-29 14:36:11 WARN  BankLogger:400 - SQL State: 42000
+2018-04-29 14:36:11 WARN  BankLogger:401 - Error Code: 904
+2018-04-29 14:36:18 TRACE BankLogger:66 - Admin: Jesse Skipper logged out.
+2018-04-29 14:36:19 TRACE BankLogger:15 - Storing data...
+2018-04-29 14:36:19 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 14:36:19 TRACE BankLogger:17 - =============================
+2018-04-29 14:37:17 TRACE BankLogger:17 - Initializing...
+2018-04-29 14:37:24 WARN  BankLogger:383 - ORA-00904: "USER_TICO": invalid identifier
+
+2018-04-29 14:37:24 WARN  BankLogger:384 - SQL State: 42000
+2018-04-29 14:37:24 WARN  BankLogger:385 - Error Code: 904
+2018-04-29 14:37:28 TRACE BankLogger:155 - User: Kinsey Webb logged out.
+2018-04-29 14:37:29 TRACE BankLogger:15 - Storing data...
+2018-04-29 14:37:29 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 14:37:29 TRACE BankLogger:17 - =============================
+2018-04-29 14:38:36 TRACE BankLogger:17 - Initializing...
+2018-04-29 14:38:47 TRACE BankLogger:155 - User: Kinsey Webb logged out.
+2018-04-29 14:39:31 TRACE BankLogger:56 - User: Jesse Skipper logged in.
+2018-04-29 14:39:43 TRACE BankLogger:155 - User: Jesse Skipper logged out.
+2018-04-29 14:39:44 TRACE BankLogger:66 - Admin: Jesse Skipper logged out.
+2018-04-29 14:39:44 TRACE BankLogger:15 - Storing data...
+2018-04-29 14:39:44 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 14:39:44 TRACE BankLogger:17 - =============================
+2018-04-29 14:48:15 TRACE BankLogger:17 - Initializing...
+2018-04-29 14:48:16 WARN  BankLogger:260 - ORA-00942: table or view does not exist
+
+2018-04-29 14:48:16 WARN  BankLogger:261 - SQL State: 42000
+2018-04-29 14:48:16 WARN  BankLogger:262 - Error Code: 942
+2018-04-29 14:48:43 WARN  BankLogger:115 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_USER' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-04-29 14:48:43 WARN  BankLogger:116 - SQL State: 65000
+2018-04-29 14:48:43 WARN  BankLogger:117 - Error Code: 6550
+2018-04-29 14:48:43 WARN  BankLogger:55 - ORA-00942: table or view does not exist
+
+2018-04-29 14:48:43 WARN  BankLogger:56 - SQL State: 42000
+2018-04-29 14:48:43 WARN  BankLogger:57 - Error Code: 942
+2018-04-29 14:50:32 TRACE BankLogger:17 - Initializing...
+2018-04-29 14:50:33 WARN  BankLogger:260 - ORA-00942: table or view does not exist
+
+2018-04-29 14:50:33 WARN  BankLogger:261 - SQL State: 42000
+2018-04-29 14:50:33 WARN  BankLogger:262 - Error Code: 942
+2018-04-29 14:54:40 TRACE BankLogger:17 - Initializing...
+2018-04-29 14:54:55 TRACE BankLogger:17 - Initializing...
+2018-04-29 14:55:04 TRACE BankLogger:51 - First time setup complete...
+2018-04-29 14:55:41 TRACE BankLogger:212 - Administator: Jesse Skipper approved an account.
+2018-04-29 14:55:46 TRACE BankLogger:212 - Administator: Jesse Skipper approved an account.
+2018-04-29 14:55:52 TRACE BankLogger:231 - Administator: Jesse Skipper approved all pending accounts.
+2018-04-29 14:56:09 TRACE BankLogger:66 - Admin: Jesse Skipper logged out.
+2018-04-29 14:56:10 TRACE BankLogger:15 - Storing data...
+2018-04-29 14:56:10 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 14:56:10 TRACE BankLogger:17 - =============================
+2018-04-29 14:59:44 TRACE BankLogger:17 - Initializing...
+2018-04-29 15:00:25 TRACE BankLogger:66 - Admin: Jesse Skipper logged out.
+2018-04-29 15:00:25 TRACE BankLogger:15 - Storing data...
+2018-04-29 15:00:25 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 15:00:25 TRACE BankLogger:17 - =============================
+2018-04-29 15:01:05 TRACE BankLogger:17 - Initializing...
+2018-04-29 15:03:00 TRACE BankLogger:17 - Initializing...
+2018-04-29 15:04:28 TRACE BankLogger:17 - Initializing...
+2018-04-29 15:04:58 TRACE BankLogger:52 - First time setup complete...
+2018-04-29 15:05:38 TRACE BankLogger:66 - Admin: Jesse Skipper logged out.
+2018-04-29 15:05:39 TRACE BankLogger:15 - Storing data...
+2018-04-29 15:05:39 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 15:05:39 TRACE BankLogger:17 - =============================
+2018-04-29 15:10:38 TRACE BankLogger:18 - Initializing...
+2018-04-29 15:11:06 TRACE BankLogger:42 - New Account: Allison Skipper
+2018-04-29 15:11:19 TRACE BankLogger:214 - Administator: Jesse Skipper approved an account.
+2018-04-29 15:11:26 TRACE BankLogger:214 - Administator: Jesse Skipper approved an account.
+2018-04-29 15:11:40 TRACE BankLogger:59 - User: Jesse Skipper logged in.
+2018-04-29 15:11:52 TRACE BankLogger:156 - User: Jesse Skipper logged out.
+2018-04-29 15:11:53 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-29 15:12:36 TRACE BankLogger:156 - User: Allison Skipper logged out.
+2018-04-29 15:12:46 TRACE BankLogger:59 - User: Jesse Skipper logged in.
+2018-04-29 15:13:10 TRACE BankLogger:156 - User: Jesse Skipper logged out.
+2018-04-29 15:13:11 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-29 15:13:30 TRACE BankLogger:156 - User: Allison Skipper logged out.
+2018-04-29 15:13:47 TRACE BankLogger:156 - User: Allison Skipper logged out.
+2018-04-29 15:13:53 TRACE BankLogger:59 - User: Jesse Skipper logged in.
+2018-04-29 15:14:15 TRACE BankLogger:156 - User: Jesse Skipper logged out.
+2018-04-29 15:14:16 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-29 15:15:12 TRACE BankLogger:15 - Storing data...
+2018-04-29 15:15:12 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 15:15:12 TRACE BankLogger:17 - =============================
+2018-04-29 15:20:16 TRACE BankLogger:18 - Initializing...
+2018-04-29 15:20:23 TRACE BankLogger:15 - Storing data...
+2018-04-29 15:20:23 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 15:20:23 TRACE BankLogger:17 - =============================
+2018-04-29 15:25:14 TRACE BankLogger:18 - Initializing...
+2018-04-29 15:25:25 TRACE BankLogger:59 - User: Jesse Skipper logged in.
+2018-04-29 15:25:34 TRACE BankLogger:158 - User: Jesse Skipper logged out.
+2018-04-29 15:25:36 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-29 15:26:20 TRACE BankLogger:158 - User: Allison Skipper logged out.
+2018-04-29 15:26:45 TRACE BankLogger:59 - User: Jesse Skipper logged in.
+2018-04-29 15:26:59 TRACE BankLogger:158 - User: Jesse Skipper logged out.
+2018-04-29 15:27:00 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-29 15:27:34 TRACE BankLogger:158 - User: Allison Skipper logged out.
+2018-04-29 15:27:35 TRACE BankLogger:15 - Storing data...
+2018-04-29 15:27:35 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 15:27:35 TRACE BankLogger:17 - =============================
+2018-04-29 15:27:49 TRACE BankLogger:18 - Initializing...
+2018-04-29 15:28:08 TRACE BankLogger:59 - User: Jesse Skipper logged in.
+2018-04-29 15:28:19 TRACE BankLogger:159 - User: Jesse Skipper logged out.
+2018-04-29 15:28:21 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-29 15:29:35 TRACE BankLogger:159 - User: Allison Skipper logged out.
+2018-04-29 15:29:35 TRACE BankLogger:15 - Storing data...
+2018-04-29 15:29:35 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 15:29:35 TRACE BankLogger:17 - =============================
+2018-04-29 15:31:02 TRACE BankLogger:18 - Initializing...
+2018-04-29 15:31:14 TRACE BankLogger:59 - User: Jesse Skipper logged in.
+2018-04-29 15:31:27 TRACE BankLogger:164 - User: Jesse Skipper logged out.
+2018-04-29 15:31:29 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-29 15:31:47 TRACE BankLogger:164 - User: Allison Skipper logged out.
+2018-04-29 15:31:47 TRACE BankLogger:15 - Storing data...
+2018-04-29 15:31:47 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 15:31:47 TRACE BankLogger:17 - =============================
+2018-04-29 22:06:15 TRACE BankLogger:18 - Initializing...
+2018-04-29 22:06:33 TRACE BankLogger:42 - New Account: Scooby Doo
+2018-04-29 22:06:49 TRACE BankLogger:228 - Administator: Jesse Skipper approved all pending accounts.
+2018-04-29 22:06:54 TRACE BankLogger:58 - User: Jesse Skipper logged in.
+2018-04-29 22:07:12 TRACE BankLogger:166 - User: Jesse Skipper logged out.
+2018-04-29 22:07:13 TRACE BankLogger:68 - Admin: Jesse Skipper logged out.
+2018-04-29 22:07:37 TRACE BankLogger:166 - User: Allison Skipper logged out.
+2018-04-29 22:07:44 TRACE BankLogger:15 - Storing data...
+2018-04-29 22:07:44 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 22:07:44 TRACE BankLogger:17 - =============================
+2018-04-29 22:23:31 TRACE BankLogger:18 - Initializing...
+2018-04-29 22:24:04 TRACE BankLogger:42 - New Account: Bill Nye
+2018-04-29 22:24:05 TRACE BankLogger:15 - Storing data...
+2018-04-29 22:24:05 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 22:24:05 TRACE BankLogger:17 - =============================
+2018-04-29 22:30:34 TRACE BankLogger:18 - Initializing...
+2018-04-29 22:30:40 WARN  BankLogger:308 - ORA-06550: line 1, column 7:
+PLS-00221: 'GET_NUMBER_OF_PENDING_USERS' is not a procedure or is undefined
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-04-29 22:30:40 WARN  BankLogger:309 - SQL State: 65000
+2018-04-29 22:30:40 WARN  BankLogger:310 - Error Code: 6550
+2018-04-29 22:33:46 TRACE BankLogger:68 - Admin: Jesse Skipper logged out.
+2018-04-29 22:33:46 TRACE BankLogger:15 - Storing data...
+2018-04-29 22:33:46 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 22:33:46 TRACE BankLogger:17 - =============================
+2018-04-29 22:34:53 TRACE BankLogger:18 - Initializing...
+2018-04-29 22:35:12 TRACE BankLogger:228 - Administator: Jesse Skipper approved all pending accounts.
+2018-04-29 22:35:21 TRACE BankLogger:68 - Admin: Jesse Skipper logged out.
+2018-04-29 22:35:22 TRACE BankLogger:15 - Storing data...
+2018-04-29 22:35:22 TRACE BankLogger:16 - Data stored. System close.
+2018-04-29 22:35:22 TRACE BankLogger:17 - =============================
