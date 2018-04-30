@@ -1,0 +1,8 @@
+2018-04-30 04:42:10 INFO  JDBCBankLogger:305 - New currentUser added into database!
+2018-04-30 04:42:23 INFO  JDBCBankLogger:318 - User is logged in!
+2018-04-30 04:42:31 INFO  JDBCBankLogger:318 - User is logged in!
+2018-04-30 04:43:16 INFO  JDBCBankLogger:259 - User ID: 5 is now approved!
+2018-04-30 04:43:19 INFO  JDBCBankLogger:358 - User is logged out!
+2018-04-30 04:43:25 INFO  JDBCBankLogger:318 - User is logged in!
+2018-04-30 04:43:41 INFO  JDBCBankLogger:358 - User is logged out!
+2018-04-30 04:43:43 INFO  JDBCBankLogger:374 - Scanner resources closed.
