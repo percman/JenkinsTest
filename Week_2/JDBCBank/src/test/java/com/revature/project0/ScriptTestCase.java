@@ -3,11 +3,23 @@ package com.revature.project0;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import com.revature.dao.users.AdminService;
+import com.revature.dao.users.UserService;
+import com.revature.data.FileIO;
+import com.revature.exceptions.UserNotFoundException;
+import com.revature.exceptions.UserTypeNotFoundException;
+import com.revature.users.Admin;
+import com.revature.users.NewUserFactory;
+import com.revature.users.User;
 
 public class ScriptTestCase {
 	private final ByteArrayOutputStream printOut = new ByteArrayOutputStream();
@@ -17,7 +29,6 @@ public class ScriptTestCase {
 	public void startStreams() {
 	    System.setOut(new PrintStream(printOut));
 	    System.setErr(new PrintStream(printErr));
-	    Record.getInstance().loadData();
 	}
 
 	@After
@@ -29,65 +40,72 @@ public class ScriptTestCase {
 	
 	@Test(expected = UserNotFoundException.class)
 	public void userNotFoundExceptionTest() throws UserNotFoundException {
-		
-		FileIO.getUser("bill");
-	}
-	@Test
-	public void getUserTest() throws UserNotFoundException {	
-		Assert.assertTrue(Record.users.contains(FileIO.getUser("greg")));
-	}
-	@Test
-	public void getAdminTest() throws UserNotFoundException {
-		Assert.assertTrue(Record.admins.contains(FileIO.getAdmin("adam")));
+		UserService.getUser("john");
 	}
 	@Test(expected = UserTypeNotFoundException.class)
 	public void typeNotFoundExceptionTest() throws UserTypeNotFoundException  {
 	NewUserFactory.getUser("notAType", "stan", "password");
 	}
 	@Test
+	@Ignore
 	public void addUserTest() throws UserNotFoundException{
 		User stan = new User("stan" , "password");
-		FileIO.addNewUser(stan);
-		Assert.assertTrue(Record.users.contains(FileIO.getUser("stan")));
+		UserService.addUser(stan);
+		Assert.assertEquals(UserService.getUser("stan"),stan);
 	}
 	@Test
+	@Ignore
 	public void addAdminTest() throws UserNotFoundException{
 		Admin tom = new Admin("tom" , "password");
-		FileIO.addAdmin(tom);
-		Assert.assertTrue(Record.admins.contains(FileIO.getAdmin("tom")));
+		AdminService.addAdmin(tom);
+		Assert.assertEquals(AdminService.getAdmin("stan"),tom);
 	}
 	@Test
 	public void setLockedTest() throws UserNotFoundException{
-		Admin tom = new Admin("tom" , "password");
-		tom.setLocked(true, FileIO.getUser("greg"));
-		Assert.assertTrue(FileIO.getUser("greg").isUserLocked());
-		tom.setLocked(false, FileIO.getUser("greg"));
-		Assert.assertFalse(FileIO.getUser("greg").isUserLocked());
+		UserService.lockUser(UserService.getUser("megan"));
+		Assert.assertTrue(UserService.isUserLocked(UserService.getUser("megan")));
+		UserService.unlockUser(UserService.getUser("megan"));
+		Assert.assertFalse(UserService.isUserLocked(UserService.getUser("megan")));
 	}
 	@Test
-	public void setApprovedTest(){
-		User stan = new User("stan" , "password");
-		FileIO.addNewUser(stan);
-		Assert.assertTrue(stan.isUserUnapproved());
+	@Ignore
+	public void setApprovedTest() throws UserNotFoundException{
+		User jimmy = new User("jimmy" , "password");
+		UserService.addUser(jimmy);
+		Assert.assertTrue(UserService.isUserUnapproved(jimmy));
+		UserService.approveUser(jimmy);
+		Assert.assertFalse(UserService.isUserUnapproved(jimmy));
 	}
 	@Test	
 	public void scanForLockedTest() throws UserNotFoundException{
-		Admin tom = new Admin("tom" , "password");
-		tom.setLocked(true, FileIO.getUser("greg"));		
+		UserService.lockUser(UserService.getUser("megan"));		
 		FileIO.scanLocked();
-		Assert.assertEquals("User has been locked.greg\r\n", printOut.toString());
+		Assert.assertEquals("megan", printOut.toString());
 	}
 	@Test
 	public void scanForUnlockedTest() throws UserNotFoundException{
 		FileIO.scanUnlocked();
-		Assert.assertEquals("greg\r\n", printOut.toString());
+		Assert.assertEquals("megan\njimmy\nstan\nhank", printOut.toString());
 	}
 	@Test
 	public void scanForApprovedTest(){
 		User stan = new User("stan" , "password");
-		FileIO.addNewUser(stan);
+		//UserService.addUser(new User("hank","password"));
 		FileIO.scanApproved();
-		Assert.assertEquals("stan\r\n", printOut.toString());
+		Assert.assertEquals("megan" + "\n" + "jimmy" + "\n", printOut.toString());
 	}
-
+   @Test
+	public void getUsersTest()  {
+	List<User> user = UserService.getUsers();
+	Assert.assertEquals(user.get(0).getUsername(),"megan");
+	Assert.assertEquals(user.get(1).getUsername(),"jimmy");
+	Assert.assertEquals(user.get(2).getUsername(),"stan");
+	Assert.assertEquals(user.get(3).getUsername(),"hank");
+	}
+	@Test
+	public void getAdminsTest()  {
+	List<Admin> admin = AdminService.getAdmins();
+	Assert.assertEquals(admin.get(0).getUsername(),"dave");
+	Assert.assertEquals(admin.get(1).getUsername(),"tom");
+	}
 }

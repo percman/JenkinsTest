@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 
 import org.apache.log4j.Logger;
 
+import com.revature.dao.movie.Movie;
 import com.revature.dao.movie.MovieService;
 import com.revature.dao.users.AdminService;
 import com.revature.dao.users.UserService;
@@ -15,6 +16,7 @@ import com.revature.data.Login;
 import com.revature.exceptions.AlreadyHaveMovieException;
 import com.revature.exceptions.ApprovalPendingException;
 import com.revature.exceptions.LockedAccountException;
+import com.revature.exceptions.MovieNotFoundException;
 import com.revature.exceptions.NoMovieException;
 import com.revature.exceptions.NotRentingMovieException;
 import com.revature.exceptions.OutOfStockException;
@@ -47,13 +49,13 @@ public class Script {
 			}
 		} catch (IOException ioe) {
 			logger.error(ioe.getMessage(), ioe);
-		} /*finally {
+		} finally {
 			try {
 				read.close();
 			} catch (IOException ioe) {
 				logger.error(ioe.getMessage(), ioe);
 			}
-		}*/
+		}
 	}
 
 	// handles the script that handles the creation of a new user
@@ -98,7 +100,7 @@ public class Script {
 			if (Login.userExists(username)) {
 				System.out.print("Please enter your password:");
 				String password = read.readLine();
-				if (Login.checkPassword(password, username)) {
+				if (Login.checkPasswordUser(UserService.getPasswordHash(new User(username,password)), username)) {
 					User user = UserService.getUser(username);
 					if (UserService.isUserUnapproved(user)) {
 						throw new ApprovalPendingException();
@@ -115,7 +117,7 @@ public class Script {
 			if (Login.adminExists(username)) {
 				System.out.print("Please enter your password:");
 				String password = read.readLine();
-				if (Login.checkPassword(password, username)) {
+				if (Login.checkPasswordAdmin(AdminService.getPasswordHash(new Admin(username,password)), username)) {
 					System.out.println("you have been successfully logged in as an admin.");
 					logger.info("admin " + username + "logged in");
 					adminHub(AdminService.getAdmin(username));
@@ -148,10 +150,12 @@ public class Script {
 		try {
 			while (!input.equals("quit") && !input.equals("q")) {
 				System.out.print(
-						"Type add to add a movie to your collection, remove to remove a movie from your collction, view to view your collection or quit to stop:");
+						"Type rent to rent a movie, return to return a movie, view to view your collection or quit to stop:");
 				input = read.readLine().toLowerCase();
 				switch (input) {
-				case "add":
+				case "rent":
+					System.out.println("The movies you can currently rent are: ");
+					MovieService.ViewAvailableMovies();
 					System.out.print("Enter the movies you want to add to your collection seperated by a common:");
 					String titles = read.readLine();
 					tokenizer = new StringTokenizer(titles, ",");
@@ -162,8 +166,8 @@ public class Script {
 					}
 					
 					break;
-				case "remove":
-					System.out.print("Enter the movies you want to remove from your collection seperated by a common:");
+				case "return":
+					System.out.print("Enter the movies you want to return seperated by a common:");
 					titles = read.readLine();
 					tokenizer = new StringTokenizer(titles, ",");
 					while (tokenizer.hasMoreTokens()) {
@@ -194,12 +198,10 @@ public class Script {
 			logger.error(nme.getMessage(), nme);
 		} catch (AlreadyHaveMovieException ahme) {
 			logger.error(ahme.getMessage(), ahme);
-		} catch (tooManyMoviesOutException tmmoe) {
-			logger.error(tmmoe.getMessage(), tmmoe);
-		} catch (OutOfStockException oose) {
-			logger.error(oose.getMessage(), oose);
 		} catch (NotRentingMovieException nrme) {
 			logger.error(nrme.getMessage(), nrme);
+		} catch (MovieNotFoundException mnfe) {
+			logger.error(mnfe.getMessage(), mnfe);
 		} finally {
 			try {
 				read.close();
@@ -214,7 +216,7 @@ public class Script {
 		try {
 			while (!input.equals("quit") && !input.equals("q")) {
 				System.out.print(
-						"Type lock to lock a user, unlock to unlock a user, approve to approve a user or quit to stop:");
+						"Type lock to lock a user, unlock to unlock a user, approve to approve a user, add to add a new movie available for rental or quit to stop:");
 				input = read.readLine().toLowerCase();
 				String user = "";
 				switch (input) {
@@ -254,6 +256,17 @@ public class Script {
 						UserService.approveUser(UserService.getUser(username));
 						logger.info("admin " + admin.getUsername() + "approved " + username);
 					}
+					break;
+				case "add":
+					System.out.print("Enter the movies you want make available for rental:");
+					String titles = read.readLine();
+					tokenizer = new StringTokenizer(titles, ",");
+					while (tokenizer.hasMoreTokens()) {
+						String title = tokenizer.nextToken();
+						AdminService.addNewMovie(new Movie(title));
+						logger.info("admin " + admin.getUsername() + "added movie " + title);
+					}
+					
 					break;
 				case "quit":
 					System.out.print("You have quit the application.");

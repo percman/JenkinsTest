@@ -23,4 +23,6 @@ public interface UserDao {
 	public boolean isUserLocked(User user) throws UserNotFoundException;
 
 	public boolean isUserUnapproved(User user) throws UserNotFoundException;
+
+	String getPasswordHash(User user);
 }

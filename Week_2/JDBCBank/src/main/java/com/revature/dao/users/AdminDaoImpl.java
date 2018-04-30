@@ -84,9 +84,37 @@ private static AdminDaoImpl instance;
 	}
 
 	@Override
-	public boolean addNewMovie(Movie movie) {
+	public boolean addNewMovie(Movie movie){
 		// TODO adds a new movie into the database
+		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()){
+			CallableStatement stmt = conn.prepareCall("{CALL insert_movie(?)}");
+			stmt.setString(++index, movie.getTitle());
+			return stmt.executeUpdate() > 0;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State:" + sqle.getSQLState());
+			System.err.println("SQL Code:" + sqle.getErrorCode());
+		}
 		return false;
+	}
+	
+	@Override
+	public String getPasswordHash(Admin admin) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT get_user_hash(?,?)AS HASH FROM dual");
+			stmt.setString(++index, admin.getUsername());
+			stmt.setString(++index, admin.getPassword());
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next())
+				return rs.getString("HASH");
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State:" + sqle.getSQLState());
+			System.err.println("SQL Code:" + sqle.getErrorCode());
+		}
+		return null;
 	}
 
 }

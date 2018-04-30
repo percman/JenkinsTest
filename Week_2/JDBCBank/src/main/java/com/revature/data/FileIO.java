@@ -15,7 +15,7 @@ public static void scanApproved() {
 	
 	for(User user : UserService.getUsers()) {
 		try {
-			if(UserService.isUserUnapproved(user)) {
+			if(!UserService.isUserUnapproved(user)) {
 				System.out.println(user.getUsername());
 			}
 		} catch (UserNotFoundException unfe) {

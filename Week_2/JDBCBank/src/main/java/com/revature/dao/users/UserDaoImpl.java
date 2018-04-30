@@ -47,9 +47,8 @@ public class UserDaoImpl implements UserDao {
 		// TODO locks a user
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()){
-			CallableStatement stmt = conn.prepareCall("{CALL change_lock(?,?)}");
+			CallableStatement stmt = conn.prepareCall("{CALL lock_user(?)}");
 			stmt.setString(++index, user.getUsername());
-			stmt.setInt(++index, 0);
 			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {
 			System.err.println(sqle.getMessage());
@@ -65,9 +64,8 @@ public class UserDaoImpl implements UserDao {
 		// TODO unlocks a user
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()){
-			CallableStatement stmt = conn.prepareCall("{CALL change_lock(?,?)}");
+			CallableStatement stmt = conn.prepareCall("{CALL unlock_user(?)}");
 			stmt.setString(++index, user.getUsername());
-			stmt.setInt(++index, 1);
 			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {
 			System.err.println(sqle.getMessage());
@@ -122,8 +120,9 @@ public class UserDaoImpl implements UserDao {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM movie_user WHERE user_username = ?");
 			stmt.setString(++index, user);
 			ResultSet rs = stmt.executeQuery();
+			
 			if (rs.next())
-				return new User(rs.getString("user_username"), rs.getString("user_password"));
+				return new User(rs.getString("user_username"), rs.getString("user_password"), rs.getInt("user_id"));
 		} catch (SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: "+sqle.getSQLState());
@@ -139,8 +138,10 @@ public class UserDaoImpl implements UserDao {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM movie_user WHERE user_username = ?");
 			stmt.setString(++index, user.getUsername());
 			ResultSet rs = stmt.executeQuery();
-			if (rs.next())
+			if (rs.next()) {
+				int lock = rs.getInt("locked");
 				return rs.getInt("locked") == 1;
+			}
 		} catch (SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: "+sqle.getSQLState());
@@ -167,7 +168,23 @@ public class UserDaoImpl implements UserDao {
 		throw new UserNotFoundException();
 	}
 	
-	
+	@Override
+	public String getPasswordHash(User user) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT get_user_hash(?,?)AS HASH FROM dual");
+			stmt.setString(++index, user.getUsername());
+			stmt.setString(++index, user.getPassword());
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next())
+				return rs.getString("HASH");
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State:" + sqle.getSQLState());
+			System.err.println("SQL Code:" + sqle.getErrorCode());
+		}
+		return null;
+	}
 	
 
 }

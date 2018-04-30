@@ -3,3 +3,174 @@
 2018-04-25 12:34:28 INFO  Script:153 - user gregadded movie batman
 2018-04-25 12:34:35 INFO  Script:153 - user gregadded movie Ironman
 2018-04-25 12:34:53 INFO  Script:153 - user gregadded movie ironman
+2018-04-29 16:43:30 INFO  Script:72 - new admin dave created
+2018-04-29 16:43:36 INFO  Script:263 - admin davelogged out
+2018-04-29 16:44:26 INFO  Script:44 - login attempt made
+2018-04-29 16:44:31 ERROR Script:133 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:124)
+	at com.revature.project0.Script.start(Script.java:45)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 16:53:35 INFO  Script:44 - login attempt made
+2018-04-29 17:00:53 INFO  Script:44 - login attempt made
+2018-04-29 17:01:00 ERROR Script:133 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:124)
+	at com.revature.project0.Script.start(Script.java:45)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:01:21 INFO  Script:44 - login attempt made
+2018-04-29 17:06:35 INFO  Script:44 - login attempt made
+2018-04-29 17:06:41 INFO  Script:121 - admin davelogged in
+2018-04-29 17:07:07 ERROR Script:278 - 
+com.revature.exceptions.UserNotFoundException
+	at com.revature.dao.users.UserDaoImpl.getUser(UserDaoImpl.java:132)
+	at com.revature.dao.users.UserService.getUser(UserService.java:38)
+	at com.revature.project0.Script.adminHub(Script.java:259)
+	at com.revature.project0.Script.login(Script.java:122)
+	at com.revature.project0.Script.start(Script.java:45)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:07:07 ERROR Script:133 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:124)
+	at com.revature.project0.Script.start(Script.java:45)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:09:51 INFO  Script:45 - login attempt made
+2018-04-29 17:09:59 INFO  Script:122 - admin davelogged in
+2018-04-29 17:10:23 INFO  Script:271 - admin daveadded movie Spiderman
+2018-04-29 17:10:23 INFO  Script:271 - admin daveadded movie Deadpool
+2018-04-29 17:11:01 INFO  Script:45 - login attempt made
+2018-04-29 17:11:11 INFO  Script:122 - admin davelogged in
+2018-04-29 17:11:25 INFO  Script:271 - admin daveadded movie Spiderman
+2018-04-29 17:11:41 INFO  Script:277 - admin davelogged out
+2018-04-29 17:11:41 ERROR Script:134 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:125)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:12:19 INFO  Script:77 - new user megan created
+2018-04-29 17:12:27 INFO  Script:45 - login attempt made
+2018-04-29 17:12:33 ERROR Script:132 - 
+com.revature.exceptions.UserNotFoundException
+	at com.revature.dao.users.UserDaoImpl.getUser(UserDaoImpl.java:132)
+	at com.revature.dao.users.UserService.getUser(UserService.java:38)
+	at com.revature.data.Login.checkPasswordUser(Login.java:40)
+	at com.revature.project0.Script.login(Script.java:103)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:13:28 INFO  Script:45 - login attempt made
+2018-04-29 17:14:06 INFO  Script:45 - login attempt made
+2018-04-29 17:15:56 INFO  Script:45 - login attempt made
+2018-04-29 17:16:02 ERROR Script:138 - 
+com.revature.exceptions.ApprovalPendingException
+	at com.revature.project0.Script.login(Script.java:106)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:16:13 INFO  Script:45 - login attempt made
+2018-04-29 17:16:18 ERROR Script:134 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:125)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:16:27 INFO  Script:45 - login attempt made
+2018-04-29 17:16:32 INFO  Script:122 - admin davelogged in
+2018-04-29 17:16:40 INFO  Script:261 - admin daveapproved megan
+2018-04-29 17:16:42 INFO  Script:277 - admin davelogged out
+2018-04-29 17:16:42 ERROR Script:134 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:125)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:16:55 INFO  Script:45 - login attempt made
+2018-04-29 17:17:06 INFO  Script:112 - user meganlogged in
+2018-04-29 17:17:17 INFO  Script:185 - user meganlogged out
+2018-04-29 17:17:17 ERROR Script:134 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:115)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:18:20 INFO  Script:45 - login attempt made
+2018-04-29 17:18:27 INFO  Script:112 - user meganlogged in
+2018-04-29 17:18:42 INFO  Script:45 - login attempt made
+2018-04-29 17:18:47 INFO  Script:122 - admin davelogged in
+2018-04-29 17:18:59 INFO  Script:271 - admin daveadded movie Fantastic Four
+2018-04-29 17:20:28 INFO  Script:45 - login attempt made
+2018-04-29 17:20:33 INFO  Script:122 - admin davelogged in
+2018-04-29 17:20:42 INFO  Script:271 - admin daveadded movie Fantastic Four
+2018-04-29 17:20:48 INFO  Script:277 - admin davelogged out
+2018-04-29 17:20:48 ERROR Script:134 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:125)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:21:01 INFO  Script:45 - login attempt made
+2018-04-29 17:21:07 INFO  Script:112 - user meganlogged in
+2018-04-29 17:21:16 INFO  Script:165 - user meganadded movie Fantastic Four
+2018-04-29 17:21:31 ERROR Script:206 - 
+com.revature.exceptions.NotRentingMovieException
+	at com.revature.dao.movie.MovieDaoImpl.ReturnMovie(MovieDaoImpl.java:88)
+	at com.revature.dao.movie.MovieService.ReturnMovie(MovieService.java:26)
+	at com.revature.project0.Script.userHub(Script.java:175)
+	at com.revature.project0.Script.login(Script.java:113)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:21:31 ERROR Script:134 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:115)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 17:23:03 INFO  Script:45 - login attempt made
+2018-04-29 17:23:07 INFO  Script:112 - user meganlogged in
+2018-04-29 17:23:18 INFO  Script:176 - user meganadded movie Fantastic Four
+2018-04-29 19:25:01 INFO  Script:45 - login attempt made
+2018-04-29 19:25:13 INFO  Script:112 - user meganlogged in
+2018-04-29 19:25:17 INFO  Script:185 - user meganlogged out
+2018-04-29 19:25:17 ERROR Script:134 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:115)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 20:36:30 INFO  Script:45 - login attempt made
+2018-04-29 20:36:38 INFO  Script:112 - user meganlogged in
+2018-04-29 20:41:38 INFO  Script:45 - login attempt made
+2018-04-29 20:41:45 INFO  Script:112 - user meganlogged in
+2018-04-29 20:41:56 INFO  Script:45 - login attempt made
+2018-04-29 20:42:01 INFO  Script:122 - admin davelogged in
+2018-04-29 20:42:08 INFO  Script:267 - admin daveadded movie Avatar
+2018-04-29 20:42:08 INFO  Script:267 - admin daveadded movie Batman
+2018-04-29 20:43:48 INFO  Script:45 - login attempt made
+2018-04-29 20:43:52 INFO  Script:112 - user meganlogged in
+2018-04-29 20:43:57 INFO  Script:165 - user meganadded movie Superman
+2018-04-29 20:44:17 INFO  Script:176 - user meganadded movie The Avengers
+2018-04-29 20:44:38 INFO  Script:176 - user meganadded movie The Avengers
+2018-04-29 20:58:12 INFO  Script:45 - login attempt made
+2018-04-29 20:58:31 INFO  Script:45 - login attempt made
+2018-04-29 20:58:38 INFO  Script:112 - user jimmylogged in
+2018-04-29 20:58:48 INFO  Script:165 - user jimmyadded movie Superman
+2018-04-29 21:14:38 INFO  Script:45 - login attempt made
+2018-04-29 21:14:47 ERROR Script:134 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:125)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 21:15:03 INFO  Script:45 - login attempt made
+2018-04-29 21:15:22 INFO  Script:112 - user jimmylogged in
+2018-04-29 21:22:21 INFO  Script:45 - login attempt made
+2018-04-29 21:22:29 INFO  Script:112 - user jimmylogged in
+2018-04-29 21:22:39 INFO  Script:176 - user jimmyadded movie Superman
+2018-04-29 21:22:45 INFO  Script:185 - user jimmylogged out
+2018-04-29 21:22:45 ERROR Script:134 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:115)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 21:27:08 INFO  Script:45 - login attempt made
+2018-04-29 21:27:16 ERROR Script:138 - 
+com.revature.exceptions.ApprovalPendingException
+	at com.revature.project0.Script.login(Script.java:106)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-04-29 21:27:30 INFO  Script:45 - login attempt made
+2018-04-29 21:27:35 INFO  Script:112 - user jimmylogged in
+2018-04-29 21:27:46 INFO  Script:165 - user jimmyadded movie Superman
+2018-04-29 21:27:46 INFO  Script:165 - user jimmyadded movie Green lanturn
+2018-04-29 21:27:56 INFO  Script:176 - user jimmyadded movie Superman

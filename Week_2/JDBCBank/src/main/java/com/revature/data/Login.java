@@ -2,6 +2,7 @@ package com.revature.data;
 
 import com.revature.dao.users.AdminService;
 import com.revature.dao.users.UserService;
+import com.revature.exceptions.UserNotFoundException;
 import com.revature.users.Admin;
 import com.revature.users.User;
 
@@ -26,8 +27,19 @@ public static boolean adminExists(String name) {
 	 return false;
 }
  //checks if the password given matches what is on record for the user
- public static boolean checkPassword(String pass,String name) {
+ public static boolean checkPasswordAdmin(String pass,String name) throws UserNotFoundException {
 	 //change password comparing method;
+	 if(AdminService.getAdmin(name).getPassword().equals(pass))
+		 return true;
+	 
 	 return false;
 }
+ 
+ public static boolean checkPasswordUser(String pass,String name) throws UserNotFoundException {
+	 //change password comparing method;
+	 if(UserService.getUser(name).getPassword().equals(pass))
+		 return true;
+	 
+	 return false;
+} 
 }

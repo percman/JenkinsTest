@@ -5,6 +5,7 @@ import java.util.List;
 import com.revature.dao.movie.Movie;
 import com.revature.exceptions.UserNotFoundException;
 import com.revature.users.Admin;
+import com.revature.users.User;
 
 public class AdminService {
 	private static AdminDao dao = AdminDaoImpl.getInstance();
@@ -22,12 +23,7 @@ public class AdminService {
 	public static boolean addNewMovie(Movie movie) {
 		return dao.addNewMovie(movie);
 	}
-	
-	public static void main(String[] args) throws UserNotFoundException {
-		System.out.println(getAdmin("gary").getPassword());
-		for(Admin admin : getAdmins()) {
-			System.out.println(admin.getUsername());
-		}
+	public static String getPasswordHash(Admin admin) {
+		return dao.getPasswordHash(admin);
 	}
-	
 }

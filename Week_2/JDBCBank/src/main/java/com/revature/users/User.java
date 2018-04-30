@@ -13,13 +13,19 @@ public class User implements Serializable, NewUser{
 private static final long serialVersionUID = -9008338397651161896L;
 private String username; // the users username and password
 private String password;
-private int moviesOut;
+private int id;
 public User() {
 
 }
 public User(String name,String pass) {
 	setUsername(name);
 	setPassword(pass);
+}
+
+public User(String name,String pass,int id) {
+	setUsername(name);
+	setPassword(pass);
+	setId(id);
 }
 
 
@@ -65,11 +71,11 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
-public int getMoviesOut() {
-	return moviesOut;
+public int getId() {
+	return id;
 }
-public void setMoviesOut(int moviesOut) {
-	this.moviesOut = moviesOut;
+public void setId(int id) {
+	this.id = id;
 }
 
 }

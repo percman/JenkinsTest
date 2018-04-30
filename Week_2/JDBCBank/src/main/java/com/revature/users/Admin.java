@@ -69,5 +69,7 @@ public class Admin implements Serializable,NewUser {
 			return false;
 		return true;
 	}
+	
+	
 
 }
