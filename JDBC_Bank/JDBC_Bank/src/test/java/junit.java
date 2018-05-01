@@ -34,4 +34,12 @@ public class junit {
 		ProductService.insertProduct(product3);
 		assertTrue(JunctionService.addToCart(user3,product3));
 	}
+	
+	@Test
+	public void testLockAccount() {
+		User testUser = new User ("Dilleon", "Joseph", "Panda");
+		UserService.insertUser(testUser);
+		assertTrue(UserService.lockAccount(UserService.getUser(testUser.getFirst_name(), testUser.getLast_name())));
+		
+	}
 }

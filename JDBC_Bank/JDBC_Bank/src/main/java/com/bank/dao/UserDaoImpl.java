@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.bank.model.Product;
 import com.bank.model.User;
+import com.bank.service.UserService;
 import com.bank.util.ConnectionUtil;
 
 public class UserDaoImpl implements UserDao{
@@ -140,7 +141,7 @@ public class UserDaoImpl implements UserDao{
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				PreparedStatement stmt = conn.prepareStatement("SELECT user_approved FROM user_table WHERE user_id = ? ");
-				stmt.setInt(++index, user.getId());
+				stmt.setInt(++index, UserService.getUserId(user));
 				ResultSet rs = stmt.executeQuery();
 				if (rs.next()) {
 					return rs.getInt("user_approved");
@@ -158,7 +159,7 @@ public class UserDaoImpl implements UserDao{
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				PreparedStatement stmt = conn.prepareStatement("SELECT user_locked FROM user_table WHERE user_id = ? ");
-				stmt.setInt(++index, user.getId());
+				stmt.setInt(++index, UserService.getUserId(user));
 				ResultSet rs = stmt.executeQuery();
 				if (rs.next()) {
 					return rs.getInt("user_locked");
@@ -176,7 +177,7 @@ public class UserDaoImpl implements UserDao{
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				PreparedStatement stmt = conn.prepareStatement("Update user_table SET user_approved = 1 WHERE user_id = ?");
-				stmt.setInt(++index, user.getId());
+				stmt.setInt(++index, UserService.getUserId(user));
 				return stmt.executeUpdate() > 0;
 			} catch (SQLException sqle) {
 				System.err.println(sqle.getMessage());
@@ -191,7 +192,7 @@ public class UserDaoImpl implements UserDao{
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				PreparedStatement stmt = conn.prepareStatement("Update user_table SET user_locked = 1 WHERE user_id = ? ");
-				stmt.setInt(++index, user.getId());
+				stmt.setInt(++index, UserService.getUserId(user));
 				return stmt.executeUpdate() > 0;
 			} catch (SQLException sqle) {
 				System.err.println(sqle.getMessage());
@@ -206,7 +207,7 @@ public class UserDaoImpl implements UserDao{
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				PreparedStatement stmt = conn.prepareStatement("Update user_table SET user_locked = 0 WHERE user_id = ? ");
-				stmt.setInt(++index, user.getId());
+				stmt.setInt(++index, UserService.getUserId(user));
 				return stmt.executeUpdate() > 0;
 			} catch (SQLException sqle) {
 				System.err.println(sqle.getMessage());

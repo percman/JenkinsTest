@@ -1,14 +1,41 @@
 package com.bank.factory;
 
+import java.util.Scanner;
+
 import com.bank.exception.UserNotFoundException;
 import com.bank.mainmenu.MainMenu;
+import com.bank.service.UserService;
 
 public class UserLogin {
 	
 	public static void userLogin() throws UserNotFoundException {
-		System.out.println("You are in user");
+		System.out.println("____Welcome to the User Login____");
+		System.out.println("1. Add to cart");
+		System.out.println("2. Remove from cart");
+		System.out.println("3. View Cart");
+		System.out.println("4. Exit");
 		
-		
+		try(Scanner scan = new Scanner(System.in)){
+			int userOption = scan.nextInt();
+			
+			switch(userOption) {
+			
+			case 1:
+				
+				break;
+			case 2:
+				
+				break;
+				
+			case 3:
+ 
+				break;
+			
+			case 4:
+				System.exit(0);
+			}
+			MainMenu.startMenu();
+		}
 		
 		
 		MainMenu.startMenu();

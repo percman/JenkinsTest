@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="junit" project="JDBC_Bank" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="junit" time="21.993">
+    <testcase name="testProductInsertion" classname="junit" time="4.151"/>
+    <testcase name="testUserInsertion" classname="junit" time="2.655"/>
+    <testcase name="testJunctionAddToCart" classname="junit" time="15.186"/>
+  </testsuite>
+</testrun>
