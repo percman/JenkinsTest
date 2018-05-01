@@ -105,28 +105,27 @@ public class Application {
 		System.out.println("=====================");
 		System.out.println("Welcome back! Please enter your username and password.");
 		
-//		Scanner reading = new Scanner(System.in);
 		String userName = scanner.next();
 		String password = scanner.next();
 		
 		Customer customer = new Customer(userName, password);
 		
 		if (CustomerService.login(customer)) {
-			if(lockCheck(customer)) {
+//			if(lockCheck(customer)) {
 				LoginMenu(customer, scanner);
 			}
-			else {
-				try {
-				throw new UserLockedOutException();
-				} catch (UserLockedOutException uloe) {
-					System.err.println(uloe.getMessage());
-					System.out.println("Returning to Main Menu");
-					MainMenu(scanner);
-				}
+//			else {
+//				try {
+//				throw new UserLockedOutException();
+//				} catch (UserLockedOutException uloe) {
+//					System.err.println(uloe.getMessage());
+//					System.out.println("Returning to Main Menu");
+//					MainMenu(scanner);
+//				}
 				
-			}
+//			}
 			
-		}
+//		}
 			System.out.println("Sorry, but the username and password that were entered do not match or the user doesn't exist.");
 			MainMenu(scanner);
 	}
@@ -135,10 +134,8 @@ public class Application {
 		System.out.println("=====================");
 		System.out.println("Welcome back! Please enter your username and password.");
 		
-//		Scanner reading = new Scanner(System.in);
 		String userName = scanner.next();
 		String password = scanner.next();
-//		reading.close();
 		
 		Employee employee = new Employee(userName, password);
 		
@@ -272,8 +269,13 @@ public class Application {
 	
 	public static void ViewApplications(Employee employee, Scanner scanner) {
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customers WHERE ROWNUM = 1");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM applying_customers WHERE ROWNUM = 1");
 			ResultSet rs = stmt.executeQuery();
+			if(!rs.next()) {
+				System.out.println("Looks like there are no applicants right now, returning to Employee Menu.");
+				EmployeeMenu(employee, scanner);
+			}
+			else {
 			System.out.println("Would you like to accept " + rs.getString("username") + "'s application?");
 			System.out.println("1. Yes");
 			System.out.println("2. No");
@@ -283,14 +285,16 @@ public class Application {
 			
 			switch(inputVal) {
 				case 1:
-					new Customer( rs.getString("username"), rs.getString("password"),
+					
+					Customer customer = new Customer( rs.getString("username"), rs.getString("password"),
 													rs.getString("fname"), rs.getString("lname"));
-					PreparedStatement stmt2 = conn.prepareStatement("DELETE * FROM customers WHERE ROWNUM = 1");
+					System.out.println("Did the application go through? " + CustomerService.insertCustomer(customer));
+					PreparedStatement stmt2 = conn.prepareStatement("DELETE FROM applying_customers WHERE ROWNUM = 1");
 					stmt2.executeQuery();
 					ViewApplications(employee, scanner);
 					break;
 				case 2:
-					PreparedStatement stmt3 = conn.prepareStatement("DELETE * FROM customers WHERE ROWNUM = 1");
+					PreparedStatement stmt3 = conn.prepareStatement("DELETE FROM applying_customers WHERE ROWNUM = 1");
 					stmt3.executeQuery();
 					ViewApplications(employee, scanner);
 					break;
@@ -300,14 +304,13 @@ public class Application {
 				default:
 					System.out.println("Invalid action. Please try again.");
 					ViewApplications(employee, scanner);
+			}			
 			}
-			
-			
 		} catch (SQLException sqle) {
 			System.err.println(sqle.getMessage());	
 			System.err.println("SQL State: " + sqle.getSQLState());				
 			System.err.println("Error Code: " + sqle.getErrorCode());		
-		}	
+		}
 	}
 	
 	public static void depositCustomer(Customer customer, int amount) {

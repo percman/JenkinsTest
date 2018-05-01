@@ -39,7 +39,7 @@ CREATE TABLE customers(
 CREATE TABLE applying_customers(
     id NUMBER(10),
     username VARCHAR2(20),
-    password VARCHAR2(20),
+    password VARCHAR2(100),
     fname VARCHAR2(20),
     lname VARCHAR2(20),
     CONSTRAINT PK_APPLYINGID PRIMARY KEY (id),
@@ -86,7 +86,7 @@ CREATE OR REPLACE TRIGGER employee_b_insert
     ON employees
     FOR EACH ROW
     BEGIN
-        IF:new.id IS NULL THEN
+        IF :new.id IS NULL THEN
             SELECT employee_id_sequence.nextval INTO :new.id FROM dual;
         END IF;
         SELECT get_user_hash(:new.username, :new.password) INTO :new.password FROM dual;
@@ -99,7 +99,7 @@ CREATE OR REPLACE TRIGGER customer_b_insert
     ON customers
     FOR EACH ROW
     BEGIN
-        IF:new.id IS NULL THEN
+        IF :new.id IS NULL THEN
             SELECT customer_id_sequence.nextval INTO :new.id FROM dual;
         END IF;
         SELECT get_user_hash(:new.username, :new.password) INTO :new.password FROM dual;
@@ -207,5 +207,14 @@ CREATE OR REPLACE PROCEDURE withdraw(search_username IN VARCHAR2, deposited_amou
             SET amount = amount - deposited_amount
             WHERE username = search_username;
         COMMIT;
+    END;
+/
+--Insert the first employee
+execute insert_employee ('test', 'test', 'test', 'test');
+
+CREATE OR REPLACE PROCEDURE removeFromApplying
+    AS
+    BEGIN
+        DELETE FROM applying_customers WHERE ROWNUM = 1;
     END;
 /
