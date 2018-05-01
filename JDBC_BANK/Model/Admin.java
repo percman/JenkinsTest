@@ -26,7 +26,7 @@ public class Admin extends Account implements Serializable, Menu {
 	 * or sign out, which will allow someone else to log in or create an account
 	 */
 	public void Home(Menu user) {
-		System.out.println("Press V to view pending users\nPress L to lock or unlock an existing account\nPress S to sign out");
+		System.out.println("Press V to view pending users\nPress L to lock or unlock an existing account\nPress any other key to sign out");
 		try {
 			String input = Login.scan.nextLine();
 			
@@ -35,8 +35,7 @@ public class Admin extends Account implements Serializable, Menu {
 					break;
 				case "l": LockUnLockMenu();
 					break;
-				case "s" : 
-					Login.menu();
+				default : 
 					break;
 			}
 		}catch(NoSuchElementException e) {
@@ -47,7 +46,7 @@ public class Admin extends Account implements Serializable, Menu {
 	}
 	
 	private static void BackToMenu() {
-		System.out.println("\nPress V to view pending users\nPress L to lock or unlock an existing account\nPress S to sign out");
+		System.out.println("\nPress V to view pending users\nPress L to lock or unlock an existing account\nPress any key to sign out");
 		try {
 			String input = Login.scan.nextLine();
 			switch(input) {
@@ -57,8 +56,7 @@ public class Admin extends Account implements Serializable, Menu {
 				case "l":
 					LockUnLockMenu();
 					break;
-				case "s" : 
-					Login.menu();
+				default : 
 					break;
 			}
 		}catch(NoSuchElementException e) {
@@ -71,13 +69,13 @@ public class Admin extends Account implements Serializable, Menu {
 	 * Admin can lock or unlock any account (not including their own)
 	 */
 	private static void LockUnLockMenu() {
-		String chosenOne = null;
+		String input = null;
 		System.out.println("Do you wish to see the locked accounts or unlocked accounts, L/U");
 		try {
 			while(true) {
-				chosenOne = Login.scan.nextLine();
-				chosenOne = chosenOne.toLowerCase();
-				switch(chosenOne) {
+				input = Login.scan.nextLine();
+				input = input.toLowerCase();
+				switch(input) {
 					case "l":
 						Lock();
 						break;
@@ -99,11 +97,15 @@ public class Admin extends Account implements Serializable, Menu {
 	
 		//Locks a users account
 		private static void Lock() {
+			//gets a list of locked users
 			List<User> locked = AccountAccessService.getLockedUsers();
 			int index = 0;
-			if(locked.isEmpty()) 
+			if(locked.isEmpty())
 				System.out.println("There are no locked users");
 			else {
+				/*
+				 * Iterates through the list of locked users and asks whether the admin wants to unlock the account
+				 */
 				while(index < locked.size()) {
 					System.out.println("Do you wish to unlock user "+locked.get(index).getUserName()+" Y/N");
 					User user = locked.get(index);
@@ -112,13 +114,13 @@ public class Admin extends Account implements Serializable, Menu {
 					switch(answer) {
 						case "y":
 							AccountAccessService.Unlock(user);
-							locked.remove(index);
+							index++;
 							break;
 						case "n":
 							index++;
 							break;
 						default:
-							System.out.println("User will remain locked");
+							System.out.println(user.getUserName()+" will remain locked");
 							index++;
 							break;
 					}
@@ -126,12 +128,12 @@ public class Admin extends Account implements Serializable, Menu {
 			}BackToMenu();
 		}
 		
-		//Unlocks a users account
+		//Unlocks a users account, same as the method above except iterates through unlocked users
 		private static void UnLock() {
 			List<User> unlocked = AccountAccessService.getUnlockedUsers();
 			int index = 0;
 			if(unlocked.isEmpty()) 
-				System.out.println("There are no unlocked users");
+				System.out.println("There are no locked users");
 			else {
 				while(index < unlocked.size()) {
 					System.out.println("Do you wish to lock user "+unlocked.get(index).getUserName()+" Y/N");
@@ -147,7 +149,7 @@ public class Admin extends Account implements Serializable, Menu {
 							index++;
 							break;
 						default:
-							System.out.println("User will remain unlocked");
+							System.out.println(user.getUserName()+" will remain unlocked");
 							index++;
 							break;
 					}
@@ -156,9 +158,8 @@ public class Admin extends Account implements Serializable, Menu {
 		}
 	
 	/*
-	 * If the user is approved, They will be serialized.
-	 * If not then they will be deleted from the list of pending users.
-	 * Once a user is approved, they will be added to a list of current users.
+	 * If the user is approved, They will be able to access their account
+	 * If not then they will be deleted from the the DB.
 	 */
 	private static void ApproveOrReject() {
 		List<User> pending = AccountAccessService.getPendingUsers();
@@ -166,7 +167,6 @@ public class Admin extends Account implements Serializable, Menu {
 			System.out.println("You have no accounts waiting for approval");
 			BackToMenu();
 		}
-		//Scanner input = new Scanner(System.in);
 		int i = 0;
 		try {
 			while( i < pending.size()) {
@@ -177,11 +177,11 @@ public class Admin extends Account implements Serializable, Menu {
 				switch(answer) {
 					case "y" :
 						AccountAccessService.Approve(user);
-						pending.remove(i);
+						i++;
 						break;
 					case "n" :
 						CredentialsService.deleteUser(user.getUserName());
-						pending.remove(i);
+						i++;
 						break;
 					default :
 						System.out.println("Skipping user for now");
@@ -195,7 +195,6 @@ public class Admin extends Account implements Serializable, Menu {
 			logger.warn("An error has occured");
 		}finally {
 				BackToMenu();
-				//BackToMenu();
 			}
 	}
 }

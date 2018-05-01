@@ -36,7 +36,6 @@ public class LoginTest {
 
 	@Test
 	public void test1() {
-		//ConnectionUtility.getInstance();
 		String name = "andy"; String pword = "boss";
 		assertNotNull(CredentialsService.login(new Account(name,pword)));
 	}
@@ -44,7 +43,7 @@ public class LoginTest {
 	
 	@Test
 	public void test2() {
-		assertTrue(User.isStringInteger("123"));
+		assertTrue(User.isInputValid("123"));
 	}
 	
 	@Test
