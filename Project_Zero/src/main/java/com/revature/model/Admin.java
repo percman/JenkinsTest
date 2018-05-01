@@ -2,7 +2,7 @@ package com.revature.model;
 
 import java.io.Serializable;
 
-public class Admin implements Serializable {
+public class Admin extends User implements Serializable {
 
 	/**
 	 * 

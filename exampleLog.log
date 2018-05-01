@@ -1,0 +1,41 @@
+2018-04-30 18:27:56 WARN  CustomerDaoImpl:112 - Closed Statement
+2018-04-30 18:27:56 WARN  CustomerDaoImpl:113 - SQL State: 99999
+2018-04-30 18:27:56 WARN  CustomerDaoImpl:114 - Error Code: 17009
+2018-04-30 18:48:33 WARN  CustomerDaoImpl:108 - Closed Statement
+2018-04-30 18:48:33 WARN  CustomerDaoImpl:109 - SQL State: 99999
+2018-04-30 18:48:33 WARN  CustomerDaoImpl:110 - Error Code: 17009
+2018-04-30 19:15:41 WARN  CustomerDaoImpl:112 - Could not commit with auto-commit set on
+2018-04-30 19:15:41 WARN  CustomerDaoImpl:113 - SQL State: 99999
+2018-04-30 19:15:41 WARN  CustomerDaoImpl:114 - Error Code: 17273
+2018-04-30 19:18:28 WARN  CustomerDaoImpl:112 - Could not commit with auto-commit set on
+2018-04-30 19:18:28 WARN  CustomerDaoImpl:113 - SQL State: 99999
+2018-04-30 19:18:28 WARN  CustomerDaoImpl:114 - Error Code: 17273
+2018-04-30 19:18:39 WARN  CustomerDaoImpl:112 - Could not commit with auto-commit set on
+2018-04-30 19:18:39 WARN  CustomerDaoImpl:113 - SQL State: 99999
+2018-04-30 19:18:39 WARN  CustomerDaoImpl:114 - Error Code: 17273
+2018-04-30 19:18:46 WARN  CustomerDaoImpl:112 - Could not commit with auto-commit set on
+2018-04-30 19:18:46 WARN  CustomerDaoImpl:113 - SQL State: 99999
+2018-04-30 19:18:46 WARN  CustomerDaoImpl:114 - Error Code: 17273
+2018-04-30 20:08:04 WARN  UserDaoImpl:68 - Closed Statement
+2018-04-30 20:08:04 WARN  UserDaoImpl:69 - SQL State: 99999
+2018-04-30 20:08:04 WARN  UserDaoImpl:70 - Error Code: 17009
+2018-04-30 20:08:04 WARN  CustomerDaoImpl:88 - Closed Statement
+2018-04-30 20:08:04 WARN  CustomerDaoImpl:89 - SQL State: 99999
+2018-04-30 20:08:04 WARN  CustomerDaoImpl:90 - Error Code: 17009
+2018-04-30 20:11:48 WARN  UserDaoImpl:68 - Closed Statement
+2018-04-30 20:11:48 WARN  UserDaoImpl:69 - SQL State: 99999
+2018-04-30 20:11:48 WARN  UserDaoImpl:70 - Error Code: 17009
+2018-04-30 20:11:49 WARN  CustomerDaoImpl:88 - Closed Statement
+2018-04-30 20:11:49 WARN  CustomerDaoImpl:89 - SQL State: 99999
+2018-04-30 20:11:49 WARN  CustomerDaoImpl:90 - Error Code: 17009
+2018-04-30 20:16:38 WARN  UserDaoImpl:65 - Closed Statement
+2018-04-30 20:16:38 WARN  UserDaoImpl:66 - SQL State: 99999
+2018-04-30 20:16:38 WARN  UserDaoImpl:67 - Error Code: 17009
+2018-04-30 20:16:40 WARN  CustomerDaoImpl:87 - Closed Statement
+2018-04-30 20:16:40 WARN  CustomerDaoImpl:88 - SQL State: 99999
+2018-04-30 20:16:40 WARN  CustomerDaoImpl:89 - Error Code: 17009
+2018-04-30 22:06:40 INFO  Application:150 - Customer Bob has logged in.
+2018-04-30 22:10:49 INFO  Application:150 - Customer Bob has logged in.
+2018-04-30 22:14:34 INFO  Application:150 - Customer Bob has logged in.
+2018-04-30 22:14:47 INFO  Application:256 - Bob has deposited 325.25
+2018-04-30 23:45:51 INFO  Application:157 - Admin adminhas logged in.

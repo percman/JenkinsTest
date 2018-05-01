@@ -39,8 +39,9 @@ public class CustomerDaoImpl implements CustomerDao{
 				Customer customer = new Customer(rs.getString("username"), rs.getString("password"), rs.getInt("approvalcode"), rs.getInt("lockcode"),
 						rs.getInt("rejected"), rs.getBigDecimal("accountbalance"));
 				customers.add(customer);
-				//return customers;
+				
 			}
+			rs.close();
 			return customers;
 		} catch (SQLException sqle) {
 			logger.warn(sqle.getMessage());
@@ -57,7 +58,6 @@ public class CustomerDaoImpl implements CustomerDao{
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customer WHERE username = ?");
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
-			// If can be used if just selecting one entry
 			if (rs.next()) {
 				return new Customer(rs.getString("username"), rs.getString("password"), rs.getInt("approvalcode"), rs.getInt("lockcode"), 
 						rs.getInt("rejected"), rs.getBigDecimal("accountbalance"));
@@ -81,6 +81,7 @@ public class CustomerDaoImpl implements CustomerDao{
 			stmt.setInt(++index, customer.getLockCode());
 			stmt.setInt(++index, customer.getRejected());
 			stmt.setBigDecimal(++index, customer.getAccountBalance());
+			//stmt.close();
 			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {
 			logger.warn(sqle.getMessage());
@@ -92,7 +93,8 @@ public class CustomerDaoImpl implements CustomerDao{
 
 	@Override
 	public boolean updateCustomer(Customer customer) {
-		int index = 0;
+		int index = 0, result;
+		
 		try (Connection conn = ConnectionUtil.getConnection()){
 			CallableStatement stmt = conn.prepareCall("{CALL update_customer(?, ?, ?, ?, ?)}");
 			stmt.setString(++index, customer.getUsername());
@@ -100,7 +102,9 @@ public class CustomerDaoImpl implements CustomerDao{
 			stmt.setInt(++index, customer.getLockCode());
 			stmt.setInt(++index, customer.getRejected());
 			stmt.setBigDecimal(++index, customer.getAccountBalance());
-			
+			result = stmt.executeUpdate();
+			stmt.close();
+			return result > 0;
 		} catch (SQLException sqle) {
 			logger.warn(sqle.getMessage());
 			logger.warn("SQL State: " + sqle.getSQLState());

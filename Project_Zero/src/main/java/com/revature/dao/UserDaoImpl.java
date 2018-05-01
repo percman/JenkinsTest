@@ -59,6 +59,7 @@ public class UserDaoImpl implements UserDao {
 			stmt.setString(++index, user.getUsername());
 			stmt.setString(++index, user.getPassword());
 			stmt.setInt(++index, user.getTypeId());
+			//stmt.close();
 			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {
 			logger.warn(sqle.getMessage());

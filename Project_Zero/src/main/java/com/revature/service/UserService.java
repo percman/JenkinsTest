@@ -3,6 +3,7 @@ package com.revature.service;
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoImpl;
 import com.revature.model.User;
+import com.revature.application.*;
 
 public class UserService {
 
@@ -25,7 +26,7 @@ public class UserService {
 			System.out.println("Valid user");
 			return temp;
 		}
-		System.err.println("YOU ARE NOT A VALID USER, " + user.getUsername());
+		System.err.println("Incorrect login information. " + user.getUsername());
 		return null;
 	}
 	

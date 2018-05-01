@@ -1,4 +1,8 @@
-package com.revature.bankapplication;
+package com.revature.application;
+
+import com.revature.model.Admin;
+import com.revature.model.Customer;
+import com.revature.model.User;
 
 import CustomException.UserNotFoundException;
 
@@ -14,7 +18,7 @@ public class UserFactory {
 		case "Customer":
 			return new Customer();
 		default:
-			throw new UserNotFoundException("User type you have chosen is not valid.");
+			throw new UserNotFoundException("User type you have chosen is not valid");
 		}
 	}
 }

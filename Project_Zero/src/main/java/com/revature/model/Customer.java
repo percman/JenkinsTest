@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 
 
-public class Customer implements Serializable{
+public class Customer extends User implements Serializable{
 
 	
 	/**

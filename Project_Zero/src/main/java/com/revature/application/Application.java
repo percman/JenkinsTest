@@ -16,7 +16,9 @@ import com.revature.model.User;
 import com.revature.service.AdminService;
 import com.revature.service.CustomerService;
 import com.revature.service.UserService;
-import com.revature.tokenizer.StringTokenizerExample;
+
+import CustomException.LoginException;
+
 
 public class Application {
 
@@ -65,23 +67,7 @@ public class Application {
 	}
 	public void start() {
 
-		/*if (file.length() == 0)
-			try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName))) {
-				Customer tempCustomer = new Customer("Eric", "password");
-				data.getLoginInfo().put("Eric", "password");
-				//data.getCustomer().put(tempCustomer.getUsername(), tempCustomer);
-				data.getApprovalList().add(tempCustomer);
-				Admin tempAdmin = new Admin("David", "password");
-				data.getLoginInfo().put("David", "password");
-				data.getAdmin().put(tempAdmin.getUsername(), tempAdmin);
-				out.writeObject(data);
-				out.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		
-
-		deserializeData(file);*/
 		menu();
 	}
 
@@ -129,12 +115,22 @@ public class Application {
 			password = input.nextLine();
 		}
 
-		/*if (!data.getLoginInfo().containsKey(username) || !data.getLoginInfo().get(username).equals(password)) {
-			System.out.println("Username or password are incorrect.");
-			logIn();
-		}       */
+
 		user0 = new User(username, password);
 		user = UserService.login(user0);
+		/*try {
+			UserService.login(user0);
+			if (UserService.login(user0) == null) {
+				System.out.println("Please enter correct Log In information.");
+				logIn();
+				throw new LoginException();
+			}
+			else {
+				user = UserService.login(user0);
+			}
+		} catch (LoginException le) {
+			System.out.println("Incorrect Log In information.");
+		}*/
 		
 		if (user.getTypeId() == 2) {
 			customer = CustomerService.getCustomer(username);
@@ -151,54 +147,18 @@ public class Application {
 				menu();
 			}
 			else {
-				System.out.println("Welcome" + customer.getUsername());
+				logger.info("Customer " + customer.getUsername() + " has logged in.");
+				System.out.println("Welcome " + customer.getUsername());
 				customerMenu();
 			}
 		}	
 		else {
 			admin = AdminService.getAdmin(username);
+			logger.info("Admin " + admin.getUsername() + "has logged in.");
 			System.out.println("Welcome " + admin.getUsername() + "\n");
 			adminMenu();
 		}	
 			
-			
-			
-			
-		/*if (data.getLoginInfo().containsKey(username) && data.getLoginInfo().get(username).equals(password)) {
-			if (data.getCustomer().containsKey(username)) {
-				customerUser = data.getCustomer().get(username);
-				isCustomer = true;
-			} else if (data.getAdmin().containsKey(username)) {
-				// currentUser = data.getAdmin().get(username);
-				adminUser = data.getAdmin().get(username);
-			}*/
-
-			/*if (isCustomer) {
-
-				if (customerUser.getRejected() == true) {
-					System.out.println("Sorry, your account has been rejected." + "\n");
-					menu();
-				} else if (customerUser.getApprovalCode() == -1) {
-					System.out.println("Please wait for account approval." + "\n\n");
-					menu();
-				} else if (customerUser.getLockCode() == 1) {
-					System.out.println("Your account is currently locked. Please contact the bank.");
-					menu();
-				} else {
-					System.out.println("Welcome" + customerUser.getUsername());
-					customerMenu();
-				}
-			} else if (adminUser.getIsAdmin() == true) {
-
-				System.out.println("Welcome " + adminUser.getUsername() + "\n");
-				adminMenu();
-			}
-
-			else {
-				System.out.println("Log In or password are incorrect.");
-				logIn();
-			}
-		}*/
 	}
 
 	public void signUp() {
@@ -216,23 +176,13 @@ public class Application {
 		}
 		
 		user = new User(username, password, 2);
-		/*if (UserService.getUser(username).getUsername().equals(username)) {
-			System.out.println("That username is taken, please choose another one.");
-			signUp();
-		}
-		else {
-			Customer newCustomer = new Customer(username, password);
-			UserService.insertUser(user);
-			CustomerService.insertCustomer(newCustomer);
-			System.out.println("Sign Up successful! Please wait for account approval." + "\n\n");
-			menu();
-		}*/
+		
 		
 		if (UserService.getUser(username) ==  null) {
 			Customer newCustomer = new Customer(username, password);
 			UserService.insertUser(user);
 			CustomerService.insertCustomer(newCustomer);
-			System.out.println("Sign Up successful! Please waint for account approval." + "\n\n");
+			System.out.println("Sign Up successful! Please wait for account approval." + "\n\n");
 			menu();
 		}
 		else {
@@ -240,23 +190,12 @@ public class Application {
 			signUp();
 		}
 		
-		/*if (data.getLoginInfo().containsKey(username)) {
-			System.out.println("That username is taken, please choose another one.");
-			signUp();
-		} else {
-			Customer newCustomer = new Customer(username, password);
-			data.getCustomer().put(username, newCustomer);
-			data.getLoginInfo().put(username, password);
-			data.getApprovalList().add(newCustomer);
-			System.out.println("Sign Up successful! Please wait for account approval." + "\n\n");
-			menu();
-		}*/
+		
 	}
 
 	public void exit() {
 
 		System.out.println("Console will now terminate.");
-		//CustomerService.updateCustomer(customer);
 		serializeData(data, file);
 		input.close();
 	}
@@ -314,6 +253,7 @@ public class Application {
 				balance = balance.add(depositAmount);
 				customer.setAccountBalance(balance);
 				CustomerService.updateCustomer(customer);
+				logger.info(customer.getUsername() + " has deposited " + depositAmount);
 				customerMenu();
 			}
 		}
@@ -365,6 +305,7 @@ public class Application {
 			balance = balance.subtract(withdrawalAmount);
 			customer.setAccountBalance(balance);
 			CustomerService.updateCustomer(customer);
+			logger.info(customer.getUsername() + "has withdrawn " + withdrawalAmount);
 			customerMenu();
 
 		}
@@ -401,11 +342,9 @@ public class Application {
 		}
 
 		if (option.equals("1")) {
-			//CustomerService.getAllCustomers();
 			for (int i = 0; i < CustomerService.getAllCustomers().size(); i++) {
 				if (CustomerService.getAllCustomers().get(i).getApprovalCode() == 0
 						&& CustomerService.getAllCustomers().get(i).getRejected() == 0) {
-					customer = CustomerService.getAllCustomers().get(i);
 					System.out.println(CustomerService.getAllCustomers().get(i).getUsername() + " is waiting for approval");
 					System.out.println("To approve enter a, to reject enter r.");
 					String approval = input.nextLine();
@@ -418,20 +357,22 @@ public class Application {
 						approval = input.nextLine();
 					}
 					if (approval.equals("a")) {
-						CustomerService.getAllCustomers().get(i).setApprovalCode(1);
+						customer = CustomerService.getAllCustomers().get(i);
+						customer.setApprovalCode(1);
 						System.out.println("Account has been approved.");
 						CustomerService.updateCustomer(customer);
 					}
 					if (approval.equals("r")) {
-						CustomerService.getAllCustomers().get(i).setRejected(1);
+						customer = CustomerService.getAllCustomers().get(i);
+						customer.setRejected(1);
 						System.out.println("Account has been rejected.");
 						CustomerService.updateCustomer(customer);
 					}
 
-				} /*else {
+				} else {
 					System.out.println("There are no accounts waiting for approval." + "\n");
 					adminMenu();
-				}*/
+				}
 			}
 			adminMenu();
 		}
@@ -456,9 +397,11 @@ public class Application {
 			while (user.length() == 0) {
 				user = input.nextLine();
 			}
+			
 			for (int i = 0; i < CustomerService.getAllCustomers().size(); i++) {
+				int j = 0;
+				j++;
 				if (CustomerService.getAllCustomers().get(i).getUsername().equals(user)) {
-					customer = CustomerService.getCustomer(user);
 					System.out.println("To lock account enter l, to unlock account enter u: ");
 					String lockUnlock = input.nextLine();
 					while (lockUnlock.length() == 0) {
@@ -469,25 +412,30 @@ public class Application {
 						lockUnlock = input.nextLine();
 					}
 					if (lockUnlock.equals("l")) {
-						CustomerService.getAllCustomers().get(i).setLockCode(1);
+						customer = CustomerService.getAllCustomers().get(i);
+						customer.setLockCode(1);
 						CustomerService.updateCustomer(customer);
 						System.out.println("Account is locked.");
 						adminMenu();
 					}
 					if (lockUnlock.equals("u")) {
-						CustomerService.getAllCustomers().get(i).setLockCode(0);
+						customer = CustomerService.getAllCustomers().get(i);
+						customer.setLockCode(0);
 						CustomerService.updateCustomer(customer);
 						System.out.println("Account has been unlocked.");
 						adminMenu();
 					}
+					
 				}
-				else {
-					System.out.println("Please input a correct username.");
-					user = input.nextLine();
-				}
+				if (j == CustomerService.getAllCustomers().size() - 1) {
+					System.out.println("Please enter a correct username that matches exactly.");
+					adminMenu();
+				}	
 			}
-
+		
 		}
+
+		
 
 		if (option.equals("3")) {
 			exit();

@@ -38,10 +38,10 @@ public class AdminDaoImpl implements AdminDao{
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM admin WHERE username = ?");
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
-			// If can be used if just selecting one entry
 			if (rs.next()) {
 				return new Admin(rs.getString("username"), rs.getString("password"));
 			}
+			rs.close();
 		} catch (SQLException sqle) {
 			logger.warn(sqle.getMessage());
 			logger.warn("SQL State: " + sqle.getSQLState());
@@ -57,6 +57,7 @@ public class AdminDaoImpl implements AdminDao{
 			CallableStatement stmt = conn.prepareCall("{CALL insert_admin(?, ?)}");
 			stmt.setString(++index, admin.getUsername());
 			stmt.setString(++index, admin.getPassword());
+			stmt.close();
 			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {
 			logger.warn(sqle.getMessage());
