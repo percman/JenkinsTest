@@ -36,6 +36,8 @@ accountbalance NUMBER(11, 2),
 CONSTRAINT PK_CUSTOMER PRIMARY KEY (username)
 );
 
+
+
 CREATE SEQUENCE customer_id_sequence
     START WITH 0
     INCREMENT BY 1
@@ -101,6 +103,7 @@ END;
 CREATE OR REPLACE PROCEDURE update_customer(new_username IN VARCHAR2, new_approvalcode IN NUMBER, new_lockcode IN NUMBER, new_rejected IN NUMBER, new_accountbalance IN NUMBER)
 AS
 BEGIN
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
     UPDATE customer
     SET accountbalance = new_accountbalance, approvalcode = new_approvalcode, lockcode = new_lockcode, rejected = new_rejected
     WHERE username = new_username;
@@ -139,6 +142,32 @@ CREATE OR REPLACE TRIGGER admin_insert
             END IF;
     END;
     /
+  
+CREATE OR REPLACE FUNCTION get_user_type(get_id NUMBER) RETURN NUMBER
+AS 
+    user_type NUMBER;
+    CURSOR A IS
+    SELECT id FROM bank_user WHERE id = get_id;
+BEGIN
+    OPEN A;
+    FETCH A INTO user_type; 
+    CLOSE A;
+    RETURN user_type;
+END;
+/
+
+
+
+CREATE OR REPLACE FUNCTION get_current_time RETURN TIMESTAMP
+AS
+    time_right_now TIMESTAMP;
+BEGIN
+    SELECT CURRENT_TIMESTAMP INTO time_right_now FROM dual;
+    dbms_output.put_line('The current time is ' || time_right_now);
+    return time_right_now;
+END;
+/
+
 
 
 INSERT INTO bank_user VALUES (1, 'Art', 'adminpassword', 1);
