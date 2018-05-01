@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class ConnectionUtil {
 
-	private ConnectionUtil() {}
+	public ConnectionUtil() {}
 	
 	public static Connection getConnection() {
 		InputStream in = null;

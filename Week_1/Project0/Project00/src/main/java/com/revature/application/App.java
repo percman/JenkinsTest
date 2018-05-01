@@ -83,8 +83,10 @@ public class App {
 							System.out.println("Access Granted");
 							if (ul.getAdmin()) {
 								admin(ul);
+								sc.close();
 							} else {
 								customer(ul);
+								sc.close();
 							}
 						} else {
 							System.out.println("Wrong Password!");
@@ -124,10 +126,12 @@ public class App {
 				case "5":
 					System.out.println("Enter New First Name:       ");
 					a.firstNameChange(accountnum, sc.nextLine());
+					customer(u);
 					break;
 				case "6":
 					System.out.println("Enter New Last Name:       ");
 					a.lastNameChange(accountnum, sc.nextLine());
+					customer(u);
 					break;
 				case "7":
 					System.out.println("Enter New Email Address:      ");
@@ -135,13 +139,16 @@ public class App {
 					u = a.getUserInfo(new_u);
 					if (u == null) {
 						a.emailChange(accountnum, new_u);
+						customer(u);
 					} else {
 						System.out.println("Email Address Already Registered!");
+						customer(u);
 					}
 
 				case "8":
 					System.out.println("New Password:       ");
 					a.passwordChange(accountnum, sc.nextLine());
+					customer(u);
 					break;
 				case "1":
 					System.out.println("Deposit Amount:      ");
@@ -149,6 +156,7 @@ public class App {
 					a.deposit(accountnum, d);
 					u.setBalance(u.getBalance() + d);
 					u.getBalance();
+					customer(u);
 					break;
 				case "2":
 					System.out.println("Withdrawal Amount:     ");
@@ -156,6 +164,7 @@ public class App {
 					a.withdrawal(accountnum, da);
 					u.setBalance(u.getBalance() - da);
 					u.getBalance();
+					customer(u);
 					break;
 				case "4":
 					System.out.println("Transfer to Account #:   ");
@@ -165,14 +174,17 @@ public class App {
 					a.transfer(accountnum, i, db);
 					u.setBalance(u.getBalance() - db);
 					u.getBalance();
+					customer(u);
 					break;
 				case "3":
 					AccountDao ad = new AccountDaoImpl();
 					System.out.println("Account Balance:" + ad.checkBalance(accountnum));
+					customer(u);
 					break;
 				case "EXIT":
 					log.info("User" + u.getU_name() + " logged out.");
 					System.out.println("Goodbye!");
+					sc.close();
 					System.exit(0);
 
 				default:
@@ -182,13 +194,14 @@ public class App {
 			}
 		} else {
 			System.out.println("Our Sincerest apologies, Your account is still pending approval..");
+			sc.close();
 			run();
 		}
 	}
 
 	public static void admin(User u) {
 		log.info("Logged in as " + u.getU_name() + " *Administor*");
-
+		
 		String input = null;
 		int accountnum = u.getId();
 		Scanner sc = new Scanner(System.in);
@@ -213,45 +226,55 @@ public class App {
 			case "5":
 				System.out.println("Enter New First Name.");
 				a.firstNameChange(accountnum, sc.nextLine());
+				admin(u);
 				break;
 			case "6":
 				System.out.println("Enter New Last Name.");
 				a.lastNameChange(accountnum, sc.nextLine());
+				admin(u);
 				break;
 			case "7":
 				System.out.println("Enter New Email Address:");
 				u = a.getUserInfo(sc.nextLine());
+				admin(u);
 				break;
 			case "8":
 				System.out.println("Enter New Password:");
 				a.passwordChange(accountnum, sc.nextLine());
+				admin(u);
 				break;
 			case "1":
 				System.out.println("Deposit Amount: ");
 				a.deposit(accountnum, sc.nextDouble());
+				admin(u);
 				break;
 			case "2":
 				System.out.println("Withdrawal Amount: ");
 				a.withdrawal(accountnum, sc.nextDouble());
+				admin(u);
 				break;
 			case "4":
 				System.out.println("Transfer to Account #:   ");
 				int i = sc.nextInt();
 				System.out.println("Transfer Amount:");
 				a.transfer(accountnum, i, sc.nextDouble());
+				admin(u);
 				break;
 			case "3":
 				AccountDao ad = new AccountDaoImpl();
 				System.out.println("Account Balance:" + ad.checkBalance(accountnum));
+				admin(u);
 				break;
 			
 			case "EXIT":
 				System.out.println("Goodbye!");
+				sc.close();
 				System.exit(0);
 				break;
 			case "9":
 				System.out.println("Enter Account Number to be approved:");
 				a.active(sc.nextInt());
+				admin(u);
 				break;
 			default:
 				System.out.println("");
