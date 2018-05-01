@@ -22,6 +22,7 @@ Project 1 Requirements
 10. tables must be in 3nf
 11. must include startup sql script
 12. use prepared statements for delete in jdbc
+13. use unit tests
 
 due Monday, April 30, 9:00am
 
