@@ -140,7 +140,7 @@ public class UserDaoImpl implements UserDao{
 		public int getApproved(User user) {
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
-				PreparedStatement stmt = conn.prepareStatement("SELECT useree_approved FROM user_table WHERE user_id = ? ");
+				PreparedStatement stmt = conn.prepareStatement("SELECT user_approved FROM user_table WHERE user_id = ? ");
 				stmt.setInt(++index, UserService.getUserId(user));
 				ResultSet rs = stmt.executeQuery();
 				if (rs.next()) {

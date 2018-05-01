@@ -5,22 +5,21 @@ import java.util.Scanner;
 import com.bank.exception.UserNotFoundException;
 import com.bank.mainmenu.MainMenu;
 import com.bank.model.User;
-import com.bank.service.JunctionService;
 import com.bank.service.ProductService;
 import com.bank.service.UserService;
 
 public class UserLogin {
 	
-	
 	public static void userLogin() throws UserNotFoundException {
 		System.out.println("____Welcome to the User Login____");
-		
+		try(Scanner scan = new Scanner(System.in)){
 			System.out.println(UserService.getUsers());
 			System.out.println("Please re-enter the first name");
 			String fname = scan.next();
 			System.out.println("Please re-enter the last name");
 			String lname = scan.next();
 			User user = new User(fname,lname);
+		}
 
 		System.out.println("1. Add to cart");
 		System.out.println("2. Remove from cart");
@@ -37,7 +36,7 @@ public class UserLogin {
 				System.out.println(ProductService.getAllProducts());
 				System.out.println("Product name?");
 				String productName = scan.next();
-				JunctionService.addToCart(user, productName);
+				
 				
 				break;
 			case 2:

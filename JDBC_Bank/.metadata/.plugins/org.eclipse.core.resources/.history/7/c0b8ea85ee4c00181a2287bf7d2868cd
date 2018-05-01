@@ -10,7 +10,7 @@ import com.bank.model.UserProduct;
 
 public class JunctionService {
 
-private static UserProductJunctionDao dao = UserProductJunctionDaoImpl.getInstance();
+private static UserProductJunctionDao dao =UserProductJunctionDaoImpl.getInstance();
 	
 	private JunctionService() {}
 	
