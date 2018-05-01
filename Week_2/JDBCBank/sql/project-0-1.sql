@@ -1,3 +1,26 @@
+/* Database Summary
+=====================================================================================
+    Tables
+    ---------------------------------------------------------------------------------
+    project_administrator(administratorid, name, password)
+    project_transaction(transactionid, userid, amount)
+    project_user(userid, name, password, approveadminid, rejectadminid, is_locked)
+    
+    Procedures
+    ---------------------------------------------------------------------------------
+    approve_user(in_user_name, in_admin_name)
+    reject_user(in_user_name, in_admin_name)
+    create_administrator(in_name, in_password)
+    create_transaction(in_name, in_amount)
+    create_user(in_name, in_password)
+    lock_user(in_name)
+    unlock_user(in_name)
+    
+    Functions
+    ---------------------------------------------------------------------------------
+    read_user_balance(in_name) returns number
+*/
+
 drop table project_transaction cascade constraints purge;
 drop table project_user cascade constraints purge;
 drop table project_administrator cascade constraints purge;
@@ -130,11 +153,13 @@ end;
 /
 
 create or replace procedure create_transaction
-    (in_userid in number, in_amount in number)
+    (in_name in varchar2, in_amount in number)
 as
+    user_id number;
 begin
+    select userid into user_id from project_user where name = in_name;
     insert into project_transaction(transactionid, userid, amount)
-        values(null, in_userid, in_amount);
+        values(null, user_id, in_amount);
 end;
 /
 
@@ -157,16 +182,32 @@ begin
     where name=in_name;
 end;
 /
---	create or replace procedure reject_user(in_user_name, in_admin_name)
---	create or replace procedure approve_user(in_user_name, in_admin_name)
+
 create or replace procedure reject_user
     (in_user_name varchar2, in_admin_name varchar2)
 as
     administrator_id number;
 begin
-    select a.administratorid into administrator_id from project_user u, project_administrator a where name=in_admin_name;
+    select a.administratorid 
+        into administrator_id 
+        from project_user u, project_administrator a 
+        where a.name=in_admin_name;
     update project_user
-    set approveadminid=administrator_id;
+        set approveadminid=administrator_id;
+end;
+/
+
+create or replace procedure approve_user
+    (in_user_name varchar2, in_admin_name varchar2)
+as
+    administrator_id number;
+begin
+    select a.administratorid 
+        into administrator_id 
+        from project_user u, project_administrator a 
+        where a.name=in_admin_name;
+    update project_user
+        set approveadminid=administrator_id;
 end;
 /
 
@@ -175,9 +216,10 @@ begin
     create_user('andy', 'password');
     create_user('vince', 'password');
     create_user('cameron', 'password');
-    create_transaction(0, 0);
-    create_transaction(1, 20);
-    create_transaction(2, 40);
+    create_transaction('andy', 0);
+    create_transaction('vince', 20);
+    create_transaction('cameron', 40);
+    commit;
 end;
 /
 
