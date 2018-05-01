@@ -12,6 +12,17 @@ GRANT CREATE ANY TRIGGER TO db_admin;
 GRANT CREATE ANY SEQUENCE TO db_admin;
 GRANT UNLIMITED TABLESPACE TO db_admin;
 
+--Revoke the appropriate privileges to the user
+REVOKE CONNECT FROM db_admin;
+REVOKE CREATE ANY TABLE FROM db_admin;
+REVOKE INSERT ANY TABLE FROM db_admin;
+REVOKE UPDATE ANY TABLE FROM db_admin;
+REVOKE DELETE ANY TABLE FROM db_admin;
+REVOKE CREATE ANY PROCEDURE FROM db_admin;
+REVOKE CREATE ANY TRIGGER FROM db_admin;
+REVOKE CREATE ANY SEQUENCE FROM db_admin;
+REVOKE UNLIMITED TABLESPACE FROM db_admin;
+
 -------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 

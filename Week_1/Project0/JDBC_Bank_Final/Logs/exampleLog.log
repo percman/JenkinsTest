@@ -453,3 +453,83 @@ PL/SQL: Statement ignored
 2018-04-29 22:35:22 TRACE BankLogger:15 - Storing data...
 2018-04-29 22:35:22 TRACE BankLogger:16 - Data stored. System close.
 2018-04-29 22:35:22 TRACE BankLogger:17 - =============================
+2018-04-29 23:04:49 TRACE BankLogger:25 - Initializing...
+2018-04-29 23:06:08 TRACE BankLogger:25 - Initializing...
+2018-04-29 23:07:26 TRACE BankLogger:172 - User: Allison Skipper logged out.
+2018-04-29 23:07:27 TRACE BankLogger:21 - Storing data...
+2018-04-29 23:07:27 TRACE BankLogger:22 - Data stored. System close.
+2018-04-29 23:07:27 TRACE BankLogger:23 - =============================
+2018-04-29 23:07:30 TRACE BankLogger:25 - Initializing...
+2018-04-29 23:07:40 TRACE BankLogger:172 - User: Allison Skipper logged out.
+2018-04-29 23:07:41 TRACE BankLogger:21 - Storing data...
+2018-04-29 23:07:41 TRACE BankLogger:22 - Data stored. System close.
+2018-04-29 23:07:41 TRACE BankLogger:23 - =============================
+2018-04-30 22:32:02 WARN  BankLogger:121 - ORA-00001: unique constraint (DB_ADMIN.SYS_C005365) violated
+ORA-06512: at "DB_ADMIN.INSERT_USER", line 5
+ORA-06512: at line 1
+
+2018-04-30 22:32:02 WARN  BankLogger:122 - SQL State: 23000
+2018-04-30 22:32:02 WARN  BankLogger:123 - Error Code: 1
+2018-04-30 22:32:14 WARN  BankLogger:121 - ORA-00001: unique constraint (DB_ADMIN.SYS_C005365) violated
+ORA-06512: at "DB_ADMIN.INSERT_USER", line 5
+ORA-06512: at line 1
+
+2018-04-30 22:32:14 WARN  BankLogger:122 - SQL State: 23000
+2018-04-30 22:32:14 WARN  BankLogger:123 - Error Code: 1
+2018-04-30 22:35:59 TRACE BankLogger:25 - Initializing...
+2018-04-30 22:36:10 WARN  BankLogger:121 - ORA-00001: unique constraint (DB_ADMIN.SYS_C005365) violated
+ORA-06512: at "DB_ADMIN.INSERT_USER", line 5
+ORA-06512: at line 1
+
+2018-04-30 22:36:10 WARN  BankLogger:122 - SQL State: 23000
+2018-04-30 22:36:10 WARN  BankLogger:123 - Error Code: 1
+2018-04-30 22:37:13 WARN  BankLogger:121 - ORA-00001: unique constraint (DB_ADMIN.SYS_C005365) violated
+ORA-06512: at "DB_ADMIN.INSERT_USER", line 5
+ORA-06512: at line 1
+
+2018-04-30 22:37:13 WARN  BankLogger:122 - SQL State: 23000
+2018-04-30 22:37:13 WARN  BankLogger:123 - Error Code: 1
+2018-04-30 22:37:25 WARN  BankLogger:121 - ORA-00001: unique constraint (DB_ADMIN.SYS_C005365) violated
+ORA-06512: at "DB_ADMIN.INSERT_USER", line 5
+ORA-06512: at line 1
+
+2018-04-30 22:37:25 WARN  BankLogger:122 - SQL State: 23000
+2018-04-30 22:37:25 WARN  BankLogger:123 - Error Code: 1
+2018-04-30 22:39:30 TRACE BankLogger:25 - Initializing...
+2018-04-30 22:40:00 TRACE BankLogger:229 - Administator: Jesse Skipper approved all pending accounts.
+2018-04-30 22:40:35 TRACE BankLogger:146 - Administator: Jesse Skipper deleted an account.
+2018-04-30 22:40:38 TRACE BankLogger:146 - Administator: Jesse Skipper deleted an account.
+2018-04-30 22:40:40 TRACE BankLogger:146 - Administator: Jesse Skipper deleted an account.
+2018-04-30 22:40:45 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-30 22:41:08 TRACE BankLogger:48 - New Account: Patrick Star
+2018-04-30 22:41:22 TRACE BankLogger:229 - Administator: Jesse Skipper approved all pending accounts.
+2018-04-30 22:41:35 TRACE BankLogger:112 - Administator: Jesse Skipper locked an account.
+2018-04-30 22:41:44 TRACE BankLogger:59 - User: Jesse Skipper logged in.
+2018-04-30 22:42:30 TRACE BankLogger:172 - User: Jesse Skipper logged out.
+2018-04-30 22:42:34 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-30 22:43:05 TRACE BankLogger:21 - Storing data...
+2018-04-30 22:43:05 TRACE BankLogger:22 - Data stored. System close.
+2018-04-30 22:43:05 TRACE BankLogger:23 - =============================
+2018-04-30 22:43:09 TRACE BankLogger:25 - Initializing...
+2018-04-30 22:43:47 TRACE BankLogger:48 - New Account: Gordon Freeman
+2018-04-30 22:44:15 TRACE BankLogger:229 - Administator: Jesse Skipper approved all pending accounts.
+2018-04-30 22:44:31 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-30 22:45:32 TRACE BankLogger:172 - User: Gordon Freeman logged out.
+2018-04-30 22:45:41 TRACE BankLogger:21 - Storing data...
+2018-04-30 22:45:41 TRACE BankLogger:22 - Data stored. System close.
+2018-04-30 22:45:41 TRACE BankLogger:23 - =============================
+2018-04-30 22:45:47 TRACE BankLogger:25 - Initializing...
+2018-04-30 22:46:03 TRACE BankLogger:129 - Administator: Jesse Skipper unlocked an account.
+2018-04-30 22:46:14 TRACE BankLogger:59 - User: Jesse Skipper logged in.
+2018-04-30 22:46:20 WARN  BankLogger:31 - ORA-00001: unique constraint (DB_ADMIN.SYS_C005372) violated
+ORA-06512: at "DB_ADMIN.INSERT_TICO", line 4
+ORA-06512: at line 1
+
+2018-04-30 22:46:20 WARN  BankLogger:32 - SQL State: 23000
+2018-04-30 22:46:20 WARN  BankLogger:33 - Error Code: 1
+2018-04-30 22:46:49 WARN  BankLogger:100 - Skip_a_few did not have enough TiCos for trade
+2018-04-30 22:47:08 TRACE BankLogger:172 - User: Jesse Skipper logged out.
+2018-04-30 22:48:59 TRACE BankLogger:69 - Admin: Jesse Skipper logged out.
+2018-04-30 22:48:59 TRACE BankLogger:21 - Storing data...
+2018-04-30 22:48:59 TRACE BankLogger:22 - Data stored. System close.
+2018-04-30 22:48:59 TRACE BankLogger:23 - =============================
