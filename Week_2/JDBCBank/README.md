@@ -1,29 +1,28 @@
 Project 0 Requirements
-=========================================
-1. persistence
-2. user/creation login
-3. admin
-4. users approved
-5. admin can lock
-6. transactions
-7. utilize logging/unit tests
+=================================================
+persistence
+user/creation login
+admin
+users approved
+admin can lock
+transactions
+utilize logging/unit tests
+
+Project 0-1 Requirements
+=================================================
+use jdbc for persistence
+use a dao
+3 stored procedures
+2 udf
+must only use preparedstatements and callablestatements
+2 sequences
+2 triggers
+create custom checked exceptions where applicable
+single and factory
+tables must be in 3nf
+must include startup sql script
+due Monday, April 30, 9:00am
+-- use prepared statements for delete in jdbc
 
 Project 1 Requirements
-=========================================
-1. use jdbc for persistence
-2. use a dao
-3. 3 stored procedures
-4. 2 udf
-5. must only use preparedstatements and callablestatements
-6. 2 sequences
-7. 2 triggers
-8. create custom checked exceptions where applicable
-9. single and factory
-10. tables must be in 3nf
-11. must include startup sql script
-12. use prepared statements for delete in jdbc
-13. use unit tests
-
-due Monday, April 30, 9:00am
-
--- 3 minutes for presentation
+=================================================

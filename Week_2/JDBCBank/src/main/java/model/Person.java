@@ -1,6 +1,7 @@
 package model;
 
 public abstract class Person {
+	private int id;
 	private String name;
 	private String password;
 	public String getName() {
@@ -14,5 +15,11 @@ public abstract class Person {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

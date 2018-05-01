@@ -3,7 +3,9 @@ import java.util.Map;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
 
+import exception.CreatePersonException;
 import model.Administrator;
+import model.PersonFactory;
 import model.User;
 import service.Bank;
 import util.Stream;
@@ -36,7 +38,7 @@ public class Teller {
 		}
 	}
 
-	private static void createAdministrator() {
+	private static void createAdministrator(){
 		System.out.println("creating new administrator");
 		System.out.println(Stream.existingAdministrators(Teller.bank.getAdministrators()));
 		System.out.print("enter administrator name: ");
@@ -52,10 +54,14 @@ public class Teller {
 		else {
 			String string = "administrator " + name + " created";
 			logger.trace(string);
-			Administrator administrator = new Administrator(name, password);
-			Teller.bank.createAdmin(administrator);
-			System.out.println("entering login...");
-			loginAdministrator();
+			try {
+				Administrator administrator = (Administrator) PersonFactory.create("administrator", name, password, 0, false);
+				Teller.bank.createAdmin(administrator);
+				System.out.println("entering login...");
+				loginAdministrator();
+			} catch (CreatePersonException e) {
+				logger.error(e);
+			}
 		}
 	}
 
@@ -75,10 +81,15 @@ public class Teller {
 		else {
 			String string = "user " + name + " created";
 			logger.trace(string);
-			User user = new User(name, password, 0, false);
-			Teller.bank.createUser(user);
-			System.out.println("entering login...");
-			loginUser();
+			
+			try {
+				User user = (User) PersonFactory.create("user", name, password, 0, false);
+				Teller.bank.createUser(user);
+				System.out.println("entering login...");
+				loginUser();			
+			} catch(CreatePersonException e) {
+				logger.error(e);
+			}
 		}
 	}
 
@@ -297,7 +308,7 @@ public class Teller {
 	public static void main(String[] args) {
 		logger = Logger.getLogger(Teller.class);
 		Teller.scanner = new Scanner(System.in);
-		Teller.bank = new Bank(logger);
+		Teller.bank = Bank.getInstance(logger);
 		Teller.greet();
 	}
 }

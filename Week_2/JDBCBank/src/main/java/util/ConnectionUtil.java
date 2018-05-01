@@ -8,9 +8,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import org.apache.log4j.Logger;
 
 public class ConnectionUtil {	
-	public static Connection getConnection() {
+	public static Connection getConnection(Logger logger) {
 		InputStream in = null;
 		Properties props = new Properties();
 		try {
@@ -22,9 +23,9 @@ public class ConnectionUtil {
 			
 			return DriverManager.getConnection(url, username, password);
 		} catch (SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL State: " + sqle.getSQLState());
-			System.err.println("Error Code: " + sqle.getErrorCode());
+			logger.error(sqle.getMessage());
+			logger.error("SQL State: " + sqle.getSQLState());
+			logger.error("Error Code: " + sqle.getErrorCode());
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
 		} catch (IOException ioe) {

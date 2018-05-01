@@ -1,10 +1,7 @@
 package service;
 
-import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.log4j.Logger;
-
 import dao.AdministratorDaoImpl;
 import dao.UserDaoImpl;
 import model.Administrator;
@@ -13,8 +10,16 @@ import model.User;
 public class Bank {
 	private AdministratorDaoImpl admindao;
 	private UserDaoImpl userdao;
+	private static Bank instance;
+	
+	public static Bank getInstance(Logger logger) {
+		if(instance == null) 
+			instance = new Bank(logger);
+		
+		return instance;
+	}
 
-	public Bank(Logger logger) {
+	private Bank(Logger logger) {
 		admindao = new AdministratorDaoImpl(logger);
 		userdao = new UserDaoImpl(logger);
 	}
@@ -61,7 +66,7 @@ public class Bank {
 	}
 
 	public String authenticateUser(String name, String password) {
-		Map<String, User> users = new HashMap<>();
+		Map<String, User> users = userdao.getUsers();
 		for(Map.Entry<String, User> entry: users.entrySet()) {
 			User user = entry.getValue();
 			if(user.getName().equals(name))
