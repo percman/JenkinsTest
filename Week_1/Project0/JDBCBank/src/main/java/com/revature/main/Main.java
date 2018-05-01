@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.revature.model.CustLogin;
+import com.revature.service.CustLoginService;
 import com.revature.util.ConnectionUtil;
 
 
@@ -32,6 +34,7 @@ public class Main {
 		
 		if(s.equals("2")) {
 				User.UserVerify();
+				
 		}
 		
 	} // main
@@ -40,43 +43,40 @@ public class Main {
 
 	private static void adminMenu() throws IOException {
 	
-	
-		System.out.println("Menu options: Create a user(1)/lock a user(2)/display all users(3)/unlock a user(4)/exit(5)");
+		System.out.println("Menu options: Create a user(1) /lock a user(2) /display all users(3) /unlock a user(4) /exit(5)");
 		
 		Scanner sc = new Scanner(System.in);
 		String st = sc.nextLine();
 		
-		Scanner sc1 = new Scanner(System.in);
-		String st1 = sc1.nextLine();
-		
-		Scanner sc2 = new Scanner(System.in);
-		String st2 = sc2.nextLine();
-		
-		Scanner sc3 = new Scanner(System.in);
-		String st3 = sc2.nextLine();
-		
-		
-		
 		
 			if(st.equals("1")) {
+				
+				Scanner sc1 = new Scanner(System.in);
+				String st1 = sc1.nextLine();
+				
+				Scanner sc2 = new Scanner(System.in);
+				String st2 = sc2.nextLine();
+				
+				Scanner sc3 = new Scanner(System.in);
+				String st3 = sc2.nextLine();
 				
 				int index = 0; 
 				try(Connection conn = ConnectionUtil.getConnection()){
 					
-					CallableStatement stmt = conn.prepareCall("{CALL (?,?,?)}");
+					CallableStatement stmt = conn.prepareCall("{CALL insert_customer(?,?,?)}");
 					stmt.setString(1, st1);
 					stmt.setString(2, st2);
-					stmt.setString(3,  st3);
+					stmt.setString(3, st3);
 					
-					//stmt.executeUpdate();
-					stmt.execute();
+					stmt.executeUpdate();
 					
 				} catch(SQLException sqle) {
 					System.err.println(sqle.getMessage());
 					System.err.println("SQL state " + sqle.getSQLState());
 					System.err.println("Error Code: " + sqle.getErrorCode());
 				}
-					
+				
+							
 			} // 1
 			
 			
@@ -90,9 +90,8 @@ public class Main {
 				int index = 0; 
 				try(Connection conn = ConnectionUtil.getConnection()){
 					
-					CallableStatement stmt = conn.prepareCall("{CALL lock_account(?}");
-					stmt.setInt(++index, acno);
-					
+					CallableStatement stmt = conn.prepareCall("{CALL lock_account(?)}");
+					stmt.setInt(++index,acno);
 					stmt.executeUpdate();
 					
 				} catch(SQLException sqle) {
@@ -123,14 +122,11 @@ public class Main {
 						System.err.println(sqle.getMessage());
 						System.err.println("SQL state " + sqle.getSQLState());
 						System.err.println("Error Code: " + sqle.getErrorCode());
-					}
-				
-				
-						      
+					}			      
 			} //3
 			
 			if(st.equals("4")) {
-				System.out.println("Enter customer account number to UN lock the account");
+				System.out.println("Enter customer account number to unlock the account");
 				Scanner sc5 = new Scanner(System.in);
 				String st5 = sc5.nextLine();
 				int acno = Integer.parseInt(st5);
@@ -138,7 +134,7 @@ public class Main {
 				int index = 0; 
 				try(Connection conn = ConnectionUtil.getConnection()){
 					
-					CallableStatement stmt = conn.prepareCall("{CALL unlock_account(?}");
+					CallableStatement stmt = conn.prepareCall("{CALL unlock_account(?)}");
 					stmt.setInt(++index, acno);
 					
 					stmt.executeUpdate();
@@ -159,5 +155,5 @@ public class Main {
 
 
 
-	}
+	} // main
 
