@@ -1799,3 +1799,2856 @@ Log session start time Sun Apr 29 21:27:28 EDT 2018<br>
 <td>Script.java:176</td>
 <td title="Message">user jimmyadded movie Superman</td>
 </tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 16:02:26 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:64</td>
+<td title="Message">ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+ORA-06512: at line 1
+</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentMovieTest(MovieTest.java:44)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>62</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:65</td>
+<td title="Message">23000</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentMovieTest(MovieTest.java:44)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>63</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:66</td>
+<td title="Message">1</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentMovieTest(MovieTest.java:44)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>764</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:64</td>
+<td title="Message">ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+ORA-06512: at line 1
+</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieTest(MovieTest.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>765</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:65</td>
+<td title="Message">23000</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieTest(MovieTest.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>766</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:66</td>
+<td title="Message">1</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieTest(MovieTest.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>1868</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>AdminDaoImpl.java:99</td>
+<td title="Message">ORA-00001: unique constraint (DLANI.UK_MOVIE_TITLE) violated
+ORA-06512: at &quot;DLANI.INSERT_MOVIE&quot;, line 4
+ORA-06512: at line 1
+</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.UK_MOVIE_TITLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.INSERT_MOVIE&quot;, line 4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminDaoImpl.addNewMovie(AdminDaoImpl.java:97)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminService.addNewMovie(AdminService.java:24)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieNotRentingTest(MovieTest.java:69)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>1869</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>AdminDaoImpl.java:100</td>
+<td title="Message">23000</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.UK_MOVIE_TITLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.INSERT_MOVIE&quot;, line 4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminDaoImpl.addNewMovie(AdminDaoImpl.java:97)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminService.addNewMovie(AdminService.java:24)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieNotRentingTest(MovieTest.java:69)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>1870</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>AdminDaoImpl.java:101</td>
+<td title="Message">1</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.UK_MOVIE_TITLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.INSERT_MOVIE&quot;, line 4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminDaoImpl.addNewMovie(AdminDaoImpl.java:97)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminService.addNewMovie(AdminService.java:24)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieNotRentingTest(MovieTest.java:69)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>8391</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:64</td>
+<td title="Message">ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+ORA-06512: at line 1
+</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentAlreadyHaveTest(MovieTest.java:49)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>8392</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:65</td>
+<td title="Message">23000</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentAlreadyHaveTest(MovieTest.java:49)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>8393</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:66</td>
+<td title="Message">1</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentAlreadyHaveTest(MovieTest.java:49)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:05:47 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:64</td>
+<td title="Message">ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+ORA-06512: at line 1
+</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentMovieTest(MovieTest.java:44)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>16</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:65</td>
+<td title="Message">23000</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentMovieTest(MovieTest.java:44)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>16</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:66</td>
+<td title="Message">1</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentMovieTest(MovieTest.java:44)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>1117</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:64</td>
+<td title="Message">ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+ORA-06512: at line 1
+</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieTest(MovieTest.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>1117</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:65</td>
+<td title="Message">23000</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieTest(MovieTest.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>1117</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:66</td>
+<td title="Message">1</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieTest(MovieTest.java:63)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>2730</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>AdminDaoImpl.java:99</td>
+<td title="Message">ORA-00001: unique constraint (DLANI.UK_MOVIE_TITLE) violated
+ORA-06512: at &quot;DLANI.INSERT_MOVIE&quot;, line 4
+ORA-06512: at line 1
+</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.UK_MOVIE_TITLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.INSERT_MOVIE&quot;, line 4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminDaoImpl.addNewMovie(AdminDaoImpl.java:97)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminService.addNewMovie(AdminService.java:24)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieNotRentingTest(MovieTest.java:69)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>2730</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>AdminDaoImpl.java:100</td>
+<td title="Message">23000</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.UK_MOVIE_TITLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.INSERT_MOVIE&quot;, line 4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminDaoImpl.addNewMovie(AdminDaoImpl.java:97)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminService.addNewMovie(AdminService.java:24)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieNotRentingTest(MovieTest.java:69)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>2730</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>AdminDaoImpl.java:101</td>
+<td title="Message">1</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.UK_MOVIE_TITLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.INSERT_MOVIE&quot;, line 4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminDaoImpl.addNewMovie(AdminDaoImpl.java:97)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.AdminService.addNewMovie(AdminService.java:24)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.returnMovieNotRentingTest(MovieTest.java:69)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>7723</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:64</td>
+<td title="Message">ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+ORA-06512: at line 1
+</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentAlreadyHaveTest(MovieTest.java:49)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>7723</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:65</td>
+<td title="Message">23000</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentAlreadyHaveTest(MovieTest.java:49)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+
+<tr>
+<td>7723</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>MovieDaoImpl.java:66</td>
+<td title="Message">1</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at &quot;DLANI.RENT_USER_MOVIE&quot;, line 8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ORA-06512: at line 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieTest.rentAlreadyHaveTest(MovieTest.java:49)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.reflect.Method.invoke(Unknown Source)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:31:31 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:32:24 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:77</td>
+<td title="Message">new user bobby created</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:32:53 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:34:08 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:77</td>
+<td title="Message">new user tyler created</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:34:36 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>7412</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:122</td>
+<td title="Message">admin davelogged in</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:36:38 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:77</td>
+<td title="Message">new user 1 created</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:36:49 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>2983</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:132</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.UserNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:127)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:36:59 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4960</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:122</td>
+<td title="Message">admin davelogged in</td>
+</tr>
+
+<tr>
+<td>21953</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:277</td>
+<td title="Message">admin davelogged out</td>
+</tr>
+
+<tr>
+<td>21954</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:135</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.PasswordIncorrectException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:125)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:37:28 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>5773</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:141</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.ApprovalPendingException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:106)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:37:44 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>3990</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:132</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.UserNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:127)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:37:57 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4412</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:141</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.ApprovalPendingException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:106)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:45:01 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>2661</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:132</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.UserNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:127)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:45:21 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:77</td>
+<td title="Message">new user paul created</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:45:33 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>5362</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:122</td>
+<td title="Message">admin davelogged in</td>
+</tr>
+
+<tr>
+<td>14260</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:261</td>
+<td title="Message">admin daveapproved paul</td>
+</tr>
+
+<tr>
+<td>20767</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:290</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.UserNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.UserDaoImpl.getUser(UserDaoImpl.java:135)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.UserService.getUser(UserService.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.adminHub(Script.java:260)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:123)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+
+<tr>
+<td>20769</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:135</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.PasswordIncorrectException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:125)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:46:06 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>5386</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:112</td>
+<td title="Message">user paullogged in</td>
+</tr>
+
+<tr>
+<td>23496</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:208</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.MovieNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.getMovie(MovieDaoImpl.java:124)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.userHub(Script.java:168)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+
+<tr>
+<td>23498</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:135</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.PasswordIncorrectException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:115)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:47:42 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4346</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:112</td>
+<td title="Message">user paullogged in</td>
+</tr>
+
+<tr>
+<td>19596</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:212</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.MovieNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.getMovie(MovieDaoImpl.java:124)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.userHub(Script.java:172)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+
+<tr>
+<td>19787</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:136</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.UserNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:131)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:48:22 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4306</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:112</td>
+<td title="Message">user paullogged in</td>
+</tr>
+
+<tr>
+<td>10159</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:173</td>
+<td title="Message">user pauladded movie Superman</td>
+</tr>
+
+<tr>
+<td>32149</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:184</td>
+<td title="Message">user pauladded movie Superman</td>
+</tr>
+
+<tr>
+<td>42101</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:193</td>
+<td title="Message">user paullogged out</td>
+</tr>
+
+<tr>
+<td>42459</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:136</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.UserNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:131)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:50:42 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4793</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:112</td>
+<td title="Message">user paullogged in</td>
+</tr>
+
+<tr>
+<td>14251</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:171</td>
+<td title="Message">user pauladded movie Superman</td>
+</tr>
+
+<tr>
+<td>38809</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:182</td>
+<td title="Message">user pauladded movie Superman</td>
+</tr>
+
+<tr>
+<td>42994</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:191</td>
+<td title="Message">user paullogged out</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:51:32 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>7734</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:124</td>
+<td title="Message">admin davelogged in</td>
+</tr>
+
+<tr>
+<td>17249</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:238</td>
+<td title="Message">admin davelocked paul</td>
+</tr>
+
+<tr>
+<td>32038</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:292</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.UserNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.UserDaoImpl.getUser(UserDaoImpl.java:135)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.users.UserService.getUser(UserService.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.adminHub(Script.java:250)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:125)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:52:20 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4709</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:140</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.LockedAccountException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:109)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:53:08 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>11495</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:137</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.PasswordIncorrectException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:128)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:53:36 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4570</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:124</td>
+<td title="Message">admin davelogged in</td>
+</tr>
+
+<tr>
+<td>12125</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:251</td>
+<td title="Message">admin daveunlocked paul</td>
+</tr>
+
+<tr>
+<td>27621</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:279</td>
+<td title="Message">admin davelogged out</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:55:25 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4325</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:112</td>
+<td title="Message">user paullogged in</td>
+</tr>
+
+<tr>
+<td>11730</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:171</td>
+<td title="Message">user pauladded movie Superman</td>
+</tr>
+
+<tr>
+<td>19308</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:210</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.MovieNotFoundException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.getMovie(MovieDaoImpl.java:124)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieDaoImpl.ReturnMovie(MovieDaoImpl.java:73)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.movie.MovieService.ReturnMovie(MovieService.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.userHub(Script.java:181)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:56:00 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>5248</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:112</td>
+<td title="Message">user paullogged in</td>
+</tr>
+
+<tr>
+<td>16005</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:182</td>
+<td title="Message">user pauladded movie Superman</td>
+</tr>
+
+<tr>
+<td>20696</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:191</td>
+<td title="Message">user paullogged out</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:56:26 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:77</td>
+<td title="Message">new user rhonda created</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:56:44 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4001</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:124</td>
+<td title="Message">admin davelogged in</td>
+</tr>
+
+<tr>
+<td>14983</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:263</td>
+<td title="Message">admin daveapproved rhonda</td>
+</tr>
+
+<tr>
+<td>22092</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:238</td>
+<td title="Message">admin davelocked paul</td>
+</tr>
+
+<tr>
+<td>25012</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:279</td>
+<td title="Message">admin davelogged out</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:57:15 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>4842</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:140</td>
+<td title="Message">null</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.revature.exceptions.LockedAccountException
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.login(Script.java:109)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.Script.start(Script.java:46)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Example</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Mon Apr 30 19:57:26 EDT 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:45</td>
+<td title="Message">login attempt made</td>
+</tr>
+
+<tr>
+<td>6051</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:112</td>
+<td title="Message">user rhondalogged in</td>
+</tr>
+
+<tr>
+<td>13506</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.revature.project0.Script category">com.revature.project0.Script</td>
+<td>Script.java:191</td>
+<td title="Message">user rhondalogged out</td>
+</tr>

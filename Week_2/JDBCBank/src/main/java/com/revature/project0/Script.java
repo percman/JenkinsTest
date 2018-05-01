@@ -112,8 +112,10 @@ public class Script {
 					logger.info("user " + username + "logged in");
 					userHub(user);
 				}
+				else {
 				throw new PasswordIncorrectException();
-			}
+				}
+				}
 			if (Login.adminExists(username)) {
 				System.out.print("Please enter your password:");
 				String password = read.readLine();
@@ -122,9 +124,9 @@ public class Script {
 					logger.info("admin " + username + "logged in");
 					adminHub(AdminService.getAdmin(username));
 				}
+				else {
 				throw new PasswordIncorrectException();
-			} else {
-				throw new UserNotFoundException();
+				}
 			}
 		} catch (IOException ioe) {
 			logger.error(ioe.getMessage(), ioe);
@@ -136,7 +138,7 @@ public class Script {
 			System.out.println("Your password incorrect");
 		} catch (LockedAccountException lae) {
 			logger.error(lae.getMessage(), lae);
-			System.out.println("Your account has been currently locked by an admin");
+			System.out.println("Your account has been locked by an admin");
 		} catch (ApprovalPendingException ape) {
 			logger.error(ape.getMessage(), ape);
 			System.out.println("Your account is currently pending approval");

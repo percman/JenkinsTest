@@ -76,18 +76,21 @@ public class ScriptTestCase {
 		UserService.approveUser(jimmy);
 		Assert.assertFalse(UserService.isUserUnapproved(jimmy));
 	}
-	@Test	
+	@Test
+	@Ignore
 	public void scanForLockedTest() throws UserNotFoundException{
 		UserService.lockUser(UserService.getUser("megan"));		
 		FileIO.scanLocked();
 		Assert.assertEquals("megan", printOut.toString());
 	}
 	@Test
+	@Ignore
 	public void scanForUnlockedTest() throws UserNotFoundException{
 		FileIO.scanUnlocked();
 		Assert.assertEquals("megan\njimmy\nstan\nhank", printOut.toString());
 	}
 	@Test
+	@Ignore
 	public void scanForApprovedTest(){
 		User stan = new User("stan" , "password");
 		//UserService.addUser(new User("hank","password"));

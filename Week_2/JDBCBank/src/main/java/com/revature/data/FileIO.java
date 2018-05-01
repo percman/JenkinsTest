@@ -15,7 +15,7 @@ public static void scanApproved() {
 	
 	for(User user : UserService.getUsers()) {
 		try {
-			if(!UserService.isUserUnapproved(user)) {
+			if(UserService.isUserUnapproved(user)) {
 				System.out.println(user.getUsername());
 			}
 		} catch (UserNotFoundException unfe) {
@@ -27,7 +27,7 @@ public static void scanApproved() {
 public static void scanLocked() {
 	for(User user : UserService.getUsers()) {
 		try {
-			if(UserService.isUserLocked(user)) {
+			if(!UserService.isUserLocked(user)) {
 				System.out.println(user.getUsername());
 			}
 		} catch (UserNotFoundException unfe) {
@@ -38,7 +38,7 @@ public static void scanLocked() {
 public static void scanUnlocked(){
 	for(User user : UserService.getUsers()) {
 		try {
-			if(!UserService.isUserLocked(user)) {
+			if(UserService.isUserLocked(user)) {
 				System.out.println(user.getUsername());
 			}
 		} catch (UserNotFoundException unfe) {
