@@ -31,7 +31,7 @@ console.log(PI);
 
 // Anonymous function ************************************
 /* ALERTS ARE BAD PRACTICE */
-let sayHello = function (name){
+let sayHello = function (name) {
     alert("Hello, " + name + '!');
 };
 
@@ -42,7 +42,7 @@ let sayHello = function (name){
 // Self-invoking Functions ***********************************************
 // Also known as IIFE's (Immediately Invoked Function Expressions)
 
-(function() {
+(function () {
     console.log("This function was invoked without my explicit call!");
 })();
 
@@ -50,13 +50,13 @@ let sayHello = function (name){
 // Template Literals ***************************************************
 // NOTE: THESE ARE NOT SINGLE QUOTES ''
 // They are backticks `` located below the ESC key
-(function(a,b){
-    console.log(`The self invoking function says that ${a} + ${b} = ${a+b}`);
-})(2,3);
+(function (a, b) {
+    console.log(`The self invoking function says that ${a} + ${b} = ${a + b}`);
+})(2, 3);
 
 
 // Function Hoisting *************************************************
-function myHoistedFunction(){
+function myHoistedFunction() {
     console.log("This function was declared on line 58");
 };
 
@@ -65,15 +65,15 @@ function myHoistedFunction(){
 // little bit of a weak example because we have yet to learn about events
 // there they are much more useful
 
-function sayHello2(name){
+function sayHello2(name) {
     alert("Hello, " + name + "!");
 };
 
-function sayGoodbye(name){
+function sayGoodbye(name) {
     alert("Goodbye, " + name + "!");
 }
 
-function getName(callback, callback2){
+function getName(callback, callback2) {
     let name = prompt("What is your name?");
     // Defined this function right above the getName function
     callback(name);
@@ -103,7 +103,7 @@ console.log("Squirtle is typeof " + typeof p2);
 console.log(p2);
 
 // Example 3: Using a "constructor"
-function Pokemon(name, type){
+function Pokemon(name, type) {
     this.name = name;
     this.type = type;
 }

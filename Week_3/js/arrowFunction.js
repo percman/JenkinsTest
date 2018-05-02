@@ -17,14 +17,14 @@ function Person() {
 
 // let p = new Person();
 
-function betterPerson(){
+function betterPerson() {
     this.age = 0;
 
     // Self invoking function to illustrate how it was before ES6
 
     (() => {
-        for (let i = 0; i < 50; i+=5) {
-            this.age+=5;
+        for (let i = 0; i < 50; i += 5) {
+            this.age += 5;
             console.log(this.age);
         }
     })();

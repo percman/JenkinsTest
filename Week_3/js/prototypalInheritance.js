@@ -3,13 +3,13 @@ console.log("Start of a prototypal inheritance");
 console.log("----------------------------------")
 
 // Prototypal Inheritance
-function Person(name = "N/A", age = 0){
+function Person(name = "N/A", age = 0) {
     this.name = name;
     this.age = age;
 };
 
 
-Person.prototype.sayHello = function() {
+Person.prototype.sayHello = function () {
     console.log(`${this.name}, age ${this.age}, says hello!`);
 };
 
@@ -21,7 +21,7 @@ console.log(p5);
 p5.sayHello();
 p6.sayHello();
 
-p5.__proto__.sayHelloAgain = function(){
+p5.__proto__.sayHelloAgain = function () {
     console.log(`${this.name}, age ${this.age}, says hello again!`);
 };
 

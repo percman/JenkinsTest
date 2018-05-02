@@ -1,9 +1,9 @@
 
-function outer(){
+function outer() {
     let a = 3;
-    function inner(){
+    function inner() {
         let b = 4;
-        function evenMoreInner(){
+        function evenMoreInner() {
             let c = 5;
             console.log(a + b + c);
         }
@@ -18,7 +18,7 @@ function outer(){
 // outer();
 
 
-var Person = function(name, age){
+var Person = function (name, age) {
     // Constructor logic
     this.name = name;
     this.age = age;
