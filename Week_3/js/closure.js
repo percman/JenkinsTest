@@ -45,9 +45,9 @@ var Person = function (name, age) {
     }
 }
 
-let Mickey = new Person("Mickey Mouse", 88);
-console.log(Mickey.getName());
-console.log(Mickey.getAge());
-Mickey.setName("Minnie");
-Mickey.info();
+// let Mickey = new Person("Mickey Mouse", 88);
+// console.log(Mickey.getName());
+// console.log(Mickey.getAge());
+// Mickey.setName("Minnie");
+// Mickey.info();
 
