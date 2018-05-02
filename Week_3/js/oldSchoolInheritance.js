@@ -29,7 +29,8 @@ function Shepard(heroName="Sorey", heroLevel=99, heroWeapon="The Sword of the Sh
 // To make the Shepard object effectively be a subclass of Hero, we use
 Shepard.prototype = Object.create(Hero.prototype);
 Shepard.prototype.attack = function () {
-    console.log(`${this.heroName}, a level ${this.heroLevel} Shepard, attacks with ${this.heroWeapon} for ${Math.round(Math.random() * 100)} damage!`);
+    console.log(`${this.heroName}, a level ${this.heroLevel} Shepard, 
+        attacks with ${this.heroWeapon} for ${Math.round(Math.random() * 100)} damage!`);
 }
 
 let shepard = new Shepard();
@@ -45,7 +46,8 @@ function Seraph(heroName="Mikleo", heroLevel=99, heroSpell="Aselia"){
 
 Seraph.prototype = Object.create(Hero.prototype);
 Seraph.prototype.cast = function() {
-    console.log(`${this.heroName}, a level ${this.heroLevel} Seraph, attacks with ${this.heroSpell} for ${Math.round(Math.random() * 100)} damage!`);
+    console.log(`${this.heroName}, a level ${this.heroLevel} Seraph, 
+        attacks with ${this.heroSpell} for ${Math.round(Math.random() * 100)} damage!`);
 }
 
 let seraph = new Seraph();
