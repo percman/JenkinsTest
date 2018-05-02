@@ -115,13 +115,13 @@
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th>Heading 1</th>
-                        <th>Heading 2</th>
-                        <th>Heading 3</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Ocupation</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody id="tablebody">
+                    <!-- <tr>
                         <td>Row 1, Cell 1</td>
                         <td>Row 1, Cell 2</td>
                         <td>Row 1, Cell 3</td>
@@ -135,26 +135,30 @@
                         <td>Row 3, Cell 1</td>
                         <td>Row 3, Cell 2</td>
                         <td>Row 3, Cell 3</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
         <div class="col-md-3 col-md-offset-1">
             <form action="#" class="well">
                 <div class="form-group">
-                    <label for="username">
-                        <strong>User Name</strong>
+                    <label for="firstname">
+                        <strong>First Name</strong>
                     </label>
-                    <input type="text" name="username" required class="form-control">
+                    <input type="text" name="firstname" id="firstname" required class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="password">
-                        <strong>Password</strong>
+                    <label for="lastname">
+                        <strong>Last Name</strong>
                     </label>
-                    <input type="password" name="password" id="password" required class="form-control">
+                    <input type="text" name="lastname" id="lastname" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="ocupation">Occupation</label>
+                    <input type="text" name="ocupation" id="ocupation" required class="form-contorl">
                 </div>
                 <div class="form-group button-group">
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button id="submitbtn" class="btn btn-primary" type="button">Submit</button>
                     <br>
                     <br>
                     <button class="btn btn-danger" type="reset">Reset</button>
@@ -185,11 +189,13 @@
 
 
 
+
     <!-- jQuery script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+    <script src="../js/domManipulation.js"></script>
 </body>
 
 </html>
