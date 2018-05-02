@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <!-- We put information about the page in the head tags -->
+    <head>
+        <title>My First HTML Page</title>
+        <!-- Links to an External Stylesheet -->
+        <link rel="stylesheet" href="./index.css">
+        <meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Internal Stylesheet -->
+        <style>
+            div {
+                background-color: cyan;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Click <a href="./bootstrap.html">Bootstrap Example</a> to go to a Bootstrap Example</p>
+        <h1 style="background-color: purple; color: white;">Hello, World!</h1>
+        <h2>Header 2</h2>
+        <h3>Header 3</h3>
+        <h4>Header 4</h4>
+        <h5>Header 5</h5>
+        <h6>Header 6</h6>
+        <!-- Use a <br> tag to create a vertical break in your webpage-->
+        <br>
+        <p>This is a paragraph. You use it to provide multiple lines of text</p>
+
+        <br>
+        <!-- Use the <div> tag to create a division for your code. Mainly used to organize it-->
+        <div>
+            <h3>Example of an ordered list</h3>
+            <ol> <!-- Add the type attribute to change how the list is shown -->
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+            <p>And so on, and so forth... it'll autoincrement for you</p>
+        </div>
+        <div>
+            <h2>Example of an unordered list</h2>
+            <h4>Grocery list</h4>
+            <ul type="circle"> <!-- Add the type attribute to change how the list is shown -->
+                <li>Eggs</li>
+                <li>Milk</li>
+                <li>Bread</li>
+                <li>Ice Cream</li>
+                <li>Broccoli</li>
+            </ul>
+        </div>
+        <br><br><br>
+        <div>
+            <h1>What about a table?</h1>
+            <table border="3">
+                <thead>
+                    <tr>
+                        <th>Heading 1</th>
+                        <th>Heading 2</th>
+                        <th>Heading 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1, Cell 1</td>
+                        <td>Row 1, Cell 2</td>
+                        <td>Row 1, Cell 3</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2, Cell 1</td>
+                        <td>Row 2, Cell 2</td>
+                        <td>Row 2, Cell 3</td>
+                    </tr>
+                    <tr>
+                        <td>Row 3, Cell 1</td>
+                        <td>Row 3, Cell 2</td>
+                        <td>Row 3, Cell 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h1>Personal Information Form</h1>
+            <form action="#" method="GET">
+                <label for="somethingElse"><strong>First Name</strong></label><br>
+                <input type="text" name="somethingElse" required placeholder="Please enter your first name"><br>
+
+                <label for="lastname"><strong>Last Name</strong></label><br>
+                <input type="text" name="lastname" required placeholder="Please enter your last name"><br>
+
+                <label for="email"><strong>Email</strong></label><br>
+                <input type="email" name="email" required placeholder="test@test.com"><br>
+
+                <label for="phone"><strong>Phone Number</strong></label><br>
+                <input type="tel" name="phone" required placeholder="888-888-8888"><br>
+
+                <label for="address"><strong>Mailing Address</strong></label><br>
+                <input type="text" name="address" required placeholder="123 Main Street"><br>
+                <br>
+                <h3>Preferred Form of Contact</h3>
+                <input type="radio" name="contact" value="Email" id="emailRadio">
+                <label for="emailRadio"><strong>Email</strong></label>
+                <input type="radio" name="contact" value="Phone" id="phoneRadio">
+                <label for="phoneRadio"><strong>Phone</strong></label>
+                <input type="radio" name="contact" value="Mail" id="mailRadio">
+                <label for="mailRadio"><strong>Snail Mail</strong></label><br>
+                <br>
+
+                <div>
+                    <input type="checkbox" id="subscribeTo" value="Yes">
+                    <label for="subscribeTo">Suscribe to ACME, Incorporated Newsletter?</label>
+                </div>
+
+                <br>
+                <input type="button" value="Just a plain ole button"><br>
+                <input type="submit" value="Submit!"><br>
+                <input type="reset" value="Reset"><br>
+            </form>
+        </div>
+
+
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+</html>
