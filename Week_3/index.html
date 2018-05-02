@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <!-- Here are the comment lines -->
+    <head>
+        <title> My First HTML page </title>
+        <!-- External stylesheet-->
+        <link rel-"stylesheet" href = "./index.css">
+        <meta charset = "ISO-8859-1" name = "viewport" content = "width = device-width, initial-scale = 1">
+        <!--Internal stylesheet-->
+        <style>
+            div {
+                background-color: cyan
+            }
+        </style>
+    </head>
+    <body>
+        <p>Click <a href="./bootstrap.html">Bootstrap Example</a> to go to a Bootstrap Example </p>
+        <h1 style="background-color: purple; color: white"> Hello, World! </h1>
+        <h2> Hello, World!</h2>
+        <h3> Hello, World!</h3>
+        <h4> Hello, World!</h4>
+        <h5> Hello, World!</h5>
+        <h6> Hello, World!</h6>
+        <!--Use <br> tag to create a vertical break in the web page-->
+        <br>
+        <br>
+        <br>
+        <p>This is a paragraph, you use it to provide multiple lines of text.</p>
+        <br>
+        <!-- Use th e<div> tag to create a division in your code, mainly to organize it-->
+        <div>
+            <h3> Example of an ordered list</h3>
+            <ol><!-- Add the type attribute to change how the list is dotted-->
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+        </div>
+        <div>
+            <h2>Example of an unordered list</h2>
+            <ul><!-- Add the type attribute to change how the list is dotted-->
+                <li> Eggs</li>
+                <li> More Eggs</li>
+                <li> Even more Eggs</li>
+                <li> A large quantity of Eggs</li>
+                <li> Bacon </li>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+            <h2> What about a table?</h2>
+            <table border = "1">
+                <thead>
+                    <tr>
+                        <th> Heading 1</th>
+                        <th> Heading 2</th>
+                        <th> Heading 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1 Cell 1</td>
+                        <td>Row 1 Cell 2</td>
+                        <td>Row 1 Cell 3</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2 Cell 1</td>
+                        <td>Row 2 Cell 2</td>
+                        <td>Row 2 Cell 3</td>
+                    </tr>
+                    <tr>
+                        <td>Row 3 Cell 1</td>
+                        <td>Row 3 Cell 2</td>
+                        <td>Row 3 Cell 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h2> Personal information form</h2>
+            <form action="#" method="GET">
+                <label for="firstname"><strong> First Name</strong></label><br>
+                <input type="text" name = "firstname" required placeholder = "Please enter your first name"><br>
+
+                <label for="lastname"><strong>Last Name</strong></label> <br>
+                <input type="text" name = "lastname" required placeholder = "Please enter your last name"><br>
+
+                <label for="email"><strong>Email</strong></label><br>
+                <input type="text" email = "email" required placeholder = "Test@Test.com"><br>
+
+                <label for="Phone"><strong>Phone Number</strong></label><br>
+                <input type="tel" name = "Phone" required placeholder="888-888-8888"><br>
+
+                <label for="address"><strong>Mailing Address</strong></label> <br>
+                <input type="text" name = "address" required placeholder = "123 Fake Street"><br>
+
+                <h3>Preferred Form of Contact</h3><br>
+                <input type="radio" name="contact" value="Email", id = "emailRadio"><br>
+                <label for="emailRadio"><strong>Email</strong></label><br>
+                <input type="radio" name="contact" value="Phone", id = "emailRadio"><br>
+                <label for="emailRadio"><strong>Phone</strong></label><br>
+                <input type="radio" name="contact" value="", id = "emailRadio"><br>
+                <label for="emailRadio"><strong>Mail</strong></label><br><br>
+
+                <div>
+                    <input type="checkbox" id = "subscribe" value = "yes"><br>
+                    <label for="subscribe"><strong>Subscribe?</strong></label><br>
+                </div>
+
+
+                <input type="button" value="Just a plain old button"><br>
+                <input type="submit" value="Submit"><br>
+                <input type="reset" value="Reset"><br>
+            </form>
+        </div>
+
+
+    </body>
+</html>
