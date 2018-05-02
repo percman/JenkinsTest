@@ -1,4 +1,4 @@
-package com.revature.connectionTest;
+1package com.revature.connectionTest;
 
 import static org.junit.Assert.assertTrue;
 

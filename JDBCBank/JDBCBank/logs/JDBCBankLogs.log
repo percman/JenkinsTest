@@ -275,3 +275,119 @@ ORA-06512: at line 1
 2018-04-30 00:17:27 INFO  LogThis:30 - All teachers were approved
 2018-04-30 00:17:27 WARN  LogThis:34 - That is not a valid type of user.
 2018-04-30 00:17:27 INFO  LogThis:30 - Login Menu
+2018-05-01 12:59:17 INFO  LogThis:30 - Create Principal
+2018-05-01 12:59:17 INFO  LogThis:30 - Create Principal
+2018-05-01 12:59:36 INFO  LogThis:30 - Principal Account Created
+2018-05-01 12:59:36 INFO  LogThis:30 - Principal Menu
+2018-05-01 12:59:43 INFO  LogThis:30 - You have successfully logged out.
+2018-05-01 12:59:44 INFO  LogThis:30 - Start Menu
+2018-05-01 12:59:47 INFO  LogThis:30 - Create a New Student Profile
+2018-05-01 13:00:23 INFO  LogThis:30 - Start Menu
+2018-05-01 13:02:51 INFO  LogThis:30 - Create a New Student Profile
+2018-05-01 13:03:05 INFO  LogThis:30 - Student Account Created
+2018-05-01 13:03:05 INFO  LogThis:30 - Start Menu
+2018-05-01 13:03:08 INFO  LogThis:30 - Create a New Teacher Profile
+2018-05-01 13:03:31 INFO  LogThis:30 - Teacher Account Created
+2018-05-01 13:03:32 INFO  LogThis:30 - Start Menu
+2018-05-01 13:09:40 INFO  LogThis:30 - Start Menu
+2018-05-01 13:12:35 INFO  LogThis:30 - Create Principal
+2018-05-01 13:12:51 INFO  LogThis:30 - Principal Account Created
+2018-05-01 13:12:51 INFO  LogThis:30 - Principal Menu
+2018-05-01 13:15:07 INFO  LogThis:30 - Start Menu
+2018-05-01 13:15:55 INFO  LogThis:30 - Login Menu
+2018-05-01 13:16:09 WARN  LogThis:34 - Your username and/or password was incorrect.
+2018-05-01 13:16:09 INFO  LogThis:30 - Start Menu
+2018-05-01 13:17:40 INFO  LogThis:30 - Create Principal
+2018-05-01 13:18:06 INFO  LogThis:30 - Principal Account Created
+2018-05-01 13:18:06 INFO  LogThis:30 - Principal Menu
+2018-05-01 13:18:12 INFO  LogThis:30 - Approve Teacher Menu
+2018-05-01 13:18:26 INFO  LogThis:30 - All teachers were approved
+2018-05-01 13:18:26 INFO  LogThis:30 - Approve Teacher Menu
+2018-05-01 13:18:28 INFO  LogThis:30 - Principal Menu
+2018-05-01 13:18:32 INFO  LogThis:30 - You have successfully logged out.
+2018-05-01 13:18:32 INFO  LogThis:30 - Start Menu
+2018-05-01 13:18:38 INFO  LogThis:30 - Login Menu
+2018-05-01 13:18:49 INFO  LogThis:30 - Teacher Menu
+2018-05-01 13:18:52 INFO  LogThis:30 - Approve Student Menu
+2018-05-01 13:18:56 INFO  LogThis:30 - All students were approved
+2018-05-01 13:18:56 INFO  LogThis:30 - Approve Student Menu
+2018-05-01 13:18:59 INFO  LogThis:30 - Teacher Menu
+2018-05-01 13:19:02 INFO  LogThis:30 - You have successfully logged out.
+2018-05-01 13:19:02 INFO  LogThis:30 - Start Menu
+2018-05-01 13:19:05 INFO  LogThis:30 - Login Menu
+2018-05-01 13:19:12 INFO  LogThis:30 - Student Menu
+2018-05-01 13:19:16 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 13:19:31 INFO  LogThis:30 - Student earned a coin!
+2018-05-01 13:19:31 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 13:19:38 INFO  LogThis:30 - Student Menu
+2018-05-01 13:19:41 INFO  LogThis:30 - You have successfully logged out.
+2018-05-01 13:19:41 INFO  LogThis:30 - Start Menu
+2018-05-01 14:28:35 INFO  LogThis:30 - Start Menu
+2018-05-01 14:28:36 INFO  LogThis:30 - Login Menu
+2018-05-01 14:28:42 WARN  LogThis:34 - Your username and/or password was incorrect.
+2018-05-01 14:28:42 INFO  LogThis:30 - Start Menu
+2018-05-01 14:28:47 INFO  LogThis:30 - Login Menu
+2018-05-01 14:28:54 WARN  LogThis:34 - Your username and/or password was incorrect.
+2018-05-01 14:28:54 INFO  LogThis:30 - Start Menu
+2018-05-01 14:30:31 INFO  LogThis:30 - Login Menu
+2018-05-01 14:30:38 WARN  LogThis:34 - Your username and/or password was incorrect.
+2018-05-01 14:30:38 INFO  LogThis:30 - Start Menu
+2018-05-01 14:30:39 INFO  LogThis:30 - Login Menu
+2018-05-01 14:30:45 WARN  LogThis:34 - Your username and/or password was incorrect.
+2018-05-01 14:30:45 INFO  LogThis:30 - Start Menu
+2018-05-01 14:30:51 INFO  LogThis:30 - Login Menu
+2018-05-01 14:31:05 WARN  LogThis:34 - Your username and/or password was incorrect.
+2018-05-01 14:31:05 INFO  LogThis:30 - Start Menu
+2018-05-01 14:31:10 INFO  LogThis:30 - Create a New Student Profile
+2018-05-01 14:31:42 INFO  LogThis:30 - Student Account Created
+2018-05-01 14:31:43 INFO  LogThis:30 - Start Menu
+2018-05-01 14:31:47 INFO  LogThis:30 - Login Menu
+2018-05-01 14:31:54 WARN  LogThis:34 - Your username and/or password was incorrect.
+2018-05-01 14:31:54 INFO  LogThis:30 - Start Menu
+2018-05-01 14:32:24 INFO  LogThis:30 - Login Menu
+2018-05-01 14:32:33 INFO  LogThis:30 - Principal Menu
+2018-05-01 14:32:40 INFO  LogThis:30 - You have successfully logged out.
+2018-05-01 14:32:40 INFO  LogThis:30 - Start Menu
+2018-05-01 14:32:45 INFO  LogThis:30 - Login Menu
+2018-05-01 14:32:50 INFO  LogThis:30 - Teacher Menu
+2018-05-01 14:32:52 INFO  LogThis:30 - Approve Student Menu
+2018-05-01 14:32:56 INFO  LogThis:30 - All students were approved
+2018-05-01 14:32:56 INFO  LogThis:30 - Approve Student Menu
+2018-05-01 14:32:58 INFO  LogThis:30 - Teacher Menu
+2018-05-01 14:33:02 INFO  LogThis:30 - You have successfully logged out.
+2018-05-01 14:33:03 INFO  LogThis:30 - Start Menu
+2018-05-01 14:33:04 INFO  LogThis:30 - Login Menu
+2018-05-01 14:33:10 INFO  LogThis:30 - Student Menu
+2018-05-01 14:34:09 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:34:21 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:34:22 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:34:28 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:34:28 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:34:32 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:34:32 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:34:36 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:34:36 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:34:39 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:34:39 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:34:43 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:34:43 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:34:46 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:34:46 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:34:51 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:34:58 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:34:58 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:35:01 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:35:01 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:35:14 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:35:14 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:35:18 INFO  LogThis:30 - Student Menu
+2018-05-01 14:35:21 INFO  LogThis:30 - Spend Your Coins Menu
+2018-05-01 14:35:31 INFO  LogThis:30 - Student Menu
+2018-05-01 14:35:35 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:35:37 INFO  LogThis:30 - Bardric earned a coin!
+2018-05-01 14:35:38 INFO  LogThis:30 - Get Coins Menu
+2018-05-01 14:35:39 INFO  LogThis:30 - Student Menu
+2018-05-01 14:35:41 INFO  LogThis:30 - Spend Your Coins Menu
+2018-05-01 14:50:56 INFO  LogThis:30 - Student Menu
+2018-05-01 14:51:19 INFO  LogThis:30 - You have successfully logged out.
+2018-05-01 14:51:20 INFO  LogThis:30 - Start Menu
