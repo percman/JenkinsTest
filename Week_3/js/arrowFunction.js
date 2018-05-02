@@ -40,5 +40,5 @@ let greet = name => {
     alert("Hello, " + name + "!");
 };
 
-console.log(add(2, 3)); 
-greet("World");
+// console.log(add(2, 3)); 
+// greet("World");
