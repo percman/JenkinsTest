@@ -7,14 +7,22 @@ GRANT SELECT ON employeeTable TO cameron;
 GRANT DELETE ON employeeTable TO cameron;
 GRANT CREATE SESSION TO cameron;
 
---create employee table
+GRANT INSERT ON infoTable TO cameron;
+GRANT UPDATE ON infoTable TO cameron;
+GRANT SELECT ON infoTable TO cameron;
+GRANT DELETE ON infoTable TO cameron;
+GRANT CREATE SESSION TO cameron;
+
 CREATE TABLE employeeTable(
 employeeId INT,
 userName VARCHAR(50),
 userPassword VARCHAR(50),
 CONSTRAINT PK_employeeId PRIMARY KEY (employeeId)
 )
+INSERT INTO employeeTable VALUES (1, 'cameron1', 'password');
 
+SELECT * FROM employeeTable;
+COMMIT;
 --create info table
 CREATE TABLE infoTable(
 employeeId INT,
@@ -24,7 +32,6 @@ lastName VARCHAR(50) NOT NULL,
 CONSTRAINT fk_employeeId FOREIGN KEY (employeeId)
 REFERENCES employeeTable(employeeId)
 )
-
 --create reimbursement table
 CREATE TABLE reimbursementTable (
 reId INT,
