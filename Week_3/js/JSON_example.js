@@ -47,7 +47,7 @@ function populateTodosTable(){
 
            } 
         }
-    }
+    };
 
     // Step 3: Call the open() method
     xhr.open("GET", "https://jsonplaceholder.typicode.com/todos");

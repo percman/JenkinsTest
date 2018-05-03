@@ -44,12 +44,31 @@
 
     <div class="container col-md-4 col-md-offset-4">
         <form action="">
-            <div class="page-header">
+            <div class="page-header col-md-10 col-md-offset-1">
                 <h2>Enter a Pokemon Id</h2>
             </div>
-            
+            <div class="form-group">
+                <input type="text" class="form-control" id="pokemonId" required placeholder="Please Enter a Pokemon ID">
+            </div>
+            <div class="button-group col-md-4 col-md-offset-4">
+                <input type="button" class="btn btn-success" id="pokemonSubmit" value="Get Pokemon!">
+            </div>
         </form>
+        <br>
+        <br>
+        <br>
+        <div class="well">
+            <div class="container">
+                <div class="call-md-2">
+                    <h5>Name: <span id="pokemonName"></span></h5>
+                    <h5>Primary: <span id="primary"></span></h5>
+                    <h5>Secondary: <span id="secondary"></span></h5>
+                </div>
+                <img src="" alt="" id="pokemonImage">
+            </div>
+        </div>
     </div>
+    <script src="../js/pokemonJsonExample.js"></script>
 </body>
 
 </html>

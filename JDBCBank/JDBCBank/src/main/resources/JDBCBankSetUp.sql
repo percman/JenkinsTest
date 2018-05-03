@@ -34,12 +34,6 @@ CREATE SEQUENCE student_id_sequence
 
 
 
--- Drop tables if they have been created before
-TRUNCATE TABLE principal;
-DELETE FROM username where username = "password";
-SELECT * FROM student;
-SELECT * FROM teacher;
-SELECT * FROM principal;
 
 -- Create the necessary tables
 CREATE TABLE principal (
