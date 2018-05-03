@@ -1,0 +1,87 @@
+2018-05-02 22:12:45 WARN  ReimbursementLogger:49 - Invalid column index
+2018-05-02 22:12:45 WARN  ReimbursementLogger:50 - Error Code: 17003
+2018-05-02 22:12:45 WARN  ReimbursementLogger:51 - SQL State: 99999
+2018-05-02 22:14:20 WARN  ReimbursementLogger:49 - Invalid column index
+2018-05-02 22:14:20 WARN  ReimbursementLogger:50 - Error Code: 17003
+2018-05-02 22:14:20 WARN  ReimbursementLogger:51 - SQL State: 99999
+2018-05-02 22:16:02 WARN  ReimbursementLogger:49 - Invalid column index
+2018-05-02 22:16:02 WARN  ReimbursementLogger:50 - Error Code: 17003
+2018-05-02 22:16:02 WARN  ReimbursementLogger:51 - SQL State: 99999
+2018-05-02 22:18:13 WARN  ReimbursementLogger:47 - Invalid column index
+2018-05-02 22:18:13 WARN  ReimbursementLogger:48 - Error Code: 17003
+2018-05-02 22:18:13 WARN  ReimbursementLogger:49 - SQL State: 99999
+2018-05-02 22:20:00 WARN  ReimbursementLogger:47 - Invalid column index
+2018-05-02 22:20:00 WARN  ReimbursementLogger:48 - Error Code: 17003
+2018-05-02 22:20:00 WARN  ReimbursementLogger:49 - SQL State: 99999
+2018-05-02 22:29:28 WARN  ReimbursementLogger:47 - Invalid column index
+2018-05-02 22:29:28 WARN  ReimbursementLogger:48 - Error Code: 17003
+2018-05-02 22:29:28 WARN  ReimbursementLogger:49 - SQL State: 99999
+2018-05-02 22:30:17 WARN  ReimbursementLogger:47 - Invalid column index
+2018-05-02 22:30:17 WARN  ReimbursementLogger:48 - Error Code: 17003
+2018-05-02 22:30:17 WARN  ReimbursementLogger:49 - SQL State: 99999
+2018-05-02 22:30:55 WARN  ReimbursementLogger:48 - Invalid column index
+2018-05-02 22:30:55 WARN  ReimbursementLogger:49 - Error Code: 17003
+2018-05-02 22:30:55 WARN  ReimbursementLogger:50 - SQL State: 99999
+2018-05-02 22:33:02 WARN  ReimbursementLogger:48 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:33:02 WARN  ReimbursementLogger:49 - Error Code: 6550
+2018-05-02 22:33:02 WARN  ReimbursementLogger:50 - SQL State: 65000
+2018-05-02 22:34:17 WARN  ReimbursementLogger:48 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:34:17 WARN  ReimbursementLogger:49 - Error Code: 6550
+2018-05-02 22:34:17 WARN  ReimbursementLogger:50 - SQL State: 65000
+2018-05-02 22:34:35 WARN  ReimbursementLogger:48 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:34:35 WARN  ReimbursementLogger:49 - Error Code: 6550
+2018-05-02 22:34:35 WARN  ReimbursementLogger:50 - SQL State: 65000
+2018-05-02 22:35:04 WARN  ReimbursementLogger:49 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:35:04 WARN  ReimbursementLogger:50 - Error Code: 6550
+2018-05-02 22:35:04 WARN  ReimbursementLogger:51 - SQL State: 65000
+2018-05-02 22:38:17 WARN  ReimbursementLogger:49 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:38:17 WARN  ReimbursementLogger:50 - Error Code: 6550
+2018-05-02 22:38:17 WARN  ReimbursementLogger:51 - SQL State: 65000
+2018-05-02 22:39:49 WARN  ReimbursementLogger:49 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:39:49 WARN  ReimbursementLogger:50 - Error Code: 6550
+2018-05-02 22:39:49 WARN  ReimbursementLogger:51 - SQL State: 65000
+2018-05-02 22:41:53 WARN  ReimbursementLogger:49 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:41:54 WARN  ReimbursementLogger:50 - Error Code: 6550
+2018-05-02 22:41:54 WARN  ReimbursementLogger:51 - SQL State: 65000
+2018-05-02 22:42:56 WARN  ReimbursementLogger:50 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:42:56 WARN  ReimbursementLogger:51 - Error Code: 6550
+2018-05-02 22:42:56 WARN  ReimbursementLogger:52 - SQL State: 65000
+2018-05-02 22:44:10 WARN  ReimbursementLogger:50 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:44:10 WARN  ReimbursementLogger:51 - Error Code: 6550
+2018-05-02 22:44:10 WARN  ReimbursementLogger:52 - SQL State: 65000
