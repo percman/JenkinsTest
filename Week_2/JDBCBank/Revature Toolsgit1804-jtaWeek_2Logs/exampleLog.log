@@ -1457,3 +1457,150 @@ com.revature.exceptions.LockedAccountException
 2018-04-30 19:57:28 INFO  Script:45 - login attempt made
 2018-04-30 19:57:34 INFO  Script:112 - user rhondalogged in
 2018-04-30 19:57:41 INFO  Script:191 - user rhondalogged out
+2018-05-01 10:55:19 INFO  Script:45 - login attempt made
+2018-05-01 10:55:42 INFO  Script:124 - admin davelogged in
+2018-05-01 10:56:26 INFO  Script:45 - login attempt made
+2018-05-01 10:56:33 INFO  Script:124 - admin davelogged in
+2018-05-01 10:58:25 INFO  Script:45 - login attempt made
+2018-05-01 10:58:30 INFO  Script:124 - admin davelogged in
+2018-05-01 10:58:51 INFO  Script:77 - new user megan created
+2018-05-01 10:59:02 INFO  Script:45 - login attempt made
+2018-05-01 10:59:09 INFO  Script:124 - admin davelogged in
+2018-05-01 10:59:15 INFO  Script:263 - admin daveapproved megan
+2018-05-01 10:59:18 INFO  Script:279 - admin davelogged out
+2018-05-01 10:59:28 INFO  Script:45 - login attempt made
+2018-05-01 10:59:33 ERROR Script:137 - 
+com.revature.exceptions.PasswordIncorrectException
+	at com.revature.project0.Script.login(Script.java:116)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-05-01 10:59:42 INFO  Script:45 - login attempt made
+2018-05-01 10:59:45 INFO  Script:112 - user meganlogged in
+2018-05-01 10:59:55 INFO  Script:171 - user meganadded movie Superman
+2018-05-01 10:59:55 ERROR Script:210 - 
+com.revature.exceptions.MovieNotFoundException
+	at com.revature.dao.movie.MovieDaoImpl.getMovie(MovieDaoImpl.java:124)
+	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:56)
+	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+	at com.revature.project0.Script.userHub(Script.java:170)
+	at com.revature.project0.Script.login(Script.java:113)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-05-01 11:00:02 INFO  Script:45 - login attempt made
+2018-05-01 11:00:08 INFO  Script:112 - user meganlogged in
+2018-05-01 11:00:19 ERROR Script:64 - ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at "DLANI.RENT_USER_MOVIE", line 8
+ORA-06512: at line 1
+
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at "DLANI.RENT_USER_MOVIE", line 8
+ORA-06512: at line 1
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+	at com.revature.project0.Script.userHub(Script.java:170)
+	at com.revature.project0.Script.login(Script.java:113)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-05-01 11:00:19 ERROR Script:65 - 23000
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at "DLANI.RENT_USER_MOVIE", line 8
+ORA-06512: at line 1
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+	at com.revature.project0.Script.userHub(Script.java:170)
+	at com.revature.project0.Script.login(Script.java:113)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-05-01 11:00:19 ERROR Script:66 - 1
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DLANI.PK_JUNCTION_TABLE) violated
+ORA-06512: at "DLANI.RENT_USER_MOVIE", line 8
+ORA-06512: at line 1
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210)
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53)
+	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+	at oracle.jdbc.driver.OracleCallableStatement.executeUpdate(OracleCallableStatement.java:5647)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+	at com.revature.dao.movie.MovieDaoImpl.RentMovie(MovieDaoImpl.java:62)
+	at com.revature.dao.movie.MovieService.RentMovie(MovieService.java:23)
+	at com.revature.project0.Script.userHub(Script.java:170)
+	at com.revature.project0.Script.login(Script.java:113)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-05-01 11:00:19 INFO  Script:171 - user meganadded movie Superman
+2018-05-01 11:00:19 INFO  Script:171 - user meganadded movie The Avengers
+2018-05-01 11:00:37 INFO  Script:182 - user meganadded movie The Avengers
+2018-05-01 11:00:44 INFO  Script:191 - user meganlogged out
+2018-05-01 11:00:54 INFO  Script:45 - login attempt made
+2018-05-01 11:00:59 INFO  Script:112 - user meganlogged in
+2018-05-01 11:01:17 INFO  Script:182 - user meganadded movie Superman
+2018-05-01 12:54:11 INFO  Script:45 - login attempt made
+2018-05-01 12:54:16 INFO  Script:112 - user meganlogged in
+2018-05-01 12:54:18 INFO  Script:191 - user meganlogged out
+2018-05-01 12:54:24 INFO  Script:45 - login attempt made
+2018-05-01 12:54:29 INFO  Script:124 - admin davelogged in
+2018-05-01 12:54:33 INFO  Script:279 - admin davelogged out
+2018-05-01 13:54:55 INFO  Script:45 - login attempt made
+2018-05-01 13:55:02 INFO  Script:112 - user meganlogged in
+2018-05-01 13:55:04 INFO  Script:191 - user megan logged out
+2018-05-01 14:16:37 INFO  Script:45 - login attempt made
+2018-05-01 14:16:48 INFO  Script:45 - login attempt made
+2018-05-01 14:16:55 INFO  Script:112 - user meganlogged in
+2018-05-01 14:17:21 INFO  Script:171 - user megan added movie Superman
+2018-05-01 14:17:22 INFO  Script:171 - user megan added movie The Avengers
+2018-05-01 14:17:41 INFO  Script:182 - user megan added movie Superman
+2018-05-01 14:17:47 INFO  Script:191 - user megan logged out
+2018-05-01 14:18:09 INFO  Script:77 - new user user created
+2018-05-01 14:18:18 INFO  Script:45 - login attempt made
+2018-05-01 14:18:24 INFO  Script:124 - admin dave logged in
+2018-05-01 14:18:47 INFO  Script:263 - admin dave approved user
+2018-05-01 14:19:10 INFO  Script:238 - admin dave locked megan
+2018-05-01 14:19:20 INFO  Script:273 - admin dave added movie Batman'
+2018-05-01 14:19:23 INFO  Script:279 - admin dave logged out
+2018-05-01 14:19:32 INFO  Script:45 - login attempt made
+2018-05-01 14:19:38 ERROR Script:140 - 
+com.revature.exceptions.LockedAccountException
+	at com.revature.project0.Script.login(Script.java:109)
+	at com.revature.project0.Script.start(Script.java:46)
+	at com.revature.project0.MovieApplication.main(MovieApplication.java:7)
+2018-05-01 14:19:42 INFO  Script:45 - login attempt made
+2018-05-01 14:19:47 INFO  Script:112 - user userlogged in

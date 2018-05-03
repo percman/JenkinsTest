@@ -121,7 +121,7 @@ public class Script {
 				String password = read.readLine();
 				if (Login.checkPasswordAdmin(AdminService.getPasswordHash(new Admin(username,password)), username)) {
 					System.out.println("you have been successfully logged in as an admin.");
-					logger.info("admin " + username + "logged in");
+					logger.info("admin " + username + " logged in");
 					adminHub(AdminService.getAdmin(username));
 				}
 				else {
@@ -168,7 +168,7 @@ public class Script {
 					while (tokenizer.hasMoreTokens()) {
 						String title = tokenizer.nextToken();
 						MovieService.RentMovie(user,title);
-						logger.info("user " + user.getUsername() + "added movie " + title);
+						logger.info("user " + user.getUsername() + " added movie " + title);
 					}
 					
 					break;
@@ -179,7 +179,7 @@ public class Script {
 					while (tokenizer.hasMoreTokens()) {
 						String title = tokenizer.nextToken();
 						MovieService.ReturnMovie(user,title);
-						logger.info("user " + user.getUsername() + "added movie " + title);
+						logger.info("user " + user.getUsername() + " added movie " + title);
 					}
 					break;
 				case "view":
@@ -188,11 +188,11 @@ public class Script {
 					break;
 				case "quit":
 					System.out.print("You have quit the application.");
-					logger.info("user " + user.getUsername() + "logged out");
+					logger.info("user " + user.getUsername() + " logged out");
 					break;
 				case "q":
 					System.out.print("You have quit the application.");
-					logger.info("user " + user.getUsername() + "logged out");
+					logger.info("user " + user.getUsername() + " logged out");
 					break;
 				default:
 					System.out.println("please enter add,remove or view.");
@@ -235,7 +235,7 @@ public class Script {
 					while (tokenizer.hasMoreTokens()) {
 						String username = tokenizer.nextToken();
 						UserService.lockUser(UserService.getUser(username));
-						logger.info("admin " + admin.getUsername() + "locked " + username);
+						logger.info("admin " + admin.getUsername() + " locked " + username);
 					}
 					break;
 				case "unlock":
@@ -260,7 +260,7 @@ public class Script {
 					while (tokenizer.hasMoreTokens()) {
 						String username = tokenizer.nextToken();
 						UserService.approveUser(UserService.getUser(username));
-						logger.info("admin " + admin.getUsername() + "approved " + username);
+						logger.info("admin " + admin.getUsername() + " approved " + username);
 					}
 					break;
 				case "add":
@@ -270,17 +270,17 @@ public class Script {
 					while (tokenizer.hasMoreTokens()) {
 						String title = tokenizer.nextToken();
 						AdminService.addNewMovie(new Movie(title));
-						logger.info("admin " + admin.getUsername() + "added movie " + title);
+						logger.info("admin " + admin.getUsername() + " added movie " + title);
 					}
 					
 					break;
 				case "quit":
 					System.out.print("You have quit the application.");
-					logger.info("admin " + admin.getUsername() + "logged out");
+					logger.info("admin " + admin.getUsername() + " logged out");
 					break;
 				case "q":
 					System.out.print("You have quit the application.");
-					logger.info("admin " + admin.getUsername() + "logged out");
+					logger.info("admin " + admin.getUsername() + " logged out");
 					break;
 				default:
 					System.out.println("please enter lock,unlock or approve.");
