@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pokemon JSON Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navbar Example -->
+    <div class="container">
+        <!-- The navbar class creates the Navbar styling -->
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header col-md-2">
+                <!-- Must use navbar-brand to make the style work -->
+                <a href="./index.html" class="navbar-brand">ACME, Inc</a>
+            </div>
+            <ul class="navbar-nav nav col-md-6">
+                <!-- to make the items appear as you want, put an <a> inside a <li>-->
+                <li><a href="./bootstrap.html">Bootstrap Example</a></li>
+                <li><a href="./JSON_example.html">JSON Example</a></li>
+                <li class="active"><a href="./pokemon_json_example.html">Pokemon JSON Example</a></li>
+            </ul>
+            <!-- navbar-right pulls the items contained inside it to the right -->
+            <ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
+                <li><a href="#">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container col-md-4 col-md-offset-4">
+        <form action="">
+            <div class="page-header">
+                <h2>Enter a Pokemon ID</h2>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="pokemonId" required placeholder="Please enter a Pokemon ID">
+            </div>
+            <div class="button-group col-md-4 col-md-offset-4">
+                <input type="button" class="btn btn-success" id="pokemonSubmit" value="Get Pokemon!">
+            </div>
+        </form>
+        <br><br><br>
+        <div class="well">
+            <div class="container">
+                <div class="col-md-2">
+                    <h5>Name: <span id="pokemonName"></span></h5>
+                    <h5>Primary: <span id="primary"></span></h5>
+                    <h5>Secondary: <span id="secondary"></span></h5>
+                </div>
+                <img src="" alt="" id="pokemonImage">
+            </div>
+        </div>
+    </div>
+    <script src="../js/pokemonJsonExample.js"></script>
+</body>
+</html>

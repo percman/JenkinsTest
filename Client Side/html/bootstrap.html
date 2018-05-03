@@ -5,7 +5,7 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="./bootstrap.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
     </head>
     <body>
         <!-- Navbar Example -->
@@ -19,8 +19,8 @@
                 <ul class="navbar-nav nav col-md-6">
                     <!-- to make the items appear as you want, put an <a> inside a <li>-->
                     <li class="active"><a href="./bootstrap.html">Bootstrap Example</a></li>
-                    <li><a href="#">Item 2</a></li>
-                    <li><a href="#">Item 3</a></li>
+                    <li><a href="./JSON_example.html">JSON Example</a></li>
+                    <li><a href="./pokemon_json_example.html">Pokemon JSON Example</a></li>
                 </ul>
                 <!-- navbar-right pulls the items contained inside it to the right -->
                 <ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
@@ -83,13 +83,13 @@
                 <table class="table table-striped table-hover table-bordered">
                     <thead>
                             <tr>
-                                <th>Heading 1</th>
-                                <th>Heading 2</th>
-                                <th>Heading 3</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Occupation</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody id="table-body">
+                            <!-- <tr>
                                 <td>Row 1, Cell 1</td>
                                 <td>Row 1, Cell 2</td>
                                 <td>Row 1, Cell 3</td>
@@ -103,22 +103,26 @@
                                 <td>Row 3, Cell 1</td>
                                 <td>Row 3, Cell 2</td>
                                 <td>Row 3, Cell 3</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
                 <div class="col-md-3 col-md-offset-1">
                     <form action="#" class="well">
                         <div class="form-group">
-                            <label for="username"><strong>User Name</strong></label>
-                            <input type="text" name="username" id="username" required class="form-control">
+                            <label for="firstname"><strong>First Name</strong></label>
+                            <input type="text" name="firstname" id="firstname" required class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="password"><strong>Password</strong></label>
-                            <input type="password" name="password" id="password" required class="form-control">
+                            <label for="lastname"><strong>Last Name</strong></label>
+                            <input type="text" name="lastname" id="lastname" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation"><strong>Occupation</strong></label>
+                            <input type="text" name="occupation" id="occupation" required class="form-control">
                         </div>
                         <div class="button-group">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button id="submitBtn" class="btn btn-primary" type="button">Submit</button>
                             <button class="btn btn-danger" type="reset">Reset</button>
                         </div>
                     </form>
@@ -133,5 +137,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="../js/domManipulation.js"></script>
     </body>
 </html>
