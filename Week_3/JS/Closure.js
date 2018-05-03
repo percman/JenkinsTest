@@ -42,9 +42,9 @@ var Person = function(name, age){
     }
 }
 
-let eddy = new Person("Eddy", 25);
-console.log(eddy.getName());
-console.log(eddy.getAge());
-eddy.setName("Eduardo");
-eddy.setAge(80);
-eddy.info();
+// let eddy = new Person("Eddy", 25);
+// console.log(eddy.getName());
+// console.log(eddy.getAge());
+// eddy.setName("Eduardo");
+// eddy.setAge(80);
+// eddy.info();
