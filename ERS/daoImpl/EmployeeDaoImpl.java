@@ -1,0 +1,54 @@
+package com.revature.daoimpl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.revature.dao.EmployeeDAO;
+import com.revature.model.Employee;
+import com.revature.utility.ConnectionUtility;
+
+public class EmployeeDaoImpl implements EmployeeDAO {
+
+	@Override
+	public Employee getEmployee(String username) {
+		ConnectionUtility.getInstance();
+		String sql = "SELECT * FROM employee WHERE username = ?";
+		try(Connection conn = ConnectionUtility.getConnection()){
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, username);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				return new Employee(rs.getInt("e_id"),rs.getString("title"),rs.getString("username"),rs.getString("password"));
+			}
+		}catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL STATE: "+sqle.getSQLState());
+			System.err.println("Error Code: "+sqle.getErrorCode());
+		}
+		return null;
+	}
+
+	@Override
+	public String getPasswordHash(Employee e) {
+		ConnectionUtility.getInstance();
+		int index = 0;
+		String sql = "SELECT get_user_hash(?,?) AS HASH FROM dual";
+		try(Connection conn = ConnectionUtility.getConnection()){
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(++index, e.getUsername());
+			stmt.setString(++index, e.getPassword());
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				return rs.getString("HASH");
+			}
+		}catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL STATE: "+sqle.getSQLState());
+			System.err.println("Error Code: "+sqle.getErrorCode());
+		}
+		return null;
+	}
+
+}
