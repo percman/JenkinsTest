@@ -9,6 +9,8 @@ public class Employee {
 	private String lname;
 	private String title;
 	private String phone;
+	private String address;
+	
 	
 	public Employee() {}
 	
@@ -17,6 +19,14 @@ public class Employee {
 		this.title = title;
 		this.username = username;
 		this.password = password;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public int getId() {
@@ -79,6 +89,7 @@ public class Employee {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + ((fname == null) ? 0 : fname.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((lname == null) ? 0 : lname.hashCode());
@@ -98,6 +109,11 @@ public class Employee {
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
 		if (fname == null) {
 			if (other.fname != null)
 				return false;
@@ -136,7 +152,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", username=" + username + ", password=" + password + ", fname=" + fname
-				+ ", lname=" + lname + ", title=" + title + ", phone=" + phone + "]";
+				+ ", lname=" + lname + ", title=" + title + ", phone=" + phone + ", address=" + address + "]";
 	}
 	
 	

@@ -1,4 +1,4 @@
-package com.revature.daoimpl;
+package com.revature.daoImpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

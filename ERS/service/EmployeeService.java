@@ -1,7 +1,7 @@
 package com.revature.service;
 
 import com.revature.dao.EmployeeDAO;
-import com.revature.daoimpl.EmployeeDaoImpl;
+import com.revature.daoImpl.EmployeeDaoImpl;
 import com.revature.model.Employee;
 import com.revature.model.EmployeeFactory;
 import com.revature.model.Worker;

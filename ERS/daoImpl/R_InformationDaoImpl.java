@@ -1,4 +1,4 @@
-package com.revature.daoimpl;
+package com.revature.daoImpl;
 
 import com.revature.dao.R_InformationDAO;
 import com.revature.model.Reimbursement;
@@ -6,9 +6,10 @@ import com.revature.model.Reimbursement;
 public class R_InformationDaoImpl implements R_InformationDAO {
 
 	@Override
-	public void setInformation(Reimbursement reimbursement) {
+	public boolean setInformation(Reimbursement reimbursement) {
 		
 		
+		return false;
 	}
 
 	@Override
