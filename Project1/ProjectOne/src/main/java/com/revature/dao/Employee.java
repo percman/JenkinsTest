@@ -7,7 +7,23 @@ public class Employee {
 	String lastName;
 	String userName;
 	String password;
+	boolean isFinanceManager =  false;
 	
+	public Employee(String firstName, String middleInit, String lastName, String userName, String password, boolean isFinanceManager) {
+		super();
+		this.firstName = firstName;
+		this.middleInit = middleInit;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.isFinanceManager = isFinanceManager;
+	}
+	public boolean isFinanceManager() {
+		return isFinanceManager;
+	}
+	public void setFinanceManager(boolean isFinanceManager) {
+		this.isFinanceManager = isFinanceManager;
+	}
 	public Employee() {}
 	//Constructor excluding middle initial
 	public Employee(String firstName, String lastName, String userName, String password) {

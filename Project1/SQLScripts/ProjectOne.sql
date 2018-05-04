@@ -13,16 +13,18 @@ GRANT SELECT ON infoTable TO cameron;
 GRANT DELETE ON infoTable TO cameron;
 GRANT CREATE SESSION TO cameron;
 
+GRANT INSERT ON reimbursementTable TO cameron;
+GRANT UPDATE ON reimbursementTable TO cameron;
+GRANT SELECT ON reimbursementTable TO cameron;
+GRANT DELETE ON reimbursementTable TO cameron;
+GRANT CREATE SESSION TO cameron;
+
 CREATE TABLE employeeTable(
 employeeId INT,
 userName VARCHAR(50),
 userPassword VARCHAR(50),
 CONSTRAINT PK_employeeId PRIMARY KEY (employeeId)
 )
-INSERT INTO infoTable VALUES (1, 'Cameron', 'J', 'Skaggs');
-
-SELECT * FROM EMPLOYEETABLE, INFOTABLE where EMPLOYEETABLE.EMPLOYEEID = INFOTABLE.EMPLOYEEID;
-COMMIT;
 --create info table
 CREATE TABLE infoTable(
 employeeId INT,
@@ -32,12 +34,9 @@ lastName VARCHAR(50) NOT NULL,
 CONSTRAINT fk_employeeId FOREIGN KEY (employeeId)
 REFERENCES employeeTable(employeeId)
 )
-
-ALTER TABLE INFOTABLE MODIFY middleName VARCHAR(1);
-COMMIT;
 --create reimbursement table
 CREATE TABLE reimbursementTable (
-reId INT,
+reId INT, 
 requesterId INT NOT NULL,
 approverId INT,
 categoryName VARCHAR(50),
@@ -48,16 +47,15 @@ CONSTRAINT fk_approverId FOREIGN KEY (approverId)
 REFERENCES  employeeTable(employeeId),
 CONSTRAINT PK_reId PRIMARY KEY (reId)
 )
---create procedure to insert users
---Creating a stored procudure to insert users
-CREATE OR REPLACE PROCEDURE insert_employee(u_name IN VARCHAR, u_password IN VARCHAR, f_name IN VARCHAR, m_name IN VARCHAR, l_name IN VARCHAR)
+SELECT * FROM EMPLOYEETABLE, INFOTABLE WHERE EMPLOYEETABLE.employeeId = INFOTABLE.employeeId;
+--Creating a stored procudure to insert employees
+CREATE OR REPLACE PROCEDURE insert_employee(u_name IN VARCHAR, u_password IN VARCHAR, 
+f_name IN VARCHAR, m_name IN VARCHAR, l_name IN VARCHAR, fm IN INT)
 AS
 BEGIN
-    --Set a value
-    hashPassword = get_user_hash(u_name, u_password);
     --INSERT INTO employee
-    INSERT INTO employeeTable (username, userpassword) 
-    VALUES (u_name, u_password);
+    INSERT INTO employeeTable (username, userpassword, FINANCEMANAGER) 
+    VALUES (u_name, u_password, fm);
     INSERT INTO infoTable (firstName, middleName, lastName)
     VALUES (f_name, m_name, l_name);
 END;
@@ -87,12 +85,11 @@ CREATE OR REPLACE TRIGGER employee_before_insert
         IF: new.employeeId IS NULL THEN
         SELECT employee_sequence.nextval INTO :new.employeeId FROM dual;
         END IF;
-        SELECT GET_USER_HASH(:new.USERNAME, :new.USERPASSWORD)
-        INTO :new.userpass FROM dual;
-  end;
+        SELECT GET_USER_HASH(:new.userName, :new.userPassword)
+        INTO :new.userPassword FROM dual;
     END;
     /
-
+SELECT * FROM EMPLOYEETABLE;
 --Info Sequence for iterating through id
 CREATE SEQUENCE info_sequence
     START WITH 1
@@ -110,16 +107,11 @@ CREATE OR REPLACE TRIGGER info_before_insert
     END;
     /
     
-INSERT INTO INFOTABLE VALUES (null, 'Cameron', 'J', 'Skaggs');
-DELETE FROM INFOTABLE;
-DELETE FROM EMPLOYEETABLE;
-SELECT * FROM INFOTABLE;
-INSERT INTO EMPLOYEETABLE VALUES (null, 'andrew6', 'password1');
-DELETE FROM EMPLOYEETABLE e where e.employeeId = 2;
-DELETE FROM INFOTABLE;
-SELECT * FROM EMPLOYEETABLE;
-SELECT * FROM INFOTABLE;
-COMMIT;
-
-
-SELECT * FROM EMPLOYEETABLE, INFOTABLE; 
+CREATE OR REPLACE PROCEDURE make_request(rmb_Id IN INT, rq_Id IN INT, a_Id IN INT, c_name IN VARCHAR, status IN VARCHAR)
+AS
+BEGIN
+    --INSERT INTO employee
+    INSERT INTO reimbursementTable (reId, requesterId, approverId, categoryName, status) 
+    VALUES (rmb_Id, rq_Id, a_Id, c_name, status);
+END;
+/

@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import com.revature.reimbursement.Reimbursement;
 import com.revature.util.ConnectionUtil;
 
 public class EmployeeDaoImpl implements EmployeeDao {
@@ -51,12 +53,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public boolean insertEmployee(Employee e) {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("{CALL insert_employee(?, ?, ?, ?, ?)  }");
+			PreparedStatement stmt = conn.prepareStatement("{CALL insert_employee(?, ?, ?, ?, ?, ?)  }");
 			stmt.setString(++index, e.getUserName());
 			stmt.setString(++index, e.getPassword());
 			stmt.setString(++index, e.getFirstName());
 			stmt.setString(++index, e.getMiddleInit());
 			stmt.setString(++index, e.getLastName());
+			int fm = e.isFinanceManager ? 1 : 0;
+			stmt.setInt(++index, fm);
 			int rowsAffected = stmt.executeUpdate();
 			return rowsAffected > 0;
 		} catch (SQLException sqle) {
@@ -67,15 +71,30 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return false;
 	}
 
+
 	@Override
-	public boolean updateEmployee(Employee e) {
+	public boolean deleteEmployee(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean deleteEmployee(int id) {
-		// TODO Auto-generated method stub
+	public boolean insertRequest(Reimbursement r) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("{CALL make_request(?, ?, ?, ?, ?)  }");
+			stmt.setInt(++index, r.getReimbursementId());
+			stmt.setInt(++index, r.getRequesterId());
+			stmt.setInt(++index, r.getApproverId());
+			stmt.setString(++index, r.getCategory());
+			stmt.setString(++index, r.getStatus());
+			int rowsAffected = stmt.executeUpdate();
+			return rowsAffected > 0;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+		}
 		return false;
 	}
 
