@@ -1,5 +1,7 @@
 package com.revature.ProjectOne;
 
+import com.revature.dao.EmployeeService;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -33,6 +35,7 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+    	//test EmployeeService
+        assertEquals( EmployeeService.getAllEmployee().size(), 2 );
     }
 }

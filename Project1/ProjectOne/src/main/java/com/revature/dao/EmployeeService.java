@@ -12,4 +12,7 @@ public class EmployeeService {
 	public static ArrayList<Employee> getAllEmployee() {
 		return dao.getAllEmployees();
 	}
+	public static boolean insertEmployee(Employee e) {
+		return dao.insertEmployee(e);
+	}
 }

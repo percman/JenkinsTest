@@ -53,6 +53,8 @@ CONSTRAINT PK_reId PRIMARY KEY (reId)
 CREATE OR REPLACE PROCEDURE insert_employee(u_name IN VARCHAR, u_password IN VARCHAR, f_name IN VARCHAR, m_name IN VARCHAR, l_name IN VARCHAR)
 AS
 BEGIN
+    --Set a value
+    hashPassword = get_user_hash(u_name, u_password);
     --INSERT INTO employee
     INSERT INTO employeeTable (username, userpassword) 
     VALUES (u_name, u_password);
@@ -69,6 +71,7 @@ BEGIN
   INPUT => UTL_I18N.STRING_TO_RAW(DATA => USERNAME || PASSWORD || EXTRA)));
 END;
 /
+
 COMMIT;
 --Employee Sequence for iterating through id
 CREATE SEQUENCE employee_sequence
@@ -84,6 +87,9 @@ CREATE OR REPLACE TRIGGER employee_before_insert
         IF: new.employeeId IS NULL THEN
         SELECT employee_sequence.nextval INTO :new.employeeId FROM dual;
         END IF;
+        SELECT GET_USER_HASH(:new.USERNAME, :new.USERPASSWORD)
+        INTO :new.userpass FROM dual;
+  end;
     END;
     /
 
