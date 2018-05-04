@@ -1,0 +1,61 @@
+ .navbar {
+  min-height: 90px;
+  background-color: #000000;
+  }
+
+body {
+	background-color: lightgrey;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 18px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #840000;
+	font-size: 60px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+}
+
+.navbar-inverse .navbar-brand:hover{
+	color:#840000;
+
+}
+
+.navbar-form{
+	padding-top: 20px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+}
+
+.navbar-brand {
+  padding: 0 15px;
+  padding-top: 20px;
+  height: 80px;
+  line-height: 40px;
+  width: 100%;
+}
+
+.btn{
+	font-size: 14px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: #fff;
+    background-color: #840000;
+    border-color: #840000;
+}
+
+#SignUpForm{
+	padding-top: 20px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#text-justify{
+	text-align: justify;
+}
+
+.glyphicon{
+	color: white;
+	line-height:  100px;
+}

@@ -44,11 +44,11 @@ public class ProductDaoImpl implements ProductDao{
 	}
 
 	@Override
-	public Product getProduct(Product productName) {
+	public Product getProduct(String productName) {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM product WHERE product_name = ?");
-			stmt.setString(++index, productName.getProduct_name());
+			stmt.setString(++index, productName);
 			ResultSet rs = stmt.executeQuery();
 			// If can be used if just selecting one entry
 			if (rs.next()) {

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="junit" project="JDBC_Bank" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="junit" time="15.494">
-    <testcase name="testProductInsertion" classname="junit" time="5.273"/>
-    <testcase name="testUserInsertion" classname="junit" time="2.451"/>
-    <testcase name="testJunctionAddToCart" classname="junit" time="7.769"/>
-  </testsuite>
-</testrun>

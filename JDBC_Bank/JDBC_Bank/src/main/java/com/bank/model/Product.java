@@ -11,6 +11,10 @@ public class Product implements Serializable{
 	private int product_quantity;
 	
 	public Product(){}
+	
+	public Product(String product_name) {
+		this.product_name = product_name;
+	}
 
 	public Product(String product_name, double product_price, int product_quantity) {
 		this.product_name = product_name;
@@ -97,7 +101,7 @@ public class Product implements Serializable{
 	@Override
 	public String toString() {
 		return "Product [product_id=" + product_id + ", product_name=" + product_name + ", product_price="
-				+ product_price + ", product_quantity=" + product_quantity + "]";
+				+ product_price + ", product_quantity=" + product_quantity + "\n]";
 	}
 	
 	

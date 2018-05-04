@@ -28,11 +28,12 @@ private static UserDao dao = UserDaoImpl.getInstance();
 	public static User login(User user) {
 		User temp = dao.getUser(user.getFirst_name(), user.getLast_name());
 		
-		if (temp.getPassword().equals(dao.getPasswordHash(user))) {
-			System.out.println("You are a valid user, " + temp.getFirst_name());
+		if (temp.getPassword().equals(dao.getPasswordHash(user)) && (UserService.getApproved(temp) >0)) {
+			System.out.println("Welcome back, " + temp.getFirst_name());
 			return temp;
 		}
-		System.err.println("YOU ARE NOT A VALID USER, " + user.getFirst_name());
+		System.err.println("Your login information is incorrect or your account is not yet approved, " + user.getFirst_name());
+		
 		return null;
 	}
 	

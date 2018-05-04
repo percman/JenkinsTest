@@ -22,6 +22,7 @@ private static UserProductJunctionDao dao = UserProductJunctionDaoImpl.getInstan
 		return dao.getCart(user_firstname, user_lastname);
 		
 	}
+	
 	public static boolean addToCart(User user,Product product ) {
 		return dao.addToCart(user, product);
 		
