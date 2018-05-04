@@ -113,4 +113,4 @@ BEGIN
 END;
 /
 
-SELECT * FROM USERTABLE;
+SELECT username, balance, isadmin, islocked, isapproved FROM USERTABLE;
