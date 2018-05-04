@@ -1,6 +1,6 @@
-/********************************************************************
-Run the following lines with administrative access to your database
-*********************************************************************/
+-------------------------------------------------------------------------
+-- Run the following lines with administrative access to your database --
+-------------------------------------------------------------------------
 CREATE USER ers_user IDENTIFIED BY ers_password;
 GRANT CONNECT TO ers_user;
 GRANT CONNECT TO ers_user;
@@ -14,14 +14,18 @@ GRANT CREATE ANY TRIGGER TO ers_user;
 GRANT CREATE ANY SEQUENCE TO ers_user;
 GRANT CREATE ANY PROCEDURE TO ers_user;
 
-/*************************************************************
-Run the following code in the new jdbcbank_user connection
-**************************************************************/
+----------------------------------------------------------------
+-- Run the following code in the new jdbcbank_user connection --
+----------------------------------------------------------------
 
 CREATE TABLE employee (
-    employee_id NUMBER (100000),        -- (PK required)
+    employee_id NUMBER (38),        -- (PK required)
     username VARCHAR2 (50),             -- (UK required) FK
-    password VARCHAR2 (100)             -- (required)
+    password VARCHAR2 (100),             -- (required)
+    CONSTRAINT PK_EMPLOYEE_ID PRIMARY KEY (employee_id),
+    CONSTRAINT UK_USERNAME UNIQUE (username),
+    CONSTRAINT FK_USERNAME FOREIGN KEY (username) REFERENCES username_table (username) ON CASCADE DELETE,
+    CONSTRAINT NN_PASSWORD NOT NULL (password)
 );
 
 CREATE TABLE reimbursement (
@@ -30,6 +34,7 @@ CREATE TABLE reimbursement (
     approver_id NUMBER (100000),        -- (FK required)
     category_id NUMBER (1),             -- (required)
     status_id NUMBER (1)                -- (required)
+    
 );
 
 CREATE TABLE employee_info (
@@ -50,7 +55,7 @@ CREATE TABLE us_state (
     state_name VARCHAR2 (14)
 );
 
-CREATE TABLE username (
+CREATE TABLE username_table (
     username VARCHAR2 (50),             -- PK
     f_manager NUMBER (1)                -- CK 0 or 1
 );
