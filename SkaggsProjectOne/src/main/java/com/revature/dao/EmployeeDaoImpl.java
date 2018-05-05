@@ -10,15 +10,16 @@ import com.revature.reimbursement.Reimbursement;
 import com.revature.util.ConnectionUtil;
 
 public class EmployeeDaoImpl implements EmployeeDao {
-
 	@Override
 	public Employee getEmployee(int id) {
 		try (Connection c = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = c.prepareStatement("SELECT * FROM employeeTable WHERE employeeId = " + id);
+			PreparedStatement stmt = c.prepareStatement("SELECT * FROM employeeTable, infoTable WHERE employeeId = " + id);
 			ResultSet rs = stmt.executeQuery();
 			Employee e = null;
 			while(rs.next()) {
-				e = new Employee(rs.getString("userName"), rs.getString("userPassword"));
+				e = new Employee(rs.getString("firstName"), rs.getString("middleInit"), 
+						rs.getString("lastName"),rs.getString("userName"), rs.getString("userPassword"),
+						rs.getInt("FINANCEMANAGER")==1);
 			}
 			return e;
 			
@@ -34,11 +35,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public ArrayList<Employee> getAllEmployees() {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			ArrayList<Employee> employeeList = new ArrayList<>();
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employeeTable");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employeeTable, infoTable  WHERE EMPLOYEETABLE.employeeId = INFOTABLE.employeeId");			
 			ResultSet rs = stmt.executeQuery();
-			
 			while(rs.next()) {	
-				employeeList.add(new Employee(rs.getString("userName"), rs.getString("userPassword")));
+				employeeList.add(new Employee(rs.getString("firstName"), rs.getString("middleName"), 
+						rs.getString("lastName"), rs.getString("userName"), rs.getString("userPassword"),
+						rs.getInt("financemanager")==1));
 			}
 			return employeeList;
 		} catch(SQLException sqle) {
@@ -97,5 +99,4 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return false;
 	}
-
 }

@@ -1,4 +1,5 @@
 package com.revature.util;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,7 +10,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionUtil {
-
 	private ConnectionUtil() {}
 
 	private static ConnectionUtil instance;
@@ -58,5 +58,4 @@ public class ConnectionUtil {
 			
 		}
 	}
-	
 }

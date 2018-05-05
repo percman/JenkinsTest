@@ -1,7 +1,6 @@
 package com.revature.reimbursement;
 
 public class Reimbursement {
-
 	int reimbursementId;
 	int requesterId;
 	int approverId;

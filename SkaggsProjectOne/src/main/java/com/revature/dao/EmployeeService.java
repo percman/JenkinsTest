@@ -11,7 +11,7 @@ public class EmployeeService {
 	public static Employee getEmployee(int id) {
 		return dao.getEmployee(id);
 	}
-	public static ArrayList<Employee> getAllEmployee() {
+	public static ArrayList<Employee> getAllEmployees() {
 		return dao.getAllEmployees();
 	}
 	public static boolean insertEmployee(Employee e) {
