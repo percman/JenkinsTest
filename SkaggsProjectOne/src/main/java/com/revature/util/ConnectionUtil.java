@@ -9,24 +9,27 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import javax.servlet.ServletContext;
+
 public class ConnectionUtil {
 	private ConnectionUtil() {}
 
-	private static ConnectionUtil instance;
-	
-	public static ConnectionUtil getInstance() {
-		if (instance == null) {
-			instance = new ConnectionUtil();
-		}
-		return instance;
-	}
+//	private static ConnectionUtil instance;
+//	
+//	public static ConnectionUtil getInstance() {
+//		if (instance == null) {
+//			instance = new ConnectionUtil();
+//		}
+//		return instance;
+//	}
 
 	public static Connection getConnection() {
 		InputStream in = null;
 		Properties props = new Properties();
 		
 		try {
-			in = new FileInputStream("src/main/resources/db.properties");
+			in = new FileInputStream("resources//db.properties");
+			System.out.println(in.read());
 			props.load(in);
 			//Things we need to connect
 			//1. URL

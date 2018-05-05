@@ -21,21 +21,17 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="https://www.google.com/" method="post" role="form">
-									<div class="form-group">
-										<input type="text" name="username" id="username"  class="form-control" placeholder="Username">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password"  class="form-control" placeholder="Password">
-									</div>
 									<div class="form-group">
 										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-btn"  class="form-control btn btn-submit"  value="Log In">
-											</div>
+											<form id="login-form" action="login.do" method="post" role="form">
+												<div class="col-sm-6 col-sm-offset-3">
+													<input type="text" name="username" id="username" class="form-control" placeholder="Username">
+													<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+													<input type="submit" name="login-submit" id="login-btn" class="form-control btn btn-submit"  value="Log In">
+												</div>
+											</form>
 										</div>
 									</div>
-								</form>
 							</div>
 						</div>
 					</div>

@@ -35,6 +35,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public ArrayList<Employee> getAllEmployees() {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			ArrayList<Employee> employeeList = new ArrayList<>();
+			System.out.println(employeeList.size());
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employeeTable, infoTable  WHERE EMPLOYEETABLE.employeeId = INFOTABLE.employeeId");			
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {	
