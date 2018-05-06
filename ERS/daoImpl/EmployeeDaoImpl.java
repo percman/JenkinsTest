@@ -34,7 +34,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
 	public String getPasswordHash(Employee e) {
 		ConnectionUtility.getInstance();
 		int index = 0;
-		String sql = "SELECT get_user_hash(?,?) AS HASH FROM dual";
+		String sql = "SELECT get_employee_hash(?,?) AS HASH FROM dual";
 		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(++index, e.getUsername());

@@ -1,6 +1,5 @@
 package com.revature.utility;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,13 +18,16 @@ public class ConnectionUtility {
 		InputStream in = null;
 		Properties p = new Properties();
 		try {
-			in = new FileInputStream("src/main/resources/db.properties");
+			in = ConnectionUtility.class.getClassLoader().getResourceAsStream("db.properties");
 			p.load(in);
+			Class.forName("oracle.jdbc.OracleDriver");
 			ConnectionUtility.connection = DriverManager.getConnection(p.getProperty("jdbc.url"),p.getProperty("jdbc.username"),p.getProperty("jdbc.secret"));
 		}catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: "+ sqle.getSQLState());
 			System.err.println("Error Code: "+sqle.getErrorCode());
+		}catch(ClassNotFoundException cnfe) {
+			cnfe.printStackTrace();
 		}catch(FileNotFoundException fnf) {
 			fnf.printStackTrace();
 		}catch(IOException ioe) {

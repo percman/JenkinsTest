@@ -20,6 +20,7 @@ CREATE TABLE information(
     f_name VARCHAR2(30) NOT NULL,
     l_name VARCHAR2(30) NOT NULL,
     telephone VARCHAR2(30),
+    address VARCHAR2(60) NOT NULL,
     CONSTRAINT FK_employee FOREIGN KEY(e_id) REFERENCES employee(e_id)
 );
 
@@ -37,3 +38,12 @@ CREATE TABLE reimbursement_info(
     status VARCHAR2(10) DEFAULT('pending'),
     CONSTRAINT FK_reimbursement FOREIGN KEY(r_id) REFERENCES reimbursement(r_id)
 );
+
+--Populate our DB
+INSERT INTO EMPLOYEE(title,username,password) VALUES('Associate', 'bg2000','password');
+INSERT INTO EMPLOYEE(title,username,password) VALUES('Financial Manager', 'andy1991','boss');
+INSERT INTO EMPLOYEE(title,username,password) VALUES('Trainer', 'william','charizard');
+INSERT INTO information(e_id,f_name,l_name,telephone,address) VALUES(1,'Bryan','Grayson','202-331-9786','120 makebelieve avenue');
+INSERT INTO information(e_id,f_name,l_name,telephone,address) VALUES(2,'Andy','Alfaro','241-717-7491','Somewhere in Dulles Greene');
+INSERT INTO information(e_id,f_name,l_name,telephone,address) VALUES(3,'William','Gentry','123-456-7890','404 Pallet Town');
+commit;

@@ -1,10 +1,12 @@
 package com.revature.service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.revature.dao.EmployeeDAO;
 import com.revature.daoImpl.EmployeeDaoImpl;
 import com.revature.model.Employee;
 import com.revature.model.EmployeeFactory;
-import com.revature.model.Worker;
 
 public class EmployeeService {
 	private static EmployeeDAO dao = new EmployeeDaoImpl();
@@ -15,12 +17,25 @@ public class EmployeeService {
 		return dao.getEmployee(username);
 	}
 	
-	public static Worker login(Employee employee) {
+	public static boolean check(Employee employee) {
 		Employee temp = dao.getEmployee(employee.getUsername());
 		if(temp.getPassword().equals(dao.getPasswordHash(employee))) {
-			return EmployeeFactory.createEmployee(employee);
+			return true;
 		}
-		return null;
+		return false;
+	}
+	
+	public static String login(HttpServletRequest request, HttpServletResponse response) {
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		Employee temp = new Employee(username,password);
+		if(check(temp)) {
+			Employee user = getEmployee(username);
+			request.getSession().setAttribute("Employee", user);
+			return EmployeeFactory.page(user);
+		}
+		return "/HTML/GenericCorpIndex.html";
+		
 	}
 	
 }

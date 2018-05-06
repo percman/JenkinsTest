@@ -37,15 +37,15 @@ public class InformationDaoImpl implements InformationDAO {
 	@Override
 	public boolean setInformation(Employee employee) {
 		ConnectionUtility.getInstance();
-		String sql = "INSERT INTO information(e_id,f_name,l_name,telephone,address) VALUES(?,?,?,?,?)";
+		String sql = "UPDATE information SET f_name=? , l_name=? , telephone=?, address=? WHERE e_id=?";
 		int index = 0;
 		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setInt(++index, employee.getId());
 			stmt.setString(++index, employee.getFname());
 			stmt.setString(++index, employee.getLname());
 			stmt.setString(++index, employee.getPhone());
 			stmt.setString(++index, employee.getAddress());
+			stmt.setInt(++index, employee.getId());
 			int success = stmt.executeUpdate();
 			return success > 0;
 		}catch(SQLException sqle) {
