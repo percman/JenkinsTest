@@ -11,12 +11,13 @@ import com.revature.model.Reimbursement;
 public class ManagerService {
 	private ManagerService() {}
 	private static ManagerDao dao = ManagerDaoImpl.getInstance();
+	
 	public static boolean insertManager(Manager manager){
 		return dao.insertManager(manager);
 	}
 	
-	public static boolean approveDeny(String response, int reimburseId, int managerId) {
-		return dao.approveDeny(response, reimburseId, managerId);
+	public static boolean approveDeny(String response, int reimbursement_id, int manager_id) {
+		return dao.approveDeny(response, reimbursement_id, manager_id);
 	}
 	
 	List<Employee> viewEmployees(){

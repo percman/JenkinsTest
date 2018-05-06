@@ -9,7 +9,7 @@ public interface EmployeeDao {
 
 	boolean insertEmployee(Employee employee);
 	
-	boolean viewEmployee(Employee employee);
+	Employee viewEmployee(int id);
 	
 	boolean updateEmployee(Employee employee);
 	

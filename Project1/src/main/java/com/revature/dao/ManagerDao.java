@@ -10,7 +10,7 @@ public interface ManagerDao {
 
 	boolean insertManager(Manager manager);
 	
-	boolean approveDeny(String response, int reimburseId, int managerId);
+	boolean approveDeny(String response, int reimburse_id, int manager_id);
 	
 	List<Employee> viewEmployees();
 	

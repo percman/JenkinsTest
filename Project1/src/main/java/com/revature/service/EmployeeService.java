@@ -15,8 +15,8 @@ public class EmployeeService {
 		return dao.insertEmployee(employee);
 	}
 	
-	public static boolean viewEmployee(Employee employee) {
-		return dao.viewEmployee(employee);
+	public static Employee viewEmployee(int id) {
+		return dao.viewEmployee(id);
 	}
 	
 	public static boolean updateEmployee(Employee employee) {
