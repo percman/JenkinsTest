@@ -66,7 +66,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 		@Override
 		public GenericEmployee getEmployee(String emp) throws EmployeeNotFoundException {
-			// TODO Auto-generated method stub
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
 				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee WHERE emp_username = ?");
@@ -91,7 +90,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 		@Override
 		public String getPasswordHash(GenericEmployee emp) {
-			// TODO Auto-generated method stub
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				PreparedStatement stmt = conn.prepareStatement("SELECT get_emp_hash(?,?)AS HASH FROM dual");
