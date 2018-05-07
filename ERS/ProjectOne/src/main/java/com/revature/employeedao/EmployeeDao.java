@@ -1,9 +1,8 @@
 package com.revature.employeedao;
 
-import java.sql.Timestamp;
 import java.util.List;
 
-import com.revature.users.Employee;
+import com.revature.model.Employee;
 
 public interface EmployeeDao {
 

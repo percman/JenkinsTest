@@ -37,10 +37,10 @@ firstname VARCHAR2(50),
 lastname VARCHAR2(50),
 datehired TIMESTAMP,
 email VARCHAR2(100),
-phonenumber NUMBER(9),
-CONSTRAINT PK_PERSONALINFO PRIMARY KEY (username),
+phonenumber NUMBER(10),
+CONSTRAINT PK_PERSONALINFO PRIMARY KEY (id),
 CONSTRAINT FK_PERSONAL_EMPLOYEE FOREIGN KEY (id) REFERENCES employee (id) ON DELETE CASCADE,
-CONSTRAINT CK_PHONE CHECK (phonenumber BETWEEN 1000000000 AND 9999999999)
+CONSTRAINT CK_PHONE CHECK (phonenumber BETWEEN 1000000000 AND 9999999909)
 );
 
 
@@ -53,13 +53,12 @@ category VARCHAR2(15),
 status NUMBER(1),
 timemade TIMESTAMP NOT NULL,
 timeapproved TIMESTAMP,
-CONSTRAINT PK_REIMBURSEMENT PRIMARY KEY,
+CONSTRAINT PK_REIMBURSEMENT PRIMARY KEY (id),
 CONSTRAINT FK_REIMBURSEMENT_R_EMPLOYEE FOREIGN KEY (requestor_id) REFERENCES employee (id) ON DELETE CASCADE,
 CONSTRAINT FK_REIMBURSEMENT_A_EMPLOYEE FOREIGN KEY (approver_id) REFERENCES employee (id) ON DELETE CASCADE,
 CONSTRAINT CK_R_A CHECK (requestor_id <> approver_id), 
 CONSTRAINT BOOLEANSTATUS CHECK (status BETWEEN 0 AND 1)
 );
-
 
 
 
@@ -74,6 +73,10 @@ CREATE SEQUENCE employee_id_sequence
     INCREMENT BY 1
     NOCACHE;
 
+CREATE SEQUENCE personalinfo_id_sequence 
+    START WITH 1000
+    INCREMENT BY 1
+    NOCACHE;
 
 CREATE SEQUENCE reimbursement_id_sequence 
     START WITH 1
@@ -115,7 +118,19 @@ BEGIN
     IF :new.id IS NULL THEN 
         SELECT employee_id_sequence.nextval INTO :new.id FROM dual;
     END IF;
-    SELECT GET_USER_HASH(:new.username, :new.password) INTO :new.password FROM dual;
+    SELECT GET_EMPLOYEE_HASH(:new.username, :new.password) INTO :new.password FROM dual;
+END;
+/
+
+-- create a before-insert-into-personalinfo trigger that will autoincrement the PK and hash the password 
+CREATE OR REPLACE TRIGGER personalinfo_b_insert 
+BEFORE INSERT 
+ON personalinfo
+FOR EACH ROW 
+BEGIN 
+    IF :new.id IS NULL THEN 
+        SELECT personalinfo_id_sequence.nextval INTO :new.id FROM dual;
+    END IF;
 END;
 /
 
@@ -139,7 +154,6 @@ END;
 
 
 
-
 -- ******************************* PROCEDURES *******************************
 
 
@@ -154,11 +168,12 @@ BEGIN
     INSERT INTO employee (username, password, manager, id)
     VALUES (new_username, new_password, new_manager, null);
     COMMIT;
-    INSERT INTO personalinfo(username, firstname, lastname, datehired, email, phonenumber, id)
-    VALUES (new_username, new_firstname, new_lastname, CURRENT_TIMESTAMP, new_email, new_phonenumber, employee.id);
+    INSERT INTO personalinfo(firstname, lastname, datehired, email, phonenumber, id)
+    VALUES (new_firstname, new_lastname, CURRENT_TIMESTAMP, new_email, new_phonenumber, null);
     COMMIT;
 END;
 /
+
 
 
 -- procedure to promote an employee
@@ -203,16 +218,6 @@ BEGIN
     COMMIT;
 END;
 /
-
-
-
-
-
-
-
-
-
-
 
 
 

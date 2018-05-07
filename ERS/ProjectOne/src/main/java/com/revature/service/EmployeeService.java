@@ -5,8 +5,8 @@ import java.util.List;
 
 import com.revature.employeedao.EmployeeDao;
 import com.revature.employeedao.EmployeeDaoImpl;
-import com.revature.logstatus.LogHere;
-import com.revature.users.Employee;
+import com.revature.logs.LogHere;
+import com.revature.model.Employee;
 
 public class EmployeeService {
 

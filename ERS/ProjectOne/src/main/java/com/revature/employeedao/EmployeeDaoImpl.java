@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.revature.logstatus.LogHere;
-import com.revature.users.Employee;
+import com.revature.logs.LogHere;
+import com.revature.model.Employee;
 import com.revature.util.ConnectionUtil;
 
 public class EmployeeDaoImpl implements EmployeeDao{
@@ -105,7 +105,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			stmt.setString(++index, employee.getFirstname());
 			stmt.setString(++index, employee.getLastname());
 			stmt.setString(++index, employee.getEmail());
-			stmt.setInt(++index, employee.getPhonenumber());
+			stmt.setLong(++index, employee.getPhonenumber());
 			return stmt.executeUpdate() > 0;
 		}  catch (SQLException sqle) {
 			LogHere.warn(sqle.getMessage());
@@ -127,7 +127,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			stmt.setString(++index, employee.getUsername());
 			stmt.setString(++index, employee.getPassword());
 			stmt.setString(++index, employee.getEmail());
-			stmt.setInt(++index, employee.getPhonenumber());
+			stmt.setLong(++index, employee.getPhonenumber());
 
 			return stmt.executeUpdate() > 0;
 		}  catch (SQLException sqle) {
