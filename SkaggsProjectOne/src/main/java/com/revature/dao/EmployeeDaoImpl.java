@@ -11,7 +11,7 @@ import com.revature.util.ConnectionUtil;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
-	public Employee getEmployee(int id) {
+	public Employee getEmployee(int id) throws ClassNotFoundException {
 		try (Connection c = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = c.prepareStatement("SELECT * FROM employeeTable, infoTable WHERE employeeId = " + id);
 			ResultSet rs = stmt.executeQuery();
@@ -32,7 +32,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 
 	@Override
-	public ArrayList<Employee> getAllEmployees() {
+	public ArrayList<Employee> getAllEmployees() throws ClassNotFoundException {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			ArrayList<Employee> employeeList = new ArrayList<>();
 			System.out.println(employeeList.size());
@@ -53,7 +53,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 
 	@Override
-	public boolean insertEmployee(Employee e) {
+	public boolean insertEmployee(Employee e) throws ClassNotFoundException {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("{CALL insert_employee(?, ?, ?, ?, ?, ?)  }");
@@ -82,7 +82,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 
 	@Override
-	public boolean insertRequest(Reimbursement r) {
+	public boolean insertRequest(Reimbursement r) throws ClassNotFoundException {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("{CALL make_request(?, ?, ?, ?, ?)  }");

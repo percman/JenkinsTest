@@ -8,4 +8,7 @@ public class UserService {
 	public static String home(HttpServletRequest request) {
 		return "/home.jsp";
 	}
+	public static String fm(HttpServletRequest request) {
+		return "/fm.jsp";
+	}
 }

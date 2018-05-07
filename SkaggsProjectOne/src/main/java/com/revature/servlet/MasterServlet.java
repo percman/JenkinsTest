@@ -22,7 +22,12 @@ public class MasterServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher(MasterDispatcher.process(request, response)).forward(request, response);
+		try {
+			request.getRequestDispatcher(MasterDispatcher.process(request, response)).forward(request, response);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 
