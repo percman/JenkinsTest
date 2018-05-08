@@ -11,6 +11,9 @@ public class EmployeeService {
 	public static Employee getEmployee(int id) throws ClassNotFoundException {
 		return dao.getEmployee(id);
 	}
+	public static Employee getEmployee(String username) throws ClassNotFoundException {
+		return dao.getEmployee(username);
+	}
 	public static ArrayList<Employee> getAllEmployees() throws ClassNotFoundException {
 		return dao.getAllEmployees();
 	}
@@ -19,5 +22,8 @@ public class EmployeeService {
 	}
 	public static boolean insertRequest(Reimbursement r) throws ClassNotFoundException {
 		return dao.insertRequest(r);
+	}
+	public static String getPasswordHash(Employee employee) {
+		return dao.getPasswordHash(employee);
 	}
 }

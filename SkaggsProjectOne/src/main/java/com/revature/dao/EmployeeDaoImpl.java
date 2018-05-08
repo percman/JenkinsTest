@@ -17,7 +17,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			ResultSet rs = stmt.executeQuery();
 			Employee e = null;
 			while(rs.next()) {
-				e = new Employee(rs.getString("firstName"), rs.getString("middleInit"), 
+				e = new Employee(rs.getString("firstName"), rs.getString("middleName"), 
 						rs.getString("lastName"),rs.getString("userName"), rs.getString("userPassword"),
 						rs.getInt("FINANCEMANAGER")==1);
 			}
@@ -30,6 +30,28 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return null;
 	}
+	@Override
+	public Employee getEmployee(String username) throws ClassNotFoundException {
+		try (Connection c = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = c.prepareStatement("SELECT * FROM EMPLOYEETABLE e FULL OUTER "
+					+ "JOIN INFOTABLE i ON e.employeeId = i.employeeId WHERE userName = '" + username + "'");
+			ResultSet rs = stmt.executeQuery();
+			Employee e = null;
+			while(rs.next()) {
+				e = new Employee(rs.getString("firstName"), rs.getString("middleName"), 
+						rs.getString("lastName"),rs.getString("userName"), rs.getString("userPassword"),
+						rs.getInt("FINANCEMANAGER")==1);
+			}
+			return e;
+			
+		} catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL STATE " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+		}
+		return null;
+	}
+	
 
 	@Override
 	public ArrayList<Employee> getAllEmployees() throws ClassNotFoundException {
@@ -100,4 +122,22 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return false;
 	}
+	@Override // Get the hashed password from the database
+    public String getPasswordHash(Employee employee) {
+        int index = 0;
+        try (Connection conn = ConnectionUtil.getConnection()){
+            PreparedStatement stmt = conn.prepareStatement("SELECT get_user_hash(?,?) AS HASH FROM dual");
+            stmt.setString(++index, employee.getUserName());
+            stmt.setString(++index, employee.getPassword());
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getString("HASH");
+            }
+        } catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+        }
+        return null;
+    }
 }

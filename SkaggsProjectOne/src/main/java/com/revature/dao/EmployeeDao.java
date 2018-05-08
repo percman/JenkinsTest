@@ -10,4 +10,6 @@ public interface EmployeeDao {
 	public boolean insertEmployee(Employee e) throws ClassNotFoundException;
 	public boolean deleteEmployee(int id);
 	public boolean insertRequest(Reimbursement r) throws ClassNotFoundException;
+	String getPasswordHash(Employee employee);
+	Employee getEmployee(String username) throws ClassNotFoundException;
 }

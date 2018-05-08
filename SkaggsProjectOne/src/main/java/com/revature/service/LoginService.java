@@ -20,14 +20,16 @@ public class LoginService {
 		for (Employee e : eList) {
 			System.out.println("employee" + e);
 			System.out.println(e.isFinanceManager());
-			if (username.equals(e.getUserName())) {
+			if (username.equals(e.getUserName()) /*& password.equals(EmployeeService.getPasswordHash(e))*/) {
 				if(e.isFinanceManager()) {
 					Employee authorized = e;
+					request.getSession().setAttribute("elist", eList);
 					request.getSession().setAttribute("authorizedUser", authorized);
 					return "/fm.do";
 				}
 				else {
 					Employee authorized = e;
+					request.getSession().setAttribute("elist", eList);
 					request.getSession().setAttribute("authorizedUser", authorized);
 					return "/home.do";
 				}
