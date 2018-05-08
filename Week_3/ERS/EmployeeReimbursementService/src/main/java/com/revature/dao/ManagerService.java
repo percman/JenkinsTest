@@ -6,25 +6,31 @@ import com.revature.employee.FinanceManager;
 import com.revature.exceptions.EmployeeNotFoundException;
 
 public class ManagerService {
-private ManagerDao dao = ManagerDaoImpl.getInstance();
+private static ManagerDao dao = ManagerDaoImpl.getInstance();
 
-public boolean addManager(FinanceManager man) {
+public static boolean addManager(FinanceManager man) {
 	return dao.addManager(man);
 }
 
-public List<FinanceManager> getManagers(){
+public static List<FinanceManager> getManagers(){
 	return dao.getManagers();
 }
 
-public FinanceManager getManager(String man) throws EmployeeNotFoundException{
+public static FinanceManager getManager(String man) throws EmployeeNotFoundException{
 	return dao.getManager(man);
 }
 
-public boolean updateInfo(FinanceManager man) throws EmployeeNotFoundException{
+public static boolean updateInfo(FinanceManager man) throws EmployeeNotFoundException{
 	return dao.updateInfo(man);
 }
 
-String getPasswordHash(FinanceManager man) {
+public static String getPasswordHash(FinanceManager man) {
 	return dao.getPasswordHash(man);
 }
+
+public static void main(String[] args) throws EmployeeNotFoundException {
+	System.out.println(getManagers().get(0).getUsername());
+	System.out.println(getManager("aksjflk").getFirstName());
+}
+
 }

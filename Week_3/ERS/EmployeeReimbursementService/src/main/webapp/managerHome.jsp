@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Info</title>
+    <title>submitReimburstment</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="../ReimbursementCss/bootstrap.css/">
@@ -11,7 +11,7 @@
 <body>
             <div class="container">
                 <div class="jumbotron">
-                    <h1 class="display-4">Info</h1>
+                    <h1 class="display-4">manager Home</h1>
                     <hr class="my-4">
                 </div>
             </div>
@@ -19,12 +19,13 @@
             <div class="container">
                     <nav class="navbar navbar-inverse">
                             <div class="navbar-header col-md-2">
-                                <a href="./employeeHome.html" class="navbar-brand">Home</a>
+                                <a href="./managerHome.html" class="navbar-brand">Home</a>
                             </div>
                             <ul class="navbar-nav nav col-md-6">
-                                <li class="active"><a href="./employeeInfo.html">Info</a></li>
-                                <li><a href="./viewEmployeeReimburstment.html">View</a></li>
-                                <li><a href="./submitEmployeeReimburstment.html">Submit</a></li>
+                                <li><a href="./managerInfo.jsp">Info</a></li>
+                                <li><a href="./viewManagerReimburstment.jsp">View</a></li>
+                                <li><a href="./submitManagerReimburstment.jsp">Submit</a></li>
+                                <li><a href="./approveReimburstment.jsp">Approve</a>></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
                                 <li><a href="#">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 

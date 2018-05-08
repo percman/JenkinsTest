@@ -11,6 +11,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.revature.connection.ConnectionUtil;
+import com.revature.employee.Employee;
 import com.revature.employee.GenericEmployee;
 import com.revature.exceptions.EmployeeNotFoundException;
 
@@ -49,11 +50,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			// TODO Auto-generated method stub
 			try(Connection conn = ConnectionUtil.getConnection()){
 				List<GenericEmployee> emp= new ArrayList<>();
-				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee ORDER BY emp_id");
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENERIC_EMPLOYEE ON gen_emp_id = emp_id ");
 				ResultSet rs = stmt.executeQuery();
 				
 				while(rs.next()) {
-					emp.add(new GenericEmployee(rs.getString("emp_username"),rs.getString("emp_password")));
+					emp.add(new GenericEmployee(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Emp_First_Name"),rs.getString("Emp_Last_Name"), rs.getInt("emp_id")));
 				}
 				return emp;
 			} catch(SQLException sqle) {
@@ -68,12 +69,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		public GenericEmployee getEmployee(String emp) throws EmployeeNotFoundException {
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
-				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee WHERE emp_username = ?");
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENERIC_EMPLOYEE ON emp_username = ?");
 				stmt.setString(++index, emp);
 				ResultSet rs = stmt.executeQuery();
 				
 				if (rs.next())
-					return new GenericEmployee(rs.getString("emp_username"), rs.getString("emp_password"), rs.getInt("emp_id"));
+					return new GenericEmployee(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Emp_First_Name"),rs.getString("Emp_Last_Name"), rs.getInt("emp_id"));
 			} catch(SQLException sqle) {
 				logger.error(sqle.getMessage(), sqle);
 				logger.error(sqle.getSQLState(),sqle);
@@ -89,7 +90,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 
 		@Override
-		public String getPasswordHash(GenericEmployee emp) {
+		public String getPasswordHash(GenericEmployee emp){
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				PreparedStatement stmt = conn.prepareStatement("SELECT get_emp_hash(?,?)AS HASH FROM dual");

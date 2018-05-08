@@ -11,7 +11,7 @@
 <body>
             <div class="container">
                 <div class="jumbotron">
-                    <h1 class="display-4">Submit a Reinburstment for approval</h1>
+                    <h1 class="display-4">view your info</h1>
                     <hr class="my-4">
                 </div>
             </div>
@@ -22,16 +22,24 @@
                                 <a href="./managerHome.html" class="navbar-brand">Home</a>
                             </div>
                             <ul class="navbar-nav nav col-md-6">
-                                <li><a href="./managerInfo.html">Info</a></li>
-                                <li><a href="./viewManagerReimburstment.html">View</a></li>
-                                <li class="active"><a href="./submitManagerReimburstment.html">Submit</a></li>
-                                <li><a href="./approveReimburstment.html">Approve</a>></li>
+                                <li class="active"><a href="./managerInfo.jsp">Info</a></li>
+                                <li><a href="./viewManagerReimburstment.jsp">View</a></li>
+                                <li><a href="./submitManagerReimburstment.jsp">Submit</a></li>
+                                <li><a href="./approveReimburstment.jsp">Approve</a>></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
                                 <li><a href="#">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
                             </ul>
                         
                     </nav>
+                </div>
+                <div class = "well">
+                        <div class="container">
+                            <div class="col-md-2">
+                                <h5>Name: <span id = "First name"></span></h5>
+                                <h5>Primary: <span id = "Last name"></span></h5>
+                            </div>
+                     </div>
                 </div>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 

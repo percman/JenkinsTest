@@ -48,11 +48,11 @@ public class ManagerDaoImpl implements ManagerDao {
 			public List<FinanceManager> getManagers() {
 				try(Connection conn = ConnectionUtil.getConnection()){
 					List<FinanceManager> man= new ArrayList<>();
-					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee ORDER BY emp_id");
+					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN FINANCE_MANAGER ON man_id = emp_id ");
 					ResultSet rs = stmt.executeQuery();
 					
 					while(rs.next()) {
-						man.add(new FinanceManager(rs.getString("emp_username"),rs.getString("emp_password")));
+						man.add(new FinanceManager(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Man_First_Name"),rs.getString("Man_Last_Name"), rs.getInt("emp_id")));
 					}
 					return man;
 				} catch(SQLException sqle) {
@@ -67,12 +67,13 @@ public class ManagerDaoImpl implements ManagerDao {
 			public FinanceManager getManager(String man) throws EmployeeNotFoundException {
 				int index = 0;
 				try(Connection conn = ConnectionUtil.getConnection()){
-					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee WHERE emp_username = ?");
+					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN FINANCE_MANAGER ON emp_username = ?");
+					System.out.println(man);
 					stmt.setString(++index, man);
 					ResultSet rs = stmt.executeQuery();
 					
 					if (rs.next())
-						return new FinanceManager(rs.getString("emp_username"), rs.getString("emp_password"), rs.getInt("emp_id"));
+						return new FinanceManager(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Man_First_Name"),rs.getString("Man_Last_Name"), rs.getInt("emp_id"));
 				} catch(SQLException sqle) {
 					logger.error(sqle.getMessage(), sqle);
 					logger.error(sqle.getSQLState(),sqle);
@@ -86,9 +87,9 @@ public class ManagerDaoImpl implements ManagerDao {
 				// TODO Auto-generated method stub
 				return false;
 			}
-
+			
 			@Override
-			public String getPasswordHash(FinanceManager man) {
+			public String getPasswordHash(FinanceManager man){
 				int index = 0;
 				try (Connection conn = ConnectionUtil.getConnection()) {
 					PreparedStatement stmt = conn.prepareStatement("SELECT get_emp_hash(?,?)AS HASH FROM dual");
@@ -104,5 +105,7 @@ public class ManagerDaoImpl implements ManagerDao {
 				} 
 				return null;
 			}
+
+		 
 	
 }

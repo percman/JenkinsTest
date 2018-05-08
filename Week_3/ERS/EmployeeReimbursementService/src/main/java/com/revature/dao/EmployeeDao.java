@@ -2,6 +2,7 @@ package com.revature.dao;
 
 import java.util.List;
 
+import com.revature.employee.Employee;
 import com.revature.employee.GenericEmployee;
 import com.revature.exceptions.EmployeeNotFoundException;
 

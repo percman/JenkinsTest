@@ -22,10 +22,10 @@
                                 <a href="./managerHome.html" class="navbar-brand">Home</a>
                             </div>
                             <ul class="navbar-nav nav col-md-6">
-                                <li><a href="./managerInfo.html">Info</a></li>
-                                <li class="active"><a href="./viewManagerReimburstment.html">View</a></li>
-                                <li><a href="./submitManagerReimburstment.html">Submit</a></li>
-                                <li><a href="./approveReimburstment.html">Approve</a>></li>
+                                <li><a href="./managerInfo.jsp">Info</a></li>
+                                <li class="active"><a href="./viewManagerReimburstment.jsp">View</a></li>
+                                <li><a href="./submitManagerReimburstment.jsp">Submit</a></li>
+                                <li><a href="./approveReimburstment.jsp">Approve</a>></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
                                 <li><a href="#">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 

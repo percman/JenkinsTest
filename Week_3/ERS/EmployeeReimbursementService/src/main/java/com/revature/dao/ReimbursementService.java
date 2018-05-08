@@ -8,35 +8,35 @@ import com.revature.reimbursement.Reimbursment;
 public class ReimbursementService{
 	private static ReimbursementDao dao = ReimbursementDaoImpl.getInstance();
 	
-	public boolean submitReimbursment(Reimbursment rebur) {
+	public static boolean submitReimbursment(Reimbursment rebur) {
 		return dao.submitReimbursment(rebur);
 	}
 	
-	public boolean approveReimbursment(Reimbursment rebur) {
+	public static boolean approveReimbursment(Reimbursment rebur) {
 		return dao.approveReimbursment(rebur);
 	}
 	
-	public boolean denyReimbursment(Reimbursment rebur) {
+	public static boolean denyReimbursment(Reimbursment rebur) {
 		return dao.denyReimbursment(rebur);
 	}
 	
-	public Reimbursment getReimbursmentByName(String emp) throws EmployeeNotFoundException{
+	public static Reimbursment getReimbursmentByName(String emp) throws EmployeeNotFoundException{
 		return dao.getReimbursmentByName(emp);
 	}
 	
-	public List<Reimbursment> getReimbursemnts(){
+	public static List<Reimbursment> getReimbursemnts(){
 		return dao.getReimbursemnts();
 	}
 	
-	public List<Reimbursment> getPendingReimbursemnts(){
+	public static List<Reimbursment> getPendingReimbursemnts(){
 		return dao.getPendingReimbursemnts();
 	}
 	
-	public List<Reimbursment> getApprovedReimbursemnts(){
+	public static List<Reimbursment> getApprovedReimbursemnts(){
 		return dao.getApprovedReimbursemnts();
 	}
 	
-	public List<Reimbursment> getReimbursmentForEmployee(String emp){
+	public static List<Reimbursment> getReimbursmentForEmployee(String emp){
 		return dao.getReimbursmentForEmployee(emp);
 	}
 }

@@ -16,4 +16,6 @@ public interface ManagerDao {
 	public boolean updateInfo(FinanceManager man) throws EmployeeNotFoundException;
 
 	String getPasswordHash(FinanceManager man);
+
+	
 }

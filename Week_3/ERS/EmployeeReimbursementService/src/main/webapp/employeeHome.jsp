@@ -11,7 +11,7 @@
 <body>
             <div class="container">
                 <div class="jumbotron">
-                    <h1 class="display-4">View your Reimburstments</h1>
+                    <h1 class="display-4">Welcome Employee</h1>
                     <hr class="my-4">
                 </div>
             </div>
@@ -19,12 +19,12 @@
             <div class="container">
                     <nav class="navbar navbar-inverse">
                             <div class="navbar-header col-md-2">
-                                <a href="./employeeHome.html" class="navbar-brand">Home</a>
+                                <a href="./managerHome.html" class="navbar-brand">Home</a>
                             </div>
                             <ul class="navbar-nav nav col-md-6">
-                                <li><a href="./employeeInfo.html">Info</a></li>
-                                <li class="active"><a href="./viewEmployeeReimburstment.html">View</a></li>
-                                <li><a href="./submitEmployeeReimburstment.html">Submit</a></li>
+                                <li><a href="./employeeInfo.jsp">Info</a></li>
+                                <li><a href="./viewEmployeeReimburstment.jsp">View</a></li>
+                                <li><a href="./submitEmployeeReimburstment.jsp">Submit</a></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
                                 <li><a href="#">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
