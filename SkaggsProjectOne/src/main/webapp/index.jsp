@@ -5,6 +5,7 @@
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
+
 <div class="container">
 	<nav class="navbar navbar-inverse">
         <div class="navbar-header col-md-2">
@@ -26,7 +27,7 @@
 											<form id="login-form" action="login.do" method="post" role="form">
 												<div class="col-sm-6 col-sm-offset-3">
 													<input type="text" name="username" id="username" class="form-control" placeholder="Username">
-													<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+													<input type="password" name="password" id="password" class="form-control"placeholder="Password">
 													<input type="submit" name="login-submit" id="login-btn" class="form-control btn btn-submit"  value="Log In">
 												</div>
 											</form>

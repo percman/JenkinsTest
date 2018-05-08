@@ -14,27 +14,24 @@ public class LoginService {
 	public static String login(HttpServletRequest request) throws ClassNotFoundException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		
+		Employee test = new Employee(username, password);
 		// Login logic
-    	ArrayList<Employee> eList = EmployeeService.getAllEmployees();
-		for (Employee e : eList) {
-			System.out.println("employee" + e);
-			System.out.println(e.isFinanceManager());
-			if (username.equals(e.getUserName()) /*& password.equals(EmployeeService.getPasswordHash(e))*/) {
-				if(e.isFinanceManager()) {
-					Employee authorized = e;
-					request.getSession().setAttribute("elist", eList);
-					request.getSession().setAttribute("authorizedUser", authorized);
-					return "/fm.do";
-				}
-				else {
-					Employee authorized = e;
-					request.getSession().setAttribute("elist", eList);
-					request.getSession().setAttribute("authorizedUser", authorized);
-					return "/home.do";
-				}
-			}	
-		}
+    	Employee e = EmployeeService.getEmployee(username);
+		System.out.println("employee " + e);
+		System.out.println(e.isFinanceManager());
+		String hashedPassword = EmployeeService.getPasswordHash(test);
+		if (username.equals(e.getUserName()) & hashedPassword.equals(e.getPassword())) {
+			
+			if (e.isFinanceManager()) {
+				Employee authorized = e;
+				request.getSession().setAttribute("authorizedUser", authorized);
+				return "/fm.do";
+			} else {
+				Employee authorized = e;
+				request.getSession().setAttribute("authorizedUser", authorized);
+				return "/home.do";
+			}
+		}	
 
 		return "/index.jsp";
 	}

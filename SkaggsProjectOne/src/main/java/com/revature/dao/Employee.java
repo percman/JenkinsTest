@@ -17,6 +17,10 @@ public class Employee {
 		this.password = password;
 		this.isFinanceManager = isFinanceManager;
 	}
+	public Employee(String userName, String password) {
+		this.userName = userName;
+		this.password = password;
+	}
 	public boolean isFinanceManager() {
 		return isFinanceManager;
 	}

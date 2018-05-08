@@ -47,7 +47,9 @@ CONSTRAINT fk_approverId FOREIGN KEY (approverId)
 REFERENCES  employeeTable(employeeId),
 CONSTRAINT PK_reId PRIMARY KEY (reId)
 )
-SELECT * FROM EMPLOYEETABLE, INFOTABLE WHERE EMPLOYEETABLE.employeeId = INFOTABLE.employeeId;
+
+SELECT * FROM EMPLOYEETABLE e FULL OUTER JOIN INFOTABLE i ON e.employeeId = i.employeeId WHERE userName = 'JFK';
+
 --Creating a stored procudure to insert employees
 CREATE OR REPLACE PROCEDURE insert_employee(u_name IN VARCHAR, u_password IN VARCHAR, 
 f_name IN VARCHAR, m_name IN VARCHAR, l_name IN VARCHAR, fm IN INT)
@@ -90,8 +92,9 @@ CREATE OR REPLACE TRIGGER employee_before_insert
     END;
     /
 
-SELECT * FROM EMPLOYEETABLE e, INFOTABLE i WHERE e.EMPLOYEEID = i.employeeid;
-SELECT * FROM reimbursementTable;
+SELECT * FROM EMPLOYEETABLE  OUTER JOIN INFOTABLE ON employeetable.EMPLOYEEID = infotable.employeeid;
+
+SELECT * FROM employeetable,infotable;
 
 CREATE OR REPLACE TRIGGER info_before_insert
     BEFORE INSERT
@@ -114,3 +117,7 @@ BEGIN
     VALUES (rmb_Id, rq_Id, a_Id, c_name, status);
 END;
 /
+
+CREATE OR REPLACE FUNCTION get_user_by_name(u_name VARCHAR) RETURN VARCHAR
+IS
+empId = SELECT employeeId FROM employeeTable WHERE userName = u_name;

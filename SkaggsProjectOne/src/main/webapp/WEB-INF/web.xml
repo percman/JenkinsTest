@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>com.revature.servlet.SecondServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>InvalidateSessionServlet</servlet-name>
+  	<display-name>InvalidateSessionServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlet.InvalidateSessionServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>MasterServlet</servlet-name>
   	<url-pattern>*.do</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>SecondServlet</servlet-name>
   	<url-pattern>/SecondServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>InvalidateSessionServlet</servlet-name>
+  	<url-pattern>/InvalidateSessionServlet</url-pattern>
   </servlet-mapping>
 </web-app>
