@@ -122,7 +122,8 @@ CREATE OR REPLACE TRIGGER teacher_b_insert
     FOR EACH ROW
     BEGIN
         IF :new.t_id IS NULL THEN
-            SELECT teacher_id_sequence.nextval INTO :new.t_id FROM dual;
+            SELECT teacher_id_sequence.nextval 
+                INTO :new.t_id FROM dual;
         END IF;
         SELECT GET_USER_HASH(:new.t_username, :new.t_password) 
             INTO :new.t_password FROM dual;
