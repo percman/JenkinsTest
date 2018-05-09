@@ -9,11 +9,14 @@ private MasterDispatcher() {
 	}
 	
 	public static String process(HttpServletRequest request, HttpServletResponse responce) {
-		System.out.println(request.getRequestURI());
 		switch(request.getRequestURI()) {
 			
 		case "/EmployeeReimbursementService/login.do": 
 			return LoginService.login(request, responce);
+		case "/EmployeeReimbursementService/managerHome.do": 
+			return ManagerHomeService.home(request, responce);
+		case "/EmployeeReimbursementService/employeeHome.do": 
+			return EmployeeHomeService.home(request, responce);
 			
 			default: return "404.jsp";
 		}

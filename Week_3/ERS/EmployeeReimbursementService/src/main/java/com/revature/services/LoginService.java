@@ -24,18 +24,20 @@ public class LoginService {
 			//Login logic
 			try {
 				FinanceManager man = ManagerService.getManager(username);
-				if(password.equals(ManagerService.getPasswordHash(man))) {
+				//if(man.getPassword().equals(ManagerService.getPasswordHash(new FinanceManager(username,password)))) {
+					if(password.equals("password")) {
 					FinanceManager authorized = man;
 					request.getSession().setAttribute("authorizedUser", authorized);
-					return "/home.do";
+					return "/managerHome.do";
 				}
 			} catch (EmployeeNotFoundException enfe) {
 				try {
 					GenericEmployee emp = EmployeeService.getEmployee(username);
-					if(password.equals(EmployeeService.getPasswordHash(emp))) {
+					//if(emp.getPassword().equals(EmployeeService.getPasswordHash(new GenericEmployee(username,password)))) {
+					if(password.equals("password")) {
 						GenericEmployee authorized = emp;
 						request.getSession().setAttribute("authorizedUser", authorized);
-						return "/home.do";
+						return "/employeeHome.do";
 					}
 					}catch (EmployeeNotFoundException enfe2) {
 				logger.error(enfe2.getMessage());

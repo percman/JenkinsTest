@@ -318,3 +318,27 @@ Caused by: java.net.ConnectException: Connection timed out: connect
 	at oracle.net.nt.ConnOption.connect(ConnOption.java:133)
 	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:411)
 	... 13 more
+2018-05-08 16:12:31 ERROR EmployeeDaoImpl:79 - Invalid column name
+java.sql.SQLException: Invalid column name
+	at oracle.jdbc.driver.OracleStatement.getColumnIndex(OracleStatement.java:3965)
+	at oracle.jdbc.driver.InsensitiveScrollableResultSet.findColumn(InsensitiveScrollableResultSet.java:299)
+	at oracle.jdbc.driver.GeneratedResultSet.getString(GeneratedResultSet.java:1460)
+	at com.revature.dao.ManagerDaoImpl.getManager(ManagerDaoImpl.java:76)
+	at com.revature.dao.ManagerService.getManager(ManagerService.java:20)
+	at com.revature.ers.application.main(application.java:8)
+2018-05-08 16:12:31 ERROR EmployeeDaoImpl:80 - 99999
+java.sql.SQLException: Invalid column name
+	at oracle.jdbc.driver.OracleStatement.getColumnIndex(OracleStatement.java:3965)
+	at oracle.jdbc.driver.InsensitiveScrollableResultSet.findColumn(InsensitiveScrollableResultSet.java:299)
+	at oracle.jdbc.driver.GeneratedResultSet.getString(GeneratedResultSet.java:1460)
+	at com.revature.dao.ManagerDaoImpl.getManager(ManagerDaoImpl.java:76)
+	at com.revature.dao.ManagerService.getManager(ManagerService.java:20)
+	at com.revature.ers.application.main(application.java:8)
+2018-05-08 16:12:31 ERROR EmployeeDaoImpl:81 - 17006
+java.sql.SQLException: Invalid column name
+	at oracle.jdbc.driver.OracleStatement.getColumnIndex(OracleStatement.java:3965)
+	at oracle.jdbc.driver.InsensitiveScrollableResultSet.findColumn(InsensitiveScrollableResultSet.java:299)
+	at oracle.jdbc.driver.GeneratedResultSet.getString(GeneratedResultSet.java:1460)
+	at com.revature.dao.ManagerDaoImpl.getManager(ManagerDaoImpl.java:76)
+	at com.revature.dao.ManagerService.getManager(ManagerService.java:20)
+	at com.revature.ers.application.main(application.java:8)

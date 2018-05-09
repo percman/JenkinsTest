@@ -27,10 +27,5 @@ public static boolean updateInfo(FinanceManager man) throws EmployeeNotFoundExce
 public static String getPasswordHash(FinanceManager man) {
 	return dao.getPasswordHash(man);
 }
-
-public static void main(String[] args) throws EmployeeNotFoundException {
-	System.out.println(getManagers().get(0).getUsername());
-	System.out.println(getManager("aksjflk").getFirstName());
 }
 
-}

@@ -68,7 +68,6 @@ public class ManagerDaoImpl implements ManagerDao {
 				int index = 0;
 				try(Connection conn = ConnectionUtil.getConnection()){
 					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN FINANCE_MANAGER ON emp_username = ?");
-					System.out.println(man);
 					stmt.setString(++index, man);
 					ResultSet rs = stmt.executeQuery();
 					
@@ -92,7 +91,7 @@ public class ManagerDaoImpl implements ManagerDao {
 			public String getPasswordHash(FinanceManager man){
 				int index = 0;
 				try (Connection conn = ConnectionUtil.getConnection()) {
-					PreparedStatement stmt = conn.prepareStatement("SELECT get_emp_hash(?,?)AS HASH FROM dual");
+					PreparedStatement stmt = conn.prepareStatement("SELECT GET_EMP_HASH(?,?)AS HASH FROM dual");
 					stmt.setString(++index, man.getUsername());
 					stmt.setString(++index, man.getPassword());
 					ResultSet rs = stmt.executeQuery();
