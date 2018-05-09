@@ -76,7 +76,7 @@ CREATE TABLE reimbursement (
     requestor_id NUMBER (10) NOT NULL,       -- (FK NN required)
     approver_id NUMBER (10),        -- (FK required)
     category_id NUMBER (1),             -- (required)
-    status_id NUMBER (1),                -- (required)
+    status_id NUMBER (1) DEFAULT 1,                -- (required)
     amount NUMBER (10,2),
     submitted TIMESTAMP,
     resolved TIMESTAMP,
@@ -120,6 +120,9 @@ INSERT INTO r_category (category_id, r_category) VALUES (1, 'lodging');
 INSERT INTO r_category (category_id, r_category) VALUES (2, 'travel');
 INSERT INTO r_category (category_id, r_category) VALUES (3, 'food');
 INSERT INTO r_category (category_id, r_category) VALUES (4, 'other');
+
+SELECT * FROM R_STATUS;
+SELECT * FROM R_CATEGORY;
 ------------------------------------------------
 ------------------------------------------------
 
@@ -240,10 +243,9 @@ CREATE OR REPLACE FUNCTION GET_CURRENT_TIME RETURN TIMESTAMP
 -----------------------------------------------------------------------------------------------
 -- Create stored procedures for inserting into employee, f_manager, and reimbursement tables -- 
 -----------------------------------------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE insert_employee (new_username VARCHAR2, new_password VARCHAR2, 
-                                            new_f_name VARCHAR2, new_m_initial VARCHAR2, 
-                                            new_l_name VARCHAR2, new_phone NUMBER, 
-                                            new_email VARCHAR2)
+CREATE OR REPLACE PROCEDURE insert_employee (new_username VARCHAR2, new_password VARCHAR2, new_f_name VARCHAR2, 
+                                                new_m_initial VARCHAR2, new_l_name VARCHAR2, new_phone NUMBER, 
+                                                new_email VARCHAR2)
     AS
     BEGIN
         INSERT INTO employee (employee_id, username, password)
@@ -253,10 +255,9 @@ CREATE OR REPLACE PROCEDURE insert_employee (new_username VARCHAR2, new_password
     END;
     /
 
-CREATE OR REPLACE PROCEDURE insert_f_manager (new_username VARCHAR2, new_password VARCHAR2, 
-                                            new_f_name VARCHAR2, new_m_initial VARCHAR2, 
-                                            new_l_name VARCHAR2, new_phone NUMBER, 
-                                            new_email VARCHAR2)
+CREATE OR REPLACE PROCEDURE insert_f_manager (new_username VARCHAR2, new_password VARCHAR2, new_f_name VARCHAR2, 
+                                                new_m_initial VARCHAR2, new_l_name VARCHAR2, new_phone NUMBER, 
+                                                new_email VARCHAR2)
     AS
     BEGIN
         INSERT INTO employee (employee_id, username, password, is_f_manager)
@@ -268,16 +269,38 @@ CREATE OR REPLACE PROCEDURE insert_f_manager (new_username VARCHAR2, new_passwor
     END;
     /
     
-CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id NUMBER, new_category_id NUMBER, 
-                                                new_status_id NUMBER, new_amount NUMBER) 
+CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id NUMBER, new_category_id NUMBER, new_amount NUMBER) 
     AS
     BEGIN
-        INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, status_id, amount)
-            VALUES (null, new_requestor_id, new_category_id, new_status_id, new_amount);
+        INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, amount)
+            VALUES (null, new_requestor_id, new_category_id, new_amount);
     END;
     /
 -----------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
