@@ -122,30 +122,28 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return false;
 	}
-//	@Override
-//	public boolean updateEmployee(Employee e) {
-//		int index = 0;
-//		try (Connection conn = ConnectionUtil.getConnection()) {
-//			String userName = user.getName();
-//			int balance = user.getBalance();
-//			int admin = user.isAdmin() ? 1 : 0;
-//			int locked = user.isLocked() ? 1 : 0;
-//			int approved = user.isApproved() ? 1 : 0;
-//			PreparedStatement stmt = conn.prepareStatement("{CALL update_user(?, ?, ?, ?, ?)  }");
-//			stmt.setString(++index, userName);
-//			stmt.setInt(++index, balance);
-//			stmt.setInt(++index, admin);
-//			stmt.setInt(++index, locked);
-//			stmt.setInt(++index, approved);
-//			int rowsAffected = stmt.executeUpdate();
-//			return rowsAffected > 0;
-//		} catch (SQLException sqle) {
-//			System.err.println(sqle.getMessage());
-//			System.err.println(sqle.getSQLState());
-//			System.err.println(sqle.getErrorCode());
-//		}
-//		return false;
-//	}
+	@Override
+	public boolean updateEmployee(Employee e) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			String firstName = e.getFirstName();
+			String lastName = e.getLastName();
+			String userName = e.getUserName();
+			String password = e.getPassword();
+			PreparedStatement stmt = conn.prepareStatement("{CALL update_employee(?, ?, ?, ?)  }");
+			stmt.setString(++index, firstName);
+			stmt.setString(++index, lastName);
+			stmt.setString(++index, userName);
+			stmt.setString(++index, password);
+			int rowsAffected = stmt.executeUpdate();
+			return rowsAffected > 0;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+		}
+		return false;
+	}
 	@Override // Get the hashed password from the database
     public String getPasswordHash(Employee employee) {
         int index = 0;

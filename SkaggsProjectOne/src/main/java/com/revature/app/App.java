@@ -16,7 +16,11 @@ public class App {
 //    	Employee e = new Employee("Richard", "M", "Nixon", "nixnax", "password", false);
 //    	boolean inserted = EmployeeService.insertEmployee(e);
 //    	System.out.println(inserted);
-    	Employee e =  EmployeeService.getEmployee("JFK");
-    	System.out.println(e);
+//    	Employee e =  EmployeeService.getEmployee("nixnax");
+//    	System.out.println(e.getFirstName());
+//    	e.setPassword("Password");
+//    	EmployeeService.updateEmployee(e);
+    	Employee e = new Employee("Benjamin", "J", "Franklin", "benny","password", false);
+    	EmployeeService.insertEmployee(e);
     }
 }

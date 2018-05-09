@@ -17,8 +17,8 @@ public class MasterDispatcher {
 			return UserService.home(request);
 		case "/SkaggsProjectOne/fm.do":
 			return UserService.fm(request);
-		case "/SkaggsProjectOne/firstnameupdate.do":
-			return UpdateService.update(request, "firstname");
+		case "/SkaggsProjectOne/update.do":
+			return UpdateService.update(request);
 		default:
 			return "404.jsp";
 		}

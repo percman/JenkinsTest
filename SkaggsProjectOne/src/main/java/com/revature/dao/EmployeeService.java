@@ -26,4 +26,7 @@ public class EmployeeService {
 	public static String getPasswordHash(Employee employee) {
 		return dao.getPasswordHash(employee);
 	}
+	public static boolean updateEmployee(Employee e) {
+		return dao.updateEmployee(e);
+	}
 }

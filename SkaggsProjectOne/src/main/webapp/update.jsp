@@ -30,19 +30,15 @@
 							<div class="col-lg-12">
 									<div class="form-group">
 										<div class="row">
-											<form id="login-form" method="post" role="form">
+											<form id="login-form" action="update.do" method="post" role="form">
 												<div class="col-sm-6 col-sm-offset-3">
 													<input type="text" name="firstname" id="firstname" class="form-control" placeholder=<%=employee.getFirstName()%>>
-													<input type="submit" action="updatefirstname.do" name="firstname-update" id="firstname-update-btn" class="form-control btn btn-submit"  value="Update First Name">
 													
 													<input type="text" name="lastname" id="lastname" class="form-control" placeholder=<%=employee.getLastName()%>>
-													<input type="submit" name="firstname-update" id="lastname-update-btn" class="form-control btn btn-submit"  value="Update Last Name">
-													
-													<input type="text" name="username" id="username" class="form-control" placeholder=<%=employee.getUserName()%>>
-													<input type="submit" name="username-update" id="username-update-btn" class="form-control btn btn-submit"  value="Update Password">
-													
+																										
 													<input type="password" name="password" id="password" class="form-control" placeholder="Password">
-													<input type="submit" name="login-submit" id="login-btn" class="form-control btn btn-submit"  value="Update Password">
+													
+													<input type="submit" name="update-submit" id="update-btn" class="form-control btn btn-submit"  value="Update Info">
 												</div>
 											</form>
 										</div>
