@@ -81,8 +81,7 @@ CREATE TABLE reimbursement (
     CONSTRAINT FK_REQUESTOR_ID FOREIGN KEY (requestor_id) REFERENCES employee (employee_id) ON DELETE CASCADE,
     CONSTRAINT FK_APPROVER_ID FOREIGN KEY (approver_id) REFERENCES f_manager (f_manager_id) ON DELETE CASCADE,
     CONSTRAINT FK_CATEGORY_ID FOREIGN KEY (category_id) REFERENCES r_category (category_id) ON DELETE CASCADE,
-    CONSTRAINT FK_STATUS_ID FOREIGN KEY (status_id) REFERENCES r_status (status_id) ON DELETE CASCADE,
-    CONSTRAINT CK_R_ID_NOT_A_ID CHECK (requestor_id != approver_id)
+    CONSTRAINT FK_STATUS_ID FOREIGN KEY (status_id) REFERENCES r_status (status_id) ON DELETE CASCADE
 );
 
 CREATE TABLE employee_info (
