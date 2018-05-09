@@ -252,6 +252,7 @@ CREATE OR REPLACE PROCEDURE insert_employee (new_username VARCHAR2, new_password
             VALUES (null, new_username, new_password);
         INSERT INTO employee_info (employee_id, f_name, m_initial, l_name, phone, email)
             VALUES (null, new_f_name, new_m_initial, new_l_name, new_phone, new_email);
+        COMMIT;
     END;
     /
 
@@ -266,6 +267,7 @@ CREATE OR REPLACE PROCEDURE insert_f_manager (new_username VARCHAR2, new_passwor
             VALUES (null, new_f_name, new_m_initial, new_l_name, new_phone, new_email);
         INSERT INTO f_manager (f_manager_id, employee_id)
             VALUES (null, null);
+        COMMIT;
     END;
     /
     
@@ -274,11 +276,11 @@ CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id NUMBER, new_c
     BEGIN
         INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, amount)
             VALUES (null, new_requestor_id, new_category_id, new_amount);
+        COMMIT;
     END;
     /
 -----------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------
-
 
 
 
