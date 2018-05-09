@@ -48,8 +48,34 @@ REFERENCES  employeeTable(employeeId),
 CONSTRAINT PK_reId PRIMARY KEY (reId)
 )
 
-SELECT * FROM EMPLOYEETABLE e FULL OUTER JOIN INFOTABLE i ON e.employeeId = i.employeeId WHERE userName = 'JFK';
 
+SELECT * FROM EMPLOYEETABLE e FULL OUTER JOIN INFOTABLE i ON e.employeeId = i.employeeId WHERE userName = 'nixnax';
+
+--Update emoplyment
+CREATE OR REPLACE PROCEDURE update_employee(f_name IN VARCHAR, l_name IN VARCHAR, u_name IN VARCHAR, u_password IN VARCHAR)
+AS
+e_id number;
+cursor c1 is SELECT employeeid FROM EMPLOYEETABLE e WHERE e.userName = u_name;
+
+BEGIN
+    open c1;
+    fetch c1 into e_id;
+    CLOSE c1;
+    
+    UPDATE employeeTable SET
+    userName = u_name, 
+    userPassword = u_password 
+    WHERE username = u_name;
+    
+    UPDATE INFOTABLE SET
+    firstName = f_name,
+    lastName = l_name,
+    WHERE employeeid = e_id;
+    
+    COMMIT;
+END;
+/
+commit;
 --Creating a stored procudure to insert employees
 CREATE OR REPLACE PROCEDURE insert_employee(u_name IN VARCHAR, u_password IN VARCHAR, 
 f_name IN VARCHAR, m_name IN VARCHAR, l_name IN VARCHAR, fm IN INT)
@@ -94,7 +120,7 @@ CREATE OR REPLACE TRIGGER employee_before_insert
 
 SELECT * FROM EMPLOYEETABLE  OUTER JOIN INFOTABLE ON employeetable.EMPLOYEEID = infotable.employeeid;
 
-SELECT * FROM employeetable,infotable;
+SELECT * FROM employeetable e,infotable i where e.employeeid = i.employeeid;
 
 CREATE OR REPLACE TRIGGER info_before_insert
     BEFORE INSERT
@@ -118,6 +144,4 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE FUNCTION get_user_by_name(u_name VARCHAR) RETURN VARCHAR
-IS
-empId = SELECT employeeId FROM employeeTable WHERE userName = u_name;
+select * from reimbursementTable;
