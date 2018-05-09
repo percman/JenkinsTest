@@ -34263,3 +34263,18 @@ ORA-06512: at line 1
 
 2018-05-08 16:37:38 WARN  LogHere:27 - SQLE State: 23000
 2018-05-08 16:37:38 WARN  LogHere:27 - Error code: 1
+2018-05-08 22:27:53 WARN  LogHere:27 - Invalid column name
+2018-05-08 22:27:53 WARN  LogHere:27 - SQLE State: 99999
+2018-05-08 22:27:53 WARN  LogHere:27 - Error code: 17006
+2018-05-08 22:27:53 WARN  LogHere:27 - 
+2018-05-08 22:29:36 WARN  LogHere:27 - Invalid column name
+2018-05-08 22:29:36 WARN  LogHere:27 - SQLE State: 99999
+2018-05-08 22:29:36 WARN  LogHere:27 - Error code: 17006
+2018-05-08 22:29:36 WARN  LogHere:27 - Invalid column name
+2018-05-08 22:29:36 WARN  LogHere:27 - SQLE State: 99999
+2018-05-08 22:29:36 WARN  LogHere:27 - Error code: 17006
+2018-05-08 22:29:36 WARN  LogHere:27 - 
+2018-05-08 22:49:19 WARN  LogHere:27 - 
+2018-05-08 22:52:22 WARN  LogHere:27 - 
+2018-05-08 22:53:03 WARN  LogHere:27 - 
+2018-05-08 22:54:58 WARN  LogHere:27 - 

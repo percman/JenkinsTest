@@ -63,7 +63,6 @@ CONSTRAINT BOOLEANSTATUS CHECK (status BETWEEN 0 AND 1)
 );
 
 
-SELECT * FROM employee INNER JOIN personalinfo ON employee.id = personalinfo.id;
 -- ******************************* SEQUENCES *******************************
 
 
@@ -196,7 +195,6 @@ BEGIN
     COMMIT;
 END;
 /
-
 
 
 

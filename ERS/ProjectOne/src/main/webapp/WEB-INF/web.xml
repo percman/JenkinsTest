@@ -5,30 +5,14 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   
-  <servlet>
-  	<servlet-name>HelloWorldServlet</servlet-name>
-  	<servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>SecondServlet</servlet-name>
-  	<display-name>SecondServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.revature.servlets.SecondServlet</servlet-class>
-  </servlet>
+
   <servlet>
   	<servlet-name>MasterServlet</servlet-name>
   	<display-name>MasterServlet</display-name>
   	<description></description>
   	<servlet-class>com.revature.servlets.MasterServlet</servlet-class>
   </servlet>
-  <servlet-mapping>
-  	<servlet-name>HelloWorldServlet</servlet-name>
-  	<url-pattern>/HelloWorldServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>SecondServlet</servlet-name>
-  	<url-pattern>/SecondServlet</url-pattern>
-  </servlet-mapping>
+
   <servlet-mapping>
   	<servlet-name>MasterServlet</servlet-name>
   	<url-pattern>*.do</url-pattern>

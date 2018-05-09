@@ -1,4 +1,4 @@
-package com.revature.service;
+package com.revature.daoservice;
 
 
 import java.util.List;
@@ -44,11 +44,7 @@ public class EmployeeService {
 		
 		try {		
 			
-			if(newemployee.getUsername() == null) {
-				System.out.println("The username is invalid.");
-				// add username exception here 
-				return false;
-			}else if(newemployee.getPassword().equals(dao.getPasswordHash(employee))){
+			if(newemployee.getPassword().equals(dao.getPasswordHash(employee))){
 				System.out.println("You are a valid user, " + newemployee.getUsername());
 				return true;
 			}

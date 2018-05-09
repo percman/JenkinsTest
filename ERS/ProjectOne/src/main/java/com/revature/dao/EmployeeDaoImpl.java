@@ -71,16 +71,24 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	public Employee getEmployee(String username) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee WHERE username = ?");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee INNER JOIN personalinfo "
+					+ "ON employee.id = personalinfo.id WHERE employee.username = ?");
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
+			
 			if(rs.next()) {				
-				return new Employee(rs.getInt("id"), rs.getString("username"), rs.getString("password"), 
-						(rs.getInt("manager")>0), rs.getString("firstname"), rs.getString("lastname"),
-						rs.getTimestamp("datehired"), rs.getString("email"), rs.getInt("phonenumber"));
+				return new Employee(rs.getInt("id"), 
+						rs.getString("username"), 
+						rs.getString("password"), 
+						(rs.getInt("manager")>0), 
+						rs.getString("firstname"), 
+						rs.getString("lastname"),
+						rs.getTimestamp("datehired"), 
+						rs.getString("email"), 
+						rs.getInt("phonenumber"));
 			}
-				
-		}  catch (SQLException sqle) {
+			
+			} catch (SQLException sqle) {
 			LogHere.warn(sqle.getMessage());
 			LogHere.warn("SQLE State: " + sqle.getSQLState());
 			LogHere.warn("Error code: " + sqle.getErrorCode());

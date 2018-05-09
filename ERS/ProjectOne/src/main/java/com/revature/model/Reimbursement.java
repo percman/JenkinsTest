@@ -28,6 +28,13 @@ public abstract class Reimbursement implements Serializable{
 		this.requestor_id = requestor_id;
 		this.status = status;
 	}
+	
+	public Reimbursement(double amount, String category, int requestor_id) {
+		super();
+		this.amount = amount;
+		this.category = category;
+		this.requestor_id = requestor_id;
+	}
 
 	public Reimbursement(int id, double amount, int requestor_id, int approver_id, boolean status, Timestamp timemade,
 			Timestamp timeapproved, String reason) {
