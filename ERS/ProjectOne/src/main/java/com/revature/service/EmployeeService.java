@@ -3,8 +3,8 @@ package com.revature.service;
 
 import java.util.List;
 
-import com.revature.employeedao.EmployeeDao;
-import com.revature.employeedao.EmployeeDaoImpl;
+import com.revature.dao.EmployeeDao;
+import com.revature.dao.EmployeeDaoImpl;
 import com.revature.logs.LogHere;
 import com.revature.model.Employee;
 
@@ -39,23 +39,27 @@ public class EmployeeService {
 	}
 	
 	
-	public static Employee login(Employee employee) {
+	public static boolean login(Employee employee) {
 		Employee newemployee = dao.getEmployee(employee.getUsername());
 		
 		try {		
 			
-			if(newemployee.getPassword().equals(dao.getPasswordHash(employee))){
+			if(newemployee.getUsername() == null) {
+				System.out.println("The username is invalid.");
+				// add username exception here 
+				return false;
+			}else if(newemployee.getPassword().equals(dao.getPasswordHash(employee))){
 				System.out.println("You are a valid user, " + newemployee.getUsername());
-				return newemployee;
+				return true;
 			}
 		} catch(NullPointerException npe) {
 			LogHere.warn(npe.getMessage());
 			System.out.println("The username or password combination is invalid.");
-			return null;
+			return false;
 		}
 
 		System.out.println("The username or password combination is invalid.");
-		return null;
+		return false;
 	}
 	
 }

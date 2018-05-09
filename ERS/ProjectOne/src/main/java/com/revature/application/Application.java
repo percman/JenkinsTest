@@ -7,7 +7,7 @@ public class Application {
 
 	
 	public static void main(String[] args) {
-		Employee someguy = new Employee ("neatdude", "password", true, "neat", "guy", "123", 4193778203L);
+		Employee someguy = new Employee ("neat", "guy", false, "neatname", "guyname", "12343214gmail.com", 1144567890L);
 
 		System.out.println(someguy);
 		

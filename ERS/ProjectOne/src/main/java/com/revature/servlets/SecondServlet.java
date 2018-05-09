@@ -24,7 +24,7 @@ public class SecondServlet extends HttpServlet {
 		String getInput = request.getParameter("getInput");
 		pw.write("<p>You wrote " + getInput + ".</p>");
 		pw.write("</body></html>");
-		request.getRequestDispatcher("index.jsp").include(request, response);
+		request.getRequestDispatcher("/HTML_loggedout/project_one_welcomepage.jsp").include(request, response);
 		pw.close();
 	}
 

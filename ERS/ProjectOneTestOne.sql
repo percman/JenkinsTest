@@ -47,6 +47,7 @@ CONSTRAINT CK_PHONE CHECK (phonenumber BETWEEN 1000000000 AND 9999999909)
 -- create a reimbursement information table 
 CREATE TABLE reimbursement (
 id NUMBER(10),
+amount NUMBER(10),
 requestor_id NUMBER(10) NOT NULL,
 approver_id NUMBER(10),
 category VARCHAR2(15),
@@ -56,15 +57,13 @@ timeapproved TIMESTAMP,
 CONSTRAINT PK_REIMBURSEMENT PRIMARY KEY (id),
 CONSTRAINT FK_REIMBURSEMENT_R_EMPLOYEE FOREIGN KEY (requestor_id) REFERENCES employee (id) ON DELETE CASCADE,
 CONSTRAINT FK_REIMBURSEMENT_A_EMPLOYEE FOREIGN KEY (approver_id) REFERENCES employee (id) ON DELETE CASCADE,
+CONSTRAINT CK_AMOUNTNEG CHECK (amount > 0),
 CONSTRAINT CK_R_A CHECK (requestor_id <> approver_id), 
 CONSTRAINT BOOLEANSTATUS CHECK (status BETWEEN 0 AND 1)
 );
 
 
-
-
-
-
+SELECT * FROM employee INNER JOIN personalinfo ON employee.id = personalinfo.id;
 -- ******************************* SEQUENCES *******************************
 
 
@@ -73,10 +72,6 @@ CREATE SEQUENCE employee_id_sequence
     INCREMENT BY 1
     NOCACHE;
 
-CREATE SEQUENCE personalinfo_id_sequence 
-    START WITH 1000
-    INCREMENT BY 1
-    NOCACHE;
 
 CREATE SEQUENCE reimbursement_id_sequence 
     START WITH 1
@@ -122,18 +117,6 @@ BEGIN
 END;
 /
 
--- create a before-insert-into-personalinfo trigger that will autoincrement the PK and hash the password 
-CREATE OR REPLACE TRIGGER personalinfo_b_insert 
-BEFORE INSERT 
-ON personalinfo
-FOR EACH ROW 
-BEGIN 
-    IF :new.id IS NULL THEN 
-        SELECT personalinfo_id_sequence.nextval INTO :new.id FROM dual;
-    END IF;
-END;
-/
-
 
 -- create a before-insert-into-reimbursement trigger that will autoincrement the PK
 CREATE OR REPLACE TRIGGER reimbursement_b_insert 
@@ -146,9 +129,6 @@ BEGIN
     END IF;
 END;
 /
-
-
-
 
 
 
@@ -169,12 +149,10 @@ BEGIN
     VALUES (new_username, new_password, new_manager, null);
     COMMIT;
     INSERT INTO personalinfo(firstname, lastname, datehired, email, phonenumber, id)
-    VALUES (new_firstname, new_lastname, CURRENT_TIMESTAMP, new_email, new_phonenumber, null);
+    VALUES (new_firstname, new_lastname, CURRENT_TIMESTAMP, new_email, new_phonenumber, (SELECT MAX(id) FROM employee));
     COMMIT;
 END;
 /
-
-
 
 -- procedure to promote an employee
 CREATE OR REPLACE PROCEDURE promote_employee(same_username IN VARCHAR2)
@@ -200,20 +178,20 @@ END;
 
 
 -- procedure to insert a reimbursement
-CREATE OR REPLACE PROCEDURE insert_reimbursement(new_requestor_id IN NUMBER, new_category in VARCHAR2)
+CREATE OR REPLACE PROCEDURE insert_reimbursement(new_requestor_id IN NUMBER, new_amount IN NUMBER, new_category in VARCHAR2)
 AS 
 BEGIN
-    INSERT INTO reimbursement (requestor_id, category, status, timemade, id)
-    VALUES (new_requestor_id, new_category, 0, CURRENT_TIMESTAMP, null);
+    INSERT INTO reimbursement (requestor_id, amount, category, status, timemade, id)
+    VALUES (new_requestor_id, new_amount, new_category, 0, CURRENT_TIMESTAMP, null);
     COMMIT;
 END;
 /
 
 -- procedure to approve a reimbursement
-CREATE OR REPLACE PROCEDURE update_reimbursement(same_id IN NUMBER, new_approver_id IN NUMBER, new_category in VARCHAR2)
+CREATE OR REPLACE PROCEDURE update_reimbursement(same_id IN NUMBER, new_approver_id IN NUMBER, new_status IN NUMBER)
 AS 
 BEGIN
-    UPDATE reimbursement SET approver_id = new_approver_id, status = 1, timeapproved = CURRENT_TIMESTAMP
+    UPDATE reimbursement SET approver_id = new_approver_id, status = new_status, timeapproved = CURRENT_TIMESTAMP
     WHERE id = same_id;
     COMMIT;
 END;

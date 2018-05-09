@@ -7,7 +7,7 @@ public class UserService {
 
 	private UserService() {}
 	
-	public static String home(HttpServletRequest request, HttpServletResponse response) {
-		return "home.jsp";
+	public static String home(HttpServletRequest request) {
+		return "/home.jsp";
 	}
 }
