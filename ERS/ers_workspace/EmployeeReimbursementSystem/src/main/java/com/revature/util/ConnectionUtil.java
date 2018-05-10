@@ -9,6 +9,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import com.revature.logging.LogThis;
+
 public class ConnectionUtil {
 
 
@@ -29,9 +31,9 @@ public class ConnectionUtil {
 				ioe.printStackTrace();
 				
 			} catch (SQLException sqle) {
-				System.err.println(sqle.getMessage());
-				System.err.println("SQL State: " + sqle.getSQLState());
-				System.err.println("Error Code: " + sqle.getErrorCode());
+				LogThis.warn(sqle.getMessage());
+				LogThis.warn("SQL State: " + sqle.getSQLState());
+				LogThis.warn("Error Code: " + sqle.getErrorCode());
 			}
 		return null;
 	}
