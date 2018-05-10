@@ -1,0 +1,397 @@
+2018-05-02 22:12:45 WARN  ReimbursementLogger:49 - Invalid column index
+2018-05-02 22:12:45 WARN  ReimbursementLogger:50 - Error Code: 17003
+2018-05-02 22:12:45 WARN  ReimbursementLogger:51 - SQL State: 99999
+2018-05-02 22:14:20 WARN  ReimbursementLogger:49 - Invalid column index
+2018-05-02 22:14:20 WARN  ReimbursementLogger:50 - Error Code: 17003
+2018-05-02 22:14:20 WARN  ReimbursementLogger:51 - SQL State: 99999
+2018-05-02 22:16:02 WARN  ReimbursementLogger:49 - Invalid column index
+2018-05-02 22:16:02 WARN  ReimbursementLogger:50 - Error Code: 17003
+2018-05-02 22:16:02 WARN  ReimbursementLogger:51 - SQL State: 99999
+2018-05-02 22:18:13 WARN  ReimbursementLogger:47 - Invalid column index
+2018-05-02 22:18:13 WARN  ReimbursementLogger:48 - Error Code: 17003
+2018-05-02 22:18:13 WARN  ReimbursementLogger:49 - SQL State: 99999
+2018-05-02 22:20:00 WARN  ReimbursementLogger:47 - Invalid column index
+2018-05-02 22:20:00 WARN  ReimbursementLogger:48 - Error Code: 17003
+2018-05-02 22:20:00 WARN  ReimbursementLogger:49 - SQL State: 99999
+2018-05-02 22:29:28 WARN  ReimbursementLogger:47 - Invalid column index
+2018-05-02 22:29:28 WARN  ReimbursementLogger:48 - Error Code: 17003
+2018-05-02 22:29:28 WARN  ReimbursementLogger:49 - SQL State: 99999
+2018-05-02 22:30:17 WARN  ReimbursementLogger:47 - Invalid column index
+2018-05-02 22:30:17 WARN  ReimbursementLogger:48 - Error Code: 17003
+2018-05-02 22:30:17 WARN  ReimbursementLogger:49 - SQL State: 99999
+2018-05-02 22:30:55 WARN  ReimbursementLogger:48 - Invalid column index
+2018-05-02 22:30:55 WARN  ReimbursementLogger:49 - Error Code: 17003
+2018-05-02 22:30:55 WARN  ReimbursementLogger:50 - SQL State: 99999
+2018-05-02 22:33:02 WARN  ReimbursementLogger:48 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:33:02 WARN  ReimbursementLogger:49 - Error Code: 6550
+2018-05-02 22:33:02 WARN  ReimbursementLogger:50 - SQL State: 65000
+2018-05-02 22:34:17 WARN  ReimbursementLogger:48 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:34:17 WARN  ReimbursementLogger:49 - Error Code: 6550
+2018-05-02 22:34:17 WARN  ReimbursementLogger:50 - SQL State: 65000
+2018-05-02 22:34:35 WARN  ReimbursementLogger:48 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:34:35 WARN  ReimbursementLogger:49 - Error Code: 6550
+2018-05-02 22:34:35 WARN  ReimbursementLogger:50 - SQL State: 65000
+2018-05-02 22:35:04 WARN  ReimbursementLogger:49 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:35:04 WARN  ReimbursementLogger:50 - Error Code: 6550
+2018-05-02 22:35:04 WARN  ReimbursementLogger:51 - SQL State: 65000
+2018-05-02 22:38:17 WARN  ReimbursementLogger:49 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:38:17 WARN  ReimbursementLogger:50 - Error Code: 6550
+2018-05-02 22:38:17 WARN  ReimbursementLogger:51 - SQL State: 65000
+2018-05-02 22:39:49 WARN  ReimbursementLogger:49 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:39:49 WARN  ReimbursementLogger:50 - Error Code: 6550
+2018-05-02 22:39:49 WARN  ReimbursementLogger:51 - SQL State: 65000
+2018-05-02 22:41:53 WARN  ReimbursementLogger:49 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:41:54 WARN  ReimbursementLogger:50 - Error Code: 6550
+2018-05-02 22:41:54 WARN  ReimbursementLogger:51 - SQL State: 65000
+2018-05-02 22:42:56 WARN  ReimbursementLogger:50 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:42:56 WARN  ReimbursementLogger:51 - Error Code: 6550
+2018-05-02 22:42:56 WARN  ReimbursementLogger:52 - SQL State: 65000
+2018-05-02 22:44:10 WARN  ReimbursementLogger:50 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_EMPLOYEE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-02 22:44:10 WARN  ReimbursementLogger:51 - Error Code: 6550
+2018-05-02 22:44:10 WARN  ReimbursementLogger:52 - SQL State: 65000
+2018-05-03 15:06:18 WARN  ReimbursementLogger:29 - ORA-06550: line 1, column 7:
+PLS-00201: identifier 'INSERT_REQUEST' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-03 15:06:18 WARN  ReimbursementLogger:30 - Error Code: 6550
+2018-05-03 15:06:18 WARN  ReimbursementLogger:31 - SQL State: 65000
+2018-05-03 17:57:27 WARN  ReimbursementLogger:35 - ORA-02291: integrity constraint (DB_ADMIN2.FK_EMPLOYEE) violated - parent key not found
+ORA-06512: at "DB_ADMIN2.INSERT_REIMBURSEMENT", line 4
+ORA-06512: at line 1
+
+2018-05-03 17:57:27 WARN  ReimbursementLogger:36 - Error Code: 2291
+2018-05-03 17:57:27 WARN  ReimbursementLogger:37 - SQL State: 23000
+2018-05-03 17:59:41 WARN  ReimbursementLogger:35 - ORA-02291: integrity constraint (DB_ADMIN2.FK_EMPLOYEE) violated - parent key not found
+ORA-06512: at "DB_ADMIN2.INSERT_REIMBURSEMENT", line 4
+ORA-06512: at line 1
+
+2018-05-03 17:59:41 WARN  ReimbursementLogger:36 - Error Code: 2291
+2018-05-03 17:59:41 WARN  ReimbursementLogger:37 - SQL State: 23000
+2018-05-03 18:04:30 WARN  ReimbursementLogger:36 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-03 18:04:30 WARN  ReimbursementLogger:37 - Error Code: 6550
+2018-05-03 18:04:30 WARN  ReimbursementLogger:38 - SQL State: 65000
+2018-05-03 18:04:30 WARN  ReimbursementLogger:36 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-03 18:04:30 WARN  ReimbursementLogger:37 - Error Code: 6550
+2018-05-03 18:04:30 WARN  ReimbursementLogger:38 - SQL State: 65000
+2018-05-03 18:05:27 WARN  ReimbursementLogger:36 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-03 18:05:27 WARN  ReimbursementLogger:37 - Error Code: 6550
+2018-05-03 18:05:27 WARN  ReimbursementLogger:38 - SQL State: 65000
+2018-05-03 18:05:27 WARN  ReimbursementLogger:36 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-03 18:05:27 WARN  ReimbursementLogger:37 - Error Code: 6550
+2018-05-03 18:05:27 WARN  ReimbursementLogger:38 - SQL State: 65000
+2018-05-03 18:05:41 WARN  ReimbursementLogger:36 - ORA-01400: cannot insert NULL into ("DB_ADMIN2"."REIMBURSEMENT"."REIMBURSEMENT_ID")
+ORA-06512: at "DB_ADMIN2.INSERT_REIMBURSEMENT", line 4
+ORA-06512: at line 1
+
+2018-05-03 18:05:41 WARN  ReimbursementLogger:37 - Error Code: 1400
+2018-05-03 18:05:41 WARN  ReimbursementLogger:38 - SQL State: 23000
+2018-05-03 18:05:41 WARN  ReimbursementLogger:36 - ORA-01400: cannot insert NULL into ("DB_ADMIN2"."REIMBURSEMENT"."REIMBURSEMENT_ID")
+ORA-06512: at "DB_ADMIN2.INSERT_REIMBURSEMENT", line 4
+ORA-06512: at line 1
+
+2018-05-03 18:05:41 WARN  ReimbursementLogger:37 - Error Code: 1400
+2018-05-03 18:05:41 WARN  ReimbursementLogger:38 - SQL State: 23000
+2018-05-03 18:06:40 WARN  ReimbursementLogger:36 - ORA-02291: integrity constraint (DB_ADMIN2.FK_EMPLOYEE) violated - parent key not found
+ORA-06512: at "DB_ADMIN2.INSERT_REIMBURSEMENT", line 4
+ORA-06512: at line 1
+
+2018-05-03 18:06:40 WARN  ReimbursementLogger:37 - Error Code: 2291
+2018-05-03 18:06:40 WARN  ReimbursementLogger:38 - SQL State: 23000
+2018-05-03 18:10:46 WARN  ReimbursementLogger:84 - Invalid column name
+2018-05-03 18:10:46 WARN  ReimbursementLogger:85 - Error Code: 17006
+2018-05-03 18:10:46 WARN  ReimbursementLogger:86 - SQL State: 99999
+2018-05-03 18:11:42 WARN  ReimbursementLogger:60 - Invalid column name
+2018-05-03 18:11:42 WARN  ReimbursementLogger:61 - Error Code: 17006
+2018-05-03 18:11:42 WARN  ReimbursementLogger:62 - SQL State: 99999
+2018-05-03 18:12:38 WARN  ReimbursementLogger:61 - Invalid column name
+2018-05-03 18:12:38 WARN  ReimbursementLogger:62 - Error Code: 17006
+2018-05-03 18:12:38 WARN  ReimbursementLogger:63 - SQL State: 99999
+2018-05-03 18:21:44 WARN  ReimbursementLogger:36 - ORA-01400: cannot insert NULL into ("DB_ADMIN2"."REIMBURSEMENT"."REIMBURSEMENT_ID")
+ORA-06512: at "DB_ADMIN2.INSERT_REIMBURSEMENT", line 4
+ORA-06512: at line 1
+
+2018-05-03 18:21:44 WARN  ReimbursementLogger:37 - Error Code: 1400
+2018-05-03 18:21:44 WARN  ReimbursementLogger:38 - SQL State: 23000
+2018-05-03 18:21:44 WARN  ReimbursementLogger:36 - ORA-01400: cannot insert NULL into ("DB_ADMIN2"."REIMBURSEMENT"."REIMBURSEMENT_ID")
+ORA-06512: at "DB_ADMIN2.INSERT_REIMBURSEMENT", line 4
+ORA-06512: at line 1
+
+2018-05-03 18:21:44 WARN  ReimbursementLogger:37 - Error Code: 1400
+2018-05-03 18:21:44 WARN  ReimbursementLogger:38 - SQL State: 23000
+2018-05-03 19:11:19 WARN  ReimbursementLogger:34 - Invalid column name
+2018-05-03 19:11:19 WARN  ReimbursementLogger:35 - Error Code: 17006
+2018-05-03 19:11:19 WARN  ReimbursementLogger:36 - SQL State: 99999
+2018-05-03 19:13:16 WARN  ReimbursementLogger:58 - ORA-00001: unique constraint (DB_ADMIN2.SYS_C005421) violated
+ORA-06512: at "DB_ADMIN2.INSERT_MANAGER", line 4
+ORA-06512: at line 1
+
+2018-05-03 19:13:16 WARN  ReimbursementLogger:59 - Error Code: 1
+2018-05-03 19:13:16 WARN  ReimbursementLogger:60 - SQL State: 23000
+2018-05-03 19:14:34 WARN  ReimbursementLogger:34 - Invalid column index
+2018-05-03 19:14:34 WARN  ReimbursementLogger:35 - Error Code: 17003
+2018-05-03 19:14:34 WARN  ReimbursementLogger:36 - SQL State: 99999
+2018-05-03 19:14:49 WARN  ReimbursementLogger:34 - Invalid column index
+2018-05-03 19:14:49 WARN  ReimbursementLogger:35 - Error Code: 17003
+2018-05-03 19:14:49 WARN  ReimbursementLogger:36 - SQL State: 99999
+2018-05-03 19:16:18 WARN  ReimbursementLogger:37 - Invalid column index
+2018-05-03 19:16:18 WARN  ReimbursementLogger:38 - Error Code: 17003
+2018-05-03 19:16:18 WARN  ReimbursementLogger:39 - SQL State: 99999
+2018-05-03 19:16:32 WARN  ReimbursementLogger:38 - Invalid column index
+2018-05-03 19:16:32 WARN  ReimbursementLogger:39 - Error Code: 17003
+2018-05-03 19:16:32 WARN  ReimbursementLogger:40 - SQL State: 99999
+2018-05-03 19:16:58 WARN  ReimbursementLogger:38 - Invalid column index
+2018-05-03 19:16:58 WARN  ReimbursementLogger:39 - Error Code: 17003
+2018-05-03 19:16:58 WARN  ReimbursementLogger:40 - SQL State: 99999
+2018-05-04 11:11:09 WARN  ReimbursementLogger:77 - ORA-04098: trigger 'DB_ADMIN2.EMPLOYEE_INFORMATION_B_INSERT' is invalid and failed re-validation
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:11:09 WARN  ReimbursementLogger:78 - Error Code: 4098
+2018-05-04 11:11:09 WARN  ReimbursementLogger:79 - SQL State: 42000
+2018-05-04 11:11:09 WARN  ReimbursementLogger:77 - ORA-04098: trigger 'DB_ADMIN2.EMPLOYEE_INFORMATION_B_INSERT' is invalid and failed re-validation
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:11:09 WARN  ReimbursementLogger:78 - Error Code: 4098
+2018-05-04 11:11:09 WARN  ReimbursementLogger:79 - SQL State: 42000
+2018-05-04 11:11:09 WARN  ReimbursementLogger:77 - ORA-04098: trigger 'DB_ADMIN2.EMPLOYEE_INFORMATION_B_INSERT' is invalid and failed re-validation
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:11:09 WARN  ReimbursementLogger:78 - Error Code: 4098
+2018-05-04 11:11:09 WARN  ReimbursementLogger:79 - SQL State: 42000
+2018-05-04 11:12:24 WARN  ReimbursementLogger:77 - ORA-04098: trigger 'DB_ADMIN2.EMPLOYEE_INFORMATION_B_INSERT' is invalid and failed re-validation
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:12:24 WARN  ReimbursementLogger:78 - Error Code: 4098
+2018-05-04 11:12:24 WARN  ReimbursementLogger:79 - SQL State: 42000
+2018-05-04 11:12:24 WARN  ReimbursementLogger:77 - ORA-04098: trigger 'DB_ADMIN2.EMPLOYEE_INFORMATION_B_INSERT' is invalid and failed re-validation
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:12:24 WARN  ReimbursementLogger:78 - Error Code: 4098
+2018-05-04 11:12:24 WARN  ReimbursementLogger:79 - SQL State: 42000
+2018-05-04 11:12:24 WARN  ReimbursementLogger:77 - ORA-04098: trigger 'DB_ADMIN2.EMPLOYEE_INFORMATION_B_INSERT' is invalid and failed re-validation
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:12:24 WARN  ReimbursementLogger:78 - Error Code: 4098
+2018-05-04 11:12:24 WARN  ReimbursementLogger:79 - SQL State: 42000
+2018-05-04 11:13:17 WARN  ReimbursementLogger:77 - ORA-04098: trigger 'DB_ADMIN2.EMPLOYEE_INFORMATION_B_INSERT' is invalid and failed re-validation
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:13:17 WARN  ReimbursementLogger:78 - Error Code: 4098
+2018-05-04 11:13:17 WARN  ReimbursementLogger:79 - SQL State: 42000
+2018-05-04 11:13:17 WARN  ReimbursementLogger:77 - ORA-04098: trigger 'DB_ADMIN2.EMPLOYEE_INFORMATION_B_INSERT' is invalid and failed re-validation
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:13:17 WARN  ReimbursementLogger:78 - Error Code: 4098
+2018-05-04 11:13:17 WARN  ReimbursementLogger:79 - SQL State: 42000
+2018-05-04 11:13:17 WARN  ReimbursementLogger:77 - ORA-04098: trigger 'DB_ADMIN2.EMPLOYEE_INFORMATION_B_INSERT' is invalid and failed re-validation
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:13:17 WARN  ReimbursementLogger:78 - Error Code: 4098
+2018-05-04 11:13:17 WARN  ReimbursementLogger:79 - SQL State: 42000
+2018-05-04 11:16:32 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:16:32 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:16:32 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:16:32 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:16:32 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:16:32 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:16:32 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:16:32 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:16:32 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:53:30 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:53:30 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:53:30 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:53:30 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:53:30 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:53:30 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:53:30 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:53:30 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:53:30 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:55:23 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:55:23 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:55:23 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:55:23 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:55:23 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:55:23 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:55:23 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:55:23 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:55:23 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:55:59 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:55:59 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:55:59 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:55:59 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:55:59 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:55:59 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-04 11:55:59 WARN  ReimbursementLogger:77 - ORA-08002: sequence EMPLOYEE_INFO_ID_SEQUENCE.CURRVAL is not yet defined in this session
+ORA-06512: at "DB_ADMIN2.EMPLOYEE_INFO_B_INSERT", line 3
+ORA-04088: error during execution of trigger 'DB_ADMIN2.EMPLOYEE_INFO_B_INSERT'
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 6
+ORA-06512: at line 1
+
+2018-05-04 11:55:59 WARN  ReimbursementLogger:78 - Error Code: 8002
+2018-05-04 11:55:59 WARN  ReimbursementLogger:79 - SQL State: 72000
+2018-05-08 14:42:16 WARN  ReimbursementLogger:52 - ORA-01000: maximum open cursors exceeded
+
+2018-05-08 14:42:17 WARN  ReimbursementLogger:53 - Error Code: 1000
+2018-05-08 14:42:17 WARN  ReimbursementLogger:54 - SQL State: 72000
+2018-05-08 14:42:17 WARN  ReimbursementLogger:52 - ORA-01000: maximum open cursors exceeded
+
+2018-05-08 14:42:17 WARN  ReimbursementLogger:53 - Error Code: 1000
+2018-05-08 14:42:17 WARN  ReimbursementLogger:54 - SQL State: 72000
+2018-05-08 15:07:38 WARN  ReimbursementLogger:93 - ORA-00001: unique constraint (DB_ADMIN2.SYS_C005421) violated
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 4
+ORA-06512: at line 1
+
+2018-05-08 15:07:38 WARN  ReimbursementLogger:94 - Error Code: 1
+2018-05-08 15:07:38 WARN  ReimbursementLogger:95 - SQL State: 23000
+2018-05-08 15:08:37 WARN  ReimbursementLogger:94 - ORA-00001: unique constraint (DB_ADMIN2.SYS_C005421) violated
+ORA-06512: at "DB_ADMIN2.INSERT_EMPLOYEE", line 4
+ORA-06512: at line 1
+
+2018-05-08 15:08:37 WARN  ReimbursementLogger:95 - Error Code: 1
+2018-05-08 15:08:37 WARN  ReimbursementLogger:96 - SQL State: 23000
+2018-05-08 22:22:09 WARN  ReimbursementLogger:114 - ORA-00001: unique constraint (DB_ADMIN2.SYS_C005421) violated
+ORA-06512: at "DB_ADMIN2.MODIFY_EMPLOYEE", line 4
+ORA-06512: at line 1
+
+2018-05-08 22:22:09 WARN  ReimbursementLogger:115 - Error Code: 1
+2018-05-08 22:22:09 WARN  ReimbursementLogger:116 - SQL State: 23000
+2018-05-08 23:35:31 WARN  ReimbursementLogger:35 - ORA-01400: cannot insert NULL into ("DB_ADMIN2"."REIMBURSEMENT"."REIMBURSEMENT_ID")
+ORA-06512: at "DB_ADMIN2.INSERT_REIMBURSEMENT", line 4
+ORA-06512: at line 1
+
+2018-05-08 23:35:31 WARN  ReimbursementLogger:36 - Error Code: 1400
+2018-05-08 23:35:31 WARN  ReimbursementLogger:37 - SQL State: 23000
+2018-05-08 23:37:06 WARN  ReimbursementLogger:35 - ORA-01400: cannot insert NULL into ("DB_ADMIN2"."REIMBURSEMENT"."REIMBURSEMENT_ID")
+ORA-06512: at "DB_ADMIN2.INSERT_REIMBURSEMENT", line 4
+ORA-06512: at line 1
+
+2018-05-08 23:37:06 WARN  ReimbursementLogger:36 - Error Code: 1400
+2018-05-08 23:37:06 WARN  ReimbursementLogger:37 - SQL State: 23000
+2018-05-09 20:31:05 WARN  ReimbursementLogger:82 - ORA-00001: unique constraint (DB_ADMIN2.SYS_C005421) violated
+ORA-06512: at "DB_ADMIN2.INSERT_MANAGER", line 4
+ORA-06512: at line 1
+
+2018-05-09 20:31:05 WARN  ReimbursementLogger:83 - Error Code: 1
+2018-05-09 20:31:05 WARN  ReimbursementLogger:84 - SQL State: 23000
+2018-05-09 21:28:38 WARN  ReimbursementLogger:109 - ORA-02291: integrity constraint (DB_ADMIN2.FK_FINANCIAL_MANAGER) violated - parent key not found
+ORA-06512: at "DB_ADMIN2.APPROVE_REIMBURSEMENT", line 5
+ORA-06512: at line 1
+
+2018-05-09 21:28:38 WARN  ReimbursementLogger:110 - SQL State: 23000
+2018-05-09 21:28:38 WARN  ReimbursementLogger:111 - Error Code: 2291
