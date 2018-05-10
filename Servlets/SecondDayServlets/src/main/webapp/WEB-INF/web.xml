@@ -1,0 +1,101 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <context-param>
+  	<param-name>anyServlet</param-name>
+  	<param-value>Any servlet can access this value, since it is a Context Param</param-value>
+  </context-param>
+  
+  <filter>
+  	<filter-name>HelloWorldFilter</filter-name>
+  	<filter-class>com.revature.servlets.HelloWorldFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>HelloWorldFilter</filter-name>
+  	<url-pattern>/InsertPokemonServlet</url-pattern>
+  </filter-mapping>
+  <servlet>
+  	<servlet-name>LazyServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.LazyServlet</servlet-class>
+  	<init-param>
+  		<param-name>lazy</param-name>
+  		<param-value>Only the LazyServlet can access this Init Param</param-value>
+  	</init-param>
+  </servlet>
+  <servlet>
+  	<servlet-name>IncludeServlet</servlet-name>
+  	<display-name>IncludeServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.IncludeServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ForwardServlet</servlet-name>
+  	<display-name>ForwardServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.ForwardServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SendRedirectServlet</servlet-name>
+  	<display-name>SendRedirectServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.SendRedirectServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>FormProcessingServlet</servlet-name>
+  	<display-name>FormProcessingServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.FormProcessingServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AjaxServlet</servlet-name>
+  	<display-name>AjaxServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.AjaxServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>InsertPokemonServlet</servlet-name>
+  	<display-name>InsertPokemonServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.InsertPokemonServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LazyServlet</servlet-name>
+  	<url-pattern>/LazyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>IncludeServlet</servlet-name>
+  	<url-pattern>/IncludeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ForwardServlet</servlet-name>
+  	<url-pattern>/ForwardServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SendRedirectServlet</servlet-name>
+  	<url-pattern>/SendRedirectServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FormProcessingServlet</servlet-name>
+  	<url-pattern>/FormProcessingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AjaxServlet</servlet-name>
+  	<url-pattern>*.ajax</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>InsertPokemonServlet</servlet-name>
+  	<url-pattern>/InsertPokemonServlet</url-pattern>
+  </servlet-mapping>
+
+  
+    
+  <welcome-file-list>
+  	<welcome-file>thisIsNotTheIndexDotHtmlFile.html</welcome-file>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
