@@ -20,7 +20,9 @@ public class App {
 //    	System.out.println(e.getFirstName());
 //    	e.setPassword("Password");
 //    	EmployeeService.updateEmployee(e);
-    	Employee e = new Employee("Benjamin", "J", "Franklin", "benny","password", false);
-    	EmployeeService.insertEmployee(e);
+    	Employee e = EmployeeService.getEmployee("ham");
+    	e.setPassword("password2");
+    	boolean update = EmployeeService.updateEmployee(e);
+    	System.out.println(update);
     }
 }

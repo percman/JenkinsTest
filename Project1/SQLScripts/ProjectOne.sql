@@ -62,19 +62,18 @@ BEGIN
     fetch c1 into e_id;
     CLOSE c1;
     
-    UPDATE employeeTable SET
-    userName = u_name, 
+    UPDATE employeeTable SET 
     userPassword = u_password 
     WHERE username = u_name;
-    
-    UPDATE INFOTABLE SET
+
+    UPDATE infotable SET
     firstName = f_name,
-    lastName = l_name,
+    lastName = l_name
     WHERE employeeid = e_id;
-    
-    COMMIT;
 END;
 /
+select * from infotable;
+
 commit;
 --Creating a stored procudure to insert employees
 CREATE OR REPLACE PROCEDURE insert_employee(u_name IN VARCHAR, u_password IN VARCHAR, 
@@ -104,7 +103,7 @@ CREATE SEQUENCE employee_sequence
     START WITH 1
     MINVALUE 0
     NOCACHE;
-
+-- trigger for hashing password and incrementing employee id
 CREATE OR REPLACE TRIGGER employee_before_insert
     BEFORE INSERT
     ON employeeTable
@@ -117,7 +116,16 @@ CREATE OR REPLACE TRIGGER employee_before_insert
         INTO :new.userPassword FROM dual;
     END;
     /
-
+CREATE OR REPLACE TRIGGER employee_before_insert
+    BEFORE INSERT
+    ON employeeTable
+    FOR EACH ROW
+    BEGIN
+        SELECT GET_USER_HASH(:new.userName, :new.userPassword)
+        INTO :new.userPassword FROM dual;
+    END;
+    /
+    
 SELECT * FROM EMPLOYEETABLE  OUTER JOIN INFOTABLE ON employeetable.EMPLOYEEID = infotable.employeeid;
 
 SELECT * FROM employeetable e,infotable i where e.employeeid = i.employeeid;
