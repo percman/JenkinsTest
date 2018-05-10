@@ -9,17 +9,19 @@
     <link rel="stylesheet" href="../ReimbursementCss/bootstrap.css/">
 </head>
 <body>
+			<%@ page import="com.revature.employee.GenericEmployee" %>
+			<%GenericEmployee emp = (GenericEmployee) request.getSession().getAttribute("authorizedUser"); %>
+            
             <div class="container">
                 <div class="jumbotron">
-                    <h1 class="display-4">Welcome Employee</h1>
+                    <h1 class="display-4">Welcome Home Employee, <%= emp.getFirstName() %></h1>
                     <hr class="my-4">
                 </div>
             </div>
-
             <div class="container">
                     <nav class="navbar navbar-inverse">
                             <div class="navbar-header col-md-2">
-                                <a href="./managerHome.html" class="navbar-brand">Home</a>
+                                <a href="./employeeHome.jsp" class="navbar-brand">Home</a>
                             </div>
                             <ul class="navbar-nav nav col-md-6">
                                 <li><a href="./employeeInfo.jsp">Info</a></li>
@@ -27,7 +29,7 @@
                                 <li><a href="./submitEmployeeReimburstment.jsp">Submit</a></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
-                                <li><a href="#">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
+                                <li><a href="logout.do">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
                             </ul>
                         
                     </nav>

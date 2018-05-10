@@ -92,8 +92,6 @@ public class ManagerDaoImpl implements ManagerDao {
 				int index = 0;
 				try (Connection conn = ConnectionUtil.getConnection()) {
 					PreparedStatement stmt = conn.prepareStatement("SELECT GET_EMP_HASH(?,?)AS HASH FROM dual");
-					String name = man.getUsername();
-					String pass = man.getPassword();
 					stmt.setString(++index, man.getUsername());
 					stmt.setString(++index, man.getPassword());
 					ResultSet rs = stmt.executeQuery();

@@ -19,7 +19,7 @@
             <div class="container">
                     <nav class="navbar navbar-inverse">
                             <div class="navbar-header col-md-2">
-                                <a href="./managerHome.html" class="navbar-brand">Home</a>
+                                 <a href="./managerHome.jsp" class="navbar-brand">Home</a>
                             </div>
                             <ul class="navbar-nav nav col-md-6">
                                 <li><a href="./managerInfo.jsp">Info</a></li>
@@ -28,11 +28,33 @@
                                 <li><a href="./approveReimburstment.jsp">Approve</a>></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
-                                <li><a href="#">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
+                                <li><a href="logout.do">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
                             </ul>
                         
                     </nav>
                 </div>
+                
+                <div class="container">
+                <div class="page-header">
+                    <h2>Your Reimbursments</h2>
+                </div>
+                <table class="table table-responsive table-stripped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Amount</th>
+                            <th>Date Submitted</th>
+                            <th>Submitting Employee</th>
+                            <th>Status</th>
+                            <th>Date Approved </th>
+                            <th>Approving Manager</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id = "ManagerReimbursments"></tbody>
+                </table>
+            </div>
+                
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

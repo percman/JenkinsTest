@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../ReimbursementCss/bootstrap.css/">
 </head>
 <body>
+			<%@ page import="com.revature.employee.FinanceManager" %>
+			<%FinanceManager man = (FinanceManager) request.getSession().getAttribute("authorizedUser"); %>
             <div class="container">
                 <div class="jumbotron">
                     <h1 class="display-4">view your info</h1>
@@ -19,7 +21,7 @@
             <div class="container">
                     <nav class="navbar navbar-inverse">
                             <div class="navbar-header col-md-2">
-                                <a href="./managerHome.html" class="navbar-brand">Home</a>
+                                <a href="./managerHome.jsp" class="navbar-brand">Home</a>
                             </div>
                             <ul class="navbar-nav nav col-md-6">
                                 <li class="active"><a href="./managerInfo.jsp">Info</a></li>
@@ -28,16 +30,16 @@
                                 <li><a href="./approveReimburstment.jsp">Approve</a>></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
-                                <li><a href="#">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
+                                <li><a href="logout.do">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
                             </ul>
                         
                     </nav>
                 </div>
-                <div class = "well">
+                 <div class = "well">
                         <div class="container">
                             <div class="col-md-2">
-                                <h5>Name: <span id = "First name"></span></h5>
-                                <h5>Primary: <span id = "Last name"></span></h5>
+                                <h5>Name: <%= man.getFirstName() %><span id = "First name"></span></h5>
+                                <h5>Primary: <%= man.getLastName() %> <span id = "Last name"></span></h5>
                             </div>
                      </div>
                 </div>

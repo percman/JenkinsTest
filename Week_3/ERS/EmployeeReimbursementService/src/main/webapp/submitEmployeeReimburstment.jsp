@@ -19,7 +19,7 @@
             <div class="container">
                     <nav class="navbar navbar-inverse">
                             <div class="navbar-header col-md-2">
-                                <a href="./employeeHome.html" class="navbar-brand">Home</a>
+                                <a href="./employeeHome.jsp" class="navbar-brand">Home</a>
                             </div>
                             <ul class="navbar-nav nav col-md-6">
                                 <li><a href="./employeeInfo.jsp">Info</a></li>
@@ -27,7 +27,7 @@
                                 <li  class="active"><a href="./submitEmployeeReimburstment.jsp">Submit</a></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
-                                <li><a href="#">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
+                                <li><a href="logout.do">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
                             </ul>
                         
                     </nav>

@@ -24,7 +24,6 @@ public class LoginService {
 			//Login logic
 			try {
 				FinanceManager man = ManagerService.getManager(username);
-				String pass = ManagerService.getPasswordHash(new FinanceManager(username,password));
 				if(man.getPassword().equals(ManagerService.getPasswordHash(new FinanceManager(username,password)))) {
 					FinanceManager authorized = man;
 					request.getSession().setAttribute("authorizedUser", authorized);
@@ -33,8 +32,6 @@ public class LoginService {
 			} catch (EmployeeNotFoundException enfe) {
 				try {
 					GenericEmployee emp = EmployeeService.getEmployee(username);
-					System.out.println(emp.getPassword());
-					System.out.println(EmployeeService.getPasswordHash(new GenericEmployee(username,password)));
 					if(emp.getPassword().equals(EmployeeService.getPasswordHash(new GenericEmployee(username,password)))) {
 						GenericEmployee authorized = emp;
 						request.getSession().setAttribute("authorizedUser", authorized);
@@ -48,7 +45,7 @@ public class LoginService {
 			return "index.jsp";
 		}
 		public static String logout(HttpServletRequest request, HttpServletResponse responce) {
-			request.getSession().setAttribute("authorizedUser", new GenericEmployee());
+			request.getSession().removeAttribute("authorizedUser");
 			return "index.jsp";
 		}
 	}

@@ -41,6 +41,7 @@ END;
 CREATE OR REPLACE PROCEDURE insert_gen_employee (new_Fname IN VARCHAR2, new_Lname IN VARCHAR2,new_id IN NUMBER)
 AS
 BEGIN
+    Delete from generic_employee where gen_emp_id = new_id;
     INSERT INTO GENERIC_EMPLOYEE VALUES(new_Fname,new_Lname,new_id);
 END;
 /
@@ -48,6 +49,7 @@ END;
 CREATE OR REPLACE PROCEDURE insert_manager (new_Fname IN VARCHAR2, new_Lname IN VARCHAR2,new_id IN NUMBER)
 AS
 BEGIN
+    Delete from generic_employee where gen_emp_id = new_id;
     INSERT INTO finance_manager VALUES(new_Fname,new_Lname,new_id);
 END;
 /
@@ -66,6 +68,15 @@ BEGIN
     SELECT emp_id_sequence.nextval INTO : new.emp_id FROM dual;
     END IF;
     Update EMPLOYEE SET EMP_PASSWORD = get_emp_hash(:new.emp_username,:new.emp_password) where EMP_USERNAME = :new.emp_username;
+END;
+/
+
+CREATE OR REPLACE TRIGGER gen_emp_insert
+After INSERT 
+ON employee
+FOR EACH ROW 
+BEGIN
+    insert_gen_employee('','',:new.emp_id);
 END;
 /
 
@@ -108,3 +119,13 @@ BEGIN
     END IF;
 END;
 /
+
+
+
+Begin
+insert_employee('max','password');
+end;
+/
+commit;
+delete from EMPLOYEE where emp_id = 10 or emp_id = 13;
+select * from GENERIC_EMPLOYEE;
