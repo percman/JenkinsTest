@@ -3,9 +3,9 @@ package dao;
 import model.Employee;
 
 public interface EmployeeDao {
-	boolean createEmployee(int inManagerId, String inUsername, String inPassword);
-	Employee readEmployee(int inEmployeeId);
-	boolean updateEmployee(int inEmployeeId, int inManagerId, String inUsername, String inPassword);
-	boolean deleteEmployee(int inEmployeeId);
+	boolean createEmployee(String inUsername, String inPassword);
+	Employee readEmployee(String inUsername);
+	boolean updateEmployee(String inManagerUsername, String inUsername, String inPassword);
+	boolean deleteEmployee(String inUsername);
 }
 	

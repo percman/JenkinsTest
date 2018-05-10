@@ -6,7 +6,8 @@ public class Information {
 	private String firstname;
 	private String middlename;
 	private String lastname;
-	public Information(int informationid, int employeeid, String firstname, String middlename, String lastname) {
+	public Information(int informationid, int employeeid, String firstname, 
+			String middlename, String lastname) {
 		super();
 		this.informationid = informationid;
 		this.employeeid = employeeid;

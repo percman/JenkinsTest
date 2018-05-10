@@ -12,16 +12,16 @@ import designpattern.ConnectionUtil;
 
 public class ConnectionUtilTest {
 	static Logger logger;
-	public static ConnectionUtil connectionUtil;
+	public static Connection connection;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		logger = Logger.getLogger(Connection.class);
-		connectionUtil = ConnectionUtil.getInstance(logger);
+		connection = ConnectionUtil.connect(logger);
 	}
 
 	@Test
 	public void testGetInstance() {	
-		assertNotNull(connectionUtil.getConnection());
+		assertNotNull(connection);
 	}
 }

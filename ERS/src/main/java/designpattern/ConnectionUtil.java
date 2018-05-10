@@ -12,11 +12,15 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 public class ConnectionUtil {
-	private static ConnectionUtil connectionUtil;
-	private Connection connection;
 	private Logger logger;
 	
 	private ConnectionUtil(Logger logger) {
+		this.logger = logger;
+	}
+	public Logger getLogger() {
+		return logger;
+	}
+	public static Connection connect(Logger logger) {
 		InputStream in = null;
 		Properties props = new Properties();
 		try {
@@ -26,33 +30,18 @@ public class ConnectionUtil {
 			String username = props.getProperty("jdbc.username");
 			String password = props.getProperty("jdbc.password");
 			
-			connection = DriverManager.getConnection(url, username, password);
+			return DriverManager.getConnection(url, username, password);
 		} catch (SQLException sqle) {	
 			logger.error("SQL State: " + sqle.getSQLState());
 			logger.error("Error Code: " + sqle.getErrorCode());
 			logger.error(sqle.getMessage());
-			connection = null;
+			return null;
 		} catch (FileNotFoundException fnfe) {
 			logger.error(fnfe);
-			connection = null;
+			return null;
 		} catch (IOException ioe) {
 			logger.error(ioe);
-			connection = null;
+			return null;
 		}
-	}
-	public static ConnectionUtil getConnectionUtil() {
-		return connectionUtil;
-	}
-	public Connection getConnection() {
-		return connection;
-	}
-	public Logger getLogger() {
-		return logger;
-	}
-	public static ConnectionUtil getInstance(Logger logger) {
-		if(connectionUtil == null) {
-			connectionUtil = new ConnectionUtil(logger);
-		}
-		return connectionUtil;
 	}	
 }
