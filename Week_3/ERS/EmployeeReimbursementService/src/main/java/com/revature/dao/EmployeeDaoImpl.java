@@ -50,7 +50,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			// TODO Auto-generated method stub
 			try(Connection conn = ConnectionUtil.getConnection()){
 				List<GenericEmployee> emp= new ArrayList<>();
-				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENERIC_EMPLOYEE ON gen_emp_id = emp_id ");
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENERIC_EMPLOYEE ON gen_emp_id = EMPLOYEE.EMP_ID");
 				ResultSet rs = stmt.executeQuery();
 				
 				while(rs.next()) {
@@ -69,7 +69,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		public GenericEmployee getEmployee(String emp) throws EmployeeNotFoundException {
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
-				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENERIC_EMPLOYEE ON emp_username = ?");
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Generic_employee INNER JOIN EMPLOYEE ON Generic_employee.gen_emp_ID = EMPLOYEE.EMP_ID where gen_emp_id in (SELECT emp_id from EMPLOYEE where EMP_USERNAME = ?)");
 				stmt.setString(++index, emp);
 				ResultSet rs = stmt.executeQuery();
 				

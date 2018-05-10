@@ -65,7 +65,7 @@ BEGIN
     IF :new.emp_id IS NULL THEN
     SELECT emp_id_sequence.nextval INTO : new.emp_id FROM dual;
     END IF;
-    SELECT GET_EMP_HASH(:NEW.emp_username, :new.emp_password) INTO :new.emp_password FROM dual;
+    Update EMPLOYEE SET EMP_PASSWORD = get_emp_hash(:new.emp_username,:new.emp_password) where EMP_USERNAME = :new.emp_username;
 END;
 /
 
@@ -77,6 +77,7 @@ BEGIN
   INPUT => UTL_I18N.STRING_TO_RAW(DATA => USERNAME || PASSWORD || EXTRA)));
 END;
 /
+
 
 CREATE OR REPLACE PROCEDURE insert_reimbursement (new_category IN VARCHAR2, new_submitter_id IN NUMBER)
 AS
@@ -105,11 +106,5 @@ BEGIN
     IF :new.rebur_id IS NULL THEN
     SELECT rebur_id_sequence.nextval INTO : new.rebur_id FROM dual;
     END IF;
-END;
-/
-
-
-BEGIN
-INSERT_EMPLOYEE('Fred','pass');
 END;
 /

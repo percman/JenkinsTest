@@ -48,7 +48,7 @@ public class ManagerDaoImpl implements ManagerDao {
 			public List<FinanceManager> getManagers() {
 				try(Connection conn = ConnectionUtil.getConnection()){
 					List<FinanceManager> man= new ArrayList<>();
-					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN FINANCE_MANAGER ON man_id = emp_id ");
+					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN FINANCE_MANAGER ON man_id = EMPLOYEE.EMP_ID ");
 					ResultSet rs = stmt.executeQuery();
 					
 					while(rs.next()) {
@@ -67,7 +67,7 @@ public class ManagerDaoImpl implements ManagerDao {
 			public FinanceManager getManager(String man) throws EmployeeNotFoundException {
 				int index = 0;
 				try(Connection conn = ConnectionUtil.getConnection()){
-					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN FINANCE_MANAGER ON emp_username = ?");
+					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM FINANCE_MANAGER INNER JOIN EMPLOYEE ON FINANCE_MANAGER.MAN_ID = EMPLOYEE.EMP_ID where man_id in (SELECT emp_id from EMPLOYEE where EMP_USERNAME = ?)");
 					stmt.setString(++index, man);
 					ResultSet rs = stmt.executeQuery();
 					
@@ -92,6 +92,8 @@ public class ManagerDaoImpl implements ManagerDao {
 				int index = 0;
 				try (Connection conn = ConnectionUtil.getConnection()) {
 					PreparedStatement stmt = conn.prepareStatement("SELECT GET_EMP_HASH(?,?)AS HASH FROM dual");
+					String name = man.getUsername();
+					String pass = man.getPassword();
 					stmt.setString(++index, man.getUsername());
 					stmt.setString(++index, man.getPassword());
 					ResultSet rs = stmt.executeQuery();

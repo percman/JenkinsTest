@@ -11,9 +11,19 @@
 		<description></description>
 		<servlet-class>com.revature.services.MasterServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<display-name>CreateUserServlet</display-name>
+		<description></description>
+		<servlet-class>com.revature.services.CreateUserServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>MasterServlet</servlet-name>
 		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<url-pattern>/CreateUserServlet</url-pattern>
 	</servlet-mapping>
 <resource-ref>
  <description>employee database</description>

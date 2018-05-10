@@ -24,8 +24,8 @@ public class LoginService {
 			//Login logic
 			try {
 				FinanceManager man = ManagerService.getManager(username);
-				//if(man.getPassword().equals(ManagerService.getPasswordHash(new FinanceManager(username,password)))) {
-					if(password.equals("password")) {
+				String pass = ManagerService.getPasswordHash(new FinanceManager(username,password));
+				if(man.getPassword().equals(ManagerService.getPasswordHash(new FinanceManager(username,password)))) {
 					FinanceManager authorized = man;
 					request.getSession().setAttribute("authorizedUser", authorized);
 					return "/managerHome.do";
@@ -33,8 +33,9 @@ public class LoginService {
 			} catch (EmployeeNotFoundException enfe) {
 				try {
 					GenericEmployee emp = EmployeeService.getEmployee(username);
-					//if(emp.getPassword().equals(EmployeeService.getPasswordHash(new GenericEmployee(username,password)))) {
-					if(password.equals("password")) {
+					System.out.println(emp.getPassword());
+					System.out.println(EmployeeService.getPasswordHash(new GenericEmployee(username,password)));
+					if(emp.getPassword().equals(EmployeeService.getPasswordHash(new GenericEmployee(username,password)))) {
 						GenericEmployee authorized = emp;
 						request.getSession().setAttribute("authorizedUser", authorized);
 						return "/employeeHome.do";

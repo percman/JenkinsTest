@@ -28,7 +28,7 @@
 			</form>
 		</div>
 	</div>
-	<p>new user<a href ="/createUser.jsp">click here</a></p>
+	<p>new user<a href ="/EmployeeReimbursementService/createUser.jsp"> click here</a></p>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script

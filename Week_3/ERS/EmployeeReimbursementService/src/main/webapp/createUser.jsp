@@ -17,7 +17,7 @@
             </div>
 
             <div class = "col-md-3 col-md-offset-5">
-                    <form action-"#">
+                    <form action="">
                         <div class="form-group well">
                             <label for="Username"><strong>Username</strong></label>
                             <input type="text" name="username" id="username" required class = "form-control">
@@ -25,17 +25,15 @@
                             <label for="Password"><strong>Password</strong></label>
                             <input type="text" name="password" id="password" required class = "form-control">
                             
-                            <label for="Confirm Password"><strong>Confirm Password</strong></label>
-                            <input type="text" name="confirm password" id="confirm password" required class = "form-control">
-
                             <label for="FirstName"><strong>First Name</strong></label>
                             <input type="text" name="firstname" id="firstname"class = "form-control">
                            
-                            <label for="LastName"><strong>Password</strong></label>
+                            <label for="LastName"><strong>Last Name</strong></label>
                             <input type="text" name="lastname" id="lastname"class = "form-control">
                             <br>
-                            <button id ="submitBtn" class="btn btn-primary" type ="button">Submit</button>
+                            <button id ="submitBtn" class="btn btn-primary" id="userSubmit" type ="button">Submit</button>
                         </div>
+                        <script src = "./userCreation.js"></script> 
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

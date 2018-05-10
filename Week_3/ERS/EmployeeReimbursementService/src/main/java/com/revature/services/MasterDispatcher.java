@@ -13,6 +13,8 @@ private MasterDispatcher() {
 			
 		case "/EmployeeReimbursementService/login.do": 
 			return LoginService.login(request, responce);
+		case"/EmployeeReimbursementService/logout.do":
+			return LoginService.logout(request, responce);
 		case "/EmployeeReimbursementService/managerHome.do": 
 			return ManagerHomeService.home(request, responce);
 		case "/EmployeeReimbursementService/employeeHome.do": 
