@@ -52,7 +52,7 @@ public class ManagerDaoImpl implements ManagerDao {
 					ResultSet rs = stmt.executeQuery();
 					
 					while(rs.next()) {
-						man.add(new FinanceManager(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Man_First_Name"),rs.getString("Man_Last_Name"), rs.getInt("emp_id")));
+						man.add(new FinanceManager(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Man_First_Name"),rs.getString("Man_Last_Name"), rs.getString("man_email"),rs.getString("man_address"),rs.getInt("emp_id")));
 					}
 					return man;
 				} catch(SQLException sqle) {
@@ -72,7 +72,7 @@ public class ManagerDaoImpl implements ManagerDao {
 					ResultSet rs = stmt.executeQuery();
 					
 					if (rs.next())
-						return new FinanceManager(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Man_First_Name"),rs.getString("Man_Last_Name"), rs.getInt("emp_id"));
+						return new FinanceManager(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Man_First_Name"),rs.getString("Man_Last_Name"), rs.getString("man_email"),rs.getString("man_address"), rs.getInt("emp_id"));
 				} catch(SQLException sqle) {
 					logger.error(sqle.getMessage(), sqle);
 					logger.error(sqle.getSQLState(),sqle);
@@ -82,10 +82,24 @@ public class ManagerDaoImpl implements ManagerDao {
 			}
 
 			@Override
-			public boolean updateInfo(FinanceManager man) throws EmployeeNotFoundException {
-				// TODO Auto-generated method stub
-				return false;
+			public boolean updateInfo(int id,String fName,String lName, String email, String add) throws EmployeeNotFoundException {
+				int index = 0;
+				try(Connection conn = ConnectionUtil.getConnection()){
+					PreparedStatement stmt = conn.prepareStatement("{CALL update_man(?,?,?,?,?)}");
+					stmt.setInt(++index, id);
+					stmt.setString(++index,fName);
+					stmt.setString(++index,lName);
+					stmt.setString(++index,email);
+					stmt.setString(++index,add);
+					return stmt.execute();
+				} catch(SQLException sqle) {
+					logger.error(sqle.getMessage(), sqle);
+					logger.error(sqle.getSQLState(),sqle);
+					logger.error(sqle.getErrorCode(),sqle);
+				} 
+				throw new EmployeeNotFoundException();
 			}
+			
 			
 			@Override
 			public String getPasswordHash(FinanceManager man){

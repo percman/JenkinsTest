@@ -5,20 +5,25 @@ emp_id     NUMBER,
 CONSTRAINT uk_emp_username UNIQUE (emp_username),
 CONSTRAINT pk_emp_id PRIMARY KEY(emp_id));
 
+
 CREATE TABLE generic_employee(
-emp_first_name VARCHAR2(30),
-emp_last_name VARCHAR2(30),
+emp_first_name VARCHAR2(30) default '',
+emp_last_name VARCHAR2(30) default '',
+emp_email VARCHAR2(50) default '',
+emp_address VARCHAR2(50) default'',
 gen_emp_id NUMBER,
-CONSTRAINT fk_generic_id FOREIGN KEY(gen_emp_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
-CONSTRAINT pk_generic_id PRIMARY KEY(gen_emp_id));
+CONSTRAINT fk_gen_id FOREIGN KEY(gen_emp_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
+CONSTRAINT pk_gen_id PRIMARY KEY(gen_emp_id));
+
 
 CREATE TABLE finance_manager(
-man_first_name VARCHAR2(30),
-man_last_name VARCHAR2(30),
-man_id NUMBER,
-CONSTRAINT FK_id FOREIGN KEY(man_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
-CONSTRAINT pk_manager_id PRIMARY KEY(man_id));
-
+man_first_name VARCHAR2(30)default '',
+man_last_name VARCHAR2(30) default '',
+man_email VARCHAR2(50) default '',
+man_address VARCHAR2(50) default'',
+man_id NUMBER ,
+CONSTRAINT FK_man_id FOREIGN KEY(man_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
+CONSTRAINT pk_man_id PRIMARY KEY(man_id));
 
 CREATE TABLE reimbursement(
 rebur_id NUMBER,
@@ -35,22 +40,6 @@ CREATE OR REPLACE PROCEDURE insert_employee (new_name IN VARCHAR2, new_pass IN V
 AS
 BEGIN
     INSERT INTO EMPLOYEE(emp_username,emp_password,emp_id) VALUES(new_name,new_pass,NULL);
-END;
-/
-
-CREATE OR REPLACE PROCEDURE insert_gen_employee (new_Fname IN VARCHAR2, new_Lname IN VARCHAR2,new_id IN NUMBER)
-AS
-BEGIN
-    Delete from generic_employee where gen_emp_id = new_id;
-    INSERT INTO GENERIC_EMPLOYEE VALUES(new_Fname,new_Lname,new_id);
-END;
-/
-
-CREATE OR REPLACE PROCEDURE insert_manager (new_Fname IN VARCHAR2, new_Lname IN VARCHAR2,new_id IN NUMBER)
-AS
-BEGIN
-    Delete from generic_employee where gen_emp_id = new_id;
-    INSERT INTO finance_manager VALUES(new_Fname,new_Lname,new_id);
 END;
 /
 
@@ -76,7 +65,7 @@ After INSERT
 ON employee
 FOR EACH ROW 
 BEGIN
-    insert_gen_employee('','',:new.emp_id);
+    insert into GENERIC_EMPLOYEE(gen_emp_id) values(:new.emp_id);
 END;
 /
 
@@ -103,6 +92,50 @@ BEGIN
     UPDATE reimbursement SET approver_id = new_approver_id WHERE REBUR_ID = new_rebur_id;
 END;
 /
+
+CREATE OR REPLACE PROCEDURE update_emp(up_id in NUMBER, new_fname in NVARCHAR2, new_lname in NVARCHAR2, new_email in NVARCHAR2, new_add in NVARCHAR2)
+AS
+BEGIN
+IF new_fname IS NOT NULL THEN
+    Update GENERIC_EMPLOYEE set emp_first_name = new_fname where up_id = gen_emp_id;
+END IF;
+IF new_lname IS NOT NULL THEN
+    Update GENERIC_EMPLOYEE set emp_last_name = new_lname where up_id = gen_emp_id;
+END IF;
+IF new_email IS NOT NULL THEN
+    Update GENERIC_EMPLOYEE set emp_email = new_email where up_id = gen_emp_id;
+END IF;
+IF new_add IS NOT NULL THEN
+    Update GENERIC_EMPLOYEE set emp_address = new_add where up_id = gen_emp_id;
+END IF;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE upgrade(new_id in Number)
+AS
+Begin
+insert into FINANCE_MANAGER(man_id) values(new_id);
+End;
+/
+
+CREATE OR REPLACE PROCEDURE update_man(up_id in NUMBER, new_fname in NVARCHAR2, new_lname in NVARCHAR2, new_email in NVARCHAR2, new_add in NVARCHAR2)
+AS
+BEGIN
+delete from GENERIC_EMPLOYEE where gen_emp_id = up_id;
+IF new_fname IS NOT NULL THEN
+    Update FINANCE_MANAGER set man_first_name = new_fname where man_id = up_id;
+END IF;
+IF new_lname IS NOT NULL THEN
+    Update FINANCE_MANAGER set man_last_name = new_lname where man_id = up_id;
+END IF;
+IF new_email IS NOT NULL THEN
+    Update FINANCE_MANAGER set man_email = new_email where man_id = up_id;
+END IF;
+IF new_add IS NOT NULL THEN
+    Update FINANCE_MANAGER set man_address = new_add where man_id = up_id;
+END IF;
+END;
+/
     
 CREATE SEQUENCE rebur_id_sequence
     MAXVALUE 10000
@@ -120,12 +153,15 @@ BEGIN
 END;
 /
 
+select * from generic_employee;
+select * from FINANCE_MANAGER;
+select * from employee;
 
+Update FINANCE_MANAGER set man_first_name = 'matt' where man_id = 2;
 
 Begin
-insert_employee('max','password');
+UPDATE_MAN(2,'matt','smith','','');
 end;
 /
+
 commit;
-delete from EMPLOYEE where emp_id = 10 or emp_id = 13;
-select * from GENERIC_EMPLOYEE;

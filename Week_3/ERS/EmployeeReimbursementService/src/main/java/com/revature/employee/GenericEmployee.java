@@ -1,18 +1,20 @@
 package com.revature.employee;
 
 public class GenericEmployee implements Employee {
-private String username,password, firstName, lastName;
+private String username,password, firstName, lastName, email, address;
 private int id;
 
 public GenericEmployee() {
 	
 }
-public GenericEmployee(String username, String password, String firstName, String lastName, int id) {
+public GenericEmployee(String username, String password, String firstName, String lastName, String email, String address, int id) {
 	super();
 	this.username = username;
 	this.password = password;
 	this.firstName = firstName;
 	this.lastName = lastName;
+	this.email = email;
+	this.address = address;
 	this.id = id;
 }
 public GenericEmployee(String username, String password, int id) {
@@ -57,6 +59,18 @@ public int getId() {
 }
 public void setId(int id) {
 	this.id = id;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
 }
 @Override
 public int hashCode() {

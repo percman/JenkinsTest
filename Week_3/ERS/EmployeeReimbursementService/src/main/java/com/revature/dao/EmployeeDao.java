@@ -14,7 +14,7 @@ public interface EmployeeDao {
 
 	public GenericEmployee getEmployee(String emp) throws EmployeeNotFoundException;
 	
-	public boolean updateInfo(GenericEmployee emp) throws EmployeeNotFoundException;
+	public boolean updateInfo(int id,String fName,String lName, String email, String add) throws EmployeeNotFoundException;
 
 	String getPasswordHash(GenericEmployee emp);
 }

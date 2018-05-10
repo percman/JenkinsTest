@@ -19,8 +19,11 @@ private MasterDispatcher() {
 			return ManagerHomeService.home(request, responce);
 		case "/EmployeeReimbursementService/employeeHome.do": 
 			return EmployeeHomeService.home(request, responce);
-			
-			default: return "404.jsp";
+		case"/EmployeeReimbursementService/updateEmployee.do":
+			return UpdateService.updateEmployee(request, responce);
+		case"/EmployeeReimbursementService/updateManager.do":
+			return UpdateService.updateManager(request, responce);	
+		default: return "404.jsp";
 		}
 	}
 }

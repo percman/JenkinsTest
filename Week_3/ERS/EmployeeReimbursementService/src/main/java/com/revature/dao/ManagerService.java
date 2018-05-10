@@ -20,8 +20,8 @@ public static FinanceManager getManager(String man) throws EmployeeNotFoundExcep
 	return dao.getManager(man);
 }
 
-public static boolean updateInfo(FinanceManager man) throws EmployeeNotFoundException{
-	return dao.updateInfo(man);
+public static boolean updateInfo(int id,String fName,String lName, String email, String add) throws EmployeeNotFoundException{
+	return dao.updateInfo(id,fName,lName,email,add);
 }
 
 public static String getPasswordHash(FinanceManager man) {

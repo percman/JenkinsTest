@@ -29,6 +29,9 @@
                                 <li><a href="./submitManagerReimburstment.jsp">Submit</a></li>
                                 <li><a href="./approveReimburstment.jsp">Approve</a>></li>
                             </ul>
+                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-4">
+                            <li><a href="createManager.jsp">Update Info<span class="glyphicon glyphicon-cog"></span></a></li>
+                            </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
                                 <li><a href="logout.do">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
                             </ul>
@@ -40,6 +43,8 @@
                             <div class="col-md-2">
                                 <h5>Name: <%= man.getFirstName() %><span id = "First name"></span></h5>
                                 <h5>Primary: <%= man.getLastName() %> <span id = "Last name"></span></h5>
+                                <h5>Email: <%= man.getEmail() %><span id = "Email"></span></h5>
+                                <h5>Address: <%= man.getAddress() %> <span id = "Address"></span></h5>
                             </div>
                      </div>
                 </div>

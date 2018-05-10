@@ -16,11 +16,11 @@
                 </div>
             </div>
 			
-			<%@ page import="com.revature.employee.GenericEmployee" %>
-			<%GenericEmployee emp = (GenericEmployee) request.getSession().getAttribute("authorizedUser"); %>
+			<%@ page import="com.revature.employee.FinanceManager" %>
+			<%FinanceManager man = (FinanceManager) request.getSession().getAttribute("authorizedUser"); %>
 			
             <div class = "col-md-3 col-md-offset-5">
-                    <form action="updateEmployee.do" method ="post">
+                    <form action="updateManager.do" method ="post">
                         <div class="form-group well">
                             <label for="firstname"><strong>FirstName</strong></label>
                             <input type="text" name="firstname" id="firstname"class = "form-control">
@@ -34,11 +34,13 @@
                             <label for="address"><strong>Address</strong></label>
                             <input type="text" name="address" id="address"class = "form-control">
                             
-                             <input type="hidden" name="id" value=<%= emp.getId() %>>
+                             <input type="hidden" name="id" value=<%= man.getId() %>>
                             <br>
-                            <button id ="submitBtn" class="btn btn-primary" id="empUpdateSubmit" type ="button">Submit</button>
+                            <button id ="submitBtn" class="btn btn-primary" id="userSubmit" type ="button">Submit</button>
                         </div>
-                        </form> 
+                        </form>
+                        </div>
+                        <script src = "./userCreation.js"></script> 
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

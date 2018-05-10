@@ -54,7 +54,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				ResultSet rs = stmt.executeQuery();
 				
 				while(rs.next()) {
-					emp.add(new GenericEmployee(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Emp_First_Name"),rs.getString("Emp_Last_Name"), rs.getInt("emp_id")));
+					emp.add(new GenericEmployee(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Emp_First_Name"),rs.getString("Emp_Last_Name"),rs.getString("Emp_email"),rs.getString("Emp_address"), rs.getInt("emp_id")));
 				}
 				return emp;
 			} catch(SQLException sqle) {
@@ -74,7 +74,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				ResultSet rs = stmt.executeQuery();
 				
 				if (rs.next())
-					return new GenericEmployee(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Emp_First_Name"),rs.getString("Emp_Last_Name"), rs.getInt("emp_id"));
+					return new GenericEmployee(rs.getString("emp_username"), rs.getString("emp_password"),rs.getString("Emp_First_Name"),rs.getString("Emp_Last_Name"),rs.getString("Emp_email"),rs.getString("Emp_address"), rs.getInt("emp_id"));
 			} catch(SQLException sqle) {
 				logger.error(sqle.getMessage(), sqle);
 				logger.error(sqle.getSQLState(),sqle);
@@ -84,9 +84,22 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 
 		@Override
-		public boolean updateInfo(GenericEmployee emp) throws EmployeeNotFoundException {
-			// TODO Auto-generated method stub
-			return false;
+		public boolean updateInfo(int id,String fName,String lName, String email, String add) throws EmployeeNotFoundException {
+			int index = 0;
+			try(Connection conn = ConnectionUtil.getConnection()){
+				PreparedStatement stmt = conn.prepareStatement("{CALL update_emp(?,?,?,?,?)}");
+				stmt.setInt(++index, id);
+				stmt.setString(++index,fName);
+				stmt.setString(++index,lName);
+				stmt.setString(++index,email);
+				stmt.setString(++index,add);
+				return stmt.execute();
+			} catch(SQLException sqle) {
+				logger.error(sqle.getMessage(), sqle);
+				logger.error(sqle.getSQLState(),sqle);
+				logger.error(sqle.getErrorCode(),sqle);
+			} 
+			throw new EmployeeNotFoundException();
 		}
 
 		@Override

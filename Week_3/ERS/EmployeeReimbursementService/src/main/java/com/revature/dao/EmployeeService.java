@@ -20,8 +20,8 @@ public static GenericEmployee getEmployee(String emp) throws EmployeeNotFoundExc
 	return dao.getEmployee(emp);
 }
 
-public static boolean updateInfo(GenericEmployee emp) throws EmployeeNotFoundException{
-	return dao.updateInfo(emp);
+public static boolean updateInfo(int id,String fName,String lName, String email, String add) throws EmployeeNotFoundException{
+	return dao.updateInfo(id,fName,lName,email,add);
 }
 
 public static String getPasswordHash(GenericEmployee emp) {

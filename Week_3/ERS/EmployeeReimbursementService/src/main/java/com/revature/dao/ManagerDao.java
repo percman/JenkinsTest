@@ -13,7 +13,7 @@ public interface ManagerDao {
 
 	public FinanceManager getManager(String man) throws EmployeeNotFoundException;
 	
-	public boolean updateInfo(FinanceManager man) throws EmployeeNotFoundException;
+	public boolean updateInfo(int id,String fName,String lName, String email, String add) throws EmployeeNotFoundException;
 
 	String getPasswordHash(FinanceManager man);
 
