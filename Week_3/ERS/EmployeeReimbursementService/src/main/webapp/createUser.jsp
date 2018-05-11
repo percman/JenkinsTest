@@ -19,34 +19,44 @@
 			<%@ page import="com.revature.employee.GenericEmployee" %>
 			<%GenericEmployee emp = (GenericEmployee) request.getSession().getAttribute("authorizedUser"); %>
 			
-           <div class="col-md-6 col-offset-4">
-			<form action="updateManager.do" method="post">
+           <div class="col-md-4 col-offset-2">
+			<form action="updateEmployee.do" method="post">
 			<div class = "form-group well">
 				<div class="form-group">
 					<label for="firstname"><strong>FirstName</strong></label>
-					<input type="text" name="firstname" id="firstname" class="form-control">
+					<input type="text" name="firstname" id="firstname" class="form-control" placeholder=<%= emp.getFirstName() %>>
 				</div>
 				<div class="form-group">
 				 	<label for="lastname"><strong>LastName</strong></label>
-					<input type="text" name="lastname" id="lastname" class="form-control">
+					<input type="text" name="lastname" id="lastname" class="form-control"  placeholder=<%= emp.getLastName() %>>
 				</div>
 				<div class="form-group">
 					<label for="email"><strong>Email</strong></label>
-					<input type="text" name="email" id="email" class="form-control">
+					<input type="text" name="email" id="email" class="form-control"  placeholder=<%= emp.getEmail() %>>
 				</div>
 				<div class="form-group">
 					<label for="address"><strong>Address</strong></label>
-					<input type="text" name="address" id="address" class="form-control">
-					<input type = hidden name="id" id ="id" value=<%=emp.getId()%>>
+					<input type="text" name="address" id="address" class="form-control"  placeholder=<%= emp.getAddress() %>>
 				</div>
 				<div class="button-group">
-					<input type="submit" class="btn btn-success" value="Submit">
+					<input type="submit" class="btn btn-success" id = "empSubmit" value="Submit">
 					<input type="reset" class="btn btn-danger" value="Reset">
 				</div>
 				</div>
 			</form>
 		</div>
-	</div>
+<script type="text/javascript">
+	 window.onload = function(){
+	    document.getElementById("empSubmit")
+	            .addEventListener("click",updateValues);
+	  }
+function updateValues()
+      {
+        xmlhttp.onreadystatechange=function(){}
+        xmlhttp.open("post", "createUser.jsp", true);
+        xmlhttp.send("/employeeRefresh.do");
+}
+</script> 
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

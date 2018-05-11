@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,7 +89,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				ResultSet rs = stmt.executeQuery();
 				
 				if (rs.next())
-					return new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("approved"));
+					return new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved"));
 			} catch(SQLException sqle) {
 				logger.error(sqle.getMessage(), sqle);
 				logger.error(sqle.getSQLState(),sqle);
@@ -105,7 +106,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				ResultSet rs = stmt.executeQuery();
 				
 				while(rs.next()) {
-					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("approved")));
+					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved")));
 				}
 				return rebur;
 			} catch(SQLException sqle) {
@@ -124,7 +125,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				ResultSet rs = stmt.executeQuery();
 				
 				while(rs.next()) {
-					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("approved")));
+					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved")));
 				}
 				return rebur;
 			} catch(SQLException sqle) {
@@ -143,7 +144,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				ResultSet rs = stmt.executeQuery();
 				
 				while(rs.next()) {
-					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("approved")));
+					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved")));
 				}
 				return rebur;
 			} catch(SQLException sqle) {

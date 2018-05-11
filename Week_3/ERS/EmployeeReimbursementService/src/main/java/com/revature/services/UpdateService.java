@@ -5,36 +5,60 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revature.dao.EmployeeService;
 import com.revature.dao.ManagerService;
+import com.revature.employee.FinanceManager;
+import com.revature.employee.GenericEmployee;
 import com.revature.exceptions.EmployeeNotFoundException;
 
 public class UpdateService {
 private UpdateService(){}
 	
 	public static String updateEmployee(HttpServletRequest request, HttpServletResponse response) {
+		GenericEmployee emp = (GenericEmployee)request.getSession().getAttribute("authorizedUser");
 		String fName = request.getParameter("firstname");
 		String lName = request.getParameter("lastname");
 		String email = request.getParameter("email");
-		String add = request.getParameter("add");
-		int id = Integer.parseInt(request.getParameter("id"));
+		String add = request.getParameter("address");
 		try {
-			EmployeeService.updateInfo(id, fName, lName, email, add);
+			EmployeeService.updateInfo(emp.getId(), fName, lName, email, add);
 		} catch (EmployeeNotFoundException e) {
 			e.printStackTrace();
 		}
-		return"/createEmployee.jsp";
+		refreshEmployee(request,response);
+		return"/employeeInfo.jsp";
 	}
 	
 	public static String updateManager(HttpServletRequest request, HttpServletResponse response) {
+		FinanceManager man = (FinanceManager)request.getSession().getAttribute("authorizedUser");
 		String fName = request.getParameter("firstname");
 		String lName = request.getParameter("lastname");
 		String email = request.getParameter("email");
-		String add = request.getParameter("add");
-		int id = Integer.parseInt(request.getParameter("id"));
+		String add = request.getParameter("address");
+		
 		try {
-			ManagerService.updateInfo(id, fName, lName, email, add);
+			ManagerService.updateInfo(man.getId(), fName, lName, email, add);
 		} catch (EmployeeNotFoundException e) {
 			e.printStackTrace();
 		}
-		return"/createManager.jsp";
+		refreshManager(request,response);
+		return"/managerInfo.jsp";
+	}
+
+	public static String refreshManager(HttpServletRequest request, HttpServletResponse responce) {
+		FinanceManager man = (FinanceManager)request.getSession().getAttribute("authorizedUser");
+		try {
+			request.getSession().setAttribute("authorizedUser", ManagerService.getManager(man.getUsername()));
+		} catch (EmployeeNotFoundException e) {
+			e.printStackTrace();
+		}
+		return"/managerInfo.jsp";
+	}
+	public static String refreshEmployee(HttpServletRequest request, HttpServletResponse responce) {
+		GenericEmployee emp = (GenericEmployee)request.getSession().getAttribute("authorizedUser");
+		try {
+			request.getSession().setAttribute("authorizedUser", EmployeeService.getEmployee(emp.getUsername()));
+		} catch (EmployeeNotFoundException e) {
+			e.printStackTrace();
+		}
+		return"/employeeInfo.jsp";
 	}
 }

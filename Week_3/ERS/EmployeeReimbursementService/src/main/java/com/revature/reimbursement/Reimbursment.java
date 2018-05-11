@@ -1,12 +1,12 @@
 package com.revature.reimbursement;
 
-
-
-
+import java.sql.Date;
+import java.time.LocalDate;
 
 public class Reimbursment {
 private Category cat;
-private int approverId,sumbitterId,reimburseId;
+private int approverId,sumbitterId,reimburseId,amount;
+private Date timeApproved,timeSubmitted;
 private boolean approved;
 
 
@@ -15,13 +15,17 @@ public Reimbursment() {
 	
 }
 
-public Reimbursment(Category cat, int approverId, int sumbitterId, int reimburseId, int approved) {
+
+public Reimbursment(Category cat, int approverId, int submitterId, int reimburseId, int amount, Date timeApproved,
+		Date timeSubmitted, int approved) {
 	super();
-	
 	this.cat = cat;
 	this.approverId = approverId;
-	this.sumbitterId = sumbitterId;
+	this.sumbitterId = submitterId;
 	this.reimburseId = reimburseId;
+	this.amount = amount;
+	this.timeApproved = timeApproved;
+	this.timeSubmitted = timeSubmitted;
 	this.approved = approved == 1;
 }
 
@@ -63,6 +67,36 @@ public boolean isApproved() {
 public void setApproved(boolean approved) {
 	this.approved = approved;
 }
+
+public int getAmount() {
+	return amount;
+}
+
+
+public void setAmount(int amount) {
+	this.amount = amount;
+}
+
+
+public Date getTimeApproved() {
+	return timeApproved;
+}
+
+
+public void setTimeApproved(Date timeApproved) {
+	this.timeApproved = timeApproved;
+}
+
+
+public Date getTimeSubmitted() {
+	return timeSubmitted;
+}
+
+
+public void setTimeSubmitted(Date timeSubmitted) {
+	this.timeSubmitted = timeSubmitted;
+}
+
 
 @Override
 public int hashCode() {

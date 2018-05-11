@@ -10,7 +10,6 @@ private MasterDispatcher() {
 	
 	public static String process(HttpServletRequest request, HttpServletResponse responce) {
 		switch(request.getRequestURI()) {
-			
 		case "/EmployeeReimbursementService/login.do": 
 			return LoginService.login(request, responce);
 		case"/EmployeeReimbursementService/logout.do":
@@ -23,6 +22,10 @@ private MasterDispatcher() {
 			return UpdateService.updateEmployee(request, responce);
 		case"/EmployeeReimbursementService/updateManager.do":
 			return UpdateService.updateManager(request, responce);	
+		case"/EmployeeReimbursementService/managerRefresh.do":
+			return UpdateService.refreshManager(request, responce);
+		case"/EmployeeReimbursementService/employeeRefresh.do":
+			return UpdateService.refreshEmployee(request, responce);	
 		default: return "404.jsp";
 		}
 	}

@@ -9,6 +9,73 @@
     <link rel="stylesheet" href="../ReimbursementCss/bootstrap.css/">
 </head>
 <body>
+<script type="text/javascript">
+window.onload = function(){
+        populateReburTable();
+    }
+
+    function populateReburTable(){
+        //Step 1 Create an xmlhttprequest object
+
+        let xhr = new XMLHttpRequest();
+
+        //Step 2 Add a callback function to on ready state change
+
+        xhr.onreadystatechange = function(){
+            //Step 5 handle the response
+            if(xhr.readyState == 4 && xhr.status == 200){
+                var reburObj = ${rebursementJson};
+                for(let rebur in reburObj){
+                    //get the properties of the JSON element
+    				let id = rebur.reimburseId;
+                    let cat = rebur.cat;
+                    let approved = (rebur.approved === true) ? "Yes" : "No";
+                    let timeApp = rebur.timeApproved;
+                    let timeSub = rebur.timeSubmitted;
+                    let amount = rebur.amount;
+                    
+
+                    //Dynamically create the HTML tags
+                    let row = document.createElement("tr");
+                    let tdId = document.createElement("td");
+                    let tdCat = document.createElement("td");
+                    let tdAmount = document.createElement("td");
+                    let tdDateSub = document.createElement("td");
+                    let tdDateApp = document.createElement("td");
+                    let tdStatus = document.createElement("td");
+
+                    tdId.textContent = id;
+                    tdCat.textContent = cat;
+                    tdAmount = amount;
+                    tdDateSub = timeSub;
+                    tdDateApp = timeApp;
+                    tdStatus = apporved;
+
+                    //Programatically bootstrapify each tdCompleted
+
+                    (tdCompleted.textContent === "Yes") ? tdCompleted.setAttribute("class","success") : tdCompleted.setAttribute("class","danger");
+
+                    row.appendChild(tdId);
+                    row.appendChild(tdCat);
+                    row.appendChild(tdAmount);
+                    row.appendChild(tdDateSub);
+                    row.appendChild(tdDateApp);
+                    row.appendChild(tdStatus);
+
+                    //Append the row
+
+                    document.getElementById("EmployeeReimbursments").appendChild(row);
+                }
+            }
+        }
+        //Step 3 call the open method 
+        xhr.open("GET","/viewEmployeeReimburstment.jsp",);
+
+        //Step 4 call the send method
+
+        xhr.send();
+    }
+    </script>
             <div class="container">
                 <div class="jumbotron">
                     <h1 class="display-4">View your Reimburstments</h1>
@@ -40,8 +107,10 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
+                            <th>Category</th>
                             <th>Amount</th>
                             <th>Date Submitted</th>
+                            <th>Date Approved</th>
                             <th>Status</th>
                         </tr>
                     </thead>

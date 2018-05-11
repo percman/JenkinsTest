@@ -37,16 +37,27 @@
 				<div class="form-group">
 					<label for="address"><strong>Address</strong></label>
 					<input type="text" name="address" id="address" class="form-control" placeholder=<%= man.getAddress() %>>
-					<input type = hidden name="id" id ="id" value=<%=man.getId()%>>
 				</div>
 				
 				<div class="button-group">
-					<input type="submit" class="btn btn-success" value="Submit">
+					<input type="submit" class="btn btn-success" id ="manSubmit" value="Submit">
 					<input type="reset" class="btn btn-danger" value="Reset">
 				</div>
 				</div>
 			</form>
 	</div>
+	<script type="text/javascript">
+	 window.onload = function(){
+	    document.getElementById("manSubmit")
+	            .addEventListener("click",updateValues);
+	  }
+function updateValues()
+      {
+        xmlhttp.onreadystatechange=function(){}
+        xmlhttp.open("post", "createManager.jsp", true);
+        xmlhttp.send("/managerRefresh.do");
+}
+</script>        
                         <script src = "./userCreation.js"></script> 
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 

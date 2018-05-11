@@ -31,6 +31,9 @@ category VARCHAR2(20),
 approved NUMBER(1) default 0,
 approver_id NUMBER,
 submitter_id NUMBER,
+timeSubmitted Date,
+timeApproved Date,
+amount number(10),
 CONSTRAINT ckUserApproved check (approved in (0,1,-1)),
 CONSTRAINT FK_submit FOREIGN KEY(submitter_id) REFERENCES generic_employee(gen_emp_id) ON DELETE CASCADE,
 CONSTRAINT FK_approve FOREIGN KEY(approver_id) REFERENCES finance_manager(man_id) ON DELETE CASCADE,
@@ -59,6 +62,8 @@ BEGIN
     Update EMPLOYEE SET EMP_PASSWORD = get_emp_hash(:new.emp_username,:new.emp_password) where EMP_USERNAME = :new.emp_username;
 END;
 /
+
+select * from employee where emp_username = 'davidfadsfjasj';
 
 CREATE OR REPLACE TRIGGER gen_emp_insert
 After INSERT 
@@ -152,6 +157,7 @@ BEGIN
     IF :new.rebur_id IS NULL THEN
     SELECT rebur_id_sequence.nextval INTO : new.rebur_id FROM dual;
     END IF;
+    SELECT CURRENT_TIMESTAMP into : new.rebur_timeSubmitted from dual;
 END;
 /
 

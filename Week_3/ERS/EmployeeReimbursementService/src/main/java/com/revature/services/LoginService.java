@@ -5,8 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import com.google.gson.Gson;
 import com.revature.dao.EmployeeService;
 import com.revature.dao.ManagerService;
+import com.revature.dao.ReimbursementService;
 import com.revature.employee.FinanceManager;
 import com.revature.employee.GenericEmployee;
 import com.revature.exceptions.EmployeeNotFoundException;
@@ -20,20 +22,14 @@ public class LoginService {
 		public static String login(HttpServletRequest request, HttpServletResponse responce) {
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
-			
-			
-			System.out.println(username);
-			System.out.println(password);
-			
-			
 			//Login logic
 			try {
 				FinanceManager man = ManagerService.getManager(username);
-				System.out.println(man.getPassword());
-				System.out.println(ManagerService.getPasswordHash(new FinanceManager(username,password)));
 				if(man.getPassword().equals(ManagerService.getPasswordHash(new FinanceManager(username,password)))) {
 					FinanceManager authorized = man;
 					request.getSession().setAttribute("authorizedUser", authorized);
+					String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(authorized.getUsername()));
+					request.getSession().setAttribute("reimbursements", rebursementJson);
 					return "/managerHome.do";
 				}
 			} catch (EmployeeNotFoundException enfe) {
@@ -42,6 +38,8 @@ public class LoginService {
 					if(emp.getPassword().equals(EmployeeService.getPasswordHash(new GenericEmployee(username,password)))) {
 						GenericEmployee authorized = emp;
 						request.getSession().setAttribute("authorizedUser", authorized);
+						String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(authorized.getUsername()));
+						request.getSession().setAttribute("reimbursements", rebursementJson);
 						return "/employeeHome.do";
 					}
 					}catch (EmployeeNotFoundException enfe2) {
