@@ -1,0 +1,91 @@
+<div class = container>
+  <h4 class="display-4">Data Binding</h4>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="border border-primary">
+        <h3>Interpolation</h3>
+        <ul>
+          <li>String Interpolation inserts interpolated string into the text within HTML Elements</li>
+          <li>String Interpolation uses double curly braces and NO QUOTES</li>
+          <li>{{interpolatedString}}</li>
+          <li>{{interpolatedNumber}}</li>
+          <li>{{interpolatedBoolean}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="border border-success">
+        <h3>Property Binding</h3>
+        <ul>
+          <li>Property Binding sets an element's property to the value of a Template Expression</li>
+          <li>The binding target is enclosed in square brackets []</li>
+          <li>The binding source is enclosed in single quotes ''</li>
+          <div class="btn-group">
+            <input type = "button" [class]='btnClass' [value]='btnText'>
+            <input type = "button" [class]='btnClassDisabled' [value]='disabledText'>
+            <input type = "button" [class]='btnClassEnabled' [value]='enabledText'>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="border border-warning">
+        <h3>Event Binding</h3>
+        <ul>
+          <li>Event Binding listens for events and executes a template statement when the event occurs</li>
+          <li>The target event is enclosed in parenthesis ()</li>
+          <li>The template statement is enclosed in ''</li>
+          <li>
+            <div>
+              <button [class]='btnClass' (click)='showPicture()'>{{showButtonText}}</button>
+              <div *ngIf="isDisplayed">
+                  <img [style.width.px]='imageWidth' src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+              </div>
+            </div>
+          </li>
+          <li (mouseover)='showText()' (mouseleave)='hideText()'> {{ listItemText }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="row border border-danger">
+    <div class="col-md-4">
+      <h3>Two-Way Data Binding</h3>
+      <ul>
+        <li>Two-Way Data Binding displays a component class property and updates that property when the user makes a change</li>
+        <li>Two-Way Data Binding is achieved with the ngModel directive, exposed from the FormsModule</li>
+        <li>Use the [()] syntax (banana in a box syntax) with the ngModel directive</li>
+        <li>The binding source is enclosed in single quotes ''</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <form action="">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" class="form-control" [(ngModel)]='username'>
+        </div>
+        <div class = "form-control">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" [(ngModel)]='password'>
+        </div>
+        <div class = "form-control">
+          <label for="email">Email</label>
+          <input type="text" name="email" class="form-control" [(ngModel)]='email'>
+        </div>
+        <div class = "form-control">
+          <label for="name">Name</label>
+          <input type="text" name="name" class="form-control" [(ngModel)]='name'>
+        </div>
+
+      </form>
+    </div>
+    <div class="col-md-4">
+      <p>Username = {{username}}</p>
+      <p>Password = {{password}}</p>
+      <p>Email = {{email}}</p>
+      <p>Name = {{name}}</p>
+    </div>
+  </div>
+</div>
