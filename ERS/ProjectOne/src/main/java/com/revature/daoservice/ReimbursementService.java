@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.revature.dao.ReimbursementDao;
 import com.revature.dao.ReimbursementDaoImpl;
-import com.revature.model.Reimbursement;
+import com.revature.factory.Reimbursement;
 
 public class ReimbursementService {
 
@@ -16,8 +16,8 @@ public class ReimbursementService {
 		return dao.getAllReimbursements();
 	}
 	
-	public static Reimbursement getReimbursement(String employeename) {
-		return dao.getReimbursement(employeename);
+	public static Reimbursement getReimbursementFromEmployee(String employeename) {
+		return dao.getReimbursementFromEmployee(employeename);
 	}
 	
 	public static boolean insertReimbursement(Reimbursement reimbursement) {

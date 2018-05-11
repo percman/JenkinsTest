@@ -34392,3 +34392,20 @@ ORA-06512: at line 1
 
 2018-05-10 19:23:34 WARN  LogHere:27 - SQLE State: 22003
 2018-05-10 19:23:34 WARN  LogHere:27 - Error code: 1438
+2018-05-11 15:18:16 WARN  LogHere:27 - ORA-06502: PL/SQL: numeric or value error: character to number conversion error
+ORA-06512: at line 1
+
+2018-05-11 15:18:16 WARN  LogHere:27 - SQLE State: 65000
+2018-05-11 15:18:16 WARN  LogHere:27 - Error code: 6502
+2018-05-11 15:18:17 WARN  LogHere:27 - Invalid column name
+2018-05-11 15:18:17 WARN  LogHere:27 - SQLE State: 99999
+2018-05-11 15:18:17 WARN  LogHere:27 - Error code: 17006
+2018-05-11 15:19:13 WARN  LogHere:27 - Invalid column name
+2018-05-11 15:19:13 WARN  LogHere:27 - SQLE State: 99999
+2018-05-11 15:19:13 WARN  LogHere:27 - Error code: 17006
+2018-05-11 15:25:51 WARN  LogHere:27 - Invalid column name
+2018-05-11 15:25:51 WARN  LogHere:27 - SQLE State: 99999
+2018-05-11 15:25:51 WARN  LogHere:27 - Error code: 17006
+2018-05-11 15:27:49 WARN  LogHere:27 - Invalid column name
+2018-05-11 15:27:49 WARN  LogHere:27 - SQLE State: 99999
+2018-05-11 15:27:49 WARN  LogHere:27 - Error code: 17006

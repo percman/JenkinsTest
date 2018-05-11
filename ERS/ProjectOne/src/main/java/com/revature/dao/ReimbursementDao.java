@@ -2,12 +2,12 @@ package com.revature.dao;
 
 import java.util.List;
 
-import com.revature.model.Reimbursement;
+import com.revature.factory.Reimbursement;
 
 public interface ReimbursementDao {
 
 	List<Reimbursement> getAllReimbursements();
-	Reimbursement getReimbursement(String employeename);
+	Reimbursement getReimbursementFromEmployee(String employeename);
 	boolean updateReimbursement(Reimbursement reimbursement);
 	boolean insertReimbursement(Reimbursement reimbursement);
 }

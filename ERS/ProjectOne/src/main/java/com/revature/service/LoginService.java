@@ -3,8 +3,6 @@ package com.revature.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.dao.EmployeeDao;
-import com.revature.dao.EmployeeDaoImpl;
 import com.revature.daoservice.EmployeeService;
 import com.revature.model.Employee;
 
@@ -12,7 +10,7 @@ public class LoginService {
 
 	private LoginService() {}
 	
-	private static EmployeeDao dao = EmployeeDaoImpl.getInstance();
+//	private static EmployeeDao dao = EmployeeDaoImpl.getInstance();
 
 	
 	public static String login(HttpServletRequest request, HttpServletResponse response) {

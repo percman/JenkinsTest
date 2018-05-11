@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.daoservice.EmployeeService;
+import com.revature.factory.Reimbursement;
 import com.revature.factory.ReimbursementFactory;
 import com.revature.logs.LogHere;
 import com.revature.model.Employee;
-import com.revature.model.Reimbursement;
 import com.revature.util.ConnectionUtil;
 
 public class ReimbursementDaoImpl implements ReimbursementDao {
@@ -58,11 +58,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	}
 
 	@Override
-	public Reimbursement getReimbursement(String employeename) {
+	public Reimbursement getReimbursementFromEmployee(String employeename) {
 //		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee "
-					+ "INNER JOIN personalinfo ON employee.id = personalinfo.id "
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement "
+					+ "INNER JOIN employee ON employee.id = reimbursement.requestor_id "
 					+ "WHERE employee.id = ?");
 			Employee new_employee = EmployeeService.getEmployee(employeename);
 			stmt.setInt(1, new_employee.getId());
@@ -95,10 +95,9 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			CallableStatement stmt = conn.prepareCall("{CALL insert_reimbursement(?,?,?)}");
 			stmt.setInt(++index, reimbursement.getRequestor_id());
-			stmt.setString(++index, reimbursement.getCategory());
 			stmt.setDouble(++index, reimbursement.getAmount());
-			int rowsAffected = stmt.executeUpdate();
-			return rowsAffected > 0;
+			stmt.setString(++index, reimbursement.getCategory());
+			return stmt.executeUpdate() > 0;
 		}  catch (SQLException sqle) {
 			LogHere.warn(sqle.getMessage());
 			LogHere.warn("SQLE State: " + sqle.getSQLState());

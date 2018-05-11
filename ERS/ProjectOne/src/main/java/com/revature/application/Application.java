@@ -1,15 +1,15 @@
 package com.revature.application;
 
-import static com.revature.daoservice.EmployeeService.insertEmployee;
+import java.util.List;
 
-import com.revature.daoservice.EmployeeService;
-import com.revature.model.Employee;
+import com.revature.daoservice.ReimbursementService;
+import com.revature.factory.Reimbursement;
 
 public class Application {
 
 	
 	public static void main(String[] args) {
-		Employee someperson = new Employee ("neat", "guy");
+//		Employee someperson = new Employee ("neat", "guy");
 //
 //		System.out.println(someperson);
 //		
@@ -24,7 +24,9 @@ public class Application {
 //		
 //		System.out.println(EmployeeService.getAllEmployees().toString());
 		
+		System.out.println(ReimbursementService.getAllReimbursements());
 		
+		List<Reimbursement> reimbursementlist = ReimbursementService.getAllReimbursements();
 		
 	}
 }

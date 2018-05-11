@@ -3,7 +3,6 @@ package com.revature.factory;
 import com.revature.model.FoodReimbursement;
 import com.revature.model.LodgingReimbursement;
 import com.revature.model.OtherReimbursement;
-import com.revature.model.Reimbursement;
 import com.revature.model.TravelReimbursement;
 
 public class ReimbursementFactory {

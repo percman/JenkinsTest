@@ -15,14 +15,16 @@
 <body>
 
 	<%@ page import="com.revature.model.Employee"%>
+	<%@ page import="com.revature.factory.Reimbursement"%>
 	<%@ page import="com.revature.daoservice.EmployeeService"%>
+	<%@ page import="com.revature.daoservice.ReimbursementService"%>
 	<%@ page import="java.util.List"%>
 
 	<%
 		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
 		List<Employee> employeelist = EmployeeService.getAllEmployees();
 		List<Employee> managerlist = EmployeeService.getAllManagers();
-
+		List<Reimbursement> reimbursementlist = ReimbursementService.getAllReimbursements();
 	%>
 	<!-- Main Navbar -->
 	<div class="container">
@@ -151,7 +153,6 @@
 				%>
 			</div>
 		</div>
-	<!-- 
 	<div class="container well">
 		<div class="container col-md-4 col-md-offset-1">
 			<div class="page-header">
@@ -159,33 +160,32 @@
 			</div>
 			<div class="list-group">
 				<%
-					for (Employee e : employeelist) {
+					for (Reimbursement r : reimbursementlist) {
 				%>
 				<li class="list-group-item">
 					<h3 class="list-group-item-heading">
-						ID:
-						<%=e.getId()%></h3>
+						Category:
+						<%=r.getCategory()%></h3>
 					<h4 class="list-group-item-text">
-						User Name:
-						<%=e.getUsername()%></h4>
+						Requestor ID:
+						<%=r.getRequestor_id()%></h4>
 					<h4 class="list-group-item-text">
-						First name:
-						<%=e.getFirstname().substring(0, 1).toUpperCase()%><%=e.getFirstname().substring(1)%></h4>
+						Approver ID:
+						<%=r.getApprover_id()%></h4>
 					<h4 class="list-group-item-text">
-						Last name:
-						<%=e.getLastname().substring(0, 1).toUpperCase()%><%=e.getLastname().substring(1)%></h4>
+						Approved Status:
+						<%=r.isStatus()%></h4>
 					<h4 class="list-group-item-text">
-						Phone number:
-						<%=e.getPhonenumber()%></h4>
+						Time Made:
+						<%=r.getTimemade()%></h4>
 					<h4 class="list-group-item-text">
-						Email:
-						<%=e.getEmail()%></h4>
+						Time Approved:
+						<%=r.getTimeapproved()%></h4>
 				</li>
 				<%
 					}
 				%>
 		</div>
- -->
 
 		
 </body>

@@ -181,7 +181,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
 	@Override
 	public Employee getAnyEmployee() {
-		int index = 0;
+//		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee INNER JOIN personalinfo "
 					+ "ON employee.id = personalinfo.id");
