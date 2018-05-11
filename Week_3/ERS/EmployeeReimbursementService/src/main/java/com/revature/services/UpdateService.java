@@ -11,8 +11,8 @@ public class UpdateService {
 private UpdateService(){}
 	
 	public static String updateEmployee(HttpServletRequest request, HttpServletResponse response) {
-		String fName = request.getParameter("username");
-		String lName = request.getParameter("password");
+		String fName = request.getParameter("firstname");
+		String lName = request.getParameter("lastname");
 		String email = request.getParameter("email");
 		String add = request.getParameter("add");
 		int id = Integer.parseInt(request.getParameter("id"));
@@ -25,8 +25,8 @@ private UpdateService(){}
 	}
 	
 	public static String updateManager(HttpServletRequest request, HttpServletResponse response) {
-		String fName = request.getParameter("username");
-		String lName = request.getParameter("password");
+		String fName = request.getParameter("firstname");
+		String lName = request.getParameter("lastname");
 		String email = request.getParameter("email");
 		String add = request.getParameter("add");
 		int id = Integer.parseInt(request.getParameter("id"));

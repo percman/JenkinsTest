@@ -9,37 +9,45 @@
     <link rel="stylesheet" href="../ReimbursementCss/bootstrap.css/">
 </head>
 <body>
+			<%@ page import="com.revature.employee.FinanceManager" %>
+			<%FinanceManager man = (FinanceManager) request.getSession().getAttribute("authorizedUser"); %>
+
             <div class="container">
                 <div class="jumbotron">
                     <h1 class="display-4">Update your info</h1>
                     <hr class="my-4">
                 </div>
             </div>
-			
-			<%@ page import="com.revature.employee.FinanceManager" %>
-			<%FinanceManager man = (FinanceManager) request.getSession().getAttribute("authorizedUser"); %>
-			
-            <div class = "col-md-3 col-md-offset-5">
-                    <form action="updateManager.do" method ="post">
-                        <div class="form-group well">
-                            <label for="firstname"><strong>FirstName</strong></label>
-                            <input type="text" name="firstname" id="firstname"class = "form-control">
-                
-                            <label for="lastname"><strong>LastName</strong></label>
-                            <input type="text" name="lastname" id="lastname"class = "form-control">
-                            
-                            <label for="email"><strong>Email</strong></label>
-                            <input type="text" name="email" id="email"class = "form-control">
-                            
-                            <label for="address"><strong>Address</strong></label>
-                            <input type="text" name="address" id="address"class = "form-control">
-                            
-                             <input type="hidden" name="id" value=<%= man.getId() %>>
-                            <br>
-                            <button id ="submitBtn" class="btn btn-primary" id="userSubmit" type ="button">Submit</button>
-                        </div>
-                        </form>
-                        </div>
+				<div class="container">
+		<div class="col-md-6 col-offset-4">
+			<form action="updateManager.do" method="post">
+			<div class = "form-group well">
+				<div class="form-group">
+					<label for="firstname"><strong>FirstName</strong></label>
+					<input type="text" name="firstname" id="firstname" class="form-control">
+				</div>
+				<div class="form-group">
+				 	<label for="lastname"><strong>LastName</strong></label>
+					<input type="text" name="lastname" id="lastname" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="email"><strong>Email</strong></label>
+					<input type="text" name="email" id="email" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="address"><strong>Address</strong></label>
+					<input type="text" name="address" id="address" class="form-control">
+					<input type = hidden name="id" id ="id" value=<%=man.getId()%>>
+				</div>
+				
+				<div class="button-group">
+					<input type="submit" class="btn btn-success" value="Submit">
+					<input type="reset" class="btn btn-danger" value="Reset">
+				</div>
+				</div>
+			</form>
+		</div>
+	</div>
                         <script src = "./userCreation.js"></script> 
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
