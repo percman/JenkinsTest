@@ -21,7 +21,7 @@ private UpdateService(){}
 		} catch (EmployeeNotFoundException e) {
 			e.printStackTrace();
 		}
-		return"/employeeInfo.jsp";
+		return"/createEmployee.jsp";
 	}
 	
 	public static String updateManager(HttpServletRequest request, HttpServletResponse response) {
@@ -35,6 +35,6 @@ private UpdateService(){}
 		} catch (EmployeeNotFoundException e) {
 			e.printStackTrace();
 		}
-		return"/managerInfo.jsp";
+		return"/createManager.jsp";
 	}
 }

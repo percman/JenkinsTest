@@ -19,24 +19,24 @@
                 </div>
             </div>
 				<div class="container">
-		<div class="col-md-6 col-offset-4">
+		<div class="col-md-6 col-offset-2">
 			<form action="updateManager.do" method="post">
 			<div class = "form-group well">
 				<div class="form-group">
 					<label for="firstname"><strong>FirstName</strong></label>
-					<input type="text" name="firstname" id="firstname" class="form-control">
+					<input type="text" name="firstname" id="firstname" class="form-control" placeholder=<%= man.getFirstName() %>>
 				</div>
 				<div class="form-group">
 				 	<label for="lastname"><strong>LastName</strong></label>
-					<input type="text" name="lastname" id="lastname" class="form-control">
+					<input type="text" name="lastname" id="lastname" class="form-control" placeholder=<%= man.getLastName() %>>
 				</div>
 				<div class="form-group">
 					<label for="email"><strong>Email</strong></label>
-					<input type="text" name="email" id="email" class="form-control">
+					<input type="text" name="email" id="email" class="form-control" placeholder=<%= man.getEmail() %>>
 				</div>
 				<div class="form-group">
 					<label for="address"><strong>Address</strong></label>
-					<input type="text" name="address" id="address" class="form-control">
+					<input type="text" name="address" id="address" class="form-control" placeholder=<%= man.getAddress() %>>
 					<input type = hidden name="id" id ="id" value=<%=man.getId()%>>
 				</div>
 				
@@ -46,7 +46,6 @@
 				</div>
 				</div>
 			</form>
-		</div>
 	</div>
                         <script src = "./userCreation.js"></script> 
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

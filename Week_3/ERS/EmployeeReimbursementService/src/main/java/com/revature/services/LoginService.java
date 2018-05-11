@@ -21,9 +21,16 @@ public class LoginService {
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 			
+			
+			System.out.println(username);
+			System.out.println(password);
+			
+			
 			//Login logic
 			try {
 				FinanceManager man = ManagerService.getManager(username);
+				System.out.println(man.getPassword());
+				System.out.println(ManagerService.getPasswordHash(new FinanceManager(username,password)));
 				if(man.getPassword().equals(ManagerService.getPasswordHash(new FinanceManager(username,password)))) {
 					FinanceManager authorized = man;
 					request.getSession().setAttribute("authorizedUser", authorized);

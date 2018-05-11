@@ -37,7 +37,7 @@
 				<div class="form-group">
 					<label for="address"><strong>Address</strong></label>
 					<input type="text" name="address" id="address" class="form-control">
-					<input type = hidden name="id" id ="id" value=<%=man.getId()%>>
+					<input type = hidden name="id" id ="id" value=<%=emp.getId()%>>
 				</div>
 				<div class="button-group">
 					<input type="submit" class="btn btn-success" value="Submit">

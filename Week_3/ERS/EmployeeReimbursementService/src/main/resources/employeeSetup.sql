@@ -108,6 +108,7 @@ END IF;
 IF new_add IS NOT NULL THEN
     Update GENERIC_EMPLOYEE set emp_address = new_add where up_id = gen_emp_id;
 END IF;
+COMMIT;
 END;
 /
 
@@ -134,6 +135,7 @@ END IF;
 IF new_add IS NOT NULL THEN
     Update FINANCE_MANAGER set man_address = new_add where man_id = up_id;
 END IF;
+COMMIT;
 END;
 /
     
@@ -160,7 +162,7 @@ select * from employee;
 Update FINANCE_MANAGER set man_first_name = 'matt' where man_id = 2;
 
 Begin
-UPDATE_MAN(2,'matt','smith','','');
+UPDATE_MAN(2,'','','','');
 end;
 /
 
