@@ -283,6 +283,30 @@ CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id NUMBER, new_c
 -----------------------------------------------------------------------------------------------
 
 
+-----------------------------------------------------
+-- Create Stored procedures for updating employees -- 
+-----------------------------------------------------
+CREATE OR REPLACE PROCEDURE update_employee (e_id NUMBER, new_username VARCHAR2, new_password VARCHAR2, new_f_name VARCHAR2, 
+                                                new_m_initial VARCHAR2, new_l_name VARCHAR2, new_phone NUMBER, 
+                                                new_email VARCHAR2)
+    AS
+    BEGIN
+        UPDATE employee SET
+            username = new_username,
+            password = GET_USER_HASH(new_username, new_password)
+        WHERE employee_id = e_id;
+        UPDATE employee_info SET
+            f_name = new_f_name,
+            m_initial = new_m_initial,
+            l_name = new_l_name,
+            phone = new_phone,
+            email = new_email
+        WHERE employee_id = e_id;
+        COMMIT;
+    END;
+    /
+-----------------------------------------------------
+-----------------------------------------------------
 
 
 
@@ -302,8 +326,12 @@ CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id NUMBER, new_c
 
 
 
+SELECT * FROM employee;
 
 
-
+-- use this to get employees instead!
+SELECT * FROM employee e
+    JOIN employee_info ei ON e.employee_id = ei.employee_id
+    WHERE e.employee_id = 5;
 
 
