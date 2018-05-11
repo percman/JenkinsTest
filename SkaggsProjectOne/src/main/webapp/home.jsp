@@ -21,7 +21,13 @@
 			<a href="./index.jsp" class="navbar-brand">Skaggs Corp</a>
 		</div>
 		<ul class="navbar-nav nav">
+			<li><a href="home.jsp">Home</a></li>
+		</ul>
+		<ul class="navbar-nav nav">
 			<li><a href = "update.jsp">Update Info</a> </li>
+		</ul>
+		<ul class="navbar-nav nav">
+			<li><a href="requestEmployee.jsp">View Reimbursement Requests</a></li>
 		</ul>
 		<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
 			<li><a href="logout.jsp">Log Out <span class="glyphicon glyphicon-log-out" 
@@ -53,18 +59,36 @@
 			</table>
 		</div>
 	</div>
-	<div class="container">
-		<div class="col-md-7">
-			<div class="form-group">
-				<label>Reimbursement Type</label> <select class="form-control"
-					id="reimbType">
-					<option>Lodging</option>
-					<option>Travel</option>
-					<option>Food</option>
-					<option>Other</option>
-				</select>
+	<form id="request-form" action="request.do" method="post" role="form">
+		<div class="container">
+			<div class="col-md-7">
+				<div class="form-group">
+					<label>Reimbursement Type</label> <select class="form-control"
+						id="requestType" name ="requestType">
+						<option>Lodging</option>
+						<option>Travel</option>
+						<option>Food</option>
+						<option>Other</option>
+					</select>
+				</div>
 			</div>
 		</div>
+		<div class="container">
+			<div class="col-md-7">
+				<div class="form-group">
+					<label for="number-input">Amount</label> <input
+						class="form-control" type="number" value="300" id="amount" name="amount">
+				</div>
+			</div>
 		</div>
+		<div class="container">
+			<div class="col-md-7">
+				<div class="form-group">
+					<input type="submit" name="request-btn" id="request-btn"
+						class="form-control btn btn-submit" value="Submit Request">
+				</div>
+			</div>
+		</div>
+	</form>
 </body>
 </html>

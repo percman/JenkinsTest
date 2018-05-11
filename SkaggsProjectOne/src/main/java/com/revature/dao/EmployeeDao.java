@@ -13,4 +13,5 @@ public interface EmployeeDao {
 	String getPasswordHash(Employee employee);
 	Employee getEmployee(String username) throws ClassNotFoundException;
 	boolean updateEmployee(Employee e);
+	boolean updateEmployeeWithoutPassword(Employee e);
 }

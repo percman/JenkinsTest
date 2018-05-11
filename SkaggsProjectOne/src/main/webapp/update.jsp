@@ -18,7 +18,17 @@
         <div class="navbar-header col-md-2">
             <a href="./index.html" class="navbar-brand">Skaggs Corp</a>
         </div>
-    </nav>
+		<ul class="navbar-nav nav">
+			<li><a href="home.jsp">Home</a></li>
+		</ul>
+		<ul class="navbar-nav nav">
+			<li><a href="update.jsp">Update Info</a></li>
+		</ul>
+		<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
+			<li><a href="logout.jsp">Log Out <span
+					class="glyphicon glyphicon-log-out" id="logout-elmt"> </span></a></li>
+		</ul>
+		</nav>
      	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-login">
@@ -32,13 +42,17 @@
 										<div class="row">
 											<form id="login-form" action="update.do" method="post" role="form">
 												<div class="col-sm-6 col-sm-offset-3">
-													<input type="text" name="firstname" id="firstname" class="form-control" placeholder=<%=employee.getFirstName()%>>
+													<input type="text" name="firstname" id="firstname" 
+													class="form-control" placeholder=<%=employee.getFirstName()%>>
 													
-													<input type="text" name="lastname" id="lastname" class="form-control" placeholder=<%=employee.getLastName()%>>
+													<input type="text" name="lastname" id="lastname" 
+													class="form-control" placeholder=<%=employee.getLastName()%>>
 																										
-													<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+													<input type="password" name="password" id="password"
+													 class="form-control" placeholder="Password">
 													
-													<input type="submit" name="update-submit" id="update-btn" class="form-control btn btn-submit"  value="Update Info">
+													<input type="submit" name="update-submit" id="update-btn" 
+													class="form-control btn btn-submit"  value="Update Info">
 												</div>
 											</form>
 										</div>

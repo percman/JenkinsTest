@@ -51,10 +51,12 @@ CONSTRAINT PK_reId PRIMARY KEY (reId)
 
 SELECT * FROM EMPLOYEETABLE e FULL OUTER JOIN INFOTABLE i ON e.employeeId = i.employeeId WHERE userName = 'nixnax';
 
---Update emoplyment
+--Update emoplymentSELECT DISTINCT billingstate FROM invoice;
+
 CREATE OR REPLACE PROCEDURE update_employee(f_name IN VARCHAR, l_name IN VARCHAR, u_name IN VARCHAR, u_password IN VARCHAR)
 AS
 e_id number;
+h_password varchar(50);
 cursor c1 is SELECT employeeid FROM EMPLOYEETABLE e WHERE e.userName = u_name;
 
 BEGIN
@@ -62,8 +64,10 @@ BEGIN
     fetch c1 into e_id;
     CLOSE c1;
     
+    h_password := get_user_hash(u_name, u_password);
+    
     UPDATE employeeTable SET 
-    userPassword = u_password 
+    userPassword = h_password 
     WHERE username = u_name;
 
     UPDATE infotable SET
@@ -116,7 +120,7 @@ CREATE OR REPLACE TRIGGER employee_before_insert
         INTO :new.userPassword FROM dual;
     END;
     /
-CREATE OR REPLACE TRIGGER employee_before_insert
+CREATE OR REPLACE TRIGGER employee_before_update
     BEFORE INSERT
     ON employeeTable
     FOR EACH ROW
@@ -129,27 +133,66 @@ CREATE OR REPLACE TRIGGER employee_before_insert
 SELECT * FROM EMPLOYEETABLE  OUTER JOIN INFOTABLE ON employeetable.EMPLOYEEID = infotable.employeeid;
 
 SELECT * FROM employeetable e,infotable i where e.employeeid = i.employeeid;
+commit;
 
-CREATE OR REPLACE TRIGGER info_before_insert
+CREATE OR REPLACE TRIGGER reimbursement_before_insert
     BEFORE INSERT
-    ON infoTable
+    ON reimbursementTable
     FOR EACH ROW
     BEGIN
-        IF: new.employeeId IS NULL THEN
-        SELECT employee_sequence.currval INTO :new.employeeId FROM dual;
+        IF: new.reid IS NULL THEN
+        SELECT reimbursement_sequence.nextval INTO :new.reid FROM dual;
+        END IF;
+        
+    END;
+    /
+-- insert date submitted
+CREATE OR REPLACE TRIGGER reimbursement_date_insert
+    BEFORE INSERT
+    ON reimbursementTable
+    FOR EACH ROW
+    BEGIN
+        IF: new.dateSubmitted IS NULL THEN
+        select CURRENT_DATE INTO :new.dateSubmitted FROM dual;
         END IF;
         
     END;
     /
     
 select employee_sequence.currval from dual;
-CREATE OR REPLACE PROCEDURE make_request(rmb_Id IN INT, rq_Id IN INT, a_Id IN INT, c_name IN VARCHAR, status IN VARCHAR)
+
+CREATE OR REPLACE PROCEDURE make_request(rq_Id IN INT, c_name IN VARCHAR, n_status IN INT, n_amount IN INT)
 AS
 BEGIN
-    --INSERT INTO employee
-    INSERT INTO reimbursementTable (reId, requesterId, approverId, categoryName, status) 
-    VALUES (rmb_Id, rq_Id, a_Id, c_name, status);
+
+    INSERT INTO reimbursementTable(reId, requesterId, categoryName, status, amount) 
+    VALUES(rq_Id, c_name, n_status, n_amount);
 END;
 /
 
+CREATE SEQUENCE reimbursement_sequence
+    START WITH 1
+    MINVALUE 0
+    NOCACHE;
 select * from reimbursementTable;
+
+ALTER TABLE reimbursementTable add dateCompleted DATE;
+select * from employeeTable;
+
+CREATE OR REPLACE PROCEDURE update_withoutpassword(f_name IN VARCHAR, l_name IN VARCHAR, u_name IN VARCHAR)
+AS
+e_id number;
+h_password varchar(50);
+cursor c1 is SELECT employeeid FROM EMPLOYEETABLE e WHERE e.userName = u_name;
+
+BEGIN
+    open c1;
+    fetch c1 into e_id;
+    CLOSE c1;
+
+    UPDATE infotable SET
+    firstName = f_name,
+    lastName = l_name
+    WHERE employeeid = e_id;
+END;
+/

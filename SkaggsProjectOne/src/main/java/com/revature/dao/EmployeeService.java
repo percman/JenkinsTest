@@ -29,4 +29,7 @@ public class EmployeeService {
 	public static boolean updateEmployee(Employee e) {
 		return dao.updateEmployee(e);
 	}
+	public static boolean updateEmployeeWithoutPassword(Employee e) {
+		return dao.updateEmployeeWithoutPassword(e);
+	}
 }

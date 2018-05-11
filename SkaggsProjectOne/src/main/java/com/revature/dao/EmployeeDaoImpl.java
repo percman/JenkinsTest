@@ -38,7 +38,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			ResultSet rs = stmt.executeQuery();
 			Employee e = null;
 			while(rs.next()) {
-				e = new Employee(rs.getString("firstName"), rs.getString("middleName"), 
+				e = new Employee(rs.getInt("employeeId"), rs.getString("firstName"), rs.getString("middleName"), 
 						rs.getString("lastName"),rs.getString("userName"), rs.getString("userPassword"),
 						rs.getInt("FINANCEMANAGER")==1);
 			}
@@ -107,12 +107,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public boolean insertRequest(Reimbursement r) throws ClassNotFoundException {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("{CALL make_request(?, ?, ?, ?, ?)  }");
-			stmt.setInt(++index, r.getReimbursementId());
+			PreparedStatement stmt = conn.prepareStatement("{CALL make_request(?, ?, ?, ?)  }");
 			stmt.setInt(++index, r.getRequesterId());
-			stmt.setInt(++index, r.getApproverId());
 			stmt.setString(++index, r.getCategory());
-			stmt.setString(++index, r.getStatus());
+			stmt.setInt(++index, r.getStatus());
+			stmt.setInt(++index, r.getAmount());
 			int rowsAffected = stmt.executeUpdate();
 			return rowsAffected > 0;
 		} catch (SQLException sqle) {
@@ -135,6 +134,26 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			stmt.setString(++index, lastName);
 			stmt.setString(++index, userName);
 			stmt.setString(++index, password);
+			int rowsAffected = stmt.executeUpdate();
+			return rowsAffected > 0;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+		}
+		return false;
+	}
+	@Override
+	public boolean updateEmployeeWithoutPassword(Employee e) {
+		int index = 0;
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			String firstName = e.getFirstName();
+			String lastName = e.getLastName();
+			String userName = e.getUserName();
+			PreparedStatement stmt = conn.prepareStatement("{CALL update_employee(?, ?, ?)  }");
+			stmt.setString(++index, firstName);
+			stmt.setString(++index, lastName);
+			stmt.setString(++index, userName);
 			int rowsAffected = stmt.executeUpdate();
 			return rowsAffected > 0;
 		} catch (SQLException sqle) {

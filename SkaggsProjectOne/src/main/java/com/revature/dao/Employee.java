@@ -1,6 +1,8 @@
 package com.revature.dao;
 
 public class Employee {
+	int employeeId;
+
 	String firstName;
 	String middleInit;
 	String lastName;
@@ -21,6 +23,12 @@ public class Employee {
 		this.userName = userName;
 		this.password = password;
 	}
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
 	public boolean isFinanceManager() {
 		return isFinanceManager;
 	}
@@ -30,6 +38,17 @@ public class Employee {
 	public Employee() {}
 
 	
+	public Employee(int employeeId, String firstName, String middleInit, String lastName, String userName,
+			String password, boolean isFinanceManager) {
+		super();
+		this.employeeId = employeeId;
+		this.firstName = firstName;
+		this.middleInit = middleInit;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.isFinanceManager = isFinanceManager;
+	}
 	@Override
 	public String toString() {
 		return "Employee [firstName=" + firstName + ", middleInit=" + middleInit + ", lastName=" + lastName

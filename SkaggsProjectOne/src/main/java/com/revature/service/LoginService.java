@@ -18,8 +18,8 @@ public class LoginService {
 		// Login logic
     	Employee e = EmployeeService.getEmployee(username);
 		System.out.println("employee " + e);
-		System.out.println(e.isFinanceManager());
 		String hashedPassword = EmployeeService.getPasswordHash(test);
+		System.out.println(" hashed password " + hashedPassword +"\n user password "  + e.getPassword());
 		if (username.equals(e.getUserName()) & hashedPassword.equals(e.getPassword())) {
 			
 			if (e.isFinanceManager()) {

@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.revature.service.LoginService;
+import com.revature.service.RequestService;
 import com.revature.service.UpdateService;
 import com.revature.service.UserService;
 
@@ -19,6 +20,8 @@ public class MasterDispatcher {
 			return UserService.fm(request);
 		case "/SkaggsProjectOne/update.do":
 			return UpdateService.update(request);
+		case "/SkaggsProjectOne/request.do":
+			return  RequestService.reqest(request);
 		default:
 			return "404.jsp";
 		}

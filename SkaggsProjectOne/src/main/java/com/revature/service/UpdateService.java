@@ -13,6 +13,7 @@ public class UpdateService {
 		String lastName = request.getParameter("lastname");
 		String password = request.getParameter("password");
 		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
+		System.out.println("employee in update " + employee);
 
 		if (firstName != null && !firstName.isEmpty()) {
 			employee.setFirstName(firstName);
@@ -22,9 +23,11 @@ public class UpdateService {
 		}
 		if (password != null && !password.isEmpty()) {
 			employee.setPassword(password);
+			EmployeeService.updateEmployee(employee);
 		}
-		System.out.println("Password null? " + password != null);
-		EmployeeService.updateEmployee(employee);
+		else {
+			EmployeeService.updateEmployeeWithoutPassword(employee);
+		}
 		return "/update.jsp";
 	}
 }
