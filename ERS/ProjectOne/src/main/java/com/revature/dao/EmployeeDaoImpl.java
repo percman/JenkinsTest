@@ -30,12 +30,19 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		List<Employee> employeelist = new ArrayList<>();
 //		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee WHERE manager = 0 ORDER BY id");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee INNER JOIN personalinfo "
+					+ "ON employee.id = personalinfo.id WHERE manager = 0 ORDER BY employee.id");
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {				
-				employeelist.add(new Employee(rs.getInt("id"), rs.getString("username"), rs.getString("password"), 
-						(rs.getInt("manager")>0), rs.getString("firstname"), rs.getString("lastname"),
-						rs.getTimestamp("datehired"), rs.getString("email"), rs.getInt("phonenumber")));
+				employeelist.add(new Employee(rs.getInt("id"), 
+						rs.getString("username"), 
+						rs.getString("password"), 
+						(rs.getInt("manager")>0), 
+						rs.getString("firstname"), 
+						rs.getString("lastname"),
+						rs.getTimestamp("datehired"), 
+						rs.getString("email"), 
+						rs.getLong("phonenumber")));
 			}
 			return employeelist;	
 		}  catch (SQLException sqle) {
@@ -51,12 +58,19 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		List<Employee> employeelist = new ArrayList<>();
 //		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee WHERE manager = 1 ORDER BY id");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee INNER JOIN personalinfo "
+					+ "ON employee.id = personalinfo.id WHERE manager = 1 ORDER BY employee.id");
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {				
-				employeelist.add(new Employee(rs.getInt("id"), rs.getString("username"), rs.getString("password"), 
-						(rs.getInt("manager")>0), rs.getString("firstname"), rs.getString("lastname"),
-						rs.getTimestamp("datehired"), rs.getString("email"), rs.getInt("phonenumber")));
+				employeelist.add(new Employee(rs.getInt("id"), 
+						rs.getString("username"), 
+						rs.getString("password"), 
+						(rs.getInt("manager")>0), 
+						rs.getString("firstname"), 
+						rs.getString("lastname"),
+						rs.getTimestamp("datehired"), 
+						rs.getString("email"), 
+						rs.getLong("phonenumber")));
 			}
 			return employeelist;	
 		}  catch (SQLException sqle) {
@@ -85,7 +99,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 						rs.getString("lastname"),
 						rs.getTimestamp("datehired"), 
 						rs.getString("email"), 
-						rs.getInt("phonenumber"));
+						rs.getLong("phonenumber"));
 			}
 			
 			} catch (SQLException sqle) {
@@ -167,17 +181,25 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
 	@Override
 	public Employee getAnyEmployee() {
+		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			System.out.println("Testing the connection. Please wait.");
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM usertable");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee INNER JOIN personalinfo "
+					+ "ON employee.id = personalinfo.id");
 			ResultSet rs = stmt.executeQuery();
-			if(rs.next()) {			
-				System.out.println("Success!");
-				return new Employee(rs.getInt("id"), rs.getString("username"), rs.getString("password"), 
-						(rs.getInt("manager")>0), rs.getString("firstname"), rs.getString("lastname"),
-						rs.getTimestamp("datehired"), rs.getString("email"), rs.getInt("phonenumber"));
+			
+			if(rs.next()) {				
+				return new Employee(rs.getInt("id"), 
+						rs.getString("username"), 
+						rs.getString("password"), 
+						(rs.getInt("manager")>0), 
+						rs.getString("firstname"), 
+						rs.getString("lastname"),
+						rs.getTimestamp("datehired"), 
+						rs.getString("email"), 
+						rs.getLong("phonenumber"));
 			}
-		}  catch (SQLException sqle) {
+			
+			} catch (SQLException sqle) {
 			LogHere.warn(sqle.getMessage());
 			LogHere.warn("SQLE State: " + sqle.getSQLState());
 			LogHere.warn("Error code: " + sqle.getErrorCode());

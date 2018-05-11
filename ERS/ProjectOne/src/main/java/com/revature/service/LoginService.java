@@ -22,9 +22,9 @@ public class LoginService {
 				
 		// Login logic
 		if(EmployeeService.login(new_employee)) {
-			Employee authorizedUser = new Employee(username, password);
+			Employee authorizedUser = EmployeeService.getEmployee(username);
 			request.getSession().setAttribute("authorizedUser", authorizedUser);
-			return "/jsp/home.do";
+			return "/home.do";
 		}
 		
 		return "/index.jsp";

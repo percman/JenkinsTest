@@ -28,8 +28,6 @@ public class Employee implements Serializable{
 		this.username = username;
 		this.password = password;
 	}
-	
-	
 
 	public Employee(String username, String password, boolean managerstatus, String firstname, String lastname,
 			String email, long phonenumber) {

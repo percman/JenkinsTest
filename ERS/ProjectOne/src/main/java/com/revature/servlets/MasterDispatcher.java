@@ -12,9 +12,9 @@ public class MasterDispatcher {
 	
 	public static String process(HttpServletRequest request, HttpServletResponse response) {
 		switch(request.getRequestURI()) {
-		case "/ProjectOneWeb/jsp/login.do":
+		case "/ProjectOneWeb/login.do":
 			return LoginService.login(request, response);
-		case "/ProjectOneWeb/jsp/home.do":
+		case "/ProjectOneWeb/home.do":
 			return UserService.home(request, response);
 		default:
 			return "404.jsp";

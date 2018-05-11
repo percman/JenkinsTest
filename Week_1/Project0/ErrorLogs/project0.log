@@ -34278,3 +34278,117 @@ ORA-06512: at line 1
 2018-05-08 22:52:22 WARN  LogHere:27 - 
 2018-05-08 22:53:03 WARN  LogHere:27 - 
 2018-05-08 22:54:58 WARN  LogHere:27 - 
+2018-05-10 17:40:05 WARN  LogHere:27 - 
+2018-05-10 17:41:03 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:41:03 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:41:03 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:41:03 WARN  LogHere:27 - 
+2018-05-10 17:50:46 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:50:46 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:50:46 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:50:46 WARN  LogHere:27 - 
+2018-05-10 17:52:48 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:52:48 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:52:48 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:52:48 WARN  LogHere:27 - 
+2018-05-10 17:53:49 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:53:49 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:53:49 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:53:49 WARN  LogHere:27 - 
+2018-05-10 17:54:35 WARN  LogHere:27 - 
+2018-05-10 17:55:05 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:55:05 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:55:05 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:55:05 WARN  LogHere:27 - 
+2018-05-10 17:57:05 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:57:05 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:57:05 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:57:05 WARN  LogHere:27 - 
+2018-05-10 17:58:02 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:58:02 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:58:02 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:58:02 WARN  LogHere:27 - 
+2018-05-10 17:58:12 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:58:12 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:58:12 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:58:12 WARN  LogHere:27 - 
+2018-05-10 17:59:01 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:59:01 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:59:01 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:59:01 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 17:59:01 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 17:59:01 WARN  LogHere:27 - Error code: 17026
+2018-05-10 17:59:01 WARN  LogHere:27 - 
+2018-05-10 18:01:57 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 18:01:57 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:01:57 WARN  LogHere:27 - Error code: 17026
+2018-05-10 18:01:57 WARN  LogHere:27 - 
+2018-05-10 18:03:27 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 18:03:27 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:03:27 WARN  LogHere:27 - Error code: 17026
+2018-05-10 18:03:27 WARN  LogHere:27 - 
+2018-05-10 18:06:37 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 18:06:37 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:06:37 WARN  LogHere:27 - Error code: 17026
+2018-05-10 18:06:37 WARN  LogHere:27 - 
+2018-05-10 18:08:55 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 18:08:55 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:08:55 WARN  LogHere:27 - Error code: 17026
+2018-05-10 18:08:55 WARN  LogHere:27 - 
+2018-05-10 18:09:08 WARN  LogHere:27 - ORA-00001: unique constraint (PROJECTONEADMINONE.UK_USERNAME) violated
+ORA-06512: at "PROJECTONEADMINONE.INSERT_EMPLOYEE", line 7
+ORA-06512: at line 1
+
+2018-05-10 18:09:08 WARN  LogHere:27 - SQLE State: 23000
+2018-05-10 18:09:08 WARN  LogHere:27 - Error code: 1
+2018-05-10 18:09:09 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 18:09:09 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:09:09 WARN  LogHere:27 - Error code: 17026
+2018-05-10 18:09:09 WARN  LogHere:27 - 
+2018-05-10 18:09:28 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 18:09:28 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:09:28 WARN  LogHere:27 - Error code: 17026
+2018-05-10 18:09:28 WARN  LogHere:27 - 
+2018-05-10 18:15:03 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 18:15:03 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:15:03 WARN  LogHere:27 - Error code: 17026
+2018-05-10 18:15:03 WARN  LogHere:27 - 
+2018-05-10 18:16:15 WARN  LogHere:27 - Invalid column name
+2018-05-10 18:16:15 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:16:15 WARN  LogHere:27 - Error code: 17006
+2018-05-10 18:17:50 WARN  LogHere:27 - Invalid column name
+2018-05-10 18:17:50 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:17:50 WARN  LogHere:27 - Error code: 17006
+2018-05-10 18:21:25 WARN  LogHere:27 - Numeric Overflow
+2018-05-10 18:21:25 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:21:25 WARN  LogHere:27 - Error code: 17026
+2018-05-10 18:21:25 WARN  LogHere:27 - 
+2018-05-10 18:24:28 WARN  LogHere:27 - ORA-00918: column ambiguously defined
+
+2018-05-10 18:24:28 WARN  LogHere:27 - SQLE State: 42000
+2018-05-10 18:24:28 WARN  LogHere:27 - Error code: 918
+2018-05-10 18:25:49 WARN  LogHere:27 - ORA-00918: column ambiguously defined
+
+2018-05-10 18:25:49 WARN  LogHere:27 - SQLE State: 42000
+2018-05-10 18:25:49 WARN  LogHere:27 - Error code: 918
+2018-05-10 18:27:24 WARN  LogHere:27 - Invalid column name
+2018-05-10 18:27:24 WARN  LogHere:27 - SQLE State: 99999
+2018-05-10 18:27:24 WARN  LogHere:27 - Error code: 17006
+2018-05-10 19:23:33 WARN  LogHere:27 - ORA-01438: value larger than specified precision allowed for this column
+ORA-06512: at "ADMINEW.UPDATE_USER", line 6
+ORA-06512: at line 1
+
+2018-05-10 19:23:33 WARN  LogHere:27 - SQLE State: 22003
+2018-05-10 19:23:33 WARN  LogHere:27 - Error code: 1438
+2018-05-10 19:23:33 WARN  LogHere:27 - ORA-01438: value larger than specified precision allowed for this column
+ORA-06512: at "ADMINEW.UPDATE_USER", line 6
+ORA-06512: at line 1
+
+2018-05-10 19:23:33 WARN  LogHere:27 - SQLE State: 22003
+2018-05-10 19:23:33 WARN  LogHere:27 - Error code: 1438
+2018-05-10 19:23:34 WARN  LogHere:27 - ORA-01438: value larger than specified precision allowed for this column
+ORA-06512: at "ADMINEW.UPDATE_USER", line 6
+ORA-06512: at line 1
+
+2018-05-10 19:23:34 WARN  LogHere:27 - SQLE State: 22003
+2018-05-10 19:23:34 WARN  LogHere:27 - Error code: 1438
