@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <title>Bootstrap example</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header col-md-2">
+                <a href="./index.html" class="navbar-brand"> index</a>
+            </div>
+            <ul class="navbar-nav nav col-md-6">
+                <li class="active">
+                    <a href="./bootstrap.html">Bootstrap Example</a>
+                </li>
+                <li>
+                    <a href="./jsonExample.html">JSON Example</a>
+                </li>
+                <li>
+                    <a href="#">asd</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
+                <li>
+                    <a href="#">logout
+                        <span class="glyphicon glyphicon-log-out"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- breakcrumb example, these help show pagination -->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"> Home</li>
+            <li class="breadcrumb-item"> Bootstrap example</li>
+            <li class="breadcrumb-item"> Bootstrap a</li>
+
+        </ol>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4"> Nisemonogatari is good, actually</h1>
+            <p class="lead">it's really tight thematically</p>
+            <hr class="my-4">
+            <a href="#" class="btn btn-info btn-large">Learn more!</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="button-group">
+            <button id="changeMe" class="btn btn-primary">kanbaru tore</button>
+            <button class="btn btn-default">kanbaru tore</button>
+            <button class="btn btn-success">kanbaru tore</button>
+            <button class="btn btn-warning">kanbaru tore</button>
+            <button class="btn btn-danger"> kanbaru tore</button>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" data-toggle="dropdown">Show me
+                <span class="caret" </span></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">b</a>
+                </li>
+                <li>
+                    <a href="#">a</a>
+                </li>
+                <li>
+                    <a href="#">a</a>
+                </li>
+                <li>
+                    <a href="#">a</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+                <div class="col-md-7">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Occupation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- <tr>
+                                    <td>Row 1, Cell 1</td>
+                                    <td>Row 1, Cell 2</td>
+                                    <td>Row 1, Cell 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Row 2, Cell 1</td>
+                                    <td>Row 2, Cell 2</td>
+                                    <td>Row 2, Cell 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Row 3, Cell 1</td>
+                                    <td>Row 3, Cell 2</td>
+                                    <td>Row 3, Cell 3</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+        <div class="col-md-3 col-md-offset-1">
+            <form class="well" action="#">
+                <div class="form-group">
+                    <label for "firstname">
+                        <b>First Name</b>
+                    </label>
+                    <input type="text" name="firstname" id="firstname" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for "lastname">
+                        <b>Last Name</b>
+                    </label>
+                    <input type="text" name="lastname" id="lastname" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for "occupation">
+                        <b>
+                            Occupation
+                        </b>
+                    </label>
+                    <input type="text" name="occupation" id="occupation" required class="form-control">
+                </div>
+
+                <div class="form-group button-group">
+                    <button class="btn btn-primary" id="submitBtn" type="button">submit</button>
+                    <button class="btn btn-primary" id="resetBtn" type="reset">reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="../js/domManipulation.js"></script>
+</body>
+
+</html>

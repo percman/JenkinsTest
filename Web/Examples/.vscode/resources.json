@@ -1,0 +1,7 @@
+{
+  "css": {
+    "style": [
+      ".vsCode/bootstap.css", ".vsCode/bootstrap-theme.css"
+    ]
+  }
+}

@@ -4191,3 +4191,200 @@ ORA-06512: at line 1
 2018-04-30 03:29:30 DEBUG PackSim:33 - Generating Rarity Distributions
 2018-04-30 03:29:30 DEBUG PackSim:35 - Generating RNG
 2018-04-30 16:23:11 INFO  UserService:75 - Adding new admin...
+2018-05-01 10:58:46 INFO  PackSim:32 - Preparing PackSim 
+2018-05-01 10:58:46 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-05-01 10:58:46 DEBUG PackSim:35 - Generating RNG
+2018-05-01 10:58:46 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-05-01 10:58:46 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-05-01 10:58:46 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-05-01 10:58:46 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-05-01 13:02:58 INFO  PackSim:32 - Preparing PackSim 
+2018-05-01 13:02:58 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-05-01 13:02:59 DEBUG PackSim:35 - Generating RNG
+2018-05-01 13:02:59 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-05-01 13:02:59 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-05-01 13:02:59 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-05-01 13:02:59 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-05-01 13:03:11 INFO  Core:127 - Attempting login with user admin
+2018-05-01 13:03:17 DEBUG UserService:50 - User admin logged in successfully!
+2018-05-01 13:03:17 INFO  Core:129 - Logged in!
+2018-05-01 13:03:41 INFO  Core:127 - Attempting login with user walkindude
+2018-05-01 13:03:56 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-05-01 13:03:56 INFO  Core:129 - Logged in!
+2018-05-01 13:14:46 INFO  PackSim:32 - Preparing PackSim 
+2018-05-01 13:14:46 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-05-01 13:14:46 DEBUG PackSim:35 - Generating RNG
+2018-05-01 13:14:46 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-05-01 13:14:46 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-05-01 13:14:46 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-05-01 13:14:46 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-05-01 13:15:30 INFO  PackSim:32 - Preparing PackSim 
+2018-05-01 13:15:30 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-05-01 13:15:30 DEBUG PackSim:35 - Generating RNG
+2018-05-01 13:15:31 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-05-01 13:15:31 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-05-01 13:15:31 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-05-01 13:15:31 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-05-01 13:17:23 INFO  Core:127 - Attempting login with user admin
+2018-05-01 13:17:27 DEBUG UserService:50 - User admin logged in successfully!
+2018-05-01 13:17:27 INFO  Core:129 - Logged in!
+2018-05-01 13:18:19 INFO  PackSim:32 - Preparing PackSim 
+2018-05-01 13:18:19 DEBUG PackSim:33 - Generating Rarity Distributions
+2018-05-01 13:18:19 DEBUG PackSim:35 - Generating RNG
+2018-05-01 13:18:19 DEBUG AbstractTextTerminal:92 - System property textio.properties.location not set.
+2018-05-01 13:18:19 DEBUG AbstractTextTerminal:105 - Terminal properties file C:\Users\WalkinDude\work\git\1804-jta\JDBCBank\textio.properties not found.
+2018-05-01 13:18:19 DEBUG AbstractTextTerminal:116 - No terminal properties file found in classpath.
+2018-05-01 13:18:19 DEBUG AbstractTextTerminal:118 - Using only default properties.
+2018-05-01 13:22:54 INFO  Core:127 - Attempting login with user admin
+2018-05-01 13:22:58 DEBUG UserService:50 - User admin logged in successfully!
+2018-05-01 13:22:58 INFO  Core:129 - Logged in!
+2018-05-01 13:24:08 INFO  Admin:49 - walkindude locked.
+2018-05-01 13:24:21 INFO  Core:127 - Attempting login with user walkindude
+2018-05-01 13:24:42 INFO  Core:138 - locked account walkindude
+2018-05-01 13:24:49 INFO  Core:127 - Attempting login with user admin
+2018-05-01 13:24:53 DEBUG UserService:50 - User admin logged in successfully!
+2018-05-01 13:24:53 INFO  Core:129 - Logged in!
+2018-05-01 13:25:13 INFO  Admin:67 - walkindude unlocked.
+2018-05-01 13:25:36 INFO  Core:127 - Attempting login with user walkindude
+2018-05-01 13:25:43 DEBUG UserService:50 - User walkindude logged in successfully!
+2018-05-01 13:25:43 INFO  Core:129 - Logged in!
+2018-05-01 13:25:48 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 13:25:48 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 13:25:52 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 13:25:52 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 13:25:54 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 13:25:54 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 13:25:55 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 13:25:55 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 13:25:57 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-05-01 13:25:57 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 13:25:58 DEBUG Player:88 - Unpacked a COMMON: Snap Freeze
+2018-05-01 13:25:58 DEBUG UserService:81 - Adding card to player...
+2018-05-01 13:25:59 DEBUG Player:88 - Unpacked a COMMON: Ghostly Charger
+2018-05-01 13:25:59 DEBUG UserService:81 - Adding card to player...
+2018-05-01 13:26:00 DEBUG Player:88 - Unpacked a COMMON: Marsh Drake
+2018-05-01 13:26:00 DEBUG UserService:81 - Adding card to player...
+2018-05-01 13:26:01 DEBUG Player:88 - Unpacked a COMMON: Marsh Drake
+2018-05-01 13:26:01 DEBUG UserService:81 - Adding card to player...
+2018-05-01 13:26:05 DEBUG Player:88 - Unpacked a EPIC: Voodoo Doll
+2018-05-01 13:26:05 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:04:16 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:04:16 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:04:17 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:04:17 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:04:18 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:04:18 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:04:20 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:04:20 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:04:21 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:04:21 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:04:22 DEBUG Player:88 - Unpacked a COMMON: Lost Spirit
+2018-05-01 14:04:22 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:04:23 DEBUG Player:88 - Unpacked a RARE: Militia Commander
+2018-05-01 14:04:23 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:04:24 DEBUG Player:88 - Unpacked a RARE: Wing Blast
+2018-05-01 14:04:24 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:04:25 DEBUG Player:88 - Unpacked a RARE: Militia Commander
+2018-05-01 14:04:25 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:04:26 DEBUG Player:88 - Unpacked a RARE: Holy Water
+2018-05-01 14:04:26 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:02 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:08:02 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:03 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:03 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:04 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:04 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:05 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:05 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:07 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:08:07 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:08 DEBUG Player:105 - Unpacked a RARE: Scaleworm
+2018-05-01 14:08:08 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:09 DEBUG Player:105 - Unpacked a COMMON: Witchwood Apple
+2018-05-01 14:08:09 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:10 DEBUG Player:105 - Unpacked a COMMON: Walnut Sprite
+2018-05-01 14:08:10 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:10 DEBUG Player:105 - Unpacked a COMMON: Dire Frenzy
+2018-05-01 14:08:10 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:11 DEBUG Player:105 - Unpacked a RARE: Pick Pocket
+2018-05-01 14:08:11 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:11 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:08:11 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:12 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:12 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:13 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:13 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:15 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:08:15 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:16 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:08:16 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:17 DEBUG Player:105 - Unpacked a RARE: Mad Hatter
+2018-05-01 14:08:17 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:18 DEBUG Player:105 - Unpacked a COMMON: Spellshifter
+2018-05-01 14:08:18 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:18 DEBUG Player:105 - Unpacked a COMMON: Vicious Scalehide
+2018-05-01 14:08:18 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:19 DEBUG Player:105 - Unpacked a RARE: Curio Collector
+2018-05-01 14:08:19 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:19 DEBUG Player:105 - Unpacked a RARE: Earthen Might
+2018-05-01 14:08:19 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:20 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:20 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:21 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:08:21 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:22 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-05-01 14:08:22 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:23 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:23 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:25 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:08:25 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:26 DEBUG Player:105 - Unpacked a COMMON: Quartz Elemental
+2018-05-01 14:08:26 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:27 DEBUG Player:105 - Unpacked a RARE: Chief Inspector
+2018-05-01 14:08:27 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:28 DEBUG Player:105 - Unpacked a EPIC: Town Crier
+2018-05-01 14:08:28 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:29 DEBUG Player:105 - Unpacked a COMMON: Hench-Clan Thug
+2018-05-01 14:08:29 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:30 DEBUG Player:105 - Unpacked a RARE: Blood Witch
+2018-05-01 14:08:30 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:40 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:40 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:41 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:41 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:42 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:42 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:44 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:08:44 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:45 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-05-01 14:08:45 DEBUG CardDaoImpl:80 - set: GILNEAS
+2018-05-01 14:08:46 DEBUG Player:105 - Unpacked a COMMON: Snap Freeze
+2018-05-01 14:08:46 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:47 DEBUG Player:105 - Unpacked a COMMON: Furious Ettin
+2018-05-01 14:08:47 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:48 DEBUG Player:105 - Unpacked a COMMON: Druid of the Scythe
+2018-05-01 14:08:48 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:48 DEBUG Player:105 - Unpacked a COMMON: Vilebrood Skitterer
+2018-05-01 14:08:48 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:08:49 DEBUG Player:105 - Unpacked a EPIC: Ratcatcher
+2018-05-01 14:08:49 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:09:38 DEBUG CardDaoImpl:79 - rarity: RARE
+2018-05-01 14:09:38 DEBUG CardDaoImpl:80 - set: GANGS
+2018-05-01 14:09:39 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:09:39 DEBUG CardDaoImpl:80 - set: GANGS
+2018-05-01 14:09:41 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:09:41 DEBUG CardDaoImpl:80 - set: GANGS
+2018-05-01 14:09:45 DEBUG CardDaoImpl:79 - rarity: COMMON
+2018-05-01 14:09:45 DEBUG CardDaoImpl:80 - set: GANGS
+2018-05-01 14:09:46 DEBUG CardDaoImpl:79 - rarity: EPIC
+2018-05-01 14:09:46 DEBUG CardDaoImpl:80 - set: GANGS
+2018-05-01 14:09:47 DEBUG Player:88 - Unpacked a RARE: Counterfeit Coin
+2018-05-01 14:09:47 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:09:48 DEBUG Player:88 - Unpacked a COMMON: Tanaris Hogchopper
+2018-05-01 14:09:48 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:09:49 DEBUG Player:88 - Unpacked a COMMON: Jade Behemoth
+2018-05-01 14:09:49 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:09:49 DEBUG Player:88 - Unpacked a COMMON: Mark of the Lotus
+2018-05-01 14:09:49 DEBUG UserService:81 - Adding card to player...
+2018-05-01 14:09:50 DEBUG Player:88 - Unpacked a EPIC: Luckydo Buccaneer
+2018-05-01 14:09:50 DEBUG UserService:81 - Adding card to player...
