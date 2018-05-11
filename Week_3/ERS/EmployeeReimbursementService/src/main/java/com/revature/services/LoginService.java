@@ -1,5 +1,7 @@
 package com.revature.services;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,6 +14,7 @@ import com.revature.dao.ReimbursementService;
 import com.revature.employee.FinanceManager;
 import com.revature.employee.GenericEmployee;
 import com.revature.exceptions.EmployeeNotFoundException;
+import com.revature.reimbursement.Reimbursment;
 
 
 public class LoginService {
@@ -29,6 +32,7 @@ public class LoginService {
 					FinanceManager authorized = man;
 					request.getSession().setAttribute("authorizedUser", authorized);
 					String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(authorized.getUsername()));
+					System.out.println(rebursementJson);
 					request.getSession().setAttribute("reimbursements", rebursementJson);
 					return "/managerHome.do";
 				}
@@ -38,6 +42,7 @@ public class LoginService {
 					if(emp.getPassword().equals(EmployeeService.getPasswordHash(new GenericEmployee(username,password)))) {
 						GenericEmployee authorized = emp;
 						request.getSession().setAttribute("authorizedUser", authorized);
+						List<Reimbursment> list= ReimbursementService.getReimbursmentForEmployee(username);
 						String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(authorized.getUsername()));
 						request.getSession().setAttribute("reimbursements", rebursementJson);
 						return "/employeeHome.do";

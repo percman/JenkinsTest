@@ -29,10 +29,11 @@ public Reimbursment(Category cat, int approverId, int submitterId, int reimburse
 	this.approved = approved == 1;
 }
 
-public Reimbursment(Category cat, int reimburseId, int approved) {
+public Reimbursment(Category cat, int amount,int reimburseId, int approved) {
 	super();
 	
 	this.cat = cat;
+	this.amount = amount;
 	this.reimburseId = reimburseId;
 	this.approved = approved == 1;
 }

@@ -6,9 +6,9 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../ReimbursementCss/bootstrap.css/">
 </head>
 <body>
+<h2><%= request.getSession().getAttribute("reimbursements") %></h2>
 <script type="text/javascript">
 window.onload = function(){
         populateReburTable();
@@ -24,7 +24,9 @@ window.onload = function(){
         xhr.onreadystatechange = function(){
             //Step 5 handle the response
             if(xhr.readyState == 4 && xhr.status == 200){
-                var reburObj = ${rebursementJson};
+            	
+                var reburObj = <%= session.getAttribute("reimbursments") %>;
+                console.log(reburObj);
                 for(let rebur in reburObj){
                     //get the properties of the JSON element
     				let id = rebur.reimburseId;
@@ -33,6 +35,7 @@ window.onload = function(){
                     let timeApp = rebur.timeApproved;
                     let timeSub = rebur.timeSubmitted;
                     let amount = rebur.amount;
+                    
                     
 
                     //Dynamically create the HTML tags
@@ -69,7 +72,7 @@ window.onload = function(){
             }
         }
         //Step 3 call the open method 
-        xhr.open("GET","/viewEmployeeReimburstment.jsp",);
+        xhr.open("GET","/EmployeeReimbursementService/viewEmployeeReimburstment.jsp",true);
 
         //Step 4 call the send method
 

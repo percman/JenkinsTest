@@ -34,8 +34,9 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		public boolean submitReimbursment(Reimbursment rebur) {
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
-				CallableStatement stmt = conn.prepareCall("{CALL insert_reimbursement(?,?)}");
+				CallableStatement stmt = conn.prepareCall("{CALL insert_reimbursement(?,?,?)}");
 				stmt.setString(++index, rebur.getCat().toString());
+				stmt.setInt(++index, rebur.getAmount());
 				stmt.setInt(++index, rebur.getSumbitterId());
 				return stmt.executeUpdate() > 0;
 			} catch(SQLException sqle) {
@@ -157,13 +158,15 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 
 		@Override
 		public List<Reimbursment> getReimbursmentForEmployee(String emp) {
+			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
 				List<Reimbursment> rebur= new ArrayList<>();
 				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM REIMBURSEMENT WHERE SUBMITTER_ID IN (SELECT EMP_ID FROM EMPLOYEE WHERE EMPLOYEE.EMP_USERNAME = ?)");
+				stmt.setString(++index, emp);
 				ResultSet rs = stmt.executeQuery();
 				
 				while(rs.next()) {
-					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")),rs.getInt("rebur_id"),rs.getInt("approved")));
+					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved")));
 				}
 				return rebur;
 			} catch(SQLException sqle) {

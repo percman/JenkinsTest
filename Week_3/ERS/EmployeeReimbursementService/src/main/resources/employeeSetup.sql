@@ -16,6 +16,8 @@ CONSTRAINT fk_gen_id FOREIGN KEY(gen_emp_id) REFERENCES employee(emp_id) ON DELE
 CONSTRAINT pk_gen_id PRIMARY KEY(gen_emp_id));
 
 
+
+
 CREATE TABLE finance_manager(
 man_first_name VARCHAR2(30)default '',
 man_last_name VARCHAR2(30) default '',
@@ -24,18 +26,18 @@ man_address VARCHAR2(50) default'',
 man_id NUMBER ,
 CONSTRAINT FK_man_id FOREIGN KEY(man_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
 CONSTRAINT pk_man_id PRIMARY KEY(man_id));
-
+drop table reimbursement;
 CREATE TABLE reimbursement(
 rebur_id NUMBER,
 category VARCHAR2(20),
 approved NUMBER(1) default 0,
-approver_id NUMBER,
+approver_id NUMBER default 0,
 submitter_id NUMBER,
 timeSubmitted Date,
 timeApproved Date,
 amount number(10),
 CONSTRAINT ckUserApproved check (approved in (0,1,-1)),
-CONSTRAINT FK_submit FOREIGN KEY(submitter_id) REFERENCES generic_employee(gen_emp_id) ON DELETE CASCADE,
+CONSTRAINT FK_submit FOREIGN KEY(submitter_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
 CONSTRAINT FK_approve FOREIGN KEY(approver_id) REFERENCES finance_manager(man_id) ON DELETE CASCADE,
 CONSTRAINT pk_rebur_id PRIMARY KEY(rebur_id));
 
@@ -63,7 +65,6 @@ BEGIN
 END;
 /
 
-select * from employee where emp_username = 'davidfadsfjasj';
 
 CREATE OR REPLACE TRIGGER gen_emp_insert
 After INSERT 
@@ -84,10 +85,10 @@ END;
 /
 
 
-CREATE OR REPLACE PROCEDURE insert_reimbursement (new_category IN VARCHAR2, new_submitter_id IN NUMBER)
+CREATE OR REPLACE PROCEDURE insert_reimbursement (new_category IN VARCHAR2, new_amount IN NUMBER,new_submitter_id IN NUMBER)
 AS
 BEGIN
-    INSERT INTO reimbursement(category,SUBMITTER_ID) VALUES(new_category,new_submitter_id);
+    INSERT INTO reimbursement(category,amount,SUBMITTER_ID) VALUES(new_category,new_amount,new_submitter_id);
 END;
 /
 
@@ -95,6 +96,7 @@ CREATE OR REPLACE PROCEDURE update_reimbursement(new_approver_id IN NUMBER,new_r
 AS
 BEGIN
     UPDATE reimbursement SET approver_id = new_approver_id WHERE REBUR_ID = new_rebur_id;
+    UPDATE reimbursement set timeApproved = CURRENT_TIMESTAMP WHERE REBUR_ID = new_rebur_id;
 END;
 /
 
@@ -157,18 +159,39 @@ BEGIN
     IF :new.rebur_id IS NULL THEN
     SELECT rebur_id_sequence.nextval INTO : new.rebur_id FROM dual;
     END IF;
-    SELECT CURRENT_TIMESTAMP into : new.rebur_timeSubmitted from dual;
+    IF :new.approver_id IS NULL THEN
+    SELECT 0 INTO : new.approver_id from dual;
+    end if;
+    SELECT CURRENT_TIMESTAMP into : new.timeSubmitted from dual;
+END;
+/
+
+CREATE OR REPLACE TRIGGER rebur_approve
+After Update 
+ON reimbursement
+FOR EACH ROW 
+BEGIN
+    IF :new.rebur_id IS NULL THEN
+    SELECT rebur_id_sequence.nextval INTO : new.rebur_id FROM dual;
+    END IF;
+    IF :new.approver_id IS NULL THEN
+    SELECT 0 INTO : new.approver_id from dual;
+    end if;
+    SELECT CURRENT_TIMESTAMP into : new.timeApproved from dual;
 END;
 /
 
 select * from generic_employee;
 select * from FINANCE_MANAGER;
 select * from employee;
-
+select * from reimbursement;
 Update FINANCE_MANAGER set man_first_name = 'matt' where man_id = 2;
+insert into employee(emp_id) values(0);
+insert into FINANCE_MANAGER(man_id) values (0); 
+insert into REIMBURSEMENT(category,submitter_id) values ('food',2);
 
 Begin
-UPDATE_MAN(2,'','','','');
+INSERT_REIMBURSEMENT('food',100,1);
 end;
 /
 
