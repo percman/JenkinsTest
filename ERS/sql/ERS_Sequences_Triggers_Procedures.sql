@@ -23,6 +23,13 @@ CREATE SEQUENCE reimbursement_id_sequence
     MINVALUE 1
     NOCACHE;
     
+CREATE SEQUENCE reimbursement_info_sequence
+    START WITH 1
+    INCREMENT BY 1
+    MINVALUE 1
+    NOCACHE;
+
+    
 CREATE OR REPLACE TRIGGER before_reimbursement_insert
     BEFORE INSERT
     ON reimbursement
@@ -30,6 +37,17 @@ CREATE OR REPLACE TRIGGER before_reimbursement_insert
     BEGIN
         IF :new.r_id is NULL THEN
             SELECT reimbursement_id_sequence.nextval INTO :new.r_id FROM DUAL;
+        END IF;
+    END;
+    /
+    
+CREATE OR REPLACE TRIGGER before_r_Info_insert
+    BEFORE INSERT
+    ON reimbursement_info
+    FOR EACH ROW
+    BEGIN
+        IF :new.r_id is NULL THEN
+            SELECT reimbursement_info_sequence.nextval INTO :new.r_id FROM DUAL;
         END IF;
     END;
     /
@@ -43,18 +61,18 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE insert_reimbursement( id IN NUMBER, e_id IN NUMBER)
+CREATE OR REPLACE PROCEDURE insert_reimbursement(e_id IN NUMBER)
 AS
 BEGIN
-    INSERT INTO reimbursement(r_id, request_id) VALUES(id,e_id);
+    INSERT INTO reimbursement(request_id) VALUES(e_id);
     COMMIT;
 END;
 /
 
-CREATE OR REPLACE PROCEDURE insert_r_info(id IN NUMBER,cat IN VARCHAR2)
+CREATE OR REPLACE PROCEDURE insert_r_info(cat IN VARCHAR2,money IN float)
 AS
 BEGIN
-    INSERT INTO reimbursement_info(r_id,category)VALUES(id,cat);
+    INSERT INTO reimbursement_info(category,amount)VALUES(cat,money);
     COMMIT;
 END;
 /

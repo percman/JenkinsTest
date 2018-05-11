@@ -4,6 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.revature.service.EmployeeService;
+import com.revature.service.InformationService;
+import com.revature.service.ReimbursementInformationService;
+import com.revature.service.ReimbursementService;
 
 public class Dispatcher {
 	
@@ -14,9 +17,17 @@ public class Dispatcher {
 		switch(request.getRequestURI()) {
 			case "/ERS/HTML/login.do":
 				return EmployeeService.login(request, response);
+			case "/ERS/HTML/update.do":
+				return InformationService.update(request, response);
+			case "/ERS/HTML/logout.do":
+				request.getSession().removeAttribute("Employee");
+				return "/HTML/GenericCorpIndex.html";
+			case "/ERS/HTML/new.do":
+				return ReimbursementService.NewReimbursement(request, response);
+			case "/ERS/HTML/resolve.do":
+				return ReimbursementInformationService.Resolve(request, response);
 			default:
 				return "404.jsp";
 		}
 	}
-
 }

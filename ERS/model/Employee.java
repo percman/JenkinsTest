@@ -1,7 +1,11 @@
 package com.revature.model;
 
-public class Employee {
-	//Both the FinancialManager class and OtherEmployee class extend from this class.
+import java.io.Serializable;
+
+public class Employee implements Serializable{
+	
+	private static final long serialVersionUID = 4764249266272828611L;
+	
 	private int id;
 	private String username;
 	private String password;

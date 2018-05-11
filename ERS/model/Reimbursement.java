@@ -1,9 +1,16 @@
 package com.revature.model;
 
-public class Reimbursement {
+import java.io.Serializable;
+
+public class Reimbursement implements Serializable {
+	
+	private static final long serialVersionUID = 6143782801477180624L;
 	private int id;
 	private int e_id;
 	private int fm_id;
+	private float amount;
+	private String recieved;
+	private String resolved;
 	private String category;
 	private String status;
 	
@@ -18,7 +25,56 @@ public class Reimbursement {
 		this.id = id;
 		this.e_id = e_id;
 	}
+	
+	public Reimbursement(int id, float amount, String category, String status) {
+		super();
+		this.id = id;
+		this.amount = amount;
+		this.category = category;
+		this.status = status;
+	}
 
+	public Reimbursement(int id, int e_id, int m_id, float amount, String recieved, String resolved, String category, String status) {
+		super();
+		this.id = id;
+		this.e_id = e_id;
+		this.fm_id = m_id;
+		this.amount = amount;
+		this.recieved = recieved;
+		this.resolved = resolved;
+		this.category = category;
+		this.status = status;
+	}
+	
+	public Reimbursement(int int1, String date, String date2, float float1, String string, String string2) {
+		this.id = int1;
+		this.recieved = date;
+		this.resolved = date2;
+		this.amount = float1;
+		this.category = string;
+		this.status = string2;
+	}
+
+	public String getRecieved() {
+		return recieved;
+	}
+
+	public void setRecieved(String recieved) {
+		this.recieved = recieved;
+	}
+
+	public String getResolved() {
+		return resolved;
+	}
+
+	public void setResolved(String resolved) {
+		this.resolved = resolved;
+	}
+
+	public void setFm_id(int fm_id) {
+		this.fm_id = fm_id;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -58,15 +114,27 @@ public class Reimbursement {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+
+	public float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + Float.floatToIntBits(amount);
 		result = prime * result + ((category == null) ? 0 : category.hashCode());
 		result = prime * result + e_id;
 		result = prime * result + fm_id;
 		result = prime * result + id;
+		result = prime * result + ((recieved == null) ? 0 : recieved.hashCode());
+		result = prime * result + ((resolved == null) ? 0 : resolved.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		return result;
 	}
@@ -80,6 +148,8 @@ public class Reimbursement {
 		if (getClass() != obj.getClass())
 			return false;
 		Reimbursement other = (Reimbursement) obj;
+		if (Float.floatToIntBits(amount) != Float.floatToIntBits(other.amount))
+			return false;
 		if (category == null) {
 			if (other.category != null)
 				return false;
@@ -91,6 +161,16 @@ public class Reimbursement {
 			return false;
 		if (id != other.id)
 			return false;
+		if (recieved == null) {
+			if (other.recieved != null)
+				return false;
+		} else if (!recieved.equals(other.recieved))
+			return false;
+		if (resolved == null) {
+			if (other.resolved != null)
+				return false;
+		} else if (!resolved.equals(other.resolved))
+			return false;
 		if (status == null) {
 			if (other.status != null)
 				return false;
@@ -101,8 +181,8 @@ public class Reimbursement {
 
 	@Override
 	public String toString() {
-		return "Reimbursement [id=" + id + ", requester id=" + e_id + ", Financial Manager id=" + fm_id + ", category=" + category
-				+ ", status=" + status + "]";
+		return "Reimbursement [id=" + id + ", e_id=" + e_id + ", fm_id=" + fm_id + ", amount=" + amount + ", recieved="
+				+ recieved + ", resolved=" + resolved + ", category=" + category + ", status=" + status + "]";
 	}
 	
 	

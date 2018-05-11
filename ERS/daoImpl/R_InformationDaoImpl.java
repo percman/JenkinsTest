@@ -14,12 +14,13 @@ public class R_InformationDaoImpl implements R_InformationDAO {
 
 	@Override
 	public boolean setInformation(Reimbursement reimbursement) {
+		ConnectionUtility.getInstance();
 		String sql = "{CALL insert_r_info(?,?)}";
 		int index = 0;
 		try(Connection conn = ConnectionUtility.getConnection()){
 			CallableStatement cs = conn.prepareCall(sql);
-			cs.setInt(++index, reimbursement.getId());
 			cs.setString(++index, reimbursement.getCategory());
+			cs.setFloat(++index, reimbursement.getAmount());
 			int success = cs.executeUpdate();
 			return success > 0;
 		}catch(SQLException sqle) {
@@ -32,6 +33,7 @@ public class R_InformationDaoImpl implements R_InformationDAO {
 
 	@Override
 	public Reimbursement getInformation(Reimbursement reimbursement) {
+		ConnectionUtility.getInstance();
 		String sql = "SELECT category,status FROM reimbursement_info WHERE r_id =?";
 		int index = 0;
 		try(Connection conn = ConnectionUtility.getConnection()){
@@ -51,13 +53,14 @@ public class R_InformationDaoImpl implements R_InformationDAO {
 		return null;
 	}
 	
-	public boolean UpdateInformation(Reimbursement rbmt) {
+	public boolean UpdateInformation(String status,int id) {
+		ConnectionUtility.getInstance();
 		String sql = "UPDATE reimbursement_info SET status = ? WHERE r_id = ?";
 		int index = 0;
 		try(Connection conn = ConnectionUtility.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(++index, rbmt.getStatus());
-			stmt.setInt(++index, rbmt.getId() );
+			stmt.setString(++index, status);
+			stmt.setInt(++index, id);
 			int success = stmt.executeUpdate();
 			return success > 0;
 		}catch(SQLException sqle) {

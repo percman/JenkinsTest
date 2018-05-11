@@ -5,7 +5,9 @@
     <meta charset="utf-8" />
     <title>Financial Manager Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/FinancialManager.CSS">
 </head>
 
 <body>
@@ -32,7 +34,27 @@
     <div class="container">
         <div class="jumbotron">
             <h1>Welcome</h1>
+            <p>Financial Managers are reminded that they must approve or reject pending reimbursements within a week from their submission</p>
+            <p>If there are any requests that are older than one week, resolving those requests take priority</p>
         </div>
+        <table class="table table-responsive" style="background-color: snow">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Employee ID</th>
+                    <th>Manager ID</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date Recieved</th>
+                    <th>Date Resolved</th>
+                    <th>Status</th>
+                    <th>Accept/Reject</th>
+                </tr>
+            </thead>
+            <tbody id="reimbursement">
+                   
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

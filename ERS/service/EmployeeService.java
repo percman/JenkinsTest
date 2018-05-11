@@ -3,12 +3,17 @@ package com.revature.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.revature.dao.EmployeeDAO;
 import com.revature.daoImpl.EmployeeDaoImpl;
 import com.revature.model.Employee;
-import com.revature.model.EmployeeFactory;
+import com.revature.model.Factory;
+import com.revature.utility.UrlFactory;
 
 public class EmployeeService {
+	private static final Logger logger = Logger.getLogger(EmployeeService.class);
+
 	private static EmployeeDAO dao = new EmployeeDaoImpl();
 	
 	private EmployeeService() {}
@@ -19,6 +24,8 @@ public class EmployeeService {
 	
 	public static boolean check(Employee employee) {
 		Employee temp = dao.getEmployee(employee.getUsername());
+		if(temp == null)
+			return false;
 		if(temp.getPassword().equals(dao.getPasswordHash(employee))) {
 			return true;
 		}
@@ -30,10 +37,13 @@ public class EmployeeService {
 		String password = request.getParameter("password");
 		Employee temp = new Employee(username,password);
 		if(check(temp)) {
-			Employee user = getEmployee(username);
+			Employee user = Factory.confirm(getEmployee(username));
+			user = InformationService.getInformation(user);
 			request.getSession().setAttribute("Employee", user);
-			return EmployeeFactory.page(user);
+			logger.trace("Employee logged in");
+			return UrlFactory.page(user);
 		}
+		logger.trace("Login failed");
 		return "/HTML/GenericCorpIndex.html";
 		
 	}
