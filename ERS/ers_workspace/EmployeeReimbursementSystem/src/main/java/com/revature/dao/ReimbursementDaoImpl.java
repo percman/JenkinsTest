@@ -10,6 +10,18 @@ import com.revature.util.ConnectionUtil;
 
 public class ReimbursementDaoImpl implements ReimbursementDao {
 
+	private static ReimbursementDaoImpl instance;
+
+	private ReimbursementDaoImpl() {
+	}
+
+	public static ReimbursementDaoImpl getInstance() {
+		if (instance == null) {
+			instance = new ReimbursementDaoImpl();
+		}
+		return instance;
+	}
+
 	@Override
 	public boolean newReimbursement(Reimbursement reimbursement) {
 		int index = 0;

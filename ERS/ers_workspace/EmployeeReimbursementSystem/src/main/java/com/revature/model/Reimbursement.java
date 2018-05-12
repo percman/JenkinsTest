@@ -9,9 +9,13 @@ public class Reimbursement implements Serializable {
 	// These are in the reimbursement table
 	private int id;
 	private int requestorId;
+	private String requestorName;
 	private int approverId;
+	private String approverName;
 	private int categoryId;
+	private String category;
 	private int statusId;
+	private String status;
 	private int amount;
 	private String submitted;
 	private String approved;
@@ -29,7 +33,7 @@ public class Reimbursement implements Serializable {
 		this.amount = amount;
 	}
 
-	// Public constructor that takes all fields
+	// Public constructor that takes fields to input into the database
 	public Reimbursement(int id, int requestorId, int approverId, int categoryId, int statusId, int amount,
 			String submitted, String approved) {
 		super();
@@ -38,6 +42,20 @@ public class Reimbursement implements Serializable {
 		this.approverId = approverId;
 		this.categoryId = categoryId;
 		this.statusId = statusId;
+		this.amount = amount;
+		this.submitted = submitted;
+		this.approved = approved;
+	}
+
+	// This is the constructor used to display the info
+	public Reimbursement(int id, String requestorName, String approverName, String category, String status, int amount,
+			String submitted, String approved) {
+		super();
+		this.id = id;
+		this.requestorName = requestorName;
+		this.approverName = approverName;
+		this.category = category;
+		this.status = status;
 		this.amount = amount;
 		this.submitted = submitted;
 		this.approved = approved;

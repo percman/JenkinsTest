@@ -29,26 +29,23 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public Employee getEmployee(String username) {
 		Employee employee = new Employee();
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmtEmployee = conn.prepareStatement("Select * FROM employee WHERE username = ? ");
-			stmtEmployee.setString(1, username);
-			ResultSet rsEmployee = stmtEmployee.executeQuery();
-			if (rsEmployee.next()) {
-				employee.setId(rsEmployee.getInt("employee_id"));
-				employee.setUsername(rsEmployee.getString("username"));
-				employee.setPassword(rsEmployee.getString("password"));
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee e" + 
+					"JOIN employee_info ei ON e.employee_id = ei.employee_id " + 
+					"WHERE e.employee_id = ?" );
+			stmt.setString(1, username);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				employee.setId(rs.getInt("employee_id"));
+				employee.setUsername(rs.getString("username"));
+				employee.setPassword(rs.getString("password"));
 				employee.setFinancialManager(false);
+				employee.setFirstname(rs.getString("f_name"));
+				employee.setMiddleInitial(rs.getString("m_initial"));
+				employee.setLastname(rs.getString("l_name"));
+				employee.setPhone(rs.getInt("phone"));
+				employee.setEmail(rs.getString("email"));
+				return employee;
 			}
-			PreparedStatement stmtInfo = conn.prepareStatement("SELECT * FROM employee_info WHERE employee_id = ?");
-			stmtInfo.setInt(1, employee.getId());
-			ResultSet rsInfo = stmtInfo.executeQuery();
-			if (rsInfo.next()) {
-				employee.setFirstname(rsInfo.getString("f_name"));
-				employee.setMiddleInitial(rsInfo.getString("m_initial"));
-				employee.setLastname(rsInfo.getString("l_name"));
-				employee.setPhone(rsInfo.getInt("phone"));
-				employee.setEmail(rsInfo.getString("email"));
-			}
-			return employee;
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());
 			LogThis.warn("SQL state: " + sqle.getSQLState());

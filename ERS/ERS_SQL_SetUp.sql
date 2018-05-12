@@ -243,9 +243,9 @@ CREATE OR REPLACE FUNCTION GET_CURRENT_TIME RETURN TIMESTAMP
 -----------------------------------------------------------------------------------------------
 -- Create stored procedures for inserting into employee, f_manager, and reimbursement tables -- 
 -----------------------------------------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE insert_employee (new_username VARCHAR2, new_password VARCHAR2, new_f_name VARCHAR2, 
-                                                new_m_initial VARCHAR2, new_l_name VARCHAR2, new_phone NUMBER, 
-                                                new_email VARCHAR2)
+CREATE OR REPLACE PROCEDURE insert_employee (new_username IN VARCHAR2, new_password IN VARCHAR2, new_f_name IN VARCHAR2, 
+                                                new_m_initial IN VARCHAR2, new_l_name IN VARCHAR2, new_phone IN NUMBER, 
+                                                new_email IN VARCHAR2)
     AS
     BEGIN
         INSERT INTO employee (employee_id, username, password)
@@ -256,9 +256,9 @@ CREATE OR REPLACE PROCEDURE insert_employee (new_username VARCHAR2, new_password
     END;
     /
 
-CREATE OR REPLACE PROCEDURE insert_f_manager (new_username VARCHAR2, new_password VARCHAR2, new_f_name VARCHAR2, 
-                                                new_m_initial VARCHAR2, new_l_name VARCHAR2, new_phone NUMBER, 
-                                                new_email VARCHAR2)
+CREATE OR REPLACE PROCEDURE insert_f_manager (new_username IN VARCHAR2, new_password IN VARCHAR2, new_f_name IN VARCHAR2, 
+                                                new_m_initial IN VARCHAR2, new_l_name IN VARCHAR2, new_phone IN NUMBER, 
+                                                new_email IN VARCHAR2)
     AS
     BEGIN
         INSERT INTO employee (employee_id, username, password, is_f_manager)
@@ -271,11 +271,13 @@ CREATE OR REPLACE PROCEDURE insert_f_manager (new_username VARCHAR2, new_passwor
     END;
     /
     
-CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id NUMBER, new_category_id NUMBER, new_amount NUMBER) 
+CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id IN NUMBER, new_category_id IN NUMBER, new_amount IN NUMBER) 
     AS
+        now TIMESTAMP; 
     BEGIN
-        INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, amount)
-            VALUES (null, new_requestor_id, new_category_id, new_amount);
+        now := GET_CURRENT_TIME;
+        INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, amount, submitted)
+            VALUES (null, new_requestor_id, new_category_id, new_amount, now);
         COMMIT;
     END;
     /
@@ -286,9 +288,9 @@ CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id NUMBER, new_c
 -----------------------------------------------------
 -- Create Stored procedures for updating employees -- 
 -----------------------------------------------------
-CREATE OR REPLACE PROCEDURE update_employee (e_id NUMBER, new_username VARCHAR2, new_password VARCHAR2, new_f_name VARCHAR2, 
-                                                new_m_initial VARCHAR2, new_l_name VARCHAR2, new_phone NUMBER, 
-                                                new_email VARCHAR2)
+CREATE OR REPLACE PROCEDURE update_employee (e_id IN NUMBER, new_username IN VARCHAR2, new_password IN VARCHAR2, new_f_name IN VARCHAR2, 
+                                                new_m_initial IN VARCHAR2, new_l_name IN VARCHAR2, new_phone IN NUMBER, 
+                                                new_email IN VARCHAR2)
     AS
     BEGIN
         UPDATE employee SET
@@ -309,19 +311,46 @@ CREATE OR REPLACE PROCEDURE update_employee (e_id NUMBER, new_username VARCHAR2,
 -----------------------------------------------------
 
 
+------------------------------------------------------------------
+-- Create a stored procedure to approve or deny a reimbursement -- 
+------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE resolve_reimbursement (fm_id IN NUMBER, new_status IN NUMBER, reimb_id IN NUMBER)
+    AS
+        now TIMESTAMP; 
+    BEGIN
+        now := GET_CURRENT_TIME;
+        UPDATE reimbursement SET
+            status_id = new_status,
+            approver_id = fm_id,
+            resolved = now
+            WHERE reimbursement_id = reimb_id;
+    
+    END;
+    /
+------------------------------------------------------------------
+------------------------------------------------------------------
 
 
 
 
 
+SELECT * FROM reimbursement;
 
+BEGIN
+    resolve_reimbursement(1000, 2, 100001);
+END;
+/
 
+SELECT (ei.f_name || ' ' || ei.l_name) AS approver_name, fm.f_manager_id AS fm_id FROM employee_info ei
+    JOIN f_manager fm ON ei.employee_id = fm.employee_id;
+            
 
-
-
-
-
-
+SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.r_status, c.r_category, r.amount, r.submitted, r.resolved, ai.approver_name FROM reimbursement r 
+    JOIN employee_info ei ON r.requestor_id = ei.employee_id
+    JOIN r_status s ON s.status_id = r.status_id
+    JOIN r_category c ON c.category_id = r.category_id
+    JOIN (SELECT (ei2.f_name || ' ' || ei2.l_name) AS approver_name, fm.f_manager_id AS fmid FROM employee_info ei2
+                JOIN f_manager fm ON ei2.employee_id = fm.employee_id) ai ON ai.fmid = r.approver_id; 
 
 
 

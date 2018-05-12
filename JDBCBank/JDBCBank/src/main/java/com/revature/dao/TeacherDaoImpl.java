@@ -31,7 +31,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	public Teacher getTeacher(String username) {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("Select * FROM teacher WHERE t_username = ? ");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM teacher WHERE t_username = ? ");
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
@@ -105,7 +105,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	public List<Student> getAllStudents() {
 		List<Student> list = new ArrayList<>();
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("Select * FROM student");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM student");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				list.add(new Student(rs.getString("s_firstname"), rs.getString("s_lastname"), rs.getString("s_username")));
@@ -123,7 +123,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	public List<Student> getUnapprovedStudents() {
 		List<Student> list = new ArrayList<>();
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("Select * FROM student WHERE s_approved = 0 ");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM student WHERE s_approved = 0 ");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				list.add(new Student(rs.getString("s_firstname"), rs.getString("s_lastname"), rs.getString("s_username")));
@@ -141,7 +141,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	public List<Student> getUnlockedStudents() {
 		List<Student> list = new ArrayList<>();
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("Select * FROM student WHERE s_locked = 0 ");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM student WHERE s_locked = 0 ");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				list.add(new Student(rs.getString("s_firstname"), rs.getString("s_lastname"), rs.getString("s_username")));
@@ -159,7 +159,7 @@ public class TeacherDaoImpl implements TeacherDao {
 	public List<Student> getLockedStudents() {
 		List<Student> list = new ArrayList<>();
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("Select * FROM student WHERE s_locked = 1 ");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM student WHERE s_locked = 1 ");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				list.add(new Student(rs.getString("s_firstname"), rs.getString("s_lastname"), rs.getString("s_username")));

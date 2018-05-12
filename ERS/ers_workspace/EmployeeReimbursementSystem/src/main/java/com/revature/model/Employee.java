@@ -29,6 +29,13 @@ public class Employee implements Serializable {
 		this.password = password;
 	}
 
+	public Employee(String firstname, String middleInitial, String lastname) {
+		super();
+		this.firstname = firstname;
+		this.middleInitial = middleInitial;
+		this.lastname = lastname;
+	}
+	
 	// Public constructor that takes all fields
 	public Employee(int id, String username, String password, boolean isFinancialManager, String firstname,
 			String middleInitial, String lastname, int phone, String email) {
