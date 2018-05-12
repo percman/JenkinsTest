@@ -11,8 +11,8 @@ public interface EmployeeDao {
 	boolean updateEmployee(Employee employee);
 	String getPasswordHash(Employee employee);
 	
-	List<Reimbursement> viewAllReimbursements();
-	List<Reimbursement> viewReimbursementByStatus(int status);
+	List<Reimbursement> viewAllReimbursements(Employee employee);
+	List<Reimbursement> viewReimbursementByStatus(Employee employee, int status);
 	
 	// Low priority
 	boolean insertEmployee(Employee employee);

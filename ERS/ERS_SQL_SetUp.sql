@@ -121,6 +121,11 @@ INSERT INTO r_category (category_id, r_category) VALUES (2, 'travel');
 INSERT INTO r_category (category_id, r_category) VALUES (3, 'food');
 INSERT INTO r_category (category_id, r_category) VALUES (4, 'other');
 
+BEGIN
+    insert_f_manager('username', 'password', 'This Request', null, 'Is Pending', null, null);
+END;
+/
+
 SELECT * FROM R_STATUS;
 SELECT * FROM R_CATEGORY;
 ------------------------------------------------
@@ -276,8 +281,8 @@ CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id IN NUMBER, ne
         now TIMESTAMP; 
     BEGIN
         now := GET_CURRENT_TIME;
-        INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, amount, submitted)
-            VALUES (null, new_requestor_id, new_category_id, new_amount, now);
+        INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, amount, submitted, approver_id)
+            VALUES (null, new_requestor_id, new_category_id, new_amount, now, 1001);
         COMMIT;
     END;
     /
@@ -324,7 +329,7 @@ CREATE OR REPLACE PROCEDURE resolve_reimbursement (fm_id IN NUMBER, new_status I
             approver_id = fm_id,
             resolved = now
             WHERE reimbursement_id = reimb_id;
-    
+        COMMIT;
     END;
     /
 ------------------------------------------------------------------
@@ -334,7 +339,6 @@ CREATE OR REPLACE PROCEDURE resolve_reimbursement (fm_id IN NUMBER, new_status I
 
 
 
-SELECT * FROM reimbursement;
 
 BEGIN
     resolve_reimbursement(1000, 2, 100001);
@@ -344,7 +348,10 @@ END;
 SELECT (ei.f_name || ' ' || ei.l_name) AS approver_name, fm.f_manager_id AS fm_id FROM employee_info ei
     JOIN f_manager fm ON ei.employee_id = fm.employee_id;
             
-
+            
+            
+            
+-- Testing the query to get a reimbursement for all reimbursements
 SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.r_status, c.r_category, r.amount, r.submitted, r.resolved, ai.approver_name FROM reimbursement r 
     JOIN employee_info ei ON r.requestor_id = ei.employee_id
     JOIN r_status s ON s.status_id = r.status_id
@@ -355,12 +362,33 @@ SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.
 
 
 
+-- Testing the query to get a reimbursement for all reimbursements for a single employee / with a specific status
+SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.r_status, c.r_category, r.amount, r.submitted, r.resolved/*, ai.approver_name*/ FROM reimbursement r 
+    JOIN employee_info ei ON r.requestor_id = ei.employee_id
+    JOIN r_status s ON s.status_id = r.status_id
+    JOIN r_category c ON c.category_id = r.category_id
+    JOIN (SELECT (ei2.f_name || ' ' || ei2.l_name) AS approver_name, fm.f_manager_id AS fmid FROM employee_info ei2
+                JOIN f_manager fm ON ei2.employee_id = fm.employee_id) ai ON r.approver_id IN (ai.fmid, null)
+    WHERE r.requestor_id = 4
+    AND r.status_id = 2; 
+
+
+
+
+
+
+
+
+
+-- Look at some tables --
 SELECT * FROM employee;
+SELECT * FROM employee_info;
+SELECT * FROM f_manager;
+SELECT * FROM reimbursement;
 
 
--- use this to get employees instead!
-SELECT * FROM employee e
-    JOIN employee_info ei ON e.employee_id = ei.employee_id
-    WHERE e.employee_id = 5;
-
+BEGIN
+  insert_reimbursement(6, 3, 5.02);
+END;
+/
 
