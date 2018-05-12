@@ -125,6 +125,38 @@ public class Reimbursement implements Serializable {
 		this.approved = approved;
 	}
 
+	public String getRequestorName() {
+		return requestorName;
+	}
+
+	public void setRequestorName(String requestorName) {
+		this.requestorName = requestorName;
+	}
+
+	public String getApproverName() {
+		return approverName;
+	}
+
+	public void setApproverName(String approverName) {
+		this.approverName = approverName;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
