@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="jumbotron">
+    <h4 class="display-4">HTTP Example</h4>
+    <p class="lead">Click this button and watch the magic happen</p>
+    <button class="btn btn-outline-primary" (click)='getPosts()'>Fire the GET request!</button>
+  </div>
+  <div *ngIf="isLoaded">
+    <div *ngFor="let post of posts">
+      <h3>(Id: {{ post.id }}) {{ post.title }}</h3>
+      <p>{{ post.userId }}.) {{ post.body }}</p>
+    </div>
+  </div>
+</div>
