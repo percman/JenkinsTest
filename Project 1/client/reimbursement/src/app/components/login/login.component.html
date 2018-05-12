@@ -1,3 +1,13 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div class="form-group col-md-4 offset-4">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="login" class="form-control" [(ngModel)]="username">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="login" class="form-control" [(ngModel)]="password">
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+  </form>
+  {{indicator}}
+</div>

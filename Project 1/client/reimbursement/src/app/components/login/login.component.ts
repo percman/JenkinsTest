@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  username = '';
+  password = '';
+  indicator = '';
   constructor() { }
 
+  onSubmit(): void {
+    this.indicator = 'IT INDICATED';
+  }
   ngOnInit() {
   }
 
