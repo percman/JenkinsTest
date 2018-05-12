@@ -97,6 +97,7 @@ AS
 BEGIN
     UPDATE reimbursement SET approver_id = new_approver_id WHERE REBUR_ID = new_rebur_id;
     UPDATE reimbursement set timeApproved = CURRENT_TIMESTAMP WHERE REBUR_ID = new_rebur_id;
+    UPDATE reimbursement set approved = 1 where rebur_id = new_rebur_id;
 END;
 /
 
@@ -191,7 +192,7 @@ insert into FINANCE_MANAGER(man_id) values (0);
 insert into REIMBURSEMENT(category,submitter_id) values ('food',2);
 
 Begin
-INSERT_REIMBURSEMENT('food',100,1);
+UPDATE_REIMBURSEMENT(2,43);
 end;
 /
 

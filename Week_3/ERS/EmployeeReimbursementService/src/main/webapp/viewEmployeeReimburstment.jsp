@@ -8,7 +8,7 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-<h2><%= request.getSession().getAttribute("reimbursements") %></h2>
+
 <script type="text/javascript">
 window.onload = function(){
         populateReburTable();
@@ -25,19 +25,18 @@ window.onload = function(){
             //Step 5 handle the response
             if(xhr.readyState == 4 && xhr.status == 200){
             	
-                var reburObj = <%= session.getAttribute("reimbursments") %>;
-                console.log(reburObj);
-                for(let rebur in reburObj){
+                var reburObj = <%= request.getSession().getAttribute("reimbursements") %>;
+                for(let rebur of reburObj){
                     //get the properties of the JSON element
-    				let id = rebur.reimburseId;
                     let cat = rebur.cat;
-                    let approved = (rebur.approved === true) ? "Yes" : "No";
-                    let timeApp = rebur.timeApproved;
+                    let appId = rebur.approverId;
+                    let subId = rebur.sumbitterId;
+    				let id= rebur.reimburseId;
+                    let timeApp = (rebur.timeApproved == null)? 'pending' : rebur.timeAprroved;
                     let timeSub = rebur.timeSubmitted;
                     let amount = rebur.amount;
-                    
-                    
-
+                    let approved = (rebur.approved === 'true') ? "Yes" : "No";
+ 
                     //Dynamically create the HTML tags
                     let row = document.createElement("tr");
                     let tdId = document.createElement("td");
@@ -47,16 +46,18 @@ window.onload = function(){
                     let tdDateApp = document.createElement("td");
                     let tdStatus = document.createElement("td");
 
+                    
+					                    
                     tdId.textContent = id;
                     tdCat.textContent = cat;
-                    tdAmount = amount;
-                    tdDateSub = timeSub;
-                    tdDateApp = timeApp;
-                    tdStatus = apporved;
+                    tdAmount.textContent = amount;
+                    tdDateSub.textContent = timeSub;
+                    tdDateApp.textContent = timeApp;
+                    tdStatus.textContent = approved;
 
+                   
                     //Programatically bootstrapify each tdCompleted
 
-                    (tdCompleted.textContent === "Yes") ? tdCompleted.setAttribute("class","success") : tdCompleted.setAttribute("class","danger");
 
                     row.appendChild(tdId);
                     row.appendChild(tdCat);
@@ -65,6 +66,7 @@ window.onload = function(){
                     row.appendChild(tdDateApp);
                     row.appendChild(tdStatus);
 
+                   
                     //Append the row
 
                     document.getElementById("EmployeeReimbursments").appendChild(row);

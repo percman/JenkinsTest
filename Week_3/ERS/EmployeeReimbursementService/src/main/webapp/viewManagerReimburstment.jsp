@@ -42,6 +42,7 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
+                            <th>Category</th>
                             <th>Amount</th>
                             <th>Date Submitted</th>
                             <th>Submitting Employee</th>
@@ -54,6 +55,83 @@
                     <tbody id = "ManagerReimbursments"></tbody>
                 </table>
             </div>
+            <script type="text/javascript">
+window.onload = function(){
+        populateReburTable();
+    }
+
+    function populateReburTable(){
+        //Step 1 Create an xmlhttprequest object
+
+        let xhr = new XMLHttpRequest();
+
+        //Step 2 Add a callback function to on ready state change
+
+        xhr.onreadystatechange = function(){
+            //Step 5 handle the response
+            if(xhr.readyState == 4 && xhr.status == 200){
+            	
+                var reburObj = <%= request.getSession().getAttribute("reimbursements") %>;
+                for(let rebur of reburObj){
+                    //get the properties of the JSON element
+                    let cat = rebur.cat;
+                    let appId = rebur.approverId;
+                    let subId = rebur.sumbitterId;
+    				let id= rebur.reimburseId;
+                    let timeApp = (rebur.timeApproved == null)? 'pending' : rebur.timeAprroved;
+                    let timeSub = rebur.timeSubmitted;
+                    let amount = rebur.amount;
+                    let approved = (rebur.approved === 'true') ? "Yes" : "No";
+ 
+                    //Dynamically create the HTML tags
+                    let row = document.createElement("tr");
+                    let tdId = document.createElement("td");
+                    let tdCat = document.createElement("td");
+                    let tdAmount = document.createElement("td");
+                    let tdAppId = document.createElement("td");
+                    let tdSubId = document.createElement("td");
+                    let tdDateSub = document.createElement("td");
+                    let tdDateApp = document.createElement("td");
+                    let tdStatus = document.createElement("td");
+
+                    
+					                    
+                    tdId.textContent = id;
+                    tdCat.textContent = cat;
+                    tdAmount.textContent = amount;
+                    tdDateSub.textContent = timeSub;
+                    tdAppId.textContent = appId;
+                    tdSubId.textContent = subId;
+                    tdDateApp.textContent = timeApp;
+                    tdStatus.textContent = approved;
+
+                   
+                    //Programatically bootstrapify each tdCompleted
+
+
+                    row.appendChild(tdId);
+                    row.appendChild(tdCat);
+                    row.appendChild(tdAmount);
+                    row.appendChild(tdDateSub);
+                    row.appendChild(tdSubId);
+                    row.appendChild(tdStatus);
+                    row.appendChild(tdDateApp);
+					row.appendChild(tdAppId);
+                   
+                    //Append the row
+
+                    document.getElementById("ManagerReimbursments").appendChild(row);
+                }
+            }
+        }
+        //Step 3 call the open method 
+        xhr.open("GET","/EmployeeReimbursementService/viewManagerReimburstment.jsp",true);
+
+        //Step 4 call the send method
+
+        xhr.send();
+    }
+    </script>
                 
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
