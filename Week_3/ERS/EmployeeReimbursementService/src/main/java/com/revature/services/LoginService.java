@@ -32,8 +32,9 @@ public class LoginService {
 					FinanceManager authorized = man;
 					request.getSession().setAttribute("authorizedUser", authorized);
 					String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(authorized.getUsername()));
-					System.out.println(rebursementJson);
 					request.getSession().setAttribute("reimbursements", rebursementJson);
+					String pendingJson = new Gson().toJson(ReimbursementService.getPendingReimbursemnts());
+					request.getSession().setAttribute("pendingReimbursements", pendingJson);
 					return "/managerHome.do";
 				}
 			} catch (EmployeeNotFoundException enfe) {
@@ -45,6 +46,8 @@ public class LoginService {
 						List<Reimbursment> list= ReimbursementService.getReimbursmentForEmployee(username);
 						String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(authorized.getUsername()));
 						request.getSession().setAttribute("reimbursements", rebursementJson);
+						String pendingJson = new Gson().toJson(ReimbursementService.getPendingReimbursemnts());
+						request.getSession().setAttribute("pendingReimbursements", pendingJson);
 						return "/employeeHome.do";
 					}
 					}catch (EmployeeNotFoundException enfe2) {

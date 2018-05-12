@@ -3,6 +3,8 @@ package com.revature.services;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.exceptions.ManagerApprovingOwnRequestException;
+
 public class MasterDispatcher {
 private MasterDispatcher() {
 		
@@ -25,7 +27,17 @@ private MasterDispatcher() {
 		case"/EmployeeReimbursementService/managerRefresh.do":
 			return UpdateService.refreshManager(request, responce);
 		case"/EmployeeReimbursementService/employeeRefresh.do":
-			return UpdateService.refreshEmployee(request, responce);	
+			return UpdateService.refreshEmployee(request, responce);
+		case"/EmployeeReimbursementService/reburMan.do":
+			return ReburService.submitManagerRebur(request, responce);
+		case"/EmployeeReimbursementService/reburEmp.do":
+			return ReburService.submitEmployeeRebur(request, responce);
+		case"/EmployeeReimbursementService/approve.do":
+			try {
+				return ReburService.approve(request, responce);
+			} catch (ManagerApprovingOwnRequestException e) {
+				e.printStackTrace();
+			}
 		default: return "404.jsp";
 		}
 	}

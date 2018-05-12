@@ -48,12 +48,12 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		}
 
 		@Override
-		public boolean approveReimbursment(Reimbursment rebur) {
+		public boolean approveReimbursment(int appId, int rebId) {
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
-				CallableStatement stmt = conn.prepareCall("{CALL update_reimbursement(?,?,?)}");
-				stmt.setInt(++index, rebur.getApproverId());
-				stmt.setInt(++index, rebur.getReimburseId());
+				CallableStatement stmt = conn.prepareCall("{CALL UPDATE_REIMBURSEMENT(?,?,?)}");
+				stmt.setInt(++index, appId);
+				stmt.setInt(++index, rebId);
 				stmt.setInt(++index, 1);
 				return stmt.executeUpdate() > 0;
 			} catch(SQLException sqle) {
@@ -65,12 +65,12 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		}
 
 		@Override
-		public boolean denyReimbursment(Reimbursment rebur) {
+		public boolean denyReimbursment(int appId, int reburId) {
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
-				CallableStatement stmt = conn.prepareCall("{CALL update_reimbursement(?,?,?)}");
-				stmt.setInt(++index, rebur.getApproverId());
-				stmt.setInt(++index, rebur.getReimburseId());
+				CallableStatement stmt = conn.prepareCall("{CALL UPDATE_REIMBURSEMENT(?,?,?)}");
+				stmt.setInt(++index, appId);
+				stmt.setInt(++index, reburId);
 				stmt.setInt(++index, -1);
 				return stmt.executeUpdate() > 0;
 			} catch(SQLException sqle) {
@@ -176,4 +176,26 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 			} 
 			return null;
 		}
+		@Override
+		public Reimbursment getReimbursmentById(int id) {
+			int index = 0;
+			Reimbursment rebur = null;
+			try(Connection conn = ConnectionUtil.getConnection()){
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM REIMBURSEMENT WHERE rebur_ID = ?");
+				stmt.setInt(++index, id);
+				ResultSet rs = stmt.executeQuery();
+				
+				if(rs.next()) {
+					rebur= new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved"));
+				}
+				return rebur;
+			} catch(SQLException sqle) {
+				logger.error(sqle.getMessage(), sqle);
+				logger.error(sqle.getSQLState(),sqle);
+				logger.error(sqle.getErrorCode(),sqle);
+			} 
+			return null;
+		}
+		
+		
 }

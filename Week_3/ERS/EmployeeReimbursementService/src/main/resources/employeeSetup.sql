@@ -92,12 +92,12 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE update_reimbursement(new_approver_id IN NUMBER,new_rebur_id IN NUMBER)
+CREATE OR REPLACE PROCEDURE update_reimbursement(new_approver_id IN NUMBER,new_rebur_id IN NUMBER,new_status IN NUMBER)
 AS
 BEGIN
     UPDATE reimbursement SET approver_id = new_approver_id WHERE REBUR_ID = new_rebur_id;
     UPDATE reimbursement set timeApproved = CURRENT_TIMESTAMP WHERE REBUR_ID = new_rebur_id;
-    UPDATE reimbursement set approved = 1 where rebur_id = new_rebur_id;
+    UPDATE reimbursement set approved = new_status where rebur_id = new_rebur_id;
 END;
 /
 
@@ -182,18 +182,6 @@ BEGIN
 END;
 /
 
-select * from generic_employee;
-select * from FINANCE_MANAGER;
-select * from employee;
+SELECT * FROM REIMBURSEMENT WHERE rebur_ID = 62;
 select * from reimbursement;
-Update FINANCE_MANAGER set man_first_name = 'matt' where man_id = 2;
-insert into employee(emp_id) values(0);
-insert into FINANCE_MANAGER(man_id) values (0); 
-insert into REIMBURSEMENT(category,submitter_id) values ('food',2);
-
-Begin
-UPDATE_REIMBURSEMENT(2,43);
-end;
-/
-
-commit;
+select * from employee;

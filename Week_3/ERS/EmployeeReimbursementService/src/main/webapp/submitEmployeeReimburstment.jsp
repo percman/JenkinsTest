@@ -32,6 +32,25 @@
                         
                     </nav>
                 </div>
+                <div class="container">
+		<div class ="container">
+        <div class ="col-md-6 col-offset-3">
+        <form action="reburEmp.do" method="post">
+				<div class="form-group">
+					<input type="text" name="category" class="form-control" required
+						placeholder="Category">
+				</div>
+				<div class="form-group">
+					<input type="text" name="amount" class="form-control"
+						required placeholder="Amount">
+				</div>
+				<div class="button-group">
+					<input type="submit" class="btn btn-success" value="Submit">
+					<input type="reset" class="btn btn-danger" value="Reset">
+				</div>
+			</form>
+        </div>
+        </div>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
