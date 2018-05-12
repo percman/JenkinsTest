@@ -6,7 +6,7 @@ import { HttpExampleComponent } from '../app/components/http-example/http-exampl
 
 export const MyRoutes: Routes = [
     { path: '', component: WelcomeComponent },
-    { path: 'http-example', component: HttpExampleComponent},
-    { path: 'data-binding', component: DataBindingComponent},
-    { path:'**', redirectTo: '', pathMatch: "full" }
+    { path: 'http-example', component: HttpExampleComponent },
+    { path: 'data-binding', component: DataBindingComponent },
+    { path: '**', redirectTo: '', pathMatch: "full" }
 ]
