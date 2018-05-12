@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<pokedex>
+	<pokemon id="1">
+		<name>Charmander</name>
+		<type>Fire</type>
+		<evolves>true</evolves>
+	</pokemon>
+	<pokemon id="2">
+		<name>Squirtle</name>
+		<type>Water</type>
+		<evolves>true</evolves>
+	</pokemon>
+	<pokemon id="3">
+		<name>Bulbasaur</name>
+		<type>Grass/Poison</type>
+		<evolves>true</evolves>
+	</pokemon>
+</pokedex>
