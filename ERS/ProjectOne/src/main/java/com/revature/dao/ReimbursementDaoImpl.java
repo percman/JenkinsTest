@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.revature.daoservice.EmployeeService;
+import com.revature.daoservice.EmployeeDaoService;
 import com.revature.factory.Reimbursement;
 import com.revature.factory.ReimbursementFactory;
 import com.revature.logs.LogHere;
@@ -41,7 +41,98 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				newreimbursement.setAmount(rs.getLong("amount"));
 				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
 				newreimbursement.setApprover_id(rs.getInt("approver_id"));
-				newreimbursement.setStatus(rs.getInt("status") > 0);
+				newreimbursement.setStatus(rs.getString("status"));
+				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
+				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
+//				newreimbursement.setReason(rs.getString("reason"));
+				
+				reimbursementlist.add(newreimbursement);
+			}
+			return reimbursementlist;	
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} 
+		return null;
+	}
+	
+
+	@Override
+	public List<Reimbursement> getPendingReimbursements() {
+		List<Reimbursement> reimbursementlist = new ArrayList<>();
+//		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE status='pending'");
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {				
+				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
+				
+				newreimbursement.setId(rs.getInt("id"));
+				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
+				newreimbursement.setApprover_id(rs.getInt("approver_id"));
+				newreimbursement.setStatus(rs.getString("status"));
+				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
+				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
+//				newreimbursement.setReason(rs.getString("reason"));
+				
+				reimbursementlist.add(newreimbursement);
+			}
+			return reimbursementlist;	
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} 
+		return null;
+	}
+
+	@Override
+	public List<Reimbursement> getApprovedReimbursements() {
+		List<Reimbursement> reimbursementlist = new ArrayList<>();
+//		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE status='approved'");
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {				
+				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
+				
+				newreimbursement.setId(rs.getInt("id"));
+				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
+				newreimbursement.setApprover_id(rs.getInt("approver_id"));
+				newreimbursement.setStatus(rs.getString("status"));
+				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
+				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
+//				newreimbursement.setReason(rs.getString("reason"));
+				
+				reimbursementlist.add(newreimbursement);
+			}
+			return reimbursementlist;	
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} 
+		return null;
+	}
+
+	@Override
+	public List<Reimbursement> getRejectedReimbursements() {
+		List<Reimbursement> reimbursementlist = new ArrayList<>();
+//		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE status='rejected'");
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {				
+				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
+				
+				newreimbursement.setId(rs.getInt("id"));
+				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
+				newreimbursement.setApprover_id(rs.getInt("approver_id"));
+				newreimbursement.setStatus(rs.getString("status"));
 				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
 				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
 //				newreimbursement.setReason(rs.getString("reason"));
@@ -64,7 +155,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement "
 					+ "INNER JOIN employee ON employee.id = reimbursement.requestor_id "
 					+ "WHERE employee.id = ?");
-			Employee new_employee = EmployeeService.getEmployee(employeename);
+			Employee new_employee = EmployeeDaoService.getEmployee(employeename);
 			stmt.setInt(1, new_employee.getId());
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {				
@@ -74,7 +165,37 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				newreimbursement.setAmount(rs.getLong("amount"));
 				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
 				newreimbursement.setApprover_id(rs.getInt("approver_id"));
-				newreimbursement.setStatus(rs.getInt("status") > 0);
+				newreimbursement.setStatus(rs.getString("status"));
+				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
+				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
+//				newreimbursement.setReason(rs.getString("reason"));
+				
+				return newreimbursement;	
+			}
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} 
+		return null;
+	}
+	
+	@Override
+	public Reimbursement getReimbursementFromId(int id) {
+//		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement "
+					+ "WHERE id = ?");
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {				
+				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
+				
+				newreimbursement.setId(rs.getInt("id"));
+				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
+				newreimbursement.setApprover_id(rs.getInt("approver_id"));
+				newreimbursement.setStatus(rs.getString("status"));
 				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
 				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
 //				newreimbursement.setReason(rs.getString("reason"));
@@ -109,14 +230,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	@Override
 	public boolean updateReimbursement(Reimbursement reimbursement) {
 		int index = 0;
-		int status = 0;
-		if(reimbursement.isStatus())
-			status = 1;
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			CallableStatement stmt = conn.prepareCall("{CALL update_reimbursement(?,?,?)}");
 			stmt.setInt(++index, reimbursement.getId());
 			stmt.setInt(++index, reimbursement.getApprover_id());
-			stmt.setInt(++index, status);
+			stmt.setString(++index, reimbursement.getStatus());
 			int rowsAffected = stmt.executeUpdate();
 			return rowsAffected > 0;
 		}  catch (SQLException sqle) {
@@ -126,6 +244,41 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		} 
 		return false;
 	}
+
+	@Override
+	public boolean rejectReimbursement(Reimbursement reimbursement) {
+		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			CallableStatement stmt = conn.prepareCall("{CALL reject_reimbursement(?,?)}");
+			stmt.setInt(++index, reimbursement.getId());
+			stmt.setInt(++index, reimbursement.getApprover_id());
+			int rowsAffected = stmt.executeUpdate();
+			return rowsAffected > 0;
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} 
+		return false;
+	}
+
+	@Override
+	public boolean approveReimbursement(Reimbursement reimbursement) {
+		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			CallableStatement stmt = conn.prepareCall("{CALL approve_reimbursement(?,?)}");
+			stmt.setInt(++index, reimbursement.getId());
+			stmt.setInt(++index, reimbursement.getApprover_id());
+			int rowsAffected = stmt.executeUpdate();
+			return rowsAffected > 0;
+		}  catch (SQLException sqle) {
+			LogHere.warn(sqle.getMessage());
+			LogHere.warn("SQLE State: " + sqle.getSQLState());
+			LogHere.warn("Error code: " + sqle.getErrorCode());
+		} 
+		return false;
+	}
+
 
 
 

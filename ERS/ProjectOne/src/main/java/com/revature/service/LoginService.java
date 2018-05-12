@@ -3,7 +3,7 @@ package com.revature.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.daoservice.EmployeeService;
+import com.revature.daoservice.EmployeeDaoService;
 import com.revature.model.Employee;
 
 public class LoginService {
@@ -19,8 +19,8 @@ public class LoginService {
 		Employee new_employee = new Employee(username,password);
 				
 		// Login logic
-		if(EmployeeService.login(new_employee)) {
-			Employee authorizedUser = EmployeeService.getEmployee(username);
+		if(EmployeeDaoService.login(new_employee)) {
+			Employee authorizedUser = EmployeeDaoService.getEmployee(username);
 			request.getSession().setAttribute("authorizedUser", authorizedUser);
 			return "/home.do";
 		}

@@ -18,8 +18,8 @@ public interface Reimbursement{
 	public void setRequestor_id(int requestor_id);
 	public int getApprover_id();
 	public void setApprover_id(int approver_id);
-	public boolean isStatus();
-	public void setStatus(boolean status);
+	public String getStatus();
+	public void setStatus(String status);
 	public Timestamp getTimemade();
 	public void setTimemade(Timestamp timemade);
 	public Timestamp getTimeapproved();

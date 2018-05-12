@@ -14,7 +14,7 @@ public class FoodReimbursement implements Reimbursement, Serializable{
 	private String category = "food";
 	private int requestor_id;
 	private int approver_id;
-	private boolean status;
+	private String status;
 	private Timestamp timemade;
 	private Timestamp timeapproved;
 	private String reason;
@@ -25,7 +25,7 @@ public class FoodReimbursement implements Reimbursement, Serializable{
 	public FoodReimbursement() {}
 	
 	
-	public FoodReimbursement(int id, double amount, int requestor_id, boolean status,
+	public FoodReimbursement(int id, double amount, int requestor_id, String status,
 			Timestamp timemade, String reason) {
 		super();
 		this.id = id;
@@ -37,7 +37,7 @@ public class FoodReimbursement implements Reimbursement, Serializable{
 	}
 	
 	public FoodReimbursement(int id, double amount, String category, int requestor_id, int approver_id,
-			boolean status, Timestamp timemade, Timestamp timeapproved, String reason) {
+			String status, Timestamp timemade, Timestamp timeapproved, String reason) {
 		super();
 		this.id = id;
 		this.amount = amount;
@@ -49,61 +49,98 @@ public class FoodReimbursement implements Reimbursement, Serializable{
 		this.timeapproved = timeapproved;
 		this.reason = reason;
 	}
-	
+
+
 	public int getId() {
 		return id;
 	}
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
 	public double getAmount() {
 		return amount;
 	}
+
+
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
+
+
 	public String getCategory() {
 		return category;
 	}
+
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
+
 	public int getRequestor_id() {
 		return requestor_id;
 	}
+
+
 	public void setRequestor_id(int requestor_id) {
 		this.requestor_id = requestor_id;
 	}
+
+
 	public int getApprover_id() {
 		return approver_id;
 	}
+
+
 	public void setApprover_id(int approver_id) {
 		this.approver_id = approver_id;
 	}
-	public boolean isStatus() {
+
+
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(boolean status) {
+
+
+	public void setStatus(String status) {
 		this.status = status;
 	}
+
+
 	public Timestamp getTimemade() {
 		return timemade;
 	}
+
+
 	public void setTimemade(Timestamp timemade) {
 		this.timemade = timemade;
 	}
+
+
 	public Timestamp getTimeapproved() {
 		return timeapproved;
 	}
+
+
 	public void setTimeapproved(Timestamp timeapproved) {
 		this.timeapproved = timeapproved;
 	}
+
+
 	public String getReason() {
 		return reason;
 	}
+
+
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -116,12 +153,13 @@ public class FoodReimbursement implements Reimbursement, Serializable{
 		result = prime * result + id;
 		result = prime * result + ((reason == null) ? 0 : reason.hashCode());
 		result = prime * result + requestor_id;
-		result = prime * result + (status ? 1231 : 1237);
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((timeapproved == null) ? 0 : timeapproved.hashCode());
 		result = prime * result + ((timemade == null) ? 0 : timemade.hashCode());
 		return result;
 	}
-	
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -149,7 +187,10 @@ public class FoodReimbursement implements Reimbursement, Serializable{
 			return false;
 		if (requestor_id != other.requestor_id)
 			return false;
-		if (status != other.status)
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
 			return false;
 		if (timeapproved == null) {
 			if (other.timeapproved != null)
@@ -163,13 +204,15 @@ public class FoodReimbursement implements Reimbursement, Serializable{
 			return false;
 		return true;
 	}
+
+
 	@Override
 	public String toString() {
 		return "FoodReimbursement [id=" + id + ", amount=" + amount + ", category=" + category + ", requestor_id="
 				+ requestor_id + ", approver_id=" + approver_id + ", status=" + status + ", timemade=" + timemade
 				+ ", timeapproved=" + timeapproved + ", reason=" + reason + "]";
 	}
-	
+
 	
 	
 }

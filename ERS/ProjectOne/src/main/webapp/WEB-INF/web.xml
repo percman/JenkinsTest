@@ -12,10 +12,20 @@
   	<description></description>
   	<servlet-class>com.revature.servlets.MasterServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ReimbursementApprovalServlet</servlet-name>
+  	<display-name>ReimbursementApprovalServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.ReimbursementApprovalServlet</servlet-class>
+  </servlet>
 
   <servlet-mapping>
   	<servlet-name>MasterServlet</servlet-name>
   	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReimbursementApprovalServlet</servlet-name>
+  	<url-pattern>/ReimbursementApprovalServlet</url-pattern>
   </servlet-mapping>
   
 </web-app>

@@ -141,16 +141,17 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	public boolean updateEmployee(Employee employee) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
+
+			CallableStatement stmt = conn.prepareCall("{CALL update_personalinfo(?, ?, ?, ?, ?, ?, ?)}");
 			
-			Employee gotemployee = getEmployee(employee.getUsername());
-			
-			CallableStatement stmt = conn.prepareCall("{CALL update_personalinfo(?, ?, ?, ?, ?)}");
-			stmt.setInt(++index, gotemployee.getId());
+			stmt.setInt(++index, employee.getId());
 			stmt.setString(++index, employee.getUsername());
 			stmt.setString(++index, employee.getPassword());
+			stmt.setString(++index, employee.getFirstname());
+			stmt.setString(++index, employee.getLastname());
 			stmt.setString(++index, employee.getEmail());
 			stmt.setLong(++index, employee.getPhonenumber());
-
+			
 			return stmt.executeUpdate() > 0;
 		}  catch (SQLException sqle) {
 			LogHere.warn(sqle.getMessage());

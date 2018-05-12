@@ -12,19 +12,24 @@
 <link rel="stylesheet" href="../css/stylesheet.css" class="styleseet">
 </head>
 
+
+
 <body>
 
 	<%@ page import="com.revature.model.Employee"%>
 	<%@ page import="com.revature.factory.Reimbursement"%>
-	<%@ page import="com.revature.daoservice.EmployeeService"%>
-	<%@ page import="com.revature.daoservice.ReimbursementService"%>
+	<%@ page import="com.revature.daoservice.EmployeeDaoService"%>
+	<%@ page import="com.revature.daoservice.ReimbursementDaoService"%>
 	<%@ page import="java.util.List"%>
 
 	<%
 		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
-		List<Employee> employeelist = EmployeeService.getAllEmployees();
-		List<Employee> managerlist = EmployeeService.getAllManagers();
-		List<Reimbursement> reimbursementlist = ReimbursementService.getAllReimbursements();
+		List<Employee> employeelist = EmployeeDaoService.getAllEmployees();
+		List<Employee> managerlist = EmployeeDaoService.getAllManagers();
+		List<Reimbursement> reimbursementlist = ReimbursementDaoService.getAllReimbursements();
+		List<Reimbursement> reimbursementlistp = ReimbursementDaoService.getPendingReimbursements();
+		List<Reimbursement> reimbursementlista = ReimbursementDaoService.getApprovedReimbursements();
+		List<Reimbursement> reimbursementlistr = ReimbursementDaoService.getRejectedReimbursements();
 	%>
 	<!-- Main Navbar -->
 	<div class="container">
@@ -53,141 +58,79 @@
 
 
 	<div class="container well">
-		<div class="container col-md-4 col-md-offset-1">
+		<div class="container col-md-10 col-md-offset-1">
 			<div class="page-header">
-				<h2 class="col-md-offset-2">
+				<h2 class="col-md-offset-4">
 					Hello,
-					<%=employee.getFirstname().substring(0, 1).toUpperCase()%><%=employee.getFirstname().substring(1)%>.
+					<%=employee.getFirstname().substring(0, 1).toUpperCase()%><%=employee.getFirstname().substring(1)%>
+					<%=employee.getLastname().substring(0, 1).toUpperCase()%><%=employee.getLastname().substring(1)%>.
 				</h2>
 			</div>
-			<nav class="navbar col-md-offset-6">
-				<p class="col-md-offset-3">
-					ID:
+			<div>
+				<p class="col-md-4 col-md-offset-5">
+					Your ID:
 					<%=employee.getId()%>
 				</p>
-				<p class="col-md-offset-3">
-					First name:
-					<%=employee.getFirstname().substring(0, 1).toUpperCase()%><%=employee.getFirstname().substring(1)%>
-				</p>
-				<p class="col-md-offset-3">
-					Last name:
-					<%=employee.getLastname().substring(0, 1).toUpperCase()%><%=employee.getLastname().substring(1)%>
-				</p>
-				<p class="col-md-offset-3">
-					User Name:
+				<p class="col-md-4">
+					Your User Name:
 					<%=employee.getUsername()%>
 				</p>
-				<p class="col-md-offset-3">
-					Phone number:
+				<p class="col-md-4">
+					Phone Number:
 					<%=employee.getPhonenumber()%>
 				</p>
-				<p class="col-md-offset-3">
+				<p class="col-md-4">
 					Email:
 					<%=employee.getEmail()%>
 				</p>
-			</nav>
+			</div>
+			
+		<button type="button" class="btn btn-info" onclick="hideButton()">Update this information?</button>
+		<div id="infoUpdateButton" style="display: none;">
+			<h2>Update your information: </h2>
+			<form action="update.do" method="post">
+				<div class="form-group">
+					<input type="text" name="updateusername" class="form-control" 
+						placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input type="password" name="updatepassword" class="form-control"
+						 placeholder="Password">
+				</div>
+				<div class="form-group">
+					<input type="text" name="updatefirstname" class="form-control"
+						 placeholder="First name">
+				</div>	
+				<div class="form-group">
+					<input type="text" name="updatelastname" class="form-control"
+						 placeholder="Last name">
+				</div>				
+				<div class="form-group">
+					<input type="text" name="updateemail" class="form-control"
+						 placeholder="Email">
+				</div>	
+				<div class="form-group">
+					<input type="phonenumber" name="updatephonenumber" class="form-control"
+						 placeholder="Phone number">
+				</div>					
+				<div class="button-group">
+					<input type="submit" class="btn btn-success" value="Submit">
+					<input type="reset" class="btn btn-danger" value="Reset">
+				</div>
+			</form>
+		</div>
+			
 		</div>
 	</div>
-	<div class="container well">
-		<div class="container col-md-4 col-md-offset-1">
-			<div class="page-header">
-				<h2 class="col-md-offset-2">Here is a list of employees:</h2>
-			</div>
-			<div class="list-group">
-				<%
-					for (Employee e : employeelist) {
-				%>
-				<li class="list-group-item">
-					<h3 class="list-group-item-heading">
-						ID:
-						<%=e.getId()%></h3>
-					<h4 class="list-group-item-text">
-						User Name:
-						<%=e.getUsername()%></h4>
-					<h4 class="list-group-item-text">
-						First name:
-						<%=e.getFirstname().substring(0, 1).toUpperCase()%><%=e.getFirstname().substring(1)%></h4>
-					<h4 class="list-group-item-text">
-						Last name:
-						<%=e.getLastname().substring(0, 1).toUpperCase()%><%=e.getLastname().substring(1)%></h4>
-					<h4 class="list-group-item-text">
-						Phone number:
-						<%=e.getPhonenumber()%></h4>
-					<h4 class="list-group-item-text">
-						Email:
-						<%=e.getEmail()%></h4>
-				</li>
-				<%
-					}
-				%>
-			</div>
-			<div class="page-header">
-				<h2 class="col-md-offset-2">Here is a list of managers:</h2>
-			</div>
-			<div class="list-group">
-				<%
-					for (Employee e : managerlist) {
-				%>
-				<li class="list-group-item">
-					<h3 class="list-group-item-heading">
-						ID:
-						<%=e.getId()%></h3>
-					<h4 class="list-group-item-text">
-						User Name:
-						<%=e.getUsername()%></h4>
-					<h4 class="list-group-item-text">
-						First name:
-						<%=e.getFirstname().substring(0, 1).toUpperCase()%><%=e.getFirstname().substring(1)%></h4>
-					<h4 class="list-group-item-text">
-						Last name:
-						<%=e.getLastname().substring(0, 1).toUpperCase()%><%=e.getLastname().substring(1)%></h4>
-					<h4 class="list-group-item-text">
-						Phone number:
-						<%=e.getPhonenumber()%></h4>
-					<h4 class="list-group-item-text">
-						Email:
-						<%=e.getEmail()%></h4>
-				</li>
-				<%
-					}
-				%>
-			</div>
-		</div>
-	<div class="container well">
-		<div class="container col-md-4 col-md-offset-1">
-			<div class="page-header">
-				<h2 class="col-md-offset-2">Here is a list of employees:</h2>
-			</div>
-			<div class="list-group">
-				<%
-					for (Reimbursement r : reimbursementlist) {
-				%>
-				<li class="list-group-item">
-					<h3 class="list-group-item-heading">
-						Category:
-						<%=r.getCategory()%></h3>
-					<h4 class="list-group-item-text">
-						Requestor ID:
-						<%=r.getRequestor_id()%></h4>
-					<h4 class="list-group-item-text">
-						Approver ID:
-						<%=r.getApprover_id()%></h4>
-					<h4 class="list-group-item-text">
-						Approved Status:
-						<%=r.isStatus()%></h4>
-					<h4 class="list-group-item-text">
-						Time Made:
-						<%=r.getTimemade()%></h4>
-					<h4 class="list-group-item-text">
-						Time Approved:
-						<%=r.getTimeapproved()%></h4>
-				</li>
-				<%
-					}
-				%>
-		</div>
-
-		
+	<div class="container">
+		<a class="btn btn-default" href="./reimbursementpage.jsp" role="button">Reimbursements</a>
+		<a class="btn btn-default" href="./employeelist.jsp" role="button">Employee Info</a>
+	</div>
+	
+	
+	<script src="./js/hidebutton.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 
 </html>

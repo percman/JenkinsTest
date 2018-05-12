@@ -15,6 +15,9 @@ GRANT ALTER ANY TABLE TO projectoneadminone;
 
 
 
+select * from employee;
+select * from personalinfo;
+select * from reimbursement;
 
 -- ******************************* TABLES *******************************
 
@@ -43,6 +46,7 @@ CONSTRAINT FK_PERSONAL_EMPLOYEE FOREIGN KEY (id) REFERENCES employee (id) ON DEL
 CONSTRAINT CK_PHONE CHECK (phonenumber BETWEEN 1000000000 AND 9999999909)
 );
 
+select * from employee;
 
 -- create a reimbursement information table 
 CREATE TABLE reimbursement (
@@ -51,15 +55,14 @@ amount NUMBER(10),
 requestor_id NUMBER(10) NOT NULL,
 approver_id NUMBER(10),
 category VARCHAR2(15),
-status NUMBER(1),
+status VARCHAR2(10),
 timemade TIMESTAMP NOT NULL,
 timeapproved TIMESTAMP,
 CONSTRAINT PK_REIMBURSEMENT PRIMARY KEY (id),
 CONSTRAINT FK_REIMBURSEMENT_R_EMPLOYEE FOREIGN KEY (requestor_id) REFERENCES employee (id) ON DELETE CASCADE,
 CONSTRAINT FK_REIMBURSEMENT_A_EMPLOYEE FOREIGN KEY (approver_id) REFERENCES employee (id) ON DELETE CASCADE,
 CONSTRAINT CK_AMOUNTNEG CHECK (amount > 0),
-CONSTRAINT CK_R_A CHECK (requestor_id <> approver_id), 
-CONSTRAINT BOOLEANSTATUS CHECK (status BETWEEN 0 AND 1)
+CONSTRAINT CK_R_A CHECK (requestor_id <> approver_id)
 );
 
 
@@ -164,39 +167,42 @@ END;
 
 -- procedure to update an employee's personal information 
 CREATE OR REPLACE PROCEDURE update_personalinfo(same_id IN NUMBER, 
+                                        new_username IN VARCHAR2, new_password IN VARCHAR2,
                                         new_firstname IN VARCHAR2, new_lastname IN VARCHAR2,
                                         new_email IN VARCHAR2, new_phonenumber IN NUMBER)
 AS 
 BEGIN
     UPDATE personalinfo SET firstname = new_firstname, lastname = new_lastname,
     email = new_email, phonenumber = new_phonenumber
-    WHERE id = same_id;
+    WHERE personalinfo.id = same_id;
+    UPDATE employee SET username = new_username, password = new_password WHERE employee.id = same_id;
     COMMIT;
 END;
 /
 
 
--- procedure to insert a reimbursement
-CREATE OR REPLACE PROCEDURE insert_reimbursement(new_requestor_id IN NUMBER, new_amount IN NUMBER, new_category in VARCHAR2)
-AS 
-BEGIN
-    INSERT INTO reimbursement (requestor_id, amount, category, status, timemade, id)
-    VALUES (new_requestor_id, new_amount, new_category, 0, CURRENT_TIMESTAMP, null);
-    COMMIT;
-END;
-/
+
+
+UPDATE personalinfo SET lastname='dude' WHERE id=1014;
 
 -- procedure to approve a reimbursement
-CREATE OR REPLACE PROCEDURE update_reimbursement(same_id IN NUMBER, new_approver_id IN NUMBER, new_status IN NUMBER)
+CREATE OR REPLACE PROCEDURE approve_reimbursement(same_id IN NUMBER, new_approver_id IN NUMBER)
 AS 
 BEGIN
-    UPDATE reimbursement SET approver_id = new_approver_id, status = new_status, timeapproved = CURRENT_TIMESTAMP
+    UPDATE reimbursement SET approver_id = new_approver_id, status = 'approved', timeapproved = CURRENT_TIMESTAMP
     WHERE id = same_id;
     COMMIT;
 END;
 /
 
+-- procedure to reject a reimbursement
+CREATE OR REPLACE PROCEDURE reject_reimbursement(same_id IN NUMBER, new_approver_id IN NUMBER)
+AS 
+BEGIN
+    UPDATE reimbursement SET approver_id = new_approver_id, status = 'rejected', timeapproved = CURRENT_TIMESTAMP
+    WHERE id = same_id;
+    COMMIT;
+END;
+/
 
-
-
-
+select * from reimbursement;
