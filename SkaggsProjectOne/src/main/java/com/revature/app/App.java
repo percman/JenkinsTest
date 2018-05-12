@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 import com.revature.dao.Employee;
 import com.revature.dao.EmployeeService;
+import com.revature.reimbursement.Reimbursement;
 
 public class App {
 	
     public static void main( String[] args ) throws ClassNotFoundException {
-new EmployeeService();
+
 		//    	ArrayList<Employee> eList = EmployeeService.getAllEmployees();
 //    	System.out.println(eList.size());
 //    	for(Employee e : eList) {
@@ -27,5 +28,9 @@ new EmployeeService();
 //    	System.out.println(update);
 //    	Employee e = EmployeeService.getEmployee("polka");
 //    	System.out.println(e + "\n Employee id " + e.getEmployeeId());
+		ArrayList<Reimbursement> rList = EmployeeService.getAllRequests();
+		for (Reimbursement r: rList) {
+			System.out.println(r);
+		}
     }
 }

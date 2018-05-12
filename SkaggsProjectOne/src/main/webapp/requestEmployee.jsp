@@ -11,6 +11,10 @@
 	crossorigin="anonymous">
 </head>
 <body>
+	<%@ page import="com.revature.dao.Employee"%>
+	<%
+		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
+	%>
 	<!-- Navbar begins  -->
 	<div class="container">
 		<nav class="navbar navbar-inverse">

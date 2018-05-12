@@ -14,4 +14,5 @@ public interface EmployeeDao {
 	Employee getEmployee(String username) throws ClassNotFoundException;
 	boolean updateEmployee(Employee e);
 	boolean updateEmployeeWithoutPassword(Employee e);
+	ArrayList<Reimbursement> getAllRequests() throws ClassNotFoundException;
 }

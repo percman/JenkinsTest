@@ -1,14 +1,57 @@
-var table = document.getElementById("requestTable");
-var row = table.insertRow(1);
+window.onload = function(){
+  getRequests();
+}
 
-var cell1 = row.insertCell(0);
-var cell2 = row.insertCell(1);
-var cell3 = row.insertCell(2);
-var cell4 = row.insertCell(3);
-var cell5 = row.insertCell(4);
+function getRequests() {
 
-cell1.innerHTML = "NEW CELL1";
-cell2.innerHTML = "NEW CELL2";
-cell3.innerHTML = "NEW CELL3";
-cell4.innerHTML = "NEW CELL4";
-cell5.innerHTML = "NEW CELL5";
+	let xhr = new XMLHttpRequest();
+	console.log(xhr.readyState);
+	xhr.onreadystatechange = function() {
+
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			// Typical action to be performed when the document is ready:
+		    let employees = JSON.parse(xhr.responseText);
+		    for ( let employee of employees) {
+		    	let eid = employee.reimbursementId;
+				let category = employee.category;
+				let status_n = employee.status;
+				if (status_n == 0) {
+					status = 'Pending';
+				}
+				if (status_n > 0) {
+					status = 'Approved';
+				}
+				if (status_n < 0) {
+					status = 'Rejected';
+				}
+				let amount = employee.amount;
+				let ds = employee.dateSubmitted;
+				
+				let row = document.createElement("tr");
+				let tdId = document.createElement("td");
+				let tdCat = document.createElement("td");
+				let tdStat = document.createElement("td");
+				let tdAmount = document.createElement("td");
+				let tdDs =  document.createElement("td");
+				
+				tdId.textContent = eid;
+				tdCat.textContent = category;
+				tdStat.textContent = status;
+				tdAmount.textContent = amount;
+				tdDs.textContent = ds;
+				
+				row.appendChild(tdId);
+				row.appendChild(tdCat);
+				row.appendChild(tdStat);
+				row.appendChild(tdAmount);
+				row.appendChild(tdDs);
+				
+				document.getElementById("requestTable").appendChild(row);
+		    };
+		}
+	}
+	console.log("open?");
+    xhr.open("POST", "http://localhost:8080/SkaggsProjectOne/getAllRequests.ajax");
+    xhr.send();
+};
+

@@ -165,7 +165,7 @@ CREATE OR REPLACE PROCEDURE make_request(rq_Id IN INT, c_name IN VARCHAR, n_stat
 AS
 BEGIN
 
-    INSERT INTO reimbursementTable(reId, requesterId, categoryName, status, amount) 
+    INSERT INTO reimbursementTable(requesterId, categoryName, status, amount) 
     VALUES(rq_Id, c_name, n_status, n_amount);
 END;
 /
@@ -196,3 +196,4 @@ BEGIN
     WHERE employeeid = e_id;
 END;
 /
+SELECT * FROM EMPLOYEETABLE e, INFOTABLE i WHERE e.employeeid = i.employeeid;

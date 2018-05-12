@@ -81,13 +81,15 @@ public class Reimbursement {
 		this.dateCompleted = dateCompleted;
 	}
 
-	public Reimbursement(int reimbursementId, int requesterId, String category, int status, int amount) {
+	public Reimbursement(int reimbursementId, int requesterId, 
+			String category, int status, int amount, String dateSubmitted) {
 		super();
 		this.reimbursementId = reimbursementId;
 		this.requesterId = requesterId;
 		this.category = category;
 		this.status = status;
 		this.amount = amount;
+		this.dateSubmitted = dateSubmitted;
 	}
 
 	public Reimbursement(int requesterId, String category, int status, int amount) {

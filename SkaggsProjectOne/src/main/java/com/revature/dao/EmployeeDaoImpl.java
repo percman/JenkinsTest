@@ -73,6 +73,25 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return null;
 	}
+	@Override
+	public ArrayList<Reimbursement> getAllRequests() throws ClassNotFoundException {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			ArrayList<Reimbursement> rList = new ArrayList<>();
+			System.out.println(rList.size());
+			PreparedStatement stmt = conn.prepareStatement("select * from reimbursementTable ORDER BY reid");			
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {	
+				rList.add(new Reimbursement(rs.getInt("reid"), rs.getInt("requesterId"), rs.getString("categoryName"), 
+						rs.getInt("status"), rs.getInt("amount"), rs.getString("dateSubmitted")));
+			}
+			return rList;
+		} catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL STATE " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+		}
+		return null;
+	}
 
 	@Override
 	public boolean insertEmployee(Employee e) throws ClassNotFoundException {

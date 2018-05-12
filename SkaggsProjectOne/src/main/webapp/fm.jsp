@@ -24,6 +24,15 @@
 		<div class="navbar-header col-md-2">
 			<a href="./index.html" class="navbar-brand">Skaggs Corp</a>
 		</div>
+		<ul class="navbar-nav nav">
+			<li><a href="fm.jsp">Home</a></li>
+		</ul>
+		<ul class="navbar-nav nav">
+			<li><a href = "update.jsp">Update Info</a> </li>
+		</ul>
+		<ul class="navbar-nav nav">
+			<li><a href="requestEmployee.jsp">View Reimbursement Requests</a></li>
+		</ul>
 		<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
 			<li><a href="#">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
 		</ul>
@@ -45,13 +54,17 @@
 			</h2>
 			<table class="table table-striped table-hover table-bordered">
 				<thead>
-					<c:forEach items="${eList}" var="employee">
-						<tr>
-							<td>Name: <c:out value="${employee.firstName}" /></td>
-							<td>Username: <c:out value="${employee.userName}" /></td>
-						</tr>
-					</c:forEach>
+					<tr>
+						<th>Name</th>
+						<th>User Name</th>
+					</tr>
 				</thead>
+				<tbody id="table-body">
+					<tr>
+						<td><%=employee.getFirstName()%> <%=employee.getLastName()%></td>
+						<td><%=employee.getUserName()%></td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 	</div>

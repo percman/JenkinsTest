@@ -32,4 +32,7 @@ public class EmployeeService {
 	public static boolean updateEmployeeWithoutPassword(Employee e) {
 		return dao.updateEmployeeWithoutPassword(e);
 	}
+	public static ArrayList<Reimbursement> getAllRequests() throws ClassNotFoundException {
+		return dao.getAllRequests();
+	}
 }
