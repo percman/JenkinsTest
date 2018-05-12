@@ -16,6 +16,10 @@ public class EmployeeService {
 	private EmployeeService() {
 	}
 
+	public static boolean isFinMan(String username) {
+		return dao.isFinMan(username);
+	}
+
 	public static Employee login(Employee employee) throws InvalidLoginException {
 		Employee temp = dao.getEmployee(employee.getUsername());
 		if (dao.getEmployee(employee.getUsername()) == null) {
@@ -42,7 +46,7 @@ public class EmployeeService {
 	}
 
 	public static List<Reimbursement> viewReimbursementByStatus(Employee employee, int status) {
-		return dao.viewReimbursementByStatus(employee, status); 
+		return dao.viewReimbursementByStatus(employee, status);
 	}
 
 }

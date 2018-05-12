@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>MasterServlet</servlet-name>
+  	<display-name>MasterServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.MasterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MasterServlet</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
 </web-app>

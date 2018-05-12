@@ -6,6 +6,8 @@ import com.revature.model.Employee;
 import com.revature.model.Reimbursement;
 
 public interface EmployeeDao {
+	
+	boolean isFinMan(String username);
 
 	Employee getEmployee(String username);
 	boolean updateEmployee(Employee employee);

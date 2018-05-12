@@ -26,6 +26,22 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return instance;
 	}
+	
+	@Override
+	public boolean isFinMan (String username) {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("SELECT is_f_manager FROM employee WHERE username = ?");
+			stmt.setString(1, username);
+			ResultSet rs = stmt.executeQuery();
+			return rs.getBoolean("is_f_manager");
+		} catch (SQLException sqle) {
+			LogThis.warn(sqle.getMessage());
+			LogThis.warn("SQL state: " + sqle.getSQLState());
+			LogThis.warn("Error Code: " + sqle.getErrorCode());
+		}
+
+		return false;
+	}
 
 	@Override
 	public String getPasswordHash(Employee employee) {
