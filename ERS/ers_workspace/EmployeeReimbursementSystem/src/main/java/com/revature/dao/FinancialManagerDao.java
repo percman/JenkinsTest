@@ -9,12 +9,13 @@ import com.revature.model.Reimbursement;
 public interface FinancialManagerDao {
 	
 	FinancialManager getFinancialManager(String username);
-	boolean insertFinancialManager(FinancialManager financialManager);
-	boolean updateFinancialManager(FinancialManager financialManager);
-	String getPasswordHash(FinancialManager financialManager);
 	
 	List<Employee> viewAllEmployees();
 	List<Reimbursement> viewAllReimbursements();
 	List<Reimbursement> viewReimbursementsByEmployee(Employee employee);
 	boolean resolveReimbursement(Reimbursement reimbursement, int status);
+	
+	// Low priority
+	boolean insertFinancialManager(FinancialManager financialManager);
+
 }
