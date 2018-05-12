@@ -33,11 +33,23 @@ private MasterDispatcher() {
 		case"/EmployeeReimbursementService/reburEmp.do":
 			return ReburService.submitEmployeeRebur(request, responce);
 		case"/EmployeeReimbursementService/approve.do":
+			if(request.getParameter("contact").equals("approve")){
 			try {
 				return ReburService.approve(request, responce);
 			} catch (ManagerApprovingOwnRequestException e) {
 				e.printStackTrace();
+				return"/approveReimburstment.jsp";
 			}
+			}
+			else {
+				try {
+					return ReburService.deny(request, responce);
+				} catch (ManagerApprovingOwnRequestException e) {
+					e.printStackTrace();
+					return"/approveReimburstment.jsp";
+				}
+			}
+		
 		default: return "404.jsp";
 		}
 	}

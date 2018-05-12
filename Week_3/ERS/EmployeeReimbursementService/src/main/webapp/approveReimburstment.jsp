@@ -121,9 +121,9 @@ window.onload = function(){
 						placeholder="Enter the id you wish to approve">
 				</div>
 				<div class="form-group">
-					<input type="radio" id="contactChoice1" name="contact"value="email"> 
+					<input type="radio" name="contact"value="approve"> 
 					<label for="contactChoice1">Approve</label> 
-					<input type="radio" id="contactChoice2" name="contact"value="email"> 
+					<input type="radio" name="contact"value="deny"> 
 					<label for="contactChoice1">Deny</label>
 				</div>
 		</div>
