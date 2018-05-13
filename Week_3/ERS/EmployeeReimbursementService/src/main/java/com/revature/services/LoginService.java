@@ -18,6 +18,7 @@ import com.revature.exceptions.ManagerNotFoundException;
 import com.revature.exceptions.NoPendingReimbursmentException;
 import com.revature.exceptions.NoReimbursementForEmployeeException;
 import com.revature.exceptions.PasswordHashException;
+import com.revature.exceptions.noReimbursmentException;
 import com.revature.reimbursement.Reimbursment;
 
 
@@ -35,7 +36,7 @@ public class LoginService {
 				if(man.getPassword().equals(ManagerService.getPasswordHash(new FinanceManager(username,password)))) {
 					FinanceManager authorized = man;
 					request.getSession().setAttribute("authorizedUser", authorized);
-					String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(authorized.getUsername()));
+					String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursemnts());
 					request.getSession().setAttribute("reimbursements", rebursementJson);
 					String pendingJson = new Gson().toJson(ReimbursementService.getPendingReimbursemnts());
 					request.getSession().setAttribute("pendingReimbursements", pendingJson);
@@ -50,8 +51,6 @@ public class LoginService {
 						List<Reimbursment> list= ReimbursementService.getReimbursmentForEmployee(username);
 						String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(authorized.getUsername()));
 						request.getSession().setAttribute("reimbursements", rebursementJson);
-						String pendingJson = new Gson().toJson(ReimbursementService.getPendingReimbursemnts());
-						request.getSession().setAttribute("pendingReimbursements", pendingJson);
 						return "/employeeHome.do";
 					}
 					}catch (EmployeeNotFoundException enfe2) {
@@ -60,17 +59,15 @@ public class LoginService {
 						logger.error(phe.getMessage(), phe);
 					} catch (NoReimbursementForEmployeeException nrfee) {
 						logger.error(nrfee.getMessage(), nrfee);
-					} catch (NoPendingReimbursmentException npre) {
-						logger.error(npre.getMessage(), npre);
 					}
 			} catch (ManagerNotFoundException mnfe) {
 				logger.error(mnfe.getMessage(),mnfe);
 			} catch (PasswordHashException phe) {
 				logger.error(phe.getMessage(), phe);
-			} catch (NoReimbursementForEmployeeException nrfee) {
-				logger.error(nrfee.getMessage(), nrfee);
 			} catch (NoPendingReimbursmentException npre) {
 				logger.error(npre.getMessage(), npre);
+			} catch (noReimbursmentException nre) {
+				logger.error(nre.getMessage(), nre);
 			}
 			
 			return "index.jsp";

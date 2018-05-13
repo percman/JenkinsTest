@@ -53,8 +53,12 @@ private MasterDispatcher() {
 					return"/approveReimburstment.jsp";
 				}
 			}
-		
-		default: return "404.jsp";
+		case"/EmployeeReimbursementService/newPending.do":
+			return ReburService.getNewPending(request, responce);
+			 
+		default: 
+			System.out.println("default");
+			return "404.jsp";
 		}
 	}
 }

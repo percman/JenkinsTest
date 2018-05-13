@@ -28,4 +28,6 @@ public interface ReimbursementDao {
 	public List<Reimbursment> getReimbursmentForEmployee(String emp) throws NoReimbursementForEmployeeException;
 
 	public Reimbursment getReimbursmentById(int id) throws NoReibursmentForIdException;
+
+	public List<Reimbursment> getReimbursmentByEmpId(int id) throws NoReibursmentForIdException;
 }

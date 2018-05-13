@@ -15,6 +15,7 @@
                     <hr class="my-4">
                 </div>
             </div>
+            
 
             <div class="container">
                     <nav class="navbar navbar-inverse">
@@ -33,10 +34,22 @@
                         
                     </nav>
                 </div>
-                
+                <div class="container">
+		<div class="col-md-6 col-offset-3">
+			<form action="newPending.do" method="post">
+				<div class="form-group">
+					<input type="text" name="id" class="form-control" required
+						placeholder="User Id">
+				</div>
+				<div class="button-group">
+					<input type="submit" class="btn btn-success" value="Submit">
+				</div>
+			</form>
+		</div>
+	</div>
                 <div class="container">
                 <div class="page-header">
-                    <h2>Your Reimbursments</h2>
+                    <h2>Employee Reimbursments</h2>
                 </div>
                 <table class="table table-responsive table-stripped">
                     <thead class="thead-dark">
@@ -66,7 +79,6 @@ window.onload = function(){
         let xhr = new XMLHttpRequest();
 
         //Step 2 Add a callback function to on ready state change
-
         xhr.onreadystatechange = function(){
             //Step 5 handle the response
             if(xhr.readyState == 4 && xhr.status == 200){
@@ -78,7 +90,8 @@ window.onload = function(){
                     let appId = rebur.approverId;
                     let subId = rebur.sumbitterId;
     				let id= rebur.reimburseId;
-                    let timeApp = (rebur.timeApproved == null)? 'pending' : rebur.timeAprroved;
+                    let timeApp =(typeof rebur.timeApproved === 'undefined') ? 'pending' : rebur.timeApproved;
+                    console.log(typeof rebur.timeApproved === 'undefined');
                     let timeSub = rebur.timeSubmitted;
                     let amount = rebur.amount;
                     let approved = (rebur.approved === 'true') ? "Yes" : "No";

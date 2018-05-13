@@ -45,4 +45,7 @@ public class ReimbursementService{
 	public static Reimbursment getReimbursmentById(int id) throws NoReibursmentForIdException {
 		return dao.getReimbursmentById(id);
 	}
+	public static List<Reimbursment> getReimbursmentByEmpId(int id) throws NoReibursmentForIdException {
+		return dao.getReimbursmentByEmpId(id);
+	} 
 }

@@ -108,4 +108,18 @@ public class ReburService {
 		}
 		throw new ManagerApprovingOwnRequestException();
 	}
+	public static String getNewPending(HttpServletRequest request, HttpServletResponse responce) {
+		String reburJson;
+		try {
+			reburJson = new Gson().toJson(ReimbursementService.getReimbursmentByEmpId(Integer.parseInt(request.getParameter("id"))));
+			request.getSession().setAttribute("reimbursements", reburJson);
+		} catch (NumberFormatException nfe) {
+			logger.error(nfe.getMessage(), nfe);
+		}	catch(NoReibursmentForIdException nrfie) {
+			logger.error(nrfie.getMessage(), nrfie);
+		}
+		
+		
+		return "/viewManagerReimburstment.jsp";
+	}
 }

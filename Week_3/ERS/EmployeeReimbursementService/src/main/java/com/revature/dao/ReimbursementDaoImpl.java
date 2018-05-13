@@ -185,6 +185,26 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 			} 
 			throw new NoReibursmentForIdException();
 		}
+		@Override
+		public List<Reimbursment> getReimbursmentByEmpId(int id) throws NoReibursmentForIdException {
+			int index = 0;
+			List<Reimbursment> rebur= new ArrayList<>();
+			try(Connection conn = ConnectionUtil.getConnection()){
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM REIMBURSEMENT WHERE submitter_Id = ?");
+				stmt.setInt(++index, id);
+				ResultSet rs = stmt.executeQuery();
+				
+				while(rs.next()) {
+					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved")));
+				}
+				return rebur;
+			} catch(SQLException sqle) {
+				logger.error(sqle.getMessage(), sqle);
+				logger.error(sqle.getSQLState(),sqle);
+				logger.error(sqle.getErrorCode(),sqle);
+			} 
+			throw new NoReibursmentForIdException();
+		}
 		
 		
 }
