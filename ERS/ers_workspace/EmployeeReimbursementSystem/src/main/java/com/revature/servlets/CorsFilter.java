@@ -28,6 +28,7 @@ public class CorsFilter implements Filter {
 		System.out.println("CORSFilter HTTP Request: " + httpRequest.getMethod());
 		System.out.println("CORSFilter HTTP URI: " + httpRequest.getRequestURI());
 		System.out.println("CORSFilter HTTP URL: " + httpRequest.getRequestURL());
+		System.out.println("CORSFilter HTTP Protocol: " + httpRequest.getProtocol());
 
 
 		
@@ -46,7 +47,7 @@ public class CorsFilter implements Filter {
 		// Got this line from Curtis, bless
 		((HttpServletResponse) response).addHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
 
-		((HttpServletResponse) response).addHeader("Access-Control-Allow-Protocol", "GET, OPTIONS, HEAD, PUT, POST");
+//		((HttpServletResponse) response).addHeader("Access-Control-Allow-Protocol", "");
 		
 		// Cast the ServletResponse to an HttpServletResponse to set a Status Code
 		HttpServletResponse httpResponse = (HttpServletResponse) response;

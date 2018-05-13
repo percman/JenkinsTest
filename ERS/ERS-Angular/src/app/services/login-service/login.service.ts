@@ -18,17 +18,24 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   checkFinMan(username: string): Observable<boolean> {
-    return this.http.get(this.urlFM)
+    return this.http.post(
+      this.urlFM, 
+      JSON.stringify([username]))
       .catch(err => this.handleError(err));
   }
 
   loginE(username: string, password: string, isFinMan: boolean): Observable<Employee> {
-    return this.http.get<Employee>(this.urlL)
+    
+    return this.http.post<Employee>(
+      this.urlL, 
+      JSON.stringify([username, password, isFinMan]))
       .catch(err => this.handleError(err));
   }
 
   loginFM(username: string, password: string, isFinMan: boolean): Observable<FinancialManager> {
-    return this.http.get<FinancialManager>(this.urlL)
+    return this.http.post<FinancialManager>(
+      this.urlL, 
+      JSON.stringify([username, password, isFinMan]))
       .catch(err => this.handleError(err));
   }
 
