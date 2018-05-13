@@ -13,7 +13,7 @@ public class Application {
 	public static void main(String[] args) {
 
 //		System.out.println("Program has begun ");
-//		Employee anotherperson = new Employee ("maybe", "here", true, "adam", "lahey", "emailhere", 4168123456L);
+//		Employee anotherperson = new Employee ("s", "s", true, "adam", "lahey", "emailhere", 4168123456L);
 //		System.out.println(EmployeeDaoService.insertEmployee(anotherperson));
 //		System.out.println("here now");
 //		

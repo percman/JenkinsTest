@@ -24,12 +24,6 @@
 
 	<%
 		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
-		List<Employee> employeelist = EmployeeDaoService.getAllEmployees();
-		List<Employee> managerlist = EmployeeDaoService.getAllManagers();
-		List<Reimbursement> reimbursementlist = ReimbursementDaoService.getAllReimbursements();
-		List<Reimbursement> reimbursementlistp = ReimbursementDaoService.getPendingReimbursements();
-		List<Reimbursement> reimbursementlista = ReimbursementDaoService.getApprovedReimbursements();
-		List<Reimbursement> reimbursementlistr = ReimbursementDaoService.getRejectedReimbursements();
 	%>
 	<!-- Main Navbar -->
 	<div class="container">
@@ -43,6 +37,9 @@
 				<li><a href="./services.jsp">Services</a></li>
 				<li><a href="./contact.jsp">Contact</a></li>
 			</ul>
+            <ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
+                <li><a href="../ProjectOneWeb/">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
+            </ul>		
 		</nav>
 	</div>
 
@@ -85,33 +82,29 @@
 				</p>
 			</div>
 			
-		<button type="button" class="btn btn-info" onclick="hideButton()">Update this information?</button>
+		<button type="button" class="btn btn-info" onclick="hideButton()">Update this information</button>
+		<button type="button" class="btn btn-info" onclick="hideCreateButton()">Create a new profile</button>
+		
 		<div id="infoUpdateButton" style="display: none;">
 			<h2>Update your information: </h2>
-			<form action="update.do" method="post">
+			<form action="update_employee.do" method="post">
 				<div class="form-group">
-					<input type="text" name="updateusername" class="form-control" 
-						placeholder="Username">
+					<input type="text" name="update_username" class="form-control" placeholder="Username">
 				</div>
 				<div class="form-group">
-					<input type="password" name="updatepassword" class="form-control"
-						 placeholder="Password">
+					<input type="password" name="update_password" class="form-control" placeholder="Password">
 				</div>
 				<div class="form-group">
-					<input type="text" name="updatefirstname" class="form-control"
-						 placeholder="First name">
+					<input type="text" name="update_firstname" class="form-control" placeholder="First name">
 				</div>	
 				<div class="form-group">
-					<input type="text" name="updatelastname" class="form-control"
-						 placeholder="Last name">
+					<input type="text" name="update_lastname" class="form-control" placeholder="Last name">
 				</div>				
 				<div class="form-group">
-					<input type="text" name="updateemail" class="form-control"
-						 placeholder="Email">
+					<input type="text" name="update_email" class="form-control" placeholder="Email">
 				</div>	
 				<div class="form-group">
-					<input type="phonenumber" name="updatephonenumber" class="form-control"
-						 placeholder="Phone number">
+					<input type="number" min="1000000000" max="9999999999" name="update_phonenumber" class="form-control" placeholder="Phone number">
 				</div>					
 				<div class="button-group">
 					<input type="submit" class="btn btn-success" value="Submit">
@@ -119,7 +112,36 @@
 				</div>
 			</form>
 		</div>
-			
+		<div id="infoCreateEmployee" style="display: none;">
+			<h2>Create new employee: </h2>
+			<form action="create_employee.do" method="post">
+				<div class="form-group">
+					<input type="text" name="create_username" class="form-control" required placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input type="password" name="create_password" class="form-control" required placeholder="Password">
+				</div>
+				<div class="form-group">
+					<input type="text" name="create_manager" class="form-control" required placeholder="Are they a manager? T or F">
+				</div>	
+				<div class="form-group">
+					<input type="text" name="create_firstname" class="form-control" required placeholder="First name">
+				</div>	
+				<div class="form-group">
+					<input type="text" name="create_lastname" class="form-control" required placeholder="Last name">
+				</div>				
+				<div class="form-group">
+					<input type="text" name="create_email" class="form-control" required placeholder="Email">
+				</div>	
+				<div class="form-group">
+					<input type="number" min="1000000000" max="9999999999" name="create_phonenumber" class="form-control" placeholder="Phone number">
+				</div>					
+				<div class="button-group">
+					<input type="submit" class="btn btn-success" value="Submit">
+					<input type="reset" class="btn btn-danger" value="Reset">
+				</div>
+			</form>
+		</div>
 		</div>
 	</div>
 	<div class="container">
@@ -127,7 +149,7 @@
 		<a class="btn btn-default" href="./employeelist.jsp" role="button">Employee Info</a>
 	</div>
 	
-	
+	<script src="./js/hidecreatebutton.js"></script>
 	<script src="./js/hidebutton.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

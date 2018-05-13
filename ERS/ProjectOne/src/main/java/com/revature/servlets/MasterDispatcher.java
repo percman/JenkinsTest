@@ -20,8 +20,10 @@ public class MasterDispatcher {
 			return UserService.home(request, response);
 		case "/ProjectOneWeb/rewreimbursement.do":
 			return ReimbursementService.insertreimbursement(request, response);
-		case "/ProjectOneWeb/updateemployee.do":
+		case "/ProjectOneWeb/update_employee.do":
 			return EmployeeService.updateemployee(request, response);
+		case "/ProjectOneWeb/create_employee.do":
+			return EmployeeService.createemployee(request, response);
 		default:
 			return "404.jsp";
 		}

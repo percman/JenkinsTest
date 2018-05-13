@@ -14,9 +14,32 @@
 
 <body>
 	<%
-		request.getSession().getAttribute("");
+		request.getSession().setAttribute("authorizedUser", "");
 	%>
+	<!-- Main Navbar -->
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+			<div class="navbar-header col-md-2">
+				<a href="../index.jsp" class="navbar-brand">ERS</a>
+			</div>
+			<ul class="navbar-nav nav col-md-6">
+				<li><a href="../ProjectOneWeb/" role="alert">Home</a></li>
+				<li><a href="./about.jsp">About</a></li>
+				<li><a href="./services.jsp">Services</a></li>
+				<li><a href="./contact.jsp">Contact</a></li>
+			</ul>
+            <ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
+                <li class="active"><a href="../ProjectOneWeb/">Log In <span class="glyphicon glyphicon-log-in"></span></a></li>
+            </ul>		
+		</nav>
+	</div>
+	
+		<!-- Breadcrumb -->
+	<div class="container">
+		<ol class="breadcrumb">
 
+		</ol>
+	</div>
 
 	<div class="container">
 		<div class="col-md-6 col-md-offset-3">
@@ -37,7 +60,6 @@
 			</form>
 		</div>
 	</div>
-
 </body>
 
 </html>
