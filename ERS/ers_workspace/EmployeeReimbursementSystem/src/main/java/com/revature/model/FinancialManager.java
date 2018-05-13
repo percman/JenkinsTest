@@ -24,7 +24,7 @@ public class FinancialManager extends Employee {
 
 	// Public constructor that takes all fields
 	public FinancialManager(int fmid, int id, String username, String password, boolean isFinancialManager,
-			String firstname, String middleInitial, String lastname, int phone, String email) {
+			String firstname, String middleInitial, String lastname, String phone, String email) {
 		super(id, username, password, isFinancialManager, firstname, middleInitial, lastname, phone, email);
 		this.fmid = fmid;
 

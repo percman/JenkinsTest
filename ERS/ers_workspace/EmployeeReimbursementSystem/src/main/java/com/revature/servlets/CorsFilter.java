@@ -15,6 +15,18 @@ import com.revature.logging.LogThis;
 
 public class CorsFilter implements Filter {
 
+//<filter>
+//	<filter-name>CorsFilter</filter-name>
+//	<display-name>CorsFilter</display-name>
+//	<description></description>
+//	<filter-class>com.revature.servlets.CorsFilter</filter-class>
+//</filter>
+//<filter-mapping>
+//	<filter-name>CorsFilter</filter-name>
+//	<url-pattern>/*</url-pattern>
+//</filter-mapping>
+
+
 	/*
 	 * If you check the web.xml, I initially set this CorsFilter to filter requests for any url-mapping. 
 	 * This can be modified to fit your needs

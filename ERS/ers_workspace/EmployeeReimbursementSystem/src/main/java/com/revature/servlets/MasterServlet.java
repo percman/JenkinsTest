@@ -21,24 +21,24 @@ public class MasterServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doPost(request, response);
+		request.getRequestDispatcher(MasterDispatcher.process(request, response)).forward(request, response);
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-//		request.getRequestDispatcher((String) MasterDispatcher.process(request, response)).forward(request, response);
-
-//		LogThis.info("MasterServlet request.getReader.readLine: " + request.getReader().readLine());
-		response.setContentType("application/json");
-		
-		// Get a reference to the ObjectMapper
-		ObjectMapper mapper = new ObjectMapper();
-		
-		//LogThis.info(" mapper:  " + mapper.writeValueAsString(MasterDispatcher.process(request, response)));
-		// Write the POJO as JSON to the response
-		response.getWriter().write(
-				mapper.writeValueAsString(MasterDispatcher.process(request, response)));
+		doGet(request, response);
+//
+////		LogThis.info("MasterServlet request.getReader.readLine: " + request.getReader().readLine());
+//		response.setContentType("application/json");
+//		
+//		// Get a reference to the ObjectMapper
+//		ObjectMapper mapper = new ObjectMapper();
+//		
+//		//LogThis.info(" mapper:  " + mapper.writeValueAsString(MasterDispatcher.process(request, response)));
+//		// Write the POJO as JSON to the response
+//		response.getWriter().write(
+//				mapper.writeValueAsString(MasterDispatcher.process(request, response)));
 
 
 	}

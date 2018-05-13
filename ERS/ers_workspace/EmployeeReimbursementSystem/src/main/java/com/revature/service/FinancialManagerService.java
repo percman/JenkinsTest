@@ -2,6 +2,8 @@ package com.revature.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.revature.dao.FinancialManagerDao;
 import com.revature.dao.FinancialManagerDaoImpl;
 import com.revature.logging.InvalidLoginException;
@@ -50,6 +52,10 @@ public class FinancialManagerService {
 		return dao.resolveReimbursement(financialmanager, reimbursement, status);
 	}
 
+	
+	public static String finManHome(HttpServletRequest request) {
+		return "finManHome.jsp";
+	}
 
 
 

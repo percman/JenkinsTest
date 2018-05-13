@@ -2,6 +2,9 @@ package com.revature.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+
 import com.revature.dao.EmployeeDao;
 import com.revature.dao.EmployeeDaoImpl;
 import com.revature.logging.InvalidLoginException;
@@ -26,7 +29,7 @@ public class EmployeeService {
 		} else {
 			return false;
 		}
-			
+
 	}
 
 	public static Employee login(Employee employee) throws InvalidLoginException {
@@ -56,6 +59,11 @@ public class EmployeeService {
 
 	public static List<Reimbursement> viewReimbursementByStatus(Employee employee, int status) {
 		return dao.viewReimbursementByStatus(employee, status);
+	}
+	
+	public static String employeeHome(HttpServletRequest request) {
+		return "employeeHome.jsp";
+		
 	}
 
 }
