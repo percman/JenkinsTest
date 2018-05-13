@@ -9200,3 +9200,40 @@
 2018-05-13 17:33:38 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/finManHome.jsp
 2018-05-13 17:33:38 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
 2018-05-13 17:38:01 INFO  LogThis:25 - json in authenticate: null
+2018-05-13 18:04:50 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-13 18:04:50 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-13 18:04:50 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-13 18:04:50 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 18:04:58 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-13 18:04:58 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:04:58 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:04:58 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 18:15:13 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-13 18:15:13 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:15:13 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:15:13 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 18:17:34 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-13 18:17:34 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:17:34 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:17:34 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 18:19:19 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-13 18:19:19 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:19:19 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:19:19 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 18:19:34 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 18:19:34 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-13 18:19:34 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-13 18:19:34 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 18:19:34 INFO  LogThis:25 - The request URI was: /EmployeeReimbursementSystem/login.do
+2018-05-13 18:19:34 INFO  LogThis:25 - Returning 404 from default
+2018-05-13 18:21:18 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-13 18:21:18 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:21:18 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.jsp
+2018-05-13 18:21:18 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 18:21:30 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 18:21:30 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-13 18:21:30 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-13 18:21:30 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 18:21:30 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 18:21:32 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 18:21:32 INFO  LogThis:25 - currentEmployee in login in NavigationService Employee [id=8, username=chosen1, password=D2CBF944F31D20EC89F73404E6F3DD41, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=7777777777, email=email@hotwarts.uk]

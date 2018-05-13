@@ -18,7 +18,7 @@
             <input type="text" name="password" id="password" placeholder="Please enter password">
             <br>
             <br>
-            <input id="loginBtn" type="button" value="Login">
+            <input id="loginBtn" type="submit" value="Subit">
         </form>
 
     </div>

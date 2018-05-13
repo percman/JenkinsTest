@@ -22,13 +22,13 @@ public class NavigationService {
 			LogThis.info("currentEmployee in login in NavigationService " + currentEmployee.toString());
 			request.getSession().setAttribute("currentEmployee", currentEmployee);
 			if(currentEmployee.isFinancialManager()) {
-				return "finManHome.jsp";
+				return "finManHome.do";
 			} else {
-				return "employeeHome.jsp";
+				return "employeeHome.do";
 			}
 		} catch (InvalidLoginException e) {
 			LogThis.warn(e.getMessage());
-			return "404.jsp";
+			return "404.do";
 		}
 	}
 	

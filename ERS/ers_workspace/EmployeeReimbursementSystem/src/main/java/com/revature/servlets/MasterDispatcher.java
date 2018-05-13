@@ -24,13 +24,13 @@ public class MasterDispatcher {
 	public static String process(HttpServletRequest request, HttpServletResponse response) {
 		
 		switch (request.getRequestURI()) {
-		case "EmployeeReimbursementSystem/login.do":
+		case "/EmployeeReimbursementSystem/login.do":
 			return NavigationService.login(request);
-		case "EmployeeReimbursementSystem/finManHome.do":
+		case "/EmployeeReimbursementSystem/finManHome.do":
 			return FinancialManagerService.finManHome(request);
-		case "EmployeeReimbursementSystem/employeeHome.do":
+		case "/EmployeeReimbursementSystem/employeeHome.do":
 			return EmployeeService.employeeHome(request);
-		case "EmployeeReimbursementSystem/404.do":
+		case "/EmployeeReimbursementSystem/404.do":
 			return NavigationService.fnf(request);
 		default:
 			LogThis.info("The request URI was: " + request.getRequestURI());
