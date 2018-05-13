@@ -79,3 +79,4 @@ INSERT INTO RCategory VALUES (3, 'Other');
 INSERT INTO RStatus VALUES (0, 'Pending');
 INSERT INTO RStatus VALUES (1, 'Approved');
 INSERT INTO RStatus VALUES (2, 'Denied');
+
