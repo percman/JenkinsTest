@@ -143,16 +143,17 @@ public class ManagerDaoImpl implements ManagerDao {
 		return null;
 	}
 	@Override
-	public String approver(Reimbursement reimbursement) {
+	public String approver(int id) {
 		int index=0;
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("SELECT i.first_name, i.middle_initial, i.last_name "
+			PreparedStatement stmt = conn.prepareStatement("SELECT first_name, middle_initial, last_name "
 					+ "FROM info NATURAL JOIN manager WHERE manager_id=?");
-			stmt.setInt(++index, reimbursement.getApproverId());
+			stmt.setInt(++index, id);
 			ResultSet rs=stmt.executeQuery();
 			if(rs.next()) {
-				String name=rs.getString("i.first_name")+ " " + 
-						rs.getString("i.middle_initial")+" " +rs.getString("i.last_name");
+				String name=rs.getString("first_name")+ " " + 
+						rs.getString("middle_initial")+" " +rs.getString("last_name");
+				System.out.println(name);
 				return name;
 			}
 		}catch(SQLException sqle) {

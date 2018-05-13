@@ -34,6 +34,7 @@
 						Personal Info</a></li>
 				<li class="dropdown-item"><a href="./ReimbursementSubmit.jsp">Submit Reimbursements</a></li>
 					<li class="dropdown-item"><a href="./viewPending.do">Pending Reimbursements</a></li>
+					<li class="dropdown-item"><a href="./viewApproved.do">Approved Reimbursements</a></li>
 
 			</ul></li>
 	</ul>

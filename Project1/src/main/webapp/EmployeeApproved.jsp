@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="com.revature.service.ManagerService" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,6 +31,7 @@
 					<li class="dropdown-item" ><a href="./EmployeeUpdate.jsp">Update Personal Info</a></li>
 					<li class="dropdown-item"><a href="./ReimbursementSubmit.jsp">Submit Reimbursements</a></li>
 					<li class="dropdown-item"><a href="./viewPending.do">Pending Reimbursements</a></li>
+					<li class="dropdown-item"><a href="./viewApproved.do">Approved Reimbursements</a></li>
 					
 					
 				</ul>
@@ -43,25 +45,31 @@
 			<%} %>
 		</nav>
 		
-		<h2>Your Pending Reimbursements:</h2>
+		<h2>Your Resolved Reimbursements:</h2>
 		<div class="container">
         <div class="col-md-7">
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
                         <th>Amount</th>
-                        <th>Submitted</th>
+                        <th>Submission Time</th>
                         <th>Category</th>
+                        <th>Approved/Denied</th>
+                        <th>Manager Name</th>
+                        <th>Resolution Time</th>
                     </tr>
                 </thead>
                 <tbody id="table-body">
                 <%@ page import="com.revature.model.Reimbursement"%>
-                <% List<Reimbursement> reimbursements= (ArrayList<Reimbursement>)request.getAttribute("pendingList");%>
+                <% List<Reimbursement> reimbursements= (ArrayList<Reimbursement>)request.getAttribute("resolvedList");%>
                 <% for (Reimbursement r:reimbursements){%>
                 	<tr>
                 		<td><%=r.getAmount()%></td>
                 		<td><%=r.getRequestTime()%></td>
                 		<td><%=r.getCategory() %></td>
+                		<td><%=r.getStatus() %></td>
+                		<td><%=ManagerService.approver(r.getApproverId()) %></td>
+                		<td><%=r.getApprovedTime() %></td>
                 	</tr>
                 <%} %>
                 </tbody>

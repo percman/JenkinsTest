@@ -22,6 +22,8 @@ public class Dispatch {
 			return ReimbursementService.insertReimbursement(request, response);
 		case "/Project1/viewPending.do":
 			return EmployeeService.listPending(request, response);
+		case "/Project1/viewApproved.do":
+			return EmployeeService.listResolved(request, response);
 		default: return "/404.jsp";
 		}
 	}

@@ -115,15 +115,15 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		int index = 0;
 		List<Reimbursement> reimbursements= new ArrayList<>();
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("SELECT requestor_id, approver_id, category, status "
-					+ "FROM reimbursement NATURAL JOIN employee WHERE username = ? AND status != 'Pending'");
-			stmt.setString(++index, employee.getUsername());
+			PreparedStatement stmt = conn.prepareStatement("SELECT * "
+					+ "FROM reimbursement WHERE requestor_id=? AND status <> 'Pending'");
+			stmt.setInt(++index, employee.getId());
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
 				Reimbursement reimbursement=new Reimbursement(rs.getInt("reimbursement_id"), 
-						rs.getInt("requestorId"), rs.getInt("approver_id"),
+						rs.getInt("requestor_id"), rs.getInt("approver_id"),
 						rs.getDouble("amount"), rs.getString("category"), rs.getString("status"),
-						rs.getTimestamp("request_time").toString(), rs.getTimestamp("approved_time").toString());
+						rs.getTimestamp("request_time").toString(), rs.getTimestamp("approval_time").toString());
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;

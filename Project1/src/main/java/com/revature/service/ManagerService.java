@@ -20,19 +20,19 @@ public class ManagerService {
 		return dao.approveDeny(response, reimbursement_id, manager_id);
 	}
 	
-	List<Employee> viewEmployees(){
+	public static List<Employee> viewEmployees(){
 		return dao.viewEmployees();
 	}
 	
-	List<Reimbursement> viewReimbursements(){
+	public static List<Reimbursement> viewReimbursements(){
 		return dao.viewReimbursements();
 	}
 	
-	List<Reimbursement> viewReimbursementByEmployee(Employee employee){
+	public static List<Reimbursement> viewReimbursementByEmployee(Employee employee){
 		return dao.viewReimbursementByEmployee(employee);
 	}
 	
-	String approver(Reimbursement reimbursement) {
-		return dao.approver(reimbursement);
+	public static String approver(int id) {
+		return dao.approver(id);
 	}
 }
