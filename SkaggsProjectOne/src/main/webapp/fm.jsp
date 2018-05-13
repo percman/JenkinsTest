@@ -17,9 +17,6 @@
 		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
 		System.out.println("employee " +employee);
 	%>
-	<%
-		ArrayList<Employee> elist = (ArrayList) request.getSession().getAttribute("eList");
-	%>
 	<div class="container">
 		<nav class="navbar navbar-inverse">
 		<div class="navbar-header col-md-2">

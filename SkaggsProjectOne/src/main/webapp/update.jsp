@@ -14,19 +14,24 @@
 		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
 	%>
 <div class="container">
-	<nav class="navbar navbar-inverse">
-        <div class="navbar-header col-md-2">
-            <a href="./index.html" class="navbar-brand">Skaggs Corp</a>
-        </div>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+		<div class="navbar-header col-md-2">
+			<a href="./index.jsp" class="navbar-brand">Skaggs Corp</a>
+		</div>
 		<ul class="navbar-nav nav">
 			<li><a href="home.jsp">Home</a></li>
 		</ul>
 		<ul class="navbar-nav nav">
-			<li><a href="update.jsp">Update Info</a></li>
+			<li><a href = "update.jsp">Update Info</a> </li>
+		</ul>
+		<ul class="navbar-nav nav">
+			<li><a href="requestEmployee.jsp">View Reimbursement Requests</a></li>
 		</ul>
 		<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
-			<li><a href="logout.jsp">Log Out <span
-					class="glyphicon glyphicon-log-out" id="logout-elmt"> </span></a></li>
+			<li><a href="logout.jsp">Log Out <span class="glyphicon glyphicon-log-out" 
+			id="logout-elmt">
+			</span></a></li>
 		</ul>
 		</nav>
      	<div class="row">

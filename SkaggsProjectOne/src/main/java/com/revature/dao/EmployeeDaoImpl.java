@@ -100,7 +100,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				String requesterLastName = rs.getString("lastName");
 
 				rList.add(new Reimbursement(reid, requesterId, approverId, category, status, amount, dateSubmitted, dateCompleted, 
-				requesterFirstName, requesterLastName));
+				requesterFirstName, requesterLastName, null, null, null));
 			}
 			
 			return rList;
@@ -136,7 +136,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				String requesterLastName = rs.getString("lastName");
 
 				rList.add(new Reimbursement(reid, requesterId, approverId, category, status, amount, dateSubmitted, dateCompleted, 
-				requesterFirstName, requesterLastName));
+				requesterFirstName, requesterLastName,null,null, null));
 			}
 			
 			return rList;
@@ -224,7 +224,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			String firstName = e.getFirstName();
 			String lastName = e.getLastName();
 			String userName = e.getUserName();
-			PreparedStatement stmt = conn.prepareStatement("{CALL update_employee(?, ?, ?)  }");
+			PreparedStatement stmt = conn.prepareStatement("{CALL update_employee_no_password(?, ?, ?)  }");
 			stmt.setString(++index, firstName);
 			stmt.setString(++index, lastName);
 			stmt.setString(++index, userName);

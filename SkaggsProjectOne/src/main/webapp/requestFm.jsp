@@ -19,27 +19,28 @@
 	<div class="container">
 		<nav class="navbar navbar-inverse">
 		<div class="navbar-header col-md-2">
-			<a href="./index.jsp" class="navbar-brand">Skaggs Corp</a>
+			<a href="./index.html" class="navbar-brand">Skaggs Corp</a>
 		</div>
 		<ul class="navbar-nav nav">
 			<li><a href="fm.jsp">Home</a></li>
 		</ul>
 		<ul class="navbar-nav nav">
-			<li><a href="update.jsp">Update Info</a></li>
+			<li><a href = "employeeList.jsp">View Employees</a> </li>
 		</ul>
 		<ul class="navbar-nav nav">
-			<li><a href="requestEmployee.jsp">View Reimbursement
-					Requests</a></li>
+			<li><a href="requestFm.jsp">Review All Requests</a></li>
+		</ul>
+		<ul class="navbar-nav nav">
+			<li><a href="requestByEmployee.jsp">View Requests by Employees</a></li>
 		</ul>
 		<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
-			<li><a href="logout.jsp">Log Out <span
-					class="glyphicon glyphicon-log-out" id="logout-elmt"> </span></a></li>
+			<li><a href="logout.jsp">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
 		</ul>
 		</nav>
 	</div>
 	<div class="container">
 		<div class="col-md-7">
-			<h2>Your Reimbursement Request</h2>
+			<h2>All Reimbursement Request</h2>
 			<table class="table table-striped table-hover table-bordered"
 				id="requestTable">
 				<thead>

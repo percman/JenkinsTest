@@ -1,5 +1,7 @@
 package com.revature.reimbursement;
 
+import java.sql.Blob;
+
 import com.revature.dao.EmployeeService;
 
 public class Reimbursement {
@@ -15,11 +17,12 @@ public class Reimbursement {
 	String requesterLastName;
 	String approverFirstName;
 	String approverLastName;
-	
+	private Blob img;
+
 	public Reimbursement(int reimbursementId, int requesterId, int approverId, String category, int status, int amount,
-			String dateSubmitted, String dateCompleted, String requesterFirstName, String requesterLastName) throws ClassNotFoundException {
+			String dateSubmitted, String dateCompleted, String requesterFirstName, String requesterLastName,
+			String approverFirstName, String approverLastName, Blob img) {
 		super();
-		
 		this.reimbursementId = reimbursementId;
 		this.requesterId = requesterId;
 		this.approverId = approverId;
@@ -27,51 +30,12 @@ public class Reimbursement {
 		this.status = status;
 		this.amount = amount;
 		this.dateSubmitted = dateSubmitted;
-		if (dateCompleted == null) {
-			this.dateCompleted = "N/A";
-		}
-		else { 
-			this.dateCompleted = dateCompleted;
-		}
+		this.dateCompleted = dateCompleted;
 		this.requesterFirstName = requesterFirstName;
 		this.requesterLastName = requesterLastName;
-		
-		if (approverId != 0) {
-			this.approverFirstName = EmployeeService.getEmployee(approverId).getFirstName();
-			this.approverLastName = EmployeeService.getEmployee(approverId).getLastName();
-		}
-	}
-
-	public String getRequesterFirstName() {
-		return requesterFirstName;
-	}
-
-	public void setRequesterFirstName(String requesterFirstName) {
-		this.requesterFirstName = requesterFirstName;
-	}
-
-	public String getRequesterLastName() {
-		return requesterLastName;
-	}
-
-	public void setRequesterLastName(String requesterLastName) {
-		this.requesterLastName = requesterLastName;
-	}
-
-	public String getApproverFirstName() {
-		return approverFirstName;
-	}
-
-	public void setApproverFirstName(String approverFirstName) {
 		this.approverFirstName = approverFirstName;
-	}
-
-	public String getApproverLastName() {
-		return approverLastName;
-	}
-
-	public void setApproverLastName(String approverLastName) {
 		this.approverLastName = approverLastName;
+		this.img = img;
 	}
 
 	public int getReimbursementId() {
@@ -138,35 +102,44 @@ public class Reimbursement {
 		this.dateCompleted = dateCompleted;
 	}
 
-	/*public Reimbursement(int reimbursementId, int requesterId, 
-			String category, int status, int amount, String dateSubmitted) {
-		super();
-		this.reimbursementId = reimbursementId;
-		this.requesterId = requesterId;
-		this.category = category;
-		this.status = status;
-		this.amount = amount;
-		this.dateSubmitted = dateSubmitted;
+	public String getRequesterFirstName() {
+		return requesterFirstName;
 	}
-*/
-	public Reimbursement(int reimbursementId, String category, int status, int amount, String dateSubmitted,
-			String requesterFirstName, String requesterLastName) {
-		super();
-		this.reimbursementId = reimbursementId;
-		this.category = category;
-		this.status = status;
-		this.amount = amount;
-		this.dateSubmitted = dateSubmitted;
+
+	public void setRequesterFirstName(String requesterFirstName) {
 		this.requesterFirstName = requesterFirstName;
+	}
+
+	public String getRequesterLastName() {
+		return requesterLastName;
+	}
+
+	public void setRequesterLastName(String requesterLastName) {
 		this.requesterLastName = requesterLastName;
 	}
 
-	public Reimbursement(int requesterId, String category, int status, int amount) {
-		super();
-		this.requesterId = requesterId;
-		this.category = category;
-		this.status = status;
-		this.amount = amount;
+	public String getApproverFirstName() {
+		return approverFirstName;
+	}
+
+	public void setApproverFirstName(String approverFirstName) {
+		this.approverFirstName = approverFirstName;
+	}
+
+	public String getApproverLastName() {
+		return approverLastName;
+	}
+
+	public void setApproverLastName(String approverLastName) {
+		this.approverLastName = approverLastName;
+	}
+
+	public Blob getImg() {
+		return img;
+	}
+
+	public void setImg(Blob img) {
+		this.img = img;
 	}
 
 	@Override
@@ -175,7 +148,7 @@ public class Reimbursement {
 				+ approverId + ", category=" + category + ", status=" + status + ", amount=" + amount
 				+ ", dateSubmitted=" + dateSubmitted + ", dateCompleted=" + dateCompleted + ", requesterFirstName="
 				+ requesterFirstName + ", requesterLastName=" + requesterLastName + ", approverFirstName="
-				+ approverFirstName + ", approverLastName=" + approverLastName + "]";
+				+ approverFirstName + ", approverLastName=" + approverLastName + ", img=" + img + "]";
 	}
-	
+
 }

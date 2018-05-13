@@ -20,24 +20,23 @@
 			<li><a href="fm.jsp">Home</a></li>
 		</ul>
 		<ul class="navbar-nav nav">
-			<li><a href="employeeList.jsp">View Employees</a></li>
+			<li><a href = "employeeList.jsp">View Employees</a> </li>
 		</ul>
 		<ul class="navbar-nav nav">
 			<li><a href="requestFm.jsp">Review All Requests</a></li>
 		</ul>
 		<ul class="navbar-nav nav">
-			<li><a href="requestByEmployee.jsp">View Requests by
-					Employees</a></li>
+			<li><a href="requestByEmployee.jsp">View Requests by Employees</a></li>
 		</ul>
 		<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
-			<li><a href="logout.jsp">Log Out <span
-					class="glyphicon glyphicon-log-out"></span></a></li>
+			<li><a href="logout.jsp">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
 		</ul>
 		</nav>
 	</div>
 	<div class="container">
 		<div class="col-md-7">
-			<table class="table table-striped table-hover table-bordered" name ="employeeTable" id ="employeeTable">
+			<table class="table table-striped table-hover table-bordered"
+			 name ="employeeTable" id ="employeeTable">
 				<thead>
 					<tr>
 						<th>Name</th>

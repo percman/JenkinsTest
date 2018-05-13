@@ -14,7 +14,7 @@ public class RequestService {
 		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
 		System.out.println("request " + requestType);
 		System.out.println("amount " + amount );
-		Reimbursement r = new Reimbursement(employee.getEmployeeId(), requestType, 0, amount);
+		Reimbursement r = new Reimbursement(0, employee.getEmployeeId(), 0, requestType, 0, amount, "", "", "", "", "", "", null);
 		EmployeeService.insertRequest(r);
 		return "home.jsp";
 	}
