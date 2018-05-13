@@ -3,9 +3,8 @@ package com.revature.servlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.dao.Employee;
-import com.revature.dao.EmployeeService;
 import com.revature.service.LoginService;
+import com.revature.service.RequestByEmployee;
 import com.revature.service.RequestService;
 import com.revature.service.UpdateRequestService;
 import com.revature.service.UpdateService;
@@ -28,6 +27,8 @@ public class MasterDispatcher {
 			return UpdateRequestService.update(request);
 		case "/SkaggsProjectOne/request.do":
 			return  RequestService.reqest(request);
+		case "/SkaggsProjectOne/request-update.do":
+			return  RequestByEmployee.request(request);
 		default:
 			return "404.jsp";
 		}

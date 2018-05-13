@@ -50,7 +50,7 @@ function getRequests() {
 		    };
 		}
 	}
-    xhr.open("POST", "http://localhost:8080/SkaggsProjectOne/getMyRequests.ajax");
+    xhr.open("POST", "http://localhost:8080/SkaggsProjectOne/getRequests.ajax");
     xhr.send();
 };
 

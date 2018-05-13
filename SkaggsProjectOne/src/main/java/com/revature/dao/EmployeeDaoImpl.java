@@ -110,6 +110,42 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return null;
 	}
+	@Override
+	public ArrayList<Reimbursement> getMyRequests(Employee e) throws ClassNotFoundException {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			ArrayList<Reimbursement> rList = new ArrayList<>();
+			System.out.println(rList.size());
+			PreparedStatement stmt = conn.prepareStatement("SELECT * " + 
+					"FROM reimbursementTable R, infoTable I " + 
+					"WHERE R.requesterid = I.employeeid and I.employeeid = " + e.getEmployeeId() + " ORDER BY reid");			
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {	
+				int reid = rs.getInt("reid");
+				int requesterId = rs.getInt("requesterId");
+				int approverId = rs.getInt("approverId");
+				String category = rs.getString("categoryName");
+				int status = rs.getInt("status");
+				int amount = rs.getInt("amount");
+				String dateSubmitted = rs.getString("dateSubmitted");
+				String dateCompleted = " ";
+				if (rs.getString("dateCompleted") !=null) {
+					dateCompleted = rs.getString("dateCompleted");
+				}
+				String requesterFirstName = rs.getString("firstName");
+				String requesterLastName = rs.getString("lastName");
+
+				rList.add(new Reimbursement(reid, requesterId, approverId, category, status, amount, dateSubmitted, dateCompleted, 
+				requesterFirstName, requesterLastName));
+			}
+			
+			return rList;
+		} catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL STATE " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+		}
+		return null;
+	}
 
 	@Override
 	public boolean insertEmployee(Employee e) throws ClassNotFoundException {

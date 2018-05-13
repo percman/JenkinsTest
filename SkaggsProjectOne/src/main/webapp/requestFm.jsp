@@ -22,7 +22,7 @@
 			<a href="./index.jsp" class="navbar-brand">Skaggs Corp</a>
 		</div>
 		<ul class="navbar-nav nav">
-			<li><a href="home.jsp">Home</a></li>
+			<li><a href="fm.jsp">Home</a></li>
 		</ul>
 		<ul class="navbar-nav nav">
 			<li><a href="update.jsp">Update Info</a></li>

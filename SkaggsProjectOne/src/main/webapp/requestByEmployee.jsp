@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Finance Manager Home</title>
+<title>Request Employee by Title</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -12,13 +12,8 @@
 </head>
 <body>
 	<%@ page import="com.revature.dao.Employee"%>
-	<%@ page import="java.util.ArrayList"%>
 	<%
 		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
-		System.out.println("employee " +employee);
-	%>
-	<%
-		ArrayList<Employee> elist = (ArrayList) request.getSession().getAttribute("eList");
 	%>
 	<div class="container">
 		<nav class="navbar navbar-inverse">
@@ -44,32 +39,13 @@
 	</div>
 	<div class="container">
 		<div class="col-md-7">
-			<h2>
-				Welcome
-				<%=employee.getFirstName()%>
-				you are a Finance Manager
-			</h2>
-		</div>
-	</div>
-	<div class="container">
-		<div class="col-md-7">
-			<h2><%=employee.getFirstName()%>
-				Information
-			</h2>
-			<table class="table table-striped table-hover table-bordered">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>User Name</th>
-					</tr>
-				</thead>
-				<tbody id="table-body">
-					<tr>
-						<td><%=employee.getFirstName()%> <%=employee.getLastName()%></td>
-						<td><%=employee.getUserName()%></td>
-					</tr>
-				</tbody>
-			</table>
+			<form id="request-by-employee-form" action="/SkaggsProjectOne/request-update.do"
+				method="post" role="form">
+				<label for="employeeUsername">Enter Employee Username</label> <input
+					type="text" name="employeeUsername" id="employeeUsername">
+				<input type="submit" name="request-submit" id="request-submit"
+					class="form-control btn btn-submit" value="View Requests">
+			</form>
 		</div>
 	</div>
 </body>
