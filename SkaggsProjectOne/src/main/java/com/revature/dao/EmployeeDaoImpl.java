@@ -59,10 +59,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			ArrayList<Employee> employeeList = new ArrayList<>();
 			System.out.println(employeeList.size());
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employeeTable, infoTable  WHERE EMPLOYEETABLE.employeeId = INFOTABLE.employeeId");			
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employeeTable, infoTable  "
+					+ "WHERE EMPLOYEETABLE.employeeId = INFOTABLE.employeeId ORDER BY EMPLOYEETABLE.employeeId");			
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {	
-				employeeList.add(new Employee(rs.getString("firstName"), rs.getString("middleName"), 
+				employeeList.add(new Employee(rs.getInt("employeeId"),rs.getString("firstName"), rs.getString("middleName"), 
 						rs.getString("lastName"), rs.getString("userName"), rs.getString("userPassword"),
 						rs.getInt("financemanager")==1));
 			}
