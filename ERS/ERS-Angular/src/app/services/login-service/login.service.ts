@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Employee } from '../../../shared/employee';
 import 'rxjs/add/operator/do';
@@ -19,22 +19,25 @@ export class LoginService {
 
   checkFinMan(username: string): Observable<boolean> {
     return this.http.post(
-      this.urlFM, 
+      this.urlFM,
       JSON.stringify([username]))
       .catch(err => this.handleError(err));
   }
 
   loginE(username: string, password: string, isFinMan: boolean): Observable<Employee> {
-    
+
     return this.http.post<Employee>(
       this.urlL, 
-      JSON.stringify([username, password, isFinMan]))
+      {username: username, 
+        password:password,
+        isFinMan: isFinMan
+      })
       .catch(err => this.handleError(err));
   }
 
   loginFM(username: string, password: string, isFinMan: boolean): Observable<FinancialManager> {
     return this.http.post<FinancialManager>(
-      this.urlL, 
+      this.urlL,
       JSON.stringify([username, password, isFinMan]))
       .catch(err => this.handleError(err));
   }

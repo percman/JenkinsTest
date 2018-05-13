@@ -25,10 +25,14 @@ public class CorsFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// Cast the ServletRequest to an HttpServletRequest in order to get the HTTP Method attached with the request
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
+		
 		System.out.println("CORSFilter HTTP Request: " + httpRequest.getMethod());
 		System.out.println("CORSFilter HTTP URI: " + httpRequest.getRequestURI());
 		System.out.println("CORSFilter HTTP URL: " + httpRequest.getRequestURL());
 		System.out.println("CORSFilter HTTP Protocol: " + httpRequest.getProtocol());
+		System.out.println("httpRequest.getParam username: " + httpRequest.getParameter("username"));
+		System.out.println("request.getParam username: " + request.getParameter("\"username\""));
+
 
 
 		

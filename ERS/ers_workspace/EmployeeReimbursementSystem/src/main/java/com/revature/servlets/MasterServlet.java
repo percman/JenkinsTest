@@ -28,13 +28,14 @@ public class MasterServlet extends HttpServlet {
 		
 //		request.getRequestDispatcher(MasterDispatcher.process(request, response)).forward(request, response);
 
-		System.out.println("request.getReader.readLine" + request.getReader().readLine());
+		System.out.println("request.getReader.readLine: " + request.getReader().readLine());
+		System.out.println("request.getParam username: " + request.getParameter("username"));
 		response.setContentType("application/json");
 		
 		// Get a reference to the ObjectMapper
 		ObjectMapper mapper = new ObjectMapper();
 		
-		System.out.println("" + mapper.writeValueAsString(MasterDispatcher.process(request, response)));
+		System.out.println("mapper " + mapper.writeValueAsString(MasterDispatcher.process(request, response)));
 		// Write the POJO as JSON to the response
 		response.getWriter().write(
 				mapper.writeValueAsString(MasterDispatcher.process(request, response)));
