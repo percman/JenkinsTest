@@ -47,7 +47,6 @@ public class CorsFilter implements Filter {
 		// Got this line from Curtis, bless
 		((HttpServletResponse) response).addHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
 
-//		((HttpServletResponse) response).addHeader("Access-Control-Allow-Protocol", "");
 		
 		// Cast the ServletResponse to an HttpServletResponse to set a Status Code
 		HttpServletResponse httpResponse = (HttpServletResponse) response;

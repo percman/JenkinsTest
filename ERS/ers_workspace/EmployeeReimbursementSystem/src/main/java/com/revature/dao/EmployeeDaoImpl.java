@@ -30,10 +30,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
 	public boolean isFinMan (String username) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
+			int index = 0;
 			PreparedStatement stmt = conn.prepareStatement("SELECT is_f_manager FROM employee WHERE username = ?");
-			stmt.setString(1, username);
+			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
 			return rs.getBoolean("is_f_manager");
+			}
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());
 			LogThis.warn("SQL state: " + sqle.getSQLState());
@@ -66,8 +69,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public Employee getEmployee(String username) {
 		Employee employee = new Employee();
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee e"
-					+ "JOIN employee_info ei ON e.employee_id = ei.employee_id " + "WHERE e.employee_id = ?");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee e "
+					+ "JOIN employee_info ei ON e.employee_id = ei.employee_id " + "WHERE e.username = ?");
 			stmt.setString(1, username);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {

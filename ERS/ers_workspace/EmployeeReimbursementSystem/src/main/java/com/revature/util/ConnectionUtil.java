@@ -25,10 +25,10 @@ public class ConnectionUtil {
 						props.getProperty("jdbc.password"));
 				
 			} catch (FileNotFoundException fnfe) {
-				fnfe.printStackTrace();
+				LogThis.warn(fnfe.getMessage());
 				
 			} catch (IOException ioe) {
-				ioe.printStackTrace();
+				LogThis.warn(ioe.getMessage());
 				
 			} catch (SQLException sqle) {
 				LogThis.warn(sqle.getMessage());
@@ -36,6 +36,10 @@ public class ConnectionUtil {
 				LogThis.warn("Error Code: " + sqle.getErrorCode());
 			}
 		return null;
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 
 }

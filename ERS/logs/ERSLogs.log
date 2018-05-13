@@ -1,0 +1,10 @@
+2018-05-13 09:35:23 INFO  LogThis:25 - Returning LoginFactory from /login
+2018-05-13 09:35:23 WARN  LogThis:29 - ..\..\..\..\db_properties\ers_db.properties (The system cannot find the path specified)
+2018-05-13 09:38:20 INFO  LogThis:25 - Returning LoginFactory from /login
+2018-05-13 09:38:20 WARN  LogThis:29 - ..\..\..\..\db_properties\ers_db.properties (The system cannot find the path specified)
+2018-05-13 09:40:01 INFO  LogThis:25 - Returning LoginFactory from /login
+2018-05-13 09:40:01 WARN  LogThis:29 - ..\..\..\..\db_properties\ers_db.properties (The system cannot find the path specified)
+2018-05-13 09:41:59 INFO  LogThis:25 - Returning LoginFactory from /login
+2018-05-13 09:41:59 WARN  LogThis:29 - ..\..\..\..\db_properties\ers_db.properties (The system cannot find the path specified)
+2018-05-13 09:46:48 INFO  LogThis:25 - Returning LoginFactory from /login
+2018-05-13 09:46:48 WARN  LogThis:29 - ..\..\..\..\db_properties\ers_db.properties (The system cannot find the path specified)

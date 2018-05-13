@@ -16,6 +16,7 @@ public class ConnectionTest {
 	public void test() {
 		Connection conn = ConnectionUtil.getConnection();
 		try {
+			System.out.println(conn);
 			conn.close();
 			assertTrue(true);
 		} catch (SQLException sqle) {

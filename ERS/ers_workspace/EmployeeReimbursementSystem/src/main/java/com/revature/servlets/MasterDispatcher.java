@@ -14,14 +14,17 @@ public class MasterDispatcher {
 	private MasterDispatcher() {
 	}
 
-	public static Object process(HttpServletRequest request, HttpServletResponse response) {
+	public static String process(HttpServletRequest request, HttpServletResponse response) {
 		switch (request.getRequestURI()) {
 		case "/EmployeeReimbursementSystem/isFinMan":
+			System.out.println(request.getParameter("username"));
 			try {
 				if (EmployeeService.isFinMan(request.getParameter("username"))) {
-					return true;
+					LogThis.info("Returning true from /isFinMan");
+					return "true";
 				} else {
-					return false;
+					LogThis.info("Returning false from /isFinMan");
+					return "false";
 				}
 			} catch (InvalidLoginException ile) {
 				LogThis.warn(ile.getMessage());
@@ -29,9 +32,11 @@ public class MasterDispatcher {
 		case "/EmployeeReimbursementSystem/login":
 			String isFinMan = request.getParameter("isFinMan");
 			Employee employee = new Employee(request.getParameter("username"), request.getParameter("password"));
-			return LoginFactory.userLogin(isFinMan, employee);
+			LogThis.info("Returning LoginFactory from /login");
+			return LoginFactory.userLogin(isFinMan, employee).toString();
 		default:
 			System.out.println("The request URI was: " + request.getRequestURI());
+			LogThis.info("Returning 404 from default");
 			return "404.jsp";
 
 		}
