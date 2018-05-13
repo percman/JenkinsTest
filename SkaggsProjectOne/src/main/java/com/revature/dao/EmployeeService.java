@@ -35,4 +35,7 @@ public class EmployeeService {
 	public static ArrayList<Reimbursement> getAllRequests() throws ClassNotFoundException {
 		return dao.getAllRequests();
 	}
+	public static boolean updateRequest(Employee e, int reid, String approved) {
+		return dao.updateRequest(e, reid, approved);
+	}
 }

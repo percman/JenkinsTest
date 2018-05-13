@@ -2,7 +2,6 @@ package com.revature.dao;
 
 public class Employee {
 	int employeeId;
-
 	String firstName;
 	String middleInit;
 	String lastName;

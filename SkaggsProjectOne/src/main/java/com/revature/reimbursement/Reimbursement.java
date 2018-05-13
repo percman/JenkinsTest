@@ -1,5 +1,7 @@
 package com.revature.reimbursement;
 
+import com.revature.dao.EmployeeService;
+
 public class Reimbursement {
 	int reimbursementId;
 	int requesterId;
@@ -9,12 +11,67 @@ public class Reimbursement {
 	int amount;
 	String dateSubmitted;
 	String dateCompleted;
+	String requesterFirstName;
+	String requesterLastName;
+	String approverFirstName;
+	String approverLastName;
 	
-	@Override
-	public String toString() {
-		return "Reimbursement [reimbursementId=" + reimbursementId + ", requesterId=" + requesterId + ", approverId="
-				+ approverId + ", category=" + category + ", status=" + status + ", amount=" + amount
-				+ ", dateSubmitted=" + dateSubmitted + ", dateCompleted=" + dateCompleted + "]";
+	public Reimbursement(int reimbursementId, int requesterId, int approverId, String category, int status, int amount,
+			String dateSubmitted, String dateCompleted, String requesterFirstName, String requesterLastName) throws ClassNotFoundException {
+		super();
+		
+		this.reimbursementId = reimbursementId;
+		this.requesterId = requesterId;
+		this.approverId = approverId;
+		this.category = category;
+		this.status = status;
+		this.amount = amount;
+		this.dateSubmitted = dateSubmitted;
+		if (dateCompleted == null) {
+			this.dateCompleted = "N/A";
+		}
+		else { 
+			this.dateCompleted = dateCompleted;
+		}
+		this.requesterFirstName = requesterFirstName;
+		this.requesterLastName = requesterLastName;
+		
+		if (approverId != 0) {
+			this.approverFirstName = EmployeeService.getEmployee(approverId).getFirstName();
+			this.approverLastName = EmployeeService.getEmployee(approverId).getLastName();
+		}
+	}
+
+	public String getRequesterFirstName() {
+		return requesterFirstName;
+	}
+
+	public void setRequesterFirstName(String requesterFirstName) {
+		this.requesterFirstName = requesterFirstName;
+	}
+
+	public String getRequesterLastName() {
+		return requesterLastName;
+	}
+
+	public void setRequesterLastName(String requesterLastName) {
+		this.requesterLastName = requesterLastName;
+	}
+
+	public String getApproverFirstName() {
+		return approverFirstName;
+	}
+
+	public void setApproverFirstName(String approverFirstName) {
+		this.approverFirstName = approverFirstName;
+	}
+
+	public String getApproverLastName() {
+		return approverLastName;
+	}
+
+	public void setApproverLastName(String approverLastName) {
+		this.approverLastName = approverLastName;
 	}
 
 	public int getReimbursementId() {
@@ -81,7 +138,7 @@ public class Reimbursement {
 		this.dateCompleted = dateCompleted;
 	}
 
-	public Reimbursement(int reimbursementId, int requesterId, 
+	/*public Reimbursement(int reimbursementId, int requesterId, 
 			String category, int status, int amount, String dateSubmitted) {
 		super();
 		this.reimbursementId = reimbursementId;
@@ -91,6 +148,18 @@ public class Reimbursement {
 		this.amount = amount;
 		this.dateSubmitted = dateSubmitted;
 	}
+*/
+	public Reimbursement(int reimbursementId, String category, int status, int amount, String dateSubmitted,
+			String requesterFirstName, String requesterLastName) {
+		super();
+		this.reimbursementId = reimbursementId;
+		this.category = category;
+		this.status = status;
+		this.amount = amount;
+		this.dateSubmitted = dateSubmitted;
+		this.requesterFirstName = requesterFirstName;
+		this.requesterLastName = requesterLastName;
+	}
 
 	public Reimbursement(int requesterId, String category, int status, int amount) {
 		super();
@@ -98,6 +167,15 @@ public class Reimbursement {
 		this.category = category;
 		this.status = status;
 		this.amount = amount;
+	}
+
+	@Override
+	public String toString() {
+		return "Reimbursement [reimbursementId=" + reimbursementId + ", requesterId=" + requesterId + ", approverId="
+				+ approverId + ", category=" + category + ", status=" + status + ", amount=" + amount
+				+ ", dateSubmitted=" + dateSubmitted + ", dateCompleted=" + dateCompleted + ", requesterFirstName="
+				+ requesterFirstName + ", requesterLastName=" + requesterLastName + ", approverFirstName="
+				+ approverFirstName + ", approverLastName=" + approverLastName + "]";
 	}
 	
 }

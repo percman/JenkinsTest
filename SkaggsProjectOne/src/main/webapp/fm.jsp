@@ -31,10 +31,10 @@
 			<li><a href = "update.jsp">Update Info</a> </li>
 		</ul>
 		<ul class="navbar-nav nav">
-			<li><a href="requestEmployee.jsp">View Reimbursement Requests</a></li>
+			<li><a href="requestFm.jsp">Review Requests</a></li>
 		</ul>
 		<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
-			<li><a href="#">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
+			<li><a href="logout.jsp">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
 		</ul>
 		</nav>
 	</div>

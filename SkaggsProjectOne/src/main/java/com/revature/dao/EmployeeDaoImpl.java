@@ -13,11 +13,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
 	public Employee getEmployee(int id) throws ClassNotFoundException {
 		try (Connection c = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = c.prepareStatement("SELECT * FROM employeeTable, infoTable WHERE employeeId = " + id);
+			PreparedStatement stmt = c.prepareStatement("SELECT * FROM EMPLOYEETABLE e FULL OUTER "
+					+ "JOIN INFOTABLE i ON e.employeeId = i.employeeId WHERE e.employeeid = " + id);
 			ResultSet rs = stmt.executeQuery();
 			Employee e = null;
 			while(rs.next()) {
-				e = new Employee(rs.getString("firstName"), rs.getString("middleName"), 
+				e = new Employee(rs.getInt("employeeId"), rs.getString("firstName"), rs.getString("middleName"), 
 						rs.getString("lastName"),rs.getString("userName"), rs.getString("userPassword"),
 						rs.getInt("FINANCEMANAGER")==1);
 			}
@@ -78,12 +79,29 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			ArrayList<Reimbursement> rList = new ArrayList<>();
 			System.out.println(rList.size());
-			PreparedStatement stmt = conn.prepareStatement("select * from reimbursementTable ORDER BY reid");			
+			PreparedStatement stmt = conn.prepareStatement("SELECT * " + 
+					"FROM reimbursementTable R, infoTable I " + 
+					"WHERE R.requesterid = I.employeeid ORDER BY reid");			
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {	
-				rList.add(new Reimbursement(rs.getInt("reid"), rs.getInt("requesterId"), rs.getString("categoryName"), 
-						rs.getInt("status"), rs.getInt("amount"), rs.getString("dateSubmitted")));
+				int reid = rs.getInt("reid");
+				int requesterId = rs.getInt("requesterId");
+				int approverId = rs.getInt("approverId");
+				String category = rs.getString("categoryName");
+				int status = rs.getInt("status");
+				int amount = rs.getInt("amount");
+				String dateSubmitted = rs.getString("dateSubmitted");
+				String dateCompleted = " ";
+				if (rs.getString("dateCompleted") !=null) {
+					dateCompleted = rs.getString("dateCompleted");
+				}
+				String requesterFirstName = rs.getString("firstName");
+				String requesterLastName = rs.getString("lastName");
+
+				rList.add(new Reimbursement(reid, requesterId, approverId, category, status, amount, dateSubmitted, dateCompleted, 
+				requesterFirstName, requesterLastName));
 			}
+			
 			return rList;
 		} catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
@@ -201,4 +219,30 @@ public class EmployeeDaoImpl implements EmployeeDao {
         }
         return null;
     }
+	@Override
+	public boolean updateRequest(Employee e, int reid, String approved) {
+		int index = 0;
+		int status = 0;
+		if (approved.equals("Approve")) {
+			status = 1;
+		}
+		if (approved.equals("Deny")) {
+			status = -1;
+		}
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement stmt = conn.prepareStatement("UPDATE reimbursementTable "
+					+ " SET status= (?), approverid=(?), "
+					+ "datecompleted=(select current_date FROM dual) WHERE reid=(?)");
+			stmt.setInt(++index, status);
+			stmt.setInt(++index, e.getEmployeeId());
+			stmt.setInt(++index, reid);
+			int rowsAffected = stmt.executeUpdate();
+			return rowsAffected > 0;
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println(sqle.getSQLState());
+			System.err.println(sqle.getErrorCode());
+		}
+		return false;
+	}
 }
