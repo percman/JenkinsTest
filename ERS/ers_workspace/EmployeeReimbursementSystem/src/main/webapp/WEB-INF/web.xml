@@ -20,9 +20,19 @@
 		<description></description>
 		<servlet-class>com.revature.servlets.MasterServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>IsFinManServlet</servlet-name>
+		<display-name>IsFinManServlet</display-name>
+		<description></description>
+		<servlet-class>com.revature.servlets.IsFinManServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>MasterServlet</servlet-name>
 		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IsFinManServlet</servlet-name>
+		<url-pattern>/IsFinManServlet</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>

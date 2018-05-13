@@ -16,8 +16,8 @@ export class ExampleService {
 
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.url)
-                    // .do(val => 'All: ' + console.log(val))
-                    .catch(err => this.handleError(err));
+      // .do(val => 'All: ' + console.log(val))
+      .catch(err => this.handleError(err));
 
   }
 

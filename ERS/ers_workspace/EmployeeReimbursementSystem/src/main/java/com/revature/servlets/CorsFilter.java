@@ -26,6 +26,7 @@ public class CorsFilter implements Filter {
 		// Cast the ServletRequest to an HttpServletRequest in order to get the HTTP Method attached with the request
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		System.out.println("CORSFilter HTTP Request: " + httpRequest.getMethod());
+		System.out.println("CORSFilter HTTP URI" + httpRequest.getRequestURI());
 		
 		// Authorize domain(s) to consume the content
 		/*
@@ -37,6 +38,11 @@ public class CorsFilter implements Filter {
 		
 		// Authorize the HTTP methods from which you allow different domains to access your resources
 		((HttpServletResponse) response).addHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD, PUT, POST");
+		
+		
+		// Got this line from Curtis, bless
+		((HttpServletResponse) response).addHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
+
 		
 		// Cast the ServletResponse to an HttpServletResponse to set a Status Code
 		HttpServletResponse httpResponse = (HttpServletResponse) response;

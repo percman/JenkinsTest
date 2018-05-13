@@ -8,12 +8,15 @@ import { MyRoutes } from '../shared/app-routes';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import { LoginService } from './services/login-service/login.service';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

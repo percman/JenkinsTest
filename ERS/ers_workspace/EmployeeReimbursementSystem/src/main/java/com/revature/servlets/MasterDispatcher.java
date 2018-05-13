@@ -12,6 +12,7 @@ public class MasterDispatcher {
 		switch (request.getRequestURI()) {
 		
 		default:
+			System.out.println("The request URI was: " + request.getRequestURI());
 			return "404.jsp";
 
 		}

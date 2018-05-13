@@ -1,16 +1,14 @@
 <div class="container col-md-4 col-md-offset-4">
 
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" name="username" class="form-control" [(ngModel)]='username'>
-    </div>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" name="username" class="form-control" [(ngModel)]='username'>
+  </div>
 
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" name="password" class="form-control" [(ngModel)]='password'>
-    </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" name="password" class="form-control" [(ngModel)]='password'>
+  </div>
 
-    <div class="btn-group">
-      <input type="button" class="btn btn-success" value="Login">
-    </div>
+  <button class="btn btn-primary" (click)='login()'>Login</button>
 </div>
