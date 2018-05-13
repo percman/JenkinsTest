@@ -5449,3 +5449,25 @@
 2018-05-13 12:18:53 INFO  LogThis:25 - isFinMan : {"username":"lemondrops"}
 2018-05-13 12:18:53 INFO  LogThis:25 - employee in is fin man : Employee [id=0, username=lemondrops, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
 2018-05-13 12:18:53 INFO  LogThis:25 - Returning true from /isFinMan
+2018-05-13 12:54:50 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 12:54:50 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 12:54:50 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 12:54:50 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 12:54:50 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 12:54:50 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 12:54:50 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 12:54:50 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 12:54:50 INFO  LogThis:25 - isFinMan : {"username":"swerag"}
+2018-05-13 12:54:50 INFO  LogThis:25 - employee in is fin man : Employee [id=0, username=swerag, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 12:54:50 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 12:59:44 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 12:59:44 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 12:59:44 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 12:59:44 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 12:59:44 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 12:59:44 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 12:59:44 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 12:59:44 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 12:59:44 INFO  LogThis:25 - isFinMan : {"username":"sarg"}
+2018-05-13 12:59:44 INFO  LogThis:25 - employee in is fin man : Employee [id=0, username=sarg, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 12:59:44 WARN  LogThis:29 - Your username and/or password was incorrect.

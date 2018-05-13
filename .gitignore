@@ -73,3 +73,6 @@ yarn-error.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#I added this, lets see if it works
+ers_db.properties
