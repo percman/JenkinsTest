@@ -5,17 +5,28 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import dao.EmployeeDao;
-import designpattern.ConnectionUtil;
-import designpattern.PersonFactory;
+import design.ConnectionUtil;
+import design.PersonFactory;
 import model.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 	private Logger logger;
+	private static EmployeeDaoImpl dao;
 	
-	public EmployeeDaoImpl(Logger logger) {
+	public static EmployeeDaoImpl getInstance(Logger logger) {
+		if(dao == null)
+			dao = new EmployeeDaoImpl(logger);
+		return dao;
+	}
+	
+	private EmployeeDaoImpl(Logger logger) {
 		super();
 		this.logger = logger;
 	}
@@ -58,6 +69,31 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return null;
 	}
+	
+	@Override
+	public List<Employee> readEmployees(){
+		String sql = "SELECT * FROM employee";
+		try(Connection c = ConnectionUtil.connect(this.logger);
+				PreparedStatement s = c.prepareStatement(sql);){
+			ResultSet r = s.executeQuery();
+			List<Employee> employees = new ArrayList<>();
+			while(r.next()) {
+				int inEmployeeid = r.getInt(1);
+				int inManagerid = r.getInt(2);
+				String inUsername = r.getString(3);
+				String inPassword = r.getString(4);
+				Employee e = (Employee)
+						PersonFactory.create("employee", inEmployeeid, inManagerid, inUsername, inPassword);	
+				employees.add(e);
+			}
+			return employees;
+		} catch(SQLException e) {
+			logger.error(e.getSQLState());
+			logger.error(e.getErrorCode());
+			logger.error(e.getMessage());
+		}
+		return null;
+	}
 
 	@Override
 	public boolean updateEmployee(String inManagerUsername, String inUsername, String inPassword) {
@@ -89,5 +125,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			logger.error(e.getMessage());
 			return false;
 		}
+	}
+
+	@Override
+	public boolean authenticateEmployee(String inUsername, String inPassword) {
+		//TODO
+		return true;
 	}
 }

@@ -38,7 +38,7 @@ create table information(
 create table reimbursement(
     reimbursementid number,
     employeeid number,
-    managerid number,
+    managerid number not null,
     status varchar2(100) not null,
     image varchar2(100),
     category varchar2(100),
@@ -170,6 +170,8 @@ begin
     select employeeid into in_employeeid from employee where username=in_username;
     insert into manager(managerid, employeeid)
         values(null, in_employeeid);
+    update employee set managerid=
+        (select m.managerid from manager m, employee e where m.employeeid=e.employeeid and e.username=in_username);
     commit;
 end;
 /
@@ -177,11 +179,13 @@ end;
 create or replace procedure create_reimbursement
     (in_username varchar2, in_status varchar2, in_image varchar2, in_category varchar2)
 as
+    in_managerid number;
     in_employeeid number;
 begin
     select employeeid into in_employeeid from employee where username=in_username;
+    select managerid into in_managerid from manager where employeeid=in_employeeid;
     insert into reimbursement(reimbursementid, employeeid, managerid, status, image, category)
-        values(null, in_employeeid, null, in_status, in_image, in_category);
+        values(null, in_employeeid, in_managerid, in_status, in_image, in_category);
     commit;
 end;
 /
@@ -237,15 +241,13 @@ end;
 create or replace procedure update_employee
     (in_managerusername varchar2, in_username varchar2, in_password varchar2)
 as
-    in_employeeid number;
     in_managerid number;
 begin
-    select employeeid into in_employeeid from employee where username=in_username;
     select m.employeeid into in_managerid from manager m, employee e 
         where m.employeeid=e.employeeid and e.username=in_managerusername;
     update employee 
         set managerid=in_managerid, username=in_username, password=in_password
-        where employeeid=in_employeeid;
+        where username=in_username;
     commit;
 end;
 /
@@ -290,11 +292,9 @@ end;
 create or replace procedure delete_information
     (in_username varchar2)
 as
-    in_informationid number;
 begin
-    select informationid into in_informationid from information i, employee e 
-        where i.employeeid=e.employeeid and e.username=in_username; 
-    delete from information where informationid=in_informationid;
+    delete from information where employeeid=
+        (select employeeid from employee where username=in_username);
     commit;
 end;
 /
@@ -314,72 +314,25 @@ end;
 create or replace procedure delete_reimbursement
     (in_username varchar2)
 as
-    in_reimbursementid number;
 begin
-    select r.reimbursementid into in_reimbursementid from employee e, reimbursement r
-        where e.employeeid=r.reimbursementid and e.username=in_username;
-    delete from reimbursement where reimbursementid=in_reimbursementid;
+    delete from reimbursement where employeeid=
+        (select employeeid from employee where username=in_username);
     commit;
 end;
 /
 
 begin
-create_employee('andrew', 'password');
-create_employee('william', 'password');
-create_manager('william');
-create_information('william', 'william', 'oracle', 'gentry');
-create_information('andrew', 'andrew', 'ox', 'ahn');
-create_reimbursement('william', 'pending', 'http', 'lodging');
-create_reimbursement('andrew', 'approved', 'http', 'travel');
-update_employee('william', 'andrew', 'password');
-update_information('william', 'william', 'trainer', 'gentry');
-update_reimbursement('william', 'rejected', '...', 'lodging');
-commit;
+create_employee('user', 'password');
+create_manager('user');
+create_information('user', 'first', 'middle', 'last');
+create_reimbursement('user', 'status', 'category', 'image');
+create_reimbursement('user', 'status', 'category', 'image');
 end;
 /
 
-select * from manager;
+
 select * from employee;
+select * from manager;
 select * from information;
 select * from reimbursement;
 
-begin
-delete_information('andrew');
-delete_information('william');
-delete_reimbursement('andrew');
-delete_reimbursement('william');
-delete_manager('william');
-delete_employee('william');
-delete_employee('andrew');
-commit;
-end;
-/
-
-select * from manager;
-select * from employee;
-select * from information;
-select * from reimbursement;
-
-/* 
---begin
---create_employee('william', 'password');
---create_manager('william');
---commit;
---end;
---/
---select * from manager m, employee e where m.employeeid=e.employeeid and e.username='william';
-
---begin
---create_employee('william', 'password');
---create_manager('william');
---create_information('william', 'firstname', 'middlename', 'lastname');
---commit;
---end;
---/
---
---select * from employee;
---select * from manager;
---select * from information;
---
---select * from information where employeeid=
---    (select employeeid from employee where username='william');

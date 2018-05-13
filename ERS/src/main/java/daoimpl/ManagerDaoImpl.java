@@ -9,14 +9,21 @@ import java.sql.SQLException;
 import org.apache.log4j.Logger;
 
 import dao.ManagerDao;
-import designpattern.ConnectionUtil;
-import designpattern.PersonFactory;
+import design.ConnectionUtil;
+import design.PersonFactory;
 import model.Manager;
 
 public class ManagerDaoImpl implements ManagerDao{
 	private Logger logger;
+	private static ManagerDaoImpl dao;
 	
-	public ManagerDaoImpl(Logger logger) {
+	public static ManagerDaoImpl getInstance(Logger logger) {
+		if(dao == null)
+			dao = new ManagerDaoImpl(logger);
+		return dao;
+	}
+	
+	private ManagerDaoImpl(Logger logger) {
 		super();
 		this.logger = logger;
 	}
@@ -75,5 +82,11 @@ public class ManagerDaoImpl implements ManagerDao{
 			logger.error(e.getMessage());
 			return false;
 		}
+	}
+
+	@Override
+	public boolean authenticateManager(String inUsername, String inPassword) {
+		// TODO Auto-generated method stub
+		return true;
 	}
 }

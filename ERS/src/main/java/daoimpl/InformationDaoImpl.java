@@ -8,13 +8,20 @@ import java.sql.SQLException;
 import org.apache.log4j.Logger;
 
 import dao.InformationDao;
-import designpattern.ConnectionUtil;
+import design.ConnectionUtil;
 import model.Information;
 
 public class InformationDaoImpl implements InformationDao{
 	private Logger logger;
+	private static InformationDaoImpl dao;
 	
-	public InformationDaoImpl(Logger logger) {
+	public static InformationDaoImpl getInstance(Logger logger) {
+		if(dao == null)
+			dao = new InformationDaoImpl(logger);
+		return dao;
+	}
+	
+	private InformationDaoImpl(Logger logger) {
 		super();
 		this.logger = logger;
 	}
@@ -29,7 +36,7 @@ public class InformationDaoImpl implements InformationDao{
 			s.setString(2, inFirstname);
 			s.setString(3, inMiddlename);
 			s.setString(4, inLastname);
-			return s.executeUpdate() == 1;
+			return s.executeUpdate() > 0;
 		} catch(SQLException e) {
 			logger.error(e.getSQLState());
 			logger.error(e.getErrorCode());
@@ -68,14 +75,14 @@ public class InformationDaoImpl implements InformationDao{
 	@Override
 	public boolean updateInformation(String inUsername, String inFirstname, 
 			String inMiddlename, String inLastname) {
-		String sql = "call update_information(?,?,?,?)";
+		String sql = "{call update_information(?,?,?,?)}";
 		try(Connection c = ConnectionUtil.connect(this.logger);
 				CallableStatement s = c.prepareCall(sql);){
 			s.setString(1, inUsername);
 			s.setString(2, inFirstname);
 			s.setString(3, inMiddlename);
 			s.setString(4, inLastname);
-			return s.executeUpdate() == 1;
+			return s.executeUpdate() > 0;
 		} catch(SQLException e) {
 			logger.error(e.getSQLState());
 			logger.error(e.getErrorCode());
@@ -86,11 +93,11 @@ public class InformationDaoImpl implements InformationDao{
 
 	@Override
 	public boolean deleteInformation(String inUsername) {
-		String sql = "call update_information(?)";
+		String sql = "{call delete_information(?)}";
 		try(Connection c = ConnectionUtil.connect(this.logger);
 				CallableStatement s = c.prepareCall(sql);){
 			s.setString(1, inUsername);
-			return s.executeUpdate() == 1;
+			return s.executeUpdate() > 0;
 		} catch(SQLException e) {
 			logger.error(e.getSQLState());
 			logger.error(e.getErrorCode());

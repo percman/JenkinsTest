@@ -54,6 +54,11 @@ public class Information {
 		this.lastname = lastname;
 	}
 	@Override
+	public String toString() {
+		return "Information [informationid=" + informationid + ", employeeid=" + employeeid + ", firstname=" + firstname
+				+ ", middlename=" + middlename + ", lastname=" + lastname + "]";
+	}
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;

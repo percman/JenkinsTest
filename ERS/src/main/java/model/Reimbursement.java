@@ -3,22 +3,22 @@ package model;
 public class Reimbursement {
 	private int reimbursementid;
 	private int employeeid;
+	private int managerid;
+	public int getManagerid() {
+		return managerid;
+	}
+	public void setManagerid(int managerid) {
+		this.managerid = managerid;
+	}
 	private String status;
 	private String image;
 	private String category;
 	
-	public Reimbursement() {
-		super();
-		this.reimbursementid = -1;
-		this.employeeid = -1;
-		this.status = "";
-		this.image = "";
-		this.category = "";
-	}
-	public Reimbursement(int reimbursementid, int employeeid, String status, String image, String category) {
+	public Reimbursement(int reimbursementid, int employeeid, int managerid, String status, String image, String category) {
 		super();
 		this.reimbursementid = reimbursementid;
 		this.employeeid = employeeid;
+		this.managerid = managerid;
 		this.status = status;
 		this.image = image;
 		this.category = category;
@@ -85,7 +85,6 @@ public class Reimbursement {
 		return true;
 	}
 	public void setStatus(String status) {
-		//String[] statuses = {"pending", "approved", "denied"};
 		this.status = status;
 	}
 	public String getImage() {
@@ -98,7 +97,9 @@ public class Reimbursement {
 		return category;
 	}
 	public void setCategory(String category) {
-		//String[] categories = {"lodging", "travel", "food", "other"};
 		this.category = category;
 	}
 }
+
+//String[] statuses = {"pending", "approved", "denied"};
+//String[] categories = {"lodging", "travel", "food", "other"};

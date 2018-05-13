@@ -19,8 +19,8 @@ public class InformationDaoImplTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		logger = Logger.getLogger(InformationDaoImpl.class);
-		employeeDao = new EmployeeDaoImpl(logger);
-		informationDao = new InformationDaoImpl(logger);
+		employeeDao = EmployeeDaoImpl.getInstance(logger);
+		informationDao = InformationDaoImpl.getInstance(logger);
 	}
 
 	@Test
@@ -28,23 +28,24 @@ public class InformationDaoImplTest {
 		employeeDao.createEmployee("william", "password");
 		boolean result = informationDao.createInformation("william", 
 				"firstname", "middlename", "lastname");
-		assertTrue(result);
-		employeeDao.deleteEmployee("william");
 		informationDao.deleteInformation("william");
-		
+		employeeDao.deleteEmployee("william");
+		assertTrue(result);
 	}
 
 	@Test
 	public void testReadInformation() {
+		employeeDao.deleteEmployee("william");
 		employeeDao.createEmployee("william", "password");
 		informationDao.createInformation("william", "firstname", 
 				"middlename", "lastname");
 		Information information = informationDao.readInformation("william");
+		informationDao.deleteInformation("william");
+		employeeDao.deleteEmployee("william");
 		assertEquals(information.getFirstname(), "firstname");
 		assertEquals(information.getMiddlename(), "middlename");
 		assertEquals(information.getLastname(), "lastname");
-		informationDao.deleteInformation("william");
-		employeeDao.deleteEmployee("william");
+
 	}
 
 	@Test
@@ -55,12 +56,13 @@ public class InformationDaoImplTest {
 		boolean result = informationDao.updateInformation("william", 
 				"first", "middle", "last");
 		Information information = informationDao.readInformation("william");
+		informationDao.deleteInformation("william");
+		employeeDao.deleteEmployee("william");
 		assertTrue(result);
 		assertEquals(information.getFirstname(), "first");
 		assertEquals(information.getMiddlename(), "middle");
 		assertEquals(information.getLastname(), "last");
-		informationDao.deleteInformation("william");
-		employeeDao.deleteEmployee("william");
+
 	}
 
 	@Test
@@ -69,8 +71,9 @@ public class InformationDaoImplTest {
 		informationDao.createInformation("william", "firstname",
 				"middlename", "lastname");
 		boolean result = informationDao.deleteInformation("william");
-		assertTrue(result);
 		employeeDao.deleteEmployee("william");
+		assertTrue(result);
+		
 	}
 
 }

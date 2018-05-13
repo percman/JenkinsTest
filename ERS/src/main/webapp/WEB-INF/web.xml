@@ -1,0 +1,55 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>Front</servlet-name>
+		<servlet-class>servlet.Front</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<display-name>EmployeeServlet</display-name>
+		<description></description>
+		<servlet-class>servlet.EmployeeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ManagerServlet</servlet-name>
+		<display-name>ManagerServlet</display-name>
+		<description></description>
+		<servlet-class>servlet.ManagerServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EmployeeInformationServlet</servlet-name>
+		<display-name>EmployeeInformationServlet</display-name>
+		<description></description>
+		<servlet-class>servlet.EmployeeInformationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EmployeeReimbursementServlet</servlet-name>
+		<display-name>EmployeeReimbursementServlet</display-name>
+		<description></description>
+		<servlet-class>servlet.EmployeeReimbursementServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Front</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<url-pattern>/EmployeeServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ManagerServlet</servlet-name>
+		<url-pattern>/ManagerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EmployeeInformationServlet</servlet-name>
+		<url-pattern>/EmployeeInformationServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EmployeeReimbursementServlet</servlet-name>
+		<url-pattern>/EmployeeReimbursementServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -19,8 +19,8 @@ public class ManagerDaoImplTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		logger = Logger.getLogger(ManagerDaoImpl.class);
-		employeeDao = new EmployeeDaoImpl(logger);
-		managerDao = new ManagerDaoImpl(logger);		
+		employeeDao = EmployeeDaoImpl.getInstance(logger);
+		managerDao = ManagerDaoImpl.getInstance(logger);
 	}
 
 	@Test

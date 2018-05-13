@@ -6,4 +6,5 @@ public interface ManagerDao {
 	boolean createManager(String inUsername);
 	Manager readManager(String inUsername);
 	boolean deleteManager(String inUsername);
+	boolean authenticateManager(String inUsername, String inPassword);
 }

@@ -1,6 +1,6 @@
 package model;
 
-import designpattern.Person;
+import design.Person;
 
 public class Manager extends Person {
 	public Manager(int employeeid, int managerid, String username, String password) {
