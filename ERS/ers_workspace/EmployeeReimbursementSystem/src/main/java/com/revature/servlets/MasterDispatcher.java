@@ -24,6 +24,8 @@ public class MasterDispatcher {
 	public static String process(HttpServletRequest request, HttpServletResponse response) {
 		
 		switch (request.getRequestURI()) {
+		case "EmployeeReimbursementSystem/login.do":
+			return NavigationService.login(request);
 		case "EmployeeReimbursementSystem/finManHome.do":
 			return FinancialManagerService.finManHome(request);
 		case "EmployeeReimbursementSystem/employeeHome.do":

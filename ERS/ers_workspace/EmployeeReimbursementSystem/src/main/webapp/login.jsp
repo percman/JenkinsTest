@@ -7,7 +7,7 @@
             <h1>Login Page.</h1>
         </div>
         <br>
-        <form action="/EmployeeReimbursementSystem/LoginServlet" method="POST">
+        <form action="login.do" method="POST">
             <label for="username">Username:</label>
             <br>
             <input type="text" name="username" id="username" placeholder="Please enter username">

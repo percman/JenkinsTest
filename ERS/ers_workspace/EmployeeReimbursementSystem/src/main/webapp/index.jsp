@@ -4,7 +4,7 @@
 
 	<div class="container">
 		<div class="jumbotron">
-			<h1>Login Page.</h1>
+			<h1>This is the index.jsp page.</h1>
 		</div>
 		<br>
 		<form>

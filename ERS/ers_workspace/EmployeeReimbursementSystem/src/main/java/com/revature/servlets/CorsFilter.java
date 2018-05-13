@@ -15,16 +15,6 @@ import com.revature.logging.LogThis;
 
 public class CorsFilter implements Filter {
 
-//<filter>
-//	<filter-name>CorsFilter</filter-name>
-//	<display-name>CorsFilter</display-name>
-//	<description></description>
-//	<filter-class>com.revature.servlets.CorsFilter</filter-class>
-//</filter>
-//<filter-mapping>
-//	<filter-name>CorsFilter</filter-name>
-//	<url-pattern>/*</url-pattern>
-//</filter-mapping>
 
 
 	/*
