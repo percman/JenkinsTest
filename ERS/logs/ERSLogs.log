@@ -5471,3 +5471,292 @@
 2018-05-13 12:59:44 INFO  LogThis:25 - isFinMan : {"username":"sarg"}
 2018-05-13 12:59:44 INFO  LogThis:25 - employee in is fin man : Employee [id=0, username=sarg, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
 2018-05-13 12:59:44 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 13:52:03 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 13:52:03 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 13:52:03 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 13:52:03 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 13:52:03 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 13:52:03 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 13:52:03 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 13:52:03 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 13:52:03 INFO  LogThis:25 - login : {"name":"tabbycat2","password":"hogwarts"}
+2018-05-13 13:52:03 INFO  LogThis:25 - isFinMan : {"username":"tabbycat2"}
+2018-05-13 13:52:03 INFO  LogThis:25 - employee in isfinman : Employee [id=0, username=tabbycat2, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 13:52:03 WARN  LogThis:29 - Unrecognized field "name" (class com.revature.model.Employee), not marked as ignorable (9 known properties: "lastname", "financialManager", "username", "id", "email", "phone", "middleInitial", "password", "firstname"])
+ at [Source: (String)"{"name":"tabbycat2","password":"hogwarts"}"; line: 1, column: 10] (through reference chain: com.revature.model.Employee["name"])
+2018-05-13 13:52:05 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 13:53:26 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 13:53:26 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 13:53:26 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 13:53:26 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 13:53:26 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 13:53:26 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 13:53:26 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 13:53:26 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 13:53:26 INFO  LogThis:25 - isFinMan : {"username":"tabbycat2"}
+2018-05-13 13:53:26 INFO  LogThis:25 - login : {"username":"tabbycat2","password":"hogwarts"}
+2018-05-13 13:53:26 INFO  LogThis:25 - employee in isfinman : Employee [id=0, username=tabbycat2, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 13:53:26 INFO  LogThis:25 - temp in login : Employee [id=0, username=tabbycat2, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 13:53:27 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 13:53:28 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 13:56:52 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 13:56:52 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 13:56:52 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 13:56:52 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 13:56:52 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 13:56:52 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 13:56:52 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 13:56:52 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 13:58:24 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 13:58:24 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 13:58:24 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 13:58:24 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 13:58:24 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 13:58:24 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 13:58:24 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 13:58:24 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 13:58:24 INFO  LogThis:25 - isFinMan : {"username":"tabbycat2"}
+2018-05-13 13:58:24 INFO  LogThis:25 - login : {"username":"tabbycat2","password":"hogwarts"}
+2018-05-13 13:58:25 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=tabbycat2, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 13:58:25 INFO  LogThis:25 - temp from login : Employee [id=0, username=tabbycat2, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 13:58:26 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 13:58:26 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 14:06:35 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:06:35 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:06:35 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:06:35 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:06:35 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:06:35 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:06:35 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:06:35 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:06:35 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:06:35 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:06:35 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 14:06:35 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 14:06:36 WARN  LogThis:29 - Numeric Overflow
+2018-05-13 14:06:36 WARN  LogThis:29 - Numeric Overflow
+2018-05-13 14:06:36 WARN  LogThis:29 - SQL state: 99999
+2018-05-13 14:06:36 WARN  LogThis:29 - SQL state: 99999
+2018-05-13 14:06:36 WARN  LogThis:29 - Error Code: 17026
+2018-05-13 14:06:36 WARN  LogThis:29 - Error Code: 17026
+2018-05-13 14:06:36 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 14:06:36 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 14:07:52 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:07:52 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:07:52 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:07:52 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:07:52 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:07:52 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:07:52 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:07:52 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:07:52 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:07:52 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:07:53 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 14:07:53 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=0, email=null]
+2018-05-13 14:07:54 WARN  LogThis:29 - Numeric Overflow
+2018-05-13 14:07:54 WARN  LogThis:29 - Numeric Overflow
+2018-05-13 14:07:54 WARN  LogThis:29 - SQL state: 99999
+2018-05-13 14:07:54 WARN  LogThis:29 - Error Code: 17026
+2018-05-13 14:07:54 WARN  LogThis:29 - SQL state: 99999
+2018-05-13 14:07:54 WARN  LogThis:29 - Error Code: 17026
+2018-05-13 14:07:54 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 14:07:54 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:07:54 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 14:11:30 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:11:30 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:11:30 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:11:30 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:11:30 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:11:30 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:11:30 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:11:30 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:11:30 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:11:30 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:11:31 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:11:31 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:13:06 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:13:06 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:13:06 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:13:06 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:13:06 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:13:06 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:13:06 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:13:06 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:13:06 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:13:06 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:13:06 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:13:06 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:13:08 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:13:08 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:13:08 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:15:19 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:15:19 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:15:19 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:15:19 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:15:19 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:15:19 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:15:19 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:15:19 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:15:19 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:15:19 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:15:19 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:15:19 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:15:19 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:15:20 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:15:20 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:16:23 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:16:23 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:16:23 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:16:23 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:16:23 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:16:23 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:16:23 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:16:23 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:16:23 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:16:23 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:16:23 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:16:23 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:16:23 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:16:24 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:16:24 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:17:25 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:17:25 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:17:25 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:17:25 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:17:25 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:17:25 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:17:25 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:17:25 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:17:25 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:17:25 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:17:25 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:17:25 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:17:26 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:17:26 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:17:26 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:17:54 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:17:54 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:17:54 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:17:54 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:17:54 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:17:54 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:17:54 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:17:54 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:17:54 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:17:54 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:17:54 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:17:54 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:17:54 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:17:55 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:17:55 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:18:35 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:18:35 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:18:35 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:18:35 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:18:35 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:18:35 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:18:35 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:18:35 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:18:35 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:18:35 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:18:35 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:18:35 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:18:35 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:18:36 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:18:36 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:20:34 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:20:34 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:20:34 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:20:34 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:20:34 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:20:34 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:20:34 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:20:34 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:20:34 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:20:34 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:20:34 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:20:34 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:20:34 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:20:35 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:20:35 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:22:34 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:22:34 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:22:34 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:22:34 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:22:34 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:22:34 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:22:34 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:22:34 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:22:34 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:22:34 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:22:34 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:22:34 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:22:35 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:22:35 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:22:35 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:33:31 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:33:31 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:33:31 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:33:31 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:33:31 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:33:31 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:33:31 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:33:31 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:33:31 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:33:31 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:33:31 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:33:31 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:33:32 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:33:32 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:33:32 INFO  LogThis:25 - authorizedEmployee from login: 
+2018-05-13 14:34:31 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:34:31 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:34:31 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:34:31 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:34:31 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:34:31 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:34:31 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:34:31 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:34:32 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:34:32 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:34:32 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:34:32 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:34:33 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:34:34 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:34:34 INFO  LogThis:25 - authorizedEmployee from login: Employee [id=8, username=chosen1, password=D2CBF944F31D20EC89F73404E6F3DD41, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=7777777777, email=email@hotwarts.uk]
+2018-05-13 14:35:56 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:35:56 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:35:56 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:35:56 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:35:56 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:35:56 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:35:56 INFO  LogThis:25 - isFinMan : {"username":""}
+2018-05-13 14:35:56 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:35:56 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:35:56 INFO  LogThis:25 - login : {"username":"","password":""}
+2018-05-13 14:35:56 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:35:56 INFO  LogThis:25 - temp from login : Employee [id=0, username=, password=, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:35:57 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 14:35:57 WARN  LogThis:29 - Your username and/or password was incorrect.
+2018-05-13 14:36:10 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:36:10 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:36:10 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:36:10 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:36:10 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:36:10 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:36:10 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login
+2018-05-13 14:36:10 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login
+2018-05-13 14:36:10 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:36:10 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:36:10 INFO  LogThis:25 - login : {"username":"chosen1","password":"hogwarts"}
+2018-05-13 14:36:10 INFO  LogThis:25 - temp from login : Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:36:11 INFO  LogThis:25 - Returning false from /isFinMan
+2018-05-13 14:36:11 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 14:36:11 INFO  LogThis:25 - authorizedEmployee from login: Employee [id=8, username=chosen1, password=D2CBF944F31D20EC89F73404E6F3DD41, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=7777777777, email=email@hotwarts.uk]
+2018-05-13 14:37:05 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 14:37:05 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:37:05 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan
+2018-05-13 14:37:05 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 14:37:05 INFO  LogThis:25 - isFinMan : {"username":"chosen1"}
+2018-05-13 14:37:05 INFO  LogThis:25 - temp from isfinman : Employee [id=0, username=chosen1, password=null, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 14:37:05 INFO  LogThis:25 - Returning false from /isFinMan

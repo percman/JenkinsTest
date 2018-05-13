@@ -81,7 +81,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				employee.setFirstname(rs.getString("f_name"));
 				employee.setMiddleInitial(rs.getString("m_initial"));
 				employee.setLastname(rs.getString("l_name"));
-				employee.setPhone(rs.getInt("phone"));
+				employee.setPhone(rs.getString("phone"));
 				employee.setEmail(rs.getString("email"));
 				return employee;
 			}
@@ -104,7 +104,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			stmt.setString(++index, employee.getFirstname());
 			stmt.setString(++index, employee.getMiddleInitial());
 			stmt.setString(++index, employee.getLastname());
-			stmt.setInt(++index, employee.getPhone());
+			stmt.setString(++index, employee.getPhone());
 			stmt.setString(++index, employee.getEmail());
 			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {

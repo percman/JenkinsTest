@@ -14,7 +14,7 @@ export class EmployeeService {
     middleInitial: '',
     lastname: '',
     phone: 0,
-    email: '',
+    email: ''
   });
 
   constructor() { }

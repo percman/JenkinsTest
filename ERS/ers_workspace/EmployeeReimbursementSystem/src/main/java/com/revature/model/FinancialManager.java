@@ -62,7 +62,8 @@ public class FinancialManager extends Employee {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nFinancialManager [fmid=" + fmid + "]";
+		return "FinancialManager [fmid=" + fmid + "]";
 	}
 
+	
 }

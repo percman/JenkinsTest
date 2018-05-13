@@ -64,7 +64,7 @@ public class FinancialManagerDaoImpl implements FinancialManagerDao {
 				financialManager.setFirstname(rs.getString("f_name"));
 				financialManager.setMiddleInitial(rs.getString("m_initial"));
 				financialManager.setLastname(rs.getString("l_name"));
-				financialManager.setPhone(rs.getInt("phone"));
+				financialManager.setPhone(rs.getString("phone"));
 				financialManager.setEmail(rs.getString("email"));
 				return financialManager;
 			}

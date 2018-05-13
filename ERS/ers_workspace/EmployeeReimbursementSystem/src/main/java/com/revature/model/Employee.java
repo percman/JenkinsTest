@@ -16,7 +16,7 @@ public class Employee implements Serializable {
 	private String firstname;
 	private String middleInitial;
 	private String lastname;
-	private int phone;
+	private String phone;
 	private String email;
 
 	// Public no-arg constructor
@@ -44,7 +44,7 @@ public class Employee implements Serializable {
 
 	// Public constructor that takes all fields
 	public Employee(int id, String username, String password, boolean isFinancialManager, String firstname,
-			String middleInitial, String lastname, int phone, String email) {
+			String middleInitial, String lastname, String phone, String email) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -113,11 +113,11 @@ public class Employee implements Serializable {
 		this.lastname = lastname;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -140,7 +140,7 @@ public class Employee implements Serializable {
 		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
 		result = prime * result + ((middleInitial == null) ? 0 : middleInitial.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + phone;
+		result = prime * result + ((phone == null) ? 0 : lastname.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -195,8 +195,10 @@ public class Employee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", username=" + username + ", firstname=" + firstname + ", middleInitial="
-				+ middleInitial + ", lastname=" + lastname + ", phone=" + phone + ", email=" + email + "]";
+		return "Employee [id=" + id + ", username=" + username + ", password=" + password + ", isFinancialManager="
+				+ isFinancialManager + ", firstname=" + firstname + ", middleInitial=" + middleInitial + ", lastname="
+				+ lastname + ", phone=" + phone + ", email=" + email + "]";
 	}
+
 
 }

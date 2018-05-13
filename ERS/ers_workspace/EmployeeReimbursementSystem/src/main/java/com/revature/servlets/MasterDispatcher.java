@@ -1,7 +1,6 @@
 package com.revature.servlets;
 
 import java.io.IOException;
-import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,8 +27,8 @@ public class MasterDispatcher {
 				String json = request.getReader().readLine();
 				LogThis.info("isFinMan : " + json);
 				Employee temp = mapper.readValue(json, Employee.class);
-//						.replace("[\"", "").replaceAll("\"]", "");
-				LogThis.info("employee in is fin man : " + temp.toString());
+				// .replace("[\"", "").replaceAll("\"]", "");
+				LogThis.info("temp from isfinman : " + temp.toString());
 				if (EmployeeService.isFinMan(temp)) {
 					LogThis.info("Returning true from /isFinMan");
 					return "true";
@@ -42,7 +41,19 @@ public class MasterDispatcher {
 			} catch (IOException ioe) {
 				LogThis.warn(ioe.getMessage());
 			}
+			return null;
 		case "/EmployeeReimbursementSystem/login":
+			try {
+				String json = request.getReader().readLine();
+				LogThis.info("login : " + json);
+				Employee temp = mapper.readValue(json, Employee.class);
+				LogThis.info("temp from login : " + temp.toString());
+				Employee authorizedEmployee = LoginFactory.userLogin(temp);
+				LogThis.info("authorizedEmployee from login: "  + authorizedEmployee.toString());
+				return mapper.writeValueAsString(authorizedEmployee);
+			} catch (IOException ioe) {
+				LogThis.warn(ioe.getMessage());
+			}
 			return null;
 		default:
 			LogThis.info("The request URI was: " + request.getRequestURI());
