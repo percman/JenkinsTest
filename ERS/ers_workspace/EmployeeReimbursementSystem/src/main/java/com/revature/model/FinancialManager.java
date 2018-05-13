@@ -6,23 +6,28 @@ public class FinancialManager extends Employee {
 
 	// This is the only field a financial manager has that an employee does not
 	private int fmid;
-	
+
 	// Public no-arg constructor
-	public FinancialManager () {
+	public FinancialManager() {
 		super();
 	}
-	
+
+	public FinancialManager(String username) {
+		super(username);
+		// TODO Auto-generated constructor stub
+	}
+
 	// Public constructor that takes the financial manager's username and password
 	public FinancialManager(String username, String password) {
 		super(username, password);
 	}
 
 	// Public constructor that takes all fields
-	public FinancialManager(int fmid, int id, String username, String password, boolean isFinancialManager, String firstname,
-			String middleInitial, String lastname, int phone, String email) {
+	public FinancialManager(int fmid, int id, String username, String password, boolean isFinancialManager,
+			String firstname, String middleInitial, String lastname, int phone, String email) {
 		super(id, username, password, isFinancialManager, firstname, middleInitial, lastname, phone, email);
 		this.fmid = fmid;
-		
+
 	}
 
 	public int getFmid() {
@@ -60,5 +65,4 @@ public class FinancialManager extends Employee {
 		return super.toString() + "\nFinancialManager [fmid=" + fmid + "]";
 	}
 
-	
 }

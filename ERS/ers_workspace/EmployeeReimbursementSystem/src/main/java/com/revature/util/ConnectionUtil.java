@@ -17,25 +17,29 @@ public class ConnectionUtil {
 	private ConnectionUtil() {}
 
 	public static Connection getConnection() {
-			Properties props = new Properties();
-			try (InputStream in = new FileInputStream("../../../../db_properties/ers_db.properties")) {
-				props.load(in);
-				return DriverManager.getConnection(props.getProperty("jdbc.url"), 
-						props.getProperty("jdbc.username"),
-						props.getProperty("jdbc.password"));
+//			Properties props = new Properties();
+			try {
+//				props.load(ConnectionUtil.class.getResourceAsStream("ers_db.properties"));
+				Class.forName("oracle.jdbc.OracleDriver");
+//				return DriverManager.getConnection(props.getProperty("jdbc.url"), 
+//						props.getProperty("jdbc.username"),
+//						props.getProperty("jdbc.password"));
+				return DriverManager.getConnection("jdbc:oracle:thin:@jta-1804.cc9fuhhtz6xr.us-east-1.rds.amazonaws.com:1521:ORCL",
+						"ers_user",
+						"ers_password");
 				
-			} catch (FileNotFoundException fnfe) {
-				LogThis.warn(fnfe.getMessage());
-				
-			} catch (IOException ioe) {
-				LogThis.warn(ioe.getMessage());
-				
+//			} catch (FileNotFoundException fnfe) {
+//				fnfe.printStackTrace();
+//			} catch (IOException ioe) {
+//				ioe.printStackTrace();
 			} catch (SQLException sqle) {
-				LogThis.warn(sqle.getMessage());
-				LogThis.warn("SQL State: " + sqle.getSQLState());
-				LogThis.warn("Error Code: " + sqle.getErrorCode());
+				System.err.println(sqle.getMessage());
+				System.err.println("SQL State: " + sqle.getSQLState());
+				System.err.println("Error Code: " + sqle.getErrorCode());
+			} catch (ClassNotFoundException cnfe) {
+				System.err.println(cnfe.getMessage());
 			}
-		return null;
+			return null;		
 	}
 	
 	public static void main(String[] args) {

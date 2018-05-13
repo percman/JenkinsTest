@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.logging.LogThis;
 
 
 public class MasterServlet extends HttpServlet {
@@ -26,16 +27,15 @@ public class MasterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-//		request.getRequestDispatcher(MasterDispatcher.process(request, response)).forward(request, response);
+//		request.getRequestDispatcher((String) MasterDispatcher.process(request, response)).forward(request, response);
 
-		System.out.println("request.getReader.readLine: " + request.getReader().readLine());
-		System.out.println("request.getParam username: " + request.getParameter("username"));
+//		LogThis.info("MasterServlet request.getReader.readLine: " + request.getReader().readLine());
 		response.setContentType("application/json");
 		
 		// Get a reference to the ObjectMapper
 		ObjectMapper mapper = new ObjectMapper();
 		
-		System.out.println("mapper " + mapper.writeValueAsString(MasterDispatcher.process(request, response)));
+		//LogThis.info(" mapper:  " + mapper.writeValueAsString(MasterDispatcher.process(request, response)));
 		// Write the POJO as JSON to the response
 		response.getWriter().write(
 				mapper.writeValueAsString(MasterDispatcher.process(request, response)));

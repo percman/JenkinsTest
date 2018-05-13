@@ -5,22 +5,28 @@ import java.io.Serializable;
 public class Employee implements Serializable {
 
 	private static final long serialVersionUID = 861925046890513138L;
-	
+
 	// These are in the employee table
 	private int id;
 	private String username;
 	private String password;
 	private boolean isFinancialManager;
-	
+
 	// These are in the employee info table
 	private String firstname;
 	private String middleInitial;
 	private String lastname;
 	private int phone;
 	private String email;
-	
+
 	// Public no-arg constructor
-	public Employee() {}
+	public Employee() {
+	}
+
+	public Employee(String username) {
+		super();
+		this.username = username;
+	}
 
 	// Public constructor that takes a username and password
 	public Employee(String username, String password) {
@@ -35,7 +41,7 @@ public class Employee implements Serializable {
 		this.middleInitial = middleInitial;
 		this.lastname = lastname;
 	}
-	
+
 	// Public constructor that takes all fields
 	public Employee(int id, String username, String password, boolean isFinancialManager, String firstname,
 			String middleInitial, String lastname, int phone, String email) {
@@ -192,7 +198,5 @@ public class Employee implements Serializable {
 		return "Employee [id=" + id + ", username=" + username + ", firstname=" + firstname + ", middleInitial="
 				+ middleInitial + ", lastname=" + lastname + ", phone=" + phone + ", email=" + email + "]";
 	}
-	
-	
-	
+
 }

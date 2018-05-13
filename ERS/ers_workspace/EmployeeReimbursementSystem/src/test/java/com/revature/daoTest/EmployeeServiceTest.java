@@ -17,7 +17,7 @@ public class EmployeeServiceTest {
 	
 	@Test
 	public void testGetEmployee() {
-		Employee employee = EmployeeService.getEmployee("tabbycat2");
+		Employee employee = EmployeeService.getEmployee(new Employee("tabbycat2"));
 		System.out.println(employee);
 		assertEquals("Employee [id=5, username=tabbycat2, firstname=Minerva, middleInitial=null, "
 				+ "lastname=McGonagall, phone=1234567890, email=gryffindor@hogwarts.uk]", employee.toString()); 
@@ -26,8 +26,9 @@ public class EmployeeServiceTest {
 	@Test
 	public void testIsFinManFalse() {
 		boolean isFinMan = false;
+		Employee employee = new Employee("tabbycat2");
 		try {
-			isFinMan = EmployeeService.isFinMan("tabbycat2");
+			isFinMan = EmployeeService.isFinMan(employee);
 		} catch (InvalidLoginException ile) {
 			LogThis.warn(ile.getMessage());
 			fail("testIsFinMan failed");
@@ -38,8 +39,9 @@ public class EmployeeServiceTest {
 	@Test
 	public void testIsFinManTrue() {
 		boolean isFinMan = false;
+		Employee employee = new Employee("lemondrops");
 		try {
-			isFinMan = EmployeeService.isFinMan("lemondrops");
+			isFinMan = EmployeeService.isFinMan(employee);
 		} catch (InvalidLoginException ile) {
 			LogThis.warn(ile.getMessage());
 			fail("testIsFinMan failed");

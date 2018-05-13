@@ -11,6 +11,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.logging.LogThis;
+
 public class CorsFilter implements Filter {
 
 	/*
@@ -26,12 +28,10 @@ public class CorsFilter implements Filter {
 		// Cast the ServletRequest to an HttpServletRequest in order to get the HTTP Method attached with the request
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		
-		System.out.println("CORSFilter HTTP Request: " + httpRequest.getMethod());
-		System.out.println("CORSFilter HTTP URI: " + httpRequest.getRequestURI());
-		System.out.println("CORSFilter HTTP URL: " + httpRequest.getRequestURL());
-		System.out.println("CORSFilter HTTP Protocol: " + httpRequest.getProtocol());
-		System.out.println("httpRequest.getParam username: " + httpRequest.getParameter("username"));
-		System.out.println("request.getParam username: " + request.getParameter("\"username\""));
+		LogThis.info("CORSFilter HTTP Request: " + httpRequest.getMethod());
+		LogThis.info("CORSFilter HTTP URI: " + httpRequest.getRequestURI());
+		LogThis.info("CORSFilter HTTP URL: " + httpRequest.getRequestURL());
+		LogThis.info("CORSFilter HTTP Protocol: " + httpRequest.getProtocol());
 
 
 
@@ -65,7 +65,7 @@ public class CorsFilter implements Filter {
 		// Any additional code can be placed here
 
 		// pass the request along the filter chain
-		chain.doFilter(request, response);
+		chain.doFilter(httpRequest, httpResponse);
 	}
 
 

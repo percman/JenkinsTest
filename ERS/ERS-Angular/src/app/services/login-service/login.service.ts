@@ -20,25 +20,23 @@ export class LoginService {
   checkFinMan(username: string): Observable<boolean> {
     return this.http.post(
       this.urlFM,
-      JSON.stringify([username]))
+      JSON.stringify({username: username}))
       .catch(err => this.handleError(err));
   }
 
   loginE(username: string, password: string, isFinMan: boolean): Observable<Employee> {
 
     return this.http.post<Employee>(
-      this.urlL, 
-      {username: username, 
-        password:password,
-        isFinMan: isFinMan
-      })
+      this.urlL,
+      JSON.stringify([username, password, isFinMan])
+    )
       .catch(err => this.handleError(err));
   }
 
   loginFM(username: string, password: string, isFinMan: boolean): Observable<FinancialManager> {
     return this.http.post<FinancialManager>(
       this.urlL,
-      JSON.stringify([username, password, isFinMan]))
+      JSON.stringify({name: username, password: password, isFinMan: isFinMan}))
       .catch(err => this.handleError(err));
   }
 

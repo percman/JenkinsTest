@@ -1,8 +1,12 @@
 package com.revature.servlets;
 
+import java.io.IOException;
+import java.util.StringTokenizer;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.logging.InvalidLoginException;
 import com.revature.logging.LogThis;
 import com.revature.model.Employee;
@@ -14,28 +18,34 @@ public class MasterDispatcher {
 	private MasterDispatcher() {
 	}
 
-	public static Object process(HttpServletRequest request, HttpServletResponse response) {
+	public static String process(HttpServletRequest request, HttpServletResponse response) {
+		ObjectMapper mapper = new ObjectMapper();
+
 		switch (request.getRequestURI()) {
 		case "/EmployeeReimbursementSystem/isFinMan":
-			System.out.println(request.getParameter("username"));
+
 			try {
-				if (EmployeeService.isFinMan(request.getParameter("username"))) {
+				String json = request.getReader().readLine();
+				LogThis.info("isFinMan : " + json);
+				Employee temp = mapper.readValue(json, Employee.class);
+//						.replace("[\"", "").replaceAll("\"]", "");
+				LogThis.info("employee in is fin man : " + temp.toString());
+				if (EmployeeService.isFinMan(temp)) {
 					LogThis.info("Returning true from /isFinMan");
-					return new Boolean(true);
+					return "true";
 				} else {
 					LogThis.info("Returning false from /isFinMan");
-					return new Boolean(false);
+					return "false";
 				}
 			} catch (InvalidLoginException ile) {
 				LogThis.warn(ile.getMessage());
+			} catch (IOException ioe) {
+				LogThis.warn(ioe.getMessage());
 			}
 		case "/EmployeeReimbursementSystem/login":
-			String isFinMan = request.getParameter("isFinMan");
-			Employee employee = new Employee(request.getParameter("username"), request.getParameter("password"));
-			LogThis.info("Returning LoginFactory from /login");
-			return LoginFactory.userLogin(isFinMan, employee);
+			return null;
 		default:
-			System.out.println("The request URI was: " + request.getRequestURI());
+			LogThis.info("The request URI was: " + request.getRequestURI());
 			LogThis.info("Returning 404 from default");
 			return "404.jsp";
 
