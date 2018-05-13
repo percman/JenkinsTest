@@ -5,19 +5,27 @@ import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
+import {RouterModule} from '@angular/router';
+import {MyRoutes} from './shared/app.routes';
+import {Globals} from './shared/Globals';
+import { EmployeeSplashComponent } from './components/employee-splash/employee-splash.component';
+import { CreateReimbursementComponent } from './components/create-reimbursement/create-reimbursement.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    EmployeeSplashComponent,
+    CreateReimbursementComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(MyRoutes)
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

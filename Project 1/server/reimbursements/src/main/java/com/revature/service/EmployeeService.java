@@ -27,7 +27,8 @@ public class EmployeeService {
     }
 
 
-    private static Employee loginHelper(String username, String password) throws UserNotFoundException, WrongPasswordException {
+    public static String login(String username, String password) throws UserNotFoundException, WrongPasswordException,
+            JsonProcessingException {
         String storedHash = getStoredHash(username);
         if (storedHash == null) {
             throw new UserNotFoundException();
@@ -42,21 +43,9 @@ public class EmployeeService {
         em.setPassword(password);
 
         logger.debug("User " + username + " logged in successfully!");
-        return em;
+        ObjectMapper om = new ObjectMapper();
+
+        return om.writeValueAsString(em);
     }
 
-    public static String login(String username, String password) {
-        ObjectMapper om = new ObjectMapper();
-        Employee empl = null;
-        try {
-            empl = loginHelper(username, password);
-            return om.writeValueAsString(empl);
-        } catch (UserNotFoundException e) {
-            return "User not found.";
-        } catch (WrongPasswordException e) {
-            return "Wrong password.";
-        } catch (JsonProcessingException e) {
-            return "Error processing JSON for object" + empl;
-        }
-    }
 }

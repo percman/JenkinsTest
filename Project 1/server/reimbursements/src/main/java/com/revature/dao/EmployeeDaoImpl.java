@@ -18,7 +18,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
         int index = 0;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement("SELECT EID, FIRST_NAME, LAST_NAME, ADDRESS " +
+            PreparedStatement stmt = conn.prepareStatement("SELECT e.EID, FIRST_NAME, LAST_NAME, ADDRESS " +
                     "FROM employee e, einfo ei WHERE username = ? AND e.EID = ei.EID");
             stmt.setString(++index, username);
             ResultSet rs = stmt.executeQuery();
@@ -63,7 +63,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
             stmt.setString(++index, username);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                return rs.getString("password");
+                return rs.getString("PASSWORD");
             }
         } catch (SQLException e) {
             logger.error(e.getMessage());

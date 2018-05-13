@@ -1,16 +1,16 @@
 package com.revature.servlet;
 
+import com.revature.service.EmployeeService;
+import org.apache.log4j.Logger;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class CorsFilter implements Filter {
-	
-	/*
-	 * If you check the web.xml, I initially set this CorsFilter to filter requests for any url-mapping. 
-	 * This can be modified to fit your needs
-	 */
+
+    private static final Logger logger = Logger.getLogger(CorsFilter.class);
 
     public CorsFilter() {}
 
@@ -19,10 +19,10 @@ public class CorsFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// Cast the ServletRequest to an HttpServletRequest in order to get the HTTP Method attached with the request
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		System.out.println("CORSFilter HTTP Request: " + httpRequest.getMethod());
-		System.out.println("CORSFilter request from " + httpRequest.getRemoteHost());
-		System.out.println("CORSFilter request from " + httpRequest.getRemoteAddr());
-		System.out.println("CORSFilter request from " + httpRequest.getRemotePort());
+		logger.debug("CORSFilter HTTP Request: " + httpRequest.getMethod());
+		logger.debug("CORSFilter request from " + httpRequest.getRemoteHost());
+		logger.debug("CORSFilter request from " + httpRequest.getRemoteAddr());
+		logger.debug("CORSFilter request from " + httpRequest.getRemotePort());
 
 		// Authorize domain(s) to consume the content
 		/*

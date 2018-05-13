@@ -38,12 +38,12 @@ CONSTRAINT PK_EIDF PRIMARY KEY(eid)
 
 CREATE TABLE RCategory (
 cid NUMBER(1) PRIMARY KEY,
-name VARCHAR(7)
+name VARCHAR(7))
 ;
 
 CREATE TABLE RStatus (
 sid NUMBER(1) PRIMARY KEY,
-name VARCHAR(9)
+name VARCHAR(9))
 ;
 
 CREATE TABLE Reimbursement (
@@ -79,4 +79,10 @@ INSERT INTO RCategory VALUES (3, 'Other');
 INSERT INTO RStatus VALUES (0, 'Pending');
 INSERT INTO RStatus VALUES (1, 'Approved');
 INSERT INTO RStatus VALUES (2, 'Denied');
+
+INSERT INTO Employee VALUES (0, 'WalkinDude', GET_USER_HASH('WalkinDude', 'WalkinWalkin'));
+INSERT INTO EInfo VALUES (0, 'Curtis', 'Hilgenberg', '123 Fake Street' );
+SELECT * FROM Employee;
+
+COMMIT;
 

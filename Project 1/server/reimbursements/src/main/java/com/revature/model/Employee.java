@@ -1,6 +1,7 @@
 package com.revature.model;
 
 import com.revature.util.Mappable;
+import com.sun.istack.internal.NotNull;
 
 public class Employee implements Mappable {
     private String username;
@@ -74,6 +75,14 @@ public class Employee implements Mappable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isManager() {
+        return isManager;
+    }
+
+    public void setManager(boolean manager) {
+        isManager = manager;
     }
 
     @Override

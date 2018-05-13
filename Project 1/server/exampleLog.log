@@ -1,0 +1,644 @@
+2018-05-13 14:33:49 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:33:49 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:33:49 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:33:49 DEBUG CorsFilter:25 - CORSFilter request from 53765
+2018-05-13 14:33:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:33:50 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:33:50 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:33:50 DEBUG CorsFilter:25 - CORSFilter request from 53769
+2018-05-13 14:33:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:33:50 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:33:50 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:33:50 DEBUG CorsFilter:25 - CORSFilter request from 53770
+2018-05-13 14:34:00 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 14:34:00 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:34:00 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:34:00 DEBUG CorsFilter:25 - CORSFilter request from 53791
+2018-05-13 14:34:00 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 14:34:00 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:34:00 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:34:00 DEBUG CorsFilter:25 - CORSFilter request from 53791
+2018-05-13 14:34:01 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 14:34:02 DEBUG OtherUtils:32 - In htmlResponse
+2018-05-13 14:36:06 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:36:06 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:36:06 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:36:06 DEBUG CorsFilter:25 - CORSFilter request from 54001
+2018-05-13 14:36:07 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:36:07 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:36:07 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:36:07 DEBUG CorsFilter:25 - CORSFilter request from 54004
+2018-05-13 14:36:07 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:36:07 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:07 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:07 DEBUG CorsFilter:25 - CORSFilter request from 54007
+2018-05-13 14:36:10 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 14:36:10 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:10 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:10 DEBUG CorsFilter:25 - CORSFilter request from 54013
+2018-05-13 14:36:10 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 14:36:10 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:10 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:10 DEBUG CorsFilter:25 - CORSFilter request from 54013
+2018-05-13 14:36:11 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 14:36:12 DEBUG OtherUtils:32 - In htmlResponse
+2018-05-13 14:36:39 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 14:36:39 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:39 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:39 DEBUG CorsFilter:25 - CORSFilter request from 54058
+2018-05-13 14:36:39 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 14:36:39 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:39 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:36:39 DEBUG CorsFilter:25 - CORSFilter request from 54058
+2018-05-13 14:36:39 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 14:36:39 DEBUG OtherUtils:32 - In htmlResponse
+2018-05-13 14:37:15 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:37:15 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:37:15 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:37:15 DEBUG CorsFilter:25 - CORSFilter request from 54145
+2018-05-13 14:37:16 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:37:16 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:37:16 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:37:16 DEBUG CorsFilter:25 - CORSFilter request from 54150
+2018-05-13 14:37:17 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:37:17 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:37:17 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:37:17 DEBUG CorsFilter:25 - CORSFilter request from 54151
+2018-05-13 14:37:21 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 14:37:21 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:37:21 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:37:21 DEBUG CorsFilter:25 - CORSFilter request from 54158
+2018-05-13 14:37:21 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 14:37:21 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:37:21 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:37:21 DEBUG CorsFilter:25 - CORSFilter request from 54158
+2018-05-13 14:37:22 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 14:37:23 DEBUG OtherUtils:32 - In htmlResponse
+2018-05-13 14:40:17 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:40:17 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:40:17 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:40:17 DEBUG CorsFilter:25 - CORSFilter request from 54442
+2018-05-13 14:40:19 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:40:19 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:40:19 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:40:19 DEBUG CorsFilter:25 - CORSFilter request from 54443
+2018-05-13 14:40:19 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:40:19 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:40:19 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:40:19 DEBUG CorsFilter:25 - CORSFilter request from 54446
+2018-05-13 14:40:27 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 14:40:27 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:40:27 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:40:27 DEBUG CorsFilter:25 - CORSFilter request from 54457
+2018-05-13 14:40:27 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 14:40:27 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:40:27 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:40:27 DEBUG CorsFilter:25 - CORSFilter request from 54457
+2018-05-13 14:40:28 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 14:40:28 INFO  MasterDispatcher:36 - User not found.
+2018-05-13 14:40:28 DEBUG OtherUtils:32 - In htmlResponse
+2018-05-13 14:48:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:48:26 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:48:26 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:48:26 DEBUG CorsFilter:25 - CORSFilter request from 55221
+2018-05-13 14:48:28 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:48:28 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 14:48:28 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 14:48:28 DEBUG CorsFilter:25 - CORSFilter request from 55224
+2018-05-13 14:48:28 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 14:48:28 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:48:28 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 14:48:28 DEBUG CorsFilter:25 - CORSFilter request from 55225
+2018-05-13 15:03:51 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:03:51 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:03:51 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:03:51 DEBUG CorsFilter:25 - CORSFilter request from 56581
+2018-05-13 15:03:51 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:03:51 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:03:51 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:03:51 DEBUG CorsFilter:25 - CORSFilter request from 56581
+2018-05-13 15:03:52 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 15:03:54 ERROR EmployeeDaoImpl:32 - ORA-00918: column ambiguously defined
+
+2018-05-13 15:03:54 ERROR EmployeeDaoImpl:33 - SQL STATE: 42000
+2018-05-13 15:03:54 ERROR EmployeeDaoImpl:34 - ERROR CODE: 918
+2018-05-13 15:05:24 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:05:24 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 15:05:24 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 15:05:24 DEBUG CorsFilter:25 - CORSFilter request from 56744
+2018-05-13 15:05:25 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:05:25 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 15:05:25 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 15:05:25 DEBUG CorsFilter:25 - CORSFilter request from 56745
+2018-05-13 15:05:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:05:26 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:26 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:26 DEBUG CorsFilter:25 - CORSFilter request from 56748
+2018-05-13 15:05:37 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:05:37 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:37 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:37 DEBUG CorsFilter:25 - CORSFilter request from 56765
+2018-05-13 15:05:37 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:05:37 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:37 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:37 DEBUG CorsFilter:25 - CORSFilter request from 56765
+2018-05-13 15:05:38 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 15:05:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:05:50 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:50 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:50 DEBUG CorsFilter:25 - CORSFilter request from 56789
+2018-05-13 15:05:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:05:50 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:50 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:05:50 DEBUG CorsFilter:25 - CORSFilter request from 56789
+2018-05-13 15:05:50 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 15:08:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:08:05 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:08:05 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:08:05 DEBUG CorsFilter:25 - CORSFilter request from 56990
+2018-05-13 15:08:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:08:05 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:08:05 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:08:05 DEBUG CorsFilter:25 - CORSFilter request from 56990
+2018-05-13 15:08:05 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 15:08:06 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 15:08:06 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 15:08:06 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 15:17:38 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:17:38 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:17:38 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:17:38 DEBUG CorsFilter:25 - CORSFilter request from 57835
+2018-05-13 15:17:38 DEBUG DispatchService:24 - 
+2018-05-13 15:18:43 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:18:43 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:18:43 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:18:43 DEBUG CorsFilter:25 - CORSFilter request from 57931
+2018-05-13 15:18:43 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:18:43 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:18:43 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:18:43 DEBUG CorsFilter:25 - CORSFilter request from 57931
+2018-05-13 15:18:43 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='WalkinWalki'}
+2018-05-13 15:18:44 INFO  MasterDispatcher:40 - Wrong password
+2018-05-13 15:18:44 DEBUG OtherUtils:32 - In htmlResponse
+2018-05-13 15:20:01 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:20:01 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 15:20:01 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 15:20:01 DEBUG CorsFilter:25 - CORSFilter request from 58082
+2018-05-13 15:20:02 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:20:02 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 15:20:02 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 15:20:02 DEBUG CorsFilter:25 - CORSFilter request from 58086
+2018-05-13 15:20:03 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:20:03 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:20:03 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:20:03 DEBUG CorsFilter:25 - CORSFilter request from 58087
+2018-05-13 15:20:13 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:20:13 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:20:13 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:20:13 DEBUG CorsFilter:25 - CORSFilter request from 58105
+2018-05-13 15:20:13 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:20:13 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:20:13 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:20:13 DEBUG CorsFilter:25 - CORSFilter request from 58105
+2018-05-13 15:20:13 DEBUG DispatchService:24 - SimpleEmployee{username='WalkinDude', password='wadsasd'}
+2018-05-13 15:20:15 INFO  MasterDispatcher:40 - Wrong password
+2018-05-13 15:20:15 DEBUG OtherUtils:32 - In htmlResponse
+2018-05-13 15:32:17 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:32:17 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:32:17 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:32:17 DEBUG CorsFilter:25 - CORSFilter request from 59256
+2018-05-13 15:32:17 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:32:17 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:32:17 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:32:17 DEBUG CorsFilter:25 - CORSFilter request from 59256
+2018-05-13 15:32:17 DEBUG DispatchService:24 - SimpleEmployee{username='asf', password='fas'}
+2018-05-13 15:32:18 INFO  MasterDispatcher:36 - User not found.
+2018-05-13 15:32:18 DEBUG OtherUtils:32 - In htmlResponse
+2018-05-13 15:36:07 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:36:07 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:36:07 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:36:07 DEBUG CorsFilter:25 - CORSFilter request from 59634
+2018-05-13 15:36:07 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:36:07 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:36:07 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:36:07 DEBUG CorsFilter:25 - CORSFilter request from 59634
+2018-05-13 15:36:07 DEBUG DispatchService:24 - SimpleEmployee{username='fsfsf', password='f'}
+2018-05-13 15:36:07 INFO  MasterDispatcher:36 - User not found.
+2018-05-13 15:36:07 DEBUG OtherUtils:32 - In htmlResponse
+2018-05-13 15:40:11 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:40:11 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 15:40:11 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 15:40:11 DEBUG CorsFilter:25 - CORSFilter request from 60020
+2018-05-13 15:40:12 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:40:12 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 15:40:12 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 15:40:12 DEBUG CorsFilter:25 - CORSFilter request from 60023
+2018-05-13 15:40:13 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 15:40:13 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:40:13 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:40:13 DEBUG CorsFilter:25 - CORSFilter request from 60024
+2018-05-13 15:40:18 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:40:18 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:40:18 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:40:18 DEBUG CorsFilter:25 - CORSFilter request from 60033
+2018-05-13 15:40:18 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:40:18 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:40:18 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:40:18 DEBUG CorsFilter:25 - CORSFilter request from 60033
+2018-05-13 15:40:19 DEBUG DispatchService:22 - SimpleEmployee{username='fsfsf', password='f'}
+2018-05-13 15:40:19 INFO  MasterDispatcher:31 - User not found.
+2018-05-13 15:40:19 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 15:44:20 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:44:20 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:44:20 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:44:20 DEBUG CorsFilter:25 - CORSFilter request from 60399
+2018-05-13 15:44:20 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:44:20 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:44:20 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:44:20 DEBUG CorsFilter:25 - CORSFilter request from 60399
+2018-05-13 15:44:20 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 15:44:20 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 15:44:20 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 15:44:20 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 15:50:06 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:50:06 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:06 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:06 DEBUG CorsFilter:25 - CORSFilter request from 60922
+2018-05-13 15:50:06 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:50:06 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:06 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:06 DEBUG CorsFilter:25 - CORSFilter request from 60922
+2018-05-13 15:50:06 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 15:50:07 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 15:50:07 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 15:50:07 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 15:50:11 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:50:11 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:11 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:11 DEBUG CorsFilter:25 - CORSFilter request from 60922
+2018-05-13 15:50:11 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:50:11 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:11 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:11 DEBUG CorsFilter:25 - CORSFilter request from 60922
+2018-05-13 15:50:11 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalki'}
+2018-05-13 15:50:12 INFO  MasterDispatcher:35 - Wrong password
+2018-05-13 15:50:12 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 15:50:31 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:50:31 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:31 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:31 DEBUG CorsFilter:25 - CORSFilter request from 60976
+2018-05-13 15:50:31 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:50:31 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:31 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:31 DEBUG CorsFilter:25 - CORSFilter request from 60976
+2018-05-13 15:50:31 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 15:50:32 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 15:50:32 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 15:50:32 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 15:50:34 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:50:34 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:34 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:34 DEBUG CorsFilter:25 - CORSFilter request from 60976
+2018-05-13 15:50:34 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalki'}
+2018-05-13 15:50:35 INFO  MasterDispatcher:35 - Wrong password
+2018-05-13 15:50:35 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 15:50:44 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 15:50:44 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:44 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:44 DEBUG CorsFilter:25 - CORSFilter request from 61002
+2018-05-13 15:50:44 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 15:50:44 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:44 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 15:50:44 DEBUG CorsFilter:25 - CORSFilter request from 61002
+2018-05-13 15:50:44 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDud', password='WalkinWalki'}
+2018-05-13 15:50:45 INFO  MasterDispatcher:31 - User not found.
+2018-05-13 15:50:45 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 16:06:43 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:06:43 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:06:43 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:06:43 DEBUG CorsFilter:25 - CORSFilter request from 62481
+2018-05-13 16:06:43 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:06:43 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:06:43 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:06:43 DEBUG CorsFilter:25 - CORSFilter request from 62481
+2018-05-13 16:06:43 DEBUG DispatchService:22 - SimpleEmployee{username='walkindude', password='WalkinWalkin'}
+2018-05-13 16:06:43 INFO  MasterDispatcher:31 - User not found.
+2018-05-13 16:06:43 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 16:06:51 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:06:51 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:06:51 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:06:51 DEBUG CorsFilter:25 - CORSFilter request from 62481
+2018-05-13 16:06:51 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:06:51 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:06:51 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:06:51 DEBUG CorsFilter:25 - CORSFilter request from 62481
+2018-05-13 16:06:51 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:06:52 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:06:52 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:06:52 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 16:07:16 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:07:16 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:07:16 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:07:16 DEBUG CorsFilter:25 - CORSFilter request from 62540
+2018-05-13 16:07:16 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:07:16 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:07:16 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:07:16 DEBUG CorsFilter:25 - CORSFilter request from 62540
+2018-05-13 16:07:16 DEBUG DispatchService:22 - SimpleEmployee{username='', password=''}
+2018-05-13 16:07:16 INFO  MasterDispatcher:31 - User not found.
+2018-05-13 16:07:16 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 16:07:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:07:26 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:07:26 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:07:26 DEBUG CorsFilter:25 - CORSFilter request from 62540
+2018-05-13 16:07:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:07:26 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:07:26 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:07:26 DEBUG CorsFilter:25 - CORSFilter request from 62540
+2018-05-13 16:07:26 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:07:27 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:07:27 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:07:27 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 16:40:03 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:40:03 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:40:03 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:40:03 DEBUG CorsFilter:25 - CORSFilter request from 63902
+2018-05-13 16:40:03 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:40:03 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:40:03 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:40:03 DEBUG CorsFilter:25 - CORSFilter request from 63902
+2018-05-13 16:40:03 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:40:04 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:40:04 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:40:04 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 16:40:04 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:40:04 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:40:04 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:40:04 DEBUG CorsFilter:25 - CORSFilter request from 63902
+2018-05-13 16:40:04 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:40:04 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:40:04 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:40:04 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 16:41:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:41:26 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:41:26 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:41:26 DEBUG CorsFilter:25 - CORSFilter request from 63919
+2018-05-13 16:41:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:41:26 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:41:26 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:41:26 DEBUG CorsFilter:25 - CORSFilter request from 63919
+2018-05-13 16:41:26 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:41:27 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:41:27 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:41:27 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 16:41:30 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:41:30 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:41:30 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:41:30 DEBUG CorsFilter:25 - CORSFilter request from 63919
+2018-05-13 16:41:30 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:41:31 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:41:31 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:41:31 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 16:51:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:51:05 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:51:05 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:51:05 DEBUG CorsFilter:25 - CORSFilter request from 64346
+2018-05-13 16:51:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:51:05 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:51:05 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:51:05 DEBUG CorsFilter:25 - CORSFilter request from 64346
+2018-05-13 16:51:05 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:51:06 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:51:06 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:51:06 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 16:54:38 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:54:38 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:54:38 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:54:38 DEBUG CorsFilter:25 - CORSFilter request from 64415
+2018-05-13 16:54:38 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:54:38 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:54:38 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:54:38 DEBUG CorsFilter:25 - CORSFilter request from 64415
+2018-05-13 16:54:38 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:54:39 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:54:39 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:54:39 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 16:55:30 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:55:30 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:55:30 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:55:30 DEBUG CorsFilter:25 - CORSFilter request from 64442
+2018-05-13 16:55:30 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:55:30 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:55:30 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:55:30 DEBUG CorsFilter:25 - CORSFilter request from 64442
+2018-05-13 16:55:30 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:55:31 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:55:31 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:55:31 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 16:56:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 16:56:50 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 16:56:50 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 16:56:50 DEBUG CorsFilter:25 - CORSFilter request from 64594
+2018-05-13 16:56:51 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 16:56:51 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-13 16:56:51 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-13 16:56:51 DEBUG CorsFilter:25 - CORSFilter request from 64595
+2018-05-13 16:56:52 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-13 16:56:52 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:56:52 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:56:52 DEBUG CorsFilter:25 - CORSFilter request from 64598
+2018-05-13 16:58:36 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 16:58:36 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:58:36 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:58:36 DEBUG CorsFilter:25 - CORSFilter request from 64760
+2018-05-13 16:58:36 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 16:58:36 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:58:36 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 16:58:36 DEBUG CorsFilter:25 - CORSFilter request from 64760
+2018-05-13 16:58:36 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 16:58:37 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 16:58:37 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 16:58:37 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 17:13:18 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 17:13:18 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:18 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:18 DEBUG CorsFilter:25 - CORSFilter request from 49744
+2018-05-13 17:13:18 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 17:13:18 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:18 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:18 DEBUG CorsFilter:25 - CORSFilter request from 49744
+2018-05-13 17:13:18 DEBUG DispatchService:22 - SimpleEmployee{username='', password=''}
+2018-05-13 17:13:18 INFO  MasterDispatcher:31 - User not found.
+2018-05-13 17:13:18 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 17:13:31 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 17:13:31 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:31 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:31 DEBUG CorsFilter:25 - CORSFilter request from 49744
+2018-05-13 17:13:31 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 17:13:31 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:31 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:31 DEBUG CorsFilter:25 - CORSFilter request from 49744
+2018-05-13 17:13:31 DEBUG DispatchService:22 - SimpleEmployee{username='', password=''}
+2018-05-13 17:13:31 INFO  MasterDispatcher:31 - User not found.
+2018-05-13 17:13:31 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 17:13:33 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 17:13:33 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:33 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:13:33 DEBUG CorsFilter:25 - CORSFilter request from 49744
+2018-05-13 17:13:33 DEBUG DispatchService:22 - SimpleEmployee{username='', password=''}
+2018-05-13 17:13:33 INFO  MasterDispatcher:31 - User not found.
+2018-05-13 17:13:33 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 17:14:46 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 17:14:46 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:14:46 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:14:46 DEBUG CorsFilter:25 - CORSFilter request from 49887
+2018-05-13 17:14:46 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 17:14:46 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:14:46 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:14:46 DEBUG CorsFilter:25 - CORSFilter request from 49887
+2018-05-13 17:14:46 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 17:14:46 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 17:14:46 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 17:14:46 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 17:24:41 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 17:24:41 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:24:41 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:24:41 DEBUG CorsFilter:25 - CORSFilter request from 50858
+2018-05-13 17:24:41 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 17:24:41 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:24:41 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:24:41 DEBUG CorsFilter:25 - CORSFilter request from 50858
+2018-05-13 17:24:41 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 17:24:42 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 17:24:42 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 17:24:42 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 17:28:47 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 17:28:47 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:28:47 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:28:47 DEBUG CorsFilter:25 - CORSFilter request from 50968
+2018-05-13 17:28:47 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 17:28:47 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:28:47 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:28:47 DEBUG CorsFilter:25 - CORSFilter request from 50968
+2018-05-13 17:28:47 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 17:28:48 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 17:28:48 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 17:28:48 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 17:40:22 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 17:40:22 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:40:22 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:40:22 DEBUG CorsFilter:25 - CORSFilter request from 51244
+2018-05-13 17:40:22 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 17:40:22 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:40:22 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 17:40:22 DEBUG CorsFilter:25 - CORSFilter request from 51244
+2018-05-13 17:40:22 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 17:40:23 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 17:40:23 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 17:40:23 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 18:03:12 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 18:03:12 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:03:12 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:03:12 DEBUG CorsFilter:25 - CORSFilter request from 51585
+2018-05-13 18:03:12 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 18:03:12 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:03:12 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:03:12 DEBUG CorsFilter:25 - CORSFilter request from 51585
+2018-05-13 18:03:12 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 18:03:12 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 18:03:12 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 18:03:12 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 18:17:17 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 18:17:17 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:17:17 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:17:17 DEBUG CorsFilter:25 - CORSFilter request from 51779
+2018-05-13 18:17:17 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 18:17:17 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:17:17 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:17:17 DEBUG CorsFilter:25 - CORSFilter request from 51779
+2018-05-13 18:17:17 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 18:17:17 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 18:17:17 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 18:17:17 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 18:25:48 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 18:25:48 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:25:48 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:25:48 DEBUG CorsFilter:25 - CORSFilter request from 52050
+2018-05-13 18:25:48 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 18:25:49 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:25:49 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:25:49 DEBUG CorsFilter:25 - CORSFilter request from 52050
+2018-05-13 18:25:49 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 18:25:49 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 18:25:49 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 18:25:49 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 18:26:13 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 18:26:13 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:26:13 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:26:13 DEBUG CorsFilter:25 - CORSFilter request from 52076
+2018-05-13 18:26:13 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 18:26:13 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:26:13 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:26:13 DEBUG CorsFilter:25 - CORSFilter request from 52076
+2018-05-13 18:26:13 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 18:26:14 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 18:26:14 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 18:26:14 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 18:30:51 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 18:30:51 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:30:51 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:30:51 DEBUG CorsFilter:25 - CORSFilter request from 52201
+2018-05-13 18:30:51 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 18:30:51 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:30:51 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:30:51 DEBUG CorsFilter:25 - CORSFilter request from 52201
+2018-05-13 18:30:51 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 18:30:52 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 18:30:52 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 18:30:52 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 18:33:07 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 18:33:07 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:07 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:07 DEBUG CorsFilter:25 - CORSFilter request from 52244
+2018-05-13 18:33:07 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 18:33:07 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:07 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:07 DEBUG CorsFilter:25 - CORSFilter request from 52244
+2018-05-13 18:33:07 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 18:33:08 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 18:33:08 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 18:33:08 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-13 18:33:21 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 18:33:21 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:21 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:21 DEBUG CorsFilter:25 - CORSFilter request from 52252
+2018-05-13 18:33:21 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 18:33:21 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:21 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:21 DEBUG CorsFilter:25 - CORSFilter request from 52252
+2018-05-13 18:33:21 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkinasd'}
+2018-05-13 18:33:22 INFO  MasterDispatcher:35 - Wrong password
+2018-05-13 18:33:22 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 18:33:43 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 18:33:44 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:44 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:44 DEBUG CorsFilter:25 - CORSFilter request from 52270
+2018-05-13 18:33:44 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 18:33:44 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:44 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:44 DEBUG CorsFilter:25 - CORSFilter request from 52270
+2018-05-13 18:33:45 DEBUG DispatchService:22 - SimpleEmployee{username='asd', password='WalkinWalkinasd'}
+2018-05-13 18:33:45 INFO  MasterDispatcher:31 - User not found.
+2018-05-13 18:33:45 DEBUG OtherUtils:32 - In stringReponse
+2018-05-13 18:33:54 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-13 18:33:54 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:54 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:54 DEBUG CorsFilter:25 - CORSFilter request from 52274
+2018-05-13 18:33:54 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-13 18:33:54 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:54 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-13 18:33:54 DEBUG CorsFilter:25 - CORSFilter request from 52274
+2018-05-13 18:33:54 DEBUG DispatchService:22 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-13 18:33:55 DEBUG EmployeeService:45 - User WalkinDude logged in successfully!
+2018-05-13 18:33:55 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-13 18:33:55 DEBUG OtherUtils:21 - In jsonResponse

@@ -14,20 +14,23 @@ public class ConnectionUtil {
     private ConnectionUtil() {}
 
     public static Connection getConnection() {
-        InputStream in = null;
-        Properties props = new Properties();
-        try {
-            in = new FileInputStream("src/main/resources/db.properties");
+        try (InputStream in = ConnectionUtil.class.getClassLoader().getResourceAsStream("db.properties")) {
+            // Get a reference to our Properties file
+            Properties props = new Properties();
             props.load(in);
+
+            // Specify the driver for Tomcat
+            Class.forName("oracle.jdbc.OracleDriver");
+
             return DriverManager.getConnection(props.getProperty("jdbc.url"), props.getProperty("jdbc.username"), props.getProperty("jdbc.password"));
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-            System.err.println("SQL State: " + e.getSQLState());
-            System.err.println("Error Code: " + e.getErrorCode());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ioe) {
+            System.err.println(ioe.getMessage());
+        } catch (ClassNotFoundException cnfe) {
+            System.err.println(cnfe.getMessage());
+        } catch (SQLException sqle) {
+            System.err.println(sqle.getMessage());
+            System.err.println("SQL State: " + sqle.getSQLState());
+            System.err.println("Error Code: " + sqle.getErrorCode());
         }
         return null;
     }

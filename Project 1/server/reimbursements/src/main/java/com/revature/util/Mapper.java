@@ -1,7 +1,6 @@
 package com.revature.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.model.Employee;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;

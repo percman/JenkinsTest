@@ -1,42 +1,45 @@
 package com.revature.servlet;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.model.Employee;
-import com.revature.util.Mapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.revature.exceptions.UserNotFoundException;
+import com.revature.exceptions.WrongPasswordException;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
-import java.io.IOException;
+
+
+import static com.revature.service.DispatchService.dispatchLogin;
+import static com.revature.util.OtherUtils.stringReponse;
 
 public class MasterDispatcher {
-
+    private static Logger logger = Logger.getLogger(MasterDispatcher.class);
     private MasterDispatcher() {}
 
-    public static String process(HttpServletRequest request, HttpServletResponse response) {
+    public static void process(HttpServletRequest request, HttpServletResponse response) {
         String st = request.getRequestURI();
-        switch(st) {
-            case "/login.do":
+        try {
+            switch (st) {
+                case "/login.do":
+                    dispatchLogin(request, response);
+                    break;
+                default:
+                    System.out.println(st);
+            }
+        }  catch (UserNotFoundException e) {
+            logger.info("User not found.");
+            response.setStatus(403);
+            stringReponse("User not found.", response);
+        } catch (WrongPasswordException e) {
+            logger.info("Wrong password");
+            response.setStatus(403);
+            stringReponse("Wrong password.", response);
 
-
-
-                break;
-            default:
-                System.out.println(st);
+        } catch (JsonProcessingException e) {
+            logger.info("Error processing JSON for object");
+            response.setStatus(500);
+            stringReponse("Error processing JSON for object ", response);
         }
-
-//                return LoginService.login(request, response);
-//            case "/InClassServlets" +"/home.do":
-//                return UserService.home(request, response);
-//            default:
-//                System.out.println(st);
-//                return "404.jsp";
-//        }
-        // System.out.println(Mapper.mapRequest(request, Employee.class));
-
-
-
-        return "Boop";
     }
 }
