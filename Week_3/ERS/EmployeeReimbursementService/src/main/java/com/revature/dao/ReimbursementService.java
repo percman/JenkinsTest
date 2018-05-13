@@ -27,9 +27,7 @@ public class ReimbursementService{
 		return dao.denyReimbursment(appId, reburId);
 	}
 	
-	public static Reimbursment getReimbursmentByName(String emp) throws EmployeeNotFoundException{
-		return dao.getReimbursmentByName(emp);
-	}
+
 	
 	public static List<Reimbursment> getReimbursemnts() throws noReimbursmentException{
 		return dao.getReimbursemnts();
