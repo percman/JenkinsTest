@@ -1,6 +1,5 @@
 package com.revature.util;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,21 +16,24 @@ public class ConnectionUtil {
 	
 	private ConnectionUtil() {}
 	public static Connection getConnection() {
-			Properties props = new Properties();
-			try (InputStream in = new FileInputStream("src/main/resources/db.properties")){
-				props.load(in);
-				return DriverManager.getConnection(props.getProperty("jdbc.url"), props.getProperty("jdbc.username"), props.getProperty("jdbc.password"));
-			}catch(FileNotFoundException fnfe) {
-				fnfe.printStackTrace();
-			}catch(IOException ioe) {
-				ioe.printStackTrace();
-			}
-			catch(SQLException sqle) {
-				System.err.println(sqle.getMessage());
-				System.err.println("SQL State: " + sqle.getSQLState());
-				System.err.println("Error Code: " + sqle.getErrorCode());
-				logger.warn(sqle.getMessage());
-			}
+		Properties props = new Properties();
+		try (InputStream in = ConnectionUtil.class.getClassLoader().getResourceAsStream("db.properties")) {
+			props.load(in);
+			Class.forName("oracle.jdbc.OracleDriver");
+			return DriverManager.getConnection(props.getProperty("jdbc.url"), props.getProperty("jdbc.username"), props.getProperty("jdbc.password"));
+		} catch (FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State: " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
+		} catch (ClassNotFoundException cnfe) {
+			System.err.println(cnfe.getMessage());
+			logger.warn(cnfe.getMessage());
+		}
 		return null;
 	}
 	

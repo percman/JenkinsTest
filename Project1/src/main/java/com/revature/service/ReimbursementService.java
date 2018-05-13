@@ -1,7 +1,11 @@
 package com.revature.service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.revature.dao.ReimbursementDao;
 import com.revature.dao.ReimbursementDaoImpl;
+import com.revature.model.Employee;
 import com.revature.model.Reimbursement;
 
 public class ReimbursementService {
@@ -9,8 +13,14 @@ public class ReimbursementService {
 	private ReimbursementService() {}
 	private static ReimbursementDao dao = ReimbursementDaoImpl.getInstance();
 	
-	public static boolean insertReimbursement (Reimbursement reimbursement) {
-		return dao.insertReimbursement(reimbursement);
+	public static String insertReimbursement (HttpServletRequest request, HttpServletResponse response) {
+		Employee employee=(Employee)request.getSession().getAttribute("authorizedUser");
+		int id=employee.getId();
+		Reimbursement reimbursement=new Reimbursement(id, request.getParameter("category"), Double.valueOf(request.getParameter("amount")));
+		if(dao.insertReimbursement(reimbursement)) {
+			return "/employee.jsp";
+		}
+		else return "ReimbursementSubmit.jsp";
 	}
 	
 	

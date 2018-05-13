@@ -54,7 +54,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			stmt.setInt(++index, id);
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
-				Employee employee=new Employee(rs.getString("username"), rs.getString("password"), 
+				Employee employee=new Employee(rs.getInt("employee_id"), rs.getString("username"), rs.getString("password"), 
 						rs.getString("first_name"), rs.getString("middle_initial").charAt(0), rs.getString("last_name"));
 				return employee;
 			}
@@ -70,13 +70,13 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	public boolean updateEmployee(Employee employee) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("UPDATE info SET first_name =?, "
-					+ "middle_initial=?, last_name=? WHERE employee_id="
-					+ "(SELECT employee_id FROM employee WHERE username= ?)");
-			stmt.setString(++index,employee.getFirstname());
+			CallableStatement stmt = conn.prepareCall("{CALL update_employee(?, ?, ?, ?, ?, ?)}");
+			stmt.setInt(++index,employee.getId());
+			stmt.setString(++index, employee.getUsername());
+			stmt.setString(++index, employee.getPassword());
+			stmt.setString(++index, employee.getFirstname());
 			stmt.setString(++index, String.valueOf(employee.getMiddleInit()));
 			stmt.setString(++index, employee.getLastName());
-			stmt.setString(++index, employee.getUsername());
 			return stmt.executeUpdate()>0;
 		}catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
@@ -91,13 +91,13 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		int index = 0;
 		List<Reimbursement> reimbursements= new ArrayList<>();
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("SELECT requestor_id, approver_id, category, status "
-					+ "FROM reimbursement NATURAL JOIN employee WHERE username = ? AND status = 'Pending'");
-			stmt.setString(++index, employee.getUsername());
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE requestor_id=? AND status = 'Pending'");
+			stmt.setInt(++index, employee.getId());
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				Reimbursement reimbursement=new Reimbursement(rs.getInt("requestorId"), rs.getInt("approver_id"),
-						rs.getString("category"), rs.getString("status"));
+				Reimbursement reimbursement=new Reimbursement(rs.getInt("reimbursement_id"), rs.getInt("requestor_id"),
+						rs.getString("category"), rs.getDouble("amount"), rs.getString("status"),
+						rs.getTimestamp("request_time").toString());
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;
@@ -120,8 +120,10 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			stmt.setString(++index, employee.getUsername());
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				Reimbursement reimbursement=new Reimbursement(rs.getInt("requestorId"), rs.getInt("approver_id"),
-						rs.getString("category"), rs.getString("status"));
+				Reimbursement reimbursement=new Reimbursement(rs.getInt("reimbursement_id"), 
+						rs.getInt("requestorId"), rs.getInt("approver_id"),
+						rs.getDouble("amount"), rs.getString("category"), rs.getString("status"),
+						rs.getTimestamp("request_time").toString(), rs.getTimestamp("approved_time").toString());
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;
@@ -132,5 +134,25 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			logger.warn(sqle.getMessage());
 		}
 		return null;
+	}
+	@Override
+	public Employee getEmployee(String username) {
+		int index = 0;
+		try(Connection conn = ConnectionUtil.getConnection()){
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM info "
+					+ "NATURAL JOIN employee WHERE username=?");
+			stmt.setString(++index, username);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				Employee employee=new Employee(rs.getInt("employee_id"), rs.getString("username"), rs.getString("password"), 
+						rs.getString("first_name"), rs.getString("middle_initial").charAt(0), rs.getString("last_name"));
+				return employee;
+			}
+		}catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State: " + sqle.getSQLState());
+			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
+		}		return null;
 	}
 }

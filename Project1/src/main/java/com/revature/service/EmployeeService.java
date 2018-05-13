@@ -2,6 +2,9 @@ package com.revature.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.revature.dao.EmployeeDao;
 import com.revature.dao.EmployeeDaoImpl;
 import com.revature.model.Employee;
@@ -18,13 +21,24 @@ public class EmployeeService {
 	public static Employee viewEmployee(int id) {
 		return dao.viewEmployee(id);
 	}
-	
-	public static boolean updateEmployee(Employee employee) {
-		return dao.updateEmployee(employee);
+	public static Employee getEmployee(String username) {
+		return dao.getEmployee(username);
+	}
+	public static String updateEmployee(HttpServletRequest request, HttpServletResponse response) {
+		Employee employee=(Employee)request.getSession().getAttribute("authorizedUser");
+		employee.setUsername(request.getParameter("username"));
+		employee.setPassword(request.getParameter("password"));
+		employee.setFirstname(request.getParameter("firstName"));
+		employee.setMiddleInit(request.getParameter("middleInitial").charAt(0));
+		employee.setLastName(request.getParameter("lastName"));
+		if(dao.updateEmployee(employee)) return "/employee.jsp";
+		else return "/EmployeeUpdate.jsp";
 	}
 	
-	public static List<Reimbursement> listPending(Employee employee){
-		return dao.listPending(employee);
+	public static String listPending(HttpServletRequest request, HttpServletResponse response){
+		Employee employee=(Employee)request.getSession().getAttribute("authorizedUser");
+		request.setAttribute("pendingList", dao.listPending(employee));
+		return "/EmployeePending.jsp";
 	}
 	
 	public static List<Reimbursement> listResolved(Employee employee){

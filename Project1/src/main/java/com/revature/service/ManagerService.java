@@ -32,7 +32,7 @@ public class ManagerService {
 		return dao.viewReimbursementByEmployee(employee);
 	}
 	
-	Manager approver(Reimbursement reimbursement) {
+	String approver(Reimbursement reimbursement) {
 		return dao.approver(reimbursement);
 	}
 }

@@ -16,4 +16,6 @@ public interface EmployeeDao {
 	List<Reimbursement> listPending(Employee employee);
 	
 	List<Reimbursement> listResolved(Employee employee);
+	
+	Employee getEmployee(String username);
 }

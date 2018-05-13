@@ -81,7 +81,7 @@ public class ManagerDaoImpl implements ManagerDao {
 					+ "last_name FROM employee NATURAL JOIN info");
 			ResultSet rs=stmt.executeQuery();
 			while(rs.next()) {
-				Employee employee=new Employee(rs.getString("username"), rs.getString("password"), 
+				Employee employee=new Employee(rs.getInt("manager_id"), rs.getString("username"), rs.getString("password"), 
 						rs.getString("firstname"), rs.getString("middleinit").charAt(0), rs.getString("lastname"));
 				employees.add(employee);
 			}
@@ -102,8 +102,10 @@ public class ManagerDaoImpl implements ManagerDao {
 					+ "FROM reimbursement");
 			ResultSet rs=stmt.executeQuery();
 			while(rs.next()) {
-				Reimbursement reimbursement = new Reimbursement(rs.getInt("requestorId"), rs.getInt("approverId"), 
-						rs.getString("category"), rs.getString("status"));
+				Reimbursement reimbursement = new Reimbursement(rs.getInt("reimbursement_id"), 
+						rs.getInt("requestorId"), rs.getInt("approverId"), rs.getDouble("amount"),
+						rs.getString("category"), rs.getString("status"),
+						rs.getTimestamp("request_time").toString(), rs.getTimestamp("approved_time").toString());
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;
@@ -125,8 +127,10 @@ public class ManagerDaoImpl implements ManagerDao {
 			stmt.setString(++index, employee.getUsername());
 			ResultSet rs=stmt.executeQuery();
 			while(rs.next()) {
-				Reimbursement reimbursement = new Reimbursement(rs.getInt("requestorId"), rs.getInt("approverId"), 
-						rs.getString("category"), rs.getString("status"));
+				Reimbursement reimbursement = new Reimbursement(rs.getInt("reimbursement_id"),
+						rs.getInt("requestorId"), rs.getInt("approverId"), rs.getDouble("amount"),
+						rs.getString("category"), rs.getString("status"), rs.getTimestamp("request_time").toString(),
+						rs.getTimestamp("approved_time").toString());
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;
@@ -139,7 +143,7 @@ public class ManagerDaoImpl implements ManagerDao {
 		return null;
 	}
 	@Override
-	public Manager approver(Reimbursement reimbursement) {
+	public String approver(Reimbursement reimbursement) {
 		int index=0;
 		try(Connection conn = ConnectionUtil.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement("SELECT i.first_name, i.middle_initial, i.last_name "
@@ -147,9 +151,9 @@ public class ManagerDaoImpl implements ManagerDao {
 			stmt.setInt(++index, reimbursement.getApproverId());
 			ResultSet rs=stmt.executeQuery();
 			if(rs.next()) {
-				Manager manager = new Manager(null, null, rs.getString("first_name"), 
-						rs.getString("middle_initial").charAt(0), rs.getString("last_name"));
-				return manager;
+				String name=rs.getString("i.first_name")+ " " + 
+						rs.getString("i.middle_initial")+" " +rs.getString("i.last_name");
+				return name;
 			}
 		}catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());

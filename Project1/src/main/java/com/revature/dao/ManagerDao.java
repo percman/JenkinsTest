@@ -18,5 +18,5 @@ public interface ManagerDao {
 	
 	List<Reimbursement> viewReimbursementByEmployee(Employee employee);
 	
-	Manager approver(Reimbursement reimbursement);
+	String approver(Reimbursement reimbursement);
 }
