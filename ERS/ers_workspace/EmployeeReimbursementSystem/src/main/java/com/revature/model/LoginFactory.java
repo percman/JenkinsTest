@@ -7,9 +7,9 @@ import com.revature.service.FinancialManagerService;
 
 public class LoginFactory {
 
-	public static Employee userLogin(boolean isFinMan, Employee employee) {
+	public static Employee userLogin(String isFinMan, Employee employee) {
 		try {
-		if (isFinMan) {
+		if (isFinMan.equals("true")) {
 			return FinancialManagerService.login((FinancialManager) employee);
 		} else {
 			return EmployeeService.login(employee);

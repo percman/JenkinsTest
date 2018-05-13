@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login-service/login.service';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { IsLoggedInService } from './services/is-logged-in-service/is-logged-in.service';
 
 
 @NgModule({
@@ -24,7 +25,10 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [LoginService],
+  providers: [
+    LoginService,
+    IsLoggedInService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

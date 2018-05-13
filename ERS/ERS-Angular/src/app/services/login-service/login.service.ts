@@ -22,12 +22,12 @@ export class LoginService {
       .catch(err => this.handleError(err));
   }
 
-  loginE(username: string, password: string): Observable<Employee> {
+  loginE(username: string, password: string, isFinMan: boolean): Observable<Employee> {
     return this.http.get<Employee>(this.urlL)
       .catch(err => this.handleError(err));
   }
 
-  loginFM(username: string, password: string): Observable<FinancialManager> {
+  loginFM(username: string, password: string, isFinMan: boolean): Observable<FinancialManager> {
     return this.http.get<FinancialManager>(this.urlL)
       .catch(err => this.handleError(err));
   }

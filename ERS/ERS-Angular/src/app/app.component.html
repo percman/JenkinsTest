@@ -13,7 +13,7 @@
           <a [routerLink]='["/http-example"]' class="nav-link">View Reimbursement Requests</a>
         </li>
       </ul>
-      <ul class="navbar-nav nav navbar-right">
+      <ul *ngIf="isLoggedIn" class="navbar-nav nav navbar-right">
         <li class="nav-item">
           <a class="nav-link">Log Out
             <span class="glyphicon glyphicon-log-out"></span>

@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../../services/login-service/login.service';
+import { Employee } from '../../../shared/employee';
+import { FinancialManager } from '../../../shared/financial-manager';
+import { RouterLink, NavigationStart, Router } from '@angular/router';
+import { IsLoggedInService } from '../../services/is-logged-in-service/is-logged-in.service';
 
 @Component({
   selector: 'app-login',
@@ -12,10 +16,18 @@ export class LoginComponent implements OnInit {
   private isFinMan: boolean = false;
   username: string = "";
   password: string = "";
-  isLoggedIn: boolean = false;
+  
+  @Input() isLoggedIn: boolean;
 
 
-  constructor(private loginService: LoginService) { }
+  constructor(
+    private loginService: LoginService, 
+    private isLoggedInService: IsLoggedInService,
+    private router: Router
+  ) { }
+
+  employee: Employee;
+  financialManager: FinancialManager;
 
   ngOnInit() {
   }
@@ -27,12 +39,21 @@ export class LoginComponent implements OnInit {
         err => this.errorMessage = err
       );
     if (this.isFinMan) {
-      this.loginService.loginFM(this.username, this.password);
-      this.isLoggedIn = true;
+      this.loginService.loginFM(this.username, this.password, this.isFinMan)
+        .subscribe(
+          validEmployee => this.employee = validEmployee,
+          err => this.errorMessage = err
+        );
     } else {
-      this.loginService.loginE(this.username, this.password);
-      this.isLoggedIn = true;
+      this.loginService.loginE(this.username, this.password, this.isFinMan)
+      .subscribe(
+        validFinMan => this.financialManager,
+        err => this.errorMessage = err
+      );
     }
+
+
+
   }
 
 
