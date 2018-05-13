@@ -3,9 +3,13 @@ package com.revature.services;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
+import com.revature.dao.EmployeeDaoImpl;
 import com.revature.exceptions.ManagerApprovingOwnRequestException;
 
 public class MasterDispatcher {
+private static final Logger logger = Logger.getLogger(EmployeeDaoImpl.class);
 private MasterDispatcher() {
 		
 	}
@@ -36,16 +40,16 @@ private MasterDispatcher() {
 			if(request.getParameter("contact").equals("approve")){
 			try {
 				return ReburService.approve(request, responce);
-			} catch (ManagerApprovingOwnRequestException e) {
-				e.printStackTrace();
+			} catch (ManagerApprovingOwnRequestException maore) {
+				logger.error(maore.getMessage(),maore);
 				return"/approveReimburstment.jsp";
 			}
 			}
 			else {
 				try {
 					return ReburService.deny(request, responce);
-				} catch (ManagerApprovingOwnRequestException e) {
-					e.printStackTrace();
+				} catch (ManagerApprovingOwnRequestException maore) {
+					logger.error(maore.getMessage(),maore);
 					return"/approveReimburstment.jsp";
 				}
 			}

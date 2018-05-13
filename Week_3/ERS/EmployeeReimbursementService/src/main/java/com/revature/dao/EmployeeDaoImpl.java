@@ -1,6 +1,6 @@
 package com.revature.dao;
 
-import java.sql.CallableStatement;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,9 +11,10 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.revature.connection.ConnectionUtil;
-import com.revature.employee.Employee;
 import com.revature.employee.GenericEmployee;
 import com.revature.exceptions.EmployeeNotFoundException;
+import com.revature.exceptions.NoEmployeesException;
+import com.revature.exceptions.PasswordHashException;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 	private static final Logger logger = Logger.getLogger(EmployeeDaoImpl.class);
@@ -29,25 +30,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 
 		@Override
-		public boolean addEmployee(GenericEmployee emp) {
-			// TODO Auto-generated method stub
-			int index = 0;
-			try(Connection conn = ConnectionUtil.getConnection()){
-				CallableStatement stmt = conn.prepareCall("{CALL insert_employee(?,?)}");
-				stmt.setString(++index, emp.getUsername());
-				stmt.setString(++index, emp.getPassword());
-				return stmt.executeUpdate() > 0;
-			} catch(SQLException sqle) {
-				logger.error(sqle.getMessage(), sqle);
-				logger.error(sqle.getSQLState(),sqle);
-				logger.error(sqle.getErrorCode(),sqle);
-			} 
-			return false;
-		}
-
-		@Override
-		public List<GenericEmployee> getEmployees() {
-			// TODO Auto-generated method stub
+		public List<GenericEmployee> getEmployees() throws NoEmployeesException {
 			try(Connection conn = ConnectionUtil.getConnection()){
 				List<GenericEmployee> emp= new ArrayList<>();
 				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENERIC_EMPLOYEE ON gen_emp_id = EMPLOYEE.EMP_ID");
@@ -62,7 +45,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				logger.error(sqle.getSQLState(),sqle);
 				logger.error(sqle.getErrorCode(),sqle);
 			} 
-			return null;
+			throw new NoEmployeesException();
 		}
 
 		@Override
@@ -103,7 +86,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 
 		@Override
-		public String getPasswordHash(GenericEmployee emp){
+		public String getPasswordHash(GenericEmployee emp) throws PasswordHashException{
 			int index = 0;
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				PreparedStatement stmt = conn.prepareStatement("SELECT get_emp_hash(?,?)AS HASH FROM dual");
@@ -117,7 +100,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				logger.error(sqle.getSQLState(),sqle);
 				logger.error(sqle.getErrorCode(),sqle);
 			} 
-			return null;
+			throw new PasswordHashException();
 		}
 		
 }

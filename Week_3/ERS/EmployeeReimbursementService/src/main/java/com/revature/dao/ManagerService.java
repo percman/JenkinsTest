@@ -4,41 +4,29 @@ import java.util.List;
 
 import com.revature.employee.FinanceManager;
 import com.revature.exceptions.EmployeeNotFoundException;
+import com.revature.exceptions.ManagerNotFoundException;
+import com.revature.exceptions.NoManagerException;
+import com.revature.exceptions.PasswordHashException;
 
 public class ManagerService {
 private static ManagerDao dao = ManagerDaoImpl.getInstance();
 
-public static boolean addManager(FinanceManager man) {
-	return dao.addManager(man);
-}
-
-public static List<FinanceManager> getManagers(){
+public static List<FinanceManager> getManagers() throws NoManagerException{
 	return dao.getManagers();
 }
 
-public static FinanceManager getManager(String man) throws EmployeeNotFoundException{
+public static FinanceManager getManager(String man) throws EmployeeNotFoundException, ManagerNotFoundException{
 	return dao.getManager(man);
 }
 
-public static boolean updateInfo(int id,String fName,String lName, String email, String add) throws EmployeeNotFoundException{
+public static boolean updateInfo(int id,String fName,String lName, String email, String add) throws EmployeeNotFoundException, ManagerNotFoundException{
 	return dao.updateInfo(id,fName,lName,email,add);
 }
 
-public static String getPasswordHash(FinanceManager man) {
+public static String getPasswordHash(FinanceManager man) throws PasswordHashException {
 	return dao.getPasswordHash(man);
 }
 
-public static void main(String[] args) {
-	try {
-		System.out.println(EmployeeService.getEmployee("matt").getLastName());
-		System.out.println(getManager("david").getLastName());
-	} catch (EmployeeNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
-	
-}
 
 }
 

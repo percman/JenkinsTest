@@ -26,8 +26,9 @@ window.onload = function(){
             if(xhr.readyState == 4 && xhr.status == 200){
             	
                 var reburObj = <%= request.getSession().getAttribute("reimbursements") %>;
+                
                 for(let rebur of reburObj){
-                    //get the properties of the JSON element
+                	//get the properties of the JSON element
                     let cat = rebur.cat;
                     let appId = rebur.approverId;
                     let subId = rebur.sumbitterId;
@@ -45,7 +46,10 @@ window.onload = function(){
                     let tdDateSub = document.createElement("td");
                     let tdDateApp = document.createElement("td");
                     let tdStatus = document.createElement("td");
-
+					let tdView = document.createElement("td");
+					let tdAnchor = document.createElement("a");
+					let linkText = document.createTextNode("View");
+					
                     
 					                    
                     tdId.textContent = id;
@@ -65,8 +69,12 @@ window.onload = function(){
                     row.appendChild(tdDateSub);
                     row.appendChild(tdDateApp);
                     row.appendChild(tdStatus);
+                    tdAnchor.appendChild(linkText);
+                    tdAnchor.title = "View";
+                    tdAnchor.href = "reimbursementImage.jsp?id="+rebur;
+					row.appendChild(tdAnchor);
 
-                   
+					
                     //Append the row
 
                     document.getElementById("EmployeeReimbursments").appendChild(row);
@@ -99,6 +107,7 @@ window.onload = function(){
                                 <li><a href="./submitEmployeeReimburstment.jsp">Submit</a></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
+                            	<li><a href="image.do">View reimbursment Image<span class="glyphicon glyphicon-picture"></span></a>
                                 <li><a href="logout.do">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
                             </ul>
                         

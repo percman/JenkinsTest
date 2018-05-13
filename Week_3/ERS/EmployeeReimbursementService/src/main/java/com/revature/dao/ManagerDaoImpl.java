@@ -14,6 +14,9 @@ import com.revature.connection.ConnectionUtil;
 import com.revature.employee.FinanceManager;
 import com.revature.employee.GenericEmployee;
 import com.revature.exceptions.EmployeeNotFoundException;
+import com.revature.exceptions.ManagerNotFoundException;
+import com.revature.exceptions.NoManagerException;
+import com.revature.exceptions.PasswordHashException;
 
 public class ManagerDaoImpl implements ManagerDao {
 		private static final Logger logger = Logger.getLogger(EmployeeDaoImpl.class);
@@ -29,23 +32,7 @@ public class ManagerDaoImpl implements ManagerDao {
 			}
 
 			@Override
-			public boolean addManager(FinanceManager man) {
-				int index = 0;
-				try(Connection conn = ConnectionUtil.getConnection()){
-					CallableStatement stmt = conn.prepareCall("{CALL insert_employee(?,?)}");
-					stmt.setString(++index, man.getUsername());
-					stmt.setString(++index, man.getPassword());
-					return stmt.executeUpdate() > 0;
-				} catch(SQLException sqle) {
-					logger.error(sqle.getMessage(), sqle);
-					logger.error(sqle.getSQLState(),sqle);
-					logger.error(sqle.getErrorCode(),sqle);
-				} 
-				return false;
-			}
-
-			@Override
-			public List<FinanceManager> getManagers() {
+			public List<FinanceManager> getManagers() throws NoManagerException {
 				try(Connection conn = ConnectionUtil.getConnection()){
 					List<FinanceManager> man= new ArrayList<>();
 					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN FINANCE_MANAGER ON man_id = EMPLOYEE.EMP_ID ");
@@ -60,11 +47,11 @@ public class ManagerDaoImpl implements ManagerDao {
 					logger.error(sqle.getSQLState(),sqle);
 					logger.error(sqle.getErrorCode(),sqle);
 				} 
-				return null;
+				throw new NoManagerException();
 			}
 
 			@Override
-			public FinanceManager getManager(String man) throws EmployeeNotFoundException {
+			public FinanceManager getManager(String man) throws ManagerNotFoundException {
 				int index = 0;
 				try(Connection conn = ConnectionUtil.getConnection()){
 					PreparedStatement stmt = conn.prepareStatement("SELECT * FROM FINANCE_MANAGER INNER JOIN EMPLOYEE ON FINANCE_MANAGER.MAN_ID = EMPLOYEE.EMP_ID where man_id in (SELECT emp_id from EMPLOYEE where EMP_USERNAME = ?)");
@@ -78,11 +65,11 @@ public class ManagerDaoImpl implements ManagerDao {
 					logger.error(sqle.getSQLState(),sqle);
 					logger.error(sqle.getErrorCode(),sqle);
 				} 
-				throw new EmployeeNotFoundException();
+				throw new ManagerNotFoundException();
 			}
 
 			@Override
-			public boolean updateInfo(int id,String fName,String lName, String email, String add) throws EmployeeNotFoundException {
+			public boolean updateInfo(int id,String fName,String lName, String email, String add) throws ManagerNotFoundException {
 				int index = 0;
 				try(Connection conn = ConnectionUtil.getConnection()){
 					PreparedStatement stmt = conn.prepareStatement("{CALL update_man(?,?,?,?,?)}");
@@ -97,12 +84,12 @@ public class ManagerDaoImpl implements ManagerDao {
 					logger.error(sqle.getSQLState(),sqle);
 					logger.error(sqle.getErrorCode(),sqle);
 				} 
-				throw new EmployeeNotFoundException();
+				throw new ManagerNotFoundException();
 			}
 			
 			
 			@Override
-			public String getPasswordHash(FinanceManager man){
+			public String getPasswordHash(FinanceManager man) throws PasswordHashException{
 				int index = 0;
 				try (Connection conn = ConnectionUtil.getConnection()) {
 					PreparedStatement stmt = conn.prepareStatement("SELECT GET_EMP_HASH(?,?)AS HASH FROM dual");
@@ -116,7 +103,7 @@ public class ManagerDaoImpl implements ManagerDao {
 					logger.error(sqle.getSQLState(),sqle);
 					logger.error(sqle.getErrorCode(),sqle);
 				} 
-				return null;
+				throw new PasswordHashException();
 			}
 
 		 

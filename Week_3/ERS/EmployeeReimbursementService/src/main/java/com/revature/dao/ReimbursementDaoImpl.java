@@ -14,6 +14,13 @@ import org.apache.log4j.Logger;
 import com.revature.connection.ConnectionUtil;
 import com.revature.employee.FinanceManager;
 import com.revature.exceptions.EmployeeNotFoundException;
+import com.revature.exceptions.NoPendingReimbursmentException;
+import com.revature.exceptions.NoReibursmentForIdException;
+import com.revature.exceptions.NoReimbursementForEmployeeException;
+import com.revature.exceptions.ReimbursmentApprovalException;
+import com.revature.exceptions.ReimbursmentDenialException;
+import com.revature.exceptions.ReimbursmentSubmissionException;
+import com.revature.exceptions.noReimbursmentException;
 import com.revature.reimbursement.Category;
 import com.revature.reimbursement.Reimbursment;
 
@@ -31,7 +38,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		}
 
 		@Override
-		public boolean submitReimbursment(Reimbursment rebur) {
+		public boolean submitReimbursment(Reimbursment rebur) throws ReimbursmentSubmissionException {
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
 				CallableStatement stmt = conn.prepareCall("{CALL insert_reimbursement(?,?,?)}");
@@ -44,11 +51,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				logger.error(sqle.getSQLState(),sqle);
 				logger.error(sqle.getErrorCode(),sqle);
 			} 
-			return false;
+			throw new ReimbursmentSubmissionException();
 		}
 
 		@Override
-		public boolean approveReimbursment(int appId, int rebId) {
+		public boolean approveReimbursment(int appId, int rebId) throws ReimbursmentApprovalException {
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
 				CallableStatement stmt = conn.prepareCall("{CALL UPDATE_REIMBURSEMENT(?,?,?)}");
@@ -61,11 +68,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				logger.error(sqle.getSQLState(),sqle);
 				logger.error(sqle.getErrorCode(),sqle);
 			} 
-			return false;
+			throw new ReimbursmentApprovalException();
 		}
 
 		@Override
-		public boolean denyReimbursment(int appId, int reburId) {
+		public boolean denyReimbursment(int appId, int reburId) throws ReimbursmentDenialException {
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
 				CallableStatement stmt = conn.prepareCall("{CALL UPDATE_REIMBURSEMENT(?,?,?)}");
@@ -78,7 +85,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				logger.error(sqle.getSQLState(),sqle);
 				logger.error(sqle.getErrorCode(),sqle);
 			} 
-			return false;
+			throw new ReimbursmentDenialException();
 		}
 
 		@Override
@@ -100,7 +107,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		}
 
 		@Override
-		public List<Reimbursment> getReimbursemnts() {
+		public List<Reimbursment> getReimbursemnts() throws noReimbursmentException {
 			try(Connection conn = ConnectionUtil.getConnection()){
 				List<Reimbursment> rebur= new ArrayList<>();
 				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement ORDER BY rebur_id");
@@ -115,11 +122,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				logger.error(sqle.getSQLState(),sqle);
 				logger.error(sqle.getErrorCode(),sqle);
 			} 
-			return null;
+			throw new noReimbursmentException();
 		}
 
 		@Override
-		public List<Reimbursment> getPendingReimbursemnts() {
+		public List<Reimbursment> getPendingReimbursemnts() throws NoPendingReimbursmentException {
 			try(Connection conn = ConnectionUtil.getConnection()){
 				List<Reimbursment> rebur= new ArrayList<>();
 				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE approved = 0  ORDER BY rebur_id");
@@ -134,30 +141,12 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				logger.error(sqle.getSQLState(),sqle);
 				logger.error(sqle.getErrorCode(),sqle);
 			} 
-			return null;
+			throw new NoPendingReimbursmentException();
 		}
 
-		@Override
-		public List<Reimbursment> getApprovedReimbursemnts() {
-			try(Connection conn = ConnectionUtil.getConnection()){
-				List<Reimbursment> rebur= new ArrayList<>();
-				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE approved = 1  ORDER BY rebur_id");
-				ResultSet rs = stmt.executeQuery();
-				
-				while(rs.next()) {
-					rebur.add(new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved")));
-				}
-				return rebur;
-			} catch(SQLException sqle) {
-				logger.error(sqle.getMessage(), sqle);
-				logger.error(sqle.getSQLState(),sqle);
-				logger.error(sqle.getErrorCode(),sqle);
-			} 
-			return null;
-		}
 
 		@Override
-		public List<Reimbursment> getReimbursmentForEmployee(String emp) {
+		public List<Reimbursment> getReimbursmentForEmployee(String emp) throws NoReimbursementForEmployeeException {
 			int index = 0;
 			try(Connection conn = ConnectionUtil.getConnection()){
 				List<Reimbursment> rebur= new ArrayList<>();
@@ -174,10 +163,10 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				logger.error(sqle.getSQLState(),sqle);
 				logger.error(sqle.getErrorCode(),sqle);
 			} 
-			return null;
+			throw new NoReimbursementForEmployeeException();
 		}
 		@Override
-		public Reimbursment getReimbursmentById(int id) {
+		public Reimbursment getReimbursmentById(int id) throws NoReibursmentForIdException {
 			int index = 0;
 			Reimbursment rebur = null;
 			try(Connection conn = ConnectionUtil.getConnection()){
@@ -194,7 +183,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				logger.error(sqle.getSQLState(),sqle);
 				logger.error(sqle.getErrorCode(),sqle);
 			} 
-			return null;
+			throw new NoReibursmentForIdException();
 		}
 		
 		

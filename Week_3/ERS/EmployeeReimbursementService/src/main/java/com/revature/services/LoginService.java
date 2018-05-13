@@ -14,6 +14,10 @@ import com.revature.dao.ReimbursementService;
 import com.revature.employee.FinanceManager;
 import com.revature.employee.GenericEmployee;
 import com.revature.exceptions.EmployeeNotFoundException;
+import com.revature.exceptions.ManagerNotFoundException;
+import com.revature.exceptions.NoPendingReimbursmentException;
+import com.revature.exceptions.NoReimbursementForEmployeeException;
+import com.revature.exceptions.PasswordHashException;
 import com.revature.reimbursement.Reimbursment;
 
 
@@ -52,7 +56,21 @@ public class LoginService {
 					}
 					}catch (EmployeeNotFoundException enfe2) {
 				logger.error(enfe2.getMessage());
+					} catch (PasswordHashException phe) {
+						logger.error(phe.getMessage(), phe);
+					} catch (NoReimbursementForEmployeeException nrfee) {
+						logger.error(nrfee.getMessage(), nrfee);
+					} catch (NoPendingReimbursmentException npre) {
+						logger.error(npre.getMessage(), npre);
 					}
+			} catch (ManagerNotFoundException mnfe) {
+				logger.error(mnfe.getMessage(),mnfe);
+			} catch (PasswordHashException phe) {
+				logger.error(phe.getMessage(), phe);
+			} catch (NoReimbursementForEmployeeException nrfee) {
+				logger.error(nrfee.getMessage(), nrfee);
+			} catch (NoPendingReimbursmentException npre) {
+				logger.error(npre.getMessage(), npre);
 			}
 			
 			return "index.jsp";
