@@ -11,6 +11,9 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login-service/login.service';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { IsLoggedInService } from './services/is-logged-in-service/is-logged-in.service';
+import { FinancialManagerService } from './services/financial-manager-service/financial-manager.service';
+import { ReimbursementService } from './services/reimbursement-service/reimbursement.service';
+import { EmployeeService } from './services/employee-service/employee.service';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { IsLoggedInService } from './services/is-logged-in-service/is-logged-in.
   ],
   providers: [
     LoginService,
-    IsLoggedInService
+    IsLoggedInService,
+    EmployeeService,
+    FinancialManagerService,
+    ReimbursementService
   ],
   bootstrap: [AppComponent]
 })

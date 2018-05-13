@@ -26,17 +26,17 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private isLoggedInService: IsLoggedInService,
-    private router: Router,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private router: Router
   ) {
     this.isLoggedInService.isLoggedIn.subscribe(
       isLoggedIn => {
         this.isLoggedIn = isLoggedIn
       });
-    this.employeeService.currentEmployee.subscribe(
-      currentEmployee => {
-        this.currentEmployee = currentEmployee
-      });
+    // this.employeeService.currentEmployee.subscribe(
+    //   currentEmployee => {
+    //     this.currentEmployee = currentEmployee
+    //   });
   }
 
   financialManager: FinancialManager;
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
     if (this.isFinMan) {
       this.loginService.loginFM(this.username, this.password, this.isFinMan)
         .subscribe(
-          validEmployee => this.employeeService.currentEmployee.next(validEmployee),
+          validEmployee => this.currentEmployee = validEmployee,
           err => this.errorMessage = err
         );
       this.isLoggedInService.isLoggedIn.next(true);
