@@ -13,6 +13,7 @@ import { CreateReimbursementComponent } from './components/create-reimbursement/
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
 import { MyReimbursementsComponent } from './components/my-reimbursements/my-reimbursements.component';
+import { AdminTableComponent } from './components/admin-table/admin-table.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MyReimbursementsComponent } from './components/my-reimbursements/my-rei
     CreateReimbursementComponent,
     UserInfoComponent,
     ViewEmployeesComponent,
-    MyReimbursementsComponent
+    MyReimbursementsComponent,
+    AdminTableComponent
   ],
   imports: [
     BrowserModule,
