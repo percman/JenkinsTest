@@ -34,7 +34,7 @@
                 <br>
                 <a href="eUpdateAccount.jsp">Update Account Information</a>
                 <br>
-                <a href="submitNewReimb.jsp">Submit New Reimbursement</a>
+                <a href="eSubmitReimb.jsp">Submit New Reimbursement</a>
             </div>
 
             <div class="container">

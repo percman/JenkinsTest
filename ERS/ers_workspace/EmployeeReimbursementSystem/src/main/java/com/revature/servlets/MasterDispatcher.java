@@ -15,6 +15,7 @@ import com.revature.model.Employee;
 import com.revature.service.EmployeeService;
 import com.revature.service.FinancialManagerService;
 import com.revature.service.NavigationService;
+import com.revature.service.ReimbursementService;
 
 public class MasterDispatcher {
 
@@ -41,6 +42,9 @@ public class MasterDispatcher {
 			
 		case "/EmployeeReimbursementSystem/update.do":
 			return NavigationService.userUpdate(request);
+			
+		case "/EmployeeReimbursementSystem/submitReimb.do":
+			return ReimbursementService.newReimbursement(request);
 			
 		case "/EmployeeReimbursementSystem/404.do":
 			return NavigationService.fnf(request);

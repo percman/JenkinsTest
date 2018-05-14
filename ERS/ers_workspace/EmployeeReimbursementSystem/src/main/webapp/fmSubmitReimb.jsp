@@ -20,29 +20,40 @@
 		<br><br>
 
         <div class="container">
-            <form>
+            <form action="submitReimb.do" method="POST">
                 <div class="container">
+                    <h3>Choose a category:</h3>
                     <div class="col-md-2">
-                        <label for="lodging">Lodging</label><br>
+                        <label for="lodging">Lodging </label>
                         <input type="radio" name="lodging" id="lodging" value="1">
                     </div>
+                    <br>
                     <div class="col-md-2">
-                        <label for="travel">Travel</label><br>
+                        <label for="travel">Travel </label>
                         <input type="radio" name="travel" id="travel" value="2">
                     </div>
+                    <br>
                     <div class="col-md-2">
-                        <label for="food">Food</label><br>
+                        <label for="food">Food </label>
                         <input type="radio" name="food" id="food" value="3">
                     </div>
+                    <br>
                     <div class="col-md-2">
-                        <label for="other">Other</label><br>
+                        <label for="other">Other </label>
                         <input type="radio" name="other" id="other" value="4">
                     </div>
                 </div>
+                <br>
                 <div class="container">
-                    <label for="amount"></label>
-                    <input type="number" name="amount" required>
+                    <h3>Enter an amout: </h3>
+                    <label for="amount">Amount: </label>
+                    <input type="number" name="amount" required step=".01">
                 </div>
+                <br>
+                <div class="container" style="display: none;" >
+                    <h3>Upload a receipt: </h3>
+                </div>
+                <br>
                 <div class="container">
                     <input type="submit" value="Submit" id="submitReimb">
                 </div>

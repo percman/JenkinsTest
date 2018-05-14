@@ -50,7 +50,7 @@ public class FinancialManagerDaoImpl implements FinancialManagerDao {
 	@Override
 	public FinancialManager getFinancialManager(String username) {
 		FinancialManager financialManager = new FinancialManager();
-		LogThis.info("Do I get to getFinMan in FinManDaoImpl");
+//		LogThis.info("Do I get to getFinMan in FinManDaoImpl");
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement(

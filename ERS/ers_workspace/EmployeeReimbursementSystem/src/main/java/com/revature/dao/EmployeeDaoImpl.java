@@ -73,7 +73,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public Employee getEmployee(String username) {
-		LogThis.info("do i get here 3");
+//		LogThis.info("do i get here 3");
 		Employee employee = new Employee();
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee e "

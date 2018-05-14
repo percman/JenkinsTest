@@ -16,11 +16,11 @@ public class NavigationService {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		Employee temp = new Employee(username, password);
-		LogThis.info("temp in login in NavigationService " + temp.toString());
+//		LogThis.info("temp in login in NavigationService " + temp.toString());
 
 		try {
 			Employee currentEmployee = LoginFactory.userLogin(temp);
-			LogThis.info("currentEmployee in login in NavigationService " + currentEmployee.toString());
+//			LogThis.info("currentEmployee in login in NavigationService " + currentEmployee.toString());
 			request.getSession().setAttribute("currentEmployee", currentEmployee);
 			if (currentEmployee.isFinancialManager()) {
 				return "finManHome.do";

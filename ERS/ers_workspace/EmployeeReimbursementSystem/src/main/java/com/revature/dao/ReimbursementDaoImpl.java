@@ -28,8 +28,8 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			CallableStatement stmt = conn.prepareCall("{CALL insert_reimbursement(?, ?, ?)}");
 			stmt.setInt(++index, reimbursement.getRequestorId());
-			stmt.setInt(++index, reimbursement.getCategoryId());
-			stmt.setInt(++index, reimbursement.getAmount());
+			stmt.setString(++index, reimbursement.getCategory());
+			stmt.setString(++index, reimbursement.getAmountString());
 			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());

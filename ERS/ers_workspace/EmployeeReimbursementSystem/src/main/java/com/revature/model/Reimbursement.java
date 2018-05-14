@@ -17,6 +17,7 @@ public class Reimbursement implements Serializable {
 	private int statusId;
 	private String status;
 	private int amount;
+	private String amountString;
 	private String submitted;
 	private String approved;
 	
@@ -31,6 +32,13 @@ public class Reimbursement implements Serializable {
 		this.requestorId = requestorId;
 		this.categoryId = categoryId;
 		this.amount = amount;
+	}
+
+	public Reimbursement(int requestorId, String category, String amountString) {
+		super();
+		this.requestorId = requestorId;
+		this.category = category;
+		this.amountString = amountString;
 	}
 
 	// Public constructor that takes fields to input into the database
@@ -59,6 +67,15 @@ public class Reimbursement implements Serializable {
 		this.amount = amount;
 		this.submitted = submitted;
 		this.approved = approved;
+	}
+
+	
+	public String getAmountString() {
+		return amountString;
+	}
+
+	public void setAmountString(String amountString) {
+		this.amountString = amountString;
 	}
 
 	public int getId() {

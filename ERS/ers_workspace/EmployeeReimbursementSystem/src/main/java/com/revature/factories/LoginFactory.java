@@ -10,9 +10,9 @@ import com.revature.service.FinancialManagerService;
 public class LoginFactory {
 
 	public static Employee userLogin(Employee employee) throws InvalidLoginException {
-		LogThis.info("do i get here 1");
+//		LogThis.info("do i get here 1");
 		boolean isFinMan = EmployeeService.isFinMan(employee);
-		LogThis.info("do i get here 5");
+//		LogThis.info("do i get here 5");
 
 		if (isFinMan) {
 
