@@ -8,10 +8,11 @@ import com.revature.service.FinancialManagerService;
 public class LoginFactory {
 
 	public static Employee userLogin(Employee employee) throws InvalidLoginException {
-
 		boolean isFinMan = EmployeeService.isFinMan(employee);
+
 		if (isFinMan) {
-			return FinancialManagerService.login((FinancialManager) employee);
+
+			return FinancialManagerService.login(new FinancialManager(employee.getUsername(), employee.getPassword()));
 		} else {
 			return EmployeeService.login(employee);
 		}

@@ -9,14 +9,19 @@
 	</head>
 
 	<body>
+		<h1>{{title}}</h1>
 		<%@ page import="com.revature.model.Employee" 
 		import="com.revature.model.FinancialManager"
 		import="com.revature.model.Reimbursement"%>
 		<% Employee employee = (Employee) request.getSession().getAttribute("currentEmployee"); %>
 		<div class="container">
+			<p id="isFinMan" style="display: none;"><%= employee.isFinancialManager() %></p>
+			<a href="employeeHome.jsp" id="employeeHome" style="display: none;">Employee Home Page</a>
+			<a href="finManHome.jsp" id="finManHome" style="display: none;">Financial Manager Home Page</a>
 		</div>
 		<br><br>
 
+		<script src="isFinMan.js"></script>
 	</body>
 
 	</html>

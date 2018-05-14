@@ -29,13 +29,19 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	
 	@Override
 	public boolean isFinMan (String username) {
+
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			int index = 0;
 			PreparedStatement stmt = conn.prepareStatement("SELECT is_f_manager FROM employee WHERE username = ?");
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
+
 			if(rs.next()) {
-			return rs.getBoolean("is_f_manager");
+				if(rs.getInt("is_f_manager")==1) {
+					return true;
+				} else {
+					return false;
+				}
 			}
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());

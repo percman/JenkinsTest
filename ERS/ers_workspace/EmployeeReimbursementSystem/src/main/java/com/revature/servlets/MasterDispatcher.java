@@ -22,14 +22,22 @@ public class MasterDispatcher {
 	}
 
 	public static String process(HttpServletRequest request, HttpServletResponse response) {
-		
+
 		switch (request.getRequestURI()) {
+		case "/EmployeeReimbursementSystem/main.do":
+			return NavigationService.main(request);
 		case "/EmployeeReimbursementSystem/login.do":
 			return NavigationService.login(request);
+		case "/EmployeeReimbursementSystem/logout.do":
+			return NavigationService.logout(request);
 		case "/EmployeeReimbursementSystem/finManHome.do":
-			return FinancialManagerService.finManHome(request);
+			if (request.getSession(false) != null) {
+				return FinancialManagerService.finManHome(request);
+			}
 		case "/EmployeeReimbursementSystem/employeeHome.do":
-			return EmployeeService.employeeHome(request);
+			if (request.getSession(false) != null) {
+				return EmployeeService.employeeHome(request);
+			}
 		case "/EmployeeReimbursementSystem/404.do":
 			return NavigationService.fnf(request);
 		default:

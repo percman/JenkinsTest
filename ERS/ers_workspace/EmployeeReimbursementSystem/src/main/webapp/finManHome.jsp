@@ -16,19 +16,13 @@
             <% Employee employee = (Employee) request.getSession().getAttribute("currentEmployee"); %>
                 <div class="container">
                     <h2>Welcome, <%= employee.getFirstname() %> <%= employee.getLastname() %></h2>
-                    <br><br>
+
                     <p>Account Information:</p>
-                    <br>
                     <p>First name: <%= employee.getFirstname() %></p>
-                    <br>
                     <p>Middle initial: <%= employee.getMiddleInitial() %></p>
-                    <br>
                     <p>Last name: <%= employee.getLastname() %></p>
-                    <br>
                     <p>Phone: <%= employee.getPhone() %></p>
-                    <br>   
                     <p>Email: <%= employee.getEmail() %></p>
-                    <br>
                 </div>
                 <br>
                 <br>

@@ -33,6 +33,17 @@ public class NavigationService {
 	}
 	
 	public static String fnf(HttpServletRequest request) {
-		return "404.jsp";
+		return "404.do";
 	}
+	
+	public static String logout(HttpServletRequest request) {
+		request.getSession().removeAttribute("currentEmployee");
+		request.getSession().invalidate();
+		return "main.do";
+	}
+	public static String main (HttpServletRequest request) {
+		return "login.jsp";
+	}
+	
+	
 }

@@ -50,10 +50,13 @@ public class FinancialManagerDaoImpl implements FinancialManagerDao {
 	@Override
 	public FinancialManager getFinancialManager(String username) {
 		FinancialManager financialManager = new FinancialManager();
+		LogThis.info("Do I get to getFinMan in FinManDaoImpl");
+		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee e"
-					+ "JOIN employee_info ei ON e.employee_id = ei.employee_id " + "WHERE e.employee_id = ?");
-			stmt.setString(1, username);
+			PreparedStatement stmt = conn.prepareStatement(
+					"SELECT * FROM employee e JOIN employee_info ei ON e.employee_id = ei.employee_id "
+							+ "JOIN f_manager fm ON fm.employee_id = e.employee_id WHERE e.username = ?");
+			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				financialManager.setFmid(rs.getInt("f_manager_id"));

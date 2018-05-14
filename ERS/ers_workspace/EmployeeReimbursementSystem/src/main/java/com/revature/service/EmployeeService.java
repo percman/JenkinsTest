@@ -20,10 +20,12 @@ public class EmployeeService {
 	}
 
 	public static boolean isFinMan(Employee employee) throws InvalidLoginException {
+
 		boolean isFinMan = dao.isFinMan(employee.getUsername());
 		if (dao.getEmployee(employee.getUsername()) == null) {
 			throw new InvalidLoginException();
 		}
+
 		if (isFinMan) {
 			return true;
 		} else {

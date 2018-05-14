@@ -134,6 +134,7 @@ CREATE SEQUENCE reimbursement_id_sequence
 ---------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------
 
+
 ------------------------------------------------
 -- Instantiate the status and category tables --
 ------------------------------------------------
@@ -145,14 +146,8 @@ INSERT INTO r_category (category_id, r_category) VALUES (1, 'lodging');
 INSERT INTO r_category (category_id, r_category) VALUES (2, 'travel');
 INSERT INTO r_category (category_id, r_category) VALUES (3, 'food');
 INSERT INTO r_category (category_id, r_category) VALUES (4, 'other');
-
-
-SELECT * FROM R_STATUS;
-SELECT * FROM R_CATEGORY;
 ------------------------------------------------
 ------------------------------------------------
-
-
 
 
 -------------------------------------------------------------------------------------------------
@@ -374,13 +369,6 @@ CREATE OR REPLACE PROCEDURE resolve_reimbursement (fm_id IN NUMBER, new_status I
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
 
--------------------------
--- Look at some tables --
--------------------------
-SELECT * FROM employee;
-SELECT * FROM employee_info;
-SELECT * FROM f_manager;
-SELECT * FROM reimbursement;
 
 ---------------------------------
 -- Let's populate those tables --
@@ -416,6 +404,21 @@ BEGIN
     resolve_reimbursement(1005, 3, 100007);
 END;
 /
+---------------------------------
+---------------------------------
+
+
+-------------------------
+-- Look at some tables --
+-------------------------
+SELECT * FROM employee;
+SELECT * FROM employee_info;
+SELECT * FROM f_manager;
+SELECT * FROM reimbursement;
+SELECT * FROM R_STATUS;
+SELECT * FROM R_CATEGORY;
+-------------------------
+-------------------------
 
 
 
