@@ -167,9 +167,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			stmt.setInt(2, status);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				list.add(new Reimbursement(rs.getInt("r.reimbursement_id"), rs.getString("requestor_name"),
-						rs.getString("ai.approver_name"), rs.getString("c.r_category"), rs.getString("s.r_status"),
-						rs.getInt("r.amount"), rs.getString("r.submitted"), rs.getString("r.resolved")));
+				list.add(new Reimbursement(rs.getInt("reimbursement_id"), rs.getString("requestor_name"),
+						rs.getString("approver_name"), rs.getString("r_category"), rs.getString("r_status"),
+						rs.getInt("amount"), rs.getString("submitted"), rs.getString("resolved")));
 			}
 			return list;
 		} catch (SQLException sqle) {

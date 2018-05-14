@@ -10,19 +10,32 @@
     <html>
 
     <body>
-            <%@ page import="com.revature.model.Employee" 
+        <%@ page import="com.revature.model.Employee" 
             import="com.revature.model.FinancialManager"
             import="com.revature.model.Reimbursement"%>
             <% Employee employee = (Employee) request.getSession().getAttribute("currentEmployee"); %>
                 <div class="container">
-                    <h2>Welcome, <%= employee.getFirstname() %> <%= employee.getLastname() %></h2>
+                    <h2>Welcome,
+                        <%= employee.getFirstname() %>
+                            <%= employee.getLastname() %>
+                    </h2>
 
                     <p>Account Information:</p>
-                    <p>First name: <%= employee.getFirstname() %></p>
-                    <p>Middle initial: <%= employee.getMiddleInitial() %></p>
-                    <p>Last name: <%= employee.getLastname() %></p>
-                    <p>Phone: <%= employee.getPhone() %></p>
-                    <p>Email: <%= employee.getEmail() %></p>
+                    <p>First name:
+                        <%= employee.getFirstname() %>
+                    </p>
+                    <p>Middle initial:
+                        <%= employee.getMiddleInitial() %>
+                    </p>
+                    <p>Last name:
+                        <%= employee.getLastname() %>
+                    </p>
+                    <p>Phone:
+                        <%= employee.getPhone() %>
+                    </p>
+                    <p>Email:
+                        <%= employee.getEmail() %>
+                    </p>
                 </div>
                 <br>
                 <br>
@@ -44,6 +57,49 @@
                     <br>
                     <a href="allEmployees.jsp">View All Employees</a>
                 </div>
+
+                <div class="container">
+                    <h2>Your Requests:</h2>
+                    <div class="container">
+                        <h3>Pending: </h3>
+
+                        <table>
+                            <thead>
+                                <th>Reimbursement ID</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Date Submitted</th>
+                            </thead>
+                            <tbody id="pendingTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <br>
+                    <div class="container">
+                        <h3>Resolved: </h3>
+                        <table>
+                            <thead>
+                                <th>Reimbursement ID</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Date Submitted</th>
+                                <th>Status</th>
+                                <th>Date Resolved</th>
+                                <th>Approved By</th>
+                            </thead>
+                            <tbody id="resolvedTable">
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <script src="reimb.js"></script>
+
     </body>
 
     </html>

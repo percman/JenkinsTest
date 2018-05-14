@@ -10359,3 +10359,61 @@ ORA-06512: at line 1
 2018-05-14 03:02:45 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
 2018-05-14 03:02:45 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
 2018-05-14 03:02:46 INFO  LogThis:25 - Minerva McGonagall, username: tabbycat has logged in.
+2018-05-14 03:19:53 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 03:19:53 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/logout.do
+2018-05-14 03:19:53 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/logout.do
+2018-05-14 03:19:53 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 03:19:59 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 03:19:59 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 03:19:59 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 03:19:59 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 03:20:00 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-14 04:18:25 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 04:18:25 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 04:18:25 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 04:18:25 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:18:35 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 04:18:35 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 04:18:35 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 04:18:35 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:18:37 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-14 04:39:38 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 04:39:38 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 04:39:38 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 04:39:38 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:40:20 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 04:40:20 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 04:40:20 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 04:40:20 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:40:23 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/reimb.js
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/reimb.js
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/getPending.ajax
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/getPending.ajax
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/getResolved.ajax
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/getResolved.ajax
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/getResolved.ajax
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/getResolved.ajax
+2018-05-14 04:40:24 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:40:25 WARN  LogThis:29 - Invalid column name
+2018-05-14 04:40:25 WARN  LogThis:29 - SQL state: 99999
+2018-05-14 04:40:25 WARN  LogThis:29 - Error Code: 17006
+2018-05-14 04:41:45 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 04:41:45 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/logout.do
+2018-05-14 04:41:45 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/logout.do
+2018-05-14 04:41:45 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:41:53 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 04:41:53 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/logout.do
+2018-05-14 04:41:53 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/logout.do
+2018-05-14 04:41:53 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 04:42:08 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 04:42:08 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 04:42:08 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 04:42:08 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
