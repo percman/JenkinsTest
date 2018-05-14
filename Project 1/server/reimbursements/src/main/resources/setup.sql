@@ -110,7 +110,7 @@ IS
 /
 
 
-CREATE OR REPLACE PROCEDURE add_reimbursement(username_in VARCHAR, password_in VARCHAR,
+CREATE OR REPLACE PROCEDURE add_reimbursement(username_in VARCHAR2, password_in VARCHAR2,
   category_in NUMBER, amount_in NUMBER)
 IS
   requesterID number;
@@ -121,5 +121,23 @@ IS
         VALUES (reimbursement_id_sequence.nextval, requesterID, -1, category_in, amount_in, 0);
     end if;
     COMMIT;
+  END;
+/
+
+CREATE OR REPLACE FUNCTION SET_RSTATUS(status_in NUMBER, rid_in NUMBER, approver_in NUMBER) RETURN NUMBER
+IS
+  output NUMBER;
+  BEGIN
+    SELECT status INTO output FROM Reimbursement;
+    IF (output <> 0) THEN
+      RETURN -1;
+    END IF;
+    SELECT count(*) into output FROM Reimbursement WHERE requester = approver_in AND rid = rid_in;
+    IF (output <> 0) THEN
+      RETURN -2;
+    END IF;
+    UPDATE Reimbursement SET status = status_in WHERE rid = rid_in;
+    COMMIT;
+    RETURN 1;
   END;
 /

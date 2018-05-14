@@ -1,7 +1,10 @@
 package com.revature.dao;
 
+import com.revature.exceptions.AlreadySetException;
+import com.revature.exceptions.SelfSetException;
 import com.revature.model.CreateReimbursementModel;
 import com.revature.model.MyReimbursementReturn;
+import com.revature.model.RStatusModel;
 import com.revature.model.ReimbursementTable;
 import com.revature.util.ConnectionUtil;
 import org.apache.log4j.Logger;
@@ -98,5 +101,25 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
             logger.error("ERROR CODE: " + e.getErrorCode());
         }
         return null;
+    }
+
+    @Override
+    public void setRStatus(RStatusModel rsm) throws AlreadySetException, SelfSetException {
+        int index = 0;
+        try (Connection conn = ConnectionUtil.getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement("SELECT SET_RSTATUS(?, ?, ?) retStat from dual");
+            stmt.setInt(++index, rsm.getStatus());
+            stmt.setInt(++index, rsm.getRid());
+            stmt.setInt(++index, rsm.getApproverId());
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                int out = rs.getInt("retStat");
+            }
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            logger.error("SQL STATE: " + e.getSQLState());
+            logger.error("ERROR CODE: " + e.getErrorCode());
+        }
+
     }
 }

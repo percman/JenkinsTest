@@ -2,6 +2,8 @@ package com.revature.servlet;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.revature.exceptions.AlreadySetException;
+import com.revature.exceptions.SelfSetException;
 import com.revature.exceptions.UserNotFoundException;
 import com.revature.exceptions.WrongPasswordException;
 import org.apache.log4j.Logger;
@@ -39,12 +41,12 @@ public class MasterDispatcher {
                 case "/get-all-reimbursements.do":
                     dispatchAllReimbusements(request, response);
                     break;
-                case "/set-rstatus":
+                case "/set-rstatus.do":
                     dispatchSetRStatus(request, response);
                     break;
                 default:
                     response.setStatus(400);
-                    System.out.println(st);
+                    logger.debug(st);
             }
         }  catch (UserNotFoundException e) {
             logger.info("User not found.");
@@ -58,6 +60,14 @@ public class MasterDispatcher {
             logger.info("Error processing JSON for object");
             response.setStatus(500);
             stringReponse("Error processing JSON for object ", response);
+        } catch (AlreadySetException e) {
+            logger.info("This request has already been approved or denied.");
+            response.setStatus(400);
+            stringReponse("This request has already been approved or denied.", response);
+        } catch (SelfSetException e) {
+            logger.info("You can't approve yrself.");
+            response.setStatus(400);
+            stringReponse("You can't approve yourself", response);
         }
     }
 }

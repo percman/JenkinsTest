@@ -2,10 +2,13 @@ package com.revature.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.exceptions.AlreadySetException;
+import com.revature.exceptions.SelfSetException;
 import com.revature.exceptions.UserNotFoundException;
 import com.revature.exceptions.WrongPasswordException;
 import com.revature.model.CreateReimbursementModel;
 import com.revature.model.Employee;
+import com.revature.model.RStatusModel;
 import com.revature.model.SimpleEmployee;
 import com.revature.util.Mapper;
 import org.apache.log4j.Logger;
@@ -48,7 +51,8 @@ public class DispatchService {
         }
     }
     public static void dispatchCreateReimbursement(HttpServletRequest request, HttpServletResponse response) {
-        CreateReimbursementModel crm = (CreateReimbursementModel) Mapper.mapRequest(request, CreateReimbursementModel.class);
+        CreateReimbursementModel crm = (CreateReimbursementModel)
+                Mapper.mapRequest(request, CreateReimbursementModel.class);
         logger.debug(crm);
         booleanResponse(createReimbursement(crm), response);
     }
@@ -58,21 +62,26 @@ public class DispatchService {
         booleanResponse(updateEmployeeInfo(crm), response);
     }
 
-    public static void dispatchEmployeeList(HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
+    public static void dispatchEmployeeList(HttpServletRequest request, HttpServletResponse response)
+            throws JsonProcessingException {
         ObjectMapper om = new ObjectMapper();
         String el = om.writeValueAsString(getEmployeeNames());
         logger.debug(el);
         jsonResponse(el, response);
     }
 
-    public static void dispatchAllReimbusements(HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
+    public static void dispatchAllReimbusements(HttpServletRequest request, HttpServletResponse response)
+            throws JsonProcessingException {
         ObjectMapper om = new ObjectMapper();
         String reimbOut = om.writeValueAsString(getAllReimbursements());
         logger.debug(reimbOut);
         jsonResponse(reimbOut, response);
     }
 
-    public static void dispatchSetRStatus(HttpServletRequest request, HttpServletResponse response) {
+    public static void dispatchSetRStatus(HttpServletRequest request, HttpServletResponse response) throws AlreadySetException,
+            SelfSetException {
+        ObjectMapper om = new ObjectMapper();
+        RStatusModel rsm = (RStatusModel) Mapper.mapRequest(request, RStatusModel.class);
 
     }
 

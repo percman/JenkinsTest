@@ -24,12 +24,16 @@ export class AdminTableComponent implements OnInit {
 
   approve(rid: number): void {
     console.log('approve ' + rid);
-    this.getThem.setRStatus({'rid': rid, 'status': 1});
+    this.getThem.setRStatus({'rid': rid, 'status': 1, 'approver': this.globals.eid})
+      .subscribe(success => this.doSomething()
+                      , err => this.doSomething());
   }
 
   deny(rid: number): void {
     console.log('deny ' + rid);
-    this.getThem.setRStatus({'rid': rid, 'status': 2});
+    this.getThem.setRStatus({'rid': rid, 'status': 2, 'approver': this.globals.eid})
+      .subscribe(success => this.doSomething()
+        , err => this.doSomething());
   }
 
   categoryToString(n: number): string {
