@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import static com.revature.service.DispatchService.dispatchCreateReimbursement;
 import static com.revature.service.DispatchService.dispatchLogin;
+import static com.revature.service.DispatchService.dispatchUpdateInfo;
 import static com.revature.util.OtherUtils.stringReponse;
 
 public class MasterDispatcher {
@@ -28,7 +29,8 @@ public class MasterDispatcher {
                 case "/create-reimbursement.do":
                     dispatchCreateReimbursement(request, response);
                     break;
-                case "/"
+                case "/update-info.do":
+                    dispatchUpdateInfo(request, response);
                 default:
                     System.out.println(st);
             }

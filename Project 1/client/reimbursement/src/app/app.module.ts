@@ -10,6 +10,7 @@ import {MyRoutes} from './shared/app.routes';
 import {Globals} from './shared/Globals';
 import { EmployeeSplashComponent } from './components/employee-splash/employee-splash.component';
 import { CreateReimbursementComponent } from './components/create-reimbursement/create-reimbursement.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CreateReimbursementComponent } from './components/create-reimbursement/
     AppComponent,
     LoginComponent,
     EmployeeSplashComponent,
-    CreateReimbursementComponent
+    CreateReimbursementComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,

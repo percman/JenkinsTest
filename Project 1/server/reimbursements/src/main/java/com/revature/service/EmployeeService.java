@@ -26,6 +26,8 @@ public class EmployeeService {
         return dao.getEmployee(username);
     }
 
+    public static boolean updateEmployeeInfo(Employee e) {return dao.updateEmployeeInfo(e);}
+
 
     public static String login(String username, String password) throws UserNotFoundException, WrongPasswordException,
             JsonProcessingException {
