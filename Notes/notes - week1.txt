@@ -1,0 +1,925 @@
+
+----------------------------------------- DAY ONE -----------------------------------------
+James Gosling
+cafebabe
+
+why java
+	OOP
+		not 100%, because there are primitives
+	memory management 
+	"platform independence"
+		can run on anything
+		ex, write once and run anywhere
+	rich API
+		do not have to reinvent the wheel
+	open source
+	supported by oracle 
+	relatively simple 
+		no operator overloading
+		no memory management 
+
+JDK JRE JVM 
+	JDK - Java Development Kit
+		contains all tools necessary to develop java programs 
+			compiler 
+			java application launcher 
+	JRE - Java Runtime Environment
+		provides class and runtime libraries, and JVM
+	JVM - Java Virtual Machine
+		runtime environment where java code is executed 
+	JDK	
+		JRE	
+			JVM
+
+how to compile a class
+	javac
+	ex: our class called myclass.java
+		myclass.class
+		to run, type: java myclass
+		
+a class is supposed to represent an object, like a blueprint that finds state and behaviour 
+object is an instance of a class 
+
+char int long etc are primitive
+**string is not a primitive
+	intregal values 
+		bool - not specified 
+		int - 32 
+		short - 16
+		char - 16
+		byte - 8
+	floating point 
+		long - 64
+		float - 32
+		double 64
+		
+objects are stored in the heap
+reference varibles are stored in the stack
+primitives and everthing else is the stack 
+
+what's contained in a class?
+	class members 
+		constructors 
+		state (variables)
+		bahaviours (methods)
+		interface 
+		inner class 
+		blocks (initializers)
+		
+	order of execution in a class
+		static variables 
+		static blocks 
+		instance variables 
+		instance blocks
+		constructor 
+
+static
+	associated with class as a whole, not individual instances 
+	
+variable scope ** 
+	instance scope / object
+	class scope / static
+	method scope
+	block 
+	
+**java is strictly pass by value
+
+4 pillars
+	a p i e 
+		abstraction 
+			interfaces and abstract classes 
+		polymorphism
+			taking on many forms
+			method overloading / static polymorphism / compile time  
+				same method name, different method signature 
+				always same return type 
+				compile time 
+			method overriding / dynamic polymorphism / runtime polymorphism
+				same method name in parent class as child class, different implementation 
+				runtime 
+			covariant return time 
+				overridden methods' return type is a subclass of the parent method's return type 
+		inheritance 
+			allows a class to extend another classes functionality 
+			multiple inheritance? just not supported 
+			multilevel inheritance is supported 
+				note, you can use multiple interfaces 
+		encapsulation
+			hiding and preventing change of data members 
+			
+POJO: Plain Old Java Object 
+	all beans are POJOs, not all POJOs are beans 
+bean - getters and setters 
+	private data members
+	public getters and setters
+		accecesors and mutators 
+	public no-arg ocnstructor
+	implements serializable 
+	overrides hashcode() and equals()
+				
+constructor 
+	no return type 
+	returns an instance of an object 
+	can be overloaded 
+	same name as the class 
+	super(),this() is always the first line 
+
+java files can have only 1 public class, and has to be the same name as the file 
+	ex: 
+		A.java
+		public class A {}
+	java through JVM provides a default constructor, given one is not provided 
+			
+access modifiers
+	public 
+		anything can access
+	protected 
+		subclasses and the class itself, anything in the same package 
+	default (packed private)
+		only used in interfaces
+		to mark a class member as default, don't provide modifier at all
+		anything in the same package 
+	private 
+		just the class itself 
+		
+
+neither can be instatiated 
+	abstract class
+		instance variables do not have to be public static final 
+		can have abstract or concrete methods 
+		do not allow multiple inheritance 
+		multiple level inheritance allowed 
+	interface 
+		variable are implicitly public static final 
+		methods are implicitly public abstract 
+		multiple inheritance is allowed 
+		multi level inheritance allowed 
+		since java 8, can have default and static method implementation 
+	
+main method is the beginning of execution 
+	can be overloaded 
+	"the" main method is static and void, accepts an array of strings as its parameter 
+	main method cannot be overriden, as it is static 
+		method hiding - replaces parent method in the class defined  in child class 
+	
+reverse domain notation
+	naming convention for our packages
+	ex: sales.amazon.helloworld.com, would be com.helloworld.amazon.sales
+	
+fully qualified class name => full package name followed by the class 
+	java.lang.object 
+	java.util.function.predicate
+	
+	
+	
+	
+	
+----------------------------------------- DAY TWO -----------------------------------------
+
+block 
+method
+instance / object
+class / static 
+
+primitives 
+	int 	float
+	long	char
+	short 	double
+	byte 	boolean
+	
+access modifiers
+	public		anything
+	private		that class
+	protected 	package / subclass
+	(default)	package
+	
+A P I E
+	Abstraction 
+		5 C's
+			centralizing creating a conceptualize class 
+		interfaces
+	Polymorphism
+		many forms 
+		overloading, overriding, covariant 
+	Inheritance 
+		extends a parent classes' functionality
+	Encapsulation 
+		bean vs POJO 
+		
+objects stored:
+	heap
+everything else stored:
+	stack 
+
+java is pass by reference 
+
+overloading 
+	signitures
+overriding
+	same method name in a parent class, different implementation
+
+covariant return class
+	overridden method's return type is a subclass of a parent method's return type 
+	
+constructor 
+	same name as the class
+	no return type 
+	can be overloaded
+	instatiates an object 
+	first line is super or this 
+	
+abstract class vs interface
+	neither can be  instatiated 
+	abstract
+		concrete  
+		dont need to be psf
+	interface 
+		public static final 
+		variables are psf
+		methods are public abstract
+		mutliple AND mutlilevel inheritance 
+		Java 8 => default and static methods 
+	
+static 
+	belongs to the class, not individual instance 
+overload main method 
+	cannot override, but can overload 
+	
+	
+
+final
+	variables cannot be changed 
+	methods cant be overridden 
+	** FINAL CLASSES DO NOT IMPLY IMMUTABILITY 
+	strings are not primitive 
+	class cannot be extended 
+
+finally 
+	keyword used at the end of a try catch block that always executes 
+		unless, catastrophic system error 
+		using method system.exit(int)
+	finalize 
+		method used by the garbage collector to mark an object ready for garbage collection 
+		only ever be called once per object 
+		
+garbage collection 
+	if the variable is not being used or out of scope, etc 
+	process of automatically freeing memory on the heap by deleting objects that are no longer reachable in your program 
+	** CANNOT BE FORCED 
+	suggest:
+		system.gc()
+		runtime.getRuntime().gc()
+		system.runFinalize()
+	
+wrapper class 
+	let you treat primitives as objects 
+	autoboxing => converts a primitive to its wrapper class 
+	unboxing => converts a wrapper class to its primitive 
+	each of these are in Pascal case 
+	boolean 		byte
+	character 		short
+	int 			long
+	float 			double
+	 
+newShort((short)1);
+
+array 
+	a group of sequentially stored elements of the same type 
+	non-dynamic, fixed size 
+	int[] arr = {1 2 3}
+	String arr[] = new String[10]
+	
+varargs 
+	variable arguments 
+	treated as an array 
+		int sum(int.. grades){
+			sysout (grades.length)
+			grades[10]
+		}
+		sum(1, 2, 3, 4, 5); //15
+		
+		int sum(int.. grades, String name)
+	must be last parameter treated as an array underhood 
+	can be ommitted, java will create an array of size 0 for you 
+	
+string
+	immutable, final
+	slowest 
+stringbuilder 
+	mutable class that allows you to build strings 
+	fastest 
+stringbuffer 
+	mutable, thread-safe 
+		inherently slower, access one at a time 
+	
+string pool
+	within the heap 
+	where all string values are stored 
+	
+for strings, 
+	what is the difference between == and .equals 
+		== is reference equality 
+		.equals() means value equality 
+	
+java.lang.Object 
+	toString() 
+		automatically called with any print statement 
+		usually overridden to provide human readable output 
+		otherwise, its fully.qualified.ClassName@memaddress
+	equals()
+		provides a custom means to determine if two instances have the same state 
+		if you do not override the equals method, you get reference equality 
+	hashCode() 
+		expected to be overridden if you override equals() 
+		returns a number that puts instances of a class into a finite number of catagories  
+		calling equals on two objects returns true, their hashcodes should be equals 
+			however, if calling equals on two objects returns false, their hashCodes do not have to be unequal 
+	
+test driven development - TDD 
+	test cases to find the behaviour (unit tests)
+	run tests, fail 
+	fix tests by writing application code 
+	retest until you pass 
+	repeat 
+	
+jUnit => javaAPI for uint level testing 
+assertion 
+	verifies a state of the application meets what is expected
+assertTrue; 	(boolean)
+assertFalse;
+assertEquals();
+assertSame()
+assertNull()
+assertNotNull()
+assertThat()
+
+maven 
+	build automation
+	dependency management 
+	
+	
+	
+----------------------------------------------------------------------------------
+project 0
+	console application 
+		user creation 
+		2 roles
+			user login
+			user account must be approved before logging in 
+		admin 
+			can approve or reject new accounts
+			can lock / unlock existing accounts 
+		user
+			deposit / withdraw (transaction feature)
+			balance etc 
+		all data must be persisted in file(s)
+			serialization
+ready by Monday 
+----------------------------------------------------------------------------------
+
+
+reflection API 
+	allows inspection and/or modify runtime attributes of classes, interfaces, fields, and methods 
+	file I/O
+		refers to the nature of how data is accessed 
+			either by reading it from a resource (input) or writing to a resource (output)
+			
+stream 
+	dealing with bytes 
+reader / writer 
+	character data 
+
+8 classes 
+	FileInputStream 
+		reads raw bytes from a file 
+	FileOutputStream 
+		writes raw bytes to a file 
+	FileReader
+		read character data from a file 
+	FileWriter
+		writes character data to a file 
+	BufferedReader
+		reads a file line by line
+		note: needs instance of a FileReader in its constructor 
+	BufferedWriter
+		writes a file line by line 
+		note: needs instance of a FileWriter in its constructor
+		
+
+**ALWAYS CLOSE YOUR RESOURCES
+
+serialization 
+	process of writing of an object to a byte 
+	in order for an object to be serializable, it must implement java.io.Serializable
+		fully qualified class name - java.io.Serializable
+	to serialize an object, you need an ObjectOutputStream, passing an instnce of a FileOutputStream to its constructor
+		call the writeObject(yourBean) method 
+		passing in a reference to your bean 
+	conversely, to de-serialize an object
+		need an ObjectInputStream
+		passing in an instance of a FileInputStream to its constructor 
+		call the readObject();
+			note - must cast it to the bean of your type 
+			
+exception 
+	error in compile time 
+	Throwable 
+		Error - things that went so wrong in your application, you shouldn't recover from it  
+			StackOverflowError
+			OutOfMemoryError
+			NoClassDefFoundError
+		Exception 
+			Checked - tend to be more anticipated, might be reasonably recovered from. **must be handled or declared
+				throws - declares in a method signature, that exception of that type, may be thrown
+			Unchecked - tend to be unexpected, but not necessiarly fatal. Do not require handled / declared  
+				RuntimeException
+				ArthimeticException
+				NullPointerException
+				ArrayIndexOutOfBounds
+		throw - using a method implementation to explicity throw an exception 
+		
+transient keyword 
+	at the variable level, marks that it will not be serialized 
+
+	
+	
+----------------------------------------- DAY THREE -----------------------------------------
+
+to create AWS account 
+	do not create a prof account 
+	method of payment 
+		probably won't charge anything 
+		
+revature pro account 
+	
+Mondays
+	one on one's 
+	testing is open at 9am
+		enthuware's 
+	project zero requirements done by 9am Monday on github 
+	
+Tuesdays
+	QC questions 
+	
+while and dowhile loop 
+	do while runs at least once
+	
+string tokenizer 
+	object which parses a string and splits it based on a delimiter 
+	
+string pool 
+	heap 
+	refers to all string values where they are stored etc 
+	
+wrapper class 
+	lets you treat primitives as objects 
+autoboxing
+	primitive to a wrapper 
+unboxing 
+	wrapper to a primitive 
+	
+varargs 
+	any number of arguments into a method 
+	cannot have multiple varargs per method list 
+	
+final
+	non-access modifier 
+	optional modifier 
+	variables, methods, classes
+	cannot be changed 
+	methods cannot be overriden
+	classes cannot be extended 
+	variables cannot be changed 
+finally 
+	end of try catch block
+	always run
+	can have try finally 
+finalize 
+	mark an object ready for gc 
+	only once 
+	cannot force 
+	
+checked exception 
+	must be handled or declared 
+handled
+	risky code which could throw an exception, in TCF
+declared 
+	throws in signature 
+unchecked exception 
+	dont have to handle or declare them 
+	
+base class of excpetion
+	throwable
+	
+throw vs throwable 
+	throws 
+		declares in a method signature, that exception of that type, may be thrown
+		exception propagation 
+	throwable
+		exceptions etc 
+
+io
+	reading and writing to files 
+FileInputStream
+	accepts raw bytes 
+FileOutputStream
+	bytes 
+FileReader
+	
+FileWriter
+
+BufferedReader
+
+BufferedWriter
+	
+Serialization
+	state of an object to a byte stream 
+	object must be serializable 
+serializable
+	marker interface 
+	
+deserializing 
+	ObjectInputStream, FileInputStream, 
+	call readObject() cast it to your Bean 
+	
+unit tests 
+
+
+MAVEN 
+	dependency manager and build automation tool 
+	dependencies storied in one of 3 locations:
+		locally, on .m2/repository 
+		globably, mvnrepository.com 
+		project level, workspace 
+		
+Project Object Model (pom)
+	xml file that contains information about the project and configuration details 
+		details include project dependencies and plugins 
+
+Maven "goals"
+	represent specific tasks which contributes to the building or management of projects 
+	1. clean => delete all compiled code 
+		/target 
+	2. compile => compiles source code 
+	3. package => perform all tests in src/test/java, package into JAR/WAR 
+	4. install => install the JAR/WAR file to the local repository 
+	5. deploy => copies the JAR/WAR file to the remote repo 
+		usually a server 
+
+JAR = Java Archived Resource 
+WAR = Web Archive Resource 
+
+Maven Build Lifecycle 
+	8steps
+	1. validate => ensures project contains all necessary information 
+	2. compile => compiles the project's source code 
+	3. test => all unit tests are run on decompiled source code 
+	4. package => packages all compile code to a JAR/WAR file 
+	5. integration => performs all integration tests on JAR/WAR file 
+	6. verify => run checks on the integration tests 
+	7. install => installs the package to the local repository 
+	8. deploy => copies the final package to the remote repo ]
+V C T P I V I D 
+vct piv id 
+	
+integration test 
+	tests performed to expose deficits in the interactions between integrated components 
+	
+	
+Generics 
+	enforce compile time safety by allowing you to use parameterized types 
+	prior to java 5, list names = new arraylist();
+	since then, you can use the diamond operator and allow the compiler to prevent causing this problem
+	prior to java 7, List<String> names = new ArrayList<String>();
+	in Java 8, List<String> names = new ArrayList<>();
+generics naming conventions:
+	E implies an element 
+	K implies a map key
+	V implies a map value 
+	N implies a number 
+	T is for some generic data type 
+	S, U, V for multiple generic types 
+	
+API - application programmable interface 
+	everything in hierarchy implemens one single interface 
+	
+collections framework 
+	set of classes and interfaces that implement commonly used data structures 
+	
+Iterable
+	right side of enhanced for loop 
+	
+	
+list -> ordered, index based, duplicates allowed,
+set -> unique elements only, not index driven 
+queue -> used when elements should be added and removed in a specific order 
+map -> used to identify a value by a key 
+
+iterator -> interface that allows you to iterate through a collection 
+	boolean hasNext()
+	E next() 
+	
+enumeration -> objects that implement this interface generate a series of elements one at a time 
+	boolean hasMoreElements() 
+	E nextElement() 
+	
+java.util	
+	Collection 	
+		single object that acts as a container for other objects
+		https://upload.wikimedia.org/wikipedia/commons/a/ab/Java.util.Collection_hierarchy.svg
+
+		Set 
+			NOT index driven 
+			allows UNIQUE elements only 
+			do NOT preserve order of insertion 
+			
+			HashSet<E>
+				subset of set 
+				backed by HashMap
+				guarentee no order when iterating 
+				allow one null value 
+				insertion and traversal are fast 
+				does not maintain order of insertion 
+				
+				SortedSet<E>
+					can be sorted by a comparable or a comparator 
+					
+					NavigableSet 
+						provides methods to report the closest match for a given search target 
+					
+						TreeSet
+							backed by sorted tree
+							maintains a sorted order 
+							singular value 
+							cannot include null values 
+							insertion and retrieval are slow 
+							
+		List<E>
+			ordered - preserve order in which they are inserted 
+			allow duplicate entries 
+			elements are accessed by index 
+			
+			ArrayList 
+				resizable arrays 
+				traversal is fast 
+				insertion and deletion is slow 
+				
+			LinkedList<E> 
+			note: also uses Deque 
+				implements both list and queue 
+				has all the methods of List and Queue
+				insertion and deletion are fast 
+				no risk of resizing 
+				accessing some arbirtary index is slow 
+			
+			Vector 
+				"old school"
+				thread-safe ArrayList 
+				
+				Stack 
+					should use an ArrayDeque for stacks
+					
+		Queue<E>
+			first in, first out 
+			used when elements should be added and removed in a specific order 
+			unless specified, elements are ordered FIFO 
+			
+			Deque 
+			
+				ArrayDeque <E>
+					"pure" double ended queue 
+					stores element in a resizable array 
+					can be implemented as either a queue or a stack 
+					
+					NOTE: SEE PICTURE FOR TABLE HERE 
+					OPERATIONS 	^	Throws Exception	^	Returns null 
+					---------------------------------------------------
+					insert		^	boolean add(Ee)		^	boolean offer(Ee)
+					---------------------------------------------------
+					remove 		^	E remove()			^	E poll()
+					---------------------------------------------------
+					examine		^	E element()			^	E peek()
+					---------------------------------------------------
+					
+					how to make a: 
+					queue 
+						offer poll peek 
+					stack
+						push poll peek 
+						
+						
+	Map<K,V>
+		identifies a value by a key 
+		each element in a map is a key-value pair 
+		
+		HashMap<K,V>
+			store elements in key-value pairs 
+			allow one null key, as many null values 
+			insertion and retrieval of the element by key is fast 
+			does not maintain order of insertion 
+			
+		Dictionary 
+			
+			Hashtable<K,V> 
+				Note: also implements Map 
+				thread-safe, HashMap
+				does not allow any null keys 
+				**DIFFERENCE BETWEEN HASHTABLE AND HASHMAP
+				
+		SortedMap
+			
+			NavigableMap 
+			
+				TreeMap<K,V>
+					keys are stored in a sorted tree structure 
+					keys are always sorted 
+					adding and retrieving are slow 
+					key and value 
+
+
+Strings are sorted! 
+Lexicographically 
+	special character 
+	0-9 
+	A-Z
+	a-z
+	
+public interface comparable<T>{
+public int compareTo(T that);
+}
+
+define a class' natural ordering 
+return is 
+	zero => the two objects are equal 
+	negative => _this object is less than "that" object 
+	positive => _this object is greater than "that" object 
+	
+public interface Comparator<T>{
+	public int compare(T _this, T that);
+}
+
+** 
+
+Difference 				comparable				comparator			
+
+package name			java.lang				java.util 
+
+interface must be 		yes						no
+implemented?	
+
+method name 			compareTo				compare 
+
+# of parameters 		1 						2 
+
+
+	
+how do we sort these collections 
+	TreeMap / TreeSet 
+		pass a comparator into their constructors 
+		they both implement SortedMap and SortedSet respectively 
+	List -> Collections.sort(List<T>) 
+		Collections.sort(List<T>, Comparator<T>)
+		
+
+----------------------------------------- DAY FOUR -----------------------------------------
+
+Good Videos: 
+
+1. java brains 
+2. cave of programming 
+3. thenewboston 
+
+log4j 
+
+logging 
+	records events that occur during software execution 
+	allows developers to access information about applications which we do not always have direct access to 
+	system accumulate log entries as the user executes the application 
+	log levels 
+		TRACE 
+			designate finer-grain informational events then DEBUG
+		DEBUG 
+			informational events that are useful to debug an application 
+		INFO 
+			informational messages that highlight progress of the application 
+		WARN 
+			potentionally harmful situtations 
+		ERROR 
+			events that still might allow the application to continue to run (maybe)
+		FATAL 
+			severe events that presumably lead the application to abort 
+	log request with level X in a logger with level Y is enabled given that X >= Y 
+		ALL < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF 
+		
+Process 
+	independent sequence of execution which has its own memory address and provides the resources needed to execute a program 
+	consist of multiple threads 
+
+	**
+Thread 
+	subset of a process that is also an independent sequence of execution(single unit of execution)
+	but, threads of the main process run in the same memory space 
+	cannot determine when they will run 
+		managed independently by the scheduler 
+multithreading 
+	extends the idea of multitasking into applications 
+	where you can subdivide operations into individual parallel threads 
+	each thread can have its own task 
+	
+Lifecycle of a thread 
+	1. New - newly created thread, not yet executing  
+	2. Runable - running or ready for execution waiting for its resource allocation 
+	3. Blocked - waiting to aquire a monitor lock to enter or reenter a synchronized block 
+	4. Waiting - waiting for some other thread to perform an action without any time limit 
+	5. Timed Waiting - waiting for some other thread to perform a specific action for a specific time 
+	6. Terminated - has completed its execution 
+	
+2 ways to create a thread: 
+	create a class that extends Thread 
+		override run() method 
+		once instatiated, call the start() method 
+	create a class that implements Runnable 
+		override the run() method 
+		pass an instance of your implementing class to a thread constructor to institiate 
+		once institated, call the start() method 
+		
+threadsafe
+	allows only one thread to access its resources at a time 
+
+Deadlock 
+	describes a situation where 2 or more threads are blocked by trying to access the same resource, waiting for the other 
+
+Synchronized
+	using the synchronized keyword on a piece of logic enforces that only one resource can be accessed at a time 
+
+Race condition 
+	in a multithreaded environment, a race condition occurs when 2 or more threads attempt to access the same resource 
+
+**
+Design Pattern 
+	established general solution to a commonly occurring software development problem 
+	Creational
+	Structional
+	Behavioural 
+Problem: how do we create an object in memory only once in an application and have it shared amoung multiple classes? 
+	Solution: Singleton 
+		private static variable<T> 
+		private constructor 
+		public static getInstance() method, which will either instantiate the object, or return the existing one in memory
+	When? 
+		connection to DB 
+		logger 
+Problem: how do we write code that creates objects in which the precise type won't be known until runtime? 
+	Solution: Factory
+		abstract data type -> interface 
+Problem: how do we write code which creates an object that has numerous values?
+	solution: builder
+		static class which has all the fields of its outer class 
+		methods with the same name as the fields, each have a return type of your builder
+		build() method which returns the new object 
+
+
+----------------------------------------- DAY FIVE -----------------------------------------
+
+import static 
+	allows for an import of static members of a class 
+	import static java.util.Collections.* 
+	
+string tokenizer
+	breaks up a string with a given delimiter 
+	
+lambda 
+	construct which enables functional programming 
+
+functional interface 
+	has exactly one abstract method 
+	
+predicate<T> {
+	boolean test(Tt);
+}
+	functional interface with just one method 
+	
+note: delimiters 
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

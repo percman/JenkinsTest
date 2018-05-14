@@ -1,0 +1,375 @@
+What is HTML?
+	HyperText Markup Language 
+	although not a programming language, used to tell a browser how to structure a webpage 
+	
+What is the anatomy of an HTML page?
+	opening tag
+	closing tag 
+	content 
+	attributes 
+	
+Can you tell me some HTML tags?
+	a img ol li ul table thead tbody header footer p div script h1 through h6 span title link 
+	
+What is XML?
+	Extensible Markup Language 
+	software- and hardware-independent tool for storing and transporting data
+	Used to carry data, not to display it 
+
+What is the difference between an XML element and an XML attribute?
+	both are used to carry data
+	element 
+		can carry multiple values (nest values, like li to an ol)
+		expandable for future use 
+		can describe the structure (table, table elements)
+	attributes 
+		cannot carry multiple values 
+		are not easily expandable for future use 
+		cannot describe the structure 
+	best to use attributes to describe info that is relevant to the data 
+
+What is well-formed XML?
+	refers to correct XML syntax 
+	1. XML docs must have a root element 
+	2. XML elements must have closing tags 
+	3. XML tags are case sensitive 
+	4. XML tags must be properly nested 
+	5. XML attributes must be quoted ""
+	
+	Qu N RE CS CT 
+
+What is a Document Type Definition?
+	a set of markup declarations that defines the legal building blocks of an XML document	
+
+What is an XML Schema?
+	like a Document Type Definition, a schema provides a list of elements which may be used to describe the hierarchy
+	  in which elements are to be used, as well as provide the means to enforce the elements to be used in a specific format
+	simple and complex types 
+	type inheritance 
+	XML namespaces to create compound documents of multiple markup languages 
+	
+What is valid XML?
+	well-formed XML that conforms to a Document Type Definition 
+
+What is CSS?
+	Cascading StyleSheet
+	used to style HTML pages 
+	why? centralize a location to change styles 
+
+What is Bootstrap?
+	developed by twitter, 
+	front-end component library and contains themes to style webpages 
+		includes CSS and JS libraries
+
+What is JavaScript?
+	object oriented as of ES6, 
+	client side interpreted language that is understood by web browsers to make web pages dynamic 
+	not meant for creating desktop applications, not java 
+	cannot be used to access local files 
+	built for DOM manipulation 
+		Document Object Model 
+			represent the document as nodes and objects so that programs can manipulate structure, style, and content 
+
+What are the data types?
+	JS data types 
+		primitives
+			boolean 
+			null 
+			undefined 
+			number 
+			string 
+			symbol
+		object
+			function **
+			array 
+			(date? time?)
+			
+		S U N B N S 
+		F A 
+		
+
+How can objects be created in JavaScript?
+	collection of key-value pairs 
+	created with 
+		"new" keyword:  		let person = new Object();
+								person.name = "William";
+		literal notation:		let person = {
+									name = "William",
+									age = 25
+									};
+		form of "constructor"	function Person(name, age){
+									this.name = name;
+									this.age = age;
+								}
+								let p = new Person("William", 25);
+
+What makes functions in JavaScript different from other languages?
+	functions are objects!
+	can be anonymous 
+	can be self-invoking 
+	can be used as callbacks 
+	can be hoisted 
+	
+	O H A SI CB 
+	
+What is truthy and falsy?
+	values that do not evaluate to what is expected 
+		false, 0, "", NaN, null, and undefined are all false 
+		null == null //true 
+		null == undefined // true 
+		undefined == null //true 
+		undefined == undefined //true 
+		null == ANYTHINGELSE // false 
+		console.log("" == 0) //true 
+		NaN is not equal to anything, including itself 
+		NaN == NaN //false 
+
+What is the purpose of isNan?
+	determines if a number is a number or not
+	useful if adding a data type to be a number, and you aren't sure if it will be 
+
+Is JavaScript pass by value or pass by reference?
+	by value 
+
+What are undeclared variables and undefined variables?
+	undeclared variables
+		not declared not initialized 
+		throw a runtime error if an attempt to access is made 
+	undefined variable 
+		declared but not initialized 
+		undefined value 
+
+What are the variable scopes in JavaScript?
+	global: available throughout the length of the program 
+	local: available in the block which they were defined 
+	block: new to ES6, available in the block which it is declared, uses "let"
+	constant: new to ES6, declares variables whose values are not intended to change, "const"
+
+What are global variables?
+	declared outside of a function 
+
+How do you add new elements dynamically?
+	.push()
+
+What is the difference between == and ===?
+	"==" 
+		returns true if and only if both operands have the same value 
+		3 == '3' returns true 
+	"==="
+		returns true if and only if both operands are of the same type and value 
+		type equality checks first 
+		3 === '3' returns false
+		3 === 3 returns true 
+	
+How would one submit a form using JavaScript?
+	document.getElementById("myForm").submit()
+		
+What is an event listener?
+	sometimes called handlers 
+	listens for an event to occur on a specified tag and invoke its callback function 
+	someElement.addEventListener(type, function, useCapture)
+		type can be an element, document, window, any object that supports events 
+		function is the function to be invoked when event occurs 
+		useCapture is a boolean which specifies if capturing or bubbling should be used 
+
+What is an event in JS? What are some common events?
+	in JS are reactions to user input 
+	in general, events begin with "on" 
+	onclick 
+	onsubmit 
+	onmouseover
+	onkeydown 
+
+What is the difference between bubbling and capturing?
+	Bubbling is when events are executed from the innermost tags to the outermost tags 
+	Capturing is when events are executed from the outermost tags to the innermost 
+
+What is strict mode?
+	removes bad syntax, and allows for more secure javascript code 
+
+In what ways can you get references to HTML elements programmatically?
+		getElementById() 
+		getElementsByTagName()			// returns an array 
+		getElementsByClassName() 		// returns an array 
+		querySelector("p.intro")		// returns the first tag with the css selector p.intro 
+		querySelectorAll("li.active") 	// returns an array of all tags with the CSS selector li.active 
+		
+		Id, TagName, ClassName
+		Selector, SelectorALl 
+
+How do we achieve encapsulation in JavaScript?
+	a closure is the combination of a function and the lexical environment within which the function was declared 
+	closures allow for encapsulation because the scopes in JS are global, local, and block 
+	inner functions have access to variables in outer functions 
+	function out() {
+		let a = 3; 
+		function Inner1(){
+			let b = 4;
+			function Inner2(){
+				let c = 5;
+			}
+		}
+	}
+
+How do we achieve inheritance in JavaScript?
+	JS supports prototypal inheritance 
+	every object in JS has a private property which holds a link to another object called its prototype 
+	when trying to access a property, that property will not only be searched for on the object,
+	  but that object's prototype, the prototype of the prototype, and so on, 
+	  until a matching name is found or the end of the prototype chain is reached 
+
+Can functions be overloaded?
+	no
+
+Can functions be overridden?
+	sort of? you can redeclare a function with the same name, but loses all previously meaning 
+
+What is JSON?
+	Javascript Object Notation
+	safe and reliable data interchange object 
+	allows for things, like objects, to be serialized, and sent to a server 
+	.parse()		.stringify()
+
+What is AJAX? What is the AJAX workflow?
+	Asynchronous Javascript And XML 
+	used to update data on a webpage asynchronously between a browser and server without refreshing the page 
+	
+	1. declare and instantiate an XMLHttpRequest object 
+	2. define and assign a function to the onreadystatechange 
+	3. call xhr.open() 
+	4. call xhr.send()
+	5. if a response was recieved, utilize it 
+
+	
+***
+
+
+What are the important XMLHttpRequest properties?
+	onreadystatechange: event handler that is called every time the readystate attribute changes 
+	readyState: returns the state of the request 
+	responseText: returns the server response as a String 
+	responseXML: returns the server response as XML 
+	status: returns the HTTP status code of the response of the request 
+	statustext: returns the string associated with the HTTP statuscode 
+	
+	O R R R S S 
+
+What are the different values of readyState?
+	Value 		State 					Description 
+	0			UNSENT					client has been created, open() not called
+	1			OPENED					open() has been called
+	2			HEADERS.RECIEVED		send() has ben called
+	3			LOADING					downloading; responseText holds partial data 
+	4			DONE 					operation is complete 
+	
+	
+***
+	
+	
+What are some advantages of using AJAX?
+	more interactive 
+	data is retrieved faster 
+	bandwidth utilization 
+		save memory when data is fetched from the same page 
+
+What are some disadvantages of using AJAX?
+	fully dependent on JS 
+	source code is easily human readible, and thus security issues 
+	increases the size of HTTP requests
+	web pages that heaviy rely on AJAX causes problems with the back button 
+
+What technologies use AJAX?
+	HTML CSS 
+	DOM 
+	JSON XML 
+	JS 
+
+What is HTTP?
+	HyperText Transfer Protocal
+	how 2 computers communicate, such as a client and server 
+
+What is an HTTP status code?
+	whenever a request is made, a response is generated with extra information about the response 
+		1XX information 
+		2XX successful 
+		3XX redirect
+		4XX client error 
+		5XX server error 
+
+What is the difference between GET and POST?
+	GET uses the URL to send the data 
+	POST sends data in the request body 
+	
+What is the SDLC?
+	Software Development LifeCycle 
+		process for planning, creating, testing, and deploying an information system 
+	in general, every SDLC methodology follows these steps 
+		1. the existing system is evaluated, deficiencies are identified 
+		2. new system requirements are defined
+		3. proposed system is designed 
+			hardware, OS, programming, security issues, etc 
+		4. new system is developed 
+			all aspects of performance are test 
+		5. new system is implemented 
+			either outright, or gradually 
+		6. once the system has been deployed for a timespan, it is exhaustively evaluated 
+		
+		E R D D I E 
+
+What is the Waterfall Method?
+	linear sequential approach 
+
+What is Agile?
+	iterative, requirements and solutions evolve through the collaboration of cross-functional teams 
+	you don't just "do" agile, rather it is a mindset 	
+	frameworks are comprehensive approaches to the phases of the SDLC 
+	  planning, execution, devlivery
+	1. Individuals and interactions over processes and tools 
+	2. Working software over comprehensive documentation 
+	3. Customer collaboration over contract negotiation 
+	4. Responding to change over following a plan 
+
+What is Scrum?
+	Agile framework for completing complex projects 
+	Iterative 
+	Entire lifecycle is completed in a fixed time period called a sprint
+
+What is the Scrum Workflow?
+	Scrum Roles 
+		1. product owner 
+			represents the product stakeholder and the voice of the company 
+			responsible for what the team is building and why
+			backlog up-to-date and in priority order 
+			defines the product in customer centric terms (user stories) and adds to the product backlog 
+		2. scrum master 
+			ensures the scrum process is followed
+			always on the lookout for how the team can improve as well as resolving any impediments 
+			part coach, part cheerleader, part team member 
+		3. scrum team 
+			individuals that actually build the product 
+			the team owns the engineering of the product and the quality that goes with it 
+			
+			
+	Scrum Lifecycle 
+		1. Product owner creates a prioritzed wish list, called the product backlog 
+		2. during sprint planning, the team pulls a small chunk off of that wishlist and decides implementation 
+		3. team has a certain amount of time to complete its work, but they meets for a "daily standup"
+		4. at the end of the sprint, the word should be potentially shippable 
+		5. a sprint review is held 
+		6. new sprint begins, team chooses next chunk off backlog, repeat 
+
+	PB SP DS PS SR R 
+
+XML namespace
+	compound documents of multiple markup languages 
+	
+Callback function 
+	function passed as a function parameter 
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+What is HTML?
+What is the anatomy of an HTML page?
+Can you tell me some HTML tags?
+	a img ol li ul table thead tbody header footer p div script h1 through h6 span title link 
+What is CSS?
+
+What is XML?
+What is the difference between an XML element and an XML attribute?
+What is well-formed XML?
+	Qu N RE CS CT 
+What is a Document Type Definition?
+What is an XML Schema?
+What is valid XML?
+
+What is Bootstrap?
+
+What is JavaScript?
+What are the data types?
+How can objects be created in JavaScript?
+What makes functions in JavaScript different from other languages?
+	O H A SI CB 
+What is truthy and falsy?
+What is the purpose of isNan?
+Is JavaScript pass by value or pass by reference?
+What are undeclared variables and undefined variables?
+What are the variable scopes in JavaScript?
+What are global variables?
+What are undeclared variables and undefined variables?
+How do you add new elements dynamically?
+What is the difference between == and ===?
+How would one submit a form using JavaScript?
+What is an event in JS? What are some common events?
+How can you submit a form using JavaScript?
+What is an event listener?
+What is the difference between bubbling and capturing?
+What is strict mode?
+In what ways can you get references to HTML elements programmatically?
+How do we achieve encapsulation in JavaScript?
+How do we achieve inheritance in JavaScript?
+Can functions be overloaded?
+Can functions be overridden?
+What is JSON?
+What is AJAX? What is the AJAX workflow?
+What are the important XMLHttpRequest properties?
+	O R R R S S 
+What are the different values of readyState?
+What are some advantages of using AJAX?
+What are some disadvantages of using AJAX?
+What technologies use AJAX?
+What is HTTP?
+What is an HTTP status code?
+What is the difference between GET and POST?
+
+
+What is the SDLC?
+	E R D D I E 
+What is the Waterfall Method?
+What is Agile?
+What is Scrum?
+What is the Scrum Workflow?
+	PB SP DS PS SR R 
+
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,833 @@
+
+----------------------------------------- DAY TWELVE  -----------------------------------------
+
+learnxiny website 
+
+What is HTML
+	HyperText Markup Langauge 
+	Not a programming language (markup langauge)
+	Used to tell a browser how to structure webpages 
+	
+Anatomy of Elements 
+	opening tag
+	closing tag 
+	content 
+	attributes 
+		name value pairs 
+		values are always enclosed in double quotes 
+		
+Anatomy of a Webpage 
+	1. Document Type Declaration: <!DOCTYPE html> 
+		set of rules that an html page has to follow in order for the browser to correctly understand and display the document 
+		must be the first tag
+	2. HTML tags: <html> </html>
+		root element which wraps all content on the page
+	3. Head tags: <head> </head>
+		contains all the stuff in the page content 
+			title, metadata, link to external style sheet, internal style blocks, etc 
+	4. Body tags <body> </body>
+		container for all the content you want to show to your users 
+			text, images, forms, tables, etc 
+
+2 catagories of elements 
+	block elements 
+		form a physical block on the page
+		appear on a new line from whatever content went before it 
+	inline elements 
+		contained within block level elements 
+
+	<a> - anchor 
+	img 
+	ol  ordered list 
+	ul 	unordered list
+	li listitems
+	table 
+	thead container of table 
+	tbody contains body of table 
+	tr table rows 
+	td table data 
+	th table header 
+	br vertical break 
+	div divider 
+	span inline div 
+	title inhead  
+	link  inhead 
+	script 
+	style
+	meta inhead 
+	header 
+	footer 
+	p paragraph 
+	h1 through 6 (1 is largest, 6 is smallest)
+	em emphasizes 
+	strong bolds 
+	audio 
+	video
+	map 
+	iframe (?)
+	form 
+	inputs 
+	buttons
+	labels
+	textarea  
+	select dropdown
+	option 
+	canvas 
+	see mozilla developer network for more 
+		
+		
+HTML form 
+	takes input to be used later 
+	with regards to HTML, main point of interaction between user and application 
+	allows users to send data to the website
+	comprised of one or more widgets 
+		text fields (single or multi)
+		check boxes 
+		buttons 
+		radio buttons 
+		dropdowns 
+	2 important attributes 
+		action 
+			defines the URL where the form's data is collected
+		method 
+			HTTP method used to send the data 
+			GET or POST 
+				GET uses the URL to send the data 
+				POST sends data in the request body 
+
+HTTP - HyperText Transfer Protocol 
+	how 2 computers communicate 
+		
+	client (browser)
+		HTTP request 
+	server (another computer)
+		HTTP response 
+		
+	HTTP verbs 
+		GET POST PUT DELETE OPTIONS HEAD TRACE 
+	HTTP status codes 
+		whenever a request is made, a response is made by the server with a status code, with extra information about the response 
+		1XX information 
+		2XX successful 
+		3XX redirect
+		4XX client error 
+		5XX server error 
+	
+	
+CSS - Cascading Style Sheets 
+	makes webpages "pretty"
+	used to style HTML pages 
+	why is css used? 
+		better than 1995 websites 
+	centralizes a location to change styles 
+	allows for consistency across all pages in a web application, as well as the seperation of concern from the developer and designer 
+	
+how do we use CSS 
+	inline 
+		inside an HTML element, you use the style attribute 
+	internal 
+		inside the style tag in the head 
+	external 
+		using the link tag in the head 
+		href property to specify the relative path to the file 
+		
+CSS order of execution 
+	1. inline 
+	2. internal 
+	3. external 
+	4. browser default 
+note: best practice is to use external 
+
+CSS consists of 2 building blocks 
+	properties
+		identifiers that indicate which stylistic features you want to change 
+	values
+		indicate how you want to change those sytlistic features
+	PV pairs are called CSS declarations 
+	declarations are put inside declaration blocks 
+	CSS declarations are paired with CSS selectors 
+		HTML tags 
+		id's, using #name_of_id
+		class, using .name_of_class
+		attributes, using [attr_name]
+		attribute/value, using [name=value]
+		
+	a,h1,h2,p{
+		test-align: center;
+		color: green;
+	}
+	
+	Groups of Selectors 
+		A,B => style will apply to any element matching A and/or B 
+		A B => style will be applied to any element matching B that is a descendent of any element matching A
+		A > B => any element that is a direct child of A  
+
+Colors
+	name (green, red, aqua, goldenrod)
+	RGB value => rgb(x,y,z) 0<(x,y,z)<255
+	RGBa => RGB with opactiy, 0<alpha<1
+	hexadecimal 
+	
+display: none 
+	element is completely removed from DOM 
+visiblity: hidden
+	element is hidden but still occupies space 
+margin: 
+	increase space around the HTML element 
+padding: 
+	space inside the element 
+	
+DOM - Document Object Model 
+	represent the document as nodes and objects so that programs can manipulate structure, style, and content 
+	
+	  document 
+		 I
+		HTML 
+		 ^
+	head	  body 
+			   ^
+		   div   div   
+			I     I
+			ul   table 
+	etc		
+
+
+Bootstrap 
+	created by Twitter 
+	front-end component library 	
+		includes CSS libraries 
+		JS libraries (built upon jQuery, jPopper, their own JS libraries) 
+	use your own theme, or Bootstrap official theme 
+containers 
+	classes that are required when using the grid system 
+	boostrap
+		container: fixed width 
+		container fluid: full width 
+		
+	grid system => 12 units 
+		.col x-y 
+			x is the viewport size 
+			y is the number of grids to occupy 
+		.col-x-offset-z
+			x is the viewport size 
+			z is the number of grids to push container to the right 
+			
+viewport size 
+	xs: <768 px (phone)
+	sm: >= 768 px (tablet)
+	md: >= 992 px (laptops, desktops)
+	lg: >= 1200 px (large destops)
+
+
+What is Javascript 
+	object oriented 
+	client-side interpreted language that is understood by web browsers and used alongside HTML to make dynamic webpages 
+	dynamically typed => variable types determined at runtime 
+	IS NOT JAVA 
+	not meant for creating desktop applications
+	cannot be used to access local files, databases, USB files, all the stuff that makes Java awesome 
+	built mainly for 
+		DOM manipulation
+		client side language 
+	
+Origins 
+	created in 1995 by Netscape 
+	originally called Livescript, but changed at the last minute to captalize on Java's marketing success 
+	Microsoft came out with pseudoJS, called JScript 
+	few months later, Netscape submitted Javascript to ECMA international (European Standards Committee)
+	First edition of ECMAScript was released 
+		ES6 came out recently 
+	Javascript supports prototypal inheritance 
+	supports functional programming 
+	
+	
+	
+	
+	
+	
+	
+----------------------------------------- DAY THIRTEEN  -----------------------------------------
+
+
+
+read: Eloquent Javascript **
+
+
+Javascript is not compiled 
+	clientside interpretted language, used to make webpages dynamic 
+	cannot be used to access database, or files
+	created by netscape, changed over to captalize on Java 
+	
+JS data types 
+	primitives
+		boolean 
+		null 
+		undefined 
+		number 
+		string 
+		symbol
+	object
+		function **
+		array 
+		(date? time?)
+	
+Symbols
+	new in ES6
+	each time time Symbol() is called, a new unique symbol is returned 
+		no two symbols are equal 
+		act as unique object keys 
+		
+number 
+	64-bit, double precision values 
+	infinity 
+	-infinity 
+	NaN, not a number 
+null 
+	value which indicates a deliberate non-value 
+undefined 
+	value that indicates an uninitialized value
+	a value has not been assigned 
+
+undeclared variables
+	not declared not initialized 
+	throw a runtime error if an attempt to access is made 
+undefined variable 
+	declared but not initialized 
+	undefined value 
+	
+
+Variable Scope 
+	global: available throughout the length of the program 
+	local: available in the block which they were defined 
+	block: new to ES6, available in the block which it is declared, uses "let"
+	constant: new to ES6, declares variables whose values are not intended to change, "const"
+	
+Testing for Equality 
+	"==" 
+		returns true if and only if both operands have the same value 
+		3 == '3' returns true 
+	"==="
+		returns true if and only if both operands are of the same type and value 
+		type equality checks first 
+		3 === '3' returns false
+		3 === 3 returns true 
+
+Functions 
+	they are objects 
+	can be anonymous 
+	can be self-invoking 
+	can be used as callbacks 
+	can be hoisted 
+What is an anonymous function 
+	function without a name 
+	let add = function(a,b){
+		return a+b;
+	};
+	add(1,9);  //10
+Self-invoking
+	function is invoked without being called 
+	(function(){
+	console.log("Hello World");
+	})();
+	
+	(function(a,b){
+	return a+b;
+	})(10,20);
+Callback Function 
+	function passed to another function as a parameter 
+	the callback is executed inside the other function 
+	this can happen since functions are objects in JS 
+What does it mean for a function to be hoisted 
+	when a function is called in a script before its implementation 
+	
+Object in JS
+	collection of key-value pairs 
+	created with 
+		"new" keyword:  		let person = new Object();
+								person.name = "William";
+		literal notation:		let person = {
+									name = "William",
+									age = 25
+									};
+		form of "constructor"	function Person(name, age){
+									this.name = name;
+									this.age = age;
+								}
+								let p = new Person("William", 25);
+
+Template Literals 
+	String literals which allow for embedded JS expressiosns 
+	declared using the ES6 backticks `
+	embedded expressions are declared inside ${}
+	
+ES6 Loops 
+	for...in => iterate over the properties of an object 
+	for...of => iterate over interable objects, closer to enhnaced for loops
+	
+truthy or falsy? 
+	falsy 
+		values that are not false but evaluate to false 
+		false, 0, "", NaN, null, and undefined all evaluate to false 
+		every other value is true 
+		null and undefined are not equal to anything but themselves 
+		null == null //true 
+		null == undefined // true 
+		undefined == null //true 
+		undefined == undefined //true 
+		null == ANYTHINGELSE // false 
+		console.log("" == 0) //true 
+		NaN is not equal to anything, including itself 
+		NaN == NaN //false 
+		
+	
+Arrow Functions 
+	New in ES6
+	provide shorter syntax than the function expression
+	until the arrow function, every new function defined its own "this" value 
+		problematic with respect to OOP 
+	the new arrow function does NOT have its own "this" value 
+		the "this" value of its enclosing context is used 
+	() => {}   //just a piece of logic used; before JS, sort of like regular Java 
+	para => expression; //just a single expression  
+	(para) =>  {statements} //as many expressions as need, but are required to have {}
+	() => {statements} //to not pass any parameters 
+	
+What is an event? 
+	in JS are reactions to user input 
+	in general, events begin with "on" 
+	onclick 
+	onsubmit 
+	onmouseover
+	onkeydown 
+	HOVER IS NOT AN EVENT IN JAVASCRIPT 
+Eventlistener 
+	sometimes called handlers 
+	listens for an event to occur on a specified tag and invoke its callback function 
+	someElement.addEventListener(type, function, useCapture)
+		type can be an element, document, window, any object that supports events 
+		function is the function to be invoked when event occurs 
+		useCapture is a boolean which specifies if capturing or bubbling should be used 
+Bubbling + Capturing 
+	Bubbling is when events are executed from the innermost tags to the outermost tags 
+	Capturing is when events are executed from the outermost tags to the innermost 
+	
+DOM Manipulation 
+	to programmatically get HTML elements: **
+		getElementById() 
+		getElementsByTagName()			// returns an array 
+		getElementsByClassName() 		// returns an array 
+		querySelector("p.intro")		// returns the first tag with the css selector p.intro 
+		querySelectorAll("li.active") 	// returns an array of all tags with the CSS selector li.active 
+	
+
+	
+how do we achieve inheritance in JS? 
+	JS supports prototypal inheritance 
+	every object in JS has a private property which holds a link to another object called its prototype 
+	when trying to access a property, that property will not only be searched for on the object,
+	  but that object's prototype, the prototype of the prototype, and so on, 
+	  until a matching name is found or the end of the prototype chain is reached 
+ES6 introduced keywords:
+	class
+	constructor 
+	extends 
+	super 
+	static 
+	=> still backed by prototypal inheritance 
+	
+how do we achieve encapsulation in JS 
+	a closure is the combination of a function and the lexical environment within which the function was declared 
+	closures allow for encapsulation because the scopes in JS are global, local, and block 
+	inner functions have access to variables in outer functions 
+	function out() {
+		let a = 3; 
+		function Inner1(){
+			let b = 4;
+			function Inner2(){
+				let c = 5;
+			}
+		}
+	}
+	
+	
+	
+	
+	
+----------------------------------------- DAY FOURTEEN  -----------------------------------------
+
+	
+What is JEE 
+	Java Enterprise Edition 
+	Standard middleware architecture proposed by Sun microsystems for 
+	  developing multitiered, distributed, enterprised-scale business applications  
+	4-tier architecture:
+		1. Client tier (presentation)
+			software (browser) that accesses resources located on the web tier 
+		2. Web tier 
+			accept HTTP requests 
+			servlets / JTP's 
+		3. Application tier 
+			contains the business logic 
+		4. Data tier 
+			external data store 
+			C W A D 
+			
+SDLC 
+	Software Development LifeCycle 
+	process for planning, creating, testing, and deploying an information system 
+	in general, every SDLC methodology follows these steps 
+		1. the existing system is evaluated, deficiencies are identified 
+		2. new system requirements are defined
+		3. proposed system is designed 
+			hardware, OS, programming, security issues, etc 
+		4. new system is developed 
+			all aspects of performance are test 
+		5. new system is implemented 
+			either outright, or gradually 
+		6. once the system has been deployed for a timespan, it is exhaustively evaluated 
+
+What is Agile
+	1. Individuals and interactions over processes and tools 
+	2. Working software over comprehensive documentation 
+	3. Customer collaboration over contract negotiation 
+	4. Responding to change over following a plan 
+	
+	Agile is NOT a thing 
+		you don't just "do" agile, rather it is a mindset 
+	This mindset drives the approach to software development 
+	
+	Agile is an approach to software development based on iterative development, 
+	  where requirements and solutions evolve through the collaboration of cross-functional teams 
+	Agile methods (frameworks) are comprehensive approaches to the phases of the SDLC 
+	  planning, execution, devlivery
+	Scrum is the most common 
+	Agile practices are techniques applied during the phases of SDLC 
+	
+What is scrum
+	Agile framework for completing complex projects 
+	Iterative 
+	Entire lifecycle is completed in a fixed time period called a sprint
+	
+	Scrum Roles 
+		1. product owner 
+			represents the product stakeholder and the voice of the company 
+			responsible for what the team is building and why
+			backlog up-to-date and in priority order 
+			defines the product in customer centric terms (user stories) and adds to the product backlog 
+		2. scrum master 
+			ensures the scrum process is followed
+			always on the lookout for how the team can improve as well as resolving any impediments 
+			part coach, part cheerleader, part team member 
+		3. scrum team 
+			individuals that actually build the product 
+			the team owns the engineering of the product and the quality that goes with it 
+			
+			
+	Scrum Lifecycle 
+		1. Product owner creates a prioritzed wish list, called the product backlog 
+		2. during sprint planning, the team pulls a small chunk off of that wishlist and decides implementation 
+		3. team has a certain amount of time to complete its work, but they meets for a "daily standup"
+		4. at the end of the sprint, the word should be potentially shippable 
+		5. a sprint review is held 
+		6. new sprint begins, team chooses next chunk off backlog, repeat 
+		
+XML
+	Extensible Markup Lnaguage 
+	Used to carry data, not to display it 
+	do not truncate whitespaces 
+	tags are case sensitve 
+	must start with a letter or an underscore 
+	cannot contain any permutation of: x, X, m, M, l, L in this order 
+	
+What is the difference between an element and an attribute 
+	both are used to carry data
+	element 
+		can carry multiple values (nest values, like li to an ol)
+		expandable for future use 
+		can describe the structure (table, table elements)
+	attributes 
+		cannot carry multiple values 
+		are not easily expandable for future use 
+		cannot describe the structure 
+	best to use attributes to describe info that is relevant to the data 
+	
+Well-formed XML 
+	refers to correct XML syntax 
+	1. XML docs must have a root element 
+	2. XML elements must have closing tags 
+	3. XML tags are case sensitive 
+	4. XML tags must be properly nested 
+	5. XML attributes must be quoted ""
+	
+What is valid XML 
+	well-formed XML that conforms to a Document Type Definition 
+	
+What is a Document Type Definition 
+	a set of markup declarations that defines the legal building blocks of an XML document	
+	
+Schema 
+	like a Document Type Definition, a schema provides a list of elements which may be used to describe the hierarchy
+	  in which elements are to be used, as well as provide the means to enforce the elements to be used in a specific format
+	simple and complex types 
+	type inheritance 
+	XML namespaces to create compound documents of multiple markup languages 
+	
+	simple types are the primitive data types contained by elements and attributes 
+		resemble Java primitives in that they are atomic 
+	complex types describe how elements are organized and nested 
+		resemble Java class definition with fields but no methods 
+	
+	XML namespace
+		provide a qualified name for an XML element or attribute similiar to how packages in Java provide a qualified name
+	
+	
+XML in Java 
+	JAX-P 
+		Java API for XML parsing 
+	JDK has two built in parsers 
+		DOM 
+			parses an entire XML document and loads it into memory 
+			easier to use 
+			slow, consumes a lot of memory if it loads a large XML document 
+		SAX 
+			does NOT load any XML document into memory 
+			it is faster and uses less memory than DOM because of that 
+			more complicated
+			does not create an object representation of an XML doc 
+	JAX-B 
+		Java API for XML binding 
+		used to convert objects to/from XML
+		marshalling: POJOs to XML (writing)
+		unmarshalling: XML to POJO (reading) 
+	
+	
+JSON 
+	JavaScript Object Notation
+	safe and reliable data interchange object 
+	JSON is a string representation which is easily readable by humans and machines 
+	allows for objects, arrays, numbers, strings, booleans, and null to be serialized 
+	
+	JSON.parse()
+		converts JSON to a JS object 
+	JSON.stringify() 
+		turns a JS object to JSON 
+	
+AJAX
+	Aysnchronous Javascript And XML 
+	used to update data to a webpage by using asynchronous data between the browser and server 
+	  without the need to refresh the page 
+	new technique which allows for web systems and applications to be better, faster, and more interactive 
+	core object in AJAX is the XML HTTP request object which is used in transfering data between client and server 
+
+AJAX workflow **
+	1. declare and instantiate an XMLHttpRequest object 
+		let xhr = new XMLHttpRequest();
+	2. define and assign a function to the onreadystatechange property,
+	  an event handler, to change the response 
+		xhr.onreadystatechange = function() {
+			if(xhr.readystate === 4 && xhr.status === 200){
+				//do stuff 
+			}
+		}
+	3. call the xhr.open() method, which takes 3 arguments 
+		verb, a string, which http method you want to use 
+		URL, a string, url to send the request to 
+		aysnc, boolean default to true, whether you want the call to be asynchronous or not 
+			allow something to update upon refresh of a page or not 
+			xhr.open("GET your-api-url"), 
+	4. call xhr.send(), which sends the request to the server specified in the URL 
+		xhr.send() 
+	5. if the response was recieved, the onreadystatechange will handle the response using:
+		xhr.responseText
+		xhr.responseXML 
+	
+Important Properties of XMLHttpRequest
+	onreadystatechange: event handler that is called every time the readystate attribute changes 
+	readyState: returns the state of the request 
+	responseText: returns the server response as a String 
+	responseXML: returns the server response as XML 
+	status: returns the HTTP status code of the response of the request 
+	statustext: returns the string associated with the HTTP statuscode 
+	
+	Ready State Values 
+	
+Value 		State 					Description 
+0			UNSENT					client has been created, open() not called
+1			OPENED					open() has been called
+2			HEADERS.RECIEVED		send() has ben called
+3			LOADING					downloading; responseText holds partial data 
+4			DONE 					operation is complete 
+
+
+HTTP Status Codes 
+	code that inicates whether a specific request hs been completed 
+		1XX - Information 
+		2XX - Success 
+		3XX - Redirection 
+		4XX - Client Error 
+		5XX - Server Error 
+		
+	200 - okay
+	400 - weird authorization 
+	401 - unauthorization 
+	403 - forbidden 
+	404 - not found 
+	500 - internal server error 
+
+Advantages of AJAX 
+	more interactive 
+	data is retrieved faster 
+	bandwidth utilization 
+		save memory when data is fetched from the same page 
+Disadvantages of AJAX 
+	fully dependent on JS 
+	source code is easily human readilbe, and thus security issues 
+	increases the size of HTTP requests
+	web pages that heaviy rely on AJAX causes problems with the back button 
+	
+Idempotent 
+	POST - encodes the data within the request body 
+		should be used if processing a form has side effects 
+	GET - encodes the data into the URL 
+		should be used if processing a form is idempotent 
+		
+
+	
+----------------------------------------- DAY FIFTEEN  -----------------------------------------
+
+	
+What is a Servlet? 
+	Java object that responds to HTTP requests 
+	first web technology for Java and is part of JEE architecture 
+	run inside a servlet container 
+
+web server 
+	uses HTTP protocol to transfer data 
+		a user types a URL into the client, the browser sends a request to the server 
+		the server recieves the request, and returns the static webpage to the client 
+	
+Servlet container 
+	part of your webserver that interacts with servlets
+	used to dynamically generate the webpage serverside 
+		browser sends a request to the web server, 
+		web server checks to see if the request is for a servlet 
+		if it is, the request passes to the servlet container 
+		the servlet container finds which servlet that request was for and actives it by calling service()
+
+Servlet hierarchy
+	servlet: central interface in the API 
+		init()
+		service()
+		destroy()
+		getServletConfig()
+		getServletInfo()
+	ServletConfig: interface 
+		getServletName()
+		getServletContext()
+		getInitParameter(String)
+		getInitParameters()
+	Generic: abstract class that provides implementations for all methods except the service method 
+		extend service()
+			extend this and provide impl to write any kind of servlet 
+	HttpServlet: abstract class that extends generic server 
+		provides support for HTTP
+		overrides the service() with 
+		protected void service(HttpServletRequest, HttpServletResponse)
+			IOException
+			
+Lifecycle of the Servlet  -  managed by the Servlet container 
+	1. Servlet class is loaded 
+	2. Creation of that servlet instance 
+	3. init() is called once
+		allows a servlet to initialize itself
+	4. serivce() is called once for every request recieved by the servlet 
+	5. destroy() is called when it is unloaded by the servlet container (once)
+		web container shuts down (power outage), container needs to reload the entire application 
+		
+Web.xml
+	for a servlet to be accessible from a server, you must tell the servlet container what servlets to deploy,
+	  and what URL's to map to 
+	src/main/webapp/WEB-INF/web.xml
+		deployment descriptor 
+How to configure and map a servlet in the web.xml 
+	<servlet> 
+		<servlet-name>HelloWorld</servlet-name>
+		<servlet-class>com.revature.servlets.HelloWorld</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>HelloWorld</servlet-name>
+		<url-pattern>/HelloWorldUrl</url-pattern>
+	</servlet-mapping>
+	
+	
+		
+PrintWriter
+	Java object that allows you write HTML back to the webpage 
+	on the HttpServletResponse object, there is a getPrintWrite() method 
+	
+Request Dispacher
+	class that allows you to call another servlet from the current servlet,
+	  which gets called if an HTTP request is sent to it 
+	on the HttpServletRequest object, there is a getRequestDispatcher() method 
+	
+	inlcude()
+		if we use include to dispatch a request, the servlet container includes the output generated by the called servlet
+		  as well as the output from the calling servlet
+			get both outputs from both servlets
+	forward()
+		if we use forward to dispatch a request, the servlet container discards the output by the calling sevlet 
+		  and sends only the output of the called servlet 
+			get only the second servlet's output 
+	
+Session Handling 
+	how to keep a user's information from being passed through requests 
+		cookies 			- client side, not entirely hidden, don't use for username/password 
+		hidden form field 	- bad 
+		URL rewriting 		- bad
+		HttpSession 		- server side 
+		
+	request.getParameter(String)
+		pulls string from a form data 
+	request.getSession().setAttribute(String, Object)
+	request.getSession().getAttribute(String)
+
+Front Controller
+	directs every request to the application's resources to a single point of contact 
+	point is: use one servlet 
+	paired with a dispatcher 
+	
+Dispatcher 
+	design pattern which communicates with the front controller servlet to manage which view gets presented 
+	switch statement 
+	
+	
+	
+	
+	
+What is the purpose of timers in JavaScript? Are there any drawbacks of using these?
+    Timers are used to execute a piece of code at a set time or to repeat the code in a given interval of time. This is done by using the functions
+        
+        setTimeout(function, delay) is used to start a timer that calls the particular function after the defined delay, 
+        setInterval(function, delay) is used to repeatedly execute the given function in the mentioned delay and only halts when canceled, and
+        
+        clearInterval(id) instructs a timer to stop
+    Timers execute upon a single thread, thus allowing the possibility of events to queue up, waiting to be executed
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+

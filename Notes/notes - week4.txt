@@ -1,0 +1,783 @@
+
+----------------------------------------- DAY SIXTEEN  -----------------------------------------
+
+did well, presented with Daniel :) 
+
+
+
+----------------------------------------- DAY SEVENTEEN  -----------------------------------------
+
+
+Servlet 
+	plain old Java object that responds to HTTP requests 
+	runs inside a servlet container 
+	first web technology for Java and is part of the JEE architecture 
+		JEE - enterprise edition, achitecture proposed by Sun Microsystems to create a tiered web service 
+			client
+			web 
+			application 
+			data 
+	
+Web Server 
+	uses HTTP protocol to transfer data 
+	client makes an HTTP request, and the server recieves the request, and dispatches a static webpage to the client 
+	
+Servlet Container 
+	part of the web server that interacts with servlets 
+	used to dynamically generate the web page server side 
+	client makes a request to the web server, the web server checks if the request is for a servlet or not
+		if it is, the request gets passed to that servlet 
+		the sevlet container will then find the corresponding servlet, and active it by calling the service() method 
+	
+	can run multiple web applications, each having multiple servlets running inside 
+	
+what is the web.xml? 
+	deployment descriptor 
+		src/main/webapp/WEB-INF/web.xml 
+	allows for servlets to be accessible from a client 
+	tells the servlet container which servlets to deploy and what URL's to map to 
+	project will not deploy with any errors in web.xml 
+	prior to servlet 3.0, web.xml was required
+	versions 3.x and higher, you can annotate your servlet with @WebServlet to provide the same details as web.xml 
+		can only use one or the other! 
+	
+	to change default opening page from index.html or .js, 
+	<webapp>
+		<welcome-file-list>
+			<welcome-file>notIndex</welcome-file>
+			.
+			.
+			.
+			mutltiple welcome pages, in case web browsers don't support functionality of all web pages 
+		</welcome-file-list>
+	</webapp>
+
+	
+What is the servlet lifecycle 
+	the servlet life cycle is managed by the servlet container 
+	1. loads the servlet class 
+	2. Creation of the servlet instance 
+		only one instance is created, concurrent requests are executed by the same servlet 
+	3. the servlet container invokes the init() method
+		allows a servlet to initialize before the first request is processed 
+		init() once per servlet 
+	4. the service method is called
+		servlet container invokes the service() method for every request recieved to the servlet 
+		service() n request times 
+	5. the destroy method 
+		to unload a servlet from the container 
+		servlet gets unloaded if the container shuts down or if the container needs to reload the entire web application 
+		destroy() once per servlet  
+		
+		L C I S D 
+	
+What is EagerLoading and LazyLoading 
+	LazyLoading is when a servlet is instantiated on the first request 
+		performs steps 1, 2, 3 at the first request 
+	EagerLoading is when a servlet is instantiated upon starting the web server 
+		specified with the <load-on-startup>, inside <servlet>
+		does steps 1, 2, and 3 when the web server starts up 
+	<load-on-startup> </load-on-startup>
+
+how to configure the sevlets inside the web.xml
+	the root element in web.xml is 
+		<webapp> </webapp>
+	to configure a servlet, you need 2 things inside the root element per servlet:
+	1.
+	<servlet> 
+		<servlet-name>TheNameOfMyServlet</servlet-name> 
+		<servlet-class>com.name.class.qualified.fully</servlet-class>
+	</servlet> 
+	
+	2.
+	<servlet-mapping> 
+		<servlet-name>TheNameOfMyServlet</servlet-name>
+		<url-pattern>./myservlet</url-pattern>
+	</servlet-mapping> 		
+
+	can now handle requests! 
+	
+	can also pass parameters to a servlet from a web.xml 
+		<param-name> 
+		<param-value> 
+		
+what is a ServletContext and ServletConfig **
+	ServletContext
+		object which contains meta information about the application 
+		avaliable to every servlet in the web app 
+		created at the time of deployment 
+		in scope as long as the web application is executing
+	ServletConfig 
+		object which is avaliable to a particular servlet
+		in scope as long as the servlet is executed 
+		is destroyed when the servlet execution completes 
+	
+What are init params and context params
+	init param stores data only accessible to the serlet to which it is defined 
+	declared inside <servlet>
+	<servlet>
+		<servlet-name></servlet-name>
+		<servlet-class></servlet-class>
+		<init-param>
+			<param-name>Name</param-name>
+			<param-value>Example</param-value>
+		</init-param>
+	</servlet>
+	
+	context param is declared under <webapp> and stores data accessible to the entire application 
+	<webapp>
+		<context-param>
+			<param-name>
+			<param-value>
+		/
+	/
+	
+Servlet API 
+	servlet - interface: central interface in API 
+		init()
+		service()
+		destroy() 
+		getServletConfig() 
+		getServletInfo() 
+	ServletConfig - interface 
+		getServletName()
+		getServletContext() 
+		getInitParameterNames()
+		getInitParameter(String) 
+	GenericServlet - abstract class: provides implementations for all methods except service() 
+		is extended and implementated to write any kind of servlet 
+	HTTPServlet - abstract class: extends ServletConfig
+		provides support for HTTP protocol 
+			doGet, doPost, doPot, doDelete
+		overrides service() method, 
+			public void sevice(HttpServletRequest, HttpServletResponse)
+				throws a Servlet Exception, IOException 
+			
+
+
+
+What are the components to an HTTP Request 
+	language agnostic 
+	verb - the HTTP method used 
+	URI - Uniform Resource Indicator 
+		used to identify the resource on the server 
+	HTTP version - 1.1
+	request headers - contain metadata for the http request message 
+	request body - message content or resource representation 
+	
+What are the components of an HTTP Response 
+	status code - server status for the resposne 
+	http version - 
+	response header - contains metadata for the HTTP response as key-value pairs 
+	response body - response message content 
+	
+URI URL URN 
+	Uniform Resource Identifier  
+		identify a resource by location and/or name 
+	Uniform Resource Locator 
+		subset of URI 
+		identifies the network location of the resource 
+		uri + host + port 
+	Uniform Resource name
+		subsit of URI 
+		simply the unique name of the resource 
+		
+What is the Request Dispatcher 
+	class that enables your servlets to call another servlet from inside your servlet,
+	  which gets called as if an HTTP request was sent to it (the second servlet)
+	
+	getRequestDispatcher() returns an instance of the request dispatcher, method of the HttpServletRequest object 
+
+What is the difference between forward and include 
+	if we use include() to dispatch the request, the servlet container includes 
+	  the output generated by the called servlet as part of the output from the calling servlet 
+		TLDR: get output from both servlets 
+	if we use forward() to dispatch the request, the servlet container discards the output generated 
+	  by the calling servlet and sends only the output of the called servlet 
+		TLDR: get the second servlet's output only 
+
+What is sendRedirect() 
+	a method of HttpServletResponse, used to redirect resources to different servers or domains 
+	the redirect sends a header back to the client which contains the resource URL to be redirected by the client
+		the client initiates a new request to the given URL
+	slower than using forward() because it requires an extra trip 
+	
+	
+	
+
+----------------------------------------- DAY EIGHTEEN  -----------------------------------------
+
+
+Processing a form using servlets 
+	request.getParameter("tagname")
+		returns a string based on the tagname 
+	could also have radio buttons 
+	
+	1. 
+	<form method="post" action="LoginServlet">
+		<input type="text" name="username">
+		<input type="password" name="password">
+		<input type="radio" name="reimbur" value="literally anything">
+		<input type="radio" name="reimbur" value="literally anything else">
+		<input type="submit" value="Submit">
+	</form>
+	
+	2. 
+	String username = request.getParameter("username");
+	String password = request.getParameter("password");
+	String reimbursement = request.getParameter("reimbur");
+
+Session Handling
+	1. Http Session 
+	2. Cookies 
+	3. Hidden form fields 
+	4. URL rewriting 
+	5. Local Storage(HTML5)
+	
+	User currentUser = getUserFromDb(username, password)
+	
+	request.getSession().setAttribute("currentUser", currentUser);
+	
+	User myUser = request.getSession().getAttribute("currentUser");
+
+Jackson
+	third party library which converts POJOs to JSON, and JSON to POJO 
+	in order for Jackson to work, ** you must have a public noargs constructor** 
+	
+	public class Pokemon {
+		int id;
+		String name; 
+		String type; 
+		
+		//whenever converted to JSON, the types are exactly the same as above 
+	}
+
+	ObjectMapper 
+		turns the object into JSON 
+		
+		// writes a POJO to JSON format
+		ObjectMapper.writeValueAsString(POJO);				
+		
+		
+		// read JSON data and convert it to a POJO 
+		ObjectMapper mapper = new ObjectMapper();
+		String json = request.getReader().readLine(); 		
+		User myUser = mapper.read(json, User.class); 
+		
+		
+Filter 
+	a servlet filter is an object that can intercept HTTPRequests targeted at your application 
+	
+	when an HTTP request arrives at your application in which your filter intercepts, the filter can inspect 
+		RequestURI 
+		Request Header 
+		Request 
+	  to determine or forward the request
+	
+	create a class that implements javax.servlet.filter to use one 
+	
+	<filter>
+		<filter-name> 
+		<filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>
+		//EITHER: 
+		<url-pattern>
+		//OR
+		<servlet-name>
+	</filter-mapping>
+	
+	
+What is CORS 
+	Cross Origin Resource Sharing 
+	for security reasons, the same origin policy in the Web Application Security Model, 
+	  is implemented by web browsers to prevent scripts contained in the first page to access data in the second page, 
+	  unless they have the same origin 
+	  
+	an origin is the combination of 
+		URI scheme 
+		host name 
+		port number
+	
+	CORS is a technique for relaxing the same-origin policy 
+	  allowing scripts on a webpage to consume resources from a different origin 
+
+	the origin request header tells the server where the client request/code originated from 
+	in order to allow CORS, you msut add the response headers
+		Access-Control-Allow-Origin: "origin"
+		Access-Control-Allow-Method: "GET,POST,PUT"
+
+	Tomcat 
+		http://localhost:8080
+	Angular
+		http://localhost:4200
+		
+		
+	
+
+
+	
+		
+----------------------------------------- DAY NINETEEN  -----------------------------------------
+
+
+What is a Front Controller
+	design pattern which directs all requests for an applications resources to a single point of contact 
+	is a sevlet and uses a dispatcher 
+	
+What is a dispatcher 
+	deisgn pattern which communicates with the front controller servlet to manage which view will be presented to the user 
+	
+What is MVC
+	model view controller 
+	design pattern used to decouple data access and business logic from the manner in which it is displayed to the user 
+	
+What is a model 
+	Model: POJO which carries the data, responds to requests about its state, which is usually about the view, and responds to instructures to change the data (usually from the controller)
+	View: manage the display of information 
+	Controller: interprets inputs from the user, informing the model or view to change as appropiate 
+
+What is NPM 
+	node package manager 
+	command line utility that interacts with a repository of open-source projects which allows developers to create and use them 
+	"THE" package manager for JS 
+	using NPM, we can install libraries, packages, and their dependencies 
+		dependencies are managed in package.json 
+			specifies which dependencies as well as their versions 
+			
+		"npm install" to install the dependencies 
+		dependencies installed into the node_modules/ 
+
+What is webpack and angular CLI 
+	webpack: module bundler which bundles files and dependencies into convenient chunks and for loading that code to a server 
+		a bundle in JS is a file that incorporates assests (HTML, CSS, JS, etc) that belong together and should be served to the client in response to a single request 
+	angular CLI is a command line utility which uses webpack for building functionality to start new projects, create new components, services, pipes, etc 
+		execute tests and deploy your application 
+		$ npm install -g @ angular/cli
+
+What is linting
+	process of checking programmatic and stylistic errors in source code which is useful in keeping code consistent as well as pointing out common mistakes 
+		linting: like getting rid of the stupid lint on your shirt 
+
+
+		
+What is Typescript 
+	open source, typed superset of javascript that "compiles" to plain, vanilla JS 
+		transpiles into JS, takes source code in one language and converts it to source code of another 
+		all JS is TS, but not all TS is JS 
+	class based
+	strongly typed 
+	supported by microsoft 
+	extremely familiar syntax 
+	OOP 
+		classes, polymorphism, inheritance, interfaces, static properties, abstract classes, generics, 
+	
+Identifier Returntype Value 	
+
+basic types 
+	string
+	number 
+	boolean 
+	null
+	undefined 
+	array 
+	tuple 
+	enum
+	any 
+	void (null or undefined) 
+	never
+	
+access modifiers
+	if not provided, default is public 
+	protected - different from java, in that only that class and any subclasses can use that property
+	private 
+	
+property checks
+	optional properties 
+	
+readonly and const 
+	readonly - cannot change after assigning, only used by properties 
+	const is for variables 
+	
+
+
+Angular
+	object oriented, clientside design 
+	Javascript framework for building client side applications using HTM, CSS, JS 
+	allows for expressive HTML, powerful data binding, and is modular by design 
+	use angular to make single-page applications 
+	index.html is the main page, and often the only webpage for an application 
+	angular application can be thought of as a set of components, with services to provide data and functionality across those components 
+	
+Angular != AngularJS 
+	complete rewrite of AngularJS 
+	"Angular 2"
+	they use the following to separate the frameworks: 
+		angular 1.X 			=> 	angularJS 
+		angular 2.X or higher 	=> 	what we are learning 
+	
+	we will be learning angular 5 
+
+Component
+	resusable building block in Angular.Components include 
+		template: UI fragment
+			defining a view for an application
+			created with HTML 
+			determines what gets rendered 
+			includes binding and directives 
+		class: code that supports the view 
+			created with TS, 
+			provides state and behaviour 
+		metadata: provide extra information to angular about the component 
+			actually defines the class as a component 
+			defined with a decorator 
+
+Decorator 
+	special type of declaration that gets attached to a class declaration, method, accessor, property, or parameter 
+	used to provide metadata 
+		how to define a decorator: 
+			@Component ({
+				selector: 'my-component',
+				templateUrl: './my-component.html',
+				styleUrl: ['./my-component.css']
+			})
+			export class MyComponent{
+				// properties 
+				// methods 
+			}
+
+What is bootstrapping 
+	bootstrapping is the first piece of code that gets loaded 
+	we have to tell angular which component to load as our root component 
+	done in @NgModule decorator under the boostrap property 
+	@NgModule is the decorator for the AppModule (app-module.ts), the app's root module 
+	@NgModule decorator tells Angular how to compile and launch the application, as well as ow the app pieces fit together 
+	there must be at least 1 module per angular app 
+	
+Module 
+	used to help organize an application into cohesive blocks of functionality, as well as to keep code modular 
+	in each angular module, we declare the set of components and other files associated with the module and the dependencies needed by those components 
+
+
+
+How do we define a template for a component 
+	inline/single 
+		wrap the HTML code in a single or double quotes 
+		assign it to the template property of the component decorator 
+	inline/multiple
+		wrap the HTML code in the ES2015 backticks
+		assign it to the template property of the component decorator 
+	linked template 
+		provide the relative URL to the template's layout, assign it to the templateURL property of @Component 
+		
+Routing 
+	like <a href> in HTML but better 
+	Angular makes single page applications, so each component gets its turn on the index.html 
+	configure a route for each component 
+	activate the route based on a user action 
+	whenever a component's route is activated, the component's view gets displayed 
+	
+How does one configure routing 
+	1. Import RouterModule from @angular/router in the app.module.ts, and add RouterModule to the @NgModule imports array 
+		application only has one router 
+		RouterModule declares the directives routerLink and routerOutlet 
+	2. Export an array of type Routes, specifying routedefinitions 
+		path: URL segment which gets appended to the URL of our application
+		component: specifies the component associated with the route, whose template is displayed when the route is activated 
+	3. add RouterModule.forRoot() to te imports array of @NgModule, passing in the result of step 2 
+	4. use the routerLink directive and use property binding to allow user actions to activate a route 
+	5. Use the <router-outlet> directive in the host components template to display the activated components template 
+	
+Directive 
+	Custom HTML elements or attributes used to power up and extend our HTML 
+	types 
+		component directive 
+			established in the selector property of @Component 
+			custom HTML elements 
+			create a directive which can be used as a property to, say, italicize text 
+		structural directive 
+			change the structure or layout of a view by manipulating, adding, or removing elements and their children 
+			*ngIf
+				takes a boolean expression and makes an entire chunk of the DOM appear or disappear 
+			*ngFor 
+				used to create for loops, at minimum it needs a looping variable and a list 
+			ngSwitch 
+				set of directives 
+				ngSwitch 
+				*ngSwitchCase 
+				*ngSwitchDefault 
+				
+		attribute directive 
+			listen to and modify the behaviour of other elements, attributes, properties, and components 
+				usually applied to attribtues
+			NgClass 
+				adds or removes a set of CSS classes 
+			NgStyle 
+				adds or removes a set of HTML styles 
+			NgModel 
+				two-way data binding to an HTML form element 
+				exposed in FormsModule 
+				
+Data binding 
+	act of binding an HTML object property to an Angular data data object property 
+	makes it easy to display properties from the component and set DOM element properties to our class propertes 
+	components can listen to events from the DOM to respond as needed to provide an interactive user experience 
+	
+	String Interpolation 
+		one way data binding
+		inserts properties from the component into the text within HTML elements, or assign element properties 
+		EX: {{property to be displayed}}
+	Property Binding 
+		sets an element's property to the value of the template expression 
+		enclose the binding target in []
+		enclose the binding source in ' '
+		EX: <img [style.width.px]='imageWidth'>
+	Event Binding 
+		listens for events and executes a template expression when the event occurs 
+		target event is enclosed in () 
+		just like property binding, the template expression is enclosed in ' ' 
+		EX: <div (click)='clickFunctionInMyComponent()' >
+	
+	
+	Two Way data binding 
+		displays a component class property, and updates that property when the user makes a change 
+		EX: [(ngModel)]
+		binding source must be enclosed in ' '
+
+
+----------------------------------------- DAY TWENTY  -----------------------------------------
+
+
+Angular
+	client side, JS framework
+	single page applications 
+
+Component 
+	resusable building block in Angular.Components include 
+		metadata 
+			decorator 
+			@Component({metadataobject})
+		class 
+		template 
+			view associated with the component 
+		
+Bootstrapping 
+	first component to be loaded when arriving at the application 
+	@NgModule 
+	
+@NgModule
+	app.module.ts 
+	declarations 
+		you tell angular which components belong to this module 
+	imports 
+		tell angular which modules to import 
+			BrowserModule 
+			FormsModule
+			RouterModule.forRoot()
+	providers 
+		tell angular which services are injectable 
+	bootstrap 
+		this tells angular which component to load 
+		
+What is a module 
+	used to group together components and their dependencies which are used to form a cohesive block of functionality
+	every angular application must have at least one module, referred to as the root module 
+		app.module.ts 
+	
+What is a decorator 
+	used to provide meta data at declaration of a class, method, property, parameter to Angular 
+	
+Directive 
+	custom HTML tag or attribute used to power up and extend our HTML 
+	component directives 
+		selector prop in @Component 
+		attributes 
+	structural directive 
+		directives used to add, manipulate, or remove DOM elements 
+			*ngIf 
+			*ngFor 
+			ngSwitch		*ngSwitchCase, *ngSwitchDefault
+	attribute directive 
+		listen to and modify an element, typically applied to Attribtues 
+			NgClass 
+			NgStyle 
+			NgModel 
+				exposed in the forms module 
+
+Data binding 
+	act of binding some HTML object property to an Angular data component property 
+	achieved via 
+		one-way data binding 
+			interpolation 
+				print onto the HML some value defined in your component class 
+				{{}}
+			property binding 
+				bind some HTML attribute to some template expression that is defined in angular 
+				[prop] = 'expression'
+			event binding 
+				listens for events and executes a template expression when the event occurs 
+				(event) = 'logic()'
+		two way data binding 
+			used to display an angular component property and update it whenever a user makes a change 
+			[(ngModel)] = 'property'
+
+
+What is the lifecycle of a component 
+	Angular 
+		creates the component 
+		renders it 
+		creates and renders its children 
+		processes changes when its data bound properties change
+		destorys it, before removing from DOM 
+		
+What are lifecycle hooks 
+	a component's constructor is called, then 
+		ngOnChanges()				**
+		ngOnInit()					**
+		ngDoCheck()
+		ngAfterContentInit()
+		ngAfterContextCheck()
+		ngAfterViewInit()
+		ngAfterViewCheck()
+		ngOnDestroy()				**
+		
+What is a pipe 
+	transform bound properties before they are displayed 
+	out of the box, angular provides pipes for:
+		Date
+		currency 
+		JSON 
+	pipes can be chained/have paramenters 
+	
+How do you build a custom pipe 
+	1. import pipe (decorator) and PipeTransform (interface) from @angular/common (probably)
+	2. Create a class that implements PipeTransform 
+		be sure to export it 
+	3. provide an implementation for transform 
+		input parameter (what is being transformed)
+		optional parameter (ex: currency type USD)
+		return the transform 
+	4. Decorate the class with @Pipe, specify name
+	5. Import the pipe to app.module.ts, adding the pipe to the @NgModule declarations array 
+		
+		
+	@Pipe ({
+		name: 'capitalize'
+	})
+	export class MyPipe implements PipeTransform{
+		trasnform(value:string):string{
+			return value.charAt(0).toUppercase() + value.slice(1);
+		}
+	}
+
+	in the string: 
+		{{ name|capitalize }}
+
+		
+		
+Filter in angular 
+	Array.prototype.filter() 
+		returns a new array with the elements that pass the test 
+		EX:
+			things: string{} = ['cats', 'cakes', 'bears', 'cars', 'Fred', 'soccer']
+			otherThings: string[] = things.filter( thing => thing.startsWith('ca') );
+
+What is a service 
+	a class not dependent on any particular component that are used to provide shared data and logic across components and encapsulate external interactions 
+		could be used for logging across your components, injecting it anywhere 
+	
+What is dependency injection 
+	a coding pattern in which a class recieves the instances of objects it needs (dependencies) from an external source rather than creating them itself 
+	
+How to create a service 
+	1. create a service class 
+		decorate it with @Injectible
+	2. Register the provider 
+		a provider is code that can create or return a service 
+		register a provider in one of two places (providers array)
+			@component: service is injectible to the component and its children 
+			@NgModule: the service is injectible everywhere in the application 
+	3. Inject the service 
+		we achieve dependency injection in the constructor of a class we wish to use the service in 
+		@Component() 
+		export class MyComponent{
+			constructor(private myService: myService){}
+		}
+
+		@Injectible() 
+		export class MyService {
+			// code 
+		}
+
+What are observables 
+	an array whose items arrive asynchronously 
+	help us manage asynchronous data, such as data coming from a backend service 
+	angular uses a third party library called Reactive Extensions RxJS 
+		NOT to be confused with React 
+	
+What is a promise 
+	a promise handles a single value when an asynchronous operation completes or fails 
+	
+What are the differences between a promise and an observable 
+	promises 
+		provide a single future value
+		not lazy, by the time you have a promise, it's on its way to be resolved 
+		not cancellable 
+	observables 
+		emit multiple values over time 
+		are lazy (by default) 
+		will not emit any values until subscribed to 
+		can be cancelled by unsubscribing 
+		also provide operations like map, filter, reduce 
+		
+HTTP request 
+	1. import HttpClientModule from @angular/common/http 
+		must add HttpClientModule to the imports array of @NgModule 
+	2. import HttpClient from @angular/common/http into the service class 
+		add the HttpClient dependency to the constructor of the service class 
+	3. inside the service class, create some method 
+		the HttpClient has methods for each of the HTTP verbs, each take a generic type, and automatically map the response to the provided generic 
+		return an observable 
+		
+			constructor(private http:HttpClient){}
+			
+			getReimbursements():Observable<Reimbursement[]> {
+				return this.http.get<Reimbursement[]>(url);
+			}
+	4. in the component you wish to make an HTTP call in, you must subscribe to the observable returned from the HttpClient method 
+		Subscribe takes two functions, one if the method was successful, and one if the request failed 
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,665 @@
+----------------------------------------- DAY SEVEN -----------------------------------------
+
+techonthenet
+
+
+Multi-level Single Inheritance 
+	as many levels as needed
+Multiple Inheritance
+	a class can interfaces  
+	
+RBS 
+	Relational Database Service 
+	amazon web service 
+	
+RDBS:
+	Relational DataBase Management System 
+	
+What's a database?
+	collection of objects that store data 
+
+Objects 
+	entity: place to hold data in the form of attributes (columns, fields) 
+	records: (rows)
+	
+	schema: group of database related objects 
+	
+	views: virtual tables based on the result set of a query 
+	
+	index - bookmarks applied to columns which allow you to locate data without the need to search the entire database 
+	
+What is SQL?
+	Structured Query Language 
+		language used for managing data held inside an RDBMS 
+
+5 sub languages of SQL
+	Data Definition Language (DDL)
+		CREATE, DROP, TRUNCATE, ALTER, RENAME 
+	Data Query Language (DQL)
+		SELECT
+	Data Manipulation Language (DML)
+		UPDATE, INSERT, DELETE 
+	Data Control Language (DCL)
+		GRANT, REVOKE, 
+	Transaction Control Language (TCL)
+		COMMIT, ROLLBACK, SAVEPOINT 
+
+Naming Convention in SQL:
+	all caps for commands, keywords 
+	underscores for 
+	table names - lower case
+	
+DELETE - deletes the match provided WHERE clause 
+	no 'WHERE' clause, will delete all rows **
+	must be committed to make changes permanant
+TRUNCATE - deletes all rows in the table 
+	cannot be rolled back 
+DROP - removes table from the database
+	includes all rows, constraints, privileges 
+	
+Common SQL Caluses 
+	WHERE: specifies a condition in which records must satisfy in order to be selected to the query 
+		note: may NOT use aggregate functions 
+	GROUP BY: arranges the result set into groups by one or more columns 
+	HAVING: specifies a condition which further restricts which data gets put in which group 
+		uses aggregate functions 
+	ORDER BY: sort the result set by one or more columns 
+	DISTINCT: returns only unique records to the result set 
+	LIMIT: max number of records to be added to the result set 
+	AND/OR: used to combine multiple conditions 
+		conjunctive operators 
+	BETWEEN: used to set a range of acceptance for the condition 
+	IN: specify multiple val. in WHERE clause 
+		shorthand for mulitple OR conditions 
+	EXISTS: tests for the existence of any record in a subquery 
+		returns true if the subquery returns one or more records 
+	
+subquery? 
+	query within a query 
+	can reside in SELECT, WHERE, FROM statements 
+	returns data that will be used in the main query as a condition to further restrict data 
+	
+what's a constraint 
+	rules used to restrict the data in a table 
+	
+	1. Primary key 
+		unique and not null 
+		used to uniquely identify each record within a table 
+		can only have one per table, but can be composed of multiple columns 
+	2. Foriegn key 
+		unique 
+		used to establish a relationship with a primary or unique key from another table 
+	3. Unique Key 
+		unique and can be null 
+		ensures values in the column are unique 
+	4. Not Null Key 
+		requires values in a column are not null 
+	5. Check Key 
+		ensures values in a column meets certain validation criteria 
+	6. Default Key 
+		specifies a default value for a column if one is not provided 
+		
+Referential Integrity 
+	principle that foriegn keys in any referencing table must always refer to a valid row in the referred table 
+
+Orphaned Record 
+	record that references a key which no longer exists 
+	if referential integrity is enforced with a foriegn key, this can never happen 
+	
+Cascade Delete 
+	a foriegn key with cascade delete means:
+		if a record in a parent table is deleted, then the corresponding records in the child's table will be deleted 
+	
+Composite Key 
+	PK which is comprised of one or more columns 
+	
+Aggregate Function 
+	function that returns single output from an array of input 
+	AVG, COUNT, MIN, MAX, SUM, and more! 
+	
+Scalar Function 
+	functions that return a single output from a single input 
+	TO_CHAR, UPPER, LOWER, TO_DATE, TRIM, SUB_STR, REPLACE, REVERSE 
+	
+Multiplicity 
+	relationship between two tables 
+	
+Relationships 
+	one-to-one 
+		relationship between two tables in which the tables should be associated on one and only one matching row 
+		enfored with primary key, unique foriegn key relationship 
+	one-to-many 
+		relationship between two tables in which one row may be related to many rows on another table 
+	many to many 
+		relationship between two tabels where many rows from one table are related to many rows in another table 
+		
+Junction table 
+	table used to establish a many-to-many relationship 
+	created by making a composite key fro both tables, and a FK points to each table's PK 
+	A_B naming convention 
+	
+SELECT A.*, B.* FROM A_B 
+	INNER JOIN A ON A.id = A_B.id 
+	INNER JOIN B ON B.id = A_B.id 
+	
+	
+Entity Relational Diagram 
+	data modelling technique that represents the relations between tables and illustartes the entit framework 
+	comprised of 
+		entites (table, representation of things)
+		attributes (columns)
+		relationships (links between tables)
+
+What's a join
+	JOIN => allows retrieval of data from two or more tables, based on a logical relationship 
+	join conidition defines the way 2 tables are related in a query by specifying the column from each table to be used in a join 
+	
+What are the joins tha are avaliable?
+	https://sqlwithmanoj.files.wordpress.com/2014/08/sql_joins.jpg
+	INNER: returns the rows on the left table that match the rows in the right table, based on the join predicate 
+	OUTER: returns all the rows that match based on the join predicate, as well as all that don't 
+	LEFT: returns all the rows from the left table, as well as those from the right, that match the predicate 
+	RIGHT: returns all the rows from the right table, as well as those on right, that match the predicate 
+	self: a table is joined with itself
+		note: not a keyword! done by defining a single table twice 
+	CROSS: Cartesian product between 2 tables, every row in one table is joined to all rows in another 
+	NATURAL: join on all columns with the same name 
+	theta: join in which any relational operator is used in the join predicate 
+	
+	
+** Create users and admins for next project (1) 
+
+Chinook Practice
+    1. Select all records from the Employee table where first name is Andrew and REPORTSTO is NULL. 
+    2. Select all albums in Album table and sort result set in descending order by title. 
+    3. Update Aaron Mitchell in Customer table to Robert Walter 
+    
+    4. Select all employees hired between 1st of June 2003 and 1st of March 2004
+    
+    5. Delete a record in Customer table where the name is Robert Walter (There may be constraints that rely on this, find out how to resolve them). 
+    
+    6. Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId. 
+    
+    7. Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, lastname, invoiceId, and total. 
+    
+    8. Create a right join that joins album and artist specifying artist name and title.
+    
+    9. Create a cross join that joins album and artist and sorts by artist name in ascending order.
+    
+    10. Perform a self-join on the employee table, joining on the reportsto column. 
+	
+	
+	
+----------------------------------------- DAY SEVEN -----------------------------------------
+
+does an RDBMS hold an RDS 
+what is SQL 
+5 sub languages 
+	DDL - Data Definition Language 
+		CREATE, ALTER, DROP, TRUNCATE, RENAME 
+	DML - Data Manipulation Language 
+		UPDATE, DELETE, INSERT 
+	DQL - Data Query Language 
+		SELECT 
+	DCL - Data Control Language 
+		GRANT, REVOKE 
+	TCL - Transaction Control Language 
+		ROLLBACK, COMMIT, SAVEPOINT 
+		
+DROP 
+	completely removes table from the DB, including rows, procedures, constraints 
+DELETE
+	deletes records that match WHERE 
+	with no WHERE, all rows are deleted 
+ROLLBACK 
+	changes anything up to a saved point
+TRUNCATE 
+	removes all records from a table 
+	cannot be rolled back 
+
+Scalar Function 
+	one output from one input 
+	TO_DATE, TO_CHAR, UPPER, LOWER, ROUND 
+Aggregate Function 
+	one output from many input 
+	COUNT, SUM, AVG, MAX, MIN
+
+Constraint 
+	restricts data in a table column 
+	Primary Key 
+		unique, not null 
+		uniquely identifies each record 
+	Foriegn Key 
+		unique 
+		stablishes a relatinoship with another unique/primary key 
+	Unique Key 
+	Default Key 
+		provides a value when none are given 
+	Not Null Key 
+	Check Key 
+		puts a constraint on attributes 
+		ex - birth date cannot be into the future  
+		
+Multiplicity 
+	refers between 2 tables 
+	one to one 
+		pk to unique k
+		car and a vim 
+	one to many 
+		pk to fk 
+	many to many 
+		junction table 
+		
+Referential Integrity 
+	the principle that every row in a referring table must point to a value row in the referred table 
+Orphaned Record 
+	row in a referring table no FK that doesn't refer to any primary key 
+	
+JOIN 
+	how you join two tables together in a logical manner 
+	one key refers to another key to bring two tables together 
+INNER
+	only in both (matches based on the joined predicate)
+OUTER 
+	Right 
+	Left 
+Self join 
+	joinning a table with itself 
+CROSS 
+	cartesian product 
+NATURAL 
+	inner, matches with columns of the same join 
+theta 
+
+Relational Operator 
+	returns a boolean value based on the value of the two operands 
+	
+Entity Relationship Diagram ERD
+	data modelling technique which represents the relationship between entities as well as the entity framework 
+	entities 
+	attributes 
+	relationships 
+
+CASCADE DELETE 
+	deleting a record on the PK will also delete all corresponding records that have FK pointing to the PK
+	specified on the foriegn key 
+	
+
+	
+What is Normalization 
+	process of reducing redundant data in an entity 
+	all tables are granular in nature 
+		small as possible 
+	only store information related to that table 
+how do we achieve normalization? 
+	First Normalized Form (1NF)
+		create a table for each set of related data which is identified by a PK 
+	Second Normalized Form (2NF)
+		meets 1NF criteria 
+		all non-key constraints depend upon the PK 
+	Third Normalized Form (3NF)
+		meets 2NF critera 
+		all non-key columns are not transitively dependent on the PK 
+Why do we normalize?
+	speed 
+	flexiblity 
+	
+Denormalization 
+	process of adding redundant data to a table 
+	fast reading 
+	
+Database System Types 
+	online transaction processing OLTP 
+		updates to DB are instant 
+		noramlized to 3NF 
+		data updates are kept as short as possible 
+	online analytical processing OLAP 
+		static data, infrequent updates 
+		no normalization 
+		"data warehouses"
+	
+Set Operations 
+	allow the results of multiple queries to be combined into a single result set 
+	UNION 
+		return distinct values from either query 
+	UNION ALL 
+		return all rows from either query, including all duplicates 
+	INTERSECT 
+		return all distinct rows selected by both query 
+	MINUS(EXCEPT)
+		return all distinct rows selected by he first query but not the second query 
+		
+	requirements 
+		for any set operation to occur, there must be the same number of columns selected 
+		must be the same data type 
+		must be in the same order 
+		
+Joins and Set operations look similiar!
+	they both are used to combine data from one or more tables 
+	the difference lies in how the data is combined 
+	JOINS 
+		combine data into new columns 
+		if 2 tables are joined together, then the data is shown in one set of columns alongside 
+			the second table's columns in the same row 
+		SET OPS 
+			combine data into new rows 
+			if we perform set ops on two tables, 
+			then data from the first query is in one set of rows and the 
+			data from the second query is in a second set of rows directly underneath 
+.
+
+What is JDBC? 
+	Java DataBase Connectivity 
+	API for how a client may access a database 
+	5 important interfaces ** 
+		connection 
+			communicates with the database
+		statement 
+			raw SQL statement 
+		prepared statement 
+			parameterized SQL statements 
+		callable statement 
+			calls stored procedures 
+		result set 
+			what gets returned from the statement 
+			
+What do we need to connect to a DB? 
+	URL 
+		URL=jdbc:oracle:thin@<your_url>:1521:ORCL
+	username 
+	password 
+	
+How do we execute a SQL statement?
+	1. create a connection object 
+	2. create a statement object 
+	3. execute the statement and get a resultset, or number of rows affected 
+	4. close the resources 
+	
+Methods to execute a statement 
+	boolean execute(String)
+		returns whether there is a result set 
+	ResultSet executeQuery(String) 
+		executes and returns a result set for the query 
+	int executeUpdate()
+		executes and returns the number of rows modified 
+
+Method				Insert		Update 		DELETE		SELECT 		Returned for Select 	Returned for DML 
+
+execute()			✓			✓			✓			✓			true 					false 
+executeQuery()		X			X			X			✓			ResultSet 				N/A 
+executeUpdate()		✓			✓			✓			X 			N/A 					# of rows modified 
+
+SQLExceptions
+	always handle them! ** 
+	connection information is incorrect 
+	thrown when you attempt to access a column that does not exist 
+	attempt to get data from a ResultSet when it isn't pointing to a valid row 
+
+Handling SQLExceptions
+	getMessage() 
+	getSQLState()
+		vendor specific error code 
+	getErrorCode()
+		provided by the error to signify what went wrong 
+	
+
+
+
+----------------------------------------- DAY NINE -----------------------------------------
+
+
+What is SQL injection? 
+	insertion of a SQL query via the input data from the client to the application
+	  in an attempt to exploit sensitive data from the DB 
+How to prevent:
+	sanatizing: escaping all user supplied input 
+	prepared statements
+	callable statements
+	whitelist validation 
+	
+OWASP 
+	Open Web Applicatoin Security Project 
+CAPTCHA
+	Completely Automated Public Turing (to tell) Computers and Humans Apart 
+
+What is PL/SQL 
+	procedural language extension of SQL 
+	combination of SQL al;ong with features of procedural programming languages 
+	used to define sort procedures, UDF's, cursors, and triggers 
+	
+	
+Stored Procedure
+	named PL/SQL block which performs one or more specific tasks 
+	
+	CREATE [OR REPLACE] PROCEDURE proc_name 
+	  (list of parameters)
+	AS 
+	  /* Decleartion Selection */
+	BEGIN 
+	  /* Execution Section */
+	END;
+	/
+	
+	
+User Defined Function UDF 
+	named pl/sql block which is simliar to a procedure V
+	main difference is that a UDF must return a value 
+	
+	CREATE [OR REPLACE] FUNCTION func_name 
+	  (parameters) RETURN return_datatype
+	AS 
+	  /* Declaration Selection */
+	BEGIN 
+	  /* Execution Section */
+	  RETURN return_datatype;
+	END;
+	/
+	
+note: UDF - average total of invoice per customer **
+	
+Difference between SP and UDF 
+
+Stored Procedures 							User Defined Function 
+
+compiled once, executes when called			(compiled and executed) everytime they are called 
+return 0...N values 						must return a value 
+cannot be used in SELECT, WHERE, HAVING		can be used 
+can have IN,OUT, or INOUT parameters 		can only have IN parameters 
+can use trasnactions 						cannot use stored procedures or transactions 
+
+
+ORACLE does not support an autoincrementing a primary key! ** 
+
+
+what is a trigger?
+	stored programs in PL/SQL which are automatically executing before or after an event 
+	written in response to
+		DML 
+		DDL 
+		Database Operations - SERVERERROR, LOGON, LOGOFF, STARTUP, SHUTDOWN
+		
+	CREATE [OR REPLACE] TRIGGER trigger_name ON tbl_name 
+	BEFORE/AFTER ACTION 
+	FOR EACH ROW 
+	BEGIN 
+		/* do stuff */ 
+	END;
+	/	
+		
+	
+
+what is a sequence? 
+	database object from which multiple users can generate unique integers 
+	
+	CREATE SEQUENCE seq_name 
+		MINVALUE 
+		MAXVALUE 
+		START WITH 
+		INCREMENT BY 
+		(NO CACHE) 
+		(CACHE);
+	
+seq_name.currval to access the current value in the SEQUENCE 
+seq_name.nextval to access the next value in the SEQUENCE 
+
+
+Cursor
+	temporary work area also known as the context area created in system memory when a SQL statement is executed 
+	contains information on a SELECT statement and the rows accessed by it 
+	useful for when an application cannot work effectively with the entire resultset, 
+	  therefore the application needs a mechanism to work with a single row or a subset of the resultset 
+
+Implicit Cursor 
+	automatically created by Oracle whenever a DML statement is made and there is not an explicit cursor for the statement 
+	
+Explicit Cursor 
+	programmer defined cursor in a PL/SQL statement to gain more control over the context area 
+	SYS_REFCURSOR 
+	
+What is a transaction 
+	logical atomic unit of work that contains one or more SQL statements 
+	all ORACLE transactions obey the ACID properties (transaction properties)
+	atomicity
+		all tasks of a transaction are performed or none of them are 
+	consistency 
+		transaction must take the DB from one consistent state to another 
+	isolation 
+		the effect of a transaction is not visible to other transactions until the transaction is committed 
+	durability 
+		property that changes made by a committed transaction are permanant 
+		after a transaction completes, 
+		  the DB ensures through its recovery mechanisms that changes from the transaction are not lost 
+
+	data concurrency 
+		many users can access the same data 
+	data consistency 
+		each user uses a consistent view of the data, including visible changes made by transactions
+		
+	Concurrency Issues 
+		phantom read 
+			during the course of a transaction, new rows are being added by another transaction to the records being saved 
+		nonrepeatable reads 
+			a transaction rereads data it has previously read and finds that another transaction has modified the data 
+		dirty read 
+			a transaction reads data what has been written by another transaction but has not yet been committed 
+			
+	Isolation Levels 
+		serializable
+			highest isolation level
+			requires read and write locks on selected data to be released at the end of a transaction 
+			requires range locks when a SELECT statement has a WHERE clause 
+			does not allow any concurrency issue 
+		repeatable reads 
+			requires read and write locks until the end of a transaction 
+			range locks are not managed, phantom reads can occur 
+		read committed 
+			keep write locks on the selected data until the end of a transaction, 
+			  but read locks are released as soon as SELECT is performed 
+			range locks not managed, phantom reads and non-repeatable reads 
+		read uncommitted 
+			lowest isolation level, allows for the above
+	
+Isolation level 		dirty read 			non repeatable reads 		phantom read
+																					
+Read Uncommited				✓						✓						✓
+																					
+Read Committed 				X						✓						✓
+																					
+Repeatable Reads 			X						X						✓
+																					
+Serializable 				X						X						X
+																					
+
+
+
+
+Data Access Object 
+	design pattern to abstract and encapsulate all acces from the data source, 
+	  seperating business logic from the data layer 
+	consist of:
+		model object
+			bean used to store the data retrieved from the data source 
+		DAO interface 
+			interface which defines the standard operations to be performed on a model object 
+		DAO class 
+			class that implements the DAO interface which is responsible to get data from the data source 
+		
+		
+
+	CRUD
+		CREATE READ UPDATE DELETE 
+
+
+
+----------------------------------------- DAY TEN -----------------------------------------
+
+Drop cannot be rolled back 
+
+
+
+
+10 and 12 
+
+
+10 to 10 
+
+10 to 12 
+
+12 to 10 
+
+12 to 12
+
+
+Normalization
+	1NF
+		the key 
+	2NF 
+		the whole key 
+	3NF 
+		nothing but the key 
+		
+OLTP 
+	used in production 
+		once consumers can see it 
+
+OLAP 
+	data warehouse 
+		slow to update, thus only use when storing data 
+		
+
+Trigger 
+	DML DDL DatabaseOps Before/After 
+	
+Cursor
+	implicit
+	explicit 
+	
+Transaction
+	ACID 
+	Atomicity
+	Consistency
+	Isolation 
+	
+Data Access Object DAO 
+	Design Pattern 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

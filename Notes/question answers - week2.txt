@@ -1,0 +1,277 @@
+5 Sublanguages of SQL
+	DML
+		manipulation 
+		UPDATE, INSERT, DELETE 
+	DDL
+		definition
+		CREATE, DROP, TRUNCATE, ALTER, RENAME 
+	DQL
+		query 
+		SELECT
+	DCL
+		control
+		GRANT, REVOKE
+	TCL
+		transaction 
+		COMMIT, ROLLBACK, SAVEPOINT 
+	
+What are the different constraints
+	PK - Primary key 
+		unique and not null 
+		used to uniquely identify each record within a table 
+		can only have one per table, but can be composed of multiple columns 
+	FK - Foriegn key 
+		unique 
+		used to establish a relationship with a primary or unique key from another table 
+	UK - Unique Key 
+		unique and can be null 
+		ensures values in the column are unique 
+	NNK - Not Null Key 
+		requires values in a column are not null 
+	CK - Check Key 
+		ensures values in a column meets certain validation criteria 
+	DK - Default Key 
+		specifies a default value for a column if one is not provided 
+
+What is cascade delete
+	a foreign key with a record pointing to a parent table will delete the record in the child's table 
+	
+What are some common commands/clauses and their syntax (I gave you a cheat sheet)
+
+
+What are the different relationships? (Multiplicity)
+	one to one 
+		pk to uk
+	one to many 
+		pk to fk 
+	many to many 
+		junction table 
+
+How do you enforce the different relationships
+	referential integrity (?)
+		principle that every row in a referring table must point to a value row in the referred table 
+
+What is an ERD
+	data modelling technique which represents the relationship between entities as well as the entity framework
+		entities 
+		attributes 
+		relationships 
+
+What is Normalization
+	process of reducing redundant data in an entity 
+	ensuring all tables are granular in nature 
+
+How do you enforce Normalization
+	depends on the form:
+		1NF
+			create a table for each set of related data identified by a PK 
+		2NF 
+			all non-key contraints depend on the PK 
+		3NF
+			all non-key column are not transitively dependent on the PK 
+
+What is Denormalization
+	adds redundant data to a table 
+
+What is OLAP/OLTP
+	OLTP - Online Transaction Processing 
+		updates to the DB are instant 
+		normalized to 3NF 
+		data updates are kept as short as possible 
+	OLAP - Online Analytical Processing 
+		static data, infrequent updates 
+		no normalization 
+		"data warehouse"
+		
+What is a nested query
+	quering a query 
+
+What is referential integrity
+	principle that foriegn keys in any referencing table must always refer to a valid row in the referred table 
+
+What is an orphaned record
+	record that references a key which no longer exists
+	if referential integrity is enforced with a FK, this can never happen 
+
+What is an aggregate function/scalar function
+	aggregate:
+		function that returns single output from an array of input 
+		AVG, COUNT, MIN, MAX, SUM, etc
+	scalar: 
+		single output form single input 
+		returns one output from one input 
+
+What is a join
+	allows retrival of data from two or more tables, based on a logical relationship 
+
+What are the different joins available
+	INNER: returns the rows on the left table that match the rows in the right table, based on the join predicate 
+	OUTER: returns all the rows that match based on the join predicate, as well as all that don't 
+	LEFT: returns all the rows from the left table, as well as those from the right, that match the predicate 
+	RIGHT: returns all the rows from the right table, as well as those on right, that match the predicate 
+	self: a table is joined with itself
+	CROSS: Cartesian product between 2 tables, every row in one table is joined to all rows in another 
+	NATURAL: join on all columns with the same name 
+	theta: join in which any relational operator is used in the join predicate 
+
+What are the difference between the joins 
+	see above 
+	
+What is a Set Operation
+	allows results of multiple queries to be combined into a single result 
+
+What are the different Set Operations available
+	UNION 
+	UNION ALL 
+	INTERSECT 
+	MINUS(EXCEPT)
+
+What are the differences between the set operations
+	see above 
+	
+What is the purpose of LIKE
+	in a where clause, to search for a pattern (such as in a string)
+	
+What is the purpose of DISTINCT
+	after SELECT, to return only different values 
+
+What is the purpose of SELECT INTO
+	copies data from one table into another 
+	
+What is the difference between Set Operations and Joins
+	joins combines data into new columns, 
+	sets combine rows into existing columns 
+
+What is the difference between WHERE and HAVING
+	WHERE specifies a search condition within a group to be displayed 
+		check conditions before aggregation takes place 
+	HAVING specifices a search condition for a group or aggregate funcition in a SELECT 
+		check conditions after aggregation takes place 
+
+What is the difference between DELETE, DROP, and TRUNCATE
+	DELETE
+		removes records that match the WHERE clause (all in a table if none is provided)
+	DROP
+		completely removes table from the DB, including rows, procedures, and constraints 
+	TRUNCATE 
+		removes all records from a table (cannot be rolled back )
+		
+What is the difference between ORDER BY and GROUP BY
+	sorts the result set by one or more columns 
+
+What is PL/SQL
+	procedural language extension of sql 
+	allows for additional functionality, such as sort, UDF's, cursors, and triggers 
+
+What is a Stored Procedure
+	PL/SQL block which performs one or more specific tasks 
+
+What is a UDF
+	User Defined Function, similiar to a procedure, except that it must return a value 
+
+What are the differences between a SP and a UDF
+	Stored Procedure 
+		compiled once, executes when called			
+		return 0...N values 						
+		cannot be used in SELECT, WHERE, HAVING		
+		can have IN,OUT, or INOUT parameters 		
+		can use trasnactions 						
+	User Defined Function 
+		(compiled and executed) everytime they are called 
+		must return a value 
+		SELECT, WHERE, HAVING can be used 
+		can only have IN parameters 
+		cannot use stored procedures or transactions 
+		
+What is a trigger
+	stored programs in PL/SQL which are automatically executes 
+	SERVERERROR, LOGON, LOGOFF, STARTUP, SHUTDOWN 
+
+What is a cursor
+	temporary work area (context area) created in system memory when an SQL statement is executed 
+	contains information on a SELECT statement and the rows accessed by it 
+	useful for when an application cannot work effectively with the entire resultset 
+
+What is a transaction
+	logical atomic unit of work that contains one ore more sql statements 
+	all obey ACID 
+
+What are the transaction properties (ACID)
+	Atomicity 
+		
+	Consistency 
+		
+	Isolation 
+		in the process of running, the no other transaction can see it until it is committed
+	Durability 
+		once a transaction is committed, it is permanant
+	
+What are the Isolation Levels
+	read uncommited 
+		lowest level, allows for all of the following 
+	read commited 
+		keeps write locks on the selected data until the end of a transaction 
+		replaced as soon as SELECT is performed 
+	repeatable reads 
+		requires read and write locks until the end of a transaction 
+	serializable 
+		requires read and write locks until on selected data to be released at the end of a transaction 
+		no concurrency issues 
+
+What are the Concurrency Issues 
+	dirty read 
+		*wow* reads data written by another transaction but has not yet been commited 
+	nonrepeatedable reads 
+		transaction rereads data it has previously read and finds that another transaction has modified the data 
+	phantom read
+		during the course of a transaction, new rows are being added by another transaction to the records being saved 
+
+	Isolation level 		dirty read 			non repeatable reads 		phantom read
+																						
+	Read Uncommited				✓						✓						✓
+																						
+	Read Committed 				X						✓						✓
+																						
+	Repeatable Reads 			X						X						✓
+																						
+	Serializable 				X						X						X
+																						
+
+What is JDBC
+	Java DataBase Connectivity 
+	API for how a client might access a database 
+
+What are the important interfaces
+	Connection 
+	Statement 
+	Prepared Statement 
+	Callable Statement 
+	Result Set 
+	
+How do you connect to the database
+	Create a connection object 
+	Create a statement object 
+	Execute the statement and get a resultset, or number of rows affected 
+	Close the resources 
+
+What are the different ways you can execute a statement
+	execute (boolean)
+	executeQuery (String)
+	executeUpdate (int)
+	
+What is the DAO
+	Data Access Object 
+	design pattern to abstract and encapsulate all access from the data source 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+Why Java?
+What is the difference between JDK, JRE, JVM
+What is the difference between a Class and an Object?
+	meth+beth, instance
+Why is Java not fully OOP? what are the primitives?
+Is Java pass by value or pass by reference?
+What are the access modifiers?
+What are the variable scopes?
+What does static mean?
+**What are class members?
+	c, s, b, i, pi, b 
+What are static imports?
+Can I force garbage collection?
+What are the ways that garbage collection can be requested?
+Whats the difference between a while and do-while loop?
+What do I need to use an enhanced for loop?
+What is the difference between == and .equals()?
+*What's a constructor?
+*What's a method?
+	invoked 
+*What's the difference between a method and a constructor?
+*What are the 4 pillars of OOP?
+	5c's, manyforms, parent, datahiding
+*What's a hashCode?
+Does Java support multiple inheritance? 
+Does Java support multi level inheritance?
+**What are the differences between an abstract class and an interface?
+What is the difference between final, finally, and finalize?
+**What's the difference between Comparator and Comparable?
+What's a wrapper class? What is Autoboxing? What is Unboxing?
+*What's the difference between String, StringBuilder, and StringBuffer?
+What are some important methods in the String class?
+What are some important methods in the StringBuilder/StringBuffer class?
+*What is the difference between a Thread and a Process?
+*How do you create a thread?
+**What is the thread lifecycle?
+*What does a thread's priority signify?
+What is the significance of the synchronized keyword?
+What's deadlock?
+What is multithreading?
+*What's a singleton?
+*Whats a factory?
+What are the different ways you can achieve File IO? (Which classes do what)
+What is serialization?
+*How do you serialize an object?
+What is the significance of the transient keyword?
+What's jUnit?
+*What's an assertion? What are some of the assert methods?
+How do I mark a method as a test method?
+How do I ignore a test?
+Is there a way I can have a method run before all test methods are run? Before every test method?
+Is there a way I can have a method run after all test methods have run? After every test method? 
+*What's TDD?
+What's Maven?
+Where are the Maven repositories stored?
+What are the goals in Maven?
+What is a POM?
+What is the Maven Build Lifecycle?
+**What is the Reflection API?
+What is varargs?
+*What's the difference between method overloading, method overriding, and covariant return type?
+*What are the other names for overloading and overriding?
+What's the difference between checked and unchecked exceptions?
+What's the difference between throw and throws?
+When does the finally block not execute?
+Can I have multiple catch blocks?
+In what order do I need to have Exceptions in a catch block?
+**What is the reflection API?
+**What are Generics?
+*What is the Collections Framework?
+*What are the important interfaces in the Collections Framework?
+*What is the difference between Array and ArrayList?
+**What is the difference between ArrayList and LinkedList?
+What is log4j?
+What are the different levels in log4j?

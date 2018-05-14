@@ -1,0 +1,383 @@
+Why Java?
+	OOP
+	WORA
+	Excellent memory management
+	Supported by ORACLE
+	open source
+		
+*What is the difference between JDK, JRE, JVM
+	compiler, runtime, execute 
+	JDK - Java Development Kit 
+		contains all tools necessary for java development
+		compiler + Java application launcher 
+	JRE - Java Runtime Environment
+		contains classes and runtime environment 
+		includes JVM
+	JVM - Java Virtual Machine
+		where Java code is finally executed 
+		
+*What is the difference between a Class and an Object?
+	class - blueprint with states and behaviours 
+	object - instance of a class
+	
+Why is Java not fully OOP? what are the primitives?
+	not fully OOP because it contains primitives
+	primitives - basic data types 
+	B I  D  S  B L  F  C 
+	8 32 64	16 8 64 32 16
+	
+Is Java pass by value or pass by reference?
+	pass by value within a method  
+	
+What are the access modifiers?
+	public - anything
+	private - class 
+	protected - package and all subclass 
+	default - package 
+	
+*What are the variable scopes?
+	range of accessible code 
+	instance / object 
+	class / static 
+	method 
+	block 
+	
+*What does static mean?
+	associated with class as a whole, not individual instances
+	
+**What are class members?
+	constructors 
+	state (variables)
+	behaviour (methods)
+	interface 
+	inner class 
+	blocks (intiializers)
+	
+What are static imports?
+	allows for an import of static members of a class 
+	
+Can I force garbage collection?
+	no 
+	
+What are the ways that garbage collection can be requested?
+	system().gc()
+	runtime.getruntime().gc
+	system.runfinalize()
+	
+Whats the difference between a while and do-while loop?
+	do while loop executes at least once
+	while loop may or may not execute, depending on truth value 
+	
+What do I need to use an enhanced for loop?
+	array / collection and iterator
+	
+*What is the difference between == and .equals()?
+	== is reference equality 
+	.equals() value equality 
+	
+**What's a constructor?
+	instantiates an object 
+	no return type (instance of an object)
+	same name as class 
+	can be overloaded 
+	super() or this() first line 
+	
+**What's a method?
+	set of code which can be invoked by calling the name 
+	
+**What's the difference between a method and a constructor?
+	constructor 
+		initialize state of object 
+		must not have return type 
+		same name as class 
+		impliicity invoke 
+	method 
+		exposes behaviour of the object 
+		must have return type (although can be void)
+		called by name (may or may not have same name as class)
+		explicity invoke 
+		
+What are the 4 pillars of OOP?
+	Abstraction - centralizing commonly characters of a conceptualized class 
+		centralizes ideas into a conceptualized class 
+	Polymorphism - allows a method to take on many forms, such as overloading and overriding 
+	Inheritance - allowing one class to extend another classes' functionality 
+	Encapsulation - data hiding of class members 
+	
+**What's a hashCode?
+	returns a number that puts instances of a class into a finite number of catagories 
+	
+Does Java support multiple inheritance? 
+	no, but you can implement many interfaces 
+	
+Does Java support multi level inheritance?
+	yes, through abstract classes (parent to children)
+	
+*What are the differences between an abstract class and an interface?
+	neither can be instantiated 
+	abstract class 
+		extends 
+		abstract and non-abstract methods 
+		may contain non-final variables 
+		final, non-final, static, non-static variables 
+		can extend a class and implement multiple interfaces 
+	interface 
+		implements 
+		only abstract methods 
+		variables are final by default 
+		only static and final variables 
+		can extend another interface 
+		
+What is the difference between final, finally, and finalize?
+	final - attribute which declares a restriction on a method or variable 
+	finally - used inside a try,catch, finally block, and will always execute, except in catastrophic system failure 
+	finalize - suggests garbage collection
+	
+**What's the difference between Comparator and Comparable?
+	control over the source 
+	comparator - interface used to order the objects of user-defined class 
+		have no control over the source
+			which one, this one OR that one 
+		multiple sorting sequence 
+		compare() 
+		doesn't affect original class
+		java.util
+		compare this object i have to the other object in parenthesis 
+	comparable - interface which imposes a total order on the objects of each class the implements it
+		specify how objects which are implemented get compared 
+			ABLE to control the source 
+		single sorting sequence 
+		compareTo
+		affects original class 
+		java.lang
+		compare it to this thing which i have defined in the bean impelmentation 
+		
+What's a wrapper class? What is Autoboxing? What is Unboxing?
+	wrapper class - changes a primitive data type to an object 
+	autoboxing - converts a primitive data type to their corresponding wrapper class 
+	unboxing - converts a wrapper class to its corresponding data type 
+*What's the difference between String, StringBuilder, and StringBuffer?
+	string - immutable, final, slowest
+	stringbuffer - mutable, threadsafe 
+	stringbuilder - mutable, fastest 
+**What are some important methods in the String class?
+	charAt()
+	concat()
+	includes()
+	indexOf()
+	repeat()
+	replace()
+	search()
+	slice()
+	split()
+	startsWith()
+	endsWith()
+	toString()
+	trim()
+	valueOf()
+**What are some important methods in the StringBuilder/StringBuffer class?
+	append 
+	capacity()
+	insert ()
+	length()
+*What is the difference between a Thread and a Process?
+	thread - single unit of execution
+		run in the same memory space 
+	process - independent sequence of execution with its own memory address
+		provides the resources needed to execute a program 
+**How do you create a thread?
+	create a class that extends Thread 
+	create a class that implements Runnable 
+**What is the thread lifecycle?
+	1. New - newly created thread, not yet executing  
+	2. Runable - running or ready for execution waiting for its resource allocation 
+	3. Blocked - waiting to aquire a monitor lock to enter or reenter a synchronized block 
+	4. Waiting - waiting for some other thread to perform an action without any time limit 
+	5. Timed Waiting - waiting for some other thread to perform a specific action for a specific time 
+	6. Terminated - has completed its execution 
+	N R B W T T 
+	NRB WTT 
+***What does a thread's priority signify?
+	order of execution 
+What is the significance of the synchronized keyword?
+	in a multithreaded environment, allows for the threadsafe execution of 2 or more threads accessing the same resource 
+What's deadlock?
+	when two or more threads attempt to access the same resource at the same type, but are blocked 
+**What is multithreading?
+	extends the idea of multitasking into applications 
+	subdivide individual operations into parallel threads 
+	each thread has its own task 
+**What's a singleton?
+	design pattern 
+	creates an object in memory only once in an application to be shared among multiple classes 
+**Whats a factory?
+	design pattern 
+	creates objects in which the precise type won't be known until runtime 
+*What are the different ways you can achieve File IO? (Which classes do what)
+	FileInputStream 
+		reads raw bytes from a file 
+	FileOutputStream 
+		writes raw bytes to a file 
+	FileReader
+		read character data from a file 
+	FileWriter
+		writes character data to a file 
+	BufferedReader
+		reads a file line by line
+		note: needs instance of a FileReader in its constructor 
+	BufferedWriter
+		writes a file line by line 
+		note: needs instance of a FileWriter in its constructor
+*What is serialization?
+	writes an object into bytes 
+*How do you serialize an object?
+	implement java.io.Serializable (qualified class name)
+	ObjectOutputStream
+**What is the significance of the transient keyword?
+	marks a variable to not be serialized 
+*What's jUnit?
+	java API for unit level testing 
+*What's an assertion? What are some of the assert methods?
+	verifies the state of the application meets unit teesting 
+How do I mark a method as a test method?
+	@Test 
+How do I ignore a test?
+	@Ignore
+Is there a way I can have a method run before all test methods are run? Before every test method?
+	@Before 
+Is there a way I can have a method run after all test methods have run? After every test method? 
+	@After 
+What's TDD?
+	Test Driven Development 
+	process of java development by running tests 
+	A - add tests 
+	R - run the tests, fail some 
+	W - write the code 
+	R - retest until you pass 
+	R - refactor 
+	R - repeat 
+What's Maven?
+	dependency tool for build automation 
+Where are the Maven repositories stored?
+	globally 			mvnrepository.com
+	locally				.m2/repository
+	Project Workspace	work space 
+*What are the goals in Maven?
+	C - clean 
+	C - compile 
+	P - package 
+	I - install 
+	D - deploy 
+	CC PID 
+What is a POM?
+	Project Object Model 
+	xml file that contains all config details 
+What is the Maven Build Lifecycle?
+	V - validate 
+	C - compile 
+	T - test 
+	P - package 
+	I - integrate 
+	V - verify 
+	I - install 
+	D - deploy 
+	VCT PIVID 
+**What is the Reflection API?
+	allows inspection and/or modification of runtime attributes of:
+		classes 
+		interfaces 
+		fields 
+		methods 
+What is varargs?
+	variable arguments 
+	allows a different number of arguments to be passed to a method 
+	excellent for using for loops
+	treated as an array 
+**What's the difference between method overloading, method overriding, and covariant return type?
+	overloading 
+		same method name, different signature 
+		same return type 
+		compile time 
+	overriding 
+		same method name, different implementation 
+		might be same return type 
+		runtime 
+	covariant 
+		method's return type is the same as the parent class 
+**What are the other names for overloading and overriding?
+	method overloading / static polymorphism / compile time  
+	method overriding / dynamic polymorphism / runtime polymorphism
+*What's the difference between checked and unchecked exceptions?
+	checked 
+		expected exception 
+		usually handled 
+		recovered from 
+	unchecked exception 
+		unexpected exception 
+		not handled 
+		can be fatal 
+What's the difference between throw and throws?
+	throw 
+		purposefully throwing an exception 
+		using method implementation to explicity throw an exception 
+	throws 
+		checking / handling an exception 
+		declared in method signature that an exception of that type may be thrown 
+When does the finally block not execute?
+	catastrophic system failure 
+	system.exit 
+Can I have multiple catch blocks?
+	yes 
+In what order do I need to have Exceptions in a catch block?
+	most specific to least 
+What is the reflection API?
+	allows inspection and/or modification of runtime attributes of:
+		classes 
+		interfaces 
+		fields 
+		methods 
+**What are Generics?
+	enforce compile time safety by allowing parameterized types 
+**What is the Collections Framework?
+	set of classes and interfaces that implement commonly used data structure 
+**What are the important interfaces in the Collections Framework?
+	list
+		ordered
+		index based 
+		duplicates allowed 
+	set 
+		unique elements only 
+		not index driven 
+	queue 
+		elements added and removed in a particular order 
+	map 
+		used to identify a value by a key 
+*What is the difference between Array and ArrayList?
+	Array
+		fixed size 
+		basic functionality provided in java 
+		members accessed by index 
+	ArrayList 
+		resizable 
+		collections framework by java 
+		methods to access elements 
+**What is the difference between ArrayList and LinkedList?
+	ArrayList 
+		resizable array 
+		elements are directly accessed via key 
+		faster using get 
+	LinkedList 
+		doublely linked list 
+		elements accessed by traversal 
+		faster with add and remove
+What is log4j?
+	automated logging software 
+What are the different levels in log4j?
+	ALL
+	TRACE 
+	DEBUG 
+	INFO 
+	WARN 
+	ERROR 
+	FATAL 
+	AT DIWEF

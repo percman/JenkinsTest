@@ -1,0 +1,59 @@
+What is JEE? What is the JEE architecture?
+What is a Servlet?
+What is a Filter?
+What is a Web Server? What is a Servlet Container? How do they differ?
+Explain to me Client-Server communication. 
+What is the Servlet Lifecycle?
+What is Eager Loading and Lazy Loading?
+What is the Servlet API hierarchy?
+What is a web.xml? What is a deployment descriptor?
+How do I configure a Servlet in the web.xml? How do I configure a Filter in the web.xml?
+What version of the Servlet API allows us to use annotations for configuration?
+What is PrintWriter? What is its purpose?
+What is the difference between ServletConfig and ServletContext?
+What is the difference between Init-Params and Context-Params?
+What is the RequestDispatcher?
+What is the difference between include() and forward()?
+What is the difference between forward() and sendRedirect()?
+What is the difference between getParameter() and getAttribute()?
+What are the components of an HTTP Request?
+What are the components of an HTTP Response?
+What are the method signatures of HttpServlet.service(), HttpServlet.doGet(), HttpServlet.doPost()?
+What is the difference between URI, URL, and URN?
+What is Session Handling? In what ways can we manage sessions?
+What is CORS?
+
+What is MVC?
+What is Front Controller?
+What is Dispatcher?
+
+What is NPM?
+What is Webpack and Angular CLI?
+What is Linting?
+What is TypeScript?
+What are the basic types in TypeScript?
+What are the access modifiers in TypeScript?
+
+What is Angular?
+What is a Decorator?
+What is a Component?
+In what ways can we define a template for a Component?
+What is the Component Lifecycle?
+What are the Lifecycle Hooks?
+With respect to Angular, what is bootstrapping? What is the purpose of @NgModule?
+What is a Module?
+What is a Directive? What are the different types Directives?
+What is the difference between Structural and Attribute Directives?
+What is data binding? 
+What is Interpolation? How do we achieve it?
+What is Property Binding? How do we achieve it?
+What is Event Binding? How do we achieve it?
+What is Two-Way Binding? How do we achieve it?
+What is a Pipe? 
+How do we create a custom Pipe? 
+What is Dependency Injection?
+What is a Service?
+How do we create a Service?
+What is RxJS? What is an Observable? How do Observables and Promises differ?
+How do we send an HTTP Request?
+What is Routing? How do we configure Routing?
