@@ -7,6 +7,7 @@ import {ReimbursementForm} from '../../shared/ReimbursementForm';
 @Component({
   selector: 'app-create-reimbursement',
   templateUrl: './create-reimbursement.component.html',
+  providers: [CreateReimbursementService],
   styleUrls: ['./create-reimbursement.component.css']
 })
 export class CreateReimbursementComponent implements OnInit {
@@ -19,7 +20,7 @@ export class CreateReimbursementComponent implements OnInit {
   onSubmit(): void {
     const rForm = new ReimbursementForm(this.amount, this.category,
                       this.globals.username, this.globals.password);
-    this.rs.createReimbursement(rForm).subscribe(success => this.indicator = 'Success!',
+    this.rs.createReimbursement(rForm).subscribe(success => this.indicator = success ? 'Success!' : 'Add Failed',
       err => this.indicator = err['error']);
   }
 

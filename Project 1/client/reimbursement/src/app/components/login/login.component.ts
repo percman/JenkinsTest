@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
 
   private populate(empl: Employee) {
     this.indicator = JSON.stringify(empl);
+    this.globals.username = this.username;
+    this.globals.password = this.password;
     this.globals.address = empl['address'];
     this.globals.eid = empl['eid'];
     this.globals.firstName = empl['firstName'];

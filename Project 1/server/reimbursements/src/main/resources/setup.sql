@@ -82,9 +82,40 @@ INSERT INTO RStatus VALUES (2, 'Denied');
 
 INSERT INTO Employee VALUES (0, 'WalkinDude', GET_USER_HASH('WalkinDude', 'WalkinWalkin'));
 INSERT INTO EInfo VALUES (0, 'Curtis', 'Hilgenberg', '123 Fake Street' );
+
+INSERT INTO Employee VALUES (-1, 'N/A', 'N/A');
+INSERT INTO EINFO VALUES (-1, 'N/A', 'N/A', 'N/A');
+INSERT INTO FManager VALUES (-1);
+
 SELECT * FROM Employee;
 
 COMMIT;
 
+CREATE SEQUENCE reimbursement_id_sequence
+  START WITH 1
+  INCREMENT BY 1;
+
+CREATE OR REPLACE FUNCTION AUTH_EMPLOYEE(username_in VARCHAR2, password_in VARCHAR2) RETURN NUMBER
+IS
+  output NUMBER;
+  BEGIN
+    SELECT count(*) into output FROM EMPLOYEE WHERE username = username_in
+                                                    AND password = GET_USER_HASH(username_in, password_in);
+    RETURN output;
+  END;
+/
 
 
+CREATE OR REPLACE PROCEDURE add_reimbursement(username_in VARCHAR, password_in VARCHAR,
+  category_in NUMBER, amount_in NUMBER)
+IS
+  requesterID number;
+  BEGIN
+    IF (AUTH_EMPLOYEE(username_in, password_in) = 1) THEN
+      SELECT eid INTO requesterID FROM Employee where username_in = username;
+      INSERT INTO Reimbursement (rid, requester, approver, category, amount, status)
+        VALUES (reimbursement_id_sequence.nextval, requesterID, -1, category_in, amount_in, 0);
+    end if;
+    COMMIT;
+  END;
+/

@@ -36,4 +36,14 @@ public class OtherUtils {
             e.printStackTrace();
         }
     }
+
+    public static void booleanResponse(boolean bool, HttpServletResponse response) {
+        response.setContentType("text/json");
+        logger.debug("In booleanResponse");
+        try(PrintWriter out = response.getWriter();) {
+            out.append(Boolean.toString(bool));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

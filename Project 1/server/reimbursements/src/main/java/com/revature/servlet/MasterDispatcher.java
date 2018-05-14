@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+import static com.revature.service.DispatchService.dispatchCreateReimbursement;
 import static com.revature.service.DispatchService.dispatchLogin;
 import static com.revature.util.OtherUtils.stringReponse;
 
@@ -24,6 +25,10 @@ public class MasterDispatcher {
                 case "/login.do":
                     dispatchLogin(request, response);
                     break;
+                case "/create-reimbursement.do":
+                    dispatchCreateReimbursement(request, response);
+                    break;
+                case "/"
                 default:
                     System.out.println(st);
             }
@@ -35,7 +40,6 @@ public class MasterDispatcher {
             logger.info("Wrong password");
             response.setStatus(403);
             stringReponse("Wrong password.", response);
-
         } catch (JsonProcessingException e) {
             logger.info("Error processing JSON for object");
             response.setStatus(500);
