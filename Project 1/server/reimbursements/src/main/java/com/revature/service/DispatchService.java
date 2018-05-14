@@ -64,5 +64,12 @@ public class DispatchService {
         jsonResponse(el, response);
     }
 
+    public static void dispatchAllReimbusements(HttpServletRequest request, HttpServletResponse response) {
+        jsonResponse();
+    }
+
+    public static void dispatchSetRStatus(HttpServletRequest request, HttpServletResponse response) {
+
+    }
 
 }

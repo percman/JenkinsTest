@@ -27,13 +27,13 @@ export class AdminTableService {
 
   getAllReimbursements(ep: SimpleEmployee): Observable<BigReimbursement[]> {
     console.log('boop');
-    return this.http.post<BigReimbursement[]>('http://localhost:8080/get-all-pending.do',
+    return this.http.post<BigReimbursement[]>('http://localhost:8080/get-all-reimbusements.do',
       ep, httpOptions);
   }
 
   setRStatus(rs: RStatusSetter): Observable<boolean> {
     console.log('boop');
-    return this.http.post<boolean>('http://localhost:8080/get-my-reimbursements.do',
+    return this.http.post<boolean>('http://localhost:8080/set-rstatus.do',
       rs, httpOptions);
   }
 

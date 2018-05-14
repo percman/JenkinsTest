@@ -25,10 +25,6 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
         return instance;
     }
 
-    @Override
-    public ReimbursementTable getAllReimbursements() {
-        return null;
-    }
 
     @Override
     public List<MyReimbursementReturn> getRequestedReimbursementsByUser(String username) {
@@ -77,4 +73,28 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
         }
         return false;
     }
+
+    public List<ReimbursementTable> getAllReimbursements() {
+        List<MyReimbursementReturn> ls = new LinkedList<>();
+
+        try (Connection conn = ConnectionUtil.getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement("SELECT amount a, category c, status s," +
+                    "ei.FIRST_NAME fApp, ei.LAST_NAME lApp, eie.FIRST_NAME fReq, eie.LAST_NAME " +
+                    "FROM REIMBURSEMENT rei, EINFO eie, EINFO ei " +
+                    "WHERE rei.requester = eie.EID " +
+                    "AND rei.approver = ei.eid ");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                ls.add(new MyReimbursementReturn(rs.getDouble("a"), rs.getInt("c"),
+                        rs.getInt("s"), rs.getString("f"), rs.getString("l")));
+
+            }
+            return ls;
+
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            logger.error("SQL STATE: " + e.getSQLState());
+            logger.error("ERROR CODE: " + e.getErrorCode());
+        }
+        return null;
 }

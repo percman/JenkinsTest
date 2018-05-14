@@ -7,7 +7,7 @@ import com.revature.model.ReimbursementTable;
 import java.util.List;
 
 public interface ReimbursementDao {
-    ReimbursementTable getAllReimbursements();
+    List<ReimbursementTable> getAllReimbursements();
     List<MyReimbursementReturn> getRequestedReimbursementsByUser(String username);
     boolean createReimbursement(CreateReimbursementModel cm);
 

@@ -36,6 +36,12 @@ public class MasterDispatcher {
                 case "/get-my-reimbursements.do":
                     dispatchMyReimbursements(request, response);
                     break;
+                case "/get-all-reimbursements.do":
+                    dispatchAllReimbusements(request, response);
+                    break;
+                case "/set-rstatus":
+                    dispatchSetRStatus(request, response);
+                    break;
                 default:
                     response.setStatus(400);
                     System.out.println(st);
