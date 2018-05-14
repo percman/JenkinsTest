@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     console.log('beep');
     this.loginService.login({'username': this.username, 'password': this.password})
       .subscribe(success => this.populate(success),
-                      err => this.indicator = err["error"]);
+                      err => this.indicator = err['error']);
   }
 
   private populate(empl: Employee) {

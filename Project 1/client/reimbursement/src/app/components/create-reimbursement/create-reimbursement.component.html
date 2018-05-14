@@ -1,3 +1,18 @@
-<p>
-  create-reimbursement works!
-</p>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div class="form-group col-md-4 offset-4">
+    <label for="amount">Amount</label>
+    <input type="number" name="amount" id="amount" min="0.00" max="10000.00" step="0.01" [(ngModel)]="amount">
+
+    <label for="category">Category</label>
+    <select id="category" name="login" class="form-control" [(ngModel)]="category">
+    <option value=0>Lodging</option>
+    <option value=1>Travel</option>
+    <option value=2>Food</option>
+    <option value=3>Other</option>
+    </select>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+  </form>
+  <h2>{{indicator}}</h2>
+</div>

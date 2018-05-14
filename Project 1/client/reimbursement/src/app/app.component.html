@@ -3,7 +3,8 @@
 <div class="container">
   <nav class="navbar navbar-expand-md navbar-light bg-primary">
     <div class="collapse navbar-collapse">
-      <a [routerLink]='["/"]' class="navbar-brand text-light">The Aria Company</a>
+      <a *ngIf="!globals.ready" [routerLink]='["/login"]' class="navbar-brand text-light">The Aria Company</a>
+      <a *ngIf="globals.ready" [routerLink]='["/employee-splash"]' class="navbar-brand text-light">The Aria Company</a>
       <ul class="navbar-nav">
         <!--<li class="nav-item"><a [routerLink]='["/data-binding"]' class="nav-link text-light">Data Binding</a></li>-->
         <!--<li class="nav-item"><a [routerLink]='["/http-example"]' class="nav-link text-light">HTTP Example</a></li>-->
@@ -11,7 +12,8 @@
     </div>
   </nav>
 </div>
-<router-outlet></router-outlet>
+<app-login *ngIf="!globals.ready"></app-login>
+<router-outlet *ngIf="globals.ready"></router-outlet>
 
 
 </body>
