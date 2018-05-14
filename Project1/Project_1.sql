@@ -1,4 +1,4 @@
---CREATE USER user IDENTIFIED BY password;
+--CREATE USER project_1 IDENTIFIED BY reimburse;
 --
 --GRANT CONNECT TO project_1;
 --GRANT CREATE ANY TABLE TO project_1;
@@ -54,6 +54,10 @@ ADD (amount NUMBER(10, 2),
 request_time TIMESTAMP,
 approval_time TIMESTAMP);
 
+ALTER TABLE reimbursement
+ADD image VARCHAR2(20);
+
+ALTER TABLE reimbursement MODIFY image VARCHAR2(50);
 
 CREATE SEQUENCE employee_id_sequence
 START WITH 1
@@ -164,11 +168,11 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE insert_reimbursement(requestor IN NUMBER, category_name IN VARCHAR2, amt IN NUMBER)
+CREATE OR REPLACE PROCEDURE insert_reimbursement(requestor IN NUMBER, category_name IN VARCHAR2, amt IN NUMBER, img IN VARCHAR2)
 AS
 BEGIN
-    INSERT INTO reimbursement(requestor_id, category, request_time, amount)
-    VALUES(requestor, category_name, CURRENT_TIMESTAMP, amt);
+    INSERT INTO reimbursement(requestor_id, category, request_time, amount, image)
+    VALUES(requestor, category_name, CURRENT_TIMESTAMP, amt, img);
     COMMIT;
 END;
 /
@@ -191,5 +195,3 @@ BEGIN
     COMMIT;
 END;
 /
-
-SELECT * FROM reimbursement WHERE requestor_id=17;

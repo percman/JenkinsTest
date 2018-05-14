@@ -78,6 +78,7 @@
 						<th>Status</th>
 						<th>Manager</th>
 						<th>Approved Time</th>
+						<th>Image</th>
 					</tr>
 				</thead>
 				<tbody id="table-body">
@@ -96,6 +97,8 @@
 						<td><%=r.getStatus() %></td>
 						<td><%=ManagerService.approver(r.getApproverId()) %></td>
 						<td><%=r.getApprovedTime() %></td>
+						<td><%if (r.getImage()!=null){ %><img src="<%=r.getImage()%>" width="300"><% }%></td>
+					
 					</tr>
 					<%
 						}

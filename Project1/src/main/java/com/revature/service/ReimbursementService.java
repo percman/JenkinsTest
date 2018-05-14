@@ -18,7 +18,7 @@ public class ReimbursementService {
 	public static String insertReimbursement (HttpServletRequest request, HttpServletResponse response) {
 		Employee employee=(Employee)request.getSession().getAttribute("authorizedUser");
 		int id=employee.getId();
-		Reimbursement reimbursement=new Reimbursement(id, request.getParameter("category"), Double.parseDouble(request.getParameter("amount")));
+		Reimbursement reimbursement=new Reimbursement(id, request.getParameter("category"), Double.parseDouble(request.getParameter("amount")), request.getParameter("image"));
 		if(dao.insertReimbursement(reimbursement)) {
 			return "/viewPending.do";
 		}

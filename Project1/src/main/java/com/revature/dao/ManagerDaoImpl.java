@@ -105,7 +105,8 @@ public class ManagerDaoImpl implements ManagerDao {
 				Reimbursement reimbursement = new Reimbursement(rs.getInt("reimbursement_id"), 
 						rs.getInt("requestor_id"), rs.getInt("approver_id"), rs.getDouble("amount"),
 						rs.getString("category"), rs.getString("status"),
-						rs.getTimestamp("request_time").toString(), rs.getTimestamp("approval_time")==null ? "" : rs.getTimestamp("approval_time").toString());
+						rs.getTimestamp("request_time").toString(), rs.getTimestamp("approval_time")==null ? "" : rs.getTimestamp("approval_time").toString(),
+						rs.getString("image"));
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;
@@ -130,7 +131,8 @@ public class ManagerDaoImpl implements ManagerDao {
 				Reimbursement reimbursement = new Reimbursement(rs.getInt("reimbursement_id"),
 						rs.getInt("requestor_id"), rs.getInt("approver_id"), rs.getDouble("amount"),
 						rs.getString("category"), rs.getString("status"), rs.getTimestamp("request_time").toString(),
-						rs.getTimestamp("approval_time")==null ? "" : rs.getTimestamp("approval_time").toString());
+						rs.getTimestamp("approval_time")==null ? "" : rs.getTimestamp("approval_time").toString(),
+								rs.getString("image"));
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;
@@ -173,7 +175,7 @@ public class ManagerDaoImpl implements ManagerDao {
 			while(rs.next()) {
 				Reimbursement reimbursement=new Reimbursement(rs.getInt("reimbursement_id"), rs.getInt("requestor_id"),
 						rs.getString("category"), rs.getDouble("amount"), rs.getString("status"),
-						rs.getTimestamp("request_time").toString());
+						rs.getTimestamp("request_time").toString(), rs.getString("image"));
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;

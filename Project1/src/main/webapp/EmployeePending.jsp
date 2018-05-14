@@ -69,6 +69,7 @@
                         <th>Amount</th>
                         <th>Submitted</th>
                         <th>Category</th>
+                        <th>Image</th>
                     </tr>
                 </thead>
                 <tbody id="table-body">
@@ -79,6 +80,8 @@
                 		<td><%=r.getAmount()%></td>
                 		<td><%=r.getRequestTime()%></td>
                 		<td><%=r.getCategory() %></td>
+                		<td><%if (r.getImage()!=null){ %><img src="<%=r.getImage()%>" width="300"><% }%></td>
+                		
                 	</tr>
                 <%} %>
                 </tbody>

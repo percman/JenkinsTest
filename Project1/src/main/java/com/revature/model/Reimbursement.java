@@ -14,16 +14,18 @@ public class Reimbursement implements Serializable{
 	private String approvedTime;
 	private String category;
 	private String status;
+	private String image;
 	
 	public Reimbursement() {};
 	
-	public Reimbursement(int requestor, String category, Double amount){
+	public Reimbursement(int requestor, String category, Double amount, String image){
 			this.requestorId=requestor;
 			this.category=category;
 			this.amount=amount;
+			this.image=image;
 	}
 	
-	public Reimbursement(int id, int requestor, String category, double amount, String status, String requestTime) {
+	public Reimbursement(int id, int requestor, String category, double amount, String status, String requestTime, String image) {
 		super();
 		this.id=id;
 		this.requestorId=requestor;
@@ -31,10 +33,11 @@ public class Reimbursement implements Serializable{
 		this.status=status;
 		this.amount=amount;
 		this.requestTime=requestTime;
+		this.image=image;
 	}
 	
 	public Reimbursement(int id, int requestor, int approver, double amount, String category, String status,
-			String requestTime, String approvedTime) {
+			String requestTime, String approvedTime, String image) {
 		super();
 		this.id=id;
 		this.requestorId = requestor;
@@ -44,8 +47,15 @@ public class Reimbursement implements Serializable{
 		this.status = status;
 		this.requestTime=requestTime;
 		this.approvedTime=approvedTime;
+		this.image=image;
 	}
 
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image=image;
+	}
 	public int getId() {
 		return id;
 	}
@@ -121,6 +131,7 @@ public class Reimbursement implements Serializable{
 		result = prime * result + approverId;
 		result = prime * result + ((category == null) ? 0 : category.hashCode());
 		result = prime * result + id;
+		result = prime * result + ((image == null) ? 0 : image.hashCode());
 		result = prime * result + ((requestTime == null) ? 0 : requestTime.hashCode());
 		result = prime * result + requestorId;
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
@@ -152,6 +163,11 @@ public class Reimbursement implements Serializable{
 			return false;
 		if (id != other.id)
 			return false;
+		if (image == null) {
+			if (other.image != null)
+				return false;
+		} else if (!image.equals(other.image))
+			return false;
 		if (requestTime == null) {
 			if (other.requestTime != null)
 				return false;
@@ -169,9 +185,11 @@ public class Reimbursement implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Reimbursement [id=" + id + ", amount=" + amount + ", requestorId=" + requestorId + ", request_time="
+		return "Reimbursement [id=" + id + ", amount=" + amount + ", requestorId=" + requestorId + ", requestTime="
 				+ requestTime + ", approverId=" + approverId + ", approvedTime=" + approvedTime + ", category="
-				+ category + ", status=" + status + "]";
+				+ category + ", status=" + status + ", image=" + image + "]";
 	}
+
+	
 	
 }

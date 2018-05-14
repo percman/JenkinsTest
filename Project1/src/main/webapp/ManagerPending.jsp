@@ -67,7 +67,7 @@
  %>
 	<h2>Pending Employee Reimbursements</h2>
 	<div class="container">
-		<div class="col-md-7">
+		<div class="col-md-10">
 			<table class="table table-striped table-hover table-bordered">
 				<thead>
 					<tr>
@@ -75,7 +75,9 @@
 						<th>Amount</th>
 						<th>Submitted</th>
 						<th>Category</th>
+						<th>Image</th>
 						<th>Actions</th>
+						
 					</tr>
 				</thead>
 				<tbody id="table-body">
@@ -92,6 +94,8 @@
 						<td><%=r.getAmount()%></td>
 						<td><%=r.getRequestTime()%></td>
 						<td><%=r.getCategory()%></td>
+						<td><%if (r.getImage()!=null){ %><img src="<%=r.getImage()%>" width="300"><% }%></td>
+						
 						<td><form action="approveDeny.do" method="post">
 						<div class="form-group">
 					<input type="text"  style="display: none"
