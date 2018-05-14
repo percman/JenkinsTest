@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,6 +9,8 @@ import java.util.ArrayList;
 
 import com.revature.reimbursement.Reimbursement;
 import com.revature.util.ConnectionUtil;
+
+import oracle.sql.BLOB;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
@@ -98,7 +101,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				}
 				String requesterFirstName = rs.getString("firstName");
 				String requesterLastName = rs.getString("lastName");
-
 				rList.add(new Reimbursement(reid, requesterId, approverId, category, status, amount, dateSubmitted, dateCompleted, 
 				requesterFirstName, requesterLastName, null, null, null));
 			}
@@ -112,10 +114,30 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return null;
 	}
 	@Override
+	public Blob getImage(int reid) {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			Blob img = null;
+			PreparedStatement stmt = conn.prepareStatement("SELECT img FROM reimbursementTable " + 
+					"WHERE reid = " +  reid);			
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {	
+				img = rs.getBlob("img");
+			}
+			
+			return img;
+		} catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL STATE " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+		}
+		return null;		
+	}
+	//Gets all the requests from employee e
+	@Override
 	public ArrayList<Reimbursement> getMyRequests(Employee e) throws ClassNotFoundException {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			ArrayList<Reimbursement> rList = new ArrayList<>();
-			System.out.println(rList.size());
+			System.out.println(e);
 			PreparedStatement stmt = conn.prepareStatement("SELECT * " + 
 					"FROM reimbursementTable R, infoTable I " + 
 					"WHERE R.requesterid = I.employeeid and I.employeeid = " + e.getEmployeeId() + " ORDER BY reid");			
@@ -134,7 +156,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				}
 				String requesterFirstName = rs.getString("firstName");
 				String requesterLastName = rs.getString("lastName");
-
 				rList.add(new Reimbursement(reid, requesterId, approverId, category, status, amount, dateSubmitted, dateCompleted, 
 				requesterFirstName, requesterLastName,null,null, null));
 			}
@@ -181,11 +202,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public boolean insertRequest(Reimbursement r) throws ClassNotFoundException {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("{CALL make_request(?, ?, ?, ?)  }");
+			PreparedStatement stmt = conn.prepareStatement("{CALL make_request(?, ?, ?, ?, ?)  }");
 			stmt.setInt(++index, r.getRequesterId());
 			stmt.setString(++index, r.getCategory());
 			stmt.setInt(++index, r.getStatus());
 			stmt.setInt(++index, r.getAmount());
+			stmt.setBlob(++index, r.getImg());
 			int rowsAffected = stmt.executeUpdate();
 			return rowsAffected > 0;
 		} catch (SQLException sqle) {

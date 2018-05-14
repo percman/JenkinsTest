@@ -59,7 +59,7 @@
 			</table>
 		</div>
 	</div>
-	<form id="request-form" action="request.do" method="post" role="form">
+	<form id="request-form" enctype="multipart/form-data" action="request.do" method="post">
 		<div class="container">
 			<div class="col-md-7">
 				<div class="form-group">
@@ -75,16 +75,22 @@
 		</div>
 		<div class="container">
 			<div class="col-md-7">
-				<div class="form-group">
 					<label for="number-input">Amount</label> <input
-						class="form-control" type="number" value="300" id="amount" name="amount">
+						 type="number" value="310" id="amount" name="amount">
+			</div>
+		</div>
+		<div class="container">
+			<div class="col-md-7">
+				<div class="form-group">
+					<label for="file">Upload Picture of Receipt</label> <input
+						name="uploadImg" id="uploadImg" type="file" accept=".jpg, .jpeg, .png">
 				</div>
 			</div>
 		</div>
 		<div class="container">
 			<div class="col-md-7">
 				<div class="form-group">
-					<input type="submit" name="request-btn" id="request-btn"
+					<input type="submit" name="request-btn" id="request-btn" enctype="multipart/form-data"
 						class="form-control btn btn-submit" value="Submit Request">
 				</div>
 			</div>

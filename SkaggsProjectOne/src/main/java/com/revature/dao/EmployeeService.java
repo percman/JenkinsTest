@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.Blob;
 import java.util.ArrayList;
 
 import com.revature.reimbursement.Reimbursement;
@@ -40,5 +41,8 @@ public class EmployeeService {
 	}
 	public static ArrayList<Reimbursement> getMyRequests(Employee e) throws ClassNotFoundException {
 		return dao.getMyRequests(e);
+	}
+	public static Blob getImage(int reid) {
+		return dao.getImage(reid);
 	}
 }

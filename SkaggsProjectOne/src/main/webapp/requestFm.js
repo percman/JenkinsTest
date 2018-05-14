@@ -28,6 +28,9 @@ function getRequests() {
 				let ds = employee.dateSubmitted;
 				let name = employee.requesterFirstName + " " + employee.requesterLastName;
 				let a_name = employee.approverFirstName + " " + employee.approverLastName;
+				if(employee.approverFirstName == null) {
+					a_name = 'N/A';
+				}
 				
 				let row = document.createElement("tr");
 				let tdId = document.createElement("td");

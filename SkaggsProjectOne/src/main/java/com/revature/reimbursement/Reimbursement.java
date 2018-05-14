@@ -1,5 +1,6 @@
 package com.revature.reimbursement;
 
+import java.io.InputStream;
 import java.sql.Blob;
 
 import com.revature.dao.EmployeeService;
@@ -17,11 +18,11 @@ public class Reimbursement {
 	String requesterLastName;
 	String approverFirstName;
 	String approverLastName;
-	private Blob img;
+	private InputStream img;
 
 	public Reimbursement(int reimbursementId, int requesterId, int approverId, String category, int status, int amount,
 			String dateSubmitted, String dateCompleted, String requesterFirstName, String requesterLastName,
-			String approverFirstName, String approverLastName, Blob img) {
+			String approverFirstName, String approverLastName, InputStream img) throws ClassNotFoundException {
 		super();
 		this.reimbursementId = reimbursementId;
 		this.requesterId = requesterId;
@@ -33,8 +34,11 @@ public class Reimbursement {
 		this.dateCompleted = dateCompleted;
 		this.requesterFirstName = requesterFirstName;
 		this.requesterLastName = requesterLastName;
-		this.approverFirstName = approverFirstName;
-		this.approverLastName = approverLastName;
+		if (approverId != 0) {
+			this.approverFirstName = EmployeeService.getEmployee(approverId).getFirstName();
+			this.approverLastName = EmployeeService.getEmployee(approverId).getLastName();
+		}
+
 		this.img = img;
 	}
 
@@ -134,11 +138,11 @@ public class Reimbursement {
 		this.approverLastName = approverLastName;
 	}
 
-	public Blob getImg() {
+	public InputStream getImg() {
 		return img;
 	}
 
-	public void setImg(Blob img) {
+	public void setImg(InputStream img) {
 		this.img = img;
 	}
 
