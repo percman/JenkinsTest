@@ -19,6 +19,7 @@ import static com.revature.service.EmployeeService.getEmployeeNames;
 import static com.revature.service.EmployeeService.login;
 import static com.revature.service.EmployeeService.updateEmployeeInfo;
 import static com.revature.service.ReimbursementService.createReimbursement;
+import static com.revature.service.ReimbursementService.getReimbursementsByUser;
 import static com.revature.util.OtherUtils.*;
 
 public class DispatchService {
@@ -27,6 +28,18 @@ public class DispatchService {
         SimpleEmployee e = (SimpleEmployee) Mapper.mapRequest(request, SimpleEmployee.class);
         logger.debug(e);
         String outStr = login(e.getUsername(), e.getPassword());
+        if (isJSONish(outStr)) {
+            jsonResponse(outStr, response);
+        } else {
+            stringReponse(outStr, response);
+        }
+    }
+
+    public static void dispatchMyReimbursements(HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
+        ObjectMapper om = new ObjectMapper();
+        SimpleEmployee e = (SimpleEmployee) Mapper.mapRequest(request, SimpleEmployee.class);
+        logger.debug(e);
+        String outStr = om.writeValueAsString(getReimbursementsByUser(e.getUsername()));
         if (isJSONish(outStr)) {
             jsonResponse(outStr, response);
         } else {

@@ -4,6 +4,7 @@ import {EmployeeSplashComponent} from '../components/employee-splash/employee-sp
 import {CreateReimbursementComponent} from '../components/create-reimbursement/create-reimbursement.component';
 import {UserInfoComponent} from '../components/user-info/user-info.component';
 import {ViewEmployeesComponent} from '../components/view-employees/view-employees.component';
+import {MyReimbursementsComponent} from '../components/my-reimbursements/my-reimbursements.component';
 
 
 export const MyRoutes: Routes = [
@@ -12,5 +13,6 @@ export const MyRoutes: Routes = [
   { path: 'create-reimbursement', component: CreateReimbursementComponent},
   { path: 'update-info', component: UserInfoComponent},
   { path: 'view-employees', component: ViewEmployeesComponent},
+  { path: 'my-reimbursements', component: MyReimbursementsComponent},
   { path: '**', redirectTo: '', pathMatch: 'full'}
 ];

@@ -6,6 +6,7 @@
       <a *ngIf="!globals.ready" [routerLink]='["/login"]' class="navbar-brand text-light">The Aria Company</a>
       <a *ngIf="globals.ready" [routerLink]='["/employee-splash"]' class="navbar-brand text-light">The Aria Company</a>
       <a *ngIf="globals.ready" [routerLink]='["/create-reimbursement"]' class="nav-link text-light">Create Reimbursement</a>
+      <a *ngIf="globals.ready" [routerLink]='["/my-reimbursements"]' class="nav-link text-light">My Reimbursements</a>
       <a *ngIf="globals.ready" [routerLink]='["/update-info"]' class="nav-link text-light">Update Personal Info</a>
       <a *ngIf="globals.ready && globals.isManager"
          [routerLink]='["/view-employees"]' class="nav-link text-light">View Employees</a>

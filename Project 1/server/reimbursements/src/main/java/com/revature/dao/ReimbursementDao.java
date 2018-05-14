@@ -1,11 +1,14 @@
 package com.revature.dao;
 
 import com.revature.model.CreateReimbursementModel;
+import com.revature.model.MyReimbursementReturn;
 import com.revature.model.ReimbursementTable;
+
+import java.util.List;
 
 public interface ReimbursementDao {
     ReimbursementTable getAllReimbursements();
-    ReimbursementTable getRequestedReimbursementsByUser(int id);
+    List<MyReimbursementReturn> getRequestedReimbursementsByUser(String username);
     boolean createReimbursement(CreateReimbursementModel cm);
 
 }

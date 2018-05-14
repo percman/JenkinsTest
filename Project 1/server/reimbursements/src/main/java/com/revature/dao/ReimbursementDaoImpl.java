@@ -1,13 +1,14 @@
 package com.revature.dao;
 
 import com.revature.model.CreateReimbursementModel;
+import com.revature.model.MyReimbursementReturn;
 import com.revature.model.ReimbursementTable;
 import com.revature.util.ConnectionUtil;
 import org.apache.log4j.Logger;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.LinkedList;
+import java.util.List;
 
 
 public class ReimbursementDaoImpl implements ReimbursementDao{
@@ -30,9 +31,33 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
     }
 
     @Override
-    public ReimbursementTable getRequestedReimbursementsByUser(int id) {
+    public List<MyReimbursementReturn> getRequestedReimbursementsByUser(String username) {
+        List<MyReimbursementReturn> ls = new LinkedList<>();
+
+        try (Connection conn = ConnectionUtil.getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement("SELECT amount a, category c, status s," +
+                    "ei.FIRST_NAME f, ei.LAST_NAME l " +
+                    "FROM REIMBURSEMENT rei, EMPLOYEE e, EINFO ei " +
+                    "WHERE rei.requester = e.EID " +
+                    "AND rei.approver = ei.eid " +
+                    "AND e.USERNAME = ?");
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                ls.add(new MyReimbursementReturn(rs.getDouble("a"), rs.getInt("c"),
+                    rs.getInt("s"), rs.getString("f"), rs.getString("l")));
+
+            }
+            return ls;
+
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            logger.error("SQL STATE: " + e.getSQLState());
+            logger.error("ERROR CODE: " + e.getErrorCode());
+        }
         return null;
     }
+
 
     @Override
     public boolean createReimbursement(CreateReimbursementModel cm) {

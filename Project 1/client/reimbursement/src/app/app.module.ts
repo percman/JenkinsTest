@@ -12,6 +12,7 @@ import { EmployeeSplashComponent } from './components/employee-splash/employee-s
 import { CreateReimbursementComponent } from './components/create-reimbursement/create-reimbursement.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
+import { MyReimbursementsComponent } from './components/my-reimbursements/my-reimbursements.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ViewEmployeesComponent } from './components/view-employees/view-employe
     EmployeeSplashComponent,
     CreateReimbursementComponent,
     UserInfoComponent,
-    ViewEmployeesComponent
+    ViewEmployeesComponent,
+    MyReimbursementsComponent
   ],
   imports: [
     BrowserModule,

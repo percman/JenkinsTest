@@ -1,0 +1,23 @@
+
+<div class="container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Amount</th>
+    <th>Category</th>
+    <th>Status</th>
+    <th>Approver First Name</th>
+    <th>Approver Last Name</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let obj of listing">
+    <tr>
+      <td>{{obj.amount}}</td>
+      <td>{{categoryToString(obj.category)}}</td>
+      <td>{{statusToString(obj.status)}}</td>
+      <td>{{obj.approverFirst}}</td>
+      <td>{{obj.approverLast}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

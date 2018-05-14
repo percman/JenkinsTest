@@ -33,6 +33,9 @@ public class MasterDispatcher {
                 case "/get-all-employees.do":
                     dispatchEmployeeList(request, response);
                     break;
+                case "/get-my-reimbursements.do":
+                    dispatchMyReimbursements(request, response);
+                    break;
                 default:
                     response.setStatus(400);
                     System.out.println(st);
