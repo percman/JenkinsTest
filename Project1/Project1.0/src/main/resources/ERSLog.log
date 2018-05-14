@@ -1,0 +1,7 @@
+2018-05-13 21:40:05 INFO  ERSLogger:112 - Data not found for username: kirk
+2018-05-13 21:41:57 INFO  ERSLogger:105 - Retrieved full data of username: kirk
+2018-05-13 21:43:00 INFO  ERSLogger:125 - All employee data retrieved.
+2018-05-13 21:43:30 INFO  ERSLogger:181 - All reimbursement data retrieved for resolve reimbursements for employeeId: 21
+2018-05-13 21:44:12 ERROR ERSLogger:167 - Invalid column name - SQL State: 99999 - Error Code: 17006
+2018-05-13 21:46:00 ERROR ERSLogger:167 - Invalid column name - SQL State: 99999 - Error Code: 17006
+2018-05-13 21:47:21 INFO  ERSLogger:161 - All reimbursement data retrieved for resolved reimbursements.
