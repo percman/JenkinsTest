@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
-import com.revature.model.Employee;
+import com.revature.model.User;
 import com.revature.util.ConnectionUtil;
 
 public class LoginDaoImpl implements LoginDao{
@@ -23,11 +23,11 @@ public class LoginDaoImpl implements LoginDao{
 	}
 	
 	@Override
-	public String getPassword(Employee employee) {
+	public String getPassword(String username) {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement("SELECT password FROM employee WHERE username = ?");
-			stmt.setString(++index, employee.getUsername());
+			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
 				return rs.getString("password");
@@ -42,12 +42,12 @@ public class LoginDaoImpl implements LoginDao{
 	}
 
 	@Override
-	public String getPasswordHash(Employee employee) {
+	public String getPasswordHash(User user) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement("SELECT get_user_hash(?, ?) AS HASH FROM dual");
-			stmt.setString(++index, employee.getUsername());
-			stmt.setString(++index, employee.getPassword());
+			stmt.setString(++index, user.getUsername());
+			stmt.setString(++index, user.getPassword());
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
 				return rs.getString("HASH");

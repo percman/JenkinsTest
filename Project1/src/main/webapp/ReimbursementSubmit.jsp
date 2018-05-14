@@ -8,27 +8,18 @@
 <link rel="stylesheet"
 	href="webjars/bootstrap/3.3.7-1/css/bootstrap.css">
 </head>
-<body>
-	<nav class="navbar navbar-inverse">
+<body class= "container">
+
+    <nav class="navbar navbar-inverse">
 	<div class="navbar-header col-md-3">
 		<!-- Must use navbar brand to make style work -->
-		<%
-			if (request.getSession().getAttribute("authorizedUser") != null) {
-		%>
-		<a href="#" class="navbar-brand">Revature Reimbursements</a>
-		<%
-			} else {
-		%>
-		<a href="./index.html" class="navbar-brand">Revature
+		<a href="./index.jsp" class="navbar-brand">Revature
 			Reimbursements</a>
-		<%
-			}
-		%>
 	</div>
 	<%
 		if (request.getSession().getAttribute("authorizedUser") != null) {
 	%>
-	<ul class="navbar-nav nav col-md-2">
+	<ul class="navbar-nav nav col-md-6">
 		<li class="active dropdown"><a class="nav-link dropdown-toggle"
 			href="#" data-toggle="dropdown">Employee</a>
 			<ul class="dropdown-menu">
@@ -36,37 +27,54 @@
 						Homepage</a></li>
 				<li class="dropdown-item"><a href="./EmployeeUpdate.jsp">Update
 						Personal Info</a></li>
-				<li class="dropdown-item"><a href="./ReimbursementSubmit.jsp">Submit Reimbursements</a></li>
-					<li class="dropdown-item"><a href="./viewPending.do">Pending Reimbursements</a></li>
-
+				<li class="dropdown-item"><a href="./ReimbursementSubmit.jsp">Submit
+						Reimbursements</a></li>
+				<li class="dropdown-item"><a href="./viewPending.do">Pending
+						Reimbursements</a></li>
+				<li class="dropdown-item"><a href="./viewApproved.do">Approved
+						Reimbursements</a></li>
+			</ul> <%
+ 	if (request.getSession().getAttribute("authorizedManager") != null) {
+ %>
+		<li class="active dropdown"><a class="nav-link dropdown-toggle"
+			href="#" data-toggle="dropdown">Manager</a>
+			<ul class="dropdown-menu">
+				<li class="dropdown-item"><a href="./Manager.jsp">Manager
+						Homepage</a></li>
+				<li class="dropdown-item"><a href="./ManagerPending.do">All
+						Pending Reimbursements</a></li>
+				<li class="dropdown-item"><a href="./ViewEmployees.do">View Employees</a></li>
+				<li class="dropdown-item"><a href="./AllReimbursements.do">All Reimbursements</a></li>
 			</ul></li>
+		<%
+			}
+		%>
 	</ul>
 	<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-1">
-		<li><a href="logout.do">Log Out <span
+		<li><a href="./logout.do">Log Out <span
 				class="glyphicon glyphicon-log-out"></span>
 		</a></li>
 	</ul>
-	</nav>
 	<%
 		}
-	%>
+	%> </nav>
 	<%
 		if (request.getSession().getAttribute("authorizedUser") != null) {
 	%>
 	<div class="container">
 		<div class="col-md-6 col-md-offset-3">
-			<form action="addReimburse.do" method="post">
+			<form action="addReimburse.do" method="post"  enctype="multipart/form-data">
 				<div class="form-group">
-					<labelfor"amount">Amount: </label> <input type="number"
+					<label for="amount">Amount: </label> <input type="number"
 						name="amount" id="username" class="form-control" required
 						placeholder="Enter the amount">
 				</div>
 				<div class="form-group">
-					<labelfor"category">Category:</label>
+					<label for="category">Category:</label>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" name="category"
 							value="Lodging"> <label class="form-check-label"
-							for="Lodging">Lodging</label>
+							for="Lodging" required>Lodging</label>
 					</div>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" name="category"
@@ -84,6 +92,9 @@
 							for="Other">Other</label>
 
 					</div>
+				</div>
+				<div class="form-group"><label for="fileToUpload">Add Receipt Image</labelfor>
+				<input id="fileToUpload" name="fileToUpload" type="file">
 				</div>
 				<div class="button-group">
 					<input type="submit" class="btn btn-success" value="Submit">

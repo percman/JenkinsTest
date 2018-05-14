@@ -1,9 +1,9 @@
 package com.revature.dao;
 
-import com.revature.model.Employee;
+import com.revature.model.User;
 
 public interface LoginDao {
 
-	String getPassword(Employee employee);
-	String getPasswordHash(Employee employee);
+	String getPassword(String username);
+	String getPasswordHash(User user);
 }

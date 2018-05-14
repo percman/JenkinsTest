@@ -51,14 +51,15 @@ public class ManagerDaoImpl implements ManagerDao {
 	public boolean approveDeny(String response, int reimburse_id, int manager_id) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement pStmt = conn.prepareStatement("SELECT r.requestor_id, m.employee_id "
-					+ "FROM reimbursement r INNER JOIN manager m ON r.requestor_id=m.employee_id "
-					+ "WHERE ? AND m.manager_id = ?");
+			PreparedStatement pStmt = conn.prepareStatement("SELECT * "
+					+ "FROM reimbursement INNER JOIN manager ON reimbursement.requestor_id=manager.employee_id "
+					+ "WHERE reimbursement_id=? AND manager_id = ?");
 			pStmt.setInt(++index, reimburse_id);
 			pStmt.setInt(++index, manager_id);
 			ResultSet rs = pStmt.executeQuery();
 			if(rs.next()) return false;
 			else {
+				index=0;
 				CallableStatement stmt = conn.prepareCall("{CALL approve_deny(?, ?, ?)}");
 				stmt.setString(++index, response);
 				stmt.setInt(++index, reimburse_id);
@@ -77,12 +78,11 @@ public class ManagerDaoImpl implements ManagerDao {
 	public List<Employee> viewEmployees() {
 		List<Employee> employees=new ArrayList<>();
  		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("SELECT username, first_name, middle_initial, "
-					+ "last_name FROM employee NATURAL JOIN info");
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee NATURAL JOIN info");
 			ResultSet rs=stmt.executeQuery();
 			while(rs.next()) {
-				Employee employee=new Employee(rs.getInt("manager_id"), rs.getString("username"), rs.getString("password"), 
-						rs.getString("firstname"), rs.getString("middleinit").charAt(0), rs.getString("lastname"));
+				Employee employee=new Employee(rs.getInt("employee_id"), rs.getString("username"), rs.getString("password"), 
+						rs.getString("first_name"), rs.getString("middle_initial").charAt(0), rs.getString("last_name"));
 				employees.add(employee);
 			}
 			return employees;
@@ -98,14 +98,14 @@ public class ManagerDaoImpl implements ManagerDao {
 	public List<Reimbursement> viewReimbursements() {
 		List<Reimbursement> reimbursements =new ArrayList<>();
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("SELECT requestor_id, approver_id, category, status "
+			PreparedStatement stmt = conn.prepareStatement("SELECT * "
 					+ "FROM reimbursement");
 			ResultSet rs=stmt.executeQuery();
 			while(rs.next()) {
 				Reimbursement reimbursement = new Reimbursement(rs.getInt("reimbursement_id"), 
-						rs.getInt("requestorId"), rs.getInt("approverId"), rs.getDouble("amount"),
+						rs.getInt("requestor_id"), rs.getInt("approver_id"), rs.getDouble("amount"),
 						rs.getString("category"), rs.getString("status"),
-						rs.getTimestamp("request_time").toString(), rs.getTimestamp("approved_time").toString());
+						rs.getTimestamp("request_time").toString(), rs.getTimestamp("approval_time")==null ? "" : rs.getTimestamp("approval_time").toString());
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;
@@ -118,19 +118,19 @@ public class ManagerDaoImpl implements ManagerDao {
 		return null;
 	}
 	@Override
-	public List<Reimbursement> viewReimbursementByEmployee(Employee employee) {
+	public List<Reimbursement> viewReimbursementByEmployee(int id) {
 		List<Reimbursement> reimbursements =new ArrayList<>();
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement("SELECT requestor_id, approver_id, category, status "
-					+ "FROM reimbursement NATURAL JOIN employee WHERE username = ?");
-			stmt.setString(++index, employee.getUsername());
+			PreparedStatement stmt = conn.prepareStatement("SELECT * "
+					+ "FROM reimbursement WHERE requestor_id = ?");
+			stmt.setInt(++index, id);
 			ResultSet rs=stmt.executeQuery();
 			while(rs.next()) {
 				Reimbursement reimbursement = new Reimbursement(rs.getInt("reimbursement_id"),
-						rs.getInt("requestorId"), rs.getInt("approverId"), rs.getDouble("amount"),
+						rs.getInt("requestor_id"), rs.getInt("approver_id"), rs.getDouble("amount"),
 						rs.getString("category"), rs.getString("status"), rs.getTimestamp("request_time").toString(),
-						rs.getTimestamp("approved_time").toString());
+						rs.getTimestamp("approval_time")==null ? "" : rs.getTimestamp("approval_time").toString());
 				reimbursements.add(reimbursement);
 			}
 			return reimbursements;
@@ -156,6 +156,27 @@ public class ManagerDaoImpl implements ManagerDao {
 				System.out.println(name);
 				return name;
 			}
+		}catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State: " + sqle.getSQLState());
+			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
+		}
+		return null;
+	}
+	@Override
+	public List<Reimbursement> listPending() {
+		List<Reimbursement> reimbursements= new ArrayList<>();
+		try(Connection conn = ConnectionUtil.getConnection()){
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE status = 'Pending'");
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				Reimbursement reimbursement=new Reimbursement(rs.getInt("reimbursement_id"), rs.getInt("requestor_id"),
+						rs.getString("category"), rs.getDouble("amount"), rs.getString("status"),
+						rs.getTimestamp("request_time").toString());
+				reimbursements.add(reimbursement);
+			}
+			return reimbursements;
 		}catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL State: " + sqle.getSQLState());

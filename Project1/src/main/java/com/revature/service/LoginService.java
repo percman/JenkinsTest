@@ -6,29 +6,30 @@ import javax.servlet.http.HttpServletResponse;
 import com.revature.dao.LoginDao;
 import com.revature.dao.LoginDaoImpl;
 import com.revature.model.Employee;
+import com.revature.model.User;
 
 public class LoginService {
 	private LoginService() {}
 	private static LoginDao dao = LoginDaoImpl.getInstance();
 	
-	public static String getPassword(Employee employee) {
-		return dao.getPassword(employee);
+	public static String getPassword(String username) {
+		return dao.getPassword(username);
 	}
-	public static String getPasswordHash(Employee employee) {
-		return dao.getPasswordHash(employee);
+	public static String getPasswordHash(User user) {
+		return dao.getPasswordHash(user);
 	}
 	
 	public static String login(HttpServletRequest request, HttpServletResponse response) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		Employee employee=EmployeeService.getEmployee(username);
 		if(EmployeeService.getEmployee(username)!=null){
-			System.out.println(getPassword(employee));
-			System.out.println(getPasswordHash(new Employee(username, password)));
-			if(getPassword(employee).equals(getPasswordHash(new Employee(username, password)))) {
-				Employee authorizedUser=employee;
+			if(getPassword(username).equals(getPasswordHash(new Employee(username, password)))) {
+				User authorizedUser=EmployeeService.getEmployee(username);
 				request.getSession().setAttribute("authorizedUser", authorizedUser);
-				return "/employee.jsp";
+				if(authorizedUser.getClass().getName().equals("com.revature.model.Manager")) {
+					request.getSession().setAttribute("authorizedManager", authorizedUser);
+					return "/Manager.jsp";
+				}else return "/employee.jsp";
 			}
 		}
 		return "/index.html";
@@ -36,6 +37,7 @@ public class LoginService {
 	
 	public static String logout(HttpServletRequest request, HttpServletResponse response) {
 		request.getSession().removeAttribute("authorizedUser");
-		return "/index.html";
+		request.getSession().removeAttribute("authorizedManager");
+		return "/index.jsp";
 	}
 }

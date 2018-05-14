@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.revature.model.Employee;
 import com.revature.model.Reimbursement;
+import com.revature.model.User;
 
 public interface EmployeeDao {
 
@@ -17,5 +18,7 @@ public interface EmployeeDao {
 	
 	List<Reimbursement> listResolved(Employee employee);
 	
-	Employee getEmployee(String username);
+	User getEmployee(String username);
+	
+	String getName(int id);
 }

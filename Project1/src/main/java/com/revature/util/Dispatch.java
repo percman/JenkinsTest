@@ -2,8 +2,10 @@ package com.revature.util;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.revature.service.EmployeeService;
 import com.revature.service.LoginService;
+import com.revature.service.ManagerService;
 import com.revature.service.ReimbursementService;
 
 public class Dispatch {
@@ -24,6 +26,16 @@ public class Dispatch {
 			return EmployeeService.listPending(request, response);
 		case "/Project1/viewApproved.do":
 			return EmployeeService.listResolved(request, response);
+		case "/Project1/ManagerPending.do":
+			return ManagerService.listPending(request, response);
+		case "/Project1/approveDeny.do":
+			return ManagerService.approveDeny(request, response);
+		case "/Project1/ViewEmployees.do":
+			return ManagerService.viewEmployees(request, response);
+		case "/Project1/ViewEmployeeReimbursements.do":
+			return ManagerService.viewReimbursementByEmployee(request, response);
+		case "/Project1/AllReimbursements.do":
+			return ManagerService.viewReimbursements(request, response);
 		default: return "/404.jsp";
 		}
 	}

@@ -16,7 +16,9 @@ public interface ManagerDao {
 	
 	List<Reimbursement> viewReimbursements();
 	
-	List<Reimbursement> viewReimbursementByEmployee(Employee employee);
+	List<Reimbursement> viewReimbursementByEmployee(int id);
 	
 	String approver(int id);
+	
+	List<Reimbursement> listPending();
 }

@@ -12,7 +12,9 @@ import org.apache.log4j.Logger;
 
 import com.revature.model.Employee;
 import com.revature.model.Reimbursement;
+import com.revature.model.User;
 import com.revature.util.ConnectionUtil;
+import com.revature.util.Factory;
 
 public class EmployeeDaoImpl implements EmployeeDao{
 
@@ -136,17 +138,19 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		return null;
 	}
 	@Override
-	public Employee getEmployee(String username) {
+	public User getEmployee(String username) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM info "
-					+ "NATURAL JOIN employee WHERE username=?");
+					+ "INNER JOIN employee ON info.employee_id=employee.employee_id FULL OUTER JOIN "
+					+ "manager ON employee.employee_id=manager.employee_id WHERE username=?");
 			stmt.setString(++index, username);
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
-				Employee employee=new Employee(rs.getInt("employee_id"), rs.getString("username"), rs.getString("password"), 
-						rs.getString("first_name"), rs.getString("middle_initial").charAt(0), rs.getString("last_name"));
-				return employee;
+				User user=Factory.getUser(rs.getInt("employee_id"), rs.getString("username"), rs.getString("password"), 
+						rs.getString("first_name"), rs.getString("middle_initial").charAt(0), rs.getString("last_name"),
+						rs.getInt("manager_id"));
+				return user;
 			}
 		}catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
@@ -154,5 +158,26 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			System.err.println("Error Code : " + sqle.getErrorCode());
 			logger.warn(sqle.getMessage());
 		}		return null;
+	}
+	@Override
+	public String getName(int id) {
+		int index=0;
+		try(Connection conn = ConnectionUtil.getConnection()){
+			PreparedStatement stmt = conn.prepareStatement("SELECT first_name, middle_initial, last_name "
+					+ "FROM info WHERE employee_id=?");
+			stmt.setInt(++index, id);
+			ResultSet rs=stmt.executeQuery();
+			if(rs.next()) {
+				String name=rs.getString("first_name")+ " " + 
+						rs.getString("middle_initial")+" " +rs.getString("last_name");
+				return name;
+			}
+		}catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State: " + sqle.getSQLState());
+			System.err.println("Error Code : " + sqle.getErrorCode());
+			logger.warn(sqle.getMessage());
+		}
+		return null;
 	}
 }

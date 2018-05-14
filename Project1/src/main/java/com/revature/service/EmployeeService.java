@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.revature.dao.EmployeeDao;
 import com.revature.dao.EmployeeDaoImpl;
 import com.revature.model.Employee;
+import com.revature.model.User;
 
 public class EmployeeService {
 
@@ -19,7 +20,7 @@ public class EmployeeService {
 	public static Employee viewEmployee(int id) {
 		return dao.viewEmployee(id);
 	}
-	public static Employee getEmployee(String username) {
+	public static User getEmployee(String username) {
 		return dao.getEmployee(username);
 	}
 	public static String updateEmployee(HttpServletRequest request, HttpServletResponse response) {
@@ -43,5 +44,9 @@ public class EmployeeService {
 		Employee employee=(Employee)request.getSession().getAttribute("authorizedUser");
 		request.setAttribute("resolvedList", dao.listResolved(employee));
 		return "/EmployeeApproved.jsp";
+	}
+	
+	public static String getName(int id) {
+		return dao.getName(id);
 	}
 }

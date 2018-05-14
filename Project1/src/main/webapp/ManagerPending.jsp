@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+	<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.revature.service.EmployeeService" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,9 +11,9 @@
 <link rel="stylesheet"
 	href="webjars/bootstrap/3.3.7-1/css/bootstrap.css">
 </head>
-<body class="container">
+<body class= "container">
 
-	<nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
 	<div class="navbar-header col-md-3">
 		<!-- Must use navbar brand to make style work -->
 		<a href="./index.jsp" class="navbar-brand">Revature
@@ -58,44 +61,73 @@
 	<%
 		}
 	%> </nav>
-	<% if (request.getSession().getAttribute("authorizedUser")!=null){ %>
+	
+	<%
+ 	if (request.getSession().getAttribute("authorizedManager") != null) {
+ %>
+	<h2>Pending Employee Reimbursements</h2>
 	<div class="container">
-			<%@ page import="com.revature.model.Employee"%>
-			<h3>Update info for: </h3>
-			<% Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");%>
-				<%=employee.getFirstname()%> <%=employee.getMiddleInit() %>. <%=employee.getLastName() %>
-			<div class="container">
-		<div class="col-md-6 col-md-offset-3">
-			<form action="update.do" method="post">
-				<div class="form-group"><label for "username">Username: </label>
-					<input type="text" name="username" id="username" class="form-control" required value=<%=employee.getUsername() %>>
-				</div>
-				<div class="form-group"><label for "password">Password:</label>
-					<input type="password" name="password" id="password" class="form-control" required placeholder="Enter your password">
-				</div>
-				<div class="form-group"><label for "firstName">First Name:</label>
-					<input type="text" name="firstName" class="form-control" id="firstname" required value=<%=employee.getFirstname() %>>
-				</div>
-				<div class="form-group"><label for "middleInitial">Middle Initial:</label>
-					<input type="text" name="middleInitial" id="middleInitial" class="form-control" maxlength="1" required value=<%=employee.getMiddleInit() %>>
-				</div>
-				<div class="form-group"><label for "lastName">Last Name</label>
-					<input type="text" name="lastName" id="lastName" class="form-control" required value=<%=employee.getLastName() %>>
-				</div>
-				<div class="button-group">
+		<div class="col-md-7">
+			<table class="table table-striped table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>Employee name</th>
+						<th>Amount</th>
+						<th>Submitted</th>
+						<th>Category</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody id="table-body">
+					<%@ page import="com.revature.model.Reimbursement"%>
+					<%
+						List<Reimbursement> reimbursements = (ArrayList<Reimbursement>) request.getAttribute("pendingList");
+					%>
+					<%
+						for (Reimbursement r : reimbursements) {
+					%>
+					<tr>
+					
+						<td><%=EmployeeService.getName(r.getRequestorId()) %>
+						<td><%=r.getAmount()%></td>
+						<td><%=r.getRequestTime()%></td>
+						<td><%=r.getCategory()%></td>
+						<td><form action="approveDeny.do" method="post">
+						<div class="form-group">
+					<input type="text"  style="display: none"
+						name="reimburse_id" class="form-control" value="<%=r.getId() %>">
+				
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="status" required
+							value="Approved"> <label class="form-check-label"
+							for="Approved">Approved</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="status"
+							value="Denied"> <label class="form-check-label"
+							for="Denied">Denied</label>
+					</div>
+					<div class="button-group">
 					<input type="submit" class="btn btn-success" value="Submit">
-					<input type="reset" class="btn btn-danger" value="Reset">
+					
 				</div>
-			</form>
+				</div></form></td>
+					</tr>
+					<%
+						}
+					%>
+				</tbody>
+			</table>
 		</div>
 	</div>
-		</div>
-	<% } else %> You are not authorized to view this page.
-	
-		    <!--jQuery CDN-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--Bootstrap jQuery CDN-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+	<% }else %>You are not authorized to view this page.
+	<!--jQuery CDN-->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--Bootstrap jQuery CDN-->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
 </body>
 </html>
