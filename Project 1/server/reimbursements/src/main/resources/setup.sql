@@ -91,7 +91,7 @@ INSERT INTO Employee VALUES (-1, 'N/A', 'N/A');
 INSERT INTO EINFO VALUES (-1, 'N/A', 'N/A', 'N/A');
 INSERT INTO FManager VALUES (-1);
 
-SELECT * FROM Employee;
+SELECT * FROM FManager;
 
 COMMIT;
 
@@ -124,11 +124,11 @@ IS
   END;
 /
 
-CREATE OR REPLACE FUNCTION SET_RSTATUS(status_in NUMBER, rid_in NUMBER, approver_in NUMBER) RETURN NUMBER
+CREATE OR REPLACE FUNCTION RSTATUS_CHECK(status_in NUMBER, rid_in NUMBER, approver_in NUMBER) RETURN NUMBER
 IS
   output NUMBER;
   BEGIN
-    SELECT status INTO output FROM Reimbursement;
+    SELECT status INTO output FROM Reimbursement WHERE rid_in = rid;
     IF (output <> 0) THEN
       RETURN -1;
     END IF;
@@ -136,8 +136,6 @@ IS
     IF (output <> 0) THEN
       RETURN -2;
     END IF;
-    UPDATE Reimbursement SET status = status_in WHERE rid = rid_in;
-    COMMIT;
     RETURN 1;
   END;
 /

@@ -2149,3 +2149,539 @@ PL/SQL: Statement ignored
 2018-05-14 17:59:53 DEBUG CorsFilter:25 - CORSFilter request from 60334
 2018-05-14 17:59:53 DEBUG DispatchService:76 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
 2018-05-14 17:59:53 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:37:07 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:37:07 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 18:37:07 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 18:37:07 DEBUG CorsFilter:25 - CORSFilter request from 63559
+2018-05-14 18:37:07 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:37:07 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 18:37:07 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 18:37:07 DEBUG CorsFilter:25 - CORSFilter request from 63562
+2018-05-14 18:37:07 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:37:07 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:37:07 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:37:07 DEBUG CorsFilter:25 - CORSFilter request from 63563
+2018-05-14 18:38:12 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:38:12 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:12 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:12 DEBUG CorsFilter:25 - CORSFilter request from 63668
+2018-05-14 18:38:12 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:38:12 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:12 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:12 DEBUG CorsFilter:25 - CORSFilter request from 63668
+2018-05-14 18:38:13 DEBUG DispatchService:31 - SimpleEmployee{username='AdminDude', password='AdminAdmin'}
+2018-05-14 18:38:14 DEBUG EmployeeService:50 - User AdminDude logged in successfully!
+2018-05-14 18:38:14 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-14 18:38:14 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:38:47 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:38:47 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:47 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:47 DEBUG CorsFilter:25 - CORSFilter request from 63723
+2018-05-14 18:38:47 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:38:47 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:47 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:47 DEBUG CorsFilter:25 - CORSFilter request from 63723
+2018-05-14 18:38:48 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:38:48 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:38:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:38:50 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:50 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:50 DEBUG CorsFilter:25 - CORSFilter request from 63723
+2018-05-14 18:38:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:38:50 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:50 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:50 DEBUG CorsFilter:25 - CORSFilter request from 63723
+2018-05-14 18:38:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:38:50 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:50 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:38:50 DEBUG CorsFilter:25 - CORSFilter request from 63731
+2018-05-14 18:38:50 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:38:50 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:39:02 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:39:02 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:02 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:02 DEBUG CorsFilter:25 - CORSFilter request from 63731
+2018-05-14 18:39:02 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:39:02 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:02 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:02 DEBUG CorsFilter:25 - CORSFilter request from 63731
+2018-05-14 18:39:02 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:39:02 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:02 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:02 DEBUG CorsFilter:25 - CORSFilter request from 63751
+2018-05-14 18:39:02 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:39:02 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:02 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:02 DEBUG CorsFilter:25 - CORSFilter request from 63751
+2018-05-14 18:39:02 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:39:02 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:39:04 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:39:04 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:04 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:04 DEBUG CorsFilter:25 - CORSFilter request from 63751
+2018-05-14 18:39:04 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:39:04 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:04 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:39:04 DEBUG CorsFilter:25 - CORSFilter request from 63756
+2018-05-14 18:39:04 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:39:04 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:41:38 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:41:38 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 18:41:38 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 18:41:38 DEBUG CorsFilter:25 - CORSFilter request from 64009
+2018-05-14 18:41:38 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:41:38 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 18:41:38 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 18:41:38 DEBUG CorsFilter:25 - CORSFilter request from 64010
+2018-05-14 18:41:39 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:41:39 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:41:39 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:41:39 DEBUG CorsFilter:25 - CORSFilter request from 64011
+2018-05-14 18:41:47 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:41:47 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:41:47 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:41:47 DEBUG CorsFilter:25 - CORSFilter request from 64035
+2018-05-14 18:41:47 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:41:47 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:41:47 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:41:47 DEBUG CorsFilter:25 - CORSFilter request from 64035
+2018-05-14 18:41:47 DEBUG DispatchService:31 - SimpleEmployee{username='AdminDude', password='AdminAdmin'}
+2018-05-14 18:41:48 DEBUG EmployeeService:50 - User AdminDude logged in successfully!
+2018-05-14 18:41:48 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-14 18:41:48 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:42:14 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:42:14 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:14 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:14 DEBUG CorsFilter:25 - CORSFilter request from 64083
+2018-05-14 18:42:14 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:42:14 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:14 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:14 DEBUG CorsFilter:25 - CORSFilter request from 64083
+2018-05-14 18:42:14 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:42:14 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:42:18 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:42:18 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:18 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:18 DEBUG CorsFilter:25 - CORSFilter request from 64083
+2018-05-14 18:42:18 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:42:18 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:18 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:18 DEBUG CorsFilter:25 - CORSFilter request from 64083
+2018-05-14 18:42:19 ERROR ReimbursementDaoImpl:125 - ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at "REIMBURSEMENT.SET_RSTATUS", line 5
+
+2018-05-14 18:42:19 ERROR ReimbursementDaoImpl:126 - SQL STATE: 21000
+2018-05-14 18:42:19 ERROR ReimbursementDaoImpl:127 - ERROR CODE: 1422
+2018-05-14 18:42:19 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 18:42:19 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:42:19 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:19 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:42:19 DEBUG CorsFilter:25 - CORSFilter request from 64083
+2018-05-14 18:42:19 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:42:19 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:43:28 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:43:28 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:43:28 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:43:28 DEBUG CorsFilter:25 - CORSFilter request from 64190
+2018-05-14 18:43:28 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:43:28 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:43:28 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:43:28 DEBUG CorsFilter:25 - CORSFilter request from 64190
+2018-05-14 18:43:28 ERROR ReimbursementDaoImpl:125 - ORA-14551: cannot perform a DML operation inside a query 
+ORA-06512: at "REIMBURSEMENT.SET_RSTATUS", line 13
+
+2018-05-14 18:43:28 ERROR ReimbursementDaoImpl:126 - SQL STATE: 72000
+2018-05-14 18:43:28 ERROR ReimbursementDaoImpl:127 - ERROR CODE: 14551
+2018-05-14 18:43:28 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 18:43:28 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:43:28 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:43:28 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:43:28 DEBUG CorsFilter:25 - CORSFilter request from 64190
+2018-05-14 18:43:28 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:43:28 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:43:28 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:43:28 DEBUG CorsFilter:25 - CORSFilter request from 64190
+2018-05-14 18:43:29 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:43:29 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:47:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:47:50 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:50 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:50 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:47:50 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:47:50 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:50 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:50 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:47:50 DEBUG DispatchService:31 - SimpleEmployee{username='AdminDude', password='AdminAdmin'}
+2018-05-14 18:47:52 DEBUG EmployeeService:50 - User AdminDude logged in successfully!
+2018-05-14 18:47:52 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-14 18:47:52 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:47:56 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:47:56 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:56 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:56 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:47:56 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:47:56 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:56 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:56 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:47:56 DEBUG DispatchService:43 - SimpleEmployee{username='AdminDude', password='AdminAdmin'}
+2018-05-14 18:47:57 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = [
+2018-05-14 18:47:57 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:47:59 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:47:59 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:59 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:59 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:47:59 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:47:59 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:59 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:47:59 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:47:59 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:47:59 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:48:09 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:48:09 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:48:09 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:48:09 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:48:09 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:48:09 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:48:09 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:48:09 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:48:09 ERROR ReimbursementDaoImpl:125 - ORA-14551: cannot perform a DML operation inside a query 
+ORA-06512: at "REIMBURSEMENT.SET_RSTATUS", line 13
+
+2018-05-14 18:48:09 ERROR ReimbursementDaoImpl:126 - SQL STATE: 72000
+2018-05-14 18:48:09 ERROR ReimbursementDaoImpl:127 - ERROR CODE: 14551
+2018-05-14 18:48:09 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 18:48:09 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:48:09 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:48:09 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:48:09 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:48:09 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:48:09 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:48:09 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:48:09 DEBUG CorsFilter:25 - CORSFilter request from 64588
+2018-05-14 18:48:10 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:48:10 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:49:20 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:49:20 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:49:20 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:49:20 DEBUG CorsFilter:25 - CORSFilter request from 64724
+2018-05-14 18:49:20 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:49:20 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:49:20 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:49:20 DEBUG CorsFilter:25 - CORSFilter request from 64724
+2018-05-14 18:49:21 ERROR ReimbursementDaoImpl:125 - ORA-14551: cannot perform a DML operation inside a query 
+ORA-06512: at "REIMBURSEMENT.SET_RSTATUS", line 13
+
+2018-05-14 18:49:21 ERROR ReimbursementDaoImpl:126 - SQL STATE: 72000
+2018-05-14 18:49:21 ERROR ReimbursementDaoImpl:127 - ERROR CODE: 14551
+2018-05-14 18:49:21 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 18:49:21 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:49:21 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:49:21 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:49:21 DEBUG CorsFilter:25 - CORSFilter request from 64724
+2018-05-14 18:49:21 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:49:21 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:49:21 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:49:21 DEBUG CorsFilter:25 - CORSFilter request from 64724
+2018-05-14 18:49:21 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:49:21 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:55:32 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:55:32 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 18:55:32 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 18:55:32 DEBUG CorsFilter:25 - CORSFilter request from 65302
+2018-05-14 18:55:32 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:55:32 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 18:55:32 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 18:55:32 DEBUG CorsFilter:25 - CORSFilter request from 65305
+2018-05-14 18:55:33 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:55:33 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:33 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:33 DEBUG CorsFilter:25 - CORSFilter request from 65306
+2018-05-14 18:55:48 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:55:48 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:48 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:48 DEBUG CorsFilter:25 - CORSFilter request from 65341
+2018-05-14 18:55:48 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:55:48 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:48 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:48 DEBUG CorsFilter:25 - CORSFilter request from 65341
+2018-05-14 18:55:49 DEBUG DispatchService:31 - SimpleEmployee{username='AdminDude', password='AdminAdmin'}
+2018-05-14 18:55:50 DEBUG EmployeeService:50 - User AdminDude logged in successfully!
+2018-05-14 18:55:50 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-14 18:55:50 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:55:53 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:55:53 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:53 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:53 DEBUG CorsFilter:25 - CORSFilter request from 65341
+2018-05-14 18:55:53 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:55:53 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:53 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:53 DEBUG CorsFilter:25 - CORSFilter request from 65341
+2018-05-14 18:55:53 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:55:53 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:55:59 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:55:59 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:59 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:59 DEBUG CorsFilter:25 - CORSFilter request from 65341
+2018-05-14 18:55:59 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:55:59 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:59 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:55:59 DEBUG CorsFilter:25 - CORSFilter request from 65341
+2018-05-14 18:56:00 ERROR ReimbursementDaoImpl:129 - ORA-14551: cannot perform a DML operation inside a query 
+ORA-06512: at "REIMBURSEMENT.SET_RSTATUS", line 13
+
+2018-05-14 18:56:00 ERROR ReimbursementDaoImpl:130 - SQL STATE: 72000
+2018-05-14 18:56:00 ERROR ReimbursementDaoImpl:131 - ERROR CODE: 14551
+2018-05-14 18:56:00 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 18:56:00 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:56:00 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:00 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:00 DEBUG CorsFilter:25 - CORSFilter request from 65341
+2018-05-14 18:56:00 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:56:00 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:00 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:00 DEBUG CorsFilter:25 - CORSFilter request from 65341
+2018-05-14 18:56:00 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:56:00 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:56:36 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:56:36 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 18:56:36 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 18:56:36 DEBUG CorsFilter:25 - CORSFilter request from 65446
+2018-05-14 18:56:36 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:56:36 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 18:56:36 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 18:56:36 DEBUG CorsFilter:25 - CORSFilter request from 65447
+2018-05-14 18:56:36 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 18:56:36 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:36 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:36 DEBUG CorsFilter:25 - CORSFilter request from 65448
+2018-05-14 18:56:56 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:56:56 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:56 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:56 DEBUG CorsFilter:25 - CORSFilter request from 65493
+2018-05-14 18:56:56 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:56:56 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:56 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:56:56 DEBUG CorsFilter:25 - CORSFilter request from 65493
+2018-05-14 18:56:57 DEBUG DispatchService:31 - SimpleEmployee{username='AdminDude', password='AdminAdmin'}
+2018-05-14 18:56:58 DEBUG EmployeeService:50 - User AdminDude logged in successfully!
+2018-05-14 18:56:58 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-14 18:56:58 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:57:02 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:57:02 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:02 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:02 DEBUG CorsFilter:25 - CORSFilter request from 65493
+2018-05-14 18:57:02 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:57:02 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:02 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:02 DEBUG CorsFilter:25 - CORSFilter request from 65493
+2018-05-14 18:57:02 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:57:02 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 18:57:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 18:57:05 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:05 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:05 DEBUG CorsFilter:25 - CORSFilter request from 65493
+2018-05-14 18:57:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:57:05 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:05 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:05 DEBUG CorsFilter:25 - CORSFilter request from 65493
+2018-05-14 18:57:05 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 18:57:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 18:57:05 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:05 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 18:57:05 DEBUG CorsFilter:25 - CORSFilter request from 65493
+2018-05-14 18:57:05 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 18:57:05 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:01:34 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:01:34 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 19:01:34 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 19:01:34 DEBUG CorsFilter:25 - CORSFilter request from 49542
+2018-05-14 19:01:35 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:01:35 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 19:01:35 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 19:01:35 DEBUG CorsFilter:25 - CORSFilter request from 49543
+2018-05-14 19:01:35 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:01:35 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:35 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:35 DEBUG CorsFilter:25 - CORSFilter request from 49544
+2018-05-14 19:01:46 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:01:46 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:46 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:46 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:46 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:01:46 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:46 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:46 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:46 DEBUG DispatchService:31 - SimpleEmployee{username='AdminDude', password='AdminAdmin'}
+2018-05-14 19:01:47 DEBUG EmployeeService:50 - User AdminDude logged in successfully!
+2018-05-14 19:01:47 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-14 19:01:47 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:01:49 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:01:49 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:49 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:49 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:49 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:01:49 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:49 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:49 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:49 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:01:49 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:01:52 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:01:52 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:52 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:52 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:52 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:01:52 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:52 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:52 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:53 ERROR ReimbursementDaoImpl:130 - Missing IN or OUT parameter at index:: 3
+2018-05-14 19:01:53 ERROR ReimbursementDaoImpl:131 - SQL STATE: 99999
+2018-05-14 19:01:53 ERROR ReimbursementDaoImpl:132 - ERROR CODE: 17041
+2018-05-14 19:01:53 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 19:01:53 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:01:53 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:53 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:53 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:53 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:01:53 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:01:59 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:01:59 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:59 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:59 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:59 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:01:59 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:59 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:59 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:59 ERROR ReimbursementDaoImpl:130 - Missing IN or OUT parameter at index:: 3
+2018-05-14 19:01:59 ERROR ReimbursementDaoImpl:131 - SQL STATE: 99999
+2018-05-14 19:01:59 ERROR ReimbursementDaoImpl:132 - ERROR CODE: 17041
+2018-05-14 19:01:59 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 19:01:59 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:01:59 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:59 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:59 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:59 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:01:59 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:59 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:01:59 DEBUG CorsFilter:25 - CORSFilter request from 49571
+2018-05-14 19:01:59 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:01:59 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:04:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:04:05 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 19:04:05 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 19:04:05 DEBUG CorsFilter:25 - CORSFilter request from 49820
+2018-05-14 19:04:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:04:05 DEBUG CorsFilter:23 - CORSFilter request from 127.0.0.1
+2018-05-14 19:04:05 DEBUG CorsFilter:24 - CORSFilter request from 127.0.0.1
+2018-05-14 19:04:05 DEBUG CorsFilter:25 - CORSFilter request from 49821
+2018-05-14 19:04:05 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:04:05 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:05 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:05 DEBUG CorsFilter:25 - CORSFilter request from 49822
+2018-05-14 19:04:13 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:04:13 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:13 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:13 DEBUG CorsFilter:25 - CORSFilter request from 49838
+2018-05-14 19:04:13 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:04:13 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:13 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:13 DEBUG CorsFilter:25 - CORSFilter request from 49838
+2018-05-14 19:04:14 ERROR ReimbursementDaoImpl:130 - ORA-02291: integrity constraint (REIMBURSEMENT.FK_APPROVER) violated - parent key not found
+
+2018-05-14 19:04:14 ERROR ReimbursementDaoImpl:131 - SQL STATE: 23000
+2018-05-14 19:04:14 ERROR ReimbursementDaoImpl:132 - ERROR CODE: 2291
+2018-05-14 19:04:14 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 19:04:14 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:04:14 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:14 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:14 DEBUG CorsFilter:25 - CORSFilter request from 49838
+2018-05-14 19:04:14 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:04:14 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:14 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:14 DEBUG CorsFilter:25 - CORSFilter request from 49838
+2018-05-14 19:04:14 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:04:14 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:04:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:04:26 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:26 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:26 DEBUG CorsFilter:25 - CORSFilter request from 49838
+2018-05-14 19:04:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:04:26 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:26 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:26 DEBUG CorsFilter:25 - CORSFilter request from 49838
+2018-05-14 19:04:26 ERROR ReimbursementDaoImpl:130 - ORA-02291: integrity constraint (REIMBURSEMENT.FK_APPROVER) violated - parent key not found
+
+2018-05-14 19:04:26 ERROR ReimbursementDaoImpl:131 - SQL STATE: 23000
+2018-05-14 19:04:26 ERROR ReimbursementDaoImpl:132 - ERROR CODE: 2291
+2018-05-14 19:04:26 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 19:04:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:04:26 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:26 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:26 DEBUG CorsFilter:25 - CORSFilter request from 49838
+2018-05-14 19:04:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:04:26 DEBUG CorsFilter:23 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:26 DEBUG CorsFilter:24 - CORSFilter request from 0:0:0:0:0:0:0:1
+2018-05-14 19:04:26 DEBUG CorsFilter:25 - CORSFilter request from 49838
+2018-05-14 19:04:26 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:04:26 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:10:15 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:10:16 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:10:16 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:10:20 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:10:20 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:10:21 DEBUG ReimbursementDaoImpl:127 - Approver: 6
+2018-05-14 19:10:21 ERROR ReimbursementDaoImpl:131 - ORA-02291: integrity constraint (REIMBURSEMENT.FK_APPROVER) violated - parent key not found
+
+2018-05-14 19:10:21 ERROR ReimbursementDaoImpl:132 - SQL STATE: 23000
+2018-05-14 19:10:21 ERROR ReimbursementDaoImpl:133 - ERROR CODE: 2291
+2018-05-14 19:10:21 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 19:10:21 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:10:21 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:10:21 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:10:21 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:13:44 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:13:45 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:13:45 DEBUG CorsFilter:22 - CORSFilter HTTP Request: GET
+2018-05-14 19:13:52 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:13:52 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:13:53 DEBUG ReimbursementDaoImpl:127 - Approver: 1
+2018-05-14 19:13:53 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 19:13:53 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:13:53 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:13:53 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":1,"approverFirst":"Curt","approverLast":"Hilgenberg","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:13:53 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:14:03 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:14:03 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:14:03 INFO  MasterDispatcher:68 - You can't approve yrself.
+2018-05-14 19:14:03 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 19:14:03 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:14:03 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:14:03 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":1,"approverFirst":"Curt","approverLast":"Hilgenberg","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:14:03 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:14:15 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:14:15 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:14:15 DEBUG DispatchService:31 - SimpleEmployee{username='WalkinDude', password='WalkinWalkin'}
+2018-05-14 19:14:15 DEBUG EmployeeService:50 - User WalkinDude logged in successfully!
+2018-05-14 19:14:15 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-14 19:14:15 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:14:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:14:26 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:14:26 DEBUG DispatchService:54 - CreateReimbursementModel{username='WalkinDude', password='WalkinWalkin'}amount=4500.0, category=2}
+2018-05-14 19:14:27 DEBUG OtherUtils:42 - In booleanResponse
+2018-05-14 19:14:36 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:14:36 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:14:36 DEBUG DispatchService:31 - SimpleEmployee{username='AdminDude', password='AdminAdmin'}
+2018-05-14 19:14:37 DEBUG EmployeeService:50 - User AdminDude logged in successfully!
+2018-05-14 19:14:37 DEBUG OtherUtils:15 - s.charAt(0) in isJSONish = {
+2018-05-14 19:14:37 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:14:40 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:14:40 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:14:40 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":4500.0,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":11},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":1,"approverFirst":"Curt","approverLast":"Hilgenberg","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:14:40 DEBUG OtherUtils:21 - In jsonResponse
+2018-05-14 19:14:49 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:14:49 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:14:49 DEBUG ReimbursementDaoImpl:127 - Approver: 1
+2018-05-14 19:14:49 DEBUG OtherUtils:32 - In stringReponse
+2018-05-14 19:14:49 DEBUG CorsFilter:22 - CORSFilter HTTP Request: OPTIONS
+2018-05-14 19:14:49 DEBUG CorsFilter:22 - CORSFilter HTTP Request: POST
+2018-05-14 19:14:50 DEBUG DispatchService:75 - [{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":8},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":7},{"amount":0.0,"category":0,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":9},{"amount":4.5,"category":2,"status":0,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curt","requesterLast":"Hilgenberg","rid":10},{"amount":4500.0,"category":2,"status":2,"approverFirst":"Curt","approverLast":"Hilgenberg","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":11},{"amount":13.4,"category":0,"status":1,"approverFirst":"N/A","approverLast":"N/A","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":5},{"amount":13.45,"category":0,"status":1,"approverFirst":"Curt","approverLast":"Hilgenberg","requesterFirst":"Curtis","requesterLast":"Hilgenberg","rid":6}]
+2018-05-14 19:14:50 DEBUG OtherUtils:21 - In jsonResponse

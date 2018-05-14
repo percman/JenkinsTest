@@ -21,9 +21,7 @@ import java.util.List;
 import static com.revature.service.EmployeeService.getEmployeeNames;
 import static com.revature.service.EmployeeService.login;
 import static com.revature.service.EmployeeService.updateEmployeeInfo;
-import static com.revature.service.ReimbursementService.createReimbursement;
-import static com.revature.service.ReimbursementService.getAllReimbursements;
-import static com.revature.service.ReimbursementService.getReimbursementsByUser;
+import static com.revature.service.ReimbursementService.*;
 import static com.revature.util.OtherUtils.*;
 
 public class DispatchService {
@@ -82,7 +80,8 @@ public class DispatchService {
             SelfSetException {
         ObjectMapper om = new ObjectMapper();
         RStatusModel rsm = (RStatusModel) Mapper.mapRequest(request, RStatusModel.class);
-
+        setRid(rsm);
+        stringReponse("success",response);
     }
 
 }

@@ -5,7 +5,7 @@ import com.revature.util.Mappable;
 public class RStatusModel implements Mappable {
     private int status;
     private int rid;
-    private int approverId;
+    private int approver;
 
     public RStatusModel() {
     }
@@ -13,7 +13,7 @@ public class RStatusModel implements Mappable {
     public RStatusModel(int status, int rid, int approverId) {
         this.status = status;
         this.rid = rid;
-        this.approverId = approverId;
+        this.approver = approverId;
     }
 
     public int getStatus() {
@@ -32,12 +32,12 @@ public class RStatusModel implements Mappable {
         this.rid = rid;
     }
 
-    public int getApproverId() {
-        return approverId;
+    public int getApprover() {
+        return approver;
     }
 
-    public void setApproverId(int approverId) {
-        this.approverId = approverId;
+    public void getApprover(int approver) {
+        this.approver = approver;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class RStatusModel implements Mappable {
         return "RStatusModel{" +
                 "status=" + status +
                 ", rid=" + rid +
-                ", approverId=" + approverId +
+                ", approverId=" + approver+
                 '}';
     }
 }

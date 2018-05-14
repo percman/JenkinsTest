@@ -107,14 +107,26 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
     public void setRStatus(RStatusModel rsm) throws AlreadySetException, SelfSetException {
         int index = 0;
         try (Connection conn = ConnectionUtil.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement("SELECT SET_RSTATUS(?, ?, ?) retStat from dual");
+            PreparedStatement stmt = conn.prepareStatement("SELECT RSTATUS_CHECK(?, ?, ?) retStat from dual");
             stmt.setInt(++index, rsm.getStatus());
             stmt.setInt(++index, rsm.getRid());
-            stmt.setInt(++index, rsm.getApproverId());
+            stmt.setInt(++index, rsm.getApprover());
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 int out = rs.getInt("retStat");
+                if (out == -1) {
+                    throw new AlreadySetException();
+                }
+                else if (out == -2) {
+                    throw new SelfSetException();
+                }
             }
+            stmt = conn.prepareStatement("UPDATE Reimbursement SET Reimbursement.STATUS = ?, APPROVER = ? WHERE rid = ?");
+            stmt.setInt(1, rsm.getStatus());
+            stmt.setInt(2, rsm.getApprover());
+            logger.debug("Approver: " + rsm.getApprover());
+            stmt.setInt(3, rsm.getRid());
+            stmt.executeUpdate();
         } catch (SQLException e) {
             logger.error(e.getMessage());
             logger.error("SQL STATE: " + e.getSQLState());

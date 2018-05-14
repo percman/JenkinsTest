@@ -20,9 +20,6 @@ public class CorsFilter implements Filter {
 		// Cast the ServletRequest to an HttpServletRequest in order to get the HTTP Method attached with the request
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		logger.debug("CORSFilter HTTP Request: " + httpRequest.getMethod());
-		logger.debug("CORSFilter request from " + httpRequest.getRemoteHost());
-		logger.debug("CORSFilter request from " + httpRequest.getRemoteAddr());
-		logger.debug("CORSFilter request from " + httpRequest.getRemotePort());
 
 		// Authorize domain(s) to consume the content
 		/*
