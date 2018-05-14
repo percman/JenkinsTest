@@ -93,8 +93,8 @@
 
 					</div>
 				</div>
-				<div class="form-group"><label for="fileToUpload">Add Receipt Image</labelfor>
-				<input id="fileToUpload" name="fileToUpload" type="file">
+				<div class="form-group"><label for="image">Add Receipt Image</label>
+				<input name="image" type="url" class="form-control" placeholder="Enter image URL">
 				</div>
 				<div class="button-group">
 					<input type="submit" class="btn btn-success" value="Submit">
