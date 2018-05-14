@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<h1>{{title}}</h1>
+		<h2>Submit a reimbursement.</h2>
 		<%@ page import="com.revature.model.Employee" 
 		import="com.revature.model.FinancialManager"
 		import="com.revature.model.Reimbursement"%>
@@ -20,6 +20,14 @@
 			<a href="finManHome.jsp" id="finManHome" style="display: none;">Financial Manager Home Page</a>
 		</div>
 		<br><br>
+
+
+
+
+
+
+
+
 
 		<script src="isFinMan.js"></script>
 	</body>

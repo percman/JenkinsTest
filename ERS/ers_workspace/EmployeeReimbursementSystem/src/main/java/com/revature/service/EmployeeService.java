@@ -20,11 +20,13 @@ public class EmployeeService {
 	}
 
 	public static boolean isFinMan(Employee employee) throws InvalidLoginException {
+		LogThis.info("do i get here 2");
 
 		boolean isFinMan = dao.isFinMan(employee.getUsername());
 		if (dao.getEmployee(employee.getUsername()) == null) {
 			throw new InvalidLoginException();
 		}
+		LogThis.info("do i get here 4");
 
 		if (isFinMan) {
 			return true;
@@ -35,6 +37,8 @@ public class EmployeeService {
 	}
 
 	public static Employee login(Employee employee) throws InvalidLoginException {
+		LogThis.info("do i get here 6");
+
 		Employee temp = dao.getEmployee(employee.getUsername());
 		if (dao.getEmployee(employee.getUsername()) == null) {
 			throw new InvalidLoginException();

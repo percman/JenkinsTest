@@ -290,14 +290,13 @@ CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id IN NUMBER, ne
 -----------------------------------------------------
 -- Create Stored procedures for updating employees -- 
 -----------------------------------------------------
-CREATE OR REPLACE PROCEDURE update_employee (e_id IN NUMBER, new_username IN VARCHAR2, new_password IN VARCHAR2, new_f_name IN VARCHAR2, 
+CREATE OR REPLACE PROCEDURE update_employee (e_id IN NUMBER, new_username IN VARCHAR2, new_f_name IN VARCHAR2, 
                                                 new_m_initial IN VARCHAR2, new_l_name IN VARCHAR2, new_phone IN NUMBER, 
                                                 new_email IN VARCHAR2)
     AS
     BEGIN
         UPDATE employee SET
-            username = new_username,
-            password = GET_USER_HASH(new_username, new_password)
+            username = new_username
         WHERE employee_id = e_id;
         UPDATE employee_info SET
             f_name = new_f_name,
@@ -419,6 +418,5 @@ SELECT * FROM R_STATUS;
 SELECT * FROM R_CATEGORY;
 -------------------------
 -------------------------
-
 
 

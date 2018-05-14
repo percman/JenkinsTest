@@ -2,10 +2,10 @@ package com.revature.service;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.revature.factories.LoginFactory;
 import com.revature.logging.InvalidLoginException;
 import com.revature.logging.LogThis;
 import com.revature.model.Employee;
-import com.revature.model.LoginFactory;
 
 public class NavigationService {
 
@@ -45,5 +45,22 @@ public class NavigationService {
 		return "login.jsp";
 	}
 	
+
+	public static String userUpdate(HttpServletRequest request) {
+		Employee temp = (Employee) request.getSession().getAttribute("currentEmployee");
+		int id = temp.getId();
+		String username = request.getParameter("username");
+		boolean isFinancialManager = temp.isFinancialManager();
+		String firstname = request.getParameter("firstname");
+		String middleInitial = request.getParameter("middleInitial");
+		String lastname = request.getParameter("lastname");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+	
+		Employee new_current = new Employee(id, username, isFinancialManager, firstname, middleInitial, lastname, phone, email);
+		EmployeeService.updateEmployee(new_current);
+		request.getSession().setAttribute("currentEmployee", new_current);
+		return "changeAccountInfo.jsp";
+	}
 	
 }

@@ -73,6 +73,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public Employee getEmployee(String username) {
+		LogThis.info("do i get here 3");
 		Employee employee = new Employee();
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM employee e "
@@ -103,10 +104,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public boolean updateEmployee(Employee employee) {
 		int index = 0;
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			CallableStatement stmt = conn.prepareCall("{CALL update_employee (?, ?, ?, ?, ?, ?, ?, ?)}");
+			CallableStatement stmt = conn.prepareCall("{CALL update_employee (?, ?, ?, ?, ?, ?, ?)}");
 			stmt.setInt(++index, employee.getId());
 			stmt.setString(++index, employee.getUsername());
-			stmt.setString(++index, employee.getPassword());
 			stmt.setString(++index, employee.getFirstname());
 			stmt.setString(++index, employee.getMiddleInitial());
 			stmt.setString(++index, employee.getLastname());
