@@ -12,7 +12,7 @@
   </thead>
   <tbody *ngFor="let obj of listing">
     <tr>
-      <td>{{obj.amount}}</td>
+      <td>{{obj.amount | currency:'USD'}}</td>
       <td>{{categoryToString(obj.category)}}</td>
       <td>{{statusToString(obj.status)}}</td>
       <td>{{obj.approverFirst}}</td>

@@ -5,6 +5,7 @@ import {CreateReimbursementComponent} from '../components/create-reimbursement/c
 import {UserInfoComponent} from '../components/user-info/user-info.component';
 import {ViewEmployeesComponent} from '../components/view-employees/view-employees.component';
 import {MyReimbursementsComponent} from '../components/my-reimbursements/my-reimbursements.component';
+import {AdminTableComponent} from '../components/admin-table/admin-table.component';
 
 
 export const MyRoutes: Routes = [
@@ -14,5 +15,6 @@ export const MyRoutes: Routes = [
   { path: 'update-info', component: UserInfoComponent},
   { path: 'view-employees', component: ViewEmployeesComponent},
   { path: 'my-reimbursements', component: MyReimbursementsComponent},
+  { path: 'all-reimbursements', component: AdminTableComponent},
   { path: '**', redirectTo: '', pathMatch: 'full'}
 ];

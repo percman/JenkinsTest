@@ -75,18 +75,19 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
     }
 
     public List<ReimbursementTable> getAllReimbursements() {
-        List<MyReimbursementReturn> ls = new LinkedList<>();
+        List<ReimbursementTable> ls = new LinkedList<>();
 
         try (Connection conn = ConnectionUtil.getConnection()) {
             PreparedStatement stmt = conn.prepareStatement("SELECT amount a, category c, status s," +
-                    "ei.FIRST_NAME fApp, ei.LAST_NAME lApp, eie.FIRST_NAME fReq, eie.LAST_NAME " +
+                    "ei.FIRST_NAME fApp, ei.LAST_NAME lApp, eie.FIRST_NAME fReq, eie.LAST_NAME lReq, rei.rid id " +
                     "FROM REIMBURSEMENT rei, EINFO eie, EINFO ei " +
                     "WHERE rei.requester = eie.EID " +
                     "AND rei.approver = ei.eid ");
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                ls.add(new MyReimbursementReturn(rs.getDouble("a"), rs.getInt("c"),
-                        rs.getInt("s"), rs.getString("f"), rs.getString("l")));
+                ls.add(new ReimbursementTable(rs.getDouble("a"), rs.getInt("c"),
+                        rs.getInt("s"), rs.getString("fApp"), rs.getString("lApp"),
+                        rs.getString("fReq"), rs.getString("lReq"), rs.getInt("id")));
 
             }
             return ls;
@@ -97,4 +98,5 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
             logger.error("ERROR CODE: " + e.getErrorCode());
         }
         return null;
+    }
 }

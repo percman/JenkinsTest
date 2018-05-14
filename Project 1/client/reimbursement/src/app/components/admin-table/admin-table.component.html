@@ -15,13 +15,13 @@
     <tr>
       <td>{{obj.requesterFirst}}</td>
       <td>{{obj.requesterLast}}</td>
-      <td>{{obj.amount}}</td>
+      <td>{{obj.amount | currency:'USD'}}</td>
       <td>{{categoryToString(obj.category)}}</td>
       <td>{{statusToString(obj.status)}}</td>
       <td>{{obj.approverFirst}}</td>
       <td>{{obj.approverLast}}</td>
       <td><button (click)="approve(obj.rid)" class="btn btn-success">Approve</button></td>
-      <td><button (click)="approve(obj.rid)" class="btn btn-success">Deny</button></td>
+      <td><button (click)="deny(obj.rid)" class="btn btn-danger">Deny</button></td>
     </tr>
     </tbody>
   </table>

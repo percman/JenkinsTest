@@ -19,6 +19,7 @@ import static com.revature.service.EmployeeService.getEmployeeNames;
 import static com.revature.service.EmployeeService.login;
 import static com.revature.service.EmployeeService.updateEmployeeInfo;
 import static com.revature.service.ReimbursementService.createReimbursement;
+import static com.revature.service.ReimbursementService.getAllReimbursements;
 import static com.revature.service.ReimbursementService.getReimbursementsByUser;
 import static com.revature.util.OtherUtils.*;
 
@@ -64,8 +65,11 @@ public class DispatchService {
         jsonResponse(el, response);
     }
 
-    public static void dispatchAllReimbusements(HttpServletRequest request, HttpServletResponse response) {
-        jsonResponse();
+    public static void dispatchAllReimbusements(HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
+        ObjectMapper om = new ObjectMapper();
+        String reimbOut = om.writeValueAsString(getAllReimbursements());
+        logger.debug(reimbOut);
+        jsonResponse(reimbOut, response);
     }
 
     public static void dispatchSetRStatus(HttpServletRequest request, HttpServletResponse response) {

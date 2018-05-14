@@ -23,10 +23,12 @@ export class AdminTableComponent implements OnInit {
   }
 
   approve(rid: number): void {
+    console.log('approve ' + rid);
     this.getThem.setRStatus({'rid': rid, 'status': 1});
   }
 
   deny(rid: number): void {
+    console.log('deny ' + rid);
     this.getThem.setRStatus({'rid': rid, 'status': 2});
   }
 

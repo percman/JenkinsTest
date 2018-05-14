@@ -27,7 +27,7 @@ export class AdminTableService {
 
   getAllReimbursements(ep: SimpleEmployee): Observable<BigReimbursement[]> {
     console.log('boop');
-    return this.http.post<BigReimbursement[]>('http://localhost:8080/get-all-reimbusements.do',
+    return this.http.post<BigReimbursement[]>('http://localhost:8080/get-all-reimbursements.do',
       ep, httpOptions);
   }
 

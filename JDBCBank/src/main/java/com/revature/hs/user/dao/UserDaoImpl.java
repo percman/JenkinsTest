@@ -6,7 +6,6 @@ import com.revature.hs.user.Player;
 import com.revature.hs.user.User;
 import com.revature.hs.util.ConnectionUtil;
 import org.apache.log4j.Logger;
-import sun.awt.image.ImageWatched;
 
 import java.sql.*;
 import java.util.LinkedList;
