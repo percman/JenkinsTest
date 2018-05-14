@@ -18,6 +18,34 @@
 				</div>
 				<br>
 				<br>
+				<form >
+						<input type="text" id="empId" placeholder="Search by Employee ID.." required >
+						<input type="button" id="submitBtn" value="View" onclick="getPendingForEmployee()" >					
+					</form>
+					<form >
+						<input type="button" id="submitBtn" value="View All" onclick="getPendingReimbs()" >					
+					</form>
+		
+					<table id="table">
+						<thead>
+							<th>Employee ID</th>
+							<th>Submitted By</th>
+							<th>Category</th>
+							<th>Amount</th>
+							<th>Date Submitted</th>
+							<th>Date Resolved</th>
+							<th>Approved By</th>
+							<th>Reimbursement ID</th>
+							<thead>Resolve</thead>
+
+						</thead>
+						<tbody id="allReimbsTable">
+
+						</tbody>
+
+					</table>
+				</div>
+				<script src="pendingReimb.js"></script>
 	</body>
 
 	</html>

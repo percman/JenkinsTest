@@ -56,10 +56,11 @@ public class Reimbursement implements Serializable {
 	}
 
 	// This is the constructor used to display the info
-	public Reimbursement(int id, String requestorName, String approverName, String category, String status, int amount,
+	public Reimbursement(int id, int requestorId, String requestorName, String approverName, String category, String status, int amount,
 			String submitted, String approved) {
 		super();
 		this.id = id;
+		this.requestorId = requestorId;
 		this.requestorName = requestorName;
 		this.approverName = approverName;
 		this.category = category;
