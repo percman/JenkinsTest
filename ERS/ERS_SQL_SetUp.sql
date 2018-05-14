@@ -3,18 +3,18 @@
 -- Run the following lines with administrative access to your database --
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
-CREATE USER ers_user IDENTIFIED BY ers_password;
-GRANT CONNECT TO ers_user;
-GRANT CONNECT TO ers_user;
-GRANT CREATE ANY TABLE TO ers_user;
-GRANT UPDATE ANY TABLE TO ers_user;
-GRANT DELETE ANY TABLE TO ers_user;
-GRANT INSERT ANY TABLE TO ers_user;
-GRANT UNLIMITED TABLESPACE TO ers_user;
-GRANT DROP ANY TABLE TO ers_user;
-GRANT CREATE ANY TRIGGER TO ers_user;
-GRANT CREATE ANY SEQUENCE TO ers_user;
-GRANT CREATE ANY PROCEDURE TO ers_user;
+--CREATE USER ers_user IDENTIFIED BY ers_password;
+--GRANT CONNECT TO ers_user;
+--GRANT CONNECT TO ers_user;
+--GRANT CREATE ANY TABLE TO ers_user;
+--GRANT UPDATE ANY TABLE TO ers_user;
+--GRANT DELETE ANY TABLE TO ers_user;
+--GRANT INSERT ANY TABLE TO ers_user;
+--GRANT UNLIMITED TABLESPACE TO ers_user;
+--GRANT DROP ANY TABLE TO ers_user;
+--GRANT CREATE ANY TRIGGER TO ers_user;
+--GRANT CREATE ANY SEQUENCE TO ers_user;
+--GRANT CREATE ANY PROCEDURE TO ers_user;
 
 
 ----------------------------------------------------------------
@@ -94,7 +94,7 @@ CREATE TABLE reimbursement (
 CREATE TABLE employee_info (
     employee_id NUMBER (10),        -- (PK FK required)
     f_name VARCHAR2 (50) NOT NULL,            -- (NN required)
-    m_initial VARCHAR2 (1),             -- (required)
+    m_initial VARCHAR2 (4),             -- (required)
     l_name VARCHAR2 (50) NOT NULL,             -- (NN required)
     phone NUMBER (10),
     email VARCHAR2 (50),
@@ -375,17 +375,17 @@ CREATE OR REPLACE PROCEDURE resolve_reimbursement (fm_id IN NUMBER, new_status I
 BEGIN
     insert_f_manager('username', 'password', 'This Request', null, 'Is Pending', null, null);
 
-    insert_f_manager('lemondrops', 'hogwarts', 'Albus', 'P', 'Dumbledore', 1234567890, 'email@hotwarts.uk');
-    insert_f_manager('tabbycat', 'hogwarts', 'Minerva', '', 'McGonagall', 1234567890, 'email@hotwarts.uk');
-    insert_f_manager('always', 'hogwarts', 'Severus', '', 'Snape', 1234567890, 'email@hotwarts.uk');
-    insert_f_manager('plantmom', 'hogwarts', 'Pamona', '', 'Sprout', 1234567890, 'email@hotwarts.uk');
-    insert_f_manager('swishandflick', 'hogwarts', 'Filius', '', 'Flitwick', 1234567890, 'email@hotwarts.uk');
-    insert_employee('chosen1', 'hogwarts', 'Harry', 'J', 'Potter', 1234567890, 'email@hotwarts.uk');
-    insert_employee('brightest', 'hogwarts', 'Hermione', 'J', 'Granger', 1234567890, 'email@hotwarts.uk');
-    insert_employee('king', 'hogwarts', 'Ronald', 'B', 'Weasly', 1234567890, 'email@hotwarts.uk');
-    insert_employee('loony', 'hogwarts', 'Luna', '', 'Lovegood', 1234567890, 'email@hotwarts.uk');
-    insert_employee('quidditchLVR', 'hogwarts', 'Ginevra', 'M', 'Weasly', 1234567890, 'email@hotwarts.uk');
-    insert_employee('bravekid', 'hogwarts', 'Nevile', '', 'Longbottom', 1234567890, 'email@hotwarts.uk');
+    insert_f_manager('lemondrops', 'hogwarts', 'Albus', 'P', 'Dumbledore', 1234567890, 'email@hogwarts.uk');
+    insert_f_manager('tabbycat', 'hogwarts', 'Minerva', '', 'McGonagall', 1234567890, 'email@hogwarts.uk');
+    insert_f_manager('always', 'hogwarts', 'Severus', '', 'Snape', 1234567890, 'email@hogwarts.uk');
+    insert_f_manager('plantmom', 'hogwarts', 'Pamona', '', 'Sprout', 1234567890, 'email@hogwarts.uk');
+    insert_f_manager('swishandflick', 'hogwarts', 'Filius', '', 'Flitwick', 1234567890, 'email@hogwarts.uk');
+    insert_employee('chosen1', 'hogwarts', 'Harry', 'J', 'Potter', 1234567890, 'email@hogwarts.uk');
+    insert_employee('brightest', 'hogwarts', 'Hermione', 'J', 'Granger', 1234567890, 'email@hogwarts.uk');
+    insert_employee('king', 'hogwarts', 'Ronald', 'B', 'Weasly', 1234567890, 'email@hogwarts.uk');
+    insert_employee('loony', 'hogwarts', 'Luna', '', 'Lovegood', 1234567890, 'email@hogwarts.uk');
+    insert_employee('quidditchLVR', 'hogwarts', 'Ginevra', 'M', 'Weasly', 1234567890, 'email@hogwarts.uk');
+    insert_employee('bravekid', 'hogwarts', 'Nevile', '', 'Longbottom', 1234567890, 'email@hogwarts.uk');
     insert_reimbursement(2, 1, 80.02);
     insert_reimbursement(4, 2, 206.29);
     insert_reimbursement(6, 3, 54.36);

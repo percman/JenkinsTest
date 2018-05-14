@@ -10,9 +10,7 @@
 		<%@ page import="com.revature.model.Employee" 
 		import="com.revature.model.Reimbursement"%>
 		<% Employee employee = (Employee) request.getSession().getAttribute("currentEmployee"); %>
-		<form action="" method="POST">
-				<input id="logoutBtn" type="submit" value="Logout">
-			</form>
 
+		
 </body>
 </html>

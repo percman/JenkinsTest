@@ -9,19 +9,20 @@ import com.revature.model.Employee;
 
 public class NavigationService {
 
-	private NavigationService() {}
-	
+	private NavigationService() {
+	}
+
 	public static String login(HttpServletRequest request) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		Employee temp = new Employee(username, password);
 		LogThis.info("temp in login in NavigationService " + temp.toString());
-		
+
 		try {
 			Employee currentEmployee = LoginFactory.userLogin(temp);
 			LogThis.info("currentEmployee in login in NavigationService " + currentEmployee.toString());
 			request.getSession().setAttribute("currentEmployee", currentEmployee);
-			if(currentEmployee.isFinancialManager()) {
+			if (currentEmployee.isFinancialManager()) {
 				return "finManHome.do";
 			} else {
 				return "employeeHome.do";
@@ -31,24 +32,25 @@ public class NavigationService {
 			return "404.do";
 		}
 	}
-	
+
 	public static String fnf(HttpServletRequest request) {
 		return "404.do";
 	}
-	
+
 	public static String logout(HttpServletRequest request) {
 		request.getSession().removeAttribute("currentEmployee");
 		request.getSession().invalidate();
 		return "main.do";
 	}
-	public static String main (HttpServletRequest request) {
+
+	public static String main(HttpServletRequest request) {
 		return "login.jsp";
 	}
-	
 
 	public static String userUpdate(HttpServletRequest request) {
 		Employee temp = (Employee) request.getSession().getAttribute("currentEmployee");
 		int id = temp.getId();
+		System.out.println("id in userUpdate" + id);
 		String username = request.getParameter("username");
 		boolean isFinancialManager = temp.isFinancialManager();
 		String firstname = request.getParameter("firstname");
@@ -56,11 +58,16 @@ public class NavigationService {
 		String lastname = request.getParameter("lastname");
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
-	
-		Employee new_current = new Employee(id, username, isFinancialManager, firstname, middleInitial, lastname, phone, email);
+
+		Employee new_current = new Employee(id, username, isFinancialManager, firstname, middleInitial, lastname, phone,
+				email);
 		EmployeeService.updateEmployee(new_current);
 		request.getSession().setAttribute("currentEmployee", new_current);
-		return "changeAccountInfo.jsp";
+		if (temp.isFinancialManager()) {
+			return "fmUpdateAccount.jsp";
+		} else {
+			return "eUpdateAccount.jsp";
+		}
 	}
-	
+
 }

@@ -9727,3 +9727,334 @@
 2018-05-14 00:48:56 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
 2018-05-14 00:48:56 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
 2018-05-14 00:48:56 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 00:50:16 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:50:16 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=chosen1, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-14 00:50:16 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=chosen1, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-14 00:50:16 INFO  LogThis:25 - do i get here 1
+2018-05-14 00:50:16 INFO  LogThis:25 - do i get here 1
+2018-05-14 00:50:16 INFO  LogThis:25 - do i get here 2
+2018-05-14 00:50:16 INFO  LogThis:25 - do i get here 2
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 4
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 5
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 6
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 4
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 5
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 6
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:50:18 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:50:18 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-14 00:50:18 INFO  LogThis:25 - currentEmployee in login in NavigationService Employee [id=7, username=chosen1, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=1234567890, email=email@hotwarts.uk]
+2018-05-14 00:50:18 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-14 00:50:18 INFO  LogThis:25 - currentEmployee in login in NavigationService Employee [id=7, username=chosen1, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=1234567890, email=email@hotwarts.uk]
+2018-05-14 00:50:25 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 00:50:25 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 00:50:25 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 00:50:25 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:50:25 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=chosen1, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-14 00:50:25 INFO  LogThis:25 - do i get here 1
+2018-05-14 00:50:25 INFO  LogThis:25 - do i get here 2
+2018-05-14 00:50:25 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:50:25 INFO  LogThis:25 - do i get here 4
+2018-05-14 00:50:25 INFO  LogThis:25 - do i get here 5
+2018-05-14 00:50:25 INFO  LogThis:25 - do i get here 6
+2018-05-14 00:50:25 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:50:25 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:50:26 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-14 00:50:26 INFO  LogThis:25 - currentEmployee in login in NavigationService Employee [id=7, username=chosen1, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=1234567890, email=email@hotwarts.uk]
+2018-05-14 00:50:30 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:50:30 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/changeAccountInfo.jsp
+2018-05-14 00:50:30 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/changeAccountInfo.jsp
+2018-05-14 00:50:30 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:50:30 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:50:30 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan.js
+2018-05-14 00:50:30 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan.js
+2018-05-14 00:50:30 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:50:36 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 00:50:36 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/update.do
+2018-05-14 00:50:36 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/update.do
+2018-05-14 00:50:36 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:51:12 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 00:51:12 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/update.do
+2018-05-14 00:51:12 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/update.do
+2018-05-14 00:51:12 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:51:19 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:51:19 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/employeeHome.jsp
+2018-05-14 00:51:19 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/employeeHome.jsp
+2018-05-14 00:51:19 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:51:30 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 00:51:30 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/logout.do
+2018-05-14 00:51:30 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/logout.do
+2018-05-14 00:51:30 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:51:35 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 00:51:35 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 00:51:35 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 00:51:35 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:51:35 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=tabbycat, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-14 00:51:35 INFO  LogThis:25 - do i get here 1
+2018-05-14 00:51:35 INFO  LogThis:25 - do i get here 2
+2018-05-14 00:51:35 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:51:36 INFO  LogThis:25 - do i get here 4
+2018-05-14 00:51:36 INFO  LogThis:25 - do i get here 5
+2018-05-14 00:51:36 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 00:51:36 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 00:51:36 INFO  LogThis:25 - Minerva McGonagall, username: tabbycat has logged in.
+2018-05-14 00:51:36 INFO  LogThis:25 - currentEmployee in login in NavigationService FinancialManager [fmid=1002]
+2018-05-14 00:51:39 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:51:39 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/changeAccountInfo.jsp
+2018-05-14 00:51:39 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/changeAccountInfo.jsp
+2018-05-14 00:51:39 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:51:45 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 00:51:45 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/update.do
+2018-05-14 00:51:45 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/update.do
+2018-05-14 00:51:45 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:51:45 WARN  LogThis:29 - ORA-12899: value too large for column "ERS_USER"."EMPLOYEE_INFO"."M_INITIAL" (actual: 4, maximum: 1)
+ORA-06512: at "ERS_USER.UPDATE_EMPLOYEE", line 9
+ORA-06512: at line 1
+
+2018-05-14 00:51:45 WARN  LogThis:29 - SQL state: 72000
+2018-05-14 00:51:45 WARN  LogThis:29 - Error Code: 12899
+2018-05-14 00:51:50 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:51:50 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/employeeHome.jsp
+2018-05-14 00:51:50 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/employeeHome.jsp
+2018-05-14 00:51:50 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:56:32 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:56:32 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 00:56:32 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 00:56:32 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:56:44 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:56:44 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 00:56:44 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 00:56:44 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:56:52 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 00:56:52 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 00:56:52 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 00:56:52 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:56:52 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=tabbycat, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-14 00:56:52 INFO  LogThis:25 - do i get here 1
+2018-05-14 00:56:52 INFO  LogThis:25 - do i get here 2
+2018-05-14 00:56:53 INFO  LogThis:25 - do i get here 3
+2018-05-14 00:56:53 INFO  LogThis:25 - do i get here 4
+2018-05-14 00:56:53 INFO  LogThis:25 - do i get here 5
+2018-05-14 00:56:53 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 00:56:53 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 00:56:53 INFO  LogThis:25 - Minerva McGonagall, username: tabbycat has logged in.
+2018-05-14 00:56:53 INFO  LogThis:25 - currentEmployee in login in NavigationService FinancialManager [fmid=1002]
+2018-05-14 00:57:01 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:57:01 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/changeAccountInfo.jsp
+2018-05-14 00:57:01 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/changeAccountInfo.jsp
+2018-05-14 00:57:01 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 00:57:07 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 00:57:07 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/employeeHome.jsp
+2018-05-14 00:57:07 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/employeeHome.jsp
+2018-05-14 00:57:07 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:00:57 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:00:57 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/logout.do
+2018-05-14 01:00:57 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/logout.do
+2018-05-14 01:00:57 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:01:01 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:01:01 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 01:01:01 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 01:01:01 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:03:29 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:03:29 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 01:03:29 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 01:03:29 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:03:36 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:03:36 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 01:03:36 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 01:03:36 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:03:36 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=tabbycat, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-14 01:03:36 INFO  LogThis:25 - do i get here 1
+2018-05-14 01:03:36 INFO  LogThis:25 - do i get here 2
+2018-05-14 01:03:37 INFO  LogThis:25 - do i get here 3
+2018-05-14 01:03:37 INFO  LogThis:25 - do i get here 4
+2018-05-14 01:03:37 INFO  LogThis:25 - do i get here 5
+2018-05-14 01:03:37 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 01:03:37 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 01:03:38 INFO  LogThis:25 - Minerva McGonagall, username: tabbycat has logged in.
+2018-05-14 01:03:38 INFO  LogThis:25 - currentEmployee in login in NavigationService FinancialManager [fmid=1002]
+2018-05-14 01:03:40 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:03:40 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:03:40 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:03:40 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:07:57 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:07:57 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:07:57 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 01:07:57 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 01:07:57 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 01:07:57 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:07:57 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 01:07:57 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:08:04 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:08:04 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 01:08:04 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 01:08:04 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:08:04 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=tabbycat, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-14 01:08:04 INFO  LogThis:25 - do i get here 1
+2018-05-14 01:08:04 INFO  LogThis:25 - do i get here 2
+2018-05-14 01:08:06 INFO  LogThis:25 - do i get here 3
+2018-05-14 01:08:06 INFO  LogThis:25 - do i get here 4
+2018-05-14 01:08:06 INFO  LogThis:25 - do i get here 5
+2018-05-14 01:08:06 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 01:08:06 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 01:08:06 INFO  LogThis:25 - Minerva McGonagall, username: tabbycat has logged in.
+2018-05-14 01:08:06 INFO  LogThis:25 - currentEmployee in login in NavigationService FinancialManager [fmid=1002]
+2018-05-14 01:08:09 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:08:09 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:08:09 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:08:09 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:08:37 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:08:37 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:08:37 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:08:37 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:08:45 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:08:45 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/update.do
+2018-05-14 01:08:45 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/update.do
+2018-05-14 01:08:45 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:08:46 WARN  LogThis:29 - ORA-12899: value too large for column "ERS_USER"."EMPLOYEE_INFO"."M_INITIAL" (actual: 4, maximum: 1)
+ORA-06512: at "ERS_USER.UPDATE_EMPLOYEE", line 9
+ORA-06512: at line 1
+
+2018-05-14 01:08:46 WARN  LogThis:29 - SQL state: 72000
+2018-05-14 01:08:46 WARN  LogThis:29 - Error Code: 12899
+2018-05-14 01:08:50 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:08:50 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/update.do
+2018-05-14 01:08:50 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/update.do
+2018-05-14 01:08:50 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:08:50 WARN  LogThis:29 - ORA-12899: value too large for column "ERS_USER"."EMPLOYEE_INFO"."M_INITIAL" (actual: 4, maximum: 1)
+ORA-06512: at "ERS_USER.UPDATE_EMPLOYEE", line 9
+ORA-06512: at line 1
+
+2018-05-14 01:08:50 WARN  LogThis:29 - SQL state: 72000
+2018-05-14 01:08:50 WARN  LogThis:29 - Error Code: 12899
+2018-05-14 01:09:28 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:09:28 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/update.do
+2018-05-14 01:09:28 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/update.do
+2018-05-14 01:09:28 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:09:28 WARN  LogThis:29 - ORA-12899: value too large for column "ERS_USER"."EMPLOYEE_INFO"."M_INITIAL" (actual: 4, maximum: 1)
+ORA-06512: at "ERS_USER.UPDATE_EMPLOYEE", line 9
+ORA-06512: at line 1
+
+2018-05-14 01:09:28 WARN  LogThis:29 - SQL state: 72000
+2018-05-14 01:09:28 WARN  LogThis:29 - Error Code: 12899
+2018-05-14 01:09:38 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:09:38 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/update.do
+2018-05-14 01:09:38 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/update.do
+2018-05-14 01:09:38 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:09:38 WARN  LogThis:29 - ORA-12899: value too large for column "ERS_USER"."EMPLOYEE_INFO"."M_INITIAL" (actual: 4, maximum: 1)
+ORA-06512: at "ERS_USER.UPDATE_EMPLOYEE", line 9
+ORA-06512: at line 1
+
+2018-05-14 01:09:38 WARN  LogThis:29 - SQL state: 72000
+2018-05-14 01:09:38 WARN  LogThis:29 - Error Code: 12899
+2018-05-14 01:09:40 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:09:40 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/finManHome.jsp
+2018-05-14 01:09:40 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/finManHome.jsp
+2018-05-14 01:09:40 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:10:04 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:10:04 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/submitNewReimb.jsp
+2018-05-14 01:10:04 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/submitNewReimb.jsp
+2018-05-14 01:10:04 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:10:04 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:10:04 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/isFinMan.js
+2018-05-14 01:10:04 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/isFinMan.js
+2018-05-14 01:10:04 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:10:05 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:10:05 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/employeeHome.jsp
+2018-05-14 01:10:05 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/employeeHome.jsp
+2018-05-14 01:10:05 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:11:55 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:11:55 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/logout.do
+2018-05-14 01:11:55 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/logout.do
+2018-05-14 01:11:55 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:13:26 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:13:26 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 01:13:26 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 01:13:26 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:13:26 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=tabbycat, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-14 01:13:26 INFO  LogThis:25 - do i get here 1
+2018-05-14 01:13:26 INFO  LogThis:25 - do i get here 2
+2018-05-14 01:13:26 INFO  LogThis:25 - do i get here 3
+2018-05-14 01:13:26 INFO  LogThis:25 - do i get here 4
+2018-05-14 01:13:26 INFO  LogThis:25 - do i get here 5
+2018-05-14 01:13:26 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 01:13:27 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 01:13:27 INFO  LogThis:25 - Minerva McGonagall, username: tabbycat has logged in.
+2018-05-14 01:13:27 INFO  LogThis:25 - currentEmployee in login in NavigationService FinancialManager [fmid=1002]
+2018-05-14 01:13:28 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:13:28 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:13:28 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:13:28 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:13:33 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:13:33 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/update.do
+2018-05-14 01:13:33 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/update.do
+2018-05-14 01:13:33 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:13:33 WARN  LogThis:29 - ORA-12899: value too large for column "ERS_USER"."EMPLOYEE_INFO"."M_INITIAL" (actual: 4, maximum: 1)
+ORA-06512: at "ERS_USER.UPDATE_EMPLOYEE", line 9
+ORA-06512: at line 1
+
+2018-05-14 01:13:33 WARN  LogThis:29 - SQL state: 72000
+2018-05-14 01:13:33 WARN  LogThis:29 - Error Code: 12899
+2018-05-14 01:13:39 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:13:39 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/finManHome.jsp
+2018-05-14 01:13:39 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/finManHome.jsp
+2018-05-14 01:13:39 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:13:41 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:13:41 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/logout.do
+2018-05-14 01:13:41 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/logout.do
+2018-05-14 01:13:41 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:17:07 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:17:07 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/
+2018-05-14 01:17:07 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/
+2018-05-14 01:17:07 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:17:16 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:17:16 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-14 01:17:16 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-14 01:17:16 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:17:16 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=tabbycat, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-14 01:17:16 INFO  LogThis:25 - do i get here 1
+2018-05-14 01:17:16 INFO  LogThis:25 - do i get here 2
+2018-05-14 01:17:18 INFO  LogThis:25 - do i get here 3
+2018-05-14 01:17:18 INFO  LogThis:25 - do i get here 4
+2018-05-14 01:17:18 INFO  LogThis:25 - do i get here 5
+2018-05-14 01:17:18 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 01:17:18 INFO  LogThis:25 - Do I get to getFinMan in FinManDaoImpl
+2018-05-14 01:17:18 INFO  LogThis:25 - Minerva McGonagall, username: tabbycat has logged in.
+2018-05-14 01:17:18 INFO  LogThis:25 - currentEmployee in login in NavigationService FinancialManager [fmid=1002]
+2018-05-14 01:17:20 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:17:20 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:17:20 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/fmUpdateAccount.jsp
+2018-05-14 01:17:20 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:17:28 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:17:28 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/update.do
+2018-05-14 01:17:28 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/update.do
+2018-05-14 01:17:28 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:17:28 WARN  LogThis:29 - ORA-12899: value too large for column "ERS_USER"."EMPLOYEE_INFO"."M_INITIAL" (actual: 4, maximum: 1)
+ORA-06512: at "ERS_USER.UPDATE_EMPLOYEE", line 9
+ORA-06512: at line 1
+
+2018-05-14 01:17:28 WARN  LogThis:29 - SQL state: 72000
+2018-05-14 01:17:28 WARN  LogThis:29 - Error Code: 12899
+2018-05-14 01:17:31 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 01:17:31 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/finManHome.jsp
+2018-05-14 01:17:31 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/finManHome.jsp
+2018-05-14 01:17:31 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 01:17:34 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-14 01:17:34 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/logout.do
+2018-05-14 01:17:34 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/logout.do
+2018-05-14 01:17:34 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1

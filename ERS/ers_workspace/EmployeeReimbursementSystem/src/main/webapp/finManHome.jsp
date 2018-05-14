@@ -32,7 +32,7 @@
                     </form>
                     <br>
                     <br>
-                    <a href="changeAccountInfo.jsp">Update Account Information</a>
+                    <a href="fmUpdateAccount.jsp">Update Account Information</a>
                     <br>
                     <a href="submitNewReimb.jsp">Submit New Reimbursement</a>
                 </div>
