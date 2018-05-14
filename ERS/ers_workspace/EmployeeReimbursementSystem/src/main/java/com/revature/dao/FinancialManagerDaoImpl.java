@@ -83,10 +83,10 @@ public class FinancialManagerDaoImpl implements FinancialManagerDao {
 	public List<Employee> viewAllEmployees() {
 		List<Employee> list = new ArrayList<>();
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			PreparedStatement stmt = conn.prepareStatement("SELECT f_name, m_initial, l_name FROM employee_info");
+			PreparedStatement stmt = conn.prepareStatement("SELECT employee_id, f_name,  l_name FROM employee_info");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				list.add(new Employee(rs.getString("f_name"), rs.getString("m_initial"), rs.getString("l_name")));
+				list.add(new Employee(rs.getInt("employee_id"), rs.getString("f_name"), rs.getString("l_name")));
 			}
 			return list;
 		} catch (SQLException sqle) {

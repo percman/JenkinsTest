@@ -41,6 +41,14 @@ public class Employee implements Serializable {
 		this.middleInitial = middleInitial;
 		this.lastname = lastname;
 	}
+	
+
+	public Employee(int id, String firstname, String lastname) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+	}
 
 	public Employee(int id, String username, boolean isFinancialManager, String firstname, String middleInitial,
 			String lastname, String phone, String email) {

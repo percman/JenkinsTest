@@ -10,6 +10,7 @@
     <html>
 
     <body>
+        <h1>Financial Manager Home Page.</h1>
         <%@ page import="com.revature.model.Employee" 
             import="com.revature.model.FinancialManager"
             import="com.revature.model.Reimbursement"%>

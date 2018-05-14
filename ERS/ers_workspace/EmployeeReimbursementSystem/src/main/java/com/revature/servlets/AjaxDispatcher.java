@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revature.model.Employee;
 import com.revature.service.EmployeeService;
+import com.revature.service.FinancialManagerService;
 
 public class AjaxDispatcher {
 
@@ -21,6 +22,9 @@ public class AjaxDispatcher {
 			
 		case "/EmployeeReimbursementSystem/getDenied.ajax":
 			return EmployeeService.viewReimbursementByStatus(temp, 3);
+			
+		case "/EmployeeReimbursementSystem/getEmployees.ajax":
+			return FinancialManagerService.viewAllEmployees();
 
 		default:
 			return new String("Not implemented");

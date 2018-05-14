@@ -18,7 +18,26 @@
 				</div>
 				<br>
 				<br>
-
+                <div class="container">
+						<h2>Your Requests:</h2>
+						<div class="container">
+							<h3>Pending: </h3>
+	
+							<table>
+								<thead>
+									<th>Employee ID</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+								</thead>
+								<tbody id="employeeTable">
+	
+								</tbody>
+	
+							</table>
+	
+						</div>
+						<br>
+	
 	</body>
 
 	</html>

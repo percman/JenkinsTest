@@ -11,6 +11,7 @@
     <html>
 
     <body>
+        <h1>Employee Home Page.</h1>
         <div class="container">
             <%@ page import="com.revature.model.Employee" 
             import="com.revature.model.Reimbursement"%>
