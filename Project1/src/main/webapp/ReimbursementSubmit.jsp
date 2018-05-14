@@ -63,10 +63,10 @@
 	%>
 	<div class="container">
 		<div class="col-md-6 col-md-offset-3">
-			<form action="addReimburse.do" method="post"  enctype="multipart/form-data">
+			<form action="addReimburse.do" method="post">
 				<div class="form-group">
-					<label for="amount">Amount: </label> <input type="number"
-						name="amount" id="username" class="form-control" required
+					<label for="amount">Amount: </label> <input type="number" step="0.01" min="0.01"
+						name="amount" class="form-control" required
 						placeholder="Enter the amount">
 				</div>
 				<div class="form-group">

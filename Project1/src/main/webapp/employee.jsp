@@ -71,11 +71,18 @@
 				<%=employee.getFirstname()%> <%=employee.getMiddleInit() %>. <%=employee.getLastName() %></h1>
 		</div>
 	</div>
+	<div class="container">
+	<button id="update" class="btn btn-primary">Update Info</button>
+	<button id="enter" class="btn btn-info">Enter Reimbursement</button>
+	</div>
+	<div id="ajax"></div>
+	
 	<% } else %> You are not authorized to view this page.
 	    <!--jQuery CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--Bootstrap jQuery CDN-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+        <script src="ajax.js"></script>
 </body>
 </html>

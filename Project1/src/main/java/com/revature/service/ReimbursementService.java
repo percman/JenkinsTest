@@ -1,7 +1,9 @@
 package com.revature.service;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 import com.revature.dao.ReimbursementDao;
 import com.revature.dao.ReimbursementDaoImpl;
@@ -16,9 +18,9 @@ public class ReimbursementService {
 	public static String insertReimbursement (HttpServletRequest request, HttpServletResponse response) {
 		Employee employee=(Employee)request.getSession().getAttribute("authorizedUser");
 		int id=employee.getId();
-		Reimbursement reimbursement=new Reimbursement(id, request.getParameter("category"), Double.valueOf(request.getParameter("amount")));
+		Reimbursement reimbursement=new Reimbursement(id, request.getParameter("category"), Double.parseDouble(request.getParameter("amount")));
 		if(dao.insertReimbursement(reimbursement)) {
-			return "/employee.jsp";
+			return "/viewPending.do";
 		}
 		else return "ReimbursementSubmit.jsp";
 	}

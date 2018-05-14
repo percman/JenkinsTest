@@ -21,11 +21,9 @@ public class ManagerService {
 	
 	public static String approveDeny(HttpServletRequest request, HttpServletResponse response) {
 		Manager manager=(Manager)request.getSession().getAttribute("authorizedManager");
-		if(dao.approveDeny(request.getParameter("status"), Integer.parseInt(request.getParameter("reimburse_id")), 
-				manager.getManagerId())) {
-			return "/Manager.jsp";
-		}
-		else return "/ManagerPending.do";
+		dao.approveDeny(request.getParameter("status"), Integer.parseInt(request.getParameter("reimburse_id")), 
+				manager.getManagerId());
+		return "/ManagerPending.do";
 	}
 	
 	public static String viewEmployees(HttpServletRequest request, HttpServletResponse response){

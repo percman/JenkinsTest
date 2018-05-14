@@ -1,7 +1,12 @@
 package com.revature.tests;
 
 
-import static org.junit.Assert.assertTrue;
+
+import static org.junit.Assert.*;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,17 +14,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.revature.model.Employee;
-import com.revature.model.Manager;
-import com.revature.service.EmployeeService;
-import com.revature.service.ManagerService;
+import com.revature.util.ConnectionUtil;
 
 public class Project1Tests {
 
-	Employee employee = new Employee("username", "password", "Bob", 'B', "Smith");
-	Manager manager = new Manager("Username", "password", "Boss", 'O', "Company");
+	Connection conn=ConnectionUtil.getConnection();
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		
 	}
 
 	@AfterClass
@@ -35,19 +37,17 @@ public class Project1Tests {
 	}
 
 	@Test
-	public void testEmployeeInsert() {
-		assertTrue(EmployeeService.insertEmployee(employee));
-	}
+	public void testConnection() {
+		try (Connection conn = ConnectionUtil.getConnection()){
+			Statement stmt=conn.createStatement();
+			conn.close();
+			assertTrue(stmt.isClosed());
+		}catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL State: " + sqle.getSQLState());
+			System.err.println("Error Code : " + sqle.getErrorCode());
+		}
 	
-	@Test
-	public void testManagerInsert() {
-		assertTrue(ManagerService.insertManager(manager));
-	}
-	
-	@Test
-	public void testEmployeeUpdate() {
-		employee.setLastName("NewName");
-		assertTrue(EmployeeService.updateEmployee(employee));
 	}
 
 }

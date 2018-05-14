@@ -66,7 +66,7 @@
  %>
  <div class="container">
  	
-		<div class="col-md-7">
+		<div class="col-md-6">
 			<table class="table table-striped table-hover table-bordered">
 				<thead>
 				<h2>Revature Employees</h2>
