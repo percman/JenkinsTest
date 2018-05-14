@@ -14,7 +14,7 @@
     <div class="container">
         <nav class="navbar navbar-inverse">
             <div class="navbar-header col-md-2">
-                <a href="../index.jsp" class="navbar-brand">ERS</a>
+                <a href="./ERS_out.jsp" class="navbar-brand">ERS</a>
             </div>
             <ul class="navbar-nav nav col-md-6">
                 <li>
