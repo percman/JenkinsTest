@@ -20,8 +20,8 @@ export class UserInfoComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.globals);
-    this.infoUpdateService.update({'username': this.globals.username, 'password': this.globals.password, 'address': this.globals.address,
-    'firstName': this.globals.firstName, 'lastName': this.globals.lastName, 'eid': this.globals.eid, 'isManager': this.globals.isManager})
+    this.infoUpdateService.update(new Employee(this.globals.username, this.globals.password, this.globals.eid, this.globals.isManager,
+      this.globals.firstName, this.globals.lastName, this.globals.address))
       .subscribe(success => this.indicator = success ? 'Success!' : 'Add Failed',
         err => this.indicator = err['error']);
   }

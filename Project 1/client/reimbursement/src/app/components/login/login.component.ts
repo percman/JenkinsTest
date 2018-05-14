@@ -40,9 +40,7 @@ export class LoginComponent implements OnInit {
     this.globals.isManager = empl['manager'];
     this.globals.ready = true;
     this.indicator = JSON.stringify(this.globals.isManager);
-    if (!this.globals.isManager) {
-      this.router.navigate(['/employee-splash']);
-    }
+    this.router.navigate(['/employee-splash']);
   }
   ngOnInit() {
   }

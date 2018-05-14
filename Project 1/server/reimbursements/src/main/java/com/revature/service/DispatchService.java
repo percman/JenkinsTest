@@ -1,6 +1,7 @@
 package com.revature.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.exceptions.UserNotFoundException;
 import com.revature.exceptions.WrongPasswordException;
 import com.revature.model.CreateReimbursementModel;
@@ -12,6 +13,9 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.util.List;
+
+import static com.revature.service.EmployeeService.getEmployeeNames;
 import static com.revature.service.EmployeeService.login;
 import static com.revature.service.EmployeeService.updateEmployeeInfo;
 import static com.revature.service.ReimbursementService.createReimbursement;
@@ -38,6 +42,13 @@ public class DispatchService {
         Employee crm = (Employee) Mapper.mapRequest(request, Employee.class);
         logger.debug(crm);
         booleanResponse(updateEmployeeInfo(crm), response);
+    }
+
+    public static void dispatchEmployeeList(HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
+        ObjectMapper om = new ObjectMapper();
+        String el = om.writeValueAsString(getEmployeeNames());
+        logger.debug(el);
+        jsonResponse(el, response);
     }
 
 

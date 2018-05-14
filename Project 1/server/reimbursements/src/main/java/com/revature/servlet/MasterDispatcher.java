@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import static com.revature.service.DispatchService.dispatchCreateReimbursement;
-import static com.revature.service.DispatchService.dispatchLogin;
-import static com.revature.service.DispatchService.dispatchUpdateInfo;
+import static com.revature.service.DispatchService.*;
 import static com.revature.util.OtherUtils.stringReponse;
 
 public class MasterDispatcher {
@@ -31,6 +29,8 @@ public class MasterDispatcher {
                     break;
                 case "/update-info.do":
                     dispatchUpdateInfo(request, response);
+                case "/get-all-employees.do":
+                    dispatchEmployeeList(request, response);
                 default:
                     System.out.println(st);
             }

@@ -85,6 +85,14 @@ public class Employee implements Mappable {
         isManager = manager;
     }
 
+    public void setIsManager(boolean manager) {
+        isManager = manager;
+    }
+
+    public boolean getIsManager(boolean manager) {
+        return isManager;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +

@@ -11,6 +11,7 @@ import {Globals} from './shared/Globals';
 import { EmployeeSplashComponent } from './components/employee-splash/employee-splash.component';
 import { CreateReimbursementComponent } from './components/create-reimbursement/create-reimbursement.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     LoginComponent,
     EmployeeSplashComponent,
     CreateReimbursementComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    ViewEmployeesComponent
   ],
   imports: [
     BrowserModule,

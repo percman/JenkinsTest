@@ -3,5 +3,6 @@
   <h1 class="display-4">Hello, {{globals.firstName}}</h1>
   <p class="lead">Use the navigation bar to submit a request, view your existing requests,
     or edit your personal info.</p>
+  <p *ngIf="globals.isManager" class="lead">As a manager, you can also approve or deny pending requests.</p>
 </div>
 </div>

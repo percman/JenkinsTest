@@ -9,6 +9,8 @@ import com.revature.exceptions.WrongPasswordException;
 import com.revature.model.Employee;
 import org.apache.log4j.Logger;
 
+import java.util.List;
+
 
 public class EmployeeService {
     private static EmployeeDao dao = new EmployeeDaoImpl();
@@ -28,6 +30,7 @@ public class EmployeeService {
 
     public static boolean updateEmployeeInfo(Employee e) {return dao.updateEmployeeInfo(e);}
 
+    public static List<String> getEmployeeNames() {return dao.getEmployeeNames();}
 
     public static String login(String username, String password) throws UserNotFoundException, WrongPasswordException,
             JsonProcessingException {

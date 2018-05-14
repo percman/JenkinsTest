@@ -83,6 +83,10 @@ INSERT INTO RStatus VALUES (2, 'Denied');
 INSERT INTO Employee VALUES (0, 'WalkinDude', GET_USER_HASH('WalkinDude', 'WalkinWalkin'));
 INSERT INTO EInfo VALUES (0, 'Curtis', 'Hilgenberg', '123 Fake Street' );
 
+INSERT INTO Employee VALUES (1, 'AdminDude', GET_USER_HASH('AdminDude', 'AdminAdmin'));
+INSERT INTO EInfo VALUES (1, 'Curt', 'Hilgenberg', '1 Grand Avenue' );
+INSERT INTO Fmanager VALUES (1);
+
 INSERT INTO Employee VALUES (-1, 'N/A', 'N/A');
 INSERT INTO EINFO VALUES (-1, 'N/A', 'N/A', 'N/A');
 INSERT INTO FManager VALUES (-1);
