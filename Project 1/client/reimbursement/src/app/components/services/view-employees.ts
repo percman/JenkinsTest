@@ -16,16 +16,16 @@ const httpOptions = {
 };
 
 @Injectable()
-export class Vie {
+export class ViewEmployeesService {
 
   constructor(private http: HttpClient) {
 
   }
 
-  createReimbursement(ep: ReimbursementForm): Observable<boolean> {
+  viewEmployees(): Observable<string[]> {
     console.log('boop');
-    return this.http.post<boolean>('http://localhost:8080/create-reimbursement.do',
-      ep, httpOptions);
+    return this.http.get<string[]>('http://localhost:8080/get-all-employees.do',
+      httpOptions);
   }
 
   private handleError(err: HttpErrorResponse) {

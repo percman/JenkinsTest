@@ -126,7 +126,9 @@ public class EmployeeDaoImpl implements EmployeeDao{
                     "FROM EINFO");
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                ls.add(rs.getString("l") + ", " + rs.getString("f"));
+                if (!rs.getString("l").equals("N/A")) {
+                    ls.add(rs.getString("l") + ", " + rs.getString("f"));
+                }
             }
             return ls;
 

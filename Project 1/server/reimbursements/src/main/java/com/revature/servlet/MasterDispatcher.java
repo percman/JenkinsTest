@@ -34,6 +34,7 @@ public class MasterDispatcher {
                     dispatchEmployeeList(request, response);
                     break;
                 default:
+                    response.setStatus(400);
                     System.out.println(st);
             }
         }  catch (UserNotFoundException e) {
