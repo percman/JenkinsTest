@@ -29,8 +29,10 @@ public class MasterDispatcher {
                     break;
                 case "/update-info.do":
                     dispatchUpdateInfo(request, response);
+                    break;
                 case "/get-all-employees.do":
                     dispatchEmployeeList(request, response);
+                    break;
                 default:
                     System.out.println(st);
             }
