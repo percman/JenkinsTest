@@ -2,7 +2,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="container" disabled>
         <div class="jumbotron">
             <h1>Login Page.</h1>
         </div>
@@ -18,7 +18,7 @@
             <input type="text" name="password" id="password" placeholder="Please enter password">
             <br>
             <br>
-            <input id="loginBtn" type="submit" value="Subit">
+            <input id="loginBtn" type="submit" value="Login">
         </form>
 
     </div>

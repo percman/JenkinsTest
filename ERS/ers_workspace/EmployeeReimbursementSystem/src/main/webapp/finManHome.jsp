@@ -5,12 +5,14 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Financial Manager Home.</title>
+        <title>Financial Manager Home Page.</title>
     </head>
     <html>
 
     <body>
-            <%@ page import="com.revature.model.User" %>
+            <%@ page import="com.revature.model.Employee" 
+            import="com.revature.model.FinancialManager"
+            import="com.revature.model.Reimbursement"%>
             <% Employee employee = (Employee) request.getSession().getAttribute("currentEmployee"); %>
                 <div class="container">
                     <h2>Welcome, <%= employee.getFirstname() %> <%= employee.getLastname() %></h2>
@@ -31,20 +33,22 @@
                 <br>
                 <br>
                 <div class="container">
-                    <a href="">Logout</a>
+                    <form action="logout.do" method="POST">
+                        <input id="logoutBtn" type="submit" value="Logout">
+                    </form>
                     <br>
                     <br>
-                    <a href="changeAccountInfo.jsp">Change Account Information</a>
+                    <a href="changeAccountInfo.jsp">Update Account Information</a>
                     <br>
                     <a href="submitNewReimb.jsp">Submit New Reimbursement</a>
                 </div>
                 <br>
                 <div class="container">
-                    <a href="">View Pending Reimbursements</a>
+                    <a href="pendingReimb.jsp">View Pending Reimbursements</a>
                     <br>
-                    <a href="">View Reimbursement History</a>
+                    <a href="reimbHistory.jsp">View Reimbursement History</a>
                     <br>
-                    <a href="">View All Employees</a>
+                    <a href="allEmployees.jsp">View All Employees</a>
                 </div>
     </body>
 
