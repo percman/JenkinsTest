@@ -32,6 +32,10 @@ DROP TABLE r_category;
 DROP TABLE r_status;
 DROP TABLE f_manager;
 DROP TABLE employee;
+DROP SEQUENCE employee_id_sequence;
+DROP SEQUENCE f_manager_id_sequence;
+DROP SEQUENCE reimbursement_id_sequence;
+
 --------------------------------------------------------
 --------------------------------------------------------
 
@@ -109,28 +113,6 @@ CREATE TABLE employee_info (
 ----------------------------------------
 ----------------------------------------
 
-------------------------------------------------
--- Instantiate the status and category tables --
-------------------------------------------------
-INSERT INTO r_status (status_id, r_status) VALUES (1, 'pending');
-INSERT INTO r_status (status_id, r_status) VALUES (2, 'approved');
-INSERT INTO r_status (status_id, r_status) VALUES (3, 'denied');
-
-INSERT INTO r_category (category_id, r_category) VALUES (1, 'lodging');
-INSERT INTO r_category (category_id, r_category) VALUES (2, 'travel');
-INSERT INTO r_category (category_id, r_category) VALUES (3, 'food');
-INSERT INTO r_category (category_id, r_category) VALUES (4, 'other');
-
-BEGIN
-    insert_f_manager('username', 'password', 'This Request', null, 'Is Pending', null, null);
-END;
-/
-
-SELECT * FROM R_STATUS;
-SELECT * FROM R_CATEGORY;
-------------------------------------------------
-------------------------------------------------
-
 
 ---------------------------------------------------------------------------------------
 -- Create the sequences necessary for the employee, f_manager, and reimbursement ids -- 
@@ -151,6 +133,26 @@ CREATE SEQUENCE reimbursement_id_sequence
     NOCACHE;
 ---------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------
+
+------------------------------------------------
+-- Instantiate the status and category tables --
+------------------------------------------------
+INSERT INTO r_status (status_id, r_status) VALUES (1, 'pending');
+INSERT INTO r_status (status_id, r_status) VALUES (2, 'approved');
+INSERT INTO r_status (status_id, r_status) VALUES (3, 'denied');
+
+INSERT INTO r_category (category_id, r_category) VALUES (1, 'lodging');
+INSERT INTO r_category (category_id, r_category) VALUES (2, 'travel');
+INSERT INTO r_category (category_id, r_category) VALUES (3, 'food');
+INSERT INTO r_category (category_id, r_category) VALUES (4, 'other');
+
+
+SELECT * FROM R_STATUS;
+SELECT * FROM R_CATEGORY;
+------------------------------------------------
+------------------------------------------------
+
+
 
 
 -------------------------------------------------------------------------------------------------
@@ -282,7 +284,7 @@ CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id IN NUMBER, ne
     BEGIN
         now := GET_CURRENT_TIME;
         INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, amount, submitted, approver_id)
-            VALUES (null, new_requestor_id, new_category_id, new_amount, now, 1001);
+            VALUES (null, new_requestor_id, new_category_id, new_amount, now, 1000);
         COMMIT;
     END;
     /
@@ -336,59 +338,84 @@ CREATE OR REPLACE PROCEDURE resolve_reimbursement (fm_id IN NUMBER, new_status I
 ------------------------------------------------------------------
 
 
-
-
-
-
-BEGIN
-    resolve_reimbursement(1000, 2, 100001);
-END;
-/
-
-SELECT (ei.f_name || ' ' || ei.l_name) AS approver_name, fm.f_manager_id AS fm_id FROM employee_info ei
-    JOIN f_manager fm ON ei.employee_id = fm.employee_id;
+-------------------------------------------------
+-- Testing getting the approver name and fm_id -- 
+-------------------------------------------------
+--SELECT (ei.f_name || ' ' || ei.l_name) AS approver_name, fm.f_manager_id AS fm_id FROM employee_info ei
+--    JOIN f_manager fm ON ei.employee_id = fm.employee_id;
+-------------------------------------------------
+-------------------------------------------------
             
             
-            
-            
--- Testing the query to get a reimbursement for all reimbursements
-SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.r_status, c.r_category, r.amount, r.submitted, r.resolved, ai.approver_name FROM reimbursement r 
-    JOIN employee_info ei ON r.requestor_id = ei.employee_id
-    JOIN r_status s ON s.status_id = r.status_id
-    JOIN r_category c ON c.category_id = r.category_id
-    JOIN (SELECT (ei2.f_name || ' ' || ei2.l_name) AS approver_name, fm.f_manager_id AS fmid FROM employee_info ei2
-                JOIN f_manager fm ON ei2.employee_id = fm.employee_id) ai ON ai.fmid = r.approver_id; 
+---------------------------------------------------------------------            
+-- Testing the query to get a reimbursement for all reimbursements --
+---------------------------------------------------------------------
+--SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.r_status, c.r_category, r.amount, r.submitted, r.resolved, ai.approver_name FROM reimbursement r 
+--    JOIN employee_info ei ON r.requestor_id = ei.employee_id
+--    JOIN r_status s ON s.status_id = r.status_id
+--    JOIN r_category c ON c.category_id = r.category_id
+--    JOIN (SELECT (ei2.f_name || ' ' || ei2.l_name) AS approver_name, fm.f_manager_id AS fmid FROM employee_info ei2
+--                JOIN f_manager fm ON ei2.employee_id = fm.employee_id) ai ON ai.fmid = r.approver_id; 
+---------------------------------------------------------------------
+---------------------------------------------------------------------
 
 
+--------------------------------------------------------------------------------------------------------------------
+-- Testing the query to get a reimbursement for all reimbursements for a single employee / with a specific status --
+--------------------------------------------------------------------------------------------------------------------
+--SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.r_status, c.r_category, r.amount, r.submitted, r.resolved/*, ai.approver_name*/ FROM reimbursement r 
+--    JOIN employee_info ei ON r.requestor_id = ei.employee_id
+--    JOIN r_status s ON s.status_id = r.status_id
+--    JOIN r_category c ON c.category_id = r.category_id
+--    JOIN (SELECT (ei2.f_name || ' ' || ei2.l_name) AS approver_name, fm.f_manager_id AS fmid FROM employee_info ei2
+--                JOIN f_manager fm ON ei2.employee_id = fm.employee_id) ai ON r.approver_id IN (ai.fmid, null)
+--    WHERE r.requestor_id = 4
+--    AND r.status_id = 2; 
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
 
-
--- Testing the query to get a reimbursement for all reimbursements for a single employee / with a specific status
-SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.r_status, c.r_category, r.amount, r.submitted, r.resolved/*, ai.approver_name*/ FROM reimbursement r 
-    JOIN employee_info ei ON r.requestor_id = ei.employee_id
-    JOIN r_status s ON s.status_id = r.status_id
-    JOIN r_category c ON c.category_id = r.category_id
-    JOIN (SELECT (ei2.f_name || ' ' || ei2.l_name) AS approver_name, fm.f_manager_id AS fmid FROM employee_info ei2
-                JOIN f_manager fm ON ei2.employee_id = fm.employee_id) ai ON r.approver_id IN (ai.fmid, null)
-    WHERE r.requestor_id = 4
-    AND r.status_id = 2; 
-
-
-
-
-
-
-
-
-
+-------------------------
 -- Look at some tables --
+-------------------------
 SELECT * FROM employee;
 SELECT * FROM employee_info;
 SELECT * FROM f_manager;
 SELECT * FROM reimbursement;
 
-
+---------------------------------
+-- Let's populate those tables --
+---------------------------------
 BEGIN
-  insert_reimbursement(6, 3, 5.02);
+    insert_f_manager('username', 'password', 'This Request', null, 'Is Pending', null, null);
+
+    insert_f_manager('lemondrops', 'hogwarts', 'Albus', 'P', 'Dumbledore', 1234567890, 'email@hotwarts.uk');
+    insert_f_manager('tabbycat', 'hogwarts', 'Minerva', '', 'McGonagall', 1234567890, 'email@hotwarts.uk');
+    insert_f_manager('always', 'hogwarts', 'Severus', '', 'Snape', 1234567890, 'email@hotwarts.uk');
+    insert_f_manager('plantmom', 'hogwarts', 'Pamona', '', 'Sprout', 1234567890, 'email@hotwarts.uk');
+    insert_f_manager('swishandflick', 'hogwarts', 'Filius', '', 'Flitwick', 1234567890, 'email@hotwarts.uk');
+    insert_employee('chosen1', 'hogwarts', 'Harry', 'J', 'Potter', 1234567890, 'email@hotwarts.uk');
+    insert_employee('brightest', 'hogwarts', 'Hermione', 'J', 'Granger', 1234567890, 'email@hotwarts.uk');
+    insert_employee('king', 'hogwarts', 'Ronald', 'B', 'Weasly', 1234567890, 'email@hotwarts.uk');
+    insert_employee('loony', 'hogwarts', 'Luna', '', 'Lovegood', 1234567890, 'email@hotwarts.uk');
+    insert_employee('quidditchLVR', 'hogwarts', 'Ginevra', 'M', 'Weasly', 1234567890, 'email@hotwarts.uk');
+    insert_employee('bravekid', 'hogwarts', 'Nevile', '', 'Longbottom', 1234567890, 'email@hotwarts.uk');
+    insert_reimbursement(2, 1, 80.02);
+    insert_reimbursement(4, 2, 206.29);
+    insert_reimbursement(6, 3, 54.36);
+    insert_reimbursement(8, 4, 1265.54);
+    insert_reimbursement(10, 1, 288.09);
+    insert_reimbursement(2, 2, 355.96);
+    insert_reimbursement(3, 3, 268.76);
+    insert_reimbursement(4, 4, 168.99);
+    insert_reimbursement(6, 1, 366.93);
+    insert_reimbursement(8, 2, 55.58);
+    resolve_reimbursement(1001, 2, 100001);
+    resolve_reimbursement(1002, 2, 100003);
+    resolve_reimbursement(1003, 2, 100005);
+    resolve_reimbursement(1004, 3, 100009);
+    resolve_reimbursement(1005, 3, 100007);
 END;
 /
+
+
 

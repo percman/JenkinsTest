@@ -9237,3 +9237,28 @@
 2018-05-13 18:21:30 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
 2018-05-13 18:21:32 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
 2018-05-13 18:21:32 INFO  LogThis:25 - currentEmployee in login in NavigationService Employee [id=8, username=chosen1, password=D2CBF944F31D20EC89F73404E6F3DD41, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=7777777777, email=email@hotwarts.uk]
+2018-05-13 19:30:24 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 19:30:24 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-13 19:30:24 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-13 19:30:24 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 19:30:24 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 19:30:25 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 19:30:25 INFO  LogThis:25 - currentEmployee in login in NavigationService Employee [id=8, username=chosen1, password=D2CBF944F31D20EC89F73404E6F3DD41, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=7777777777, email=email@hotwarts.uk]
+2018-05-13 19:30:35 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-13 19:30:35 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.jsp
+2018-05-13 19:30:35 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.jsp
+2018-05-13 19:30:35 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 19:31:11 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 19:31:11 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-13 19:31:11 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-13 19:31:11 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 19:31:11 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 19:31:13 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 19:31:13 INFO  LogThis:25 - currentEmployee in login in NavigationService Employee [id=8, username=chosen1, password=D2CBF944F31D20EC89F73404E6F3DD41, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=7777777777, email=email@hotwarts.uk]
+2018-05-13 20:26:29 INFO  LogThis:25 - CORSFilter HTTP Request: POST
+2018-05-13 20:26:29 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/login.do
+2018-05-13 20:26:29 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/login.do
+2018-05-13 20:26:29 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-13 20:26:29 INFO  LogThis:25 - temp in login in NavigationService Employee [id=0, username=chosen1, password=hogwarts, isFinancialManager=false, firstname=null, middleInitial=null, lastname=null, phone=null, email=null]
+2018-05-13 20:26:30 INFO  LogThis:25 - Harry Potter, username: chosen1 has logged in.
+2018-05-13 20:26:30 INFO  LogThis:25 - currentEmployee in login in NavigationService Employee [id=7, username=chosen1, password=D2CBF944F31D20EC89F73404E6F3DD41, isFinancialManager=false, firstname=Harry, middleInitial=J, lastname=Potter, phone=1234567890, email=email@hotwarts.uk]
