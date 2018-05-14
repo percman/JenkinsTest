@@ -2,14 +2,11 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project One Welcomepage</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="../css/stylesheet.css" class="styleseet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project One Welcomepage</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./stylesheet.css">
 </head>
 
 
@@ -17,29 +14,34 @@
 <body>
 
 	<%@ page import="com.revature.model.Employee"%>
-	<%@ page import="com.revature.factory.Reimbursement"%>
 	<%@ page import="com.revature.daoservice.EmployeeDaoService"%>
+	<%@ page import="com.revature.factory.Reimbursement"%>
 	<%@ page import="com.revature.daoservice.ReimbursementDaoService"%>
 	<%@ page import="java.util.List"%>
 
-	<%
-		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
-	%>
+	<%Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");%>
+	
+	
+	
 	<!-- Main Navbar -->
 	<div class="container">
 		<nav class="navbar navbar-inverse">
-			<div class="navbar-header col-md-2">
-				<a href="../index.jsp" class="navbar-brand">ERS</a>
+			<div class="navbar-header col-md-1">
+				<a href="./ERS_in.jsp" class="navbar-brand">ERS</a>
 			</div>
-			<ul class="navbar-nav nav col-md-6">
-				<li class="active"><a href="./home.jsp">Home</a></li>
-				<li><a href="./about.jsp">About</a></li>
-				<li><a href="./services.jsp">Services</a></li>
-				<li><a href="./contact.jsp">Contact</a></li>
+			<ul class="navbar-nav nav col-md-8">
+				<li class="active"><a href="./home_in.jsp">Home</a></li>
+				<li><a href="./about_in.jsp">About</a></li>
+				<li><a href="./services_in.jsp">Services</a></li>
+				<li><a href="./contact_in.jsp">Contact</a></li>
+				<li><a class="btn btn-default" href="./reimbursementpage.jsp" role="button">Reimbursements</a></li>
+				<% if(employee.isManagerstatus()){ %>
+				<li><a class="btn btn-default" href="./employeelist.jsp" role="button">Employee Info</a></li>
+				<% } %>
 			</ul>
-            <ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
-                <li><a href="../ProjectOneWeb/">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
-            </ul>		
+			<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-3">
+                <li><a href="./logout.jsp">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
+            </ul>	
 		</nav>
 	</div>
 
@@ -60,10 +62,14 @@
 				<h2 class="col-md-offset-4">
 					Hello,
 					<%=employee.getFirstname().substring(0, 1).toUpperCase()%><%=employee.getFirstname().substring(1)%>
-					<%=employee.getLastname().substring(0, 1).toUpperCase()%><%=employee.getLastname().substring(1)%>.
-				</h2>
+					<%=employee.getLastname().substring(0, 1).toUpperCase()%><%=employee.getLastname().substring(1)%>.</h2>
+					<%if(employee.isManagerstatus()){ %>
+					<p class="col-md-4 col-md-offset-5">You are a manager :)</p>
+					<% } %>
+				<br>
 			</div>
 			<div>
+			
 				<p class="col-md-4 col-md-offset-5">
 					Your ID:
 					<%=employee.getId()%>
@@ -83,7 +89,10 @@
 			</div>
 			
 		<button type="button" class="btn btn-info" onclick="hideButton()">Update this information</button>
+		
+		<% if(employee.isManagerstatus()){ %>
 		<button type="button" class="btn btn-info" onclick="hideCreateButton()">Create a new profile</button>
+		<% } %>
 		
 		<div id="infoUpdateButton" style="display: none;">
 			<h2>Update your information: </h2>
@@ -112,6 +121,8 @@
 				</div>
 			</form>
 		</div>
+		
+		<% if(employee.isManagerstatus()){ %>
 		<div id="infoCreateEmployee" style="display: none;">
 			<h2>Create new employee: </h2>
 			<form action="create_employee.do" method="post">
@@ -142,11 +153,8 @@
 				</div>
 			</form>
 		</div>
+		<% } %>
 		</div>
-	</div>
-	<div class="container">
-		<a class="btn btn-default" href="./reimbursementpage.jsp" role="button">Reimbursements</a>
-		<a class="btn btn-default" href="./employeelist.jsp" role="button">Employee Info</a>
 	</div>
 	
 	<script src="./js/hidecreatebutton.js"></script>

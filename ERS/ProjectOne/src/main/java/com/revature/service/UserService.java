@@ -8,6 +8,6 @@ public class UserService {
 	private UserService() {}
 	
 	public static String home(HttpServletRequest request, HttpServletResponse response) {
-		return "/home.jsp";
+		return "/home_in.jsp";
 	}
 }

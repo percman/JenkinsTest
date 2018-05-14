@@ -25,7 +25,7 @@ public class LoginService {
 			return "/home.do";
 		}
 		
-		return "/index.jsp";
+		return "/login.jsp";
 	}
 	
 }

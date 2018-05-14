@@ -38,7 +38,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
 				
 				newreimbursement.setId(rs.getInt("id"));
-				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setAmount(rs.getDouble("amount"));
 				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
 				newreimbursement.setApprover_id(rs.getInt("approver_id"));
 				newreimbursement.setStatus(rs.getString("status"));
@@ -69,7 +69,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
 				
 				newreimbursement.setId(rs.getInt("id"));
-				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setAmount(rs.getDouble("amount"));
 				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
 				newreimbursement.setApprover_id(rs.getInt("approver_id"));
 				newreimbursement.setStatus(rs.getString("status"));
@@ -99,7 +99,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
 				
 				newreimbursement.setId(rs.getInt("id"));
-				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setAmount(rs.getDouble("amount"));
 				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
 				newreimbursement.setApprover_id(rs.getInt("approver_id"));
 				newreimbursement.setStatus(rs.getString("status"));
@@ -129,7 +129,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
 				
 				newreimbursement.setId(rs.getInt("id"));
-				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setAmount(rs.getDouble("amount"));
 				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
 				newreimbursement.setApprover_id(rs.getInt("approver_id"));
 				newreimbursement.setStatus(rs.getString("status"));
@@ -162,7 +162,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
 				
 				newreimbursement.setId(rs.getInt("id"));
-				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setAmount(rs.getDouble("amount"));
 				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
 				newreimbursement.setApprover_id(rs.getInt("approver_id"));
 				newreimbursement.setStatus(rs.getString("status"));
@@ -192,7 +192,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				Reimbursement newreimbursement = ReimbursementFactory.getReimbursement(rs.getString("category"));
 				
 				newreimbursement.setId(rs.getInt("id"));
-				newreimbursement.setAmount(rs.getLong("amount"));
+				newreimbursement.setAmount(rs.getDouble("amount"));
 				newreimbursement.setRequestor_id(rs.getInt("requestor_id"));
 				newreimbursement.setApprover_id(rs.getInt("approver_id"));
 				newreimbursement.setStatus(rs.getString("status"));

@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project One Welcomepage</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/stylesheet.css" class="styleseet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./stylesheet.css">
 </head>
 
 <body>
@@ -15,20 +14,20 @@
     <div class="container">
         <nav class="navbar navbar-inverse">
             <div class="navbar-header col-md-2">
-                <a href="../index.jsp" class="navbar-brand">ERS</a>
+                <a href="./ERS_out.jsp" class="navbar-brand">ERS</a>
             </div>
             <ul class="navbar-nav nav col-md-6">
                 <li>
-                    <a href="./home.jsp">Home</a>
+                    <a href="./home_out.jsp">Home</a>
                 </li>
                 <li class="active">
-                    <a href="./about.jsp">About</a>
+                    <a href="./about_out.jsp">About</a>
                 </li>
                 <li>
-                    <a href="./services.jsp">Services</a>
+                    <a href="./services_out.jsp">Services</a>
                 </li>
                 <li>
-                    <a href="./contact.jsp">Contact</a>
+                    <a href="./contact_out.jsp">Contact</a>
                 </li>
             </ul>
 
@@ -54,17 +53,18 @@
           <!-- Jumbotron -->
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4">About Me</h1>
+            <h1 class="display-4">About Project One</h1>
             <hr class="my-4">
             <p>Adam Lahey strives to create a simple user interface which quickly displays the most up-to-date information.
             </p>
             <p>This webpage utilizes cutting-edge techniques, such as JSON coupled with AJAX, to display all the information
-                ever needed by both finacial managers and employees.
+                ever needed by both financial managers and employees.
             </p>
         </div>
     </div>
 
  <div class="container">
+ 	<div class="well">
 	  <div class="list-group">
 	  	<h2>Core Technologies:</h2>
 	  	<br>
@@ -113,6 +113,7 @@
 	    </li>	    	    
 	    </div>
 	</div>
+</div>
 	
 
 </body>

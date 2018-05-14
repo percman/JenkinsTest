@@ -43,7 +43,7 @@ public class ReimbursementApprovalServlet extends HttpServlet {
 				System.out.println(updatereimbursement);
 				System.out.println(ReimbursementDaoService.approveReimbursement(updatereimbursement));
 			}
-			else
+			else {
 				System.out.println("Reimbursement with ID " +
 						((String) reimbursementstring).substring(8,10) + " has been rejected");
 				
@@ -52,9 +52,10 @@ public class ReimbursementApprovalServlet extends HttpServlet {
 				updatereimbursement = ReimbursementDaoService.getReimbursementFromId(updatereimbursement.getId());
 				updatereimbursement.setApprover_id(Integer.parseInt(((String) reimbursementstring).substring(10,14)));
 				ReimbursementDaoService.rejectReimbursement(updatereimbursement);
+			}
 		}
 		
-		request.getRequestDispatcher("home.jsp").forward(request, response);
+		request.getRequestDispatcher("home_in.jsp").forward(request, response);
 
 	}
 

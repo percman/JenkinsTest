@@ -38,7 +38,7 @@ public class EmployeeService {
 			npe.getMessage();
 		}
 		
-		return "/home.jsp";
+		return "/home_in.jsp";
 	}
 
 	public static String createemployee(HttpServletRequest request, HttpServletResponse response) {
@@ -65,7 +65,7 @@ public class EmployeeService {
 			System.out.println(npe.getMessage());
 		}
 		
-		return "/home.jsp";	
+		return "/home_in.jsp";	
 		
 	}
 

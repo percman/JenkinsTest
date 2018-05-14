@@ -14,9 +14,8 @@ GRANT UNLIMITED TABLESPACE TO projectoneadminone;
 GRANT ALTER ANY TABLE TO projectoneadminone;
 
 
-
-select * from employee;
-select * from personalinfo;
+select * from employee order by id;
+select * from personalinfo order by id;
 select * from reimbursement;
 
 -- ******************************* TABLES *******************************
@@ -46,16 +45,16 @@ CONSTRAINT FK_PERSONAL_EMPLOYEE FOREIGN KEY (id) REFERENCES employee (id) ON DEL
 CONSTRAINT CK_PHONE CHECK (phonenumber BETWEEN 1000000000 AND 9999999909)
 );
 
-select * from employee;
 
 -- create a reimbursement information table 
 CREATE TABLE reimbursement (
 id NUMBER(10),
-amount NUMBER(10),
+amount NUMBER(10,2),
 requestor_id NUMBER(10) NOT NULL,
 approver_id NUMBER(10),
 category VARCHAR2(15),
 status VARCHAR2(10),
+reason VARCHAR2(100),
 timemade TIMESTAMP NOT NULL,
 timeapproved TIMESTAMP,
 CONSTRAINT PK_REIMBURSEMENT PRIMARY KEY (id),
@@ -115,6 +114,17 @@ BEGIN
     IF :new.id IS NULL THEN 
         SELECT employee_id_sequence.nextval INTO :new.id FROM dual;
     END IF;
+    SELECT GET_EMPLOYEE_HASH(:new.username, :new.password) INTO :new.password FROM dual;
+END;
+/
+
+
+-- create a before-insert-into-employee trigger that will autoincrement the PK and hash the password 
+CREATE OR REPLACE TRIGGER employee_b_update
+BEFORE UPDATE 
+ON employee
+FOR EACH ROW 
+BEGIN 
     SELECT GET_EMPLOYEE_HASH(:new.username, :new.password) INTO :new.password FROM dual;
 END;
 /
@@ -183,7 +193,6 @@ END;
 
 
 
-UPDATE personalinfo SET lastname='dude' WHERE id=1014;
 
 -- procedure to approve a reimbursement
 CREATE OR REPLACE PROCEDURE approve_reimbursement(same_id IN NUMBER, new_approver_id IN NUMBER)
@@ -205,4 +214,3 @@ BEGIN
 END;
 /
 
-select * from reimbursement;

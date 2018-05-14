@@ -27,7 +27,7 @@ public class ReimbursementService {
 
 		System.out.println(ReimbursementDaoService.insertReimbursement(newreimbursement));
 		
-		return "/home.jsp";
+		return "/home_in.jsp";
 	}
 
 	

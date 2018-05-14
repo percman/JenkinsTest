@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project One Welcomepage</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/stylesheet.css" class="styleseet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./stylesheet.css">
 </head>
 
 <body>
@@ -19,16 +18,16 @@
             </div>
             <ul class="navbar-nav nav col-md-6">
                 <li>
-                    <a href="./home.jsp">Home</a>
+                    <a href="./home_out.jsp">Home</a>
                 </li>
                 <li>
-                    <a href="./about.jsp">About</a>
+                    <a href="./about_out.jsp">About</a>
                 </li>
                 <li>
-                    <a href="./services.jsp">Services</a>
+                    <a href="./services_out.jsp">Services</a>
                 </li>
                 <li class="active">
-                    <a href="./contact.jsp">Contact</a>
+                    <a href="./contact_out.jsp">Contact</a>
                 </li>
             </ul>
 
@@ -49,7 +48,16 @@
         </ol>
     </div>
 
-
+	    <!-- Jumbotron -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Contact</h1>
+            <p class="lead">Any errors reported saves time and money. On my part, and yours.</p>
+            <hr class="my-4">
+            <p>The best way to contact me about any outstanding issues is through email:</p>
+            <a href="#" >adamjl@bgsu.edu</a>
+        </div>
+    </div>
 
 </body>
 
