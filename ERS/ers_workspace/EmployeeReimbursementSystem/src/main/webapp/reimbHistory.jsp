@@ -18,6 +18,27 @@
 				</div>
 				<br>
 				<br>
+				<div class="container">
+					<h3>All Reimbursements: </h3>
+					<table>
+						<thead>
+							<th>Reimbursement ID</th>
+							<th>Submitted By</th>
+							<th>Category</th>
+							<th>Amount</th>
+							<th>Date Submitted</th>
+							<th>Status</th>
+							<th>Date Resolved</th>
+							<th>Approved By</th>
+						</thead>
+						<tbody id="allReimbsTable">
+
+						</tbody>
+
+					</table>
+				</div>
+
+	<script src="reimbHistory.js"></script>
 	</body>
 
 	</html>

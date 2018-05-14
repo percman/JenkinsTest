@@ -37,7 +37,7 @@
 	
 						</div>
 						<br>
-	
+	<script src="allEmployees.js"></script>
 	</body>
 
 	</html>

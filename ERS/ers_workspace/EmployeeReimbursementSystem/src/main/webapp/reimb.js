@@ -7,7 +7,7 @@ window.onload = function () {
 function getPending() {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "http://localhost:8080/EmployeeReimbursementSystem/getPending.ajax");
+    xhr.open("POST", "http://localhost:8080/EmployeeReimbursementSystem/getPending.ajax");
 
     xhr.send();
 
@@ -50,7 +50,7 @@ function getPending() {
 function getApproved() {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "http://localhost:8080/EmployeeReimbursementSystem/getApproved.ajax");
+    xhr.open("POST", "http://localhost:8080/EmployeeReimbursementSystem/getApproved.ajax");
 
     xhr.send();
 
@@ -106,7 +106,7 @@ function getApproved() {
 function getDenied() {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "http://localhost:8080/EmployeeReimbursementSystem/getDenied.ajax");
+    xhr.open("POST", "http://localhost:8080/EmployeeReimbursementSystem/getDenied.ajax");
 
     xhr.send();
 

@@ -25,6 +25,9 @@ public class AjaxDispatcher {
 			
 		case "/EmployeeReimbursementSystem/getEmployees.ajax":
 			return FinancialManagerService.viewAllEmployees();
+			
+		case "/EmployeeReimbursementSystem/getAllReimbs.ajax":
+			return FinancialManagerService.viewAllReimbursements();
 
 		default:
 			return new String("Not implemented");

@@ -5,7 +5,7 @@ window.onload = function () {
 function getEmployees() {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "http://localhost:8080/EmployeeReimbursementSystem/getEmployees.ajax");
+    xhr.open("POST", "http://localhost:8080/EmployeeReimbursementSystem/getEmployees.ajax");
 
     xhr.send();
 

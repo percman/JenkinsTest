@@ -373,7 +373,7 @@ CREATE OR REPLACE PROCEDURE resolve_reimbursement (fm_id IN NUMBER, new_status I
 -- Let's populate those tables --
 ---------------------------------
 BEGIN
-    insert_f_manager('username', 'password', 'This Request', null, 'Is Pending', null, null);
+    insert_f_manager('username', 'password', 'N', null, 'A', null, null);
 
     insert_f_manager('lemondrops', 'hogwarts', 'Albus', 'P', 'Dumbledore', 1234567890, 'email@hogwarts.uk');
     insert_f_manager('tabbycat', 'hogwarts', 'Minerva', '', 'McGonagall', 1234567890, 'email@hogwarts.uk');
