@@ -88,6 +88,11 @@ INSERT INTO Employee VALUES (1, 'AdminDude', GET_USER_HASH('AdminDude', 'AdminAd
 INSERT INTO EInfo VALUES (1, 'Curt', 'Hilgenberg', '1 Grand Avenue' );
 INSERT INTO Fmanager VALUES (1);
 
+INSERT INTO Employee VALUES (2, 'OtherAdmin', GET_USER_HASH('OtherAdmin', 'AdminAdmin'));
+INSERT INTO EInfo VALUES (2, 'Cart', 'Hooliganburg', 'THIS IS AN ADDRESS' );
+INSERT INTO Fmanager VALUES (2);
+
+
 INSERT INTO Employee VALUES (-1, 'N/A', 'N/A');
 INSERT INTO EINFO VALUES (-1, 'N/A', 'N/A', 'N/A');
 INSERT INTO FManager VALUES (-1);
