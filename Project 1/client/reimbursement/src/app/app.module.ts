@@ -14,6 +14,7 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
 import { MyReimbursementsComponent } from './components/my-reimbursements/my-reimbursements.component';
 import { AdminTableComponent } from './components/admin-table/admin-table.component';
+import {ImageUploadModule} from 'angular2-image-upload';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { AdminTableComponent } from './components/admin-table/admin-table.compon
   ],
   imports: [
     BrowserModule,
+    ImageUploadModule.forRoot(),
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(MyRoutes)

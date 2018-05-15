@@ -3,6 +3,8 @@ import {CreateReimbursementService} from '../services/create-reimbursement.servi
 import {Globals} from '../../shared/Globals';
 import {Router} from '@angular/router';
 import {ReimbursementForm} from '../../shared/ReimbursementForm';
+import {FileHolder} from 'angular2-image-upload';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-create-reimbursement',
@@ -14,8 +16,10 @@ export class CreateReimbursementComponent implements OnInit {
   category: number;
   amount: number;
   indicator = '';
+  filesToUpload: Array<File>;
 
-  constructor(private rs: CreateReimbursementService, public globals: Globals, private router: Router) { }
+  constructor(private rs: CreateReimbursementService, public globals: Globals, private router: Router) {
+  }
 
   onSubmit(): void {
     const rForm = new ReimbursementForm(this.amount, this.category,
@@ -24,6 +28,10 @@ export class CreateReimbursementComponent implements OnInit {
       err => this.indicator = err['error']);
   }
 
+  fileChangeEvent(fileInput: any) {
+    this.filesToUpload = <Array<File>> fileInput.target.files;
+    console.log(this.filesToUpload);
+  }
 
   ngOnInit() {
   }
