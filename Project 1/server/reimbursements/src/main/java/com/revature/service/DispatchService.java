@@ -6,10 +6,7 @@ import com.revature.exceptions.AlreadySetException;
 import com.revature.exceptions.SelfSetException;
 import com.revature.exceptions.UserNotFoundException;
 import com.revature.exceptions.WrongPasswordException;
-import com.revature.model.CreateReimbursementModel;
-import com.revature.model.Employee;
-import com.revature.model.RStatusModel;
-import com.revature.model.SimpleEmployee;
+import com.revature.model.*;
 import com.revature.util.Mapper;
 import org.apache.log4j.Logger;
 
@@ -82,6 +79,13 @@ public class DispatchService {
         RStatusModel rsm = (RStatusModel) Mapper.mapRequest(request, RStatusModel.class);
         setRid(rsm);
         stringReponse("success",response);
+    }
+
+    public static void dispatchFile(HttpServletRequest request, HttpServletResponse response) {
+        ObjectMapper om = new ObjectMapper();
+        TestRequest tr = (TestRequest) Mapper.mapRequest(request, TestRequest.class);
+        logger.debug("dispatch file");
+        logger.debug(tr);
     }
 
 }

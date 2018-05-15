@@ -12,7 +12,7 @@
     <option value=2>Food</option>
     <option value=3>Other</option>
     </select>
-    <input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+    <input id="file-field" name="file-field" (change)="fileChangeEvent($event)" type="file" accept=".png,.jpg,.jpeg">
     <button type="submit" class="btn btn-success">Submit</button>
   </div>
   </form>

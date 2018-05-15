@@ -44,6 +44,9 @@ public class MasterDispatcher {
                 case "/set-rstatus.do":
                     dispatchSetRStatus(request, response);
                     break;
+                case "/upload-file-test.do":
+                    dispatchFile(request, response);
+                    break;
                 default:
                     response.setStatus(400);
                     logger.debug(st);

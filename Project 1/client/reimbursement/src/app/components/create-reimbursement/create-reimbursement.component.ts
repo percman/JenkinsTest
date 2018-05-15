@@ -31,6 +31,16 @@ export class CreateReimbursementComponent implements OnInit {
   fileChangeEvent(fileInput: any) {
     this.filesToUpload = <Array<File>> fileInput.target.files;
     console.log(this.filesToUpload);
+    console.log(this.filesToUpload[0]);
+
+    const fr = new FileReader();
+    fr.onload = () => {
+      console.log('READ');
+      this.rs.uploadFile(fr.result).subscribe(success => this.indicator = 'UPASDASPD',
+        fail => this.indicator = 'FAIL');
+    }
+    fr.readAsText(this.filesToUpload[0]);
+
   }
 
   ngOnInit() {
