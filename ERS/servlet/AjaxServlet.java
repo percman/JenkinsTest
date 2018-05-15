@@ -18,7 +18,6 @@ public class AjaxServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json");
-		System.out.println("in Ajax servlet");
 		ObjectMapper mapper = new ObjectMapper();
 		response.getWriter().write(mapper.writeValueAsString(AjaxDispatcher.process(request, response)));
 	}

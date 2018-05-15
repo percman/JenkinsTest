@@ -20,6 +20,10 @@ public class ReimbursementService {
 	
 	private ReimbursementService() {}
 	
+	public static List<Reimbursement> getEmployeesReimbursement(int id){
+		return dao.ManagerGetEmployee(id);
+	}
+	
 	public static boolean setReimbursement(Employee rbmt) {
 		return dao.setReimbursement(rbmt);
 	}

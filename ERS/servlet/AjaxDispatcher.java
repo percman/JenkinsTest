@@ -1,9 +1,10 @@
-package com.revature.servlet;
+	package com.revature.servlet;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.revature.model.Employee;
+import com.revature.service.EmployeeService;
 import com.revature.service.ReimbursementService;
 
 
@@ -17,6 +18,12 @@ public class AjaxDispatcher {
 				return ReimbursementService.getMyReimbursements(emp);
 			case "/ERS/FinancialManagerList.ajax":
 				return ReimbursementService.getAllReimbursements(emp);
+			case "/ERS/getEmployees.ajax":
+				return EmployeeService.getEveryone(emp);
+			case "/ERS/ManagerGetReimbursement.ajax":
+				int id = Integer.parseInt(request.getParameter("get"));
+				System.out.println(id);
+				return ReimbursementService.getEmployeesReimbursement(id);
 			default:
 				return new String ("Not Implemented");
 		}

@@ -40,6 +40,8 @@ public class ReimbursementInformationService {
 		String decision = (approve == null) ? reject : approve;
 		ReimbursementInformationService.UpdateInformation(decision, id);
 		logger.trace("Reimbursement resolved");
+		if(request.getParameter("get") != null)
+			return "/HTML/ViewEmployees.jsp";
 		return "/HTML/FinancialManagerHome.jsp";
 	}
 }

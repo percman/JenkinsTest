@@ -21,6 +21,9 @@
         		<li>
             		<a href="./FinancialManagerHome.jsp">Home</a>
             	</li>
+            	<li>
+            		<a href="./ViewEmployees.jsp">Employees <span class="glyphicons glyphicons-family"></span></a>
+            	</li>
             	<li class="active">
             		<a href="./ManagerReimbursement.jsp">Reimbursement <span class="glyphicon glyphicon-usd"></span></a>
             	</li>

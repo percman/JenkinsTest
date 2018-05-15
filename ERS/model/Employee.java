@@ -33,6 +33,18 @@ public class Employee implements Serializable{
 		this.password = password;
 	}
 
+	
+
+	public Employee(int id, String title, String fname, String lname, String phone, String address) {
+		super();
+		this.id = id;
+		this.fname = fname;
+		this.lname = lname;
+		this.title = title;
+		this.phone = phone;
+		this.address = address;
+	}
+
 	public String getAddress() {
 		return address;
 	}

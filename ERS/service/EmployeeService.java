@@ -1,5 +1,7 @@
 package com.revature.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,6 +22,10 @@ public class EmployeeService {
 	
 	public static Employee getEmployee(String username) {
 		return dao.getEmployee(username);
+	}
+	
+	public static List<Employee> getEveryone(Employee emp){
+		return dao.getAll(emp);
 	}
 	
 	public static boolean check(Employee employee) {

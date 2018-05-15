@@ -10,5 +10,6 @@ public interface ReimbursementDAO {
 	boolean UpdateReimbursement(int r, Employee e);
 	List<Reimbursement> getEmployeeReimbursement(Employee id);
 	List<Reimbursement> ManagerFetch(Employee emp);
+	List<Reimbursement> ManagerGetEmployee(int id);
 	
 }
