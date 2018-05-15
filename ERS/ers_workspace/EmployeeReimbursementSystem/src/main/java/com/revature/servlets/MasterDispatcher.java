@@ -27,28 +27,44 @@ public class MasterDispatcher {
 		switch (request.getRequestURI()) {
 		case "/EmployeeReimbursementSystem/main.do":
 			return NavigationService.main(request);
-			
+
 		case "/EmployeeReimbursementSystem/login.do":
 			return NavigationService.login(request);
-			
+
 		case "/EmployeeReimbursementSystem/logout.do":
 			return NavigationService.logout(request);
-			
+
 		case "/EmployeeReimbursementSystem/finManHome.do":
 			return FinancialManagerService.finManHome(request);
-			
+
 		case "/EmployeeReimbursementSystem/employeeHome.do":
 			return EmployeeService.employeeHome(request);
-			
+
 		case "/EmployeeReimbursementSystem/update.do":
 			return NavigationService.userUpdate(request);
-			
+
 		case "/EmployeeReimbursementSystem/submitReimb.do":
 			return ReimbursementService.newReimbursement(request);
+
+		case "/EmployeeReimbursementSystem/approve.do":
+			boolean approve = FinancialManagerService.resolveReimbursement(request, 2);
+			if (approve) {
+				return "pendingReimb.jsp";
+			} else {
+				return "404.do";
+			}
 			
+		case "/EmployeeReimbursementSystem/deny.do":
+			boolean deny = FinancialManagerService.resolveReimbursement(request, 3);
+			if (deny) {
+				return "pendingReimb.jsp";
+			} else {
+				return "404.do";
+			}
+
 		case "/EmployeeReimbursementSystem/404.do":
 			return NavigationService.fnf(request);
-			
+
 		default:
 			LogThis.info("The request URI was: " + request.getRequestURI());
 			LogThis.info("Returning 404 from default");

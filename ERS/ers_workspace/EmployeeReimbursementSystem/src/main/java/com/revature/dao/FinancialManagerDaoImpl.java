@@ -156,11 +156,14 @@ public class FinancialManagerDaoImpl implements FinancialManagerDao {
 	@Override
 	public boolean resolveReimbursement(FinancialManager financialmanager, Reimbursement reimbursement, int status) {
 		int index = 0;
+		LogThis.info("fin man ID " +financialmanager.getFmid());
+		LogThis.info("reimb ID " +reimbursement.getIdString());
+		LogThis.info("status "+ status);
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			CallableStatement stmt = conn.prepareCall("{CALL resolve_reimbursement (?, ?, ?)}");
-			stmt.setInt(++index, financialmanager.getId());
-			stmt.setInt(++index, reimbursement.getId());
+			stmt.setInt(++index, financialmanager.getFmid());
 			stmt.setInt(++index, status);
+			stmt.setString(++index, reimbursement.getIdString());
 			return stmt.executeUpdate() > 0;
 		} catch (SQLException sqle) {
 			LogThis.warn(sqle.getMessage());

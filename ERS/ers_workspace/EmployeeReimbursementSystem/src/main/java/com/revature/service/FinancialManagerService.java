@@ -48,7 +48,10 @@ public class FinancialManagerService {
 		return dao.viewReimbursementsByEmployee(employee);
 	}
 	
-	public static boolean resolveReimbursement(FinancialManager financialmanager, Reimbursement reimbursement, int status) {
+	public static boolean resolveReimbursement(HttpServletRequest request, int status) {
+		FinancialManager financialmanager = (FinancialManager) request.getSession().getAttribute("currentEmployee");
+		LogThis.info(request.getParameter("reimbId"));
+		Reimbursement reimbursement = new Reimbursement(request.getParameter("reimbId"));
 		return dao.resolveReimbursement(financialmanager, reimbursement, status);
 	}
 

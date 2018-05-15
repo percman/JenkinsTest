@@ -8,6 +8,7 @@ public class Reimbursement implements Serializable {
 
 	// These are in the reimbursement table
 	private int id;
+	private String idString;
 	private int requestorId;
 	private String requestorName;
 	private int approverId;
@@ -20,12 +21,17 @@ public class Reimbursement implements Serializable {
 	private String amountString;
 	private String submitted;
 	private String approved;
-	
+
 	// Public no-arg constructor
 	public Reimbursement() {
 		super();
 	}
-	
+
+	public Reimbursement(String idString) {
+		super();
+		this.idString = idString;
+	}
+
 	// Public constructor that takes the requestor's id, category, and amount
 	public Reimbursement(int requestorId, int categoryId, int amount) {
 		super();
@@ -56,8 +62,8 @@ public class Reimbursement implements Serializable {
 	}
 
 	// This is the constructor used to display the info
-	public Reimbursement(int id, int requestorId, String requestorName, String approverName, String category, String status, int amount,
-			String submitted, String approved) {
+	public Reimbursement(int id, int requestorId, String requestorName, String approverName, String category,
+			String status, int amount, String submitted, String approved) {
 		super();
 		this.id = id;
 		this.requestorId = requestorId;
@@ -69,8 +75,16 @@ public class Reimbursement implements Serializable {
 		this.submitted = submitted;
 		this.approved = approved;
 	}
-
 	
+
+	public String getIdString() {
+		return idString;
+	}
+
+	public void setIdString(String idString) {
+		this.idString = idString;
+	}
+
 	public String getAmountString() {
 		return amountString;
 	}
@@ -230,7 +244,5 @@ public class Reimbursement implements Serializable {
 				+ ", categoryId=" + categoryId + ", statusId=" + statusId + ", amount=" + amount + ", submitted="
 				+ submitted + ", approved=" + approved + "]";
 	}
-	
-	
-	
+
 }

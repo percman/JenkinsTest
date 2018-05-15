@@ -84,6 +84,7 @@ CREATE TABLE reimbursement (
     amount NUMBER (10,2),
     submitted TIMESTAMP,
     resolved TIMESTAMP,
+    image BLOB, 
     CONSTRAINT PK_REIMBURSEMENT_ID PRIMARY KEY (reimbursement_id),
     CONSTRAINT FK_REQUESTOR_ID FOREIGN KEY (requestor_id) REFERENCES employee (employee_id) ON DELETE CASCADE,
     CONSTRAINT FK_APPROVER_ID FOREIGN KEY (approver_id) REFERENCES f_manager (f_manager_id) ON DELETE CASCADE,
@@ -112,7 +113,6 @@ CREATE TABLE employee_info (
 --);
 ----------------------------------------
 ----------------------------------------
-
 
 ---------------------------------------------------------------------------------------
 -- Create the sequences necessary for the employee, f_manager, and reimbursement ids -- 
@@ -146,6 +146,7 @@ INSERT INTO r_category (category_id, r_category) VALUES (1, 'lodging');
 INSERT INTO r_category (category_id, r_category) VALUES (2, 'travel');
 INSERT INTO r_category (category_id, r_category) VALUES (3, 'food');
 INSERT INTO r_category (category_id, r_category) VALUES (4, 'other');
+COMMIT;
 ------------------------------------------------
 ------------------------------------------------
 
