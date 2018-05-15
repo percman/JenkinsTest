@@ -1,5 +1,7 @@
 package com.revature.service;
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,8 +23,8 @@ public class ReimbursementInformationService {
 		return dao.getInformation(rbmt);
 	}
 	
-	public static boolean newInformation(Reimbursement rbmt) {
-		return dao.setInformation(rbmt);
+	public static boolean newInformation(Reimbursement rbmt, File file ) {
+		return dao.setInformation(rbmt, file);
 	}
 	
 	public static boolean UpdateInformation(String status, int id) {

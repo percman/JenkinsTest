@@ -48,4 +48,10 @@ public class EmployeeService {
 		
 	}
 	
+	public static String logout(HttpServletRequest request,HttpServletResponse response) {
+		request.getSession().removeAttribute("Employee");
+		
+		return "/HTML/GenericCorpIndex.html";
+	}
+	
 }

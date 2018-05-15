@@ -20,8 +20,7 @@ public class Dispatcher {
 			case "/ERS/HTML/update.do":
 				return InformationService.update(request, response);
 			case "/ERS/HTML/logout.do":
-				request.getSession().removeAttribute("Employee");
-				return "/HTML/GenericCorpIndex.html";
+				return EmployeeService.logout(request, response);
 			case "/ERS/HTML/new.do":
 				return ReimbursementService.NewReimbursement(request, response);
 			case "/ERS/HTML/resolve.do":

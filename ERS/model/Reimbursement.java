@@ -1,10 +1,11 @@
 package com.revature.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class Reimbursement implements Serializable {
 	
-	private static final long serialVersionUID = 6143782801477180624L;
+	private static final long serialVersionUID = 330071914846302198L;
 	private int id;
 	private int e_id;
 	private int fm_id;
@@ -13,12 +14,9 @@ public class Reimbursement implements Serializable {
 	private String resolved;
 	private String category;
 	private String status;
+	private byte[] image;
 	
-	/*
-	 * Wasnt really sure if I would need a reimbursement class, but after thinking about it realized it would make things so
-	 * much easier when it came time to change things in the reimbursement and reimbursement_info table. Note:Check database
-	 * and you will know what I am talking about
-	 */
+
 	public Reimbursement() {}
 	
 	public Reimbursement(int id, int e_id) {
@@ -46,6 +44,22 @@ public class Reimbursement implements Serializable {
 		this.status = status;
 	}
 	
+	
+	
+	public Reimbursement(int id, int e_id, int fm_id, float amount, String recieved, String resolved, String category,
+			String status, byte[] image) {
+		super();
+		this.id = id;
+		this.e_id = e_id;
+		this.fm_id = fm_id;
+		this.amount = amount;
+		this.recieved = recieved;
+		this.resolved = resolved;
+		this.category = category;
+		this.status = status;
+		this.image = image;
+	}
+
 	public Reimbursement(int int1, String date, String date2, float float1, String string, String string2) {
 		this.id = int1;
 		this.recieved = date;
@@ -53,6 +67,16 @@ public class Reimbursement implements Serializable {
 		this.amount = float1;
 		this.category = string;
 		this.status = string2;
+	}
+	
+	
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 
 	public String getRecieved() {
@@ -133,6 +157,7 @@ public class Reimbursement implements Serializable {
 		result = prime * result + e_id;
 		result = prime * result + fm_id;
 		result = prime * result + id;
+		result = prime * result + Arrays.hashCode(image);
 		result = prime * result + ((recieved == null) ? 0 : recieved.hashCode());
 		result = prime * result + ((resolved == null) ? 0 : resolved.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
@@ -161,6 +186,8 @@ public class Reimbursement implements Serializable {
 			return false;
 		if (id != other.id)
 			return false;
+		if (!Arrays.equals(image, other.image))
+			return false;
 		if (recieved == null) {
 			if (other.recieved != null)
 				return false;
@@ -182,7 +209,8 @@ public class Reimbursement implements Serializable {
 	@Override
 	public String toString() {
 		return "Reimbursement [id=" + id + ", e_id=" + e_id + ", fm_id=" + fm_id + ", amount=" + amount + ", recieved="
-				+ recieved + ", resolved=" + resolved + ", category=" + category + ", status=" + status + "]";
+				+ recieved + ", resolved=" + resolved + ", category=" + category + ", status=" + status + ", image="
+				+ Arrays.toString(image) + "]";
 	}
 	
 	

@@ -37,7 +37,7 @@ function populateReimbursementTable(){
                 	tdStatus.setAttribute("class", "success");
                 }
                 else if(tdStatus.textContent ==="rejected"){
-                	tdStatus.setAttribute("class", "danger")
+                	tdStatus.setAttribute("class", "danger");
                 }
                 else{
                 	tdStatus.setAttribute("class","warning");

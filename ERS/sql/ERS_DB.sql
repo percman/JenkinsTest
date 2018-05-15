@@ -6,8 +6,6 @@
 --GRANT CREATE SESSION TO projectOne;
 --GRANT CREATE TABLE TO projectOne;
 
-
-
 CREATE TABLE employee(
     e_id NUMBER PRIMARY KEY,
     title VARCHAR(20)NOT NULL,
@@ -39,6 +37,7 @@ CREATE TABLE reimbursement_info(
     category VARCHAR2(30) NOT NULL,
     status VARCHAR2(10) DEFAULT('pending'),
     amount float NOT NULL,
+    image blob,
     CONSTRAINT FK_reimbursement FOREIGN KEY(r_id) REFERENCES reimbursement(r_id)
 );
 
@@ -46,8 +45,10 @@ CREATE TABLE reimbursement_info(
 INSERT INTO EMPLOYEE(title,username,password) VALUES('Associate', 'bg2000','password');
 INSERT INTO EMPLOYEE(title,username,password) VALUES('Financial Manager', 'andy1991','boss');
 INSERT INTO employee(title,username,password) VALUES('Trainer','pokeMaster','charizard');
+INSERT INTO EMPLOYEE(title,username,password) VALUES('Financial Manager', 'pheonix2005', 'boss');
+
 INSERT INTO information(e_id,f_name,l_name,telephone,address) VALUES(1,'Bryan','Grayson','202-331-9786','120 makebelieve avenue');
 INSERT INTO information(e_id,f_name,l_name,telephone,address) VALUES(2,'Andy','Alfaro','241-717-7491','Somewhere in Dulles Greene');
 INSERT INTO information(e_id,f_name,l_name,telephone,address) VALUES(4,'William','Gentry','123-456-7890','404 Pallet Town');
-
+INSERT INTO information(e_id,f_name,l_name,telephone,address) VALUES(5,'Ben','Anderson','241-404-0912','In your database');
 commit;

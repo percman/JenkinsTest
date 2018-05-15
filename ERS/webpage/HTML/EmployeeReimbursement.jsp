@@ -61,7 +61,7 @@
         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#new">Create new reimbursement</button>
         <div id="new" class="collapse">
             <div class="col-md-2">
-            <form action="new.do" method ="POST">
+            <form action="new.do" method ="POST" >
                 <div class="form-group">
                     <label for="amount">
                         <h3>Amount</h3>

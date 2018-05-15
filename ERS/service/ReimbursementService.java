@@ -1,5 +1,6 @@
 package com.revature.service;
 
+import java.io.File;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,11 +19,6 @@ public class ReimbursementService {
 	private static ReimbursementDAO dao = new ReimbursementDaoImpl();
 	
 	private ReimbursementService() {}
-	
-	
-	public static Reimbursement getReimbursement(int id) {
-		return dao.getReimbursement(id);
-	}
 	
 	public static boolean setReimbursement(Employee rbmt) {
 		return dao.setReimbursement(rbmt);
@@ -43,18 +39,23 @@ public class ReimbursementService {
 	public static String NewReimbursement(HttpServletRequest request, HttpServletResponse response) {
 		String amount = request.getParameter("amount");
 		String category = request.getParameter("category");
+		String picture = request.getParameter("pic");
+		File image = new File("C://"+picture);
+	
 		Employee user = (Employee) request.getSession().getAttribute("Employee");
 		Reimbursement entry = new Reimbursement();
 		entry.setAmount(Float.parseFloat(amount));
 		entry.setCategory(category);
 		entry.setE_id(user.getId());
+		
 		if(setReimbursement(user)) {
-			ReimbursementInformationService.newInformation(entry);
+			ReimbursementInformationService.newInformation(entry,image);
 			logger.info("New reimbursement request created");
 		}
 		String page = (user.getTitle().equals("Financial Manager")) ?
 				"/HTML/ManagerReimbursement.jsp" : "/HTML/EmployeeReimbursement.jsp";
+		
 		return page;
 	}
-	
+		
 }

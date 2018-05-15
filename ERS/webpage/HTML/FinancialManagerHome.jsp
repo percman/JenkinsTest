@@ -19,7 +19,7 @@
             </div>
             <ul class="navbar-nav nav">
                 <li class="active">
-                    <a href="./FinancialManagerHomePage.jsp">Home</a>
+                    <a href="./FinancialManagerHome.jsp">Home</a>
                 </li>
                 <li>
                     <a href="./ManagerReimbursement.jsp">Reimbursement<span class="glyphicon glyphicon-usd"></span></a>
@@ -52,7 +52,9 @@
                     <th>Date Recieved</th>
                     <th>Date Resolved</th>
                     <th>Status</th>
+                    <th>image</th>
                     <th>Approve/Reject</th>
+                    
                 </tr>
             </thead>
             <tbody id="reimbursement">
@@ -62,6 +64,6 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="../JS/ManagerList.js"></script>
+    <script src="../JS/Manager.js"></script>
 </body>
 </html>

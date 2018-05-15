@@ -33,30 +33,7 @@ public class ReimbursementDaoImpl implements ReimbursementDAO {
 
 	}
 
-	@Override
-	public Reimbursement getReimbursement(int id) {
-		ConnectionUtility.getInstance();
-		String sql = "SELECT * FROM reimbursement WHERE request_id =?";
-		int index =0;
-		Reimbursement rbmt = new Reimbursement();
-		try(Connection conn = ConnectionUtility.getConnection()){
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setInt(++index, id);
-			ResultSet rs = stmt.executeQuery();
-			while(rs.next()) {
-				rbmt.setId(rs.getInt("r_id"));
-				rbmt.setE_id(rs.getInt("request_id"));
-				rbmt.setFm_id(rs.getInt("manager_id"));
-				rbmt.setRecieved(rs.getString("recieved"));
-				rbmt.setResolved(rs.getString("resolved"));
-			}return rbmt;
-		}catch(SQLException sqle) {
-			System.err.println(sqle.getMessage());
-			System.err.println("SQL STATE: "+sqle.getSQLState());
-			System.err.println("Error Code: "+sqle.getErrorCode());
-		}
-		return null;
-	}
+	
 	
 	public boolean UpdateReimbursement(int id, Employee emp) {
 		ConnectionUtility.getInstance();
@@ -107,7 +84,7 @@ public class ReimbursementDaoImpl implements ReimbursementDAO {
 		ConnectionUtility.getInstance();
 		List<Reimbursement> list = new ArrayList<>();
 		String sql = "SELECT reimbursement.r_id,reimbursement.request_id,reimbursement.manager_id,reimbursement_info.amount,"
-				+ "reimbursement_info.category,reimbursement.recieved,reimbursement.resolved,reimbursement_info.status FROM reimbursement INNER JOIN reimbursement_info"
+				+ "reimbursement_info.category,reimbursement.recieved,reimbursement.resolved,reimbursement_info.status, reimbursement_info.image FROM reimbursement INNER JOIN reimbursement_info"
 				+ " ON reimbursement.r_id = reimbursement_info.r_id WHERE reimbursement.request_id != ?";
 		int index = 0;
 		try(Connection conn = ConnectionUtility.getConnection()){
@@ -116,7 +93,7 @@ public class ReimbursementDaoImpl implements ReimbursementDAO {
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
 				list.add(new Reimbursement(rs.getInt("r_id"),rs.getInt("request_id"),rs.getInt("manager_id"),rs.getFloat("amount"),
-						rs.getString("recieved"),rs.getString("resolved"),rs.getString("category"),rs.getString("status")));
+						rs.getString("recieved"),rs.getString("resolved"),rs.getString("category"),rs.getString("status"),rs.getBytes("image")));
 			}
 			return list;
 		}catch(SQLException sqle) {
@@ -126,5 +103,5 @@ public class ReimbursementDaoImpl implements ReimbursementDAO {
 		}
 		return null;
 	}
-
+	
 }

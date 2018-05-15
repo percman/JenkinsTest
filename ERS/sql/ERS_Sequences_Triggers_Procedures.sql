@@ -69,10 +69,10 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE insert_r_info(cat IN VARCHAR2,money IN float)
+CREATE OR REPLACE PROCEDURE insert_r_info(cat IN VARCHAR2,money IN float, img IN blob)
 AS
 BEGIN
-    INSERT INTO reimbursement_info(category,amount)VALUES(cat,money);
+    INSERT INTO reimbursement_info(category,amount, image)VALUES(cat,money,img);
     COMMIT;
 END;
 /
