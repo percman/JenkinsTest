@@ -26,17 +26,15 @@
                                 <label for="lodging">Lodging </label>
                                 <input type="radio" name="lodging" id="lodging" value="1">
                             </div>
-                            <br>
+                            
                             <div class="col-md-2">
                                 <label for="travel">Travel </label>
                                 <input type="radio" name="travel" id="travel" value="2">
                             </div>
-                            <br>
                             <div class="col-md-2">
                                 <label for="food">Food </label>
                                 <input type="radio" name="food" id="food" value="3">
                             </div>
-                            <br>
                             <div class="col-md-2">
                                 <label for="other">Other </label>
                                 <input type="radio" name="other" id="other" value="4">

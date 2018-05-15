@@ -13584,3 +13584,7 @@ PL/SQL: Statement ignored
 2018-05-14 23:41:20 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/eSubmitReimb.jsp
 2018-05-14 23:41:20 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/eSubmitReimb.jsp
 2018-05-14 23:41:20 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
+2018-05-14 23:42:11 INFO  LogThis:25 - CORSFilter HTTP Request: GET
+2018-05-14 23:42:11 INFO  LogThis:25 - CORSFilter HTTP URI: /EmployeeReimbursementSystem/eSubmitReimb.jsp
+2018-05-14 23:42:11 INFO  LogThis:25 - CORSFilter HTTP URL: http://localhost:8080/EmployeeReimbursementSystem/eSubmitReimb.jsp
+2018-05-14 23:42:11 INFO  LogThis:25 - CORSFilter HTTP Protocol: HTTP/1.1
