@@ -45,4 +45,7 @@ public class EmployeeService {
 	public static byte[] getImage(int reid) {
 		return dao.getImage(reid);
 	}
+	public static Reimbursement getRequest(int id) throws ClassNotFoundException {
+		return dao.getRequest(id);
+	}
 }

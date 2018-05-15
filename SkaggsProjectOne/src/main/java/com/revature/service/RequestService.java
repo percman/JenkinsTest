@@ -31,7 +31,12 @@ public class RequestService {
 		Reimbursement r = new Reimbursement(0, employee.getEmployeeId(), 0, requestType, 0, 
 				amount, "", "", "", "", "", "", input);
 		EmployeeService.insertRequest(r);
-		return "/home.jsp";
+		if (employee.isFinanceManager()) {
+			return "./makeRequestFM.jsp";
+		}
+		else {
+			return "/home.jsp";
+		}
 	}
 	private static String getValue(Part part) throws IOException {
 	    BufferedReader reader = new BufferedReader(new InputStreamReader(part.getInputStream(), "UTF-8"));

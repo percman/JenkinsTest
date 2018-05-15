@@ -34,6 +34,9 @@
 		<ul class="navbar-nav nav">
 			<li><a href="requestByEmployee.jsp">View Requests by Employees</a></li>
 		</ul>
+				<ul class="navbar-nav nav">
+			<li><a href="makeRequestFM.jsp">Make Reimbursement Request</a></li>
+		</ul>
 		<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
 			<li><a href="logout.jsp">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
 		</ul>

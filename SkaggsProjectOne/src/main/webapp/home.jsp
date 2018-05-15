@@ -46,14 +46,12 @@
 					<tr>
 						<th>Name</th>
 						<th>User Name</th>
-						<th>Reimbursements</th>
 					</tr>
 				</thead>
 				<tbody id="table-body">
 					<tr>
 						<td><%=employee.getFirstName()%> <%=employee.getLastName()%></td>
 						<td><%=employee.getUserName()%></td>
-						<td>None</td>
 					</tr>
 				</tbody>
 			</table>
@@ -76,7 +74,7 @@
 		<div class="container">
 			<div class="col-md-7">
 					<label for="number-input">Amount</label> <input
-						 type="number" value="310" id="amount" name="amount">
+						 type="number" id="amount" name="amount">
 			</div>
 		</div>
 		<div class="container">

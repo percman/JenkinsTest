@@ -168,6 +168,36 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return null;
 	}
+	@Override
+	public Reimbursement getRequest(int id) throws ClassNotFoundException {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			Reimbursement r = null;
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursementTable WHERE reid= " + id);			
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {	
+				int reid = rs.getInt("reid");
+				int requesterId = rs.getInt("requesterId");
+				int approverId = rs.getInt("approverId");
+				String category = rs.getString("categoryName");
+				int status = rs.getInt("status");
+				int amount = rs.getInt("amount");
+				String dateSubmitted = rs.getString("dateSubmitted");
+				String dateCompleted = " ";
+				if (rs.getString("dateCompleted") !=null) {
+					dateCompleted = rs.getString("dateCompleted");
+				}
+				r = new Reimbursement(reid, requesterId, approverId, category, status, amount, dateSubmitted, dateCompleted, 
+				" ", " ",null,null, null);
+			}
+			
+			return r;
+		} catch(SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQL STATE " + sqle.getSQLState());
+			System.err.println("Error Code: " + sqle.getErrorCode());
+		}
+		return null;
+	}
 
 	@Override
 	public boolean insertEmployee(Employee e) throws ClassNotFoundException {
