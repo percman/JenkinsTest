@@ -53,6 +53,7 @@ approver NUMBER(3),
 category NUMBER(1),
 amount NUMBER(6, 2),
 status NUMBER(1),
+image BLOB,
 CONSTRAINT FK_REQUESTER FOREIGN KEY (requester) REFERENCES Employee(eid),
 CONSTRAINT FK_APPROVER FOREIGN KEY (approver) REFERENCES FManager(eid),
 CONSTRAINT CK_RA_NOT_EQUAL CHECK (requester <> approver),
@@ -93,6 +94,8 @@ INSERT INTO FManager VALUES (-1);
 
 SELECT * FROM FManager;
 
+DROP TABLE Reimbursement;
+
 COMMIT;
 
 CREATE SEQUENCE reimbursement_id_sequence
@@ -111,14 +114,14 @@ IS
 
 
 CREATE OR REPLACE PROCEDURE add_reimbursement(username_in VARCHAR2, password_in VARCHAR2,
-  category_in NUMBER, amount_in NUMBER)
+  category_in NUMBER, amount_in NUMBER, image_in BLOB)
 IS
   requesterID number;
   BEGIN
     IF (AUTH_EMPLOYEE(username_in, password_in) = 1) THEN
       SELECT eid INTO requesterID FROM Employee where username_in = username;
-      INSERT INTO Reimbursement (rid, requester, approver, category, amount, status)
-        VALUES (reimbursement_id_sequence.nextval, requesterID, -1, category_in, amount_in, 0);
+      INSERT INTO Reimbursement (rid, requester, approver, category, amount, status, image)
+        VALUES (reimbursement_id_sequence.nextval, requesterID, -1, category_in, amount_in, 0, image_in);
     end if;
     COMMIT;
   END;
@@ -139,3 +142,5 @@ IS
     RETURN 1;
   END;
 /
+
+SELECT * FROM Reimbursement;

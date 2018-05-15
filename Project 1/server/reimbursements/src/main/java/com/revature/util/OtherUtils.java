@@ -6,6 +6,8 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Blob;
+import java.sql.SQLException;
 
 public class OtherUtils {
 
@@ -45,5 +47,12 @@ public class OtherUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String blobToString(Blob bloob) throws SQLException {
+        String s = new String(bloob.getBytes(1l, (int) bloob.length()));
+        logger.debug("Blob " + bloob);
+        logger.debug("String " + s);
+        return s ;
     }
 }

@@ -3,6 +3,15 @@ package com.revature.model;
 public class CreateReimbursementModel extends SimpleEmployee {
     private double amount;
     private int category;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String s) {
+        this.image = s;
+    }
 
     public double getAmount() {
         return amount;

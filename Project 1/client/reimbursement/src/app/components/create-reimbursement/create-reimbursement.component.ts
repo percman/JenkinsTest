@@ -22,24 +22,22 @@ export class CreateReimbursementComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const rForm = new ReimbursementForm(this.amount, this.category,
-                      this.globals.username, this.globals.password);
-    this.rs.createReimbursement(rForm).subscribe(success => this.indicator = success ? 'Success!' : 'Add Failed',
-      err => this.indicator = err['error']);
+    const fr = new FileReader();
+    fr.onload = () => {
+      console.log('READ');
+      const rForm = new ReimbursementForm(this.amount, this.category,
+        this.globals.username, this.globals.password, fr.result);
+      this.rs.createReimbursement(rForm).subscribe(success => this.indicator = success ? 'Success!' : 'Add Failed',
+        err => this.indicator = err['error']);
+    }
+    fr.readAsDataURL(this.filesToUpload[0]);
+
   }
 
   fileChangeEvent(fileInput: any) {
     this.filesToUpload = <Array<File>> fileInput.target.files;
     console.log(this.filesToUpload);
     console.log(this.filesToUpload[0]);
-
-    const fr = new FileReader();
-    fr.onload = () => {
-      console.log('READ');
-      this.rs.uploadFile(fr.result).subscribe(success => this.indicator = 'UPASDASPD',
-        fail => this.indicator = 'FAIL');
-    }
-    fr.readAsText(this.filesToUpload[0]);
 
   }
 

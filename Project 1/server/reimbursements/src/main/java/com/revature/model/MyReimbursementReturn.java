@@ -6,16 +6,26 @@ public class MyReimbursementReturn {
     private int status;
     private String approverFirst;
     private String approverLast;
+    private String image;
 
     public MyReimbursementReturn() {
     }
 
-    public MyReimbursementReturn(double amount, int category, int status, String approverFirst, String approverLast) {
+    public MyReimbursementReturn(double amount, int category, int status, String approverFirst, String approverLast, String image) {
         this.amount = amount;
         this.category = category;
         this.status = status;
         this.approverFirst = approverFirst;
         this.approverLast = approverLast;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public double getAmount() {

@@ -7,4 +7,5 @@ export interface BigReimbursement {
   requesterFirst: string;
   requesterLast: string;
   rid: string;
+  image: string;
 }

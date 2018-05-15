@@ -11,8 +11,9 @@ public class ReimbursementTable implements Mappable {
     private String requesterFirst;
     private String requesterLast;
     private int rid;
+    private String image;
 
-    public ReimbursementTable(double amount, int category, int status, String approverFirst, String approverLast, String requesterFirst, String requesterLast, int rid) {
+    public ReimbursementTable(double amount, int category, int status, String approverFirst, String approverLast, String requesterFirst, String requesterLast, int rid, String image) {
         this.amount = amount;
         this.category = category;
         this.status = status;
@@ -21,9 +22,18 @@ public class ReimbursementTable implements Mappable {
         this.requesterFirst = requesterFirst;
         this.requesterLast = requesterLast;
         this.rid = rid;
+        this.image = image;
     }
 
     public ReimbursementTable() {
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public double getAmount() {

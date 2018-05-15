@@ -9,9 +9,13 @@ import com.revature.model.ReimbursementTable;
 import com.revature.util.ConnectionUtil;
 import org.apache.log4j.Logger;
 
+import java.io.ByteArrayInputStream;
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
+
+import static com.revature.util.OtherUtils.blobToString;
 
 
 public class ReimbursementDaoImpl implements ReimbursementDao{
@@ -32,10 +36,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
     @Override
     public List<MyReimbursementReturn> getRequestedReimbursementsByUser(String username) {
         List<MyReimbursementReturn> ls = new LinkedList<>();
+        Blob bloob;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
             PreparedStatement stmt = conn.prepareStatement("SELECT amount a, category c, status s," +
-                    "ei.FIRST_NAME f, ei.LAST_NAME l " +
+                    "ei.FIRST_NAME f, ei.LAST_NAME l, image " +
                     "FROM REIMBURSEMENT rei, EMPLOYEE e, EINFO ei " +
                     "WHERE rei.requester = e.EID " +
                     "AND rei.approver = ei.eid " +
@@ -43,8 +48,9 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
             stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
+                bloob = rs.getBlob("image");
                 ls.add(new MyReimbursementReturn(rs.getDouble("a"), rs.getInt("c"),
-                    rs.getInt("s"), rs.getString("f"), rs.getString("l")));
+                    rs.getInt("s"), rs.getString("f"), rs.getString("l"), blobToString(bloob)));
 
             }
             return ls;
@@ -61,11 +67,12 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
     @Override
     public boolean createReimbursement(CreateReimbursementModel cm) {
         try (Connection conn = ConnectionUtil.getConnection()) {
-            CallableStatement stmt = conn.prepareCall("{CALL add_reimbursement(?, ?, ?, ?)}");
+            CallableStatement stmt = conn.prepareCall("{CALL add_reimbursement(?, ?, ?, ?, ?)}");
             stmt.setString(1, cm.getUsername());
             stmt.setString(2, cm.getPassword());
             stmt.setInt(3, cm.getCategory());
             stmt.setDouble(4, cm.getAmount());
+            stmt.setBlob(5, (new ByteArrayInputStream(cm.getImage().getBytes(StandardCharsets.UTF_8))));
 
             return stmt.executeUpdate() > 0;
 
@@ -82,15 +89,17 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 
         try (Connection conn = ConnectionUtil.getConnection()) {
             PreparedStatement stmt = conn.prepareStatement("SELECT amount a, category c, status s," +
-                    "ei.FIRST_NAME fApp, ei.LAST_NAME lApp, eie.FIRST_NAME fReq, eie.LAST_NAME lReq, rei.rid id " +
+                    "ei.FIRST_NAME fApp, ei.LAST_NAME lApp, eie.FIRST_NAME fReq, eie.LAST_NAME lReq, rei.rid id, image " +
                     "FROM REIMBURSEMENT rei, EINFO eie, EINFO ei " +
                     "WHERE rei.requester = eie.EID " +
                     "AND rei.approver = ei.eid ");
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
+                Blob bloob = rs.getBlob("image");
                 ls.add(new ReimbursementTable(rs.getDouble("a"), rs.getInt("c"),
                         rs.getInt("s"), rs.getString("fApp"), rs.getString("lApp"),
-                        rs.getString("fReq"), rs.getString("lReq"), rs.getInt("id")));
+                        rs.getString("fReq"), rs.getString("lReq"), rs.getInt("id"),
+                        blobToString(bloob)));
 
             }
             return ls;

@@ -4,4 +4,5 @@ export interface MyReimbursement {
   status: number;
   approverFirst: string;
   approverLast: string;
+  image: string;
 }
