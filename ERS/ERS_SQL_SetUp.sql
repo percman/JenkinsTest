@@ -274,13 +274,13 @@ CREATE OR REPLACE PROCEDURE insert_f_manager (new_username IN VARCHAR2, new_pass
     END;
     /
     
-CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id IN NUMBER, new_category_id IN NUMBER, new_amount IN NUMBER) 
+CREATE OR REPLACE PROCEDURE insert_reimbursement (new_requestor_id IN NUMBER, new_category_id IN NUMBER, new_amount IN NUMBER, new_image IN BLOB) 
     AS
         now TIMESTAMP; 
     BEGIN
         now := GET_CURRENT_TIME;
-        INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, amount, submitted, approver_id)
-            VALUES (null, new_requestor_id, new_category_id, new_amount, now, 1000);
+        INSERT INTO reimbursement(reimbursement_id, requestor_id, category_id, amount, submitted, approver_id, image)
+            VALUES (null, new_requestor_id, new_category_id, new_amount, now, 1000, new_image);
         COMMIT;
     END;
     /
@@ -387,21 +387,21 @@ BEGIN
     insert_employee('loony', 'hogwarts', 'Luna', '', 'Lovegood', 1234567890, 'email@hogwarts.uk');
     insert_employee('quidditchLVR', 'hogwarts', 'Ginevra', 'M', 'Weasly', 1234567890, 'email@hogwarts.uk');
     insert_employee('bravekid', 'hogwarts', 'Nevile', '', 'Longbottom', 1234567890, 'email@hogwarts.uk');
-    insert_reimbursement(2, 1, 80.02);
-    insert_reimbursement(4, 2, 206.29);
-    insert_reimbursement(6, 3, 54.36);
-    insert_reimbursement(8, 4, 1265.54);
-    insert_reimbursement(10, 1, 288.09);
-    insert_reimbursement(2, 2, 355.96);
-    insert_reimbursement(3, 3, 268.76);
-    insert_reimbursement(4, 4, 168.99);
-    insert_reimbursement(6, 1, 366.93);
-    insert_reimbursement(8, 2, 55.58);
-    resolve_reimbursement(1001, 2, 100001);
-    resolve_reimbursement(1002, 2, 100003);
-    resolve_reimbursement(1003, 2, 100005);
-    resolve_reimbursement(1004, 3, 100009);
-    resolve_reimbursement(1005, 3, 100007);
+--    insert_reimbursement(2, 1, 80.02);
+--    insert_reimbursement(4, 2, 206.29);
+--    insert_reimbursement(6, 3, 54.36);
+--    insert_reimbursement(8, 4, 1265.54);
+--    insert_reimbursement(10, 1, 288.09);
+--    insert_reimbursement(2, 2, 355.96);
+--    insert_reimbursement(3, 3, 268.76);
+--    insert_reimbursement(4, 4, 168.99);
+--    insert_reimbursement(6, 1, 366.93);
+--    insert_reimbursement(8, 2, 55.58);
+--    resolve_reimbursement(1001, 2, 100001);
+--    resolve_reimbursement(1002, 2, 100003);
+--    resolve_reimbursement(1003, 2, 100005);
+--    resolve_reimbursement(1004, 3, 100009);
+--    resolve_reimbursement(1005, 3, 100007);
 END;
 /
 ---------------------------------
@@ -419,5 +419,4 @@ SELECT * FROM R_STATUS;
 SELECT * FROM R_CATEGORY;
 -------------------------
 -------------------------
-
 

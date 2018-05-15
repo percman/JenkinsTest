@@ -16,6 +16,7 @@ function getAllPending() {
         if (xhr.readyState === 4 && xhr.status === 200) {
 
             let reimbs = JSON.parse(xhr.responseText);
+            let currentEmployeeId = document.getElementById("employeeId").value;
 
             for (let reimb of reimbs) {
                 // public Reimbursement(int id, String requestorName, String approverName, String category, String status, int amount,
@@ -30,7 +31,7 @@ function getAllPending() {
                 let resolved = reimb.approved;
                 let approverName = reimb.approverName;
 
-                if (status == "pending") {
+                if (status == "pending" && currentEmployeeId != eId) {
 
                     let row = document.createElement("tr");
                     let tdId = document.createElement("td");
@@ -134,7 +135,7 @@ function getPendingForEmployee() {
 
                 let empId = document.getElementById("empId").value;
 
-                if (empId == eId && status == "pending") {
+                if (empId == eId && status == "pending" && currentEmployeeId != eId) {
 
                     let row = document.createElement("tr");
                     let tdId = document.createElement("td");

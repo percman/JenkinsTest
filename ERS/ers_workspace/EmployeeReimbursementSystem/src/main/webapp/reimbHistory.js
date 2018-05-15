@@ -30,6 +30,7 @@ function getAllReimbs() {
                 let resolved = reimb.approved;
                 let approverName = reimb.approverName;
                 let image = reimb.imageString;
+                console.log(image);
 
 
                 let row = document.createElement("tr");
@@ -46,9 +47,9 @@ function getAllReimbs() {
                 let tdImageString = document.createElement("td");
                 let imageTag = document.createElement("img");
 
-                // imageTag.setAttribute("src", "data:image/jpeg;base64" + image);
+                imageTag.setAttribute("src", "data:image/png;base64," + image);
 
-                tdId.textContent = "wehueflhudfs" + id;
+                tdId.textContent = id;
                 tdRequestorName.textContent = requestorName;
                 tdEId.textContent = eId;
                 tdCategory.textContent = category;
@@ -58,9 +59,9 @@ function getAllReimbs() {
                 tdResolved.textContent = resolved;
                 tdApproverName.textContent = approverName;
 
-                tdImageString.textContent = "grergg";
+                // tdImageString.textContent = "grergg";
                     
-                // tdImageString.appendChild(imageTag);
+                tdImageString.appendChild(imageTag);
 
                 row.appendChild(tdEId);
                 row.appendChild(tdRequestorName);
@@ -70,8 +71,8 @@ function getAllReimbs() {
                 row.appendChild(tdStatus);
                 row.appendChild(tdResolved);
                 row.appendChild(tdApproverName);
-                row.appendChild(tdImageString);
                 row.appendChild(tdId);
+                row.appendChild(tdImageString);
 
 
                 document.getElementById("allReimbsTable").appendChild(row);
