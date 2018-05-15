@@ -20,7 +20,7 @@
             <br>
             <label for="password">Password:</label>
             <br>
-            <input type="text" name="password" id="password" required placeholder="Please enter password">
+            <input type="password" name="password" id="password" required placeholder="Please enter password">
             <br>
             <br>
             <input id="loginBtn" type="submit" value="Login">
