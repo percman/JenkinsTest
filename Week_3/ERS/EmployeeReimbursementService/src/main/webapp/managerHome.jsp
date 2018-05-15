@@ -27,7 +27,7 @@
                                 <li><a href="./managerInfo.jsp">Info</a></li>
                                 <li><a href="./viewManagerReimburstment.jsp">View</a></li>
                                 <li><a href="./submitManagerReimburstment.jsp">Submit</a></li>
-                                <li><a href="./approveReimburstment.jsp">Approve</a>></li>
+                                <li><a href="./approveReimburstment.jsp">Approve</a></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
                                 <li><a href="logout.do">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 

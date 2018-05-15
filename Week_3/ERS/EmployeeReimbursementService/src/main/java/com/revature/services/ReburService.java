@@ -33,12 +33,13 @@ public class ReburService {
 		FinanceManager man = (FinanceManager)request.getSession().getAttribute("authorizedUser");
 		String cat = request.getParameter("category");
 		String amount = request.getParameter("amount");
-		//InputStream inputStream = null;
+		InputStream inputStream = null;
 		
 		try {
-			//Part filePart = request.getPart("photo");
-			//inputStream = filePart.getInputStream();
-			Reimbursment rebur = new Reimbursment(Category.stringToCat(cat), Integer.parseInt(amount),man.getId());
+			String part = request.getParameter("photo");
+			Part filePart = request.getPart("photo");
+			inputStream = filePart.getInputStream();
+			Reimbursment rebur = new Reimbursment(Category.stringToCat(cat), Integer.parseInt(amount),man.getId(),inputStream);
 			ReimbursementService.submitReimbursment(rebur);
 			String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(man.getUsername()));
 			request.getSession().setAttribute("reimbursements", rebursementJson);
@@ -50,6 +51,10 @@ public class ReburService {
 			logger.error(nrfee.getMessage(), nrfee);
 		} catch (NoPendingReimbursmentException npre) {
 			logger.error(npre.getMessage(), npre);
+		} catch (IOException ioe) {
+			logger.error(ioe.getMessage(), ioe);
+		} catch (ServletException se) {
+			logger.error(se.getMessage(), se);
 		} 
 		return"/viewManagerReimburstment.jsp";
 	}
@@ -57,11 +62,11 @@ public class ReburService {
 		GenericEmployee emp = (GenericEmployee)request.getSession().getAttribute("authorizedUser");
 		String cat = request.getParameter("category");
 		String amount = request.getParameter("amount");
-//		InputStream inputStream = null;
+		InputStream inputStream = null;
 		try {
-//			Part filePart = request.getPart("photo");
-//			inputStream = filePart.getInputStream();
-			Reimbursment rebur = new Reimbursment(Category.stringToCat(cat), Integer.parseInt(amount),emp.getId());
+			Part filePart = request.getPart("photo");
+			inputStream = filePart.getInputStream();
+			Reimbursment rebur = new Reimbursment(Category.stringToCat(cat), Integer.parseInt(amount),emp.getId(),inputStream);
 			ReimbursementService.submitReimbursment(rebur);
 			String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(emp.getUsername()));
 			request.getSession().setAttribute("reimbursements", rebursementJson);
@@ -73,6 +78,10 @@ public class ReburService {
 			logger.error(nrfee.getMessage(), nrfee);
 		} catch (NoPendingReimbursmentException npre) {
 			logger.error(npre.getMessage(), npre);
+		} catch (IOException ioe) {
+			logger.error(ioe.getMessage(), ioe);
+		} catch (ServletException se) {
+			logger.error(se.getMessage(), se);
 		}
 		return"/viewEmployeeReimburstment.jsp";
 	}

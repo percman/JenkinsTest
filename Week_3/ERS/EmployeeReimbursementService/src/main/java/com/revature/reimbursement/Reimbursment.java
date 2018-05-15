@@ -51,8 +51,9 @@ public Reimbursment(Category cat, int amount,int reimburseId, int approved) {
 	this.reimburseId = reimburseId;
 	this.approved = approved == 1;
 }
-public Reimbursment(Category cat, int amount,int sumbitterId) {
+public Reimbursment(Category cat, int amount,int sumbitterId,InputStream photo) {
 	super();
+	this.photo = photo;
 	this.cat = cat;
 	this.amount = amount;
 	this.sumbitterId = sumbitterId;

@@ -190,14 +190,12 @@ END;
 /
 
 begin
-update_reimbursement(0,63,0);
+upgrade(4);
+UPDATE_Man(4,'megan','smith',null,null);
 end;
 /
-
-select * from employee;
-
-select * from reimbursement;
-
-SELECT * FROM reimbursement ORDER BY rebur_id;
-
+insert into employee values('megan','password',4);
+insert into generic_employee values ('megan','smith','','',4);
+select * from FINANCE_MANAGER;
+select * from generic_employee;
 commit;
