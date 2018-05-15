@@ -29,6 +29,7 @@ public class ReimbursementApprovalServlet extends HttpServlet {
 		String[] names = request.getParameterValues("approval");
 		List list =  Arrays.asList(names); 
 		request.setAttribute("approval", list);
+		String reason_given = request.getParameter("reasongiven");
 		
 		for(Object reimbursementstring : list) {
 			if(((String) reimbursementstring).startsWith("approved")) {
@@ -36,22 +37,22 @@ public class ReimbursementApprovalServlet extends HttpServlet {
 						((String) reimbursementstring).substring(8,10) + " has been approved");
 				
 				Reimbursement updatereimbursement = ReimbursementFactory.getReimbursement(((String) reimbursementstring).substring(10));
-				System.out.println(updatereimbursement);
 				updatereimbursement.setId(Integer.parseInt(((String) reimbursementstring).substring(8, 10)));
 				updatereimbursement = ReimbursementDaoService.getReimbursementFromId(updatereimbursement.getId());
 				updatereimbursement.setApprover_id(employee.getId());
-				System.out.println(updatereimbursement);
+				updatereimbursement.setReason(reason_given);
 				System.out.println(ReimbursementDaoService.approveReimbursement(updatereimbursement));
 			}
 			else {
 				System.out.println("Reimbursement with ID " +
 						((String) reimbursementstring).substring(8,10) + " has been rejected");
 				
-				Reimbursement updatereimbursement = ReimbursementFactory.getReimbursement(((String) reimbursementstring).substring(14));
+				Reimbursement updatereimbursement = ReimbursementFactory.getReimbursement(((String) reimbursementstring).substring(10));
 				updatereimbursement.setId(Integer.parseInt(((String) reimbursementstring).substring(8, 10)));
 				updatereimbursement = ReimbursementDaoService.getReimbursementFromId(updatereimbursement.getId());
-				updatereimbursement.setApprover_id(Integer.parseInt(((String) reimbursementstring).substring(10,14)));
-				ReimbursementDaoService.rejectReimbursement(updatereimbursement);
+				updatereimbursement.setApprover_id(employee.getId());
+				updatereimbursement.setReason(reason_given);
+				System.out.println(ReimbursementDaoService.rejectReimbursement(updatereimbursement));
 			}
 		}
 		

@@ -1,5 +1,9 @@
 package com.revature.dao;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.revature.daoservice.EmployeeDaoService;
 import com.revature.factory.Reimbursement;
@@ -30,7 +35,6 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	@Override
 	public List<Reimbursement> getAllReimbursements() {
 		List<Reimbursement> reimbursementlist = new ArrayList<>();
-//		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement");
 			ResultSet rs = stmt.executeQuery();
@@ -44,9 +48,14 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				newreimbursement.setStatus(rs.getString("status"));
 				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
 				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
-//				newreimbursement.setReason(rs.getString("reason"));
+				newreimbursement.setReason(rs.getString("reason"));
 				
-				reimbursementlist.add(newreimbursement);
+				Blob new_image = rs.getBlob("image");
+//				System.out.println(new_image);
+				InputStream image = new_image.getBinaryStream();
+				newreimbursement.setImage(image);
+				
+				reimbursementlist.add(newreimbursement);			
 			}
 			return reimbursementlist;	
 		}  catch (SQLException sqle) {
@@ -61,7 +70,6 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	@Override
 	public List<Reimbursement> getPendingReimbursements() {
 		List<Reimbursement> reimbursementlist = new ArrayList<>();
-//		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE status='pending'");
 			ResultSet rs = stmt.executeQuery();
@@ -75,8 +83,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				newreimbursement.setStatus(rs.getString("status"));
 				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
 				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
-//				newreimbursement.setReason(rs.getString("reason"));
+				newreimbursement.setReason(rs.getString("reason"));
 				
+				Blob new_image = rs.getBlob("image");
+				InputStream image = new_image.getBinaryStream();
+				newreimbursement.setImage(image);				
 				reimbursementlist.add(newreimbursement);
 			}
 			return reimbursementlist;	
@@ -91,7 +102,6 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	@Override
 	public List<Reimbursement> getApprovedReimbursements() {
 		List<Reimbursement> reimbursementlist = new ArrayList<>();
-//		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE status='approved'");
 			ResultSet rs = stmt.executeQuery();
@@ -105,8 +115,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				newreimbursement.setStatus(rs.getString("status"));
 				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
 				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
-//				newreimbursement.setReason(rs.getString("reason"));
+				newreimbursement.setReason(rs.getString("reason"));
 				
+				Blob new_image = rs.getBlob("image");
+				InputStream image = new_image.getBinaryStream();
+				newreimbursement.setImage(image);				
 				reimbursementlist.add(newreimbursement);
 			}
 			return reimbursementlist;	
@@ -121,7 +134,6 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	@Override
 	public List<Reimbursement> getRejectedReimbursements() {
 		List<Reimbursement> reimbursementlist = new ArrayList<>();
-//		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement WHERE status='rejected'");
 			ResultSet rs = stmt.executeQuery();
@@ -135,8 +147,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				newreimbursement.setStatus(rs.getString("status"));
 				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
 				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
-//				newreimbursement.setReason(rs.getString("reason"));
+				newreimbursement.setReason(rs.getString("reason"));
 				
+				Blob new_image = rs.getBlob("image");
+				InputStream image = new_image.getBinaryStream();
+				newreimbursement.setImage(image);				
 				reimbursementlist.add(newreimbursement);
 			}
 			return reimbursementlist;	
@@ -150,7 +165,6 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 
 	@Override
 	public Reimbursement getReimbursementFromEmployee(String employeename) {
-//		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement "
 					+ "INNER JOIN employee ON employee.id = reimbursement.requestor_id "
@@ -168,8 +182,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				newreimbursement.setStatus(rs.getString("status"));
 				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
 				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
-//				newreimbursement.setReason(rs.getString("reason"));
+				newreimbursement.setReason(rs.getString("reason"));
 				
+				Blob new_image = rs.getBlob("image");
+				InputStream image = new_image.getBinaryStream();
+				newreimbursement.setImage(image);				
 				return newreimbursement;	
 			}
 		}  catch (SQLException sqle) {
@@ -182,7 +199,6 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	
 	@Override
 	public Reimbursement getReimbursementFromId(int id) {
-//		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM reimbursement "
 					+ "WHERE id = ?");
@@ -198,7 +214,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				newreimbursement.setStatus(rs.getString("status"));
 				newreimbursement.setTimemade(rs.getTimestamp("timemade"));
 				newreimbursement.setTimeapproved(rs.getTimestamp("timeapproved"));
-//				newreimbursement.setReason(rs.getString("reason"));
+				newreimbursement.setReason(rs.getString("reason"));
+				
+				Blob new_image = rs.getBlob("image");
+				InputStream image = new_image.getBinaryStream();
+				newreimbursement.setImage(image);
 				
 				return newreimbursement;	
 			}
@@ -214,10 +234,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	public boolean insertReimbursement(Reimbursement reimbursement) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			CallableStatement stmt = conn.prepareCall("{CALL insert_reimbursement(?,?,?)}");
+			CallableStatement stmt = conn.prepareCall("{CALL insert_reimbursement(?,?,?,?)}");
 			stmt.setInt(++index, reimbursement.getRequestor_id());
 			stmt.setDouble(++index, reimbursement.getAmount());
 			stmt.setString(++index, reimbursement.getCategory());
+			stmt.setBlob(++index, reimbursement.getImage());
 			return stmt.executeUpdate() > 0;
 		}  catch (SQLException sqle) {
 			LogHere.warn(sqle.getMessage());
@@ -249,8 +270,9 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	public boolean rejectReimbursement(Reimbursement reimbursement) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			CallableStatement stmt = conn.prepareCall("{CALL reject_reimbursement(?,?)}");
+			CallableStatement stmt = conn.prepareCall("{CALL reject_reimbursement(?,?,?)}");
 			stmt.setInt(++index, reimbursement.getId());
+			stmt.setString(++index, reimbursement.getReason());
 			stmt.setInt(++index, reimbursement.getApprover_id());
 			int rowsAffected = stmt.executeUpdate();
 			return rowsAffected > 0;
@@ -266,8 +288,9 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	public boolean approveReimbursement(Reimbursement reimbursement) {
 		int index = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			CallableStatement stmt = conn.prepareCall("{CALL approve_reimbursement(?,?)}");
+			CallableStatement stmt = conn.prepareCall("{CALL approve_reimbursement(?,?, ?)}");
 			stmt.setInt(++index, reimbursement.getId());
+			stmt.setString(++index, reimbursement.getReason());
 			stmt.setInt(++index, reimbursement.getApprover_id());
 			int rowsAffected = stmt.executeUpdate();
 			return rowsAffected > 0;

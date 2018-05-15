@@ -1,5 +1,6 @@
 package com.revature.factory;
 
+import java.io.InputStream;
 import java.sql.Timestamp;
 
 public interface Reimbursement{
@@ -26,5 +27,7 @@ public interface Reimbursement{
 	public void setTimeapproved(Timestamp timeapproved);
 	public String getReason();
 	public void setReason(String reason);
+	public InputStream getImage();
+	public void setImage(InputStream new_image);
 
 }

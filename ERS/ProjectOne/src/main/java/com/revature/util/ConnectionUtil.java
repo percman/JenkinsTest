@@ -34,4 +34,15 @@ public class ConnectionUtil {
 		return null;
 	}
 	
+	public static void main(String[] args) {
+		Connection conn = ConnectionUtil.getConnection();
+		System.out.println(conn);
+		try {
+			conn.close();
+		} catch (SQLException sqle) {
+			System.err.println(sqle.getMessage());
+			System.err.println("SQLE State: " + sqle.getSQLState());
+			System.err.println("Error code: " + sqle.getErrorCode());
+		} 
+	}
 }

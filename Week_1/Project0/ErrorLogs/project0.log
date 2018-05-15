@@ -34467,3 +34467,61 @@ ORA-06512: at line 1
 2018-05-13 01:34:26 WARN  LogHere:27 - 
 2018-05-13 01:35:45 WARN  LogHere:27 - 
 2018-05-13 01:37:47 WARN  LogHere:27 - 
+2018-05-14 20:21:11 WARN  LogHere:27 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-14 20:21:11 WARN  LogHere:27 - SQLE State: 65000
+2018-05-14 20:21:11 WARN  LogHere:27 - Error code: 6550
+2018-05-14 20:21:35 WARN  LogHere:27 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-14 20:21:35 WARN  LogHere:27 - SQLE State: 65000
+2018-05-14 20:21:35 WARN  LogHere:27 - Error code: 6550
+2018-05-14 20:46:14 WARN  LogHere:27 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-14 20:46:14 WARN  LogHere:27 - SQLE State: 65000
+2018-05-14 20:46:14 WARN  LogHere:27 - Error code: 6550
+2018-05-14 20:46:27 WARN  LogHere:27 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-14 20:46:27 WARN  LogHere:27 - SQLE State: 65000
+2018-05-14 20:46:27 WARN  LogHere:27 - Error code: 6550
+2018-05-14 21:04:16 WARN  LogHere:27 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-14 21:04:16 WARN  LogHere:27 - SQLE State: 65000
+2018-05-14 21:04:16 WARN  LogHere:27 - Error code: 6550
+2018-05-14 21:07:27 WARN  LogHere:27 - ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERT_REIMBURSEMENT'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+2018-05-14 21:07:27 WARN  LogHere:27 - SQLE State: 65000
+2018-05-14 21:07:27 WARN  LogHere:27 - Error code: 6550
+2018-05-14 21:09:26 WARN  LogHere:27 - ORA-06502: PL/SQL: numeric or value error
+ORA-06512: at line 1
+
+2018-05-14 21:09:26 WARN  LogHere:27 - SQLE State: 65000
+2018-05-14 21:09:26 WARN  LogHere:27 - Error code: 6502
+2018-05-14 21:10:26 WARN  LogHere:27 - ORA-06502: PL/SQL: numeric or value error
+ORA-06512: at line 1
+
+2018-05-14 21:10:26 WARN  LogHere:27 - SQLE State: 65000
+2018-05-14 21:10:26 WARN  LogHere:27 - Error code: 6502
+2018-05-14 23:18:31 WARN  LogHere:27 - Invalid column index
+2018-05-14 23:18:31 WARN  LogHere:27 - SQLE State: 99999
+2018-05-14 23:18:31 WARN  LogHere:27 - Error code: 17003
+2018-05-14 23:20:47 WARN  LogHere:27 - Invalid column index
+2018-05-14 23:20:47 WARN  LogHere:27 - SQLE State: 99999
+2018-05-14 23:20:47 WARN  LogHere:27 - Error code: 17003

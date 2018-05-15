@@ -17,6 +17,9 @@ GRANT ALTER ANY TABLE TO projectoneadminone;
 select * from employee order by id;
 select * from personalinfo order by id;
 select * from reimbursement;
+delete from reimbursement;
+drop table reimbursement;
+commit;
 
 -- ******************************* TABLES *******************************
 
@@ -55,6 +58,7 @@ approver_id NUMBER(10),
 category VARCHAR2(15),
 status VARCHAR2(10),
 reason VARCHAR2(100),
+image blob,
 timemade TIMESTAMP NOT NULL,
 timeapproved TIMESTAMP,
 CONSTRAINT PK_REIMBURSEMENT PRIMARY KEY (id),
@@ -63,6 +67,7 @@ CONSTRAINT FK_REIMBURSEMENT_A_EMPLOYEE FOREIGN KEY (approver_id) REFERENCES empl
 CONSTRAINT CK_AMOUNTNEG CHECK (amount > 0),
 CONSTRAINT CK_R_A CHECK (requestor_id <> approver_id)
 );
+
 
 
 -- ******************************* SEQUENCES *******************************
@@ -190,25 +195,33 @@ BEGIN
 END;
 /
 
-
-
+-- procedure to insert a reimbursement
+CREATE OR REPLACE PROCEDURE insert_reimbursement(new_requestor_id IN NUMBER, new_amount IN NUMBER, 
+                                            new_category in VARCHAR2, new_image IN BLOB)
+AS 
+ BEGIN
+   INSERT INTO reimbursement (requestor_id, amount, category, status, timemade, image, id)
+   VALUES (new_requestor_id, new_amount, new_category, 'pending', CURRENT_TIMESTAMP, new_image, null);
+     COMMIT;
+ END;
+ /
 
 
 -- procedure to approve a reimbursement
-CREATE OR REPLACE PROCEDURE approve_reimbursement(same_id IN NUMBER, new_approver_id IN NUMBER)
+CREATE OR REPLACE PROCEDURE approve_reimbursement(same_id IN NUMBER, new_reason IN VARCHAR2, new_approver_id IN NUMBER)
 AS 
 BEGIN
-    UPDATE reimbursement SET approver_id = new_approver_id, status = 'approved', timeapproved = CURRENT_TIMESTAMP
+    UPDATE reimbursement SET approver_id = new_approver_id, reason=new_reason, status = 'approved', timeapproved = CURRENT_TIMESTAMP
     WHERE id = same_id;
     COMMIT;
 END;
 /
 
 -- procedure to reject a reimbursement
-CREATE OR REPLACE PROCEDURE reject_reimbursement(same_id IN NUMBER, new_approver_id IN NUMBER)
+CREATE OR REPLACE PROCEDURE reject_reimbursement(same_id IN NUMBER, new_reason IN VARCHAR2, new_approver_id IN NUMBER)
 AS 
 BEGIN
-    UPDATE reimbursement SET approver_id = new_approver_id, status = 'rejected', timeapproved = CURRENT_TIMESTAMP
+    UPDATE reimbursement SET approver_id = new_approver_id, reason=new_reason, status = 'rejected', timeapproved = CURRENT_TIMESTAMP
     WHERE id = same_id;
     COMMIT;
 END;

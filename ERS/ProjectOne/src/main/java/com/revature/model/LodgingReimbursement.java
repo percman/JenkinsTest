@@ -1,5 +1,6 @@
 package com.revature.model;
 
+import java.io.InputStream;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -17,6 +18,7 @@ public class LodgingReimbursement implements Reimbursement, Serializable{
 	private Timestamp timemade;
 	private Timestamp timeapproved;
 	private String reason;
+	private InputStream image;
 	
 //	private String streetaddress;
 //	private String city;
@@ -41,6 +43,18 @@ public class LodgingReimbursement implements Reimbursement, Serializable{
 		this.reason = reason;
 	}
 	
+	public LodgingReimbursement(int id, double amount, int requestor_id, String status,
+			Timestamp timemade, String reason, InputStream image) {
+		super();
+		this.id = id;
+		this.amount = amount;
+		this.requestor_id = requestor_id;
+		this.status = status;
+		this.timemade = timemade;
+		this.reason = reason;
+		this.image = image;
+	}
+	
 	public LodgingReimbursement(int id, double amount, String category, int requestor_id, int approver_id,
 			String status, Timestamp timemade, Timestamp timeapproved, String reason) {
 		super();
@@ -53,6 +67,21 @@ public class LodgingReimbursement implements Reimbursement, Serializable{
 		this.timemade = timemade;
 		this.timeapproved = timeapproved;
 		this.reason = reason;
+	}
+	
+	public LodgingReimbursement(int id, double amount, String category, int requestor_id, int approver_id,
+			String status, Timestamp timemade, Timestamp timeapproved, String reason, InputStream image) {
+		super();
+		this.id = id;
+		this.amount = amount;
+		this.category = category;
+		this.requestor_id = requestor_id;
+		this.approver_id = approver_id;
+		this.status = status;
+		this.timemade = timemade;
+		this.timeapproved = timeapproved;
+		this.reason = reason;
+		this.image = image;
 	}
 
 
@@ -143,6 +172,15 @@ public class LodgingReimbursement implements Reimbursement, Serializable{
 
 	public void setReason(String reason) {
 		this.reason = reason;
+	}
+
+	public InputStream getImage() {
+		return image;
+	}
+
+
+	public void setImage(InputStream image) {
+		this.image = image;
 	}
 
 

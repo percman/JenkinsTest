@@ -17,6 +17,9 @@
 	<%@ page import="com.revature.daoservice.EmployeeDaoService"%>
 	<%@ page import="com.revature.daoservice.ReimbursementDaoService"%>
 	<%@ page import="java.util.List"%>
+	<%@ page import="java.util.Scanner" %>
+	<%@ page import="java.io.InputStream" %>
+
 
 	<%
 		Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");
@@ -77,7 +80,7 @@
 		
 		<div id="infoUpdateButton" style="display: none;">
 			<h3>Adding reimbursement:</h3>
-			<form action="rewreimbursement.do" method="post">
+			<form action="rewreimbursement.do" enctype="multipart/form-data" method="post">
 				<div class="form-group">
 					    <label for="categoryselect">Category</label>
 					    <select class="form-control" name="categoryselect" id="categoryselect" required>
@@ -91,15 +94,15 @@
 				
 				</div>
 				<div class="form-group">
-					<label for="reimbursementamount">Enter the amount: </label> <input
-						type="number" step=".01" name="reimbursementamount" class="form-control"
-						required>
+					<label for="reimbursementamount">Enter the amount: </label> 
+					<input type="number" step=".01" name="reimbursementamount" class="form-control" required>
+					<label for="reimbursementamount">Enter the link to the image of your receipt: </label> 
 				</div>
 				<div class="form-group">
 					<label for="receiptimage">Image of receipt</label>
-				    <input type="file" class="form-control-file" id="receiptimage">
+				    <input type="file" name="receiptimage" id="receiptimage" accept=".jpg, .jpeg, .png">
 				</div>
-				<input type="submit" class="btn btn-success" value="Submit Form">
+				<input type="submit" class="form-control btn btn-success" enctype="multipart/form-data" value="Submit Form">
 			</form>
 		</div>
 		
@@ -118,8 +121,10 @@
 								<th>Requestor ID</th>
 								<th>Approver ID</th>
 								<th>Status</th>
+								<th>Reason</th>
 								<th>Time Made</th>
 								<th>Time Approved</th>
+								<th>Image</th>
 							</tr>
 						</thead>	
 						<tbody id="reimbursement_Table">
@@ -134,8 +139,15 @@
 							<td><%=r.getRequestor_id()%></td>
 							<td> </td>
 							<td><%=r.getStatus()%></td>
+							<td></td>
 							<td><%=r.getTimemade().toGMTString()%></td>
 							<td> </td>
+							<td><%if(r.getImage() != null){ %>   
+							
+						
+							
+							
+							<img src="data:image/png;base64,[B@7200d52a"> <% } %></td>
 						<tr>
 						<% } else { %>
 						<tr>
@@ -143,10 +155,12 @@
 							<td><%=r.getCategory()%></td>
 							<td><%=r.getAmount()%></td>
 							<td><%=r.getRequestor_id()%></td>
-							<td><%=r.getTimeapproved().toGMTString()%></td>
+							<td><%=r.getApprover_id() %></td>
 							<td><%=r.getStatus()%></td>
+							<td><%=r.getReason() %></td>
 							<td><%=r.getTimemade().toGMTString()%></td>
 							<td><%=r.getTimeapproved().toGMTString()%></td>
+							<td><%if(r.getImage() != null){ %>   <img src="data:image/png;base64,<%=r.getImage().toString() %>"> <% } %></td>
 						<tr>
 						<% } %>
 						<% } %>
@@ -169,8 +183,10 @@
 								<th>Requestor ID</th>
 								<th>Approver ID</th>
 								<th>Status</th>
+								<th>Reason</th>
 								<th>Time Made</th>
 								<th>Time Approved</th>
+								<th>Image</th>
 							</tr>
 						</thead>	
 						<tbody id="reimbursement_Table">
@@ -186,8 +202,10 @@
 							<td><%=r.getRequestor_id()%></td>
 							<td> </td>
 							<td><%=r.getStatus()%></td>
+							<td></td>
 							<td><%=r.getTimemade().toGMTString()%></td>
 							<td> </td>
+							<td><%if(r.getImage() != null){ %> <%=r.getImage()%> <% } %></td>
 						<tr>
 						<% } else { %>
 						<tr>
@@ -195,10 +213,12 @@
 							<td><%=r.getCategory()%></td>
 							<td><%=r.getAmount()%></td>
 							<td><%=r.getRequestor_id()%></td>
-							<td><%=r.getTimeapproved().toGMTString()%></td>
+							<td><%=r.getApprover_id() %></td>
 							<td><%=r.getStatus()%></td>
+							<td><%=r.getReason() %></td>
 							<td><%=r.getTimemade().toGMTString()%></td>
 							<td><%=r.getTimeapproved().toGMTString()%></td>
+							<td><%if(r.getImage() != null){ %> <%=r.getImage()%> <% } %></td>
 						<tr>
 						<% } %>
 						<% } %>
@@ -216,6 +236,7 @@
 				<h2>Please note, if you made a request, another manager is required to approve it.</h2>
 				<h3>Here is a list of pending reimbursements:</h3>
   				<input class="form-control" id="pending_Filter" type="text" placeholder="Filter list here">
+				<form action="/ProjectOneWeb/ReimbursementApprovalServlet" method="POST">
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
@@ -228,31 +249,31 @@
 						</thead>	
 						<tbody id="pending_Table">
 						<%
-							for (Reimbursement r : reimbursementlist) {
+							for (Reimbursement r : reimbursementlistp) {
 						%>
-						<% if (r.getStatus().equals("pending")) { %>
 						<tr>
 							<td><%=r.getId()%></td>
 							<td><%=r.getCategory()%></td>
 							<td><%=r.getAmount()%></td>
 							<td><%=r.getRequestor_id()%></td>
 							<td><%=r.getTimemade().toGMTString()%></td>
-						<% } %>
 						<% if(r.getRequestor_id() != employee.getId()){ %>
-							<form action="/ProjectOneWeb/ReimbursementApprovalServlet" method="POST">
 								<td><input type="checkbox" name="approval" value=<%="approved" + r.getId() + r.getCategory()%>>
 								<label for="Approve">Approve</label></td>
 								<td><input type="checkbox" name="approval" value=<%="rejected" + r.getId() + r.getCategory()%>>
 								<label for="Reject">Reject</label></td>
+								<td><input type="text" name="reasongiven" class="form-control" placeholder="Explain your reasoning here..">
 						<% } %>
 						</tr>
 						<% } %>
-							<div class="button-group">
-								<input type="submit" value="Submit Form">
-							</div>
-							</form>						
+				
 					</tbody>
+	
 					</table>
+					<div class="button-group">
+						<input type="submit" class="btn btn-success" value="Submit Form">
+					</div>
+				</form>	
 			</div>
 		</div>
 	</div>

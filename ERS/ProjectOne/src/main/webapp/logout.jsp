@@ -39,11 +39,11 @@
     </div>
 
 	<div class="container">
-		<div class="col-md-6 col-md-offset-3">
-			<h2>Click below to log out</h2>
+		<div class="well col-md-6 col-md-offset-2">
+			<h2 class="col-md-offset-2">Click below to log out</h2>
 			<form action="./login.jsp" method="post">
-				<div class="button-group">
-					<input type="submit" class="btn btn-danger" value="Log Off">
+				<div class="button-group col-md-offset-2">
+					<input type="submit" class="btn btn-danger col-md-offset-3" value="Log Off">
 				</div>
 			</form>
 		</div>	
