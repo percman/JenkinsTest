@@ -19,6 +19,12 @@
   	<description></description>
   	<servlet-class>com.revature.servlets.ReimbursementApprovalServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AjaxDispatcher</servlet-name>
+  	<display-name>AjaxDispatcher</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.AjaxDispatcher</servlet-class>
+  </servlet>
 
   <servlet-mapping>
   	<servlet-name>MasterServlet</servlet-name>
@@ -27,6 +33,10 @@
   <servlet-mapping>
   	<servlet-name>ReimbursementApprovalServlet</servlet-name>
   	<url-pattern>/ReimbursementApprovalServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AjaxDispatcher</servlet-name>
+  	<url-pattern>/AjaxDispatcher</url-pattern>
   </servlet-mapping>
   
   	<welcome-file-list>

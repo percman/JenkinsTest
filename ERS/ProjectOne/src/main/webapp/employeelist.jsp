@@ -90,7 +90,7 @@
 							<td><%=e.getLastname().substring(0, 1).toUpperCase()%><%=e.getLastname().substring(1)%> </td>
 							<td><%=e.getPhonenumber()%></td>
 							<td><%=e.getEmail()%></td>
-							<td><%=e.getDatehired().toGMTString() %></td>
+							<td><%=e.getDatehired().toGMTString()%></td>
 						<tr>
 						<% } %>
 						</tbody>
@@ -163,7 +163,8 @@
 		});
 	</script>
 	
-	
+	<script src="./js/getemployeelist.js"></script>
+	<script src="./js/getmanagerlist.js"></script>
 	<script src="./js/hideemployeebutton.js"></script>
 	<script src="./js/hidemanagerbutton.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
