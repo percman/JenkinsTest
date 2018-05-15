@@ -17,11 +17,11 @@ public class ManagerServe {
 	}
 
 	public static String login(HttpServletRequest request) {
+		request.setAttribute("message", "");
 		return "managerlogin.jsp";
 	}
 	
 	public static String logout(HttpServletRequest request) {
 		return "index.do";
 	}
-
 }

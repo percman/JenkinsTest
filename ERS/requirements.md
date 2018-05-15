@@ -11,9 +11,9 @@ Requirements
 - Employees can update their information 
 - Employees can submit reimbursements
 - Reimbursements fall into the category of lodging, travel, food, and other
-- Employees can view their pending requests
+- Employees can view their pending requests 
 - Employees can view their resolved requests 
-- Employees can upload an image of his/her reciept as part of the reimbursement request (HARD! Do last)
+- Employees can upload an image of his/her receipt as part of the reimbursement request (HARD! Do last) x
 
 - Finance managers can log in
 - Finance managers can log out 
@@ -22,9 +22,9 @@ Requirements
 - Finance managers can view all Employees 
 - Finance managers can view all reimbursements from all Employees
 - Finance managers can view all reimbursements from a single Employee 
-- Finance managers can view which manager approved/denied reimbursements
-- Finance managers can not approve/deny their own requests 
-- Finance managers can view images of the receipts from reimbursement requests (HARD! Do last)
+- Finance managers can view which manager approved/denied reimbursements |
+- Finance managers can not approve/deny their own requests |
+- Finance managers can view images of the receipts from reimbursement requests (HARD! Do last) x
 	
 Technologies
 ==============================================================================================

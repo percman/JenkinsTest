@@ -29,11 +29,12 @@ public class ManagerDaoImpl implements ManagerDao{
 	}
 
 	@Override
-	public boolean createManager(String inUsername) {
-		String sql = "{call create_manager(?)}";
+	public boolean createManager(String inUsername, String inPassword) {
+		String sql = "{call create_manager(?, ?)}";
 		try(Connection c = ConnectionUtil.connect(this.logger);
 				CallableStatement s = c.prepareCall(sql);){
 			s.setString(1, inUsername);
+			s.setString(2, inPassword);
 			return s.executeUpdate() > 0;
 		} catch(SQLException e) {
 			logger.error(e.getSQLState());
@@ -45,8 +46,7 @@ public class ManagerDaoImpl implements ManagerDao{
 
 	@Override
 	public Manager readManager(String inUsername) {
-		String sql = "SELECT * FROM manager m, employee e "
-				+ "WHERE m.employeeid=e.employeeid AND e.username=?";
+		String sql = "SELECT * FROM manager WHERE username=?";
 		try(Connection c = ConnectionUtil.connect(this.logger);
 				PreparedStatement s = c.prepareStatement(sql);){
 			s.setString(1, inUsername);
@@ -54,12 +54,11 @@ public class ManagerDaoImpl implements ManagerDao{
 			ResultSet r = s.executeQuery();
 			
 			while(r.next()) {
-				int managerid = r.getInt(1);
-				int employeeid = r.getInt(2);
-				String username = r.getString(5);
-				String password = r.getString(6);
+				int id = r.getInt(1);
+				String username = r.getString(2);
+				String password = r.getString(3);
 				return (Manager) PersonFactory
-						.create("manager", employeeid, managerid, username, password);
+						.create("manager", id, username, password);
 			}
 		} catch(SQLException e) {
 			logger.error(e.getSQLState());

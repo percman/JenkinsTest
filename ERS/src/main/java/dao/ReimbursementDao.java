@@ -5,9 +5,11 @@ import java.util.List;
 import model.Reimbursement;
 
 public interface ReimbursementDao {
-	boolean createReimbursement(String inUsername, String inStatus, String inImage, String inCategory);
-	Reimbursement readReimbursement(String inUsername);
+	boolean createReimbursementEmployee(String inUsername, String inStatus, String inImage, String inCategory);
+	boolean createReimbursementManager(String inUsername, String inStatus, String inImage, String inCategory);
+	Reimbursement readReimbursement(int inReimbursementid);
 	List<Reimbursement> readReimbursements();
-	boolean updateReimbursement(String inUsername, String inStatus, String inImage, String inCategory);
+	List<Reimbursement> readReimbursements(String inUsername);
+	boolean updateReimbursement(int inReimbursementid, String inStatus, int inManagerid);
 	boolean deleteReimbursement(String inUsername);
 }

@@ -10,6 +10,8 @@ import serve.ManagerServe;
 public class Dispatcher {
 	public static String dispatch(HttpServletRequest request, HttpServletResponse response) {
 		switch(request.getRequestURI()) {
+		case "/ers/reimbursements.do":
+			return ManagerServe.updateReimbursement(request);
 		case "/ers/index.do":
 			return IndexServe.index(request);
 		case "/ers/employee-login.do":

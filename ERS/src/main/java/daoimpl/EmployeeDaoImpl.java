@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,12 +31,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 
 	@Override
-	public boolean createEmployee(String inUsername, String inPassword) {
-		String sql = "{call create_employee(?,?)}";
+	public boolean createEmployee(String inUsername, String inPassword, String inManager) {
+		String sql = "{call create_employee(?,?, ?)}";
 		try(Connection c = ConnectionUtil.connect(this.logger);
 				CallableStatement s = c.prepareCall(sql);){
 			s.setString(1, inUsername);
 			s.setString(2, inPassword);
+			s.setString(3, inManager);
 			return s.executeUpdate() > 0;
 		} catch(SQLException e) {
 			logger.error(e.getSQLState());
@@ -56,11 +56,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			ResultSet r = s.executeQuery();
 			while(r.next()) {
 				int inEmployeeid = r.getInt(1);
-				int inManagerid = r.getInt(2);
-				String inUsername = r.getString(3);
-				String inPassword = r.getString(4);
+				String inUsername = r.getString(2);
+				String inPassword = r.getString(3);
 				return (Employee)
-						PersonFactory.create("employee", inEmployeeid, inManagerid, inUsername, inPassword);
+						PersonFactory.create("employee", inEmployeeid, inUsername, inPassword);
 			}
 		} catch(SQLException e) {
 			logger.error(e.getSQLState());
@@ -79,11 +78,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			List<Employee> employees = new ArrayList<>();
 			while(r.next()) {
 				int inEmployeeid = r.getInt(1);
-				int inManagerid = r.getInt(2);
-				String inUsername = r.getString(3);
-				String inPassword = r.getString(4);
+				String inUsername = r.getString(2);
+				String inPassword = r.getString(3);
 				Employee e = (Employee)
-						PersonFactory.create("employee", inEmployeeid, inManagerid, inUsername, inPassword);	
+						PersonFactory.create("employee", inEmployeeid, inUsername, inPassword);	
 				employees.add(e);
 			}
 			return employees;

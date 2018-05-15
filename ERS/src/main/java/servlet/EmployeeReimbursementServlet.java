@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -27,9 +28,9 @@ public class EmployeeReimbursementServlet extends HttpServlet {
 		String inUsername = employee.getUsername();
 		String inCategory = request.getParameter("category");
 		
-		ReimbursementService.createReimbursement(inUsername, "pending", "image", inCategory);
-		Reimbursement reimbursement = ReimbursementService.readReimbursement(inUsername);
-		request.getSession().setAttribute("reimbursement", reimbursement);
+		ReimbursementService.createReimbursementEmployee(inUsername, "pending", "image", inCategory);
+		List<Reimbursement> reimbursements = ReimbursementService.readReimbursements(inUsername);
+		request.getSession().setAttribute("reimbursements", reimbursements);
 		
 		request.getRequestDispatcher("employee-read-reimbursement.do").forward(request, response);
 	}

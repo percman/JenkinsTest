@@ -9,8 +9,8 @@ public class ManagerService {
 	private static Logger logger = Logger.getLogger(ManagerService.class);
 	private static ManagerDaoImpl dao = ManagerDaoImpl.getInstance(logger);
 	
-	public static boolean createManager(String inUsername) {
-		return dao.createManager(inUsername);
+	public static boolean createManager(String inUsername, String inPassword) {
+		return dao.createManager(inUsername, inPassword);
 	}
 	public static Manager readManager(String inUsername) {
 		return dao.readManager(inUsername);

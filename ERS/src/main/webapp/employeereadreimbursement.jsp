@@ -12,43 +12,35 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Employee: reimbursement</title>
 </head>
 <body>
-	<div class='container'>
-		<h2><%=employee.getUsername()%>
-			read reimbursement
-		</h2>
-		<a href='employee-home.do'>Home</a>
-		<table class='table'>
-			<thead>
-				<tr>
-					<td>Image</td>
-					<td>Category</td>
-					<td>Status</td>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${reimbursements}" var="reimbursement">
-					<tr>
-						<td><c:out value="${reimbursement.iamge}" /></td>
-						<td><c:out value="${reimbursement.category}" /></td>
-						<td><c:out value='${reimbursement.status }'/></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-		<p><%=reimbursements.toString()%>
-		<p>
-			Image:
-			<%=reimbursement.getImage()%></p>
-		<p>
-			Category:
-			<%=reimbursement.getCategory()%></p>
-		<p>
-			Status:
-			<%=reimbursement.getStatus()%></p>
+<div class='container'>
+	<h2><%=employee.getUsername()%>	read reimbursement </h2>
+	<a href='employee-home.do'>Home</a>
+	<div>
+		<button id='pending'>pending</button>
+		<button id='resolved'>resolved</button>
+		<button id='all'>all</button>
+	
 	</div>
-
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>status</th>
+				<th>image</th>
+				<th>category</th>
+			</tr>
+		</thead>
+		<tbody>				
+		</tbody>
+	</table>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+<script type='text/javascript' src='js/employeereadreimbursement.js'></script>
 </body>
 </html>

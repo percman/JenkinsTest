@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Employee: information</title>
 </head>
 <body>
 <div class='container'>
@@ -19,15 +19,9 @@
 	<a href='employee-home.do'>Home</a>
 	
 	<form action='EmployeeInformationServlet' method='post'>
-		<label for='first'>Firstname:</label>
-		<input type='text' name='first' value='<%= information.getFirstname() %>'>
-		
-		<label for='middle'>Middlename:</label>
-		<input type='text' name='middle' value='<%= information.getMiddlename() %>'>
-		
-		<label for='last'>Lastname:</label>
-		<input type='text' name='last' value='<%= information.getLastname() %>'>
-		
+		<input type='text' name='first' placeholder='<%= information.getFirstname() %>'>
+		<input type='text' name='middle' placeholder='<%= information.getMiddlename() %>'>
+		<input type='text' name='last' placeholder='<%= information.getLastname() %>'>
 		<input type='submit' value='Submit'>
 	
 	</form>

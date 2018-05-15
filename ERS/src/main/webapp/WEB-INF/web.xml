@@ -4,6 +4,16 @@
 
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>Cors</filter-name>
+		<display-name>Cors</display-name>
+		<description></description>
+		<filter-class>design.Cors</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Cors</filter-name>
+		<url-pattern>*.cors</url-pattern>
+	</filter-mapping>
 	<servlet>
 		<servlet-name>Front</servlet-name>
 		<servlet-class>servlet.Front</servlet-class>
@@ -32,6 +42,30 @@
 		<description></description>
 		<servlet-class>servlet.EmployeeReimbursementServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>JacksonReimbursementServlet</servlet-name>
+		<display-name>JacksonReimbursementServlet</display-name>
+		<description></description>
+		<servlet-class>servlet.JacksonReimbursementServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>JacksonEmployeeServlet</servlet-name>
+		<display-name>JacksonEmployeeServlet</display-name>
+		<description></description>
+		<servlet-class>servlet.JacksonEmployeeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ManagerReimbursementServlet</servlet-name>
+		<display-name>ManagerReimbursementServlet</display-name>
+		<description></description>
+		<servlet-class>servlet.ManagerReimbursementServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>JacksonEmployeeReimbursementServlet</servlet-name>
+		<display-name>JacksonEmployeeReimbursementServlet</display-name>
+		<description></description>
+		<servlet-class>servlet.JacksonEmployeeReimbursementServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>Front</servlet-name>
 		<url-pattern>*.do</url-pattern>
@@ -52,4 +86,23 @@
 		<servlet-name>EmployeeReimbursementServlet</servlet-name>
 		<url-pattern>/EmployeeReimbursementServlet</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JacksonReimbursementServlet</servlet-name>
+		<url-pattern>/JacksonReimbursementServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JacksonEmployeeServlet</servlet-name>
+		<url-pattern>/JacksonEmployeeServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ManagerReimbursementServlet</servlet-name>
+		<url-pattern>/ManagerReimbursementServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JacksonEmployeeReimbursementServlet</servlet-name>
+		<url-pattern>/JacksonEmployeeReimbursementServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>

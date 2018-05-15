@@ -2,10 +2,6 @@ package serve;
 
 import javax.servlet.http.HttpServletRequest;
 
-import model.Employee;
-import model.Information;
-import service.InformationService;
-
 public class EmployeeServe {
 
 	public static String login(HttpServletRequest request) {

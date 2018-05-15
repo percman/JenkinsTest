@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Employee: reimbursement</title>
 </head>
 <body>
 <div class='container'>
@@ -19,15 +19,14 @@
 	<a href='employee-home.do'>Home</a>
 	
 	<form action='EmployeeReimbursementServlet' method='post'>
-		<label for='lodging'>lodging</label>
 		<input type='radio' name='category' value='lodging'>
+		<label for='lodging'>lodging</label>
 		
-		<label for='travel'>travel</label>
 		<input type='radio' name='category' value='travel'>
+		<label for='travel'>travel</label>
 		
-		<label for='food'>food</label>
 		<input type='radio' name='category' value='other'>
-		
+		<label for='food'>food</label>
 		<input type='submit' value='submit'>
 	</form>
 </div>
