@@ -59,6 +59,7 @@ window.onload = function(){
     				let id= rebur.reimburseId;
                     let timeSub = rebur.timeSubmitted;
                     let amount = rebur.amount;
+                    
 
  
                     //Dynamically create the HTML tags
@@ -66,7 +67,9 @@ window.onload = function(){
                     let tdId = document.createElement("td");
                     let tdCat = document.createElement("td");
                     let tdAmount = document.createElement("td");
+                    let tdSubId = document.createElement("td");
                     let tdDateSub = document.createElement("td");
+                    
 
 
                     
@@ -74,6 +77,7 @@ window.onload = function(){
                     tdId.textContent = id;
                     tdCat.textContent = cat;
                     tdAmount.textContent = amount;
+                    tdSubId.textContent = subId;
                     tdDateSub.textContent = timeSub;
                    
                     //Programatically bootstrapify each tdCompleted
@@ -81,6 +85,7 @@ window.onload = function(){
                     row.appendChild(tdId);
                     row.appendChild(tdCat);
                     row.appendChild(tdAmount);
+                    row.appendChild(tdSubId);
                     row.appendChild(tdDateSub);
 
                     //Append the row
@@ -107,6 +112,7 @@ window.onload = function(){
 					<th>ID</th>
 					<th>Category</th>
 					<th>Amount</th>
+					<th>Submitting Employee</th>
 					<th>Date Submitted</th>
 				</tr>
 			</thead>

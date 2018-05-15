@@ -91,7 +91,6 @@ window.onload = function(){
                     let subId = rebur.sumbitterId;
     				let id= rebur.reimburseId;
                     let timeApp =(typeof rebur.timeApproved === 'undefined') ? 'pending' : rebur.timeApproved;
-                    console.log(typeof rebur.timeApproved === 'undefined');
                     let timeSub = rebur.timeSubmitted;
                     let amount = rebur.amount;
                     let approved = (rebur.approved === 'true') ? "Yes" : "No";

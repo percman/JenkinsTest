@@ -33,7 +33,7 @@ window.onload = function(){
                     let appId = rebur.approverId;
                     let subId = rebur.sumbitterId;
     				let id= rebur.reimburseId;
-                    let timeApp = (rebur.timeApproved == null)? 'pending' : rebur.timeAprroved;
+    				 let timeApp =(typeof rebur.timeApproved === 'undefined') ? 'pending' : rebur.timeApproved;
                     let timeSub = rebur.timeSubmitted;
                     let amount = rebur.amount;
                     let approved = (rebur.approved === 'true') ? "Yes" : "No";
@@ -107,7 +107,6 @@ window.onload = function(){
                                 <li><a href="./submitEmployeeReimburstment.jsp">Submit</a></li>
                             </ul>
                             <ul class="navbar-nav nav navbar-right col-md-2 offset-md-2">
-                            	<li><a href="image.do">View reimbursment Image<span class="glyphicon glyphicon-picture"></span></a>
                                 <li><a href="logout.do">Log out <span class="glyphicon glyphicon-log-out"></span></a></li> 
                             </ul>
                         

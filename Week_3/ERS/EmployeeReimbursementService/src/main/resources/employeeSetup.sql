@@ -36,10 +36,14 @@ submitter_id NUMBER,
 timeSubmitted Date,
 timeApproved Date,
 amount number(10),
+photo blob,
 CONSTRAINT ckUserApproved check (approved in (0,1,-1)),
 CONSTRAINT FK_submit FOREIGN KEY(submitter_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
 CONSTRAINT FK_approve FOREIGN KEY(approver_id) REFERENCES finance_manager(man_id) ON DELETE CASCADE,
 CONSTRAINT pk_rebur_id PRIMARY KEY(rebur_id));
+
+ALTER TABLE reimbursement
+  DROP COLUMN url;
 
 CREATE OR REPLACE PROCEDURE insert_employee (new_name IN VARCHAR2, new_pass IN VARCHAR2)
 AS
@@ -92,14 +96,17 @@ BEGIN
 END;
 /
 
+
 CREATE OR REPLACE PROCEDURE update_reimbursement(new_approver_id IN NUMBER,new_rebur_id IN NUMBER,new_status IN NUMBER)
 AS
 BEGIN
     UPDATE reimbursement SET approver_id = new_approver_id WHERE REBUR_ID = new_rebur_id;
     UPDATE reimbursement set timeApproved = CURRENT_TIMESTAMP WHERE REBUR_ID = new_rebur_id;
     UPDATE reimbursement set approved = new_status where rebur_id = new_rebur_id;
+    commit;
 END;
 /
+
 
 CREATE OR REPLACE PROCEDURE update_emp(up_id in NUMBER, new_fname in NVARCHAR2, new_lname in NVARCHAR2, new_email in NVARCHAR2, new_add in NVARCHAR2)
 AS
@@ -182,6 +189,15 @@ BEGIN
 END;
 /
 
-SELECT * FROM REIMBURSEMENT WHERE rebur_ID = 62;
-select * from reimbursement;
+begin
+update_reimbursement(0,63,0);
+end;
+/
+
 select * from employee;
+
+select * from reimbursement;
+
+SELECT * FROM reimbursement ORDER BY rebur_id;
+
+commit;

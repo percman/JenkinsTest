@@ -1,18 +1,17 @@
 package com.revature.dao;
 
+import java.io.InputStream;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
 import com.revature.connection.ConnectionUtil;
-import com.revature.employee.FinanceManager;
 import com.revature.exceptions.EmployeeNotFoundException;
 import com.revature.exceptions.NoPendingReimbursmentException;
 import com.revature.exceptions.NoReibursmentForIdException;
@@ -97,7 +96,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				ResultSet rs = stmt.executeQuery();
 				
 				if (rs.next())
-					return new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved"));
+					return new Reimbursment(Category.stringToCat(rs.getString("category")), rs.getInt("approver_id"), rs.getInt("submitter_id"),rs.getInt("rebur_id"),rs.getInt("amount"),rs.getDate("timeApproved"),rs.getDate("timeSubmitted"),rs.getInt("approved"),rs.getBlob("photo").getBinaryStream());
 			} catch(SQLException sqle) {
 				logger.error(sqle.getMessage(), sqle);
 				logger.error(sqle.getSQLState(),sqle);

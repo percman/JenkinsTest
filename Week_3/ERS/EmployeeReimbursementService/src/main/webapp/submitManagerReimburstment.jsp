@@ -43,6 +43,9 @@
 					<input type="text" name="amount" class="form-control"
 						required placeholder="Amount">
 				</div>
+				<div class="form-group">
+				<input type="file" name="pic" accept="image/*">
+ 				</div>
 				<div class="button-group">
 					<input type="submit" class="btn btn-success" value="Submit">
 					<input type="reset" class="btn btn-danger" value="Reset">

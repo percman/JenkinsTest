@@ -27,8 +27,6 @@ public class ReimbursementService{
 		return dao.denyReimbursment(appId, reburId);
 	}
 	
-
-	
 	public static List<Reimbursment> getReimbursemnts() throws noReimbursmentException{
 		return dao.getReimbursemnts();
 	}

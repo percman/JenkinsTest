@@ -41,8 +41,8 @@
                  <div class = "well">
                         <div class="container">
                             <div class="col-md-2">
-                                <h5>Name: <%= man.getFirstName() %><span id = "First name"></span></h5>
-                                <h5>Primary: <%= man.getLastName() %> <span id = "Last name"></span></h5>
+                                <h5>First Name: <%= man.getFirstName() %><span id = "First name"></span></h5>
+                                <h5>Last Name: <%= man.getLastName() %> <span id = "Last name"></span></h5>
                                 <h5>Email: <%= man.getEmail() %><span id = "Email"></span></h5>
                                 <h5>Address: <%= man.getAddress() %> <span id = "Address"></span></h5>
                             </div>

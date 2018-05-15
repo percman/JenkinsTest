@@ -1,7 +1,12 @@
 package com.revature.services;
 
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import org.apache.log4j.Logger;
 
@@ -28,8 +33,12 @@ public class ReburService {
 		FinanceManager man = (FinanceManager)request.getSession().getAttribute("authorizedUser");
 		String cat = request.getParameter("category");
 		String amount = request.getParameter("amount");
-		Reimbursment rebur = new Reimbursment(Category.stringToCat(cat), Integer.parseInt(amount),man.getId());
+		//InputStream inputStream = null;
+		
 		try {
+			//Part filePart = request.getPart("photo");
+			//inputStream = filePart.getInputStream();
+			Reimbursment rebur = new Reimbursment(Category.stringToCat(cat), Integer.parseInt(amount),man.getId());
 			ReimbursementService.submitReimbursment(rebur);
 			String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(man.getUsername()));
 			request.getSession().setAttribute("reimbursements", rebursementJson);
@@ -41,15 +50,18 @@ public class ReburService {
 			logger.error(nrfee.getMessage(), nrfee);
 		} catch (NoPendingReimbursmentException npre) {
 			logger.error(npre.getMessage(), npre);
-		}
+		} 
 		return"/viewManagerReimburstment.jsp";
 	}
 	public static String submitEmployeeRebur(HttpServletRequest request, HttpServletResponse response) {
 		GenericEmployee emp = (GenericEmployee)request.getSession().getAttribute("authorizedUser");
 		String cat = request.getParameter("category");
 		String amount = request.getParameter("amount");
-		Reimbursment rebur = new Reimbursment(Category.stringToCat(cat), Integer.parseInt(amount),emp.getId());
+//		InputStream inputStream = null;
 		try {
+//			Part filePart = request.getPart("photo");
+//			inputStream = filePart.getInputStream();
+			Reimbursment rebur = new Reimbursment(Category.stringToCat(cat), Integer.parseInt(amount),emp.getId());
 			ReimbursementService.submitReimbursment(rebur);
 			String rebursementJson = new Gson().toJson(ReimbursementService.getReimbursmentForEmployee(emp.getUsername()));
 			request.getSession().setAttribute("reimbursements", rebursementJson);

@@ -42,7 +42,7 @@ public class LoginService {
 					request.getSession().setAttribute("pendingReimbursements", pendingJson);
 					return "/managerHome.do";
 				}
-			} catch (EmployeeNotFoundException enfe) {
+			}  catch (ManagerNotFoundException mnfe) {
 				try {
 					GenericEmployee emp = EmployeeService.getEmployee(username);
 					if(emp.getPassword().equals(EmployeeService.getPasswordHash(new GenericEmployee(username,password)))) {
@@ -60,14 +60,14 @@ public class LoginService {
 					} catch (NoReimbursementForEmployeeException nrfee) {
 						logger.error(nrfee.getMessage(), nrfee);
 					}
-			} catch (ManagerNotFoundException mnfe) {
-				logger.error(mnfe.getMessage(),mnfe);
 			} catch (PasswordHashException phe) {
 				logger.error(phe.getMessage(), phe);
 			} catch (NoPendingReimbursmentException npre) {
 				logger.error(npre.getMessage(), npre);
 			} catch (noReimbursmentException nre) {
 				logger.error(nre.getMessage(), nre);
+			} catch (EmployeeNotFoundException enfe) {
+				logger.error(enfe.getMessage(), enfe);
 			}
 			
 			return "index.jsp";
