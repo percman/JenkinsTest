@@ -1,6 +1,11 @@
 package com.revature.model;
 
 import java.io.Serializable;
+import java.sql.Blob;
+import java.sql.SQLException;
+import java.util.Base64;
+
+import com.revature.logging.LogThis;
 
 public class Reimbursement implements Serializable {
 
@@ -21,6 +26,8 @@ public class Reimbursement implements Serializable {
 	private String amountString;
 	private String submitted;
 	private String approved;
+	private Blob imageBlob;
+	private String imageString;
 
 	// Public no-arg constructor
 	public Reimbursement() {
@@ -75,7 +82,43 @@ public class Reimbursement implements Serializable {
 		this.submitted = submitted;
 		this.approved = approved;
 	}
-	
+
+	public Reimbursement(int id, int requestorId, String requestorName, String approverName, String category,
+			String status, int amount, String submitted, String approved, Blob image) {
+		super();
+		this.id = id;
+		this.requestorId = requestorId;
+		this.requestorName = requestorName;
+		this.approverName = approverName;
+		this.category = category;
+		this.status = status;
+		this.amount = amount;
+		this.submitted = submitted;
+		this.approved = approved;
+		byte[] encoded;
+		try {
+			encoded = Base64.getEncoder().encode(image.getBytes(1, (int) image.length()));
+			this.imageString = new String(encoded);
+		} catch (SQLException e) {
+			LogThis.warn(e.getMessage());
+		}
+	}
+
+	public Blob getImageBlob() {
+		return imageBlob;
+	}
+
+	public void setImageBlob(Blob imageBlob) {
+		this.imageBlob = imageBlob;
+	}
+
+	public String getImageString() {
+		return imageString;
+	}
+
+	public void setImageString(String imageString) {
+		this.imageString = imageString;
+	}
 
 	public String getIdString() {
 		return idString;

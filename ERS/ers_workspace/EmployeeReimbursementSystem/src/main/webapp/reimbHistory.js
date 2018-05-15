@@ -29,6 +29,8 @@ function getAllReimbs() {
                 let status = reimb.status;
                 let resolved = reimb.approved;
                 let approverName = reimb.approverName;
+                let image = reimb.imageString;
+
 
                 let row = document.createElement("tr");
                 let tdId = document.createElement("td");
@@ -41,7 +43,12 @@ function getAllReimbs() {
                 let tdResolved = document.createElement("td");
                 let tdApproverName = document.createElement("td");
 
-                tdId.textContent = id;
+                let tdImageString = document.createElement("td");
+                let imageTag = document.createElement("img");
+
+                // imageTag.setAttribute("src", "data:image/jpeg;base64" + image);
+
+                tdId.textContent = "wehueflhudfs" + id;
                 tdRequestorName.textContent = requestorName;
                 tdEId.textContent = eId;
                 tdCategory.textContent = category;
@@ -51,6 +58,10 @@ function getAllReimbs() {
                 tdResolved.textContent = resolved;
                 tdApproverName.textContent = approverName;
 
+                tdImageString.textContent = "grergg";
+                    
+                // tdImageString.appendChild(imageTag);
+
                 row.appendChild(tdEId);
                 row.appendChild(tdRequestorName);
                 row.appendChild(tdCategory);
@@ -59,7 +70,9 @@ function getAllReimbs() {
                 row.appendChild(tdStatus);
                 row.appendChild(tdResolved);
                 row.appendChild(tdApproverName);
+                row.appendChild(tdImageString);
                 row.appendChild(tdId);
+
 
                 document.getElementById("allReimbsTable").appendChild(row);
             }
@@ -96,6 +109,7 @@ function getReimbForEmployee() {
                 let status = reimb.status;
                 let resolved = reimb.approved;
                 let approverName = reimb.approverName;
+                let image = reimb.imageString;
 
                 let empId = document.getElementById("empId").value;
 
@@ -112,6 +126,11 @@ function getReimbForEmployee() {
                     let tdResolved = document.createElement("td");
                     let tdApproverName = document.createElement("td");
 
+                    let tdImageString = document.createElement("td");
+                    let imageTag = document.createElement("img");
+
+                    // imageTag.setAttribute("src", "data:image/jpeg;base64" + image);
+
                     tdId.textContent = id;
                     tdRequestorName.textContent = requestorName;
                     tdEId.textContent = eId;
@@ -122,6 +141,10 @@ function getReimbForEmployee() {
                     tdResolved.textContent = resolved;
                     tdApproverName.textContent = approverName;
 
+                    tdImageString.textContent = "grergg";
+                    
+                    // tdImageString.appendChild(imageTag);
+
                     row.appendChild(tdEId);
                     row.appendChild(tdRequestorName);
                     row.appendChild(tdCategory);
@@ -131,6 +154,7 @@ function getReimbForEmployee() {
                     row.appendChild(tdResolved);
                     row.appendChild(tdApproverName);
                     row.appendChild(tdId);
+                    row.appendChild(tdImageString);
 
                     document.getElementById("allReimbsTable").appendChild(row);
                 }

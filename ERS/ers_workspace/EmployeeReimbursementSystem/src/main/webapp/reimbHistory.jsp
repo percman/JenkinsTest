@@ -40,6 +40,7 @@
 							<th>Date Resolved</th>
 							<th>Approved By</th>
 							<th>Reimbursement ID</th>
+							<th>Image</th>
 
 						</thead>
 						<tbody id="allReimbsTable">

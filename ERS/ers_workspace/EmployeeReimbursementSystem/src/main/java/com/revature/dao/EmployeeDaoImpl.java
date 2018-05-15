@@ -127,7 +127,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement(
 					"SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.r_status, "
-							+ "c.r_category, r.amount, r.submitted, r.resolved, ai.approver_name, ei.employee_id FROM reimbursement r "
+							+ "c.r_category, r.amount, r.submitted, r.resolved, ai.approver_name, ei.employee_id, r.image FROM reimbursement r "
 							+ "JOIN employee_info ei ON r.requestor_id = ei.employee_id "
 							+ "JOIN r_status s ON s.status_id = r.status_id "
 							+ "JOIN r_category c ON c.category_id = r.category_id "
@@ -139,7 +139,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			while (rs.next()) {
 				list.add(new Reimbursement(rs.getInt("reimbursement_id"), rs.getInt("employee_id"), rs.getString("requestor_name"),
 						rs.getString("approver_name"), rs.getString("r_category"), rs.getString("r_status"),
-						rs.getInt("amount"), rs.getString("submitted"), rs.getString("resolved")));
+						rs.getInt("amount"), rs.getString("submitted"), rs.getString("resolved"), rs.getBlob("image")));
 			}
 			return list;
 		} catch (SQLException sqle) {
@@ -156,7 +156,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement stmt = conn.prepareStatement(
 					"SELECT r.reimbursement_id, (ei.f_name || ' ' || ei.l_name) AS requestor_name, s.r_status, "
-							+ "c.r_category, r.amount, r.submitted, r.resolved, ai.approver_name, ei.employee_id FROM reimbursement r "
+							+ "c.r_category, r.amount, r.submitted, r.resolved, ai.approver_name, ei.employee_id, r.image FROM reimbursement r "
 							+ "JOIN employee_info ei ON r.requestor_id = ei.employee_id "
 							+ "JOIN r_status s ON s.status_id = r.status_id "
 							+ "JOIN r_category c ON c.category_id = r.category_id "
@@ -169,7 +169,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			while (rs.next()) {
 				list.add(new Reimbursement(rs.getInt("reimbursement_id"), rs.getInt("employee_id"), rs.getString("requestor_name"),
 						rs.getString("approver_name"), rs.getString("r_category"), rs.getString("r_status"),
-						rs.getInt("amount"), rs.getString("submitted"), rs.getString("resolved")));
+						rs.getInt("amount"), rs.getString("submitted"), rs.getString("resolved"), rs.getBlob("image")));
 			}
 			return list;
 		} catch (SQLException sqle) {

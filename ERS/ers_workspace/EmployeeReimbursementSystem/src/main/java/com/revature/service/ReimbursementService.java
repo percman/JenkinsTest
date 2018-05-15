@@ -18,7 +18,7 @@ public class ReimbursementService {
 	public static String newReimbursement(HttpServletRequest request) {
 		
 		
-		String filePath = "C:/Users/Maxwell/Desktop/RevatrueBootcamp/1804-jta/ERS/ers_workspace/EmployeeReimbursementSystem/src/main/resources" + request.getParameter("receiptImage");
+		String filePath = "C:/Users/Maxwell/Desktop/RevatrueBootcamp/1804-jta/ERS/ers_workspace/EmployeeReimbursementSystem/src/main/resources/" + request.getParameter("receiptImage");
 		LogThis.info(filePath);
 		
 		Employee temp = (Employee) request.getSession().getAttribute("currentEmployee");		

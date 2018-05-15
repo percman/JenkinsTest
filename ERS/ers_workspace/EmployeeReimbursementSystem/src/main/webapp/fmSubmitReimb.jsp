@@ -55,6 +55,10 @@
                             <h3>Upload a receipt: </h3>
                         </div>
                         <br>
+                        <input type="file" value="" name="receiptImage">
+                        <br>
+                        <br>
+
                         <div class="container">
                             <input type="submit" value="Submit" id="submitReimb">
                         </div>
