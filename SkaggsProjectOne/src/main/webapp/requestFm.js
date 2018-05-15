@@ -2,6 +2,9 @@ window.onload = function(){
   getRequests();
 }
 
+//window.onClick = function() {
+//	displayImage();
+//}
 function getRequests() {
 
 	let xhr = new XMLHttpRequest();
@@ -62,6 +65,23 @@ function getRequests() {
 		}
 	}
     xhr.open("POST", "http://localhost:8080/SkaggsProjectOne/getAllRequests.ajax");
+    xhr.send();
+};
+function displayImage() {
+
+	let xhr = new XMLHttpRequest();
+
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			let image = JSON.parse(xhr.responseText);
+			console.log(image);
+			var image64 = image.base64;
+			document.getElementById("receipt").src = "data:image/png;base64," + image64;
+			console.log("Here we are");
+		}
+	}
+	
+    xhr.open("POST", "http://localhost:8080/SkaggsProjectOne/getImage.ajax");
     xhr.send();
 };
 

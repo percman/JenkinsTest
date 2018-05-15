@@ -1,5 +1,7 @@
 package com.revature.ajax;
 
+import java.util.Base64;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,8 +23,15 @@ public class AjaxDispatcher {
 		case"/SkaggsProjectOne/getRequests.ajax":
 			Employee requested = (Employee) request.getSession().getAttribute("requestedUser");
 			return EmployeeService.getMyRequests(requested);
+		case "/SkaggsProjectOne/getImage.ajax":
+			//int reid = Integer.parseInt(request.getParameter("reid"));
+			byte[] image = EmployeeService.getImage(15);	
+			String image64 = Base64.getEncoder().encodeToString(image);
+			System.out.println(image64);
+			return image;
 		default:
 			return new String("Not implemented");
 		}
 	}
+
 }

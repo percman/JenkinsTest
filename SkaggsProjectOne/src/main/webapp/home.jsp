@@ -90,7 +90,7 @@
 		<div class="container">
 			<div class="col-md-7">
 				<div class="form-group">
-					<input type="submit" name="request-btn" id="request-btn" enctype="multipart/form-data"
+					<input type="submit" name="request-btn" id="request-btn"
 						class="form-control btn btn-submit" value="Submit Request">
 				</div>
 			</div>

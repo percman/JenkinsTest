@@ -25,16 +25,18 @@
 			<li><a href="fm.jsp">Home</a></li>
 		</ul>
 		<ul class="navbar-nav nav">
-			<li><a href = "employeeList.jsp">View Employees</a> </li>
+			<li><a href="employeeList.jsp">View Employees</a></li>
 		</ul>
 		<ul class="navbar-nav nav">
 			<li><a href="requestFm.jsp">Review All Requests</a></li>
 		</ul>
 		<ul class="navbar-nav nav">
-			<li><a href="requestByEmployee.jsp">View Requests by Employees</a></li>
+			<li><a href="requestByEmployee.jsp">View Requests by
+					Employees</a></li>
 		</ul>
 		<ul class="navbar-nav nav navbar-right col-md-2 col-md-offset-2">
-			<li><a href="logout.jsp">Log Out <span class="glyphicon glyphicon-log-out"></span></a></li>
+			<li><a href="logout.jsp">Log Out <span
+					class="glyphicon glyphicon-log-out"></span></a></li>
 		</ul>
 		</nav>
 	</div>
@@ -73,13 +75,31 @@
 					</select>
 				</div>
 				<div>
-					<input type="submit" name="update-request-submit" id="update-request-btn"
-						class="form-control btn btn-submit" value="Approve or Deny">
+					<input type="submit" name="update-request-submit"
+						id="update-request-btn" class="form-control btn btn-submit"
+						value="Approve or Deny">
 				</div>
 			</form>
 		</div>
 	</div>
-	<script src="requestFm.js"></script>
+	<div class="container">
+		<div class="col-md-7">
+			<h4>View Receipt</h4>
+			<form id="view-image-form" role="form">
+				<div>
+					<label for="inputId">Enter receipt Id</label> <input type="number"
+						id="reid" name="reid">
+				</div>
+				<div>
+					<input type="button" name="view-img-btn" id="view-img-btn"
+						class="form-control btn btn-submit" value="View Receipt"
+						onclick="displayImage();"> <img id="receipt"/>
+				</div>
+			</form>
+		</div>
 
+	</div>
+	</div>
+	<script src="requestFm.js"></script>
 </body>
 </html>

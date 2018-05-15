@@ -18,5 +18,5 @@ public interface EmployeeDao {
 	ArrayList<Reimbursement> getAllRequests() throws ClassNotFoundException;
 	boolean updateRequest(Employee e, int reid, String approved);
 	ArrayList<Reimbursement> getMyRequests(Employee e) throws ClassNotFoundException;
-	Blob getImage(int reid);
+	byte[] getImage(int reid);
 }

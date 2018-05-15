@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import com.revature.reimbursement.Reimbursement;
 import com.revature.util.ConnectionUtil;
 
-import oracle.sql.BLOB;
-
 public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
 	public Employee getEmployee(int id) throws ClassNotFoundException {
@@ -114,17 +112,19 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return null;
 	}
 	@Override
-	public Blob getImage(int reid) {
+	public byte[] getImage(int reid) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			Blob img = null;
+	    	byte[] image = null;
 			PreparedStatement stmt = conn.prepareStatement("SELECT img FROM reimbursementTable " + 
 					"WHERE reid = " +  reid);			
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {	
-				img = rs.getBlob("img");
+				Blob blob = rs.getBlob("img");
+				int blobLength = (int) blob.length();  
+				image = blob.getBytes(1, blobLength);
+				blob.free();
 			}
-			
-			return img;
+			return image;
 		} catch(SQLException sqle) {
 			System.err.println(sqle.getMessage());
 			System.err.println("SQL STATE " + sqle.getSQLState());
