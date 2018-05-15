@@ -51,8 +51,6 @@ public class OtherUtils {
 
     public static String blobToString(Blob bloob) throws SQLException {
         String s = new String(bloob.getBytes(1l, (int) bloob.length()));
-        //logger.debug("Blob " + bloob);
-        //logger.debug("String " + s);
         return s ;
     }
 }

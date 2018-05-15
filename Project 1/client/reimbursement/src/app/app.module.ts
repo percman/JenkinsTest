@@ -15,6 +15,7 @@ import { ViewEmployeesComponent } from './components/view-employees/view-employe
 import { MyReimbursementsComponent } from './components/my-reimbursements/my-reimbursements.component';
 import { AdminTableComponent } from './components/admin-table/admin-table.component';
 import {ImageUploadModule} from 'angular2-image-upload';
+import TableFilter from 'node_modules/tablefilter';
 
 
 @NgModule({
