@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.awt.Image;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -123,6 +124,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				int blobLength = (int) blob.length();  
 				image = blob.getBytes(1, blobLength);
 				blob.free();
+				System.out.println("Image" + image);
 			}
 			return image;
 		} catch(SQLException sqle) {

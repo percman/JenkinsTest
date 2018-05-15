@@ -74,9 +74,8 @@ function displayImage() {
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			let image = JSON.parse(xhr.responseText);
-			console.log(image);
-			var image64 = image.base64;
-			document.getElementById("receipt").src = "data:image/png;base64," + image64;
+			console.log("imgage" + image);
+			document.getElementById("receipt").src = "data:image/png;base64," + image;
 			console.log("Here we are");
 		}
 	}
