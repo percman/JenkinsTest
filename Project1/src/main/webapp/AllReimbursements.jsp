@@ -97,7 +97,7 @@
 						<td><%=r.getStatus() %></td>
 						<td><%=ManagerService.approver(r.getApproverId()) %></td>
 						<td><%=r.getApprovedTime() %></td>
-						<td><%if (r.getImage()!=null){ %><img src="<%=r.getImage()%>" width="300"><% }%></td>
+						<td><%if (r.getImage()!=null){ %><img src="./images/<%=r.getImage()%>" width="300"><% }%></td>
 					</tr>
 				
 				<%} %>

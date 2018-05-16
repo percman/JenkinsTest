@@ -80,7 +80,7 @@
                 		<td><%=r.getAmount()%></td>
                 		<td><%=r.getRequestTime()%></td>
                 		<td><%=r.getCategory() %></td>
-                		<td><%if (r.getImage()!=null){ %><img src="<%=r.getImage()%>" width="300"><% }%></td>
+                		<td><%if (r.getImage()!=null){ %><img src="./images/<%=r.getImage()%>" width="300"><% }%></td>
                 		
                 	</tr>
                 <%} %>

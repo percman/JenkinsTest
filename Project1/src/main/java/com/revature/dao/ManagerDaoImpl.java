@@ -155,7 +155,6 @@ public class ManagerDaoImpl implements ManagerDao {
 			if(rs.next()) {
 				String name=rs.getString("first_name")+ " " + 
 						rs.getString("middle_initial")+" " +rs.getString("last_name");
-				System.out.println(name);
 				return name;
 			}
 		}catch(SQLException sqle) {

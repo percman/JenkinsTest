@@ -1,6 +1,10 @@
+	<%
+		if (request.getSession().getAttribute("authorizedUser") != null) {
+	%>
+
 	<div class="container">
 		<div class="col-md-6 col-md-offset-3">
-			<form action="addReimburse.do" method="post">
+			<form action="addReimburse.do" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="amount">Amount: </label> <input type="number" step="0.01" min="0.01"
 						name="amount" class="form-control" required
@@ -31,7 +35,7 @@
 					</div>
 				</div>
 				<div class="form-group"><label for="fileToUpload">Add Receipt Image</labelfor>
-				<input id="fileToUpload" name="fileToUpload" type="file">
+				<input id="fileToUpload" name="fileToUpload" type="file" required>
 				</div>
 				<div class="button-group">
 					<input type="submit" class="btn btn-success" value="Submit">
@@ -40,3 +44,5 @@
 			</form>
 		</div>
 	</div>
+	
+	<%}%>

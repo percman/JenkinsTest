@@ -1,3 +1,7 @@
+	<%
+		if (request.getSession().getAttribute("authorizedUser") != null) {
+	%>
+
 <%@ page import="com.revature.model.Employee"%>
 <% Employee employee = (Employee) request.getSession().getAttribute("authorizedUser");%>
 
@@ -28,3 +32,5 @@
 		</div>
 	</div>
 		</div>
+		
+		<%}%>
