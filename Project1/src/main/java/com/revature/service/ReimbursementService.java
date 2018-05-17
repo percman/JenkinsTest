@@ -12,7 +12,6 @@ import java.net.URL;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.TimeUnit;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -43,13 +42,13 @@ public class ReimbursementService {
 	    fileContent.read(buffer);
 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");
 	    fileName=id+"-"+LocalDateTime.now().format(formatter)+fileName.substring(fileName.indexOf("."));
-	    File targetFile = new File("/home/ec2-user/.jenkins/workspace/Project1/Project1/src/main/webapp/images/"+fileName);
+	    File targetFile = new File("/home/ec2-user/.jenkins/workspace/Project1/Project1/src/main/webapp/images"+fileName);
 	    OutputStream outStream = new FileOutputStream(targetFile);
 	    outStream.write(buffer);
 	    outStream.close();
 		Reimbursement reimbursement=new Reimbursement(id, request.getParameter("category"), Double.parseDouble(request.getParameter("amount")), fileName);
 		
-		URL url = new URL("http://ec2-54-236-11-254.compute-1.amazonaws.com:8090/jenkins/job/Project1/build?token=update");
+		URL url = new URL("http://ec2-54-236-11-254.compute-1.amazonaws.com:8090/jenkins/buildByToken/build?job=Project1&token=update");
 		  HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
 		  httpCon.setDoOutput(true);
 		  httpCon.setRequestMethod("POST");
