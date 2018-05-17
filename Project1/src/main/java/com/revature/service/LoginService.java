@@ -38,6 +38,7 @@ public class LoginService {
 	public static String logout(HttpServletRequest request, HttpServletResponse response) {
 		request.getSession().removeAttribute("authorizedUser");
 		request.getSession().removeAttribute("authorizedManager");
+		request.getSession().invalidate();
 		return "/index.jsp";
 	}
 }

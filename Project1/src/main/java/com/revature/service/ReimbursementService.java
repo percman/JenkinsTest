@@ -42,7 +42,7 @@ public class ReimbursementService {
 	    fileContent.read(buffer);
 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");
 	    fileName=id+"-"+LocalDateTime.now().format(formatter)+fileName.substring(fileName.indexOf("."));
-	    File targetFile = new File("/home/ec2-user/.jenkins/workspace/Project1/Project1/src/main/webapp/images"+fileName);
+	    File targetFile = new File("/home/ec2-user/.jenkins/workspace/Project1/Project1/src/main/webapp/images/"+fileName);
 	    OutputStream outStream = new FileOutputStream(targetFile);
 	    outStream.write(buffer);
 	    outStream.close();

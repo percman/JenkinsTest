@@ -13,6 +13,12 @@ public class Dispatch {
 	private Dispatch() {}
 	
 	public static String process(HttpServletRequest request, HttpServletResponse response) {
+		if(!request.getRequestURI().equals("/Project1/index.jsp")){
+			response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); 
+			response.addHeader("Cache-Control", "post-check=0, pre-check=0");
+			response.setHeader("Pragma","no-cache"); 
+			response.setDateHeader ("Expires", 0);
+		}
 		switch(request.getRequestURI()) {
 		case "/Project1/login.do":
 			return LoginService.login(request, response);
