@@ -6,6 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -16,12 +19,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import org.apache.log4j.Logger;
+
 import com.revature.dao.ReimbursementDao;
 import com.revature.dao.ReimbursementDaoImpl;
 import com.revature.model.Employee;
 import com.revature.model.Reimbursement;
 
 public class ReimbursementService {
+	private static final Logger logger = Logger.getLogger(ReimbursementService.class);
 
 	private ReimbursementService() {}
 	private static ReimbursementDao dao = ReimbursementDaoImpl.getInstance();
@@ -41,21 +47,26 @@ public class ReimbursementService {
 	    OutputStream outStream = new FileOutputStream(targetFile);
 	    outStream.write(buffer);
 	    outStream.close();
-	    try {
-			TimeUnit.SECONDS.sleep(2);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		Reimbursement reimbursement=new Reimbursement(id, request.getParameter("category"), Double.parseDouble(request.getParameter("amount")), fileName);
+		
+		URL url = new URL("http://ec2-54-236-11-254.compute-1.amazonaws.com:8090/jenkins/job/Project1/build?token=update");
+		  HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+		  httpCon.setDoOutput(true);
+		  httpCon.setRequestMethod("POST");
+		  OutputStreamWriter out = new OutputStreamWriter(
+		      httpCon.getOutputStream());
+		  System.out.println(httpCon.getResponseCode());
+		  System.out.println(httpCon.getResponseMessage());
+		  out.close();
+		
 		if(dao.insertReimbursement(reimbursement)) {
 			return "/viewPending.do";
 		}
 		}catch(ServletException se) {
-			se.getMessage();
+			logger.warn(se.getMessage());
 		}
 		catch(IOException ioe) {
-			ioe.getMessage();
+			logger.warn(ioe.getMessage());
 		}
 		
 		return "ReimbursementSubmit.jsp";
